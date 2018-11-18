@@ -120,6 +120,10 @@ table {
   margin: auto;
 }
 
+table td {
+  text-align: center;
+}
+
 .quote {
   font-style: italic;
 }
