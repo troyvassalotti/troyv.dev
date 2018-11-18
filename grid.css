@@ -1,0 +1,16 @@
+.row {
+  width: 100%;
+  float: left;
+}
+
+.column {
+  float: left;
+}
+
+.column-70 {
+  width: 70%;
+}
+
+.column-30 {
+  width: 30%;
+}
