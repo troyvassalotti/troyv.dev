@@ -161,3 +161,7 @@ a:active {
 /* p:hover {
   width: 300px;
 } */
+
+.centerfold {
+  text-align: center;
+}
