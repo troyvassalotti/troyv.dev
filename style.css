@@ -85,6 +85,13 @@ h6 {
   font-size: 18;
 }
 
+figcaption {
+  font-size: 12px;
+  font-family: 'Merriweather', serif;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
 p {
   font-size: 18px;
   font-family: 'Poppins', sans-serif;
@@ -162,8 +169,16 @@ a:active {
   width: 300px;
 } */
 
-.centerfold {
+.center {
+  margin: auto;
+  width: 50%;
+}
+
+.center img {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 20px auto 0px;
+}
+
+.table-spacer {
+  margin: 20px auto;
 }
