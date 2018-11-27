@@ -17,7 +17,7 @@
       <form id="survey-form">
         <div class="rowTab">
           <div class="labels">
-            <label>* Name:</label>
+            <label id="name-label" for="name">* Name:</label>
           </div>
           <div class="rightTab">
             <input class="inputs" type="text" placeholder="Enter your name" required>
@@ -25,7 +25,7 @@
         </div>
         <div class="rowTab">
           <div class="labels">
-            <label>* Email:</label>
+            <label id="email-label" for="email">* Email:</label>
           </div>
           <div class="rightTab">
             <input class="inputs" type="text" placeholder="Enter your email" required>
@@ -33,10 +33,54 @@
         </div>
         <div class="rowTab">
           <div class="labels">
-            <label>* Age:</label>
+            <label id="number-label" for="breakfasts">* Breakfasts Per Day:</label>
           </div>
           <div class="rightTab">
-            <input class="inputs" type="text" placeholder="Enter your age in years" minmax="0 120" required>
+            <input class="inputs" id="number" type="number" placeholder="Breakfasts per day" min="0" max="10" required>
+          </div>
+        </div>
+        <div class="rowTab">
+          <div class="labels">
+            <label for="time of day">When do you prefer to eat breakfast?</label>
+          </div>
+          <div class="rightTab">
+            <select class="dropdowns" id="dropdown" name="timeOfDay">
+              <option disabled value>Select Time</option>
+              <option value="waking">As I Wake Up</option>
+              <option value="early morning">At Work In The Morning</option>
+              <option value="midday">Just Before Noon</option>
+              <option value="afternoon">Early Afternoon</option>
+              <option value="evening">After Work or At Dusk</option>
+              <option value="bed">Just Before Bed</option>
+              <option value="never">Never</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="rowTab">
+          <div class="labels">
+            <label for="favorite">Which of these do you most prefer?</label>
+          </div>
+          <div class="rightTab">
+            <ul class="preference">
+              <li>
+                <label>French Toast<input name="radio-buttons" value="1" type="radio" class="userRatings"></label>
+              </li>
+              <li>
+                <label>Cereal<input name="radio-buttons" value="2" type="radio" class="userRatings"></label>
+              </li>
+              <li>
+                <label>Eggs<input name="radio-buttons" value="3" type="radio" class="userRatings"></label>
+              </li>
+              <li>
+                <label>Oatmeal<input name="radio-buttons" value="4" type="radio" class="userRatings"></label>
+              </li>
+              <li>
+                <label>English Breakfast<input name="radio-buttons" value="5" type="radio" class="userRatings"></label>
+              </li>
+              <li>
+                <label>None of the above<input name="radio-buttons" value="6" type="radio" class="userRatings"></label>
+              </li>
           </div>
         </div>
       </form>

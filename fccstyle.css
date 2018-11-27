@@ -53,6 +53,7 @@ h3 {
   display: inline-block;
   text-align: left;
   width: 50%;
+  vertical-align: middle;
 }
 
 .rowTab {
@@ -65,6 +66,31 @@ h3 {
   padding: 5px;
   border: 1px solid #60656f;
   border-radius: 6px;
+}
+
+.dropdowns {
+  height: 30px;
+  width: 50%;
+  border: 1px solid #60656f;
+  border-radius: 6px;
+}
+
+.preference {
+  list-style: none;
+}
+
+.preference li, .checkbox {
+  position: relative;
+  left: -50px;
+  margin-left: 10px;
+  display: block;
+  padding-bottom: 5px;
+}
+
+.userRatings,
+input[type="checkbox"] {
+  float: left;
+  margin: 0px 5px 0px 0px;
 }
 
 #title {
