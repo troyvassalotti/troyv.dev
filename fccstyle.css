@@ -90,7 +90,7 @@ h3 {
 .userRatings,
 input[type="checkbox"] {
   float: left;
-  margin: 0px 5px 0px 0px;
+  margin-top: 6px;
 }
 
 #title {
