@@ -7,13 +7,39 @@
     <link rel="stylesheet" type="text/css" href="fccstyle.css">
     <title>freeCodeCamp Survey Page</title>
   </head>
-  <body>
+  <body id="survey">
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
-    <div id="main">
-      <h1 id="title">My freeCodeCamp Survey</h1>
+    <h1 id="title">My freeCodeCamp Survey</h1>
+    <div id="survey-main">
       <p id="description">
         In this survey, we will be discussing breakfast and everything about it.
       </p>
+      <form id="survey-form">
+        <div class="rowTab">
+          <div class="labels">
+            <label>* Name:</label>
+          </div>
+          <div class="rightTab">
+            <input class="inputs" type="text" placeholder="Enter your name" required>
+          </div>
+        </div>
+        <div class="rowTab">
+          <div class="labels">
+            <label>* Email:</label>
+          </div>
+          <div class="rightTab">
+            <input class="inputs" type="text" placeholder="Enter your email" required>
+          </div>
+        </div>
+        <div class="rowTab">
+          <div class="labels">
+            <label>* Age:</label>
+          </div>
+          <div class="rightTab">
+            <input class="inputs" type="text" placeholder="Enter your age in years" minmax="0 120" required>
+          </div>
+        </div>
+      </form>
     </div>
   </body>
 </html>
