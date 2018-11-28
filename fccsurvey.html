@@ -9,7 +9,7 @@
   </head>
   <body id="survey">
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
-    <h1 id="title">My freeCodeCamp Survey</h1>
+    <h1 id="title">Tell Me Your Breakfast Habits</h1>
     <div id="survey-main">
       <p id="description">
         In this survey, we will be discussing breakfast and everything about it.
@@ -20,7 +20,7 @@
             <label id="name-label" for="name">* Name:</label>
           </div>
           <div class="rightTab">
-            <input class="inputs" type="text" placeholder="Enter your name" required>
+            <input class="inputs" id="name" type="text" placeholder="Enter your name" required>
           </div>
         </div>
         <div class="rowTab">
@@ -28,7 +28,7 @@
             <label id="email-label" for="email">* Email:</label>
           </div>
           <div class="rightTab">
-            <input class="inputs" type="text" placeholder="Enter your email" required>
+            <input class="inputs" id="email" type="email" placeholder="Enter your email" required>
           </div>
         </div>
         <div class="rowTab">
@@ -64,30 +64,66 @@
           <div class="rightTab">
             <ul class="preference">
               <li>
-                <label>French Toast<input name="radio-buttons" value="1" type="radio" class="userRatings"></label>
+                <label>French Toast<input name="breakfast-preference" value="1" type="radio" class="userRatings"></label>
               </li>
               <li>
-                <label>Cereal<input name="radio-buttons" value="2" type="radio" class="userRatings"></label>
+                <label>Cereal<input name="breakfast-preference" value="2" type="radio" class="userRatings"></label>
               </li>
               <li>
-                <label>Eggs<input name="radio-buttons" value="3" type="radio" class="userRatings"></label>
+                <label>Eggs<input name="breakfast-preference" value="3" type="radio" class="userRatings"></label>
               </li>
               <li>
-                <label>Oatmeal<input name="radio-buttons" value="4" type="radio" class="userRatings"></label>
+                <label>Oatmeal<input name="breakfast-preference" value="4" type="radio" class="userRatings"></label>
               </li>
               <li>
-                <label>English Breakfast<input name="radio-buttons" value="5" type="radio" class="userRatings"></label>
+                <label>English Breakfast<input name="breakfast-preference" value="5" type="radio" class="userRatings"></label>
               </li>
               <li>
-                <label>None of the above<input name="radio-buttons" value="6" type="radio" class="userRatings"></label>
+                <label>None of the above<input name="breakfast-preference" value="6" type="radio" class="userRatings"></label>
               </li>
-          </div>
-        </div
-        <div class="rowTab">
-          <div class="labels">
-            <label for="this is where i left off">
           </div>
         </div>
+        <div class="rowTab">
+          <div class="labels">
+            <label for="explanation">Please Explain Your Reasoning:</label>
+          </div>
+          <div class="rightTab">
+            <textarea placeholder="Write your reasoning here." class="textArea"></textarea>
+          </div>
+        </div>
+        <div class="rowTab">
+          <div class="labels">
+            <label for="checkbox">Which of these classic breakfast establishments have you eaten at in the last 6 months?</label>
+          </div>
+          <div class="rightTab">
+            <ul class="preference">
+              <li>
+                <label>Denny's<input name="breakfast-place" value="1" type="checkbox"></label>
+              </li>
+              <li>
+                <label>IHOP<input name="breakfast-place" value="2" type="checkbox"></label>
+              </li>
+              <li>
+                <label>Bob Evans<input name="breakfast-place" value="3" type="checkbox"></label>
+              </li>
+              <li>
+                <label>Waffle House<input name="breakfast-place" value="4" type="checkbox"></label>
+              </li>
+              <li>
+                <label>McDonald's<input name="breakfast-place" value="5" type="checkbox"></label>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="rowTab">
+          <div class="labels">
+            <label for="comments">Any Additional Comments or Concerns?</label>
+          </div>
+          <div class="rightTab">
+            <textarea placeholder="Write your comments here." class="textArea"></textarea>
+          </div>
+        </div>
+          <button id="submit" type="submit">Submit</button>
       </form>
     </div>
   </body>

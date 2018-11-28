@@ -27,6 +27,7 @@ html, body {
 /* font and heading styles */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Merriweather", serif;
+  color: #131112;
 }
 
 h1 {
@@ -87,10 +88,29 @@ h3 {
   padding-bottom: 5px;
 }
 
-.userRatings,
-input[type="checkbox"] {
+.userRatings, input[type="checkbox"] {
   float: left;
   margin-top: 6px;
+}
+
+.textArea {
+  width: 75%;
+  height: 50px;
+  border: 1px solid #60656f;
+  border-radius: 6px;
+  padding: 5px;
+}
+
+#submit {
+  padding: 5px;
+  width: 15%;
+  height: 50%;
+  margin-bottom: 20px;
+  background-color: #279af1;
+  color: #f7f7ff;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  border: 1px solid #60656f;
 }
 
 #title {
