@@ -15,6 +15,12 @@ html, body {
   background-color: #fbfbfb;
 }
 
+#productMain {
+  margin: auto;
+  padding: 10px;
+  background-color: #f7f7ff;
+}
+
 #survey-main {
   margin: auto;
   border: 3px solid #131112;
@@ -22,6 +28,14 @@ html, body {
   background-color: #f7f7ff;
   width: 50%;
   max-width: 800px;
+}
+
+#header {
+  text-align: left;
+}
+
+#frLogo {
+  display: inline-block;
 }
 
 /* font and heading styles */
