@@ -59,7 +59,7 @@ header {
   transition: .3s;
 }
 
-#header-image {
+#header-img {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -67,7 +67,7 @@ header {
   max-height: auto;
 }
 
-#emailForm {
+#form {
   padding: 10px 0px;
 }
 
@@ -88,6 +88,7 @@ header {
 #signUp {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 #video {
