@@ -22,6 +22,7 @@ header {
   flex-direction: row;
   justify-content: space-around;
   align-items: baseline;
+  background-color: #f7f7ff;
 }
 
 #header {
@@ -105,6 +106,32 @@ header {
   grid-template-rows: auto;
 }
 
+.info {
+  width: 70%;
+  margin: auto;
+  height: auto;
+}
+
+.level {
+  background-color: #131112;
+  color: #f7f7ff;
+}
+
+table {
+  width: 100%;
+  border: 1px solid #131112;
+}
+
+td {
+  width: 50%;
+  height: auto;
+  border: 1px solid #131112;
+}
+
+ol {
+  text-align: left;
+}
+
 /* font and heading styles */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Merriweather", serif;
@@ -137,6 +164,21 @@ img {
   display: block;
   height: auto;
   margin: auto;
+}
+
+.infoPane {
+  padding: 0px 0px 20px 0px;
+}
+
+.album {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.albumArt {
+  width: 60%;
+  display: flex;
 }
 
 #img-caption {
