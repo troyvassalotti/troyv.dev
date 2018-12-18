@@ -69,7 +69,7 @@ header {
   height: 35px;
 }
 
-#nav-bar li {
+.nav-button {
   display: inline-block;
 }
 
