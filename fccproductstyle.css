@@ -69,18 +69,18 @@ header {
   height: 35px;
 }
 
-.nav-link {
+#nav-bar li {
   display: inline-block;
 }
 
-.nav-link a {
+.nav-link {
   color: #131112;
   display: block;
   padding: 10px;
   text-decoration: none;
 }
 
-.nav-link a:hover {
+.nav-link:hover {
   background-color: #131112;
   color: white;
   transition: .3s;
