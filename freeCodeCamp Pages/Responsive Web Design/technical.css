@@ -1,3 +1,42 @@
+html {
+  font-family: "Merriweather", serif;
+  font-size: 18px;
+  background-color: #f7f7ff;
+}
+
+h1, h2, h3, h4, h5, h6, header {
+  font-family: "Poppins", sans-serif;
+  font-size: 42px;
+  color: #131112;
+}
+
+#main-doc {
+  /* insert styles */
+}
+
+.main-section {
+  padding: 0 0 2%;
+}
+
+#navbar {
+  /* insert styles */
+}
+
+.nav-link {
+  /* insert styles */
+}
+
+code {
+  white-space: pre;
+  font-size: 16px;
+  background-color: #60656f;
+  color: #ffffff;
+  display: block;
+  padding: 0 15px;
+  line-height: 2;
+}
+
+
 @media only screen and (max-width: 815px) {
   /* for mobile devices */
   /* insert styles here */
