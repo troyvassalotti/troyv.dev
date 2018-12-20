@@ -11,7 +11,9 @@ h1, h2, h3, h4, h5, h6, header {
 }
 
 #main-doc {
-  /* insert styles */
+  position: absolute;
+  left: 354px;
+  padding: 1% 1% 0 1%;
 }
 
 .main-section {
@@ -19,11 +21,40 @@ h1, h2, h3, h4, h5, h6, header {
 }
 
 #navbar {
-  /* insert styles */
+  position: fixed;
+  left: 0;
+  top: 0;
+  border-right: 4px solid #c49991;
+  background-color: #f7f7ff;
+  padding-right: 4px;
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  width: 350px;
+}
+
+#navbar header {
+  font-size: 36px;
+}
+
+#navbar ul {
+  list-style: none;
+}
+
+#navbar li {
+  border-bottom: 1px solid #131112;
+  padding: 10px 10px 10px 45px;
+  position: relative;
+  left: -50px;
+  width: 100%;
+}
+
+#navbar li:first-child {
+  border-top: 1px solid #131112;
 }
 
 .nav-link {
-  /* insert styles */
+  text-decoration: none;
+  color: #131112;
 }
 
 code {
@@ -32,17 +63,35 @@ code {
   background-color: #60656f;
   color: #ffffff;
   display: block;
-  padding: 0 15px;
-  line-height: 2;
+  line-height: 1.5;
 }
 
 
 @media only screen and (max-width: 815px) {
   /* for mobile devices */
-  /* insert styles here */
-}
+  #navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    font-size: 95%;
+  }
 
-@media only screen and (max-device-width: 480px) {
-  /* for mobile devices */
-  /* insert styles here */
+  #navbar header {
+    text-align: center;
+    padding-top: 10px;
+  }
+
+  #navbar ul {
+    overflow-y: auto;
+    overflow-x: hidden;
+    border: 1px solid #131112;
+    height: 235px;
+  }
+
+  #main-doc {
+    position: absolute;
+    top: 300px;
+    left: 0;
+    padding: 3%;
+  }
 }
