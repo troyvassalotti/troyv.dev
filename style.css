@@ -1,35 +1,60 @@
-/* body {
-  background-attachment: fixed;
-  background-image: url(https://media.giphy.com/media/JYGVdb72VWSXu/giphy.gif);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-} */
-
-/* merlinpatt.com */
-
-#header-image {
-  height: 200px;
-  background-attachment: fixed;
-  background-image: url(images\houseplant.jpg);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
+/* heading styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
 }
 
+h1 {
+  font-size: 56px;
+}
+
+h2 {
+  font-size: 46px;
+}
+
+h3 {
+  font-size: 42px;
+}
+
+h4 {
+  font-size: 38px;
+}
+
+h5 {
+  font-size: 34px;
+}
+
+h6 {
+  font-size: 30px;
+}
+/* end heading styles */
+
+a:link {
+  color: #279af1;
+}
+
+a:visited {
+  color: #c49991;
+}
+
+a:hover {
+  color: #60656f;
+}
+
+/* navigation styles */
 nav {
   margin-bottom: 20px;
   padding-bottom: 12px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #131112;
 }
 
 ul.navigation {
-  background-color: white;
   display: block;
   list-style: none;
   margin-top: 0;
-  width: 100%;
   height: 35px;
+  font-size: 18px;
+  margin: auto;
 }
 
 ul.navigation li {
@@ -37,150 +62,23 @@ ul.navigation li {
 }
 
 ul.navigation a {
-  color: black;
+  color: #131112;
   display: block;
   padding: 10px;
   text-decoration: none;
+  font-family: "Poppins", sans-serif;
 }
 
 ul.navigation a:hover {
-  background-color: black;
-  color: white;
+  background-color: #131112;
+  color: #f7f7ff;
   transition: .3s;
 }
+/* end navigation styles */
 
-/* heading styles */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Merriweather', serif;
-  padding: 10px;
-  border: 2px dashed #f77133;
-  text-align: center;
-}
-
-h1 {
-  font-size: 56px;
-  /* transition: .5s linear; */
-}
-
-h2 {
-  font-size: 46;
-}
-
-h3 {
-  font-size: 36;
-}
-
-h4 {
-  font-size: 26;
-}
-
-h5 {
-  font-size: 20;
-}
-
-h6 {
-  font-size: 18;
-}
-
-figcaption {
-  font-size: 12px;
-  font-family: 'Merriweather', serif;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-p {
-  font-size: 18px;
-  font-family: 'Poppins', sans-serif;
-  width: 800px;
-  margin: auto;
-  transition: 2s width linear;
-}
-
-p em {
-  border: 1px solid black;
-  padding: 5px;
-}
-
-p strong {
-  text-decoration: line-through;
-  font-size: 24px;
-}
-
-.mini {
-  width: 300px;
-}
-
-.rightcat {
-  float: right;
-}
-
-ul,
-ol,
-table {
-  font-size: 18px;
-  font-family: 'Poppins', sans-serif;
-  width: 400px;
-  margin: auto;
-}
-
-table td {
-  text-align: center;
-}
-
-.quote {
-  font-style: italic;
-}
-
-#special {
-  color: gold;
-}
-
-/* .link-bg {
-  background-color: black;
-  width: 400px;
-} */
-
-a:link {
-  color: rgb(255, 0, 0);
-}
-
-a:visited {
-  color: rgb(0, 255, 0);
-}
-
-a:hover {
-  color: rgb(255, 0, 255);
-}
-
-a:active {
-  color: rgb(0, 0, 255);
-}
-
-/* h1:hover {
-  font-size: 72px;
-  color: red; */
-}
-
-/* p:hover {
-  width: 300px;
-} */
-
-.center {
-  margin: auto;
+.projectContainer {
   width: 50%;
-}
-
-.center img {
-  display: block;
-  margin: 20px auto 0px;
-}
-
-.table-spacer {
-  margin: 20px auto;
+  height: auto;
+  margin: 0 auto;
+  text-align: center;
 }
