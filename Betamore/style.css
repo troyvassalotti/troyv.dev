@@ -11,7 +11,7 @@
 #header-image {
   height: 200px;
   background-attachment: fixed;
-  background-image: url(houseplant.jpg);
+  background-image: url(images\houseplant.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
