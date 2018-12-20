@@ -41,3 +41,8 @@ code {
   /* for mobile devices */
   /* insert styles here */
 }
+
+@media only screen and (max-device-width: 480px) {
+  /* for mobile devices */
+  /* insert styles here */
+}
