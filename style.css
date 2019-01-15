@@ -1,6 +1,6 @@
 html {
   max-width: 2000px;
-  font-size: 20px;
+  font-size: 24px;
 }
 
 /* heading styles */
@@ -81,12 +81,29 @@ ul.navigation a:hover {
 }
 /* end navigation styles */
 
-.projectContainer {
+#projectContainer {
+  width: 80%;
+  height: 1000px;
+  margin: 0px auto;
+}
+
+#introContainer {
   width: 100%;
-  height: 500px;
+  height: 650px;
+  margin: 0px auto;
   display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 250px 250px;
+  grid-template-columns: 60% 40%;
+  grid-template-rows: 500px;
+}
+
+#purpose p {
+  width: 90%;
+}
+
+#me {
+  display: block;
+  max-height: 500px;
+  margin: 0px auto;
 }
 
 #explain {
