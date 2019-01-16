@@ -62,11 +62,20 @@ ul.navigation {
   margin: auto;
 }
 
-ul.navigation li {
+ul.pageLinks {
+  display: inline-block;
+  list-style: none;
+  margin-top: 0;
+  height: 35px;
+  font-size: 18px;
+  margin: auto;
+}
+
+ul.navigation li, ul.pageLinks li {
   display: inline-block;
 }
 
-ul.navigation a {
+ul.navigation a, ul.pageLinks a {
   color: #131112;
   display: block;
   padding: 10px;
@@ -74,30 +83,51 @@ ul.navigation a {
   font-family: "Poppins", sans-serif;
 }
 
-ul.navigation a:hover {
+ul.navigation a:hover, ul.pageLinks a:hover {
   background-color: #131112;
   color: #f7f7ff;
   transition: .3s;
 }
 /* end navigation styles */
 
-#projectContainer {
+#introContainer {
   width: 80%;
-  height: 1000px;
+  height: 650px;
   margin: 0px auto;
 }
 
-#introContainer {
-  width: 100%;
+#linkContainer {
+  width: 80%;
   height: 650px;
   margin: 0px auto;
+}
+
+.links {
+  width: 100%;
+  height: auto;
+  margin: 0px auto;
   display: grid;
-  grid-template-columns: 60% 40%;
+  grid-template-columns: 50% 50%;
   grid-template-rows: 500px;
 }
 
 #purpose p {
   width: 90%;
+}
+
+@keyframes fadein {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+#intro {
+  width: 100%;
+  height: auto;
+  margin: 0px auto;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-template-rows: 500px;
+  animation: fadein 2s;
 }
 
 #me {
@@ -111,8 +141,16 @@ ul.navigation a:hover {
   font-style: italic;
 }
 
+@keyframes welcome {
+  0% {background-color: #131112; color: #f7f7ff; opacity: 0; width: 50%;}
+  50% {opacity: .5;}
+  75% {background-color: inherit; color: inherit;}
+  100% {opacity: 1;}
+}
+
 #welcome {
   width: 100%;
   margin: 0px 0px 30px 0px;
   text-align: center;
+  animation: welcome 2s;
 }
