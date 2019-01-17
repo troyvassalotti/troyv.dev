@@ -1,16 +1,24 @@
-.row {
-  width: 100%;
-  float: left;
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+  grid-template-areas:
+    "h1 h2"
+    "l1 l2";
 }
 
-.column {
-  float: left;
+.header1 {
+  grid-area: h1;
 }
 
-.column-70 {
-  width: 70%;
+.header2 {
+  grid-area: h2;
 }
 
-.column-30 {
-  width: 30%;
+.links1 {
+  grid-area: l1;
+}
+
+.links2 {
+  grid-area: l2;
 }
