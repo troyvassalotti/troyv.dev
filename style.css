@@ -109,6 +109,13 @@ ul.navigation a:hover, ul.pageLinks a:hover {
   display: flex;
 }
 
+@media only screen and (max-device-width: 1300px) {
+  #introContainer {
+    width: 100%;
+    font-size: 85%;
+  }
+}
+
 #linkContainer {
   width: 90%;
   margin-left: auto;
@@ -163,12 +170,25 @@ ul.navigation a:hover, ul.pageLinks a:hover {
 #intro {
   width: 90%;
   margin: 0px auto;
-  /* display: grid;
-  grid-template-columns: 60% 40%;
-  grid-template-rows: 500px; */
   display: flex;
   animation: fadein 2s;
 }
+
+@media only screen and (max-device-width: 600px) {
+  #purpose p {
+    width: 100%;
+  }
+
+  #intro {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  #introContainer {
+    font-size: 125%;
+  }
+}
+
 
 #me {
   margin: auto;
@@ -186,26 +206,17 @@ ul.navigation a:hover, ul.pageLinks a:hover {
 }
 
 @keyframes welcome {
-  0% {background-color: #131112; color: #f7f7ff; opacity: 0; width: 50%;}
+  0% {background-color: #131112; color: #f7f7ff; opacity: 0; width: 50%; border-radius: 50%;}
   50% {opacity: .5;}
   75% {background-color: inherit; color: inherit;}
-  100% {opacity: 1;}
+  100% {opacity: 1; border-radius: 0;}
 }
 
 #welcome {
   width: 100%;
-  margin: 0px 0px 30px 0px;
+  margin: 0px auto 30px;
   text-align: center;
   animation: welcome 2s;
 }
 
 /* media styles */
-@media only screen and (max-width: 1200px) {
-  #introContainer {
-    width: 100%;
-  }
-
-  #linkContainer {
-    width: 100%;
-  }
-}
