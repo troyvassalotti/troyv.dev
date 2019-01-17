@@ -54,7 +54,7 @@ nav {
   border-bottom: 1px solid #131112;
 }
 
-ul.navigation {
+ul.navbar {
   display: block;
   list-style: none;
   margin-top: 0;
@@ -72,7 +72,7 @@ ul.pageLinks {
   margin: auto;
 }
 
-ul.navigation li {
+ul.navbar li {
   display: inline-block;
 }
 
@@ -80,7 +80,7 @@ ul.navigation li {
    display: block;
  }
 
-ul.navigation a, ul.pageLinks a {
+ul.navbar a, ul.pageLinks a {
   color: #131112;
   display: block;
   padding: 10px;
@@ -88,7 +88,7 @@ ul.navigation a, ul.pageLinks a {
   font-family: "Poppins", sans-serif;
 }
 
-ul.navigation a:hover, ul.pageLinks a:hover {
+ul.navbar a:hover, ul.pageLinks a:hover {
   background-color: #131112;
   color: #f7f7ff;
   transition: .3s;
@@ -116,7 +116,7 @@ ul.navigation a:hover, ul.pageLinks a:hover {
   }
 }
 
-#linkContainer {
+#projects {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
@@ -205,18 +205,18 @@ ul.navigation a:hover, ul.pageLinks a:hover {
   font-style: italic;
 }
 
-@keyframes welcome {
+@keyframes welcome-section {
   0% {background-color: #131112; color: #f7f7ff; opacity: 0; width: 50%; border-radius: 50%;}
   50% {opacity: .5;}
   75% {background-color: inherit; color: inherit;}
   100% {opacity: 1; border-radius: 0;}
 }
 
-#welcome {
+#welcome-section {
   width: 100%;
   margin: 0px auto 30px;
   text-align: center;
-  animation: welcome 2s;
+  animation: welcome-section 2s;
 }
 
 /* media styles */
