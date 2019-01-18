@@ -189,7 +189,6 @@ ul.navbar a:hover, ul.pageLinks a:hover {
   }
 }
 
-
 #me {
   margin: auto;
 }
@@ -214,6 +213,7 @@ ul.navbar a:hover, ul.pageLinks a:hover {
 
 #welcome-section {
   width: 100%;
+  height: 100vh;
   margin: 0px auto 30px;
   text-align: center;
   animation: welcome-section 2s;
