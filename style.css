@@ -52,6 +52,10 @@ nav {
   margin-bottom: 20px;
   padding-bottom: 12px;
   border-bottom: 1px solid #131112;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #f7f7ff;
 }
 
 ul.navbar {
@@ -196,7 +200,7 @@ ul.navbar a:hover, ul.pageLinks a:hover {
 #me img {
   display: block;
   max-height: 500px;
-  margin: 0px auto;
+  padding-bottom: 5%;
 }
 
 #explain {
@@ -205,7 +209,7 @@ ul.navbar a:hover, ul.pageLinks a:hover {
 }
 
 @keyframes welcome-section {
-  0% {background-color: #131112; color: #f7f7ff; opacity: 0; width: 50%; border-radius: 50%;}
+  0% {background-color: #131112; color: #f7f7ff; opacity: 0; border-radius: 50%;}
   50% {opacity: .5;}
   75% {background-color: inherit; color: inherit;}
   100% {opacity: 1; border-radius: 0;}
@@ -216,7 +220,30 @@ ul.navbar a:hover, ul.pageLinks a:hover {
   height: 100vh;
   margin: 0px auto 30px;
   text-align: center;
+}
+
+.animation-wrapper {
+  margin-left: auto;
+  margin-right: auto;
   animation: welcome-section 2s;
+}
+
+.animation-wrapper:hover h1 {
+  font-size: 500%;
+  transition: .3s;
+  transition-timing-function: ease-in-out;
+}
+
+#explain:hover {
+  font-size: 400%;
+  transition: .3s;
+  transition-timing-function: ease-in-out;
+}
+
+.welcome {
+  padding-top: 50vh;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* media styles */
