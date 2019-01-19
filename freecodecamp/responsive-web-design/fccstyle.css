@@ -9,8 +9,6 @@ html, body {
 
 #main {
   margin: 30px auto;
-  border: 1px solid #444444;
-  border-radius: 6px;
   padding: 10px;
   background-color: #fbfbfb;
 }
@@ -64,14 +62,14 @@ h3 {
   padding-right: 20px;
 }
 
-.rightTab {
+.right {
   display: inline-block;
   text-align: left;
   width: 50%;
   vertical-align: middle;
 }
 
-.rowTab {
+.left {
   margin: 20px auto;
 }
 
@@ -129,6 +127,7 @@ h3 {
 
 #title {
 text-align: center;
+color: #f7f7ff;
 }
 
 .center {
@@ -146,9 +145,7 @@ text-align: center;
   height: auto;
   min-height: 300px;
   margin: 20px auto;
-  background: #ffffff;
   display: grid;
-  grid-template-columns: repeat ( auto-fill, minmax(50%, 50%));
   grid-template-rows: auto;
   align-items: center;
   grid-row-gap: 20px;
@@ -213,13 +210,23 @@ img {
 
 @media only screen and (max-device-width: 800px) {
   #tribute-container {
-    width: 400px;
+    width: 90vw;
     height: auto;
+    font-size: 75%;
   }
 
   #survey-main {
     width: 100%;
     font-size: 150%;
     padding: 2%;
+  }
+
+  #title {
+    font-size: 400%;
+  }
+
+  .subhead {
+    width: 100%;
+    font-size: 150%;
   }
 }
