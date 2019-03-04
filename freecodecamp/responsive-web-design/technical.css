@@ -5,7 +5,7 @@ html {
 }
 
 h1, h2, h3, h4, h5, h6, header {
-  font-family: "Poppins", sans-serif;
+  font-family: "Merriweather Sans", sans-serif;
   font-size: 42px;
   color: #131112;
 }
@@ -28,7 +28,7 @@ h1, h2, h3, h4, h5, h6, header {
   background-color: #f7f7ff;
   padding-right: 4px;
   height: 100%;
-  font-family: "Poppins", sans-serif;
+  font-family: "Merriweather Sans", sans-serif;
   width: 350px;
 }
 

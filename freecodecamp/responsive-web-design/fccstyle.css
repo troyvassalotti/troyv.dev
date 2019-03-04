@@ -1,6 +1,6 @@
 html, body {
   text-align: center;
-  font-family: "Poppins", sans-serif;
+  font-family: "Merriweather Sans", sans-serif;
 }
 
 #survey {
@@ -120,7 +120,7 @@ h3 {
   margin-bottom: 20px;
   background-color: #279af1;
   color: #f7f7ff;
-  font-family: "Poppins", sans-serif;
+  font-family: "Merriweather Sans", sans-serif;
   font-size: 18px;
   border: 1px solid #60656f;
 }
