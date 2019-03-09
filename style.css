@@ -41,11 +41,11 @@ a:link {
 }
 
 a:visited {
-  color: #c49991;
+  color: #60656f;
 }
 
 a:hover {
-  color: #60656f;
+  color: #c49991;
 }
 /* end link styles */
 
