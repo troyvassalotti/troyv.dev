@@ -2,9 +2,113 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans|Prata" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="emailstyle.css">
+  <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans|Prata" rel="stylesheet"/>
+  <link rel="stylesheet" type="text/css" href="emailstyle.css"/>
   <title>Email #1 | Troy Vassalotti</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
+
+<body style="margin: 0; padding: 0;">
+  <!--this table marks the body of the html page -->
+ <table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+   <td style="padding: 20px 0 30px 0;">
+     <!-- this table sets the 600px width of the email body and content -->
+     <table align="center" border="0" cellpadding="0" cellspacing="0" width="600" style="border-collapse: collapse; border: 1px solid #cccccc;"">
+      <tr> <!-- header row of the email -->
+        <td align="center" bgcolor="#70bbd9" style="padding: 40px 0 30px 0;">
+          <img src="http://tutsplus.github.io/build-an-html-email-template-from-scratch/images/h1.gif" alt="Email Header Image" width="300" height="230" style="display: block;"/>
+        </td>
+      </tr>
+      <tr> <!-- middle row with email content inside -->
+        <td bgcolor="#ffffff" style="padding: 40px 30px 40px 30px;"> <!-- padding here gives the words space to breathe -->
+          <table border="0" cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+              <td style="color: #011627; font-family: 'Alegreya Sans', sans-serif; font-size: 24px;"> <!-- refrain from using <p> or <div> tags and instead use tables and <td> plain -->
+                <b>Lorem ipsum dolor sit amet!</b>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 20px 0 30px 0; color: #011627; font-family: 'Alegreya Sans', sans-serif; font-size: 16px;">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus adipiscing felis, sit amet blandit ipsum volutpat sed. Morbi porttitor, eget accumsan dictum, nisi libero ultricies ipsum, in posuere mauris neque at erat.
+              </td>
+            </tr>
+            <tr>
+              <td> <!-- nest all tables inside of <td> cells as the tables are the content of the cell -->
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                 <tr>
+                  <td width="260" valign="top"> <!-- 260 + 260 + 20 = 540, which is the cell width minus the 30px padding on each side -->
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                       <td> <!-- the img tag has an assigned 'height' style, which we'll need to override in the responsive format -->
+                        <img src="http://tutsplus.github.io/build-an-html-email-template-from-scratch/images/left.gif" alt="" width="100%" height="140" style="display: block;"/>
+                       </td>
+                      </tr>
+                      <tr>
+                       <td style="padding: 25px 0 0 0; color: #011627; font-family: 'Alegreya Sans', sans-serif; font-size: 16px;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus adipiscing felis, sit amet blandit ipsum volutpat sed. Morbi porttitor, eget accumsan dictum, nisi libero ultricies ipsum, in posuere mauris neque at erat.
+                       </td>
+                      </tr>
+                     </table>
+                  </td>
+                  <td style="font-size: 0; line-height: 0;" width="20"> <!-- this cell serves as the margin between the two columns -->
+                   &nbsp;
+                  </td>
+                  <td width="260" valign="top">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                     <tr>
+                      <td>
+                       <img src="http://tutsplus.github.io/build-an-html-email-template-from-scratch/images/right.gif" alt="" width="100%" height="140" style="display: block;"/>
+                      </td>
+                     </tr>
+                     <tr>
+                      <td style="padding: 25px 0 0 0; color: #011627; font-family: 'Alegreya Sans', sans-serif; font-size: 16px;">
+                       Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus adipiscing felis, sit amet blandit ipsum volutpat sed. Morbi porttitor, eget accumsan dictum, nisi libero ultricies ipsum, in posuere mauris neque at erat.
+                      </td>
+                     </tr>
+                    </table>
+                  </td>
+                 </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr> <!-- footer row with other necessities -->
+        <td bgcolor="#ee4c50" style="padding: 30px 30px 30px 30px;">
+          <table border="0" cellpadding="0" cellspacing="0" width="100%">
+           <tr>
+             <td width="75%" style="color: #fdfffc; font-family: 'Alegreya Sans', sans-serif; font-size: 14px;">
+              &reg; Someone, somewhere 2013<br/>
+              <a href="#" style="color: #fdfffc;"><font color="#fdfffc">Unsubscribe</font></a> to this newsletter instantly
+             </td>
+            <td align="right">
+             <table border="0" cellpadding="0" cellspacing="0">
+              <tr>
+               <td>
+                <a href="https://www.twitter.com/">
+                 <img src="http://tutsplus.github.io/build-an-html-email-template-from-scratch/images/tw.gif" alt="Twitter" width="38" height="38" style="display: block;" border="0" />
+                </a>
+               </td>
+               <td style="font-size: 0; line-height: 0;" width="20">&nbsp;</td>
+               <td>
+                <a href="https://www.twitter.com/">
+                 <img src="http://tutsplus.github.io/build-an-html-email-template-from-scratch/images/tw.gif" alt="Facebook" width="38" height="38" style="display: block;" border="0" />
+                </a>
+               </td>
+              </tr>
+             </table>
+            </td>
+           </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+   </td>
+  </tr>
+ </table>
+</body>
+
+
 </html>
