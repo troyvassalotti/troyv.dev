@@ -1,0 +1,152 @@
+html {
+  font-size: 21px;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+/* heading styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Merriweather Sans", sans-serif;
+  margin: 0px;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+h2 {
+  font-size: 48px;
+}
+
+h3 {
+  font-size: 38px;
+}
+
+h4 {
+  font-size: 32px;
+}
+
+h5 {
+  font-size: 28px;
+}
+
+h6 {
+  font-size: 24px;
+}
+/* end heading styles */
+
+/* link styles */
+a:link {
+  color: #279af1;
+}
+
+a:visited {
+  color: #c49991;
+}
+
+a:hover {
+  color: #131112;
+}
+/* end link styles */
+
+/* navigation styles */
+nav {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #131112;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #f7f7ff;
+}
+
+ul.navbar {
+  display: block;
+  list-style: none;
+  margin-top: 0;
+  height: 35px;
+  font-size: 18px;
+  margin: auto;
+}
+
+ul.pageLinks {
+  display: inline-block;
+  list-style: none;
+  margin-top: 0;
+  height: 35px;
+  font-size: 18px;
+  margin: auto;
+}
+
+ul.navbar li {
+  display: inline-block;
+}
+
+ ul.pageLinks li {
+   display: block;
+ }
+
+ul.navbar a, ul.pageLinks a {
+  color: #131112;
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  font-family: "Merriweather Sans", sans-serif;
+}
+
+ul.navbar a:hover, ul.pageLinks a:hover {
+  background-color: #131112;
+  color: #f7f7ff;
+  transition: .3s;
+}
+/* end navigation styles */
+
+#explain {
+  font-size: 30px;
+  font-style: italic;
+}
+
+@keyframes welcome-section {
+  0% {background-color: #131112; color: #f7f7ff; opacity: 0; border-radius: 50%;}
+  50% {opacity: .5;}
+  75% {background-color: inherit; color: inherit;}
+  100% {opacity: 1; border-radius: 0;}
+}
+
+#welcome-section {
+  width: 100%;
+  height: 100vh;
+  margin: 0px auto 30px;
+  text-align: center;
+}
+
+.animation-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  animation: welcome-section 2s;
+}
+
+.animation-wrapper:hover h1 {
+  font-size: 500%;
+  transition: .3s;
+  transition-timing-function: ease-in-out;
+}
+
+#explain:hover {
+  font-size: 400%;
+  transition: .3s;
+  transition-timing-function: ease-in-out;
+}
+
+.welcome {
+  padding-top: 50vh;
+  margin-left: auto;
+  margin-right: auto;
+}
