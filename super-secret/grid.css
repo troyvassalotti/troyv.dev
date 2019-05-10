@@ -1,24 +1,110 @@
-.wrapper {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: minmax(100px, auto);
-  grid-template-areas:
-    "h1 h2"
-    "l1 l2";
+/* The side navigation menu */
+.sidenav {
+    height: 100%;
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #131112; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
-.header1 {
-  grid-area: h1;
+/* The navigation menu links */
+.sidenav a {
+    text-decoration: none;
+    color: #f7f7ff;
+    transition: 0.3s;
+    display: block;
 }
 
-.header2 {
-  grid-area: h2;
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
 }
 
-.links1 {
-  grid-area: l1;
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+    overflow: hidden;
+    width: 100%;
+}
+body {
+  overflow-x: hidden;
 }
 
-.links2 {
-  grid-area: l2;
+/* Add a background color to the top navigation */
+.topnav {
+    background-color: #fbfbfb;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    padding: 14px 16px;
+}
+
+
+
+/* navigation styles */
+nav {
+  /* margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #131112;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #f7f7ff; */
+}
+
+ul.navbar {
+  display: block;
+  list-style: none;
+  margin-top: 0;
+  height: 35px;
+  margin: auto;
+}
+
+ul.navbar li {
+  display: inline-block;
+}
+
+ul.navbar a {
+  color: #f7f7ff;
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  font-family: "Merriweather Sans", sans-serif;
+}
+
+ul.navbar a:hover {
+  background-color: #008800;
+  color: #f7f7ff;
+  transition: .3s;
+}
+/* end navigation styles */
+
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media only screen and (max-width: 450px) {
+    .sidenav {
+      padding-top: 15px;
+    }
+
+    /* .sidenav a {
+    font-size: 18px;
+    } */
+
+    #desktopNav {
+      display: none;
+    }
+
 }

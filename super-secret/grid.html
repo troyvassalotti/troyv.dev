@@ -2,31 +2,69 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="..\normalize.css">
     <link rel="stylesheet" type="text/css" href="grid.css">
     <title>Welcome To The Grid</title>
+    <script src="..\javascript.js"></script>
   </head>
   <body>
-    <section class="wrapper">
-      <div class="header1">
-        betamore
-      </div>
-      <div class="links1">
-        <ul>
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-        </ul>
-      </div>
-      <div class="header2">
-        freecodecamp
-      </div>
-      <div class="links2">
-        <ul>
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-        </ul>
-      </div>
-    </section>
+
+    <nav>
+      <ul class="navbar" id="desktopNav">
+        <li>
+          <a href="https://troyvassalotti.wixsite.com/portfolio" target="_blank">About Me</a>
+        </li>
+        <li>
+          <a href="https://frontroyalmd.bandcamp.com" target="_blank">Front Royal</a>
+        </li>
+        <li>
+          <a href="https://actionhamilton.bandcamp.com" target="_blank">Action Hamilton</a>
+        </li>
+        <li>
+          <a href="https://github.com/actionhamilton" target="_blank" id="profile-link">GitHub</a>
+        </li>
+        <li>
+          <a href="https://www.freecodecamp.org/actionhamilton" target="_blank">freeCodeCamp</a>
+        </li>
+        <li>
+          <a href="freecodecamp/responsive-web-design/fccportfolio.html">Projects</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div id="sideNavigation" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <ul class="navbar">
+        <li>
+          <a href="https://troyvassalotti.wixsite.com/portfolio" target="_blank">About Me</a>
+        </li>
+        <li>
+          <a href="https://frontroyalmd.bandcamp.com" target="_blank">Front Royal</a>
+        </li>
+        <li>
+          <a href="https://actionhamilton.bandcamp.com" target="_blank">Action Hamilton</a>
+        </li>
+        <li>
+          <a href="https://github.com/actionhamilton" target="_blank" id="profile-link">GitHub</a>
+        </li>
+        <li>
+          <a href="https://www.freecodecamp.org/actionhamilton" target="_blank">freeCodeCamp</a>
+        </li>
+        <li>
+          <a href="freecodecamp/responsive-web-design/fccportfolio.html">Projects</a>
+        </li>
+      </ul>
+    </div>
+
+<nav class="topnav">
+  <a href="#" onclick="openNav()">
+    <svg width="30" height="30" id="icoOpen">
+        <path d="M0,5 30,5" stroke="#000" stroke-width="5"/>
+        <path d="M0,14 30,14" stroke="#000" stroke-width="5"/>
+        <path d="M0,23 30,23" stroke="#000" stroke-width="5"/>
+    </svg>
+  </a>
+</nav>
+
   </body>
 </html>
