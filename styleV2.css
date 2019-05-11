@@ -139,10 +139,15 @@ ul.navbar a:hover {
   padding-top: 50vh;
 }
 
-@keyframes welcome-section {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
+#icoOpen {
+  opacity: 1;
+  transition: opacity .5s;
 }
+
+#icoOpen.fade {
+  opacity: 0;
+}
+
 
 /* desktop styles */
 @media only screen and (min-device-width: 850px) {
