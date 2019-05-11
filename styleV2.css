@@ -145,7 +145,7 @@ ul.navbar a:hover {
 }
 
 /* desktop styles */
-@media only screen and (min-width: 850px) {
+@media only screen and (min-device-width: 850px) {
   /* begin desktop navigation */
   #sideNavigation, #topNav {
     display: none;
