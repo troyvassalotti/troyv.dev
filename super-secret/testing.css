@@ -8,7 +8,7 @@
   left: 0;
   background-color: #131112; /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
+  padding-top: 10vh; /* Place content 60px from the top */
   transition: .5s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
@@ -43,7 +43,10 @@ body {
   padding: 14px 16px;
 }
 
-/* navigation styles */
+#desktopNav {
+  display: none;
+}
+
 ul.navbar {
   display: block;
   list-style: none;
@@ -53,61 +56,53 @@ ul.navbar {
   font-size: 21px;
 }
 
+ul.navbar a:hover {
+  background-color: #f7f7ff;
+  color: #131112;
+  transition: .3s;
+}
+
 ul.navbar li {
-  display: inline-block;
+  display: block;
   white-space: nowrap;
 }
 
 ul.navbar a {
-  color: #131112;
+  color: #f7f7ff;
   display: block;
   padding: 10px;
   text-decoration: none;
   font-family: "Merriweather Sans", sans-serif;
 }
 
-ul.navbar a:hover {
-  background-color: #131112;
-  color: #f7f7ff;
-  transition: .3s;
-}
-
-#sideNavigation, #topNav {
-  display: none;
-}
-
-/* end navigation styles */
-
-/* Mobile Styles */
-@media only screen and (max-width: 815px) {
-  .sidenav {
-    padding-top: 10vh;
-  }
-
-  #desktopNav {
-    display: none;
-  }
-
-  #sideNavigation, #topNav {
-    display: initial;
-  }
-
-  ul.navbar a:hover {
-    background-color: #f7f7ff;
-    color: #131112;
-    transition: .3s;
-  }
-
+@media only screen and (min-width: 850px){
   ul.navbar li {
-    display: block;
+    display: inline-block;
   }
 
   ul.navbar a {
-    color: #f7f7ff;
+    color: #131112;
     display: block;
     padding: 10px;
     text-decoration: none;
     font-family: "Merriweather Sans", sans-serif;
   }
 
+  ul.navbar a:hover {
+    background-color: #131112;
+    color: #f7f7ff;
+    transition: .3s;
+  }
+
+  #sideNavigation, #topNav {
+    display: none;
+  }
+
+  #desktopNav {
+    display: initial;
+  }
+
+  .sidenav {
+    padding-top: 60px;
+  }
 }

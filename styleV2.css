@@ -1,5 +1,18 @@
 html {
   font-size: 21px;
+  font-family: "Merriweather", serif;
+}
+
+/* Style page content to push to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  overflow: hidden;
+  width: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  height: 100vh;
 }
 
 /* heading styles */
@@ -13,13 +26,37 @@ h6 {
   margin: 0px;
 }
 
+h1 {
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 1.35rem;
+}
+
+h3 {
+  font-size: 1.20rem;
+}
+
+h4 {
+  font-size: 1.05rem;
+}
+
+h5 {
+  font-size: .9rem;
+}
+
+h6 {
+  font-size: .75rem;
+}
+
 /* link styles */
 a:link {
   color: #279af1;
 }
 
 a:visited {
-  color: #c49991;
+  color: #BF5FFF;
 }
 
 a:hover {
@@ -27,16 +64,79 @@ a:hover {
 }
 /* end link styles */
 
-#welcome-section {
-  width: 100%;
-  margin: 0px auto;
-  text-align: center;
+/* The side navigation menu */
+.sidenav {
+  height: 100%;
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: #131112; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 10vh; /* Place content 60px from the top */
+  transition: .5s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
-.welcome {
+/* The side navigation menu links */
+.sidenav a {
+  color: #f7f7ff;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  text-decoration: none;
+}
+
+ul.navbar {
+  display: block;
+  list-style: none;
+  margin-top: 0;
+  height: 35px;
+  margin: auto;
+  font-size: .85rem;
+}
+
+ul.navbar li {
+  display: block;
+  white-space: nowrap;
+}
+
+/* Style the links inside the navigation bar */
+#topNav a {
+  float: left;
+  padding: 14px 16px;
+}
+
+ul.navbar a {
+  color: #f7f7ff;
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  font-family: "Merriweather Sans", sans-serif;
+}
+
+ul.navbar a:hover {
+  background-color: #f7f7ff;
+  color: #131112;
+  transition: .3s;
+}
+
+#desktopNav {
+  display: none;
+}
+/* end side navigation styles */
+
+.welcome-section {
+  width: 100%;
+  margin: 0px auto 0px;
+  text-align: center;
   padding-top: 50vh;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 @keyframes welcome-section {
@@ -44,13 +144,41 @@ a:hover {
   100% {opacity: 1;}
 }
 
-.animation-wrapper {
-  margin-left: auto;
-  margin-right: auto;
-  animation: welcome-section 2s;
+/* desktop styles */
+@media only screen and (min-width: 850px) {
+  /* begin desktop navigation */
+  #sideNavigation, #topNav {
+    display: none;
+  }
+
+  #desktopNav {
+    display: initial;
+  }
+
+  .sidenav {
+    padding-top: 60px;
+  }
+
+  ul.navbar {
+    font-size: .9rem;
+  }
+
+  ul.navbar li {
+    display: inline-block;
+  }
+
+  ul.navbar a {
+    color: #131112;
+  }
+
+  ul.navbar a:hover {
+    background-color: #131112;
+    color: #f7f7ff;
+  }
+  /* end desktop navigation */
 }
 
-/* desktop styles */
+
 @media only screen and (min-device-width: 1024px) {
   /* headings */
   h1 {
@@ -77,56 +205,5 @@ a:hover {
     font-size: 24px;
   }
   /* end headings*/
-
-  /* navigation styles */
-  nav {
-    margin-bottom: 20px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid #131112;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #f7f7ff;
-  }
-
-  ul.navbar {
-    display: block;
-    list-style: none;
-    margin-top: 0;
-    height: 35px;
-    font-size: 18px;
-    margin: auto;
-  }
-
-  ul.navbar li {
-    display: inline-block;
-  }
-
-  ul.navbar a {
-    color: #131112;
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    font-family: "Merriweather Sans", sans-serif;
-  }
-
-  ul.navbar a:hover {
-    background-color: #131112;
-    color: #f7f7ff;
-    transition: .3s;
-  }
-  /* end navigation styles */
-
-  .animation-wrapper:hover h1 {
-    font-size: 500%;
-    transition: .3s;
-    transition-timing-function: ease-in-out;
-  }
-
-  #explain:hover {
-    font-size: 400%;
-    transition: .3s;
-    transition-timing-function: ease-in-out;
-  }
 }
 /* end desktop styles */
