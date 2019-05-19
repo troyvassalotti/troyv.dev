@@ -1,3 +1,69 @@
+html {
+  font-size: 21px;
+  font-family: "Merriweather", serif;
+}
+
+/* Style page content to push to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  overflow: hidden;
+  width: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  height: 100vh;
+}
+
+/* heading styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Merriweather Sans", sans-serif;
+  margin: 0px;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 1.35rem;
+}
+
+h3 {
+  font-size: 1.20rem;
+}
+
+h4 {
+  font-size: 1.05rem;
+}
+
+h5 {
+  font-size: .9rem;
+}
+
+h6 {
+  font-size: .75rem;
+}
+
+/* link styles */
+a:link {
+  color: #279af1;
+}
+
+a:visited {
+  color: #BF5FFF;
+}
+
+a:hover {
+  color: #131112;
+}
+/* end link styles */
+
 /* The side navigation menu */
 .sidenav {
   height: 100%;
@@ -8,7 +74,7 @@
   left: 0;
   background-color: #131112; /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 10vh; /* Place content 60px from the top */
+  padding-top: 10vh;
   transition: .5s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
@@ -27,44 +93,24 @@
   text-decoration: none;
 }
 
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-  transition: margin-left .5s;
-  overflow: hidden;
-  width: 100%;
-}
-body {
-  overflow-x: hidden;
-}
-
-/* Style the links inside the navigation bar */
-#topNav a {
-  float: left;
-  padding: 14px 16px;
-}
-
-#desktopNav {
-  display: none;
-}
-
 ul.navbar {
   display: block;
   list-style: none;
   margin-top: 0;
   height: 35px;
   margin: auto;
-  font-size: 21px;
-}
-
-ul.navbar a:hover {
-  background-color: #f7f7ff;
-  color: #131112;
-  transition: .3s;
+  font-size: .85rem;
 }
 
 ul.navbar li {
   display: block;
   white-space: nowrap;
+}
+
+/* Style the links inside the navigation bar */
+#topNav a {
+  float: left;
+  padding: 14px 16px;
 }
 
 ul.navbar a {
@@ -75,34 +121,91 @@ ul.navbar a {
   font-family: "Merriweather Sans", sans-serif;
 }
 
-@media only screen and (min-width: 850px){
+ul.navbar a:hover {
+  background-color: #f7f7ff;
+  color: #131112;
+  transition: .3s;
+}
+/* end side navigation styles */
+
+.welcome-section {
+  width: 100%;
+  margin: 0px auto 0px;
+  text-align: center;
+  padding-top: 50vh;
+}
+
+#icoOpen {
+  opacity: 1;
+  transition: opacity .5s;
+}
+
+#icoOpen.fade {
+  opacity: 0;
+}
+
+
+/* desktop styles */
+@media only screen and (min-device-width: 850px) {
+  /* begin desktop navigation */
+  #topNav, .closebtn {
+    display: none;
+  }
+
+  .sidenav {
+    height: 45px;
+    width: 100%;
+    background-color: #ffffff;
+    overflow-y: hidden;
+    padding-top: 0;
+    display: block;
+  }
+
+  ul.navbar {
+    font-size: .9rem;
+  }
+
   ul.navbar li {
     display: inline-block;
   }
 
   ul.navbar a {
     color: #131112;
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    font-family: "Merriweather Sans", sans-serif;
   }
 
   ul.navbar a:hover {
     background-color: #131112;
     color: #f7f7ff;
-    transition: .3s;
   }
-
-  #sideNavigation, #topNav {
-    display: none;
-  }
-
-  #desktopNav {
-    display: initial;
-  }
-
-  .sidenav {
-    padding-top: 60px;
-  }
+  /* end desktop navigation */
 }
+
+
+@media only screen and (min-device-width: 1024px) {
+  /* headings */
+  h1 {
+    font-size: 60px;
+  }
+
+  h2 {
+    font-size: 48px;
+  }
+
+  h3 {
+    font-size: 38px;
+  }
+
+  h4 {
+    font-size: 32px;
+  }
+
+  h5 {
+    font-size: 28px;
+  }
+
+  h6 {
+    font-size: 24px;
+  }
+  /* end headings*/
+}
+/* end desktop styles */

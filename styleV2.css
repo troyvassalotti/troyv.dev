@@ -1,6 +1,7 @@
 html {
   font-size: 21px;
-  font-family: "Merriweather", serif;
+  font-family: "Montserrat", "Merriweather", serif;
+  background-color: #FDFFFC;
 }
 
 /* Style page content to push to the right when you open the side navigation */
@@ -15,27 +16,30 @@ body {
   height: 100vh;
 }
 
-/* heading styles */
+/*
+*** heading styles ***
+*/
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: "Merriweather Sans", sans-serif;
+  font-family: "Quicksand", sans-serif;
   margin: 0px;
+  font-weight: normal;
 }
 
 h1 {
-  font-size: 1.5rem;
+  font-size: 2.25rem;
 }
 
 h2 {
-  font-size: 1.35rem;
+  font-size: 1.75rem;
 }
 
 h3 {
-  font-size: 1.20rem;
+  font-size: 1.30rem;
 }
 
 h4 {
@@ -50,21 +54,24 @@ h6 {
   font-size: .75rem;
 }
 
-/* link styles */
+/*
+*** link styles ***
+*/
 a:link {
   color: #279af1;
 }
 
 a:visited {
-  color: #BF5FFF;
+  color: #27ae60;
 }
 
 a:hover {
   color: #131112;
 }
-/* end link styles */
 
-/* The side navigation menu */
+/*
+*** The side navigation menu ***
+*/
 .sidenav {
   height: 100%;
   width: 0; /* 0 width - change this with JavaScript */
@@ -74,13 +81,8 @@ a:hover {
   left: 0;
   background-color: #131112; /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 10vh; /* Place content 60px from the top */
+  padding-top: 10vh;
   transition: .5s; /* 0.5 second transition effect to slide in the sidenav */
-}
-
-/* The side navigation menu links */
-.sidenav a {
-  color: #f7f7ff;
 }
 
 /* Position and style the close button (top right corner) */
@@ -91,6 +93,7 @@ a:hover {
   font-size: 36px;
   margin-left: 50px;
   text-decoration: none;
+  color: #f7f7ff;
 }
 
 ul.navbar {
@@ -118,25 +121,13 @@ ul.navbar a {
   display: block;
   padding: 10px;
   text-decoration: none;
-  font-family: "Merriweather Sans", sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 ul.navbar a:hover {
   background-color: #f7f7ff;
   color: #131112;
   transition: .3s;
-}
-
-#desktopNav {
-  display: none;
-}
-/* end side navigation styles */
-
-.welcome-section {
-  width: 100%;
-  margin: 0px auto 0px;
-  text-align: center;
-  padding-top: 50vh;
 }
 
 #icoOpen {
@@ -148,20 +139,62 @@ ul.navbar a:hover {
   opacity: 0;
 }
 
+/*
+*** content styles ***
+*/
 
-/* desktop styles */
+.center {
+  text-align: center;
+}
+
+.welcome {
+  width: 100%;
+  margin: 0 auto 0px;
+  padding-top: 5%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+#headshot {
+  margin: 3% auto 5%;
+  width: 60vw;
+}
+
+.button {
+  width: 275px;
+  text-align: center;
+  background-color: #279af1;
+  border-radius: 20px;
+  font-size: 1.30rem;
+  margin: auto;
+  padding: 10px;
+  color: #f7f7ff;
+}
+
+div.button:hover {
+  transition: .3s;
+  color: #131112;
+  background-color: #f2c94c;
+}
+
+/*
+*** desktop styles ***
+*/
 @media only screen and (min-device-width: 850px) {
   /* begin desktop navigation */
-  #sideNavigation, #topNav {
+  #topNav, .closebtn {
     display: none;
   }
 
-  #desktopNav {
-    display: initial;
-  }
-
   .sidenav {
-    padding-top: 60px;
+    height: 45px;
+    width: 100%;
+    background-color: #ffffff;
+    overflow-y: hidden;
+    padding-top: 0;
+    display: block;
   }
 
   ul.navbar {
