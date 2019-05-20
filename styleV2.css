@@ -7,13 +7,8 @@ html {
 /* Style page content to push to the right when you open the side navigation */
 #main {
   transition: margin-left .5s;
-  overflow: hidden;
   width: 100%;
-}
-
-body {
   overflow-x: hidden;
-  height: 100vh;
 }
 
 /*
@@ -57,8 +52,9 @@ h6 {
 /*
 *** link styles ***
 */
-a:link {
+a {
   color: #279af1;
+  text-decoration: none;
 }
 
 a:visited {
@@ -142,7 +138,6 @@ ul.navbar a:hover {
 /*
 *** content styles ***
 */
-
 .center {
   text-align: center;
 }
@@ -173,10 +168,28 @@ ul.navbar a:hover {
   color: #f7f7ff;
 }
 
-div.button:hover {
+.button:hover {
   transition: .3s;
   color: #131112;
   background-color: #f2c94c;
+}
+
+#resumeButton {
+  margin: 10% auto;
+}
+
+#blurb {
+  width: 100%;
+  font-size: .9rem;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0 2%;
+}
+
+.downArrow {
+  width: 100%;
+  margin: 5% auto;
+  text-align: center;
 }
 
 /*
@@ -195,6 +208,7 @@ div.button:hover {
     overflow-y: hidden;
     padding-top: 0;
     display: block;
+    position: static;
   }
 
   ul.navbar {
