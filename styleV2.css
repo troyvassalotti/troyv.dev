@@ -352,6 +352,8 @@ ul.navbar a:hover {
   align-items: flex-end;
 }
 
+
+
 /*
 *** desktop styles ***
 */
@@ -394,28 +396,179 @@ ul.navbar a:hover {
 @media only screen and (min-device-width: 1024px) {
   /* headings */
   h1 {
-    font-size: 60px;
+    font-size: 64px;
   }
 
   h2 {
-    font-size: 48px;
+    font-size: 46px;
   }
 
   h3 {
-    font-size: 38px;
-  }
-
-  h4 {
     font-size: 32px;
   }
 
+  h4 {
+    font-size: 30px;
+  }
+
   h5 {
-    font-size: 28px;
+    font-size: 26px;
   }
 
   h6 {
     font-size: 24px;
   }
   /* end headings*/
+
+  .welcome {
+    width: 90vw;
+    margin: 5vh auto;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: auto auto 1fr;
+    grid-template-areas:
+      "header img"
+      "button img"
+      "blurb img";
+  }
+
+  .welcome h1 {
+    grid-area: header;
+    margin: 10% auto 5%;
+  }
+
+  .headshot {
+    grid-area: img;
+    align-self: center;
+  }
+
+  #welcomeButton {
+    grid-area: button;
+  }
+
+  #blurb {
+    grid-area: blurb;
+    font-size: revert;
+  }
+
+  #headshot {
+    width: 90%;
+    margin: auto;
+    float: right;
+  }
+
+  .downArrow {
+    margin-bottom: 0;
+    font-size: .7rem;
+  }
+
+  .card {
+    margin-bottom: 5vh;
+  }
+
+  #whatsThis {
+    text-align: center;
+    width: 80%;
+  }
+
+  #whatsThis.card {
+    padding: 2% 0 0;
+  }
+
+  #whatsThis p {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #briefExplanation.card {
+    width: 95vw;
+    padding: 0 1vw;
+  }
+
+  #briefExplanation {
+    display: grid;
+    margin: 5vh auto;
+    grid-template-columns: 35% 65%;
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:
+      ". text"
+      "header text"
+      "button text"
+      ". text";
+  }
+
+  #briefExplanation h2 {
+    grid-area: header;
+  }
+
+  #briefContent {
+    grid-area: text;
+    text-align: right;
+    font-size: .9rem;
+  }
+
+  #aboutButton {
+    grid-area: button;
+  }
+
+  #aboutButton.buttonSpacing {
+    margin: 0;
+    margin-right: auto;
+  }
+
+  #musicIntro h2 {
+    text-align: left;
+  }
+
+  #container-music {
+    display: flex;
+    flex-direction: row;
+    margin: 5vh auto;
+  }
+
+  #container-bands {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+  }
+
+  #myBands {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .bandLogo {
+    margin: 10px auto;
+  }
+
+  .plate {
+    font-size: .8rem;
+  }
+
+  #footer {
+    background-image: none;
+    background-color: #f7f7ff;
+    color: #131112
+  }
+
+  #footer a {
+    color: #131112;
+  }
+
+  #contact {
+    justify-content: flex-end;
+  }
+
+  #myEmail {
+    margin-right: 10px;
+  }
+
+  #icons {
+    width: 30%;
+  }
+
 }
 /* end desktop styles */

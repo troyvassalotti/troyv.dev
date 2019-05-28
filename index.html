@@ -49,48 +49,55 @@
 
     <section class="welcome">
       <h1>Hey, I'm Troy</h1>
-      <img src="images/headshot-arrow.png" alt="This is me. I look like this." id="headshot">
-      <h3>And I'm still figuring things out.</h3>
-      <div id="resumeButton">
-        <a href="docs/resume.pdf" target="_blank">
-          <div class="button">View Resumé</div>
-        </a>
+      <div class="headshot">
+        <img src="images/headshot-arrow.png" alt="This is me. I look like this." id="headshot">
+      </div>
+      <div id="welcomeButton">
+        <h3>And I'm still figuring things out.</h3>
+        <div id="resumeButton">
+          <a href="docs/resume.pdf" target="_blank">
+            <div class="button">View Resumé</div>
+          </a>
+        </div>
+      </div>
+      <div id="blurb">
+        Email marketer by day, aspiring musician and web developer by night...as long as I’m in bed at a reasonable time.
+        <div class="downArrow">
+          <i class="fas fa-arrow-down fa-3x"></i>
+        </div>
       </div>
     </section>
 
-    <div id="blurb">
-      Email marketer by day, aspiring musician and web developer by night...as long as I’m in bed at a reasonable time.
-      <div class="downArrow">
-        <i class="fas fa-arrow-down fa-3x"></i>
-      </div>
-    </div>
-
     <section class="card" id="whatsThis">
       <h2>What's This?</h2>
-      <p>
-        I never expected to be doing what I’m doing today, but I’m enjoying every second of it.
-      </p>
-      <p>
-        Take a look at my projects, learn more about who I am, and don’t hesitate to say hi.
-      </p>
+        <p>
+          I never expected to be doing what I’m doing today, but I’m enjoying every second of it.
+        </p>
+        <p>
+          Take a look at my projects, learn more about who I am, and don’t hesitate to say hi.
+        </p>
       <div class="buttonSpacing" id="projectsButton">
         <a href="freecodecamp/responsive-web-design/fccportfolio.html" target="_blank">
-          <div class="button">My Projects</div>
+          <div class="button">
+            My Projects
+          </div>
         </a>
       </div>
     </section>
 
     <section class="card" id="briefExplanation">
       <h2>A Brief Explanation of Me</h2>
-      <p>
-        A Towson University graduate with a bachelor's degree in marketing living in Baltimore, Maryland. My passions include music, exercising, coding, behavioral economics, and always learning new things.
-      </p>
-      <p>
-        Since 2017, when I started my career at Terra's Kitchen, I've been working directly on email marketing and SEO, with additional projects in our ecommerce and CMS platform - Magento. It was through this experience that I found my love of coding.
-      </p>
-      <p>
-        So, let's talk. I'd love to talk, especially if it includes coffee.
-      </p>
+      <div id="briefContent">
+        <p>
+          A Towson University graduate with a bachelor's degree in marketing living in Baltimore, Maryland. My passions include music, exercising, coding, behavioral economics, and always learning new things.
+        </p>
+        <p>
+          Since 2017, when I started my career at Terra's Kitchen, I've been working directly on email marketing and SEO, with additional projects in our ecommerce and CMS platform - Magento. It was through this experience that I found my love of coding.
+        </p>
+        <p>
+          So, let's talk. I'd love to talk, especially if it includes coffee.
+        </p>
+      </div>
       <div class="buttonSpacing" id="aboutButton">
         <a href="https://troyvassalotti.wixsite.com/portfolio" target="_blank">
           <div class="button">About Me</div>
@@ -98,6 +105,7 @@
       </div>
     </section>
 
+    <div id="container-music">
     <section class="card" id="musicIntro">
       <div>
         <h2>Didn't You Say Music?</h2>
@@ -115,23 +123,30 @@
 
     <section class="card" id="myBands">
       <h2>My Bands</h2>
-      <a href="https://actionhamilton.bandcamp.com" target="_blank">
-        <div>
-          <img src="images/Action-Hamilton-Logo.png" class="bandLogo" id="ahLogo">
-          <div class="plate" id="ah">
-            Action Hamilton
+      <div id="container-bands">
+      <div id="actionhamilton">
+        <a href="https://actionhamilton.bandcamp.com" target="_blank">
+          <div>
+            <img src="images/Action-Hamilton-Logo.png" class="bandLogo" id="ahLogo">
+            <div class="plate" id="ah">
+              Action Hamilton
+            </div>
           </div>
-        </div>
-      </a>
-      <a href="https://frontroyalmd.bandcamp.com" target="_blank">
-        <div>
-          <img src="images/fr_logo.png" class="bandLogo" id="frLogo">
-          <div class="plate" id="fr">
-            Front Royal
+        </a>
+      </div>
+      <div id="frontroyal">
+        <a href="https://frontroyalmd.bandcamp.com" target="_blank">
+          <div>
+            <img src="images/fr_logo.png" class="bandLogo" id="frLogo">
+            <div class="plate" id="fr">
+              Front Royal
+            </div>
           </div>
-        </div>
-      </a>
+        </a>
+      </div>
+      </div>
     </section>
+    </div>
 
     <section id="footer">
       <h2>Contact Me</h2>
