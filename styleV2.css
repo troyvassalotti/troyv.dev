@@ -195,7 +195,6 @@ ul.navbar a:hover {
   background-color: #279af1;
   border-radius: 20px;
   font-size: 1.30rem;
-  margin: 0 auto;
   padding: 10px;
   color: #f7f7ff;
   margin: 5% auto;
@@ -525,6 +524,7 @@ ul.navbar a:hover {
     display: flex;
     flex-direction: row;
     margin: 5vh auto;
+    padding: 0 2vw;
   }
 
   #container-bands {
@@ -569,6 +569,91 @@ ul.navbar a:hover {
   #icons {
     width: 30%;
   }
+}
 
+@media only screen and (min-device-width: 1440px) {
+  .welcome {
+    max-width: 1600px;
+  }
+
+  #headshot {
+    width: 75%;
+    float: none;
+  }
+
+  #blurb {
+    padding: 0 6vw;
+  }
+
+  #whatsThis {
+    width: 65%;
+  }
+
+  #projectsButton a div.button {
+    margin: 2% auto 4%;
+  }
+
+  #briefExplanation.card {
+    padding: 0 5vw;
+    width: 90%;
+  }
+
+  #briefExplanation {
+    grid-template-columns: 40% 60%;
+    margin: 3vh auto;
+  }
+
+  #briefContent {
+    text-align: center;
+  }
+
+  #container-music {
+    width: 90vw;
+    padding: 0 5vw;
+    margin-bottom: 0;
+  }
+
+  #actionhamilton, #frontroyal {
+    width: 50%;
+  }
+
+  #frLogo {
+    width: 100%;
+  }
+
+  #musicIntro {
+    background-size: revert;
+  }
+}
+
+@media only screen and (min-device-width: 1800px) {
+  #headshot {
+    width: 65%;
+  }
+
+  .welcome h1 {
+    margin-bottom: 4%;
+  }
+
+  #whatsThis {
+    width: 60vw;
+  }
+
+  #briefContent {
+    padding: 0 5%;
+    font-size: revert;
+  }
+
+  #briefExplanation.card {
+    width: 80%;
+  }
+
+  #briefExplanation h2 {
+    width: 80%;
+  }
+
+  #icons {
+    width: 20%;
+  }
 }
 /* end desktop styles */
