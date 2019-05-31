@@ -7,13 +7,12 @@
     <link rel="stylesheet" type="text/css" href="normalize.css">
     <link rel="stylesheet" type="text/css" href="styleV2.css">
     <link rel="icon" type="image/png" href="favicon.png">
-    <title>Welcome | Troy Vassalotti</title>
     <meta name="description" content="Watch as Troy Vassalotti learns his way around a computer.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="javascript.js"></script>
+    <title>Welcome | Troy Vassalotti</title>
   </head>
-  <body id="main">
-
+  <body id="main" class="homepage">
     <div id="topNav">
       <a href="#" onclick="openNav()">
         <svg width="30" height="30" id="icoOpen">
@@ -23,9 +22,9 @@
         </svg>
       </a>
     </div>
-    <div id="sideNavigation" class="sidenav">
+    <nav id="sideNavigation" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <ul class="navbar">
+      <ul class="navbar" id="navbar">
         <li>
           <a href="https://troyvassalotti.wixsite.com/portfolio" target="_blank">About Me</a>
         </li>
@@ -45,8 +44,7 @@
           <a href="freecodecamp/responsive-web-design/fccportfolio.html" target="_blank">Projects</a>
         </li>
       </ul>
-    </div>
-
+    </nav>
     <section class="welcome">
       <h1>Hey, I'm Troy</h1>
       <div class="headshot">
@@ -67,7 +65,6 @@
         </div>
       </div>
     </section>
-
     <section class="card" id="whatsThis">
       <h2>What's This?</h2>
         <p>
@@ -84,7 +81,6 @@
         </a>
       </div>
     </section>
-
     <section class="card" id="briefExplanation">
       <h2>A Brief Explanation of Me</h2>
       <div id="briefContent">
@@ -104,7 +100,6 @@
         </a>
       </div>
     </section>
-
     <div id="container-music">
     <section class="card" id="musicIntro">
       <div id="musicContent">
@@ -120,7 +115,6 @@
         </p>
       </div>
     </section>
-
     <section class="card" id="myBands">
       <h2>My Bands</h2>
       <div id="container-bands">
@@ -147,7 +141,6 @@
       </div>
     </section>
     </div>
-
     <section id="footer">
       <h2>Contact Me</h2>
       <a href="mailto:troyvassalotti@gmail.com" target="_blank">
@@ -178,6 +171,5 @@
         </div>
       </div>
     </section>
-
   </body>
 </html>
