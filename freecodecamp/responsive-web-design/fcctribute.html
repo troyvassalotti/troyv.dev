@@ -2,54 +2,160 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Quicksand|Merriweather&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="..\..\normalize.css">
-    <link rel="stylesheet" type="text/css" href="fccstyle.css">
-    <title>freeCodeCamp Tribute Page</title>
+    <link rel="stylesheet" type="text/css" href="..\..\styleV2.css">
+    <!-- <link rel="stylesheet" type="text/css" href="fccstyle.css"> -->
+    <link rel="stylesheet" type="text/css" href="tribute-style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta name="description" content="My tribute page project for freeCodeCamp.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="..\..\javascript.js"></script>
+    <title>Tribute Page | Troy Vassalotti</title>
   </head>
-  <body>
-    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
-    <div id="main">
-      <div id="header">
+  <body id="main" class="tributePage">
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <div id="topNav">
+      <a href="#" onclick="openNav()">
+        <svg width="30" height="30" id="icoOpen">
+          <path d="M0,5 30,5" stroke="#131112" stroke-width="5"/>
+          <path d="M0,14 30,14" stroke="#131112" stroke-width="5"/>
+          <path d="M0,23 30,23" stroke="#131112" stroke-width="5"/>
+        </svg>
+      </a>
+    </div>
+    <nav id="sideNavigation" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <ul class="navbar" id="navbar">
+        <li>
+          <a href="https://actionhamilton.github.io">Home</a>
+        </li>
+        <li>
+          <a href="https://troyvassalotti.wixsite.com/portfolio" target="_blank">About Me</a>
+        </li>
+        <li>
+          <a href="https://frontroyalmd.bandcamp.com" target="_blank">Front Royal</a>
+        </li>
+        <li>
+          <a href="https://actionhamilton.bandcamp.com" target="_blank">Action Hamilton</a>
+        </li>
+        <li>
+          <a href="https://github.com/actionhamilton" target="_blank">GitHub</a>
+        </li>
+        <li>
+          <a href="https://www.freecodecamp.org/actionhamilton" target="_blank">freeCodeCamp</a>
+        </li>
+        <li>
+          <a href="fccportfolio.html">Projects</a>
+        </li>
+      </ul>
+    </nav>
+    <section class="title">
+      <div>
         <h1 id="title">Buckethead</h1>
-          <p class="subhead">
-            From chicken coop to main stage
-          </p>
+        <div id="subtitle">From the chicken coop to the main stage</div>
       </div>
       <div id="img-div">
-        <img id="image" src="http://twincitiesmedia.net/blog/wp-content/uploads/2018/03/Buckethead-13-of-14-678x381.jpg" alt="Buckethead playing a sold out show">
-        <div id="img-caption">
-          Buckethead playing a sold out show
+        <img src="..\..\images\buckethead.jpg" id="image">
+        <div id="img-caption">Buckethead representing KFC and Michael Jordan at the same time.</div>
+      </div>
+    </section>
+    <section id="tribute-info">
+      <p>
+        As of writing this, Buckethead has released 305 studio albums, four special releases, and one EP. He's performed on more than 50 albums by other artists since 1988. If you want to check out his music before purchasing, you can find him on <a href="https://open.spotify.com/artist/0fDF0jjmdouCIeWhNnblwV" target="_blank">Spotify</a>.
+      </p>
+      <div id="facts-container">
+        <div class="tribute-fact">
+          <div class="year">
+            1981
+          </div>
+          <div class="fact">
+            Began playing guitar at the age of 12. His early teachers include Max McGuire, Johnny Fortune, Mark Hammond, Pebber Brown and Paul Gilbert.
+          </div>
+        </div>
+        <div class="tribute-fact">
+          <div class="year">
+            1988
+          </div>
+          <div class="fact">
+            The Buckethead character is born after watching Halloween 4, buying a mask, and eating KFC for dinner.
+          </div>
+        </div>
+        <div class="tribute-fact">
+          <div class="year">
+            1992
+          </div>
+          <div class="fact">
+            Releases his first album <span class="italic">Bucketheadland</span>.
+          </div>
+        </div>
+        <div class="tribute-fact">
+          <div class="year">
+            1992
+          </div>
+          <div class="fact">
+            Supergroup <span class="italic">Praxis</span> is formed, featuring Bill Laswell, Bernie Worrell, Bootsy Collins, and Bryan "Brain" Mantia.
+          </div>
+        </div>
+        <div class="tribute-fact">
+          <div class="year">
+            1997
+          </div>
+          <div class="fact">
+            Contributes to movie soundtracks, appearing on Beverly Hills Ninja and Mortal Kombat: Annihilation, the sequel to Mortal Kombat.
+          </div>
+        </div>
+        <div class="tribute-fact">
+          <div class="year">
+            2000-2004
+          </div>
+          <div class="fact">
+            Performs as a member of Guns N' Roses, even recording on their <span class="italic">Chinese Democracy</span>.
+          </div>
+        </div>
+        <div class="tribute-fact">
+          <div class="year">
+            2005
+          </div>
+          <div class="fact">
+            <span class="italic">Enter The Chicken</span> is released under the Buckethead & Friends name, featuring some of Buckethead's musician friends.
+          </div>
+        </div>
+        <div class="tribute-fact">
+          <div class="year">
+            2013
+          </div>
+          <div class="fact">
+            Releases 31 albums.
+          </div>
+        </div>
+        <div class="tribute-fact">
+          <div class="year">
+            2014-2015
+          </div>
+          <div class="fact">
+            178 <span class="italic">Pikes</span> - albums released as a concept to resemble a comic book style and be shorter in length than his previous works at around half an hour in length - are released.
+          </div>
+        </div>
+        <div class="tribute-fact">
+          <div class="year">
+            2015
+          </div>
+          <div class="fact">
+            Releases 118 albums, totaling 236 albums.
+          </div>
         </div>
       </div>
-      <div id="tribute-container">
-      <div id="tribute-info">
-        <div id="tribute-head">Buckethead, real name Brian Patrick Carroll, has had a prolific career, releasing 305 studio albums, four special releases, and one EP. He's also performed on more than 50 other albums by other artists since 1988. A more in-depth look at Buckethead can be found <a id="tribute-link" href="https://en.wikipedia.org/wiki/Buckethead" target="_blank">on his Wikipedia entry</a>. And if you want to check out his music for purchase, you can find him <a id="spotify" href="https://open.spotify.com/artist/0fDF0jjmdouCIeWhNnblwV" target="_blank">on&nbsp;Spotify</a>.</div>
-        <div>1981</div>
-        <div>Began playing guitar at the age of 12. His early teachers include Max McGuire, Johnny Fortune, Mark Hammond, Pebber Brown and Paul Gilbert.</div>
-        <div>1988</div>
-        <div>The Buckethead character is born after watching Halloween 4, buying a mask, and eating KFC for dinner.</div>
-        <div>1992</div>
-        <div>Releases his first album <span class="italic">Bucketheadland</span>.</div>
-        <div>1992</div>
-        <div>Supergroup <span class="italic">Praxis</span> is formed, featuring Bill Laswell, Bernie Worrell, Bootsy Collins, and Bryan "Brain" Mantia.</div>
-        <div>1997</div>
-        <div>Contribute to movie soundtracks, appearing on Beverly Hills Ninja and Mortal Kombat: Annihilation, the sequel to Mortal Kombat.</div>
-        <div>2000-2004</div>
-        <div>Performs as a member of Guns N' Roses, even recording on their <span class="italic">Chinese Democracy</span>.</div>
-        <div>2005</div>
-        <div><span class="italic">Enter The Chicken</span> is released under the Buckethead & Friends name, featuring some of Buckethead's musician friends.</div>
-        <div>2013</div>
-        <div>Releases 31 albums.</div>
-        <div>2014-2015</div>
-        <div>178 <span class="italic">Pikes</span> - albums released as a concept to resemble a comic book style and be shorter in length than his previous works at around half an hour in length - are released.</div>
-        <div>2015</div>
-        <div>Releases 118 albums, totaling 236 albums.</div>
-        <div id="tribute-footer">Since leaving his various bands between 2010 and 2013, Buckethead has returned to playing solo live shows. He recently released his first live album, <span class="italic">Live From Bucketheadland</span>.</div>
+      <div id="tribute-footer">
+        <div>
+          <p>
+            Since leaving his various bands between 2010 and 2013, Buckethead has returned to playing solo live shows. He recently released his first live album, <span class="italic">Live From Bucketheadland</span>.
+          </p>
+          <p>
+            More information about Buckethead can be found <a id="tribute-link" href="https://en.wikipedia.org/wiki/Buckethead" target="_blank">on his Wikipedia entry</a>.
+        </div>
       </div>
-      </div>
-    </div>
+    </section>
   </body>
 </html>

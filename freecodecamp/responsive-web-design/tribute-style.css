@@ -1,0 +1,117 @@
+.title {
+  width: 100%;
+  text-align: center;
+  margin: 8vh auto 0;
+}
+
+#subtitle {
+  width: 75%;
+  margin: 0 auto;
+  padding: 1vh 2vw;
+}
+
+#image {
+  display: block;
+  max-width: 100vw;
+  margin: 10px auto 0;
+}
+
+#img-caption {
+  margin: 1vh auto 0;
+  font-size: .7rem;
+  width: 80%;
+}
+
+.tributePage #topNav {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#tribute-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  padding: 0 1%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#tribute-info p {
+  font-size: .9rem;
+}
+
+#facts-container {
+  margin: 3vh auto 0;
+  background-color: var(--grey-one);
+  color: #f7f7ff;
+}
+
+.year {
+  font-size: 2rem;
+  font-family: 'Quicksand', sans-serif;
+  margin-bottom: 1vh;
+  font-weight: bold;
+}
+
+.fact {
+  font-size: .9rem;
+  margin-bottom: 5vh;
+}
+
+
+@media only screen and (min-device-width: 850px) {
+  /* make the navbar sticky for desktop on the projects page */
+  .projectsPage #sideNavigation {
+    position: fixed;
+    top: 0;
+  }
+
+  .title {
+    margin-top: 2vh;
+  }
+
+  #tribute-info p, .fact {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (min-device-width: 1024px) {
+  #tribute-info {
+    width: 90vw;
+  }
+
+  .tribute-fact {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 2% 4% 2% 3%;
+  }
+
+  .year, .fact {
+    margin-bottom: initial;
+  }
+
+  .year {
+    width: 40%;
+  }
+
+  .fact {
+    width: 60%;
+  }
+}
+
+@media only screen and (min-device-width: 1440px) {
+  #tribute-info {
+    width: 75vw;
+  }
+}
+
+@media only screen and (min-device-width: 1800px) {
+  #tribute-info {
+    width: 65vw;
+  }
+}
