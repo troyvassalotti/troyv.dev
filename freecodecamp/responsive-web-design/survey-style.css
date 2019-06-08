@@ -1,0 +1,136 @@
+.surveyPage {
+  background-color: #279af1;
+}
+
+.surveyPage #topNav {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#title {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 3vh;
+}
+
+#description {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#survey-main {
+  margin: 0 auto;
+  border: 2px solid #131112;
+  border-radius: 6px;
+  background-color: #f7f7ff;
+}
+
+#survey-form {
+  display: flex;
+  flex-direction: column;
+  font-size: .85rem;
+}
+
+.question {
+  margin: 15px auto;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.labels {
+  margin-bottom: 5px;
+}
+
+.answer {
+
+}
+
+.inputs, .dropdowns {
+  border: 1px solid #60656f;
+  border-radius: 6px;
+  padding: 10px;
+}
+
+.preference {
+  margin-top: 5px;
+}
+
+label {
+
+}
+
+.preference li, .checkbox {
+  position: relative;
+  left: -50px;
+  margin-left: 20px;
+  display: block;
+  padding-bottom: 5px;
+}
+
+.userRatings, input[type="checkbox"] {
+  float: left;
+  margin-top: 3px;
+}
+
+.textArea {
+  border: 1px solid #60656f;
+  border-radius: 6px;
+  padding: 5px;
+  height: 100px;
+  width: 100%;
+}
+
+#submit {
+  padding: 5px;
+  margin: 0 auto 20px;
+  background-color: #279af1;
+  color: #f7f7ff;
+  border: 1px solid #60656f;
+  width: 50%;
+}
+
+@media only screen and (min-device-width: 850px) {
+  .question {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .labels {
+    width: 60%;
+  }
+
+  .answer {
+    width: 40%;
+  }
+
+  #submit {
+    width: 30%;
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (min-device-width: 1024px) {
+  #survey-main {
+    width: 80vw;
+  }
+}
+
+@media only screen and (min-device-width: 1440px) {
+  #survey-main {
+    width: 60vw;
+  }
+
+  label {
+    padding-right: 2vw;
+  }
+}
+
+@media only screen and (min-device-width: 1800px) {
+  #survey-form {
+    width: 80%;
+    margin: 0 auto;
+  }
+}

@@ -2,50 +2,89 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i|Quicksand:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="..\..\normalize.css">
-    <link rel="stylesheet" type="text/css" href="fccstyle.css">
-    <title>freeCodeCamp Survey Page</title>
+    <link rel="stylesheet" type="text/css" href="..\..\styleV2.css">
+    <link rel="stylesheet" type="text/css" href="survey-style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta name="description" content="My survey page project for freeCodeCamp.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="..\..\javascript.js"></script>
+    <title>Breakfast Survey | Troy Vassalotti</title>
   </head>
-  <body id="survey">
+  <body id="main" class="surveyPage">
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <div id="topNav">
+      <a href="#" onclick="openNav()">
+        <svg width="30" height="30" id="icoOpen">
+          <path d="M0,5 30,5" stroke="#131112" stroke-width="5"/>
+          <path d="M0,14 30,14" stroke="#131112" stroke-width="5"/>
+          <path d="M0,23 30,23" stroke="#131112" stroke-width="5"/>
+        </svg>
+      </a>
+    </div>
+    <nav id="sideNavigation" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <ul class="navbar" id="navbar">
+        <li>
+          <a href="https://actionhamilton.github.io">Home</a>
+        </li>
+        <li>
+          <a href="https://troyvassalotti.wixsite.com/portfolio" target="_blank">About Me</a>
+        </li>
+        <li>
+          <a href="https://frontroyalmd.bandcamp.com" target="_blank">Front Royal</a>
+        </li>
+        <li>
+          <a href="https://actionhamilton.bandcamp.com" target="_blank">Action Hamilton</a>
+        </li>
+        <li>
+          <a href="https://github.com/actionhamilton" target="_blank">GitHub</a>
+        </li>
+        <li>
+          <a href="https://www.freecodecamp.org/actionhamilton" target="_blank">freeCodeCamp</a>
+        </li>
+        <li>
+          <a href="fccportfolio.html">Projects</a>
+        </li>
+      </ul>
+    </nav>
     <h1 id="title">Tell Me Your Breakfast Habits</h1>
     <div id="survey-main">
       <p id="description">
         In this survey, we will be discussing breakfast and everything about it.
       </p>
       <form id="survey-form">
-        <div class="left">
+        <div class="question">
           <div class="labels">
             <label id="name-label" for="name">* Name:</label>
           </div>
-          <div class="right">
+          <div class="answer">
             <input class="inputs" id="name" type="text" placeholder="Enter your name" required>
           </div>
         </div>
-        <div class="left">
+        <div class="question">
           <div class="labels">
             <label id="email-label" for="email">* Email:</label>
           </div>
-          <div class="right">
+          <div class="answer">
             <input class="inputs" id="email" type="email" placeholder="Enter your email" required>
           </div>
         </div>
-        <div class="left">
+        <div class="question">
           <div class="labels">
             <label id="number-label" for="breakfasts">* Breakfasts Per Day:</label>
           </div>
-          <div class="right">
+          <div class="answer">
             <input class="inputs" id="number" type="number" placeholder="Breakfasts per day" min="0" max="10" required>
           </div>
         </div>
-        <div class="left">
+        <div class="question">
           <div class="labels">
             <label for="time of day">When do you prefer to eat breakfast?</label>
           </div>
-          <div class="right">
+          <div class="answer">
             <select class="dropdowns" id="dropdown" name="timeOfDay">
               <option disabled value>Select Time</option>
               <option value="waking">As I Wake Up</option>
@@ -59,11 +98,11 @@
             </select>
           </div>
         </div>
-        <div class="left">
+        <div class="question">
           <div class="labels">
             <label for="favorite">Which of these do you most prefer?</label>
           </div>
-          <div class="right">
+          <div class="answer">
             <ul class="preference">
               <li>
                 <label>French Toast<input name="breakfast-preference" value="1" type="radio" class="userRatings"></label>
@@ -85,19 +124,19 @@
               </li>
           </div>
         </div>
-        <div class="left">
+        <div class="question">
           <div class="labels">
             <label for="explanation">Please Explain Your Reasoning:</label>
           </div>
-          <div class="right">
+          <div class="answer">
             <textarea placeholder="Write your reasoning here." class="textArea"></textarea>
           </div>
         </div>
-        <div class="left">
+        <div class="question">
           <div class="labels">
             <label for="checkbox">Which of these classic breakfast establishments have you eaten at in the last 6 months?</label>
           </div>
-          <div class="right">
+          <div class="answer">
             <ul class="preference">
               <li>
                 <label>Denny's<input name="breakfast-place" value="1" type="checkbox"></label>
@@ -117,11 +156,11 @@
             </ul>
           </div>
         </div>
-        <div class="left">
+        <div class="question">
           <div class="labels">
             <label for="comments">Any Additional Comments or Concerns?</label>
           </div>
-          <div class="right">
+          <div class="answer">
             <textarea placeholder="Write your comments here." class="textArea"></textarea>
           </div>
         </div>

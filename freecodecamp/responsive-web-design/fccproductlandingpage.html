@@ -2,213 +2,153 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i|Quicksand:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="..\..\normalize.css">
-    <link rel="stylesheet" type="text/css" href="fccproductstyle.css">
-    <title>freeCodeCamp Product Landing Page</title>
+    <link rel="stylesheet" type="text/css" href="..\..\styleV2.css">
+    <link rel="stylesheet" type="text/css" href="landing-page-style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta name="description" content="My product landing page project for freeCodeCamp.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="..\..\javascript.js"></script>
+    <title>Product Landing Page | Troy Vassalotti</title>
   </head>
-  <body>
+  <body id="main" class="landingPage">
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 
-    <!-- begin header -->
+    <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us17.list-manage.com","uuid":"4e13673cf275ea95a06b67103","lid":"fc567fa48a","uniqueMethods":true}) })</script>
+
+    <div id="topNav">
+      <a href="#" onclick="openNav()">
+        <svg width="30" height="30" id="icoOpen">
+          <path d="M0,5 30,5" stroke="#131112" stroke-width="5"/>
+          <path d="M0,14 30,14" stroke="#131112" stroke-width="5"/>
+          <path d="M0,23 30,23" stroke="#131112" stroke-width="5"/>
+        </svg>
+      </a>
+    </div>
+    <nav id="sideNavigation" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <ul class="navbar" id="navbar">
+        <li>
+          <a href="https://actionhamilton.github.io">Home</a>
+        </li>
+        <li>
+          <a href="https://troyvassalotti.wixsite.com/portfolio" target="_blank">About Me</a>
+        </li>
+        <li>
+          <a href="https://frontroyalmd.bandcamp.com" target="_blank">Front Royal</a>
+        </li>
+        <li>
+          <a href="https://actionhamilton.bandcamp.com" target="_blank">Action Hamilton</a>
+        </li>
+        <li>
+          <a href="https://github.com/actionhamilton" target="_blank">GitHub</a>
+        </li>
+        <li>
+          <a href="https://www.freecodecamp.org/actionhamilton" target="_blank">freeCodeCamp</a>
+        </li>
+        <li>
+          <a href="fccportfolio.html">Projects</a>
+        </li>
+      </ul>
+    </nav>
     <header id="header">
-        <img id="header-img" src="..\..\images\FR_3x5-banner.png" alt="Front Royal">
+      <div id="logo-div">
+        <img src="..\..\images\fr_logo.png" id="header-img">
+      </div>
       <nav id="nav-bar">
         <ul>
-          <li class="nav-button">
-            <a class="nav-link" href="#tbntt">The Band, Not The Town</a>
-          </li>
-          <li class="nav-button">
-            <a class="nav-link" href="#adhfh">All Down Hill From Here</a>
-          </li>
-          <li class="nav-button">
-            <a class="nav-link" href="#tth">These Things Happen</a>
-          </li>
+          <li><a class="nav-link" href="#tbntt">The Band, Not The Town</a></li>
+          <li><a class="nav-link" href="#adhfh">All Down Hill From Here</a></li>
+          <li><a class="nav-link" href="#tth">These Things Happen</a></li>
         </ul>
       </nav>
     </header>
-    <!-- end header -->
-
-    <!-- row 1 -->
-    <div id="container">
-      <section id="signUp">
+    <section id="email-signup">
+      <div id="intro-div">
         <h1>Front Royal</h1>
-          <div class="subhead">A band from Maryland</div>
+        <div id="subtitle">A band from Maryland</div>
         <form id="form" action="https://www.freecodecamp.com/email-submit">
-          <label for="email">Enter Your Email For Updates And Offers:</label>
-            <input class="inputs" id="email" name="email" type="email" placeholder="Enter your email address">
-            <input type="submit" id="submit" value="Get Started">
+          <label for="email">Enter your email address for updates and more</label>
+          <input id="email" name="email" type="email" placeholder="Enter your email address">
+          <input class="button" type="submit" id="submit" value="Get Started">
         </form>
-      <div>
+      </div>
+      <div id="video-div">
         <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/NdyO2PI6bPk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
-      </section>
-
-      <!-- row 2 -->
-      <div class="wrapper" id="tbntt">
-      <section class="album">
-        <img class="albumArt" src="..\..\images\FR_TheBandNotTheTown_C1.png" alt="The Band, Not The Town">
-      </section>
-      <section class="infoPane">
-        <h2>The Band, Not The Town</h2>
-        <div class="info">
-          <h3 class="level">EP #1</h3>
-          <table>
-            <tbody>
-              <tr>
-                <td>
-                  <div>Runtime</div>
-                </td>
-                <td>
-                  <div>8m</div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div>Songs</div>
-                </td>
-                <td>
-                  <div>3</div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div>Tracklist</div>
-                </td>
-                <td>
-                  <ol>
-                    <li>Can't Seem</li>
-                    <li>Loudest Silence</li>
-                    <li>That Night</li>
-                  </ol>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div>Order of Importance</div>
-                </td>
-                <td>
-                  <div>Third</div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+    </section>
+    <section id="products">
+      <h2>Discography</h2>
+      <div id="albums-container">
+      <div class="album" id="tbntt">
+        <div>
+          <div class="artwork-div">
+            <img class="artwork" src="..\..\images\FR_TheBandNotTheTown_C1.png" alt="The band, not the town">
+          </div>
+          <div class="albumTitle">
+            <h3>The Band, Not The Town</h3>
+          </div>
+          <div class="tracks">
+            <ol>
+              <li>Can't Seem</li>
+              <li>Loudest Silence</li>
+              <li>That Night</li>
+            </ol>
+          </div>
         </div>
-      </section>
-    </div>
-
-      <!-- row 3 -->
-      <div class="wrapper" id="adhfh">
-        <section class="album">
-          <img class="albumArt" src="..\..\images\FR_EP2_Cover.png" alt="All Down Hill From Here">
-        </section>
-      <section class="infoPane">
-        <h2>All Down Hill From Here</h2>
-        <div class="info">
-          <h3 class="level">EP #2</h3>
-          <table>
-            <tbody>
-              <tr>
-                <td>
-                  <div>Runtime</div>
-                </td>
-                <td>
-                  <div>20m</div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div>Songs</div>
-                </td>
-                <td>
-                  <div>6</div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div>Tracklist</div>
-                </td>
-                <td>
-                  <ol>
-                    <li>This Wasn't In The Brochure</li>
-                    <li>Broken Glass</li>
-                    <li>Calloused</li>
-                    <li>Hindsight</li>
-                    <li>Live And Leave Behind</li>
-                    <li>Good So Far, Katie Holmes</li>
-                  </ol>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div>Order of Importance</div>
-                </td>
-                <td>
-                  <div>Second</div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <a href="https://frontroyalmd.bandcamp.com/album/the-band-not-the-town" target="_blank">
+            <div class="button">Buy Here</div>
+          </a>
+      </div>
+      <div class="album" id="adhfh">
+        <div>
+          <div class="artwork-div">
+            <img class="artwork" src="..\..\images\FR_EP2_Cover.png" alt="All down hill from here">
+          </div>
+          <div class="albumTitle">
+            <h3>All Down Hill From Here</h3>
+          </div>
+          <div class="tracks">
+            <ol>
+              <li>This Wasn't In The Brochure</li>
+              <li>Broken Glass</li>
+              <li>Calloused</li>
+              <li>Hindsight</li>
+              <li>Live and Leave Behind</li>
+              <li>Good So Far, Katie Holmes</li>
+            </ol>
+          </div>
         </div>
-      </section>
-    </div>
-
-      <!-- row 4 -->
-      <div class="wrapper" id="tth">
-      <section class="album">
-        <img class="albumArt" src="..\..\images\FR_these things happen_album_3kx3k.png" alt="The Band, Not The Town">
-      </section>
-      <section class="infoPane">
-        <h2>These Things Happen</h2>
-        <div class="info">
-          <h3 class="level">EP #3</h3>
-          <table>
-            <tbody>
-              <tr>
-                <td>
-                  <div>Runtime</div>
-                </td>
-                <td>
-                  <div>19m</div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div>Songs</div>
-                </td>
-                <td>
-                  <div>6</div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div>Tracklist</div>
-                </td>
-                <td>
-                  <ol>
-                    <li>Track Title</li>
-                    <li>On Impulse</li>
-                    <li>Gomorrah</li>
-                    <li>When I Leave Here</li>
-                    <li>Tired</li>
-                    <li>Don't Start</li>
-                  </ol>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div>Order of Importance</div>
-                </td>
-                <td>
-                  <div>First</div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+        <a href="https://frontroyalmd.bandcamp.com/album/all-down-hill-from-here" target="_blank">
+          <div class="button">Buy Here</div>
+        </a>
+      </div>
+      <div class="album" id="tth">
+        <div>
+          <div class="artwork-div">
+            <img class="artwork" src="..\..\images\FR_these things happen_album_3kx3k.png" alt="These things happen">
+          </div>
+          <div class="albumTitle">
+            <h3>These Things Happen</h3>
+          </div>
+          <div class="tracks">
+            <ol>
+              <li>Track Title</li>
+              <li>On Impulse</li>
+              <li>Gomorrah</li>
+              <li>When I Leave Here</li>
+              <li>Tired</li>
+              <li>Don't Start</li>
+            </ol>
+          </div>
         </div>
-      </section>
-    </div>
+        <a href="https://frontroyalmd.bandcamp.com/album/these-things-happen" target="_blank">
+          <div class="button">Buy Here</div>
+        </a>
+      </div>
+      </div>
+    </section>
   </body>
 </html>
