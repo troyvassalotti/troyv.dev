@@ -121,7 +121,7 @@ input#submit {
   color: #131112;
 }
 
-@media only screen and (min-device-width: 850px) {
+@media only screen and (min-width: 850px) {
   #nav-bar ul {
     justify-content: space-around;
     font-size: .85rem;
@@ -155,7 +155,7 @@ input#submit {
   }
 }
 
-@media only screen and (min-device-width: 1024px) {
+@media only screen and (min-width: 1024px) {
   input {
     max-width: 500px;
   }
@@ -166,7 +166,7 @@ input#submit {
   }
 }
 
-@media only screen and (min-device-width: 1440px) {
+@media only screen and (min-width: 1440px) {
   .button {
     margin: 20px auto;
   }

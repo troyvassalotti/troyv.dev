@@ -371,7 +371,7 @@ ul.navbar a:hover {
 /*
 *** desktop styles ***
 */
-@media only screen and (min-device-width: 850px) {
+@media only screen and (min-width: 850px) {
   /* begin desktop navigation */
   #topNav, .closebtn {
     display: none;
@@ -407,7 +407,7 @@ ul.navbar a:hover {
 }
 
 
-@media only screen and (min-device-width: 1024px) {
+@media only screen and (min-width: 1024px) {
   /* headings */
   h1 {
     font-size: 64px;
@@ -590,7 +590,7 @@ ul.navbar a:hover {
   }
 }
 
-@media only screen and (min-device-width: 1440px) {
+@media only screen and (min-width: 1440px) {
   .welcome {
     max-width: 1600px;
   }
@@ -645,7 +645,7 @@ ul.navbar a:hover {
   }
 }
 
-@media only screen and (min-device-width: 1800px) {
+@media only screen and (min-width: 1800px) {
   #headshot {
     width: 65%;
   }

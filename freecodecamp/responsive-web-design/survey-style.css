@@ -92,7 +92,7 @@ label {
   width: 50%;
 }
 
-@media only screen and (min-device-width: 850px) {
+@media only screen and (min-width: 850px) {
   .question {
     flex-direction: row;
     align-items: center;
@@ -112,13 +112,13 @@ label {
   }
 }
 
-@media only screen and (min-device-width: 1024px) {
+@media only screen and (min-width: 1024px) {
   #survey-main {
     width: 80vw;
   }
 }
 
-@media only screen and (min-device-width: 1440px) {
+@media only screen and (min-width: 1440px) {
   #survey-main {
     width: 60vw;
   }
@@ -128,7 +128,7 @@ label {
   }
 }
 
-@media only screen and (min-device-width: 1800px) {
+@media only screen and (min-width: 1800px) {
   #survey-form {
     width: 80%;
     margin: 0 auto;

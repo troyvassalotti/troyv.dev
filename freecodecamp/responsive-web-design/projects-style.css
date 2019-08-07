@@ -64,7 +64,7 @@
 /*
 *** desktop styles ***
 */
-@media only screen and (min-device-width: 850px) {
+@media only screen and (min-width: 850px) {
   /* make the navbar sticky for desktop on the projects page */
   .projectsPage #sideNavigation {
     position: fixed;
@@ -72,13 +72,13 @@
   }
 }
 
-@media only screen and (min-device-width: 1024px) {
+@media only screen and (min-width: 1024px) {
   .project-tile img {
     max-width: 50vw;
   }
 }
 
-@media only screen and (min-device-width: 1440px) {
+@media only screen and (min-width: 1440px) {
   #welcome-wrapper {
     padding: 0 30vw;
     width: 100vw;
@@ -97,7 +97,7 @@
   }
 }
 
-@media only screen and (min-device-width: 1800px) {
+@media only screen and (min-width: 1800px) {
   .project-tile img {
     max-width: 20vw;
   }
