@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i|Quicksand:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="https://actionhamilton.github.io/normalize.css">
-    <link rel="stylesheet" type="text/css" href="https://actionhamilton.github.io/styleV2.css">
-    <link rel="icon" type="image/png" href="https://actionhamilton.github.io/favicon.png">
+    <link rel="stylesheet" type="text/css" href="normalize.css">
+    <link rel="stylesheet" type="text/css" href="styleV2.css">
+    <link rel="icon" type="image/png" href="favicon.png">
     <meta name="description" content="Watch as Troy Vassalotti learns his way around a computer.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="javascript.js"></script>
@@ -26,7 +26,7 @@
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
       <ul class="navbar" id="navbar">
         <li>
-          <a href="https://actionhamilton.github.io">Home</a>
+          <a href="index.html">Home</a>
         </li>
         <!-- <li>
           <a href="https://troyvassalotti.wixsite.com/portfolio" target="_blank">About Me</a>
@@ -44,7 +44,7 @@
           <a href="https://www.freecodecamp.org/actionhamilton" target="_blank">freeCodeCamp</a>
         </li>
         <li>
-          <a href="https://actionhamilton.github.io/freecodecamp/responsive-web-design/fccportfolio.html">Projects</a>
+          <a href="freecodecamp/responsive-web-design/fccportfolio.html">Projects</a>
         </li>
       </ul>
     </nav>
@@ -56,8 +56,8 @@
       <div id="welcomeButton">
         <h3>And I'm still figuring things out.</h3>
         <div id="resumeButton">
-          <a href="docs/resume.pdf" target="_blank">
-            <div class="button">View Resumé</div>
+          <a href="docs/resume.pdf" target="_blank" class="button">
+            View Resumé
           </a>
         </div>
       </div>
@@ -76,11 +76,9 @@
         <p>
           Take a look at my projects, learn more about who I am, and don’t hesitate to say hi.
         </p>
-      <div class="buttonSpacing" id="projectsButton">
-        <a href="freecodecamp/responsive-web-design/fccportfolio.html">
-          <div class="button">
-            My Projects
-          </div>
+      <div id="projectsButton">
+        <a class="button" href="freecodecamp/responsive-web-design/fccportfolio.html">
+          My Projects
         </a>
       </div>
     </section>
@@ -97,9 +95,9 @@
           So, let's talk. I'd love to talk, especially if it includes coffee.
         </p>
       </div>
-      <div class="buttonSpacing" id="aboutButton">
-        <a href="mailto:troyvassalotti@gmail.com" target="_blank">
-          <div class="button">Email Me</div>
+      <div id="aboutButton">
+        <a class="button" href="mailto:troyvassalotti@gmail.com" target="_blank">
+          Email Me
         </a>
       </div>
     </section>
@@ -122,24 +120,24 @@
       <h2>My Bands</h2>
       <div id="container-bands">
       <div id="actionhamilton">
-        <a href="https://actionhamilton.bandcamp.com" target="_blank">
-          <div>
+        <div>
+          <a href="https://actionhamilton.bandcamp.com" target="_blank">
             <img src="images/Action-Hamilton-Logo.png" class="bandLogo" id="ahLogo">
-            <div class="plate" id="ah">
+          </a>
+          <a class="plate" id="ah" href="https://actionhamilton.bandcamp.com" target="_blank">
               Action Hamilton
-            </div>
-          </div>
-        </a>
+          </a>
+        </div>
       </div>
       <div id="frontroyal">
-        <a href="https://frontroyalmd.bandcamp.com" target="_blank">
-          <div>
+        <div>
+          <a href="https://frontroyalmd.bandcamp.com" target="_blank">
             <img src="images/fr_logo.png" class="bandLogo" id="frLogo">
-            <div class="plate" id="fr">
-              Front Royal
-            </div>
-          </div>
-        </a>
+          </a>
+          <a class="plate" id="fr" href="https://frontroyalmd.bandcamp.com" target="_blank">
+            Front Royal
+          </a>
+        </div>
       </div>
       </div>
     </section>
@@ -152,7 +150,9 @@
               troyvassalotti@gmail.com
             </a>
           </div>
-          <i class="far fa-envelope fa-3x"></i>
+          <a href="mailto:troyvassalotti@gmail.com" target="_blank">
+            <i class="far fa-envelope fa-3x"></i>
+          </a>
         </div>
       <div class="footerRow" id="social">
         <div id="icons">

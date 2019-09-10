@@ -4,15 +4,15 @@
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Quicksand|Merriweather&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="https://actionhamilton.github.io/normalize.css">
-    <link rel="stylesheet" type="text/css" href="https://actionhamilton.github.io/styleV2.css">
+    <link rel="stylesheet" type="text/css" href="normalize.css">
+    <link rel="stylesheet" type="text/css" href="styleV2.css">
     <link rel="icon" type="image/png" href="favicon.png">
     <title>About Me | Troy Vassalotti</title>
     <meta name="description" content="Watch as Troy Vassalotti learns his way around a computer.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="javascript.js"></script>
   </head>
-  <body id="main">
+  <body id="main" class="aboutMe">
 
     <div id="topNav">
       <a href="#" onclick="openNav()">
@@ -23,9 +23,12 @@
         </svg>
       </a>
     </div>
-    <div id="sideNavigation" class="sidenav">
+    <nav id="sideNavigation" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <ul class="navbar">
+      <ul class="navbar" id="navbar">
+        <li>
+          <a href="index.html">Home</a>
+        </li>
         <!-- <li>
           <a href="https://troyvassalotti.wixsite.com/portfolio" target="_blank">About Me</a>
         </li> -->
@@ -42,10 +45,10 @@
           <a href="https://www.freecodecamp.org/actionhamilton" target="_blank">freeCodeCamp</a>
         </li>
         <li>
-          <a href="https://actionhamilton.github.io/freecodecamp/responsive-web-design/fccportfolio.html" target="_blank">Projects</a>
+          <a href="freecodecamp/responsive-web-design/fccportfolio.html">Projects</a>
         </li>
       </ul>
-    </div>
+    </nav>
 
     <section class="welcome">
       <h1>The Long Explanation of Me</h1>

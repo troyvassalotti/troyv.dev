@@ -161,6 +161,10 @@ ul.navbar a:hover {
   padding: 0 2%;
 }
 
+#notebookHeader {
+  text-align: center;
+}
+
 .spacer {
   height: 50px;
 }
@@ -194,14 +198,19 @@ ul.navbar a:hover {
 }
 
 .button {
-  width: 275px;
+  display: block;
+  line-height: 1.42857143;
+  width: 70vw;
+  max-width: 300px;
+  white-space: nowrap;
   text-align: center;
   background-color: var(--blue-one);
   border-radius: 20px;
+  border: 1px solid transparent;
   font-size: 1.30rem;
-  padding: 10px;
+  padding: 9px 25px;
   color: var(--white-one);
-  margin: 5% auto;
+  margin: 2% auto;
 }
 
 .button:hover, #ah:hover, #fr:hover {
@@ -211,11 +220,7 @@ ul.navbar a:hover {
 }
 
 #resumeButton {
-  margin: 5% auto;
-}
-
-.buttonSpacing {
-  margin: 2% auto;
+  margin: 3% auto;
 }
 
 #blurb {
@@ -293,9 +298,13 @@ ul.navbar a:hover {
 }
 
 .plate {
+  display: block;
   width: 75%;
+  max-width: 400px;
   margin: 10px auto;
+  border: 1px solid transparent;
   padding: 10px;
+  white-space: nowrap;
   text-align: center;
   font-style: italic;
   color: var(--white-one);
@@ -530,9 +539,8 @@ ul.navbar a:hover {
     grid-area: button;
   }
 
-  #aboutButton.buttonSpacing {
-    margin: 0;
-    margin-right: auto;
+  #aboutButton a.button {
+    margin: 2% auto 2% 0;
   }
 
   #musicIntro h2 {
@@ -608,7 +616,7 @@ ul.navbar a:hover {
     width: 65%;
   }
 
-  #projectsButton a div.button {
+  #projectsButton a.button {
     margin: 2% auto 4%;
   }
 
