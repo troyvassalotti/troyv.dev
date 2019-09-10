@@ -21,8 +21,8 @@
 html {
   font-size: 21px;
   font-family: "Montserrat", "Merriweather", serif;
-  background-color: #FDFFFC;
-  color: #131112;
+  background-color: var(--white-two);
+  color: var(--black-one);
 }
 
 /* Style page content to push to the right when you open the side navigation */
@@ -76,16 +76,12 @@ h6 {
 *** link styles ***
 */
 a {
-  color: #279af1;
+  color: var(--blue-one);
   text-decoration: none;
 }
 
-a:visited {
-  color: #27ae60;
-}
-
 a:hover {
-  color: #f2994a;
+  color: var(--magenta);
 }
 
 /*
@@ -98,7 +94,7 @@ a:hover {
   z-index: 1; /* Stay on top */
   top: 0;
   left: 0;
-  background-color: #131112; /* Black*/
+  background-color: var(--black-one); /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 10vh;
   transition: .5s; /* 0.5 second transition effect to slide in the sidenav */
@@ -112,7 +108,7 @@ a:hover {
   font-size: 36px;
   margin-left: 50px;
   text-decoration: none;
-  color: #f7f7ff;
+  color: var(--white-one);
 }
 
 ul.navbar {
@@ -136,7 +132,7 @@ ul.navbar li {
 }
 
 ul.navbar a {
-  color: #f7f7ff;
+  color: var(--white-one);
   display: block;
   padding: 10px;
   text-decoration: none;
@@ -144,8 +140,8 @@ ul.navbar a {
 }
 
 ul.navbar a:hover {
-  background-color: #f7f7ff;
-  color: #131112;
+  background-color: var(--white-one);
+  color: var(--black-one);
   transition: .3s;
 }
 
@@ -161,6 +157,10 @@ ul.navbar a:hover {
 /*
 *** content styles ***
 */
+#notebookHeader, #notepad {
+  padding: 0 2%;
+}
+
 .spacer {
   height: 50px;
 }
@@ -196,18 +196,18 @@ ul.navbar a:hover {
 .button {
   width: 275px;
   text-align: center;
-  background-color: #279af1;
+  background-color: var(--blue-one);
   border-radius: 20px;
   font-size: 1.30rem;
   padding: 10px;
-  color: #f7f7ff;
+  color: var(--white-one);
   margin: 5% auto;
 }
 
 .button:hover, #ah:hover, #fr:hover {
   transition: .3s;
-  color: #131112;
-  background-color: #f2c94c;
+  color: var(--black-one);
+  background-color: var(--gold);
 }
 
 #resumeButton {
@@ -243,8 +243,8 @@ ul.navbar a:hover {
 }
 
 #whatsThis {
-  background-color: #131112;
-  color: #f7f7ff;
+  background-color: var(--black-one);
+  color: var(--white-one);
 }
 
 #whatsThis h2, #myBands h2 {
@@ -256,7 +256,7 @@ ul.navbar a:hover {
 }
 
 #musicIntro {
-  color: #f7f7ff;
+  color: var(--white-one);
   position: relative;
 }
 
@@ -298,15 +298,15 @@ ul.navbar a:hover {
   padding: 10px;
   text-align: center;
   font-style: italic;
-  color: #f7f7ff;
+  color: var(--white-one);
 }
 
 #ah {
-  background-color: #9b51e0;
+  background-color: var(--purple-one);
 }
 
 #fr {
-  background-color: #131112;
+  background-color: var(--black-one);
 }
 
 #footer {
@@ -314,7 +314,7 @@ ul.navbar a:hover {
   background-size: cover;
   width: 100vw;
   height: 234px;
-  color: #f7f7ff;
+  color: var(--white-one);
   padding: 1% 2%;
   display: flex;
   flex-direction: column;
@@ -326,7 +326,7 @@ ul.navbar a:hover {
 }
 
 #footer a {
-  color: #f7f7ff;
+  color: var(--white-one);
 }
 
 #footer a:hover {
@@ -380,7 +380,7 @@ ul.navbar a:hover {
   .sidenav {
     height: 45px;
     width: 100%;
-    background-color: #ffffff;
+    background-color: var(--white-two);
     overflow-y: hidden;
     padding-top: 0;
     display: block;
@@ -396,12 +396,12 @@ ul.navbar a:hover {
   }
 
   ul.navbar a {
-    color: #131112;
+    color: var(--black-one);
   }
 
   ul.navbar a:hover {
-    background-color: #131112;
-    color: #f7f7ff;
+    background-color: var(--black-one);
+    color: var(--white-one);
   }
   /* end desktop navigation */
 }
@@ -569,12 +569,12 @@ ul.navbar a:hover {
 
   #footer {
     background-image: none;
-    background-color: #f7f7ff;
-    color: #131112
+    background-color: var(--white-one);
+    color: var(--black-one)
   }
 
   #footer a {
-    color: #131112;
+    color: var(--black-one);
   }
 
   #contact {

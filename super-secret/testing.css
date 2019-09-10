@@ -1,41 +1,63 @@
+:root {
+  --black-one: #131112;
+  --black-two: #011627;
+  --grey-one: #60656f;
+  --grey-two: #786c72;
+  --white-one: #f7f7ff;
+  --white-two: #fdfffc;
+  --red: #ff0022;
+  --orange: #f2994a;
+  --gold: #f2c94c;
+  --brown: #c49991;
+  --green: #27ae60;
+  --teal: #41ead4;
+  --blue-one: #279af1;
+  --blue-two: #2d53db;
+  --magenta: #b91372;
+  --purple-one: #9B51E0;
+  --purple-two: #bb6bd9;
+}
+
 html {
   font-size: 21px;
-  font-family: "Merriweather", serif;
+  font-family: "Montserrat", "Merriweather", serif;
+  background-color: var(--white-two);
+  color: var(--black-one);
 }
 
 /* Style page content to push to the right when you open the side navigation */
 #main {
   transition: margin-left .5s;
-  overflow: hidden;
   width: 100%;
-}
-
-body {
   overflow-x: hidden;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* heading styles */
+/*
+*** heading styles ***
+*/
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: "Merriweather Sans", sans-serif;
+  font-family: "Quicksand", sans-serif;
   margin: 0px;
+  font-weight: normal;
 }
 
 h1 {
-  font-size: 1.5rem;
+  font-size: 2.25rem;
 }
 
 h2 {
-  font-size: 1.35rem;
+  font-size: 1.75rem;
 }
 
 h3 {
-  font-size: 1.20rem;
+  font-size: 1.30rem;
 }
 
 h4 {
@@ -50,21 +72,21 @@ h6 {
   font-size: .75rem;
 }
 
-/* link styles */
-a:link {
-  color: #279af1;
-}
-
-a:visited {
-  color: #BF5FFF;
+/*
+*** link styles ***
+*/
+a {
+  color: var(--blue-one);
+  text-decoration: none;
 }
 
 a:hover {
-  color: #131112;
+  color: var(--magenta);
 }
-/* end link styles */
 
-/* The side navigation menu */
+/*
+*** The side navigation menu ***
+*/
 .sidenav {
   height: 100%;
   width: 0; /* 0 width - change this with JavaScript */
@@ -72,15 +94,10 @@ a:hover {
   z-index: 1; /* Stay on top */
   top: 0;
   left: 0;
-  background-color: #131112; /* Black*/
+  background-color: var(--black-one); /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 10vh;
   transition: .5s; /* 0.5 second transition effect to slide in the sidenav */
-}
-
-/* The side navigation menu links */
-.sidenav a {
-  color: #f7f7ff;
 }
 
 /* Position and style the close button (top right corner) */
@@ -91,6 +108,7 @@ a:hover {
   font-size: 36px;
   margin-left: 50px;
   text-decoration: none;
+  color: var(--white-one);
 }
 
 ul.navbar {
@@ -114,25 +132,17 @@ ul.navbar li {
 }
 
 ul.navbar a {
-  color: #f7f7ff;
+  color: var(--white-one);
   display: block;
   padding: 10px;
   text-decoration: none;
-  font-family: "Merriweather Sans", sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 ul.navbar a:hover {
-  background-color: #f7f7ff;
-  color: #131112;
+  background-color: var(--white-one);
+  color: var(--black-one);
   transition: .3s;
-}
-/* end side navigation styles */
-
-.welcome-section {
-  width: 100%;
-  margin: 0px auto 0px;
-  text-align: center;
-  padding-top: 50vh;
 }
 
 #icoOpen {
@@ -144,9 +154,224 @@ ul.navbar a:hover {
   opacity: 0;
 }
 
+/*
+*** content styles ***
+*/
+#notebookHeader, #notepad {
+  padding: 0 2%;
+}
 
-/* desktop styles */
-@media only screen and (min-device-width: 850px) {
+.spacer {
+  height: 50px;
+}
+
+.center {
+  text-align: center;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.welcome {
+  width: 100%;
+  margin: 0 auto 0px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.container {
+  width: 90%;
+  text-align: left;
+  margin: 0 auto;
+}
+
+#headshot {
+  margin: 3% auto 5%;
+  width: 60vw;
+}
+
+.button {
+  width: 275px;
+  text-align: center;
+  background-color: var(--blue-one);
+  border-radius: 20px;
+  font-size: 1.30rem;
+  padding: 10px;
+  color: var(--white-one);
+  margin: 5% auto;
+}
+
+.button:hover, #ah:hover, #fr:hover {
+  transition: .3s;
+  color: var(--black-one);
+  background-color: var(--gold);
+}
+
+#resumeButton {
+  margin: 5% auto;
+}
+
+.buttonSpacing {
+  margin: 2% auto;
+}
+
+#blurb {
+  width: 100%;
+  font-size: .9rem;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0 2%;
+}
+
+.downArrow {
+  width: 100%;
+  margin: 7% auto;
+  text-align: center;
+}
+
+.card {
+  width: 90%;
+  margin: 0 auto 2vh;
+  padding: 2% 2%;
+}
+
+.card h2 {
+  font-weight: bold;
+}
+
+#whatsThis {
+  background-color: var(--black-one);
+  color: var(--white-one);
+}
+
+#whatsThis h2, #myBands h2 {
+  text-align: center;
+}
+
+#briefExplanation {
+  margin: 5% auto;
+}
+
+#musicIntro {
+  color: var(--white-one);
+  position: relative;
+}
+
+#musicIntro::before {
+  content : "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url("images/guitar-tracking-blur.jpg") center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  z-index: -1;
+}
+
+#musicIntro h2 {
+  text-align: right;
+}
+
+.bandLogo {
+  display: block;
+  max-width: 90vw;
+  margin: 30px auto 0;
+}
+
+#ahLogo {
+  width: 50%;
+}
+
+#frLogo {
+  width: 80%;
+}
+
+.plate {
+  width: 75%;
+  margin: 10px auto;
+  padding: 10px;
+  text-align: center;
+  font-style: italic;
+  color: var(--white-one);
+}
+
+#ah {
+  background-color: var(--purple-one);
+}
+
+#fr {
+  background-color: var(--black-one);
+}
+
+#footer {
+  background: url("images/cleveland-blur.png") center;
+  background-size: cover;
+  width: 100vw;
+  height: 234px;
+  color: var(--white-one);
+  padding: 1% 2%;
+  display: flex;
+  flex-direction: column;
+}
+
+#footer h2 {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#footer a {
+  color: var(--white-one);
+}
+
+#footer a:hover {
+  color: #f2c94c;
+  transition: .3s;
+}
+
+.footerRow {
+  display: flex;
+  flex-direction: row;
+}
+
+#contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#myEmail {
+  font-size: 1.15rem;
+}
+
+#social {
+  margin-top: auto;
+  justify-content: space-between;
+  display: flex;
+  align-items: flex-end;
+}
+
+#icons {
+  width: 55%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#builtByMe {
+  font-size: .8rem;
+  display: flex;
+  align-items: flex-end;
+}
+
+/*
+*** desktop styles ***
+*/
+@media only screen and (min-width: 850px) {
   /* begin desktop navigation */
   #topNav, .closebtn {
     display: none;
@@ -155,10 +380,11 @@ ul.navbar a:hover {
   .sidenav {
     height: 45px;
     width: 100%;
-    background-color: #ffffff;
+    background-color: var(--white-two);
     overflow-y: hidden;
     padding-top: 0;
     display: block;
+    position: static;
   }
 
   ul.navbar {
@@ -170,42 +396,283 @@ ul.navbar a:hover {
   }
 
   ul.navbar a {
-    color: #131112;
+    color: var(--black-one);
   }
 
   ul.navbar a:hover {
-    background-color: #131112;
-    color: #f7f7ff;
+    background-color: var(--black-one);
+    color: var(--white-one);
   }
   /* end desktop navigation */
 }
 
 
-@media only screen and (min-device-width: 1024px) {
+@media only screen and (min-width: 1024px) {
   /* headings */
   h1 {
-    font-size: 60px;
+    font-size: 64px;
   }
 
   h2 {
-    font-size: 48px;
+    font-size: 46px;
   }
 
   h3 {
-    font-size: 38px;
-  }
-
-  h4 {
     font-size: 32px;
   }
 
+  h4 {
+    font-size: 30px;
+  }
+
   h5 {
-    font-size: 28px;
+    font-size: 26px;
   }
 
   h6 {
     font-size: 24px;
   }
   /* end headings*/
+
+  /* #sideNavigation {
+    position: sticky;
+  } */
+
+  .welcome {
+    width: 90vw;
+    margin: 5vh auto;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: auto auto 1fr;
+    grid-template-areas:
+      "header img"
+      "button img"
+      "blurb img";
+  }
+
+  .welcome h1 {
+    grid-area: header;
+    margin: 10% auto 5%;
+  }
+
+  .headshot {
+    grid-area: img;
+    align-self: center;
+  }
+
+  #welcomeButton {
+    grid-area: button;
+  }
+
+  #blurb {
+    grid-area: blurb;
+    font-size: revert;
+  }
+
+  #headshot {
+    width: 90%;
+    margin: auto;
+    float: right;
+  }
+
+  .downArrow {
+    margin-bottom: 0;
+    font-size: .7rem;
+  }
+
+  .card {
+    margin-bottom: 5vh;
+  }
+
+  #whatsThis {
+    text-align: center;
+    width: 80%;
+  }
+
+  #whatsThis.card {
+    padding: 2% 0 0;
+  }
+
+  #whatsThis p {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #briefExplanation.card {
+    width: 95vw;
+    padding: 0 1vw;
+  }
+
+  #briefExplanation {
+    display: grid;
+    margin: 5vh auto;
+    grid-template-columns: 35% 65%;
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:
+      ". text"
+      "header text"
+      "button text"
+      ". text";
+  }
+
+  #briefExplanation h2 {
+    grid-area: header;
+  }
+
+  #briefContent {
+    grid-area: text;
+    text-align: right;
+    font-size: .9rem;
+  }
+
+  #aboutButton {
+    grid-area: button;
+  }
+
+  #aboutButton.buttonSpacing {
+    margin: 0;
+    margin-right: auto;
+  }
+
+  #musicIntro h2 {
+    text-align: left;
+  }
+
+  #container-music {
+    display: flex;
+    flex-direction: row;
+    margin: 5vh auto;
+    padding: 0 2vw;
+  }
+
+  #container-bands {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+  }
+
+  #myBands {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .bandLogo {
+    margin: 10px auto;
+  }
+
+  .plate {
+    font-size: .8rem;
+  }
+
+  #footer {
+    background-image: none;
+    background-color: var(--white-one);
+    color: var(--black-one)
+  }
+
+  #footer a {
+    color: var(--black-one);
+  }
+
+  #contact {
+    justify-content: flex-end;
+  }
+
+  #myEmail {
+    margin-right: 10px;
+  }
+
+  #icons {
+    width: 30%;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .welcome {
+    max-width: 1600px;
+  }
+
+  #headshot {
+    width: 75%;
+    float: none;
+  }
+
+  #blurb {
+    padding: 0 6vw;
+  }
+
+  #whatsThis {
+    width: 65%;
+  }
+
+  #projectsButton a div.button {
+    margin: 2% auto 4%;
+  }
+
+  #briefExplanation.card {
+    padding: 0 5vw;
+    width: 90%;
+  }
+
+  #briefExplanation {
+    grid-template-columns: 40% 60%;
+    margin: 3vh auto;
+  }
+
+  #briefContent {
+    text-align: center;
+  }
+
+  #container-music {
+    width: 90vw;
+    padding: 0 5vw;
+    margin-bottom: 0;
+  }
+
+  #actionhamilton, #frontroyal {
+    width: 50%;
+  }
+
+  #frLogo {
+    width: 100%;
+  }
+
+  #musicIntro::before {
+    background-size: revert;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  #headshot {
+    width: 65%;
+  }
+
+  .welcome h1 {
+    margin-bottom: 4%;
+  }
+
+  #whatsThis {
+    width: 60vw;
+  }
+
+  #briefContent {
+    padding: 0 5%;
+    font-size: revert;
+  }
+
+  #briefExplanation.card {
+    width: 80%;
+  }
+
+  #briefExplanation h2 {
+    width: 80%;
+  }
+
+  #icons {
+    width: 20%;
+  }
 }
 /* end desktop styles */
