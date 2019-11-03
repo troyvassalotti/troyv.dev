@@ -368,6 +368,13 @@ ul.navbar a:hover {
   align-items: flex-end;
 }
 
+#easterEgg1 {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
 /*
 *** desktop styles ***
 */
