@@ -4,13 +4,14 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" type="text/css" href="..\normalize.css"/>
-    <link rel="stylesheet" type="text/css" href="testing.css"/>
+    <link rel="stylesheet" type="text/css" href="testing-css.css"/>
     <title>Welcome To The Gridiron</title>
     <meta name="description" content="I come here to test things out."/>
     <link rel="icon" type="image/png" href="..\favicon.png"/>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700|Quicksand:400,700&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous"/>
-    <script src="..\javascript.js" async></script>
+    <link rel="canonical" href="..\index.html"/>
+    <script src="testing-javascript.js" async></script>
 
     <!-- JQuery Core from Google CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" async></script>
@@ -18,7 +19,7 @@
     <!-- begin JQuery functions -->
     <script>
       $(document).ready(function() {
-        $(".welcome-section").css({
+        $("#header").css({
           "background-color": "orange",
           "text-align": "center"
         });
@@ -53,8 +54,8 @@
     <span id="easterEgg1">
       <a href="javascript:void(0)">Click Me</a>
     </span>
-    
-    <section class="welcome-section">
+
+    <section id="header" class="container">
       <h1>Currently Under Construction</h1>
       <h4>Something Better Coming Soon</h4>
     </section>
