@@ -1,29 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i|Quicksand:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="..\..\normalize.css">
-    <link rel="stylesheet" type="text/css" href="..\..\styleV2.css">
-    <link rel="stylesheet" type="text/css" href="landing-page-style.css">
-    <link rel="icon" type="image/png" href="..\..\favicon.png">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="My product landing page project for freeCodeCamp.">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" href="..\..\normalize.css"/>
+    <link rel="stylesheet" type="text/css" href="..\..\styleV2.css"/>
+    <link rel="stylesheet" type="text/css" href="landing-page-style.css"/>
     <title>Product Landing Page | Troy Vassalotti</title>
-
-    <!-- icons courtesy of FontAwesome: https://fontawesome.com/license/free -->
-    <script src="https://kit.fontawesome.com/4cb891a010.js"></script>
-    <script src="..\..\javascript.js"></script>
-
-    <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us17.list-manage.com","uuid":"4e13673cf275ea95a06b67103","lid":"fc567fa48a","uniqueMethods":true}) })</script>
-
+    <meta name="description" content="My product landing page project for freeCodeCamp."/>
+    <link rel="icon" type="image/png" href="..\..\favicon.png"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700|Quicksand:400,700&display=swap" rel="stylesheet"/>
+    <script src="..\..\javascript.js" async></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous"/>
+    <script src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false" async></script>
+    <script>window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us17.list-manage.com","uuid":"4e13673cf275ea95a06b67103","lid":"fc567fa48a","uniqueMethods":true}) })</script>
   </head>
   <body id="main" class="landingPage">
-    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js" async></script>
     <div id="topNav">
-      <a href="#" onclick="openNav()">
+      <a href="javascript:void(0)" onclick="openNav()">
         <svg width="30" height="30" id="icoOpen">
           <path d="M0,5 30,5" stroke="#131112" stroke-width="5"/>
           <path d="M0,14 30,14" stroke="#131112" stroke-width="5"/>
@@ -37,20 +32,17 @@
         <li>
           <a href="..\..\index.html">Home</a>
         </li>
-        <!-- <li>
-          <a href="https://troyvassalotti.wixsite.com/portfolio" target="_blank">About Me</a>
-        </li> -->
         <li>
-          <a href="https://frontroyalmd.bandcamp.com" target="_blank">Front Royal</a>
+          <a href="https://frontroyalmd.bandcamp.com" target="_blank" rel="noreferrer">Front Royal</a>
         </li>
         <li>
-          <a href="https://actionhamilton.bandcamp.com" target="_blank">Action Hamilton</a>
+          <a href="https://actionhamilton.bandcamp.com" target="_blank" rel="noreferrer">Action Hamilton</a>
         </li>
         <li>
-          <a href="https://github.com/actionhamilton" target="_blank">GitHub</a>
+          <a href="https://github.com/actionhamilton" target="_blank" rel="noreferrer">GitHub</a>
         </li>
         <li>
-          <a href="https://www.freecodecamp.org/actionhamilton" target="_blank">freeCodeCamp</a>
+          <a href="https://www.freecodecamp.org/actionhamilton" target="_blank" rel="noreferrer">freeCodeCamp</a>
         </li>
         <li>
           <a href="fccportfolio.html">Projects</a>
@@ -59,7 +51,10 @@
     </nav>
     <header id="header">
       <div id="logo-div">
-        <img src="..\..\images\fr_logo.png" id="header-img">
+        <picture>
+          <source srcset="..\..\images\fr_logo.webp" type="image/webp"/>
+          <img src="..\..\images\fr_logo.png" id="header-img" alt="Front Royal logo"/>
+        </picture>
       </div>
       <nav id="nav-bar">
         <ul>
@@ -89,7 +84,10 @@
       <div class="album" id="tbntt">
         <div>
           <div class="artwork-div">
-            <img class="artwork" src="..\..\images\FR_TheBandNotTheTown_C1.png" alt="The band, not the town">
+            <picture>
+              <source srcset="..\..\images\FR_TBNTT.webp" type="image/webp"/>
+              <img class="artwork" src="..\..\images\FR_TBNTT_408x408.jpg" alt="The band, not the town"/>
+          </picture>
           </div>
           <div class="albumTitle">
             <h3>The Band, Not The Town</h3>
@@ -102,14 +100,17 @@
             </ol>
           </div>
         </div>
-          <a href="https://frontroyalmd.bandcamp.com/album/the-band-not-the-town" target="_blank">
+          <a href="https://frontroyalmd.bandcamp.com/album/the-band-not-the-town" target="_blank" rel="noreferrer">
             <div class="button">Buy Here</div>
           </a>
       </div>
       <div class="album" id="adhfh">
         <div>
           <div class="artwork-div">
-            <img class="artwork" src="..\..\images\FR_EP2_Cover.png" alt="All down hill from here">
+            <picture>
+              <source srcset="..\..\images\FR_EP2_Cover.webp" type="image/webp"/>
+              <img class="artwork" src="..\..\images\FR_EP2_Cover_408x408.jpg" alt="All down hill from here"/>
+            </picture>
           </div>
           <div class="albumTitle">
             <h3>All Down Hill From Here</h3>
@@ -125,14 +126,17 @@
             </ol>
           </div>
         </div>
-        <a href="https://frontroyalmd.bandcamp.com/album/all-down-hill-from-here" target="_blank">
+        <a href="https://frontroyalmd.bandcamp.com/album/all-down-hill-from-here" target="_blank" rel="noreferrer">
           <div class="button">Buy Here</div>
         </a>
       </div>
       <div class="album" id="tth">
         <div>
           <div class="artwork-div">
-            <img class="artwork" src="..\..\images\FR_these-things-happen_album_3kx3k.png" alt="These things happen">
+            <picture>
+              <source srcset="..\..\images\FR_TTH.webp" type="image/webp"/>
+              <img class="artwork" src="..\..\images\FR_TTH_408x408.jpg" alt="These things happen"/>
+            </picture>
           </div>
           <div class="albumTitle">
             <h3>These Things Happen</h3>
@@ -148,7 +152,7 @@
             </ol>
           </div>
         </div>
-        <a href="https://frontroyalmd.bandcamp.com/album/these-things-happen" target="_blank">
+        <a href="https://frontroyalmd.bandcamp.com/album/these-things-happen" target="_blank" rel="noreferrer">
           <div class="button">Buy Here</div>
         </a>
       </div>

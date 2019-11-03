@@ -1,27 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i|Quicksand:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="..\..\normalize.css">
-    <link rel="stylesheet" type="text/css" href="..\..\styleV2.css">
-    <link rel="stylesheet" type="text/css" href="projects-style.css">
-    <link rel="icon" type="image/png" href="..\..\favicon.png">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="I'm Troy Vassalotti and this is my projects page.">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" href="..\..\normalize.css"/>
+    <link rel="stylesheet" type="text/css" href="..\..\styleV2.css"/>
+    <link rel="stylesheet" type="text/css" href="projects-style.css"/>
     <title>My Projects | Troy Vassalotti</title>
-
-    <!-- icons courtesy of FontAwesome: https://fontawesome.com/license/free -->
-    <script src="https://kit.fontawesome.com/4cb891a010.js"></script>
-    <script src="..\..\javascript.js"></script>
-
+    <meta name="description" content="I'm Troy Vassalotti and this is my projects page."/>
+    <link rel="icon" type="image/png" href="..\..\favicon.png"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700|Quicksand:400,700&display=swap" rel="stylesheet"/>
+    <script src="..\..\javascript.js" async></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous"/>
   </head>
   <body id="main" class="projectsPage">
-  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js" async></script>
     <div id="topNav">
-      <a href="#" onclick="openNav()">
+      <a href="javascript:void(0)" onclick="openNav()">
         <svg width="30" height="30" id="icoOpen">
           <path d="M0,5 30,5" stroke="#131112" stroke-width="5"/>
           <path d="M0,14 30,14" stroke="#131112" stroke-width="5"/>
@@ -32,46 +27,23 @@
     <nav id="sideNavigation" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
       <ul class="navbar" id="navbar">
-        <li>
-          <a href="..\..\index.html">Home</a>
-        </li>
-        <!-- <li>
-          <a href="https://troyvassalotti.wixsite.com/portfolio" target="_blank">About Me</a>
-        </li> -->
-        <li>
-          <a href="https://frontroyalmd.bandcamp.com" target="_blank">Front Royal</a>
-        </li>
-        <li>
-          <a href="https://actionhamilton.bandcamp.com" target="_blank">Action Hamilton</a>
-        </li>
-        <li>
-          <a href="https://github.com/actionhamilton" target="_blank">GitHub</a>
-        </li>
-        <li>
-          <a href="https://www.freecodecamp.org/actionhamilton" target="_blank">freeCodeCamp</a>
-        </li>
-        <li>
-          <a href="#projects">Projects</a>
-        </li>
+        <li><a href="..\..\index.html">Home</a></li>
+        <li><a href="https://frontroyalmd.bandcamp.com" target="_blank" rel="noreferrer">Front Royal</a></li>
+        <li><a href="https://actionhamilton.bandcamp.com" target="_blank" rel="noreferrer">Action Hamilton</a></li>
+        <li><a href="https://github.com/actionhamilton" target="_blank" rel="noreferrer">GitHub</a></li>
+        <li><a href="https://www.freecodecamp.org/actionhamilton" target="_blank" rel="noreferrer">freeCodeCamp</a></li>
+        <li><a href="#projects" onclick="closeNav()">Projects</a></li>
       </ul>
     </nav>
     <section id="welcome-section" class="center">
       <div id="welcome-wrapper">
         <div>
-          <h1>
-            My Projects
-          </h1>
-          <p>
-            This page also serves as my <span class="italic">Personal Portfolio</span> project for freeCodeCamp.org.
-          </p>
-          <p>
-            Why not kill two birds with one stone?
-          </p>
+          <h1>My Projects</h1>
+          <p>This page also serves as my <span class="italic">Personal Portfolio</span> project for freeCodeCamp.org.</p>
+          <p>Why not kill two birds with one stone?</p>
           <div>
             <a href="#projects">
-              <div class="button">
-                Show My Work
-              </div>
+              <div class="button">Show My Work</div>
             </a>
           </div>
         </div>
@@ -82,61 +54,57 @@
       <section id="projects-container">
         <div class="project-tile">
           <a href="fcctribute.html">
-            <img src="..\..\images\tribute-page.jpg" alt="Tribute page for my freeCodeCamp certification">
+            <picture>
+              <source srcset="..\..\images\tribute-page.webp" type="image/webp"/>
+              <img src="..\..\images\tribute-page_600x338.jpg" alt="Tribute page for my freeCodeCamp certification">
+            </picture>
             <h3>Tribute Page</h3>
           </a>
         </div>
         <div class="project-tile">
           <a href="fccsurvey.html">
-            <img src="..\..\images\survey-page.jpg" alt="Survey Page">
+            <picture>
+              <source srcset="..\..\images\survey-page.webp" type="image/webp"/>
+              <img src="..\..\images\survey-page_600x338.jpg" alt="Survey Page">
+            </picture>
             <h3>Survey Page</h3>
           </a>
         </div>
         <div class="project-tile">
           <a href="fccproductlandingpage.html">
-            <img src="..\..\images\landing-page.jpg" alt="Product Landing Page">
+            <picture>
+              <source srcset="..\..\images\landing-page.webp" type="image/webp"/>
+              <img src="..\..\images\landing-page_600x338.jpg" alt="Product Landing Page"/>
+            </picture>
             <h3>Product Landing Page</h3>
           </a>
         </div>
         <div class="project-tile">
           <a href="fccdocumentation.html">
-            <img src="..\..\images\documentation-page.jpg" alt="Technical Documentation">
+            <picture>
+              <source srcset="..\..\images\documentation-page.webp" type="image/webp"/>
+              <img src="..\..\images\documentation-page_600x338.jpg" alt="Technical Documentation"/>
+            </picture>
             <h3>Technical Documentation</h3>
           </a>
         </div>
       </section>
     </div>
-    <section id="footer">
+    <footer id="footer">
       <h2>Contact Me</h2>
         <div class="footerRow" id="contact">
-          <div id="myEmail">
-            <a href="mailto:troyvassalotti@gmail.com" target="_blank">
-              troyvassalotti@gmail.com
-            </a>
-          </div>
-          <a href="mailto:troyvassalotti@gmail.com" target="_blank">
-            <i class="far fa-envelope fa-3x"></i>
-          </a>
+          <div id="myEmail"><a href="mailto:troyvassalotti@gmail.com" target="_blank">troyvassalotti@gmail.com</a></div>
+          <a href="mailto:troyvassalotti@gmail.com" target="_blank"><i class="far fa-envelope fa-3x"></i></a>
         </div>
       <div class="footerRow" id="social">
         <div id="icons">
-          <a href="https://github.com/actionhamilton" target="_blank">
-            <i class="fab fa-github fa-2x"></i>
-          </a>
-          <a href="https://www.freecodecamp.org/actionhamilton" target="_blank">
-            <i class="fab fa-free-code-camp fa-2x"></i>
-          </a>
-          <a href="https://www.instagram.com/actionhamilton/" target="_blank">
-            <i class="fab fa-instagram fa-2x"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/troy-vassalotti-468053142/" target="_blank">
-            <i class="fab fa-linkedin fa-2x"></i>
-          </a>
+          <a href="https://github.com/actionhamilton" target="_blank" rel="noreferrer"><i class="fab fa-github fa-2x"></i></a>
+          <a href="https://www.freecodecamp.org/actionhamilton" target="_blank" rel="noreferrer"><i class="fab fa-free-code-camp fa-2x"></i></a>
+          <a href="https://www.instagram.com/actionhamilton/" target="_blank" rel="noreferrer"><i class="fab fa-instagram fa-2x"></i></a>
+          <a href="https://www.linkedin.com/in/troy-vassalotti-468053142/" target="_blank" rel="noreferrer"><i class="fab fa-linkedin fa-2x"></i></a>
         </div>
-        <div id="builtByMe">
-          Built by me in 2019
-        </div>
+        <div id="builtByMe">Built by me in 2019</div>
       </div>
-    </section>
+    </footer>
   </body>
 </html>

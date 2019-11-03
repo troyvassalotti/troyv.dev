@@ -4,62 +4,42 @@
   right: 0;
   z-index: 1;
 }
-
-.technicalPage {
-  padding-top: 25px;
-}
-
-header {
-  font-size: 2rem;
-}
-
+.technicalPage {padding-top: 25px;}
+header {font-size: 2rem;}
 #navbar header {
   text-align: center;
   padding-top: 5vh;
 }
-
 #navbar {
   width: 100%;
   font-size: 95%;
-  background-color: #fdfffc;
+  background-color: var(--white-two);
   margin: 0px auto 10px;
 }
-
 #navbar ul {
   overflow-y: auto;
-  border: 1px solid #131112;
+  border: 1px solid var(--black-one);;
   height: 20vh;
   padding: 1% 0 0 2%;
   list-style: none;
   margin: 2vh auto 0;
+  background-color: var(--black-one);;
 }
-
-#navbar ul a {
-  color: #131112;
-}
-
-#main-doc {
-  padding: 3%;
-}
-
+#navbar ul a {color: var(--white-two);}
+#main-doc {padding: 3%;}
 .nav-link {
   text-decoration: none;
-  color: #131112;
+  color: var(--black-one);;
 }
-
-.main-section {
-  padding: 0 0 2%;
-}
-
+.main-section {padding: 0 0 2%;}
 code {
   white-space: pre-wrap;
   font-size: 12px;
-  background-color: #60656f;
-  color: #f7f7ff;
+  background-color: var(--grey-one);
+  color: var(--white-one);
   display: block;
   line-height: 1.5;
 }
-
 
 @media only screen and (min-width: 815px) {
   #main-doc {
@@ -67,35 +47,27 @@ code {
     left: 354px;
     padding: 1% 1% 0 1%;
   }
-
   #navbar {
     position: fixed;
     left: 0;
     top: 0;
     border-right: 4px solid var(--black-one);
-    background-color: #f7f7ff;
+    background-color: var(--white-one);
     padding-right: 4px;
     height: 100%;
     width: 350px;
   }
-
   #navbar ul {
     height: 100%;
     border: none;
   }
-
-  #navbar header {
-    font-size: 36px;
-  }
-
+  #navbar header {font-size: 36px;}
   #navbar li {
-    border-bottom: 1px solid #131112;
+    border-bottom: 1px solid var(--black-one);;
     padding: 20px 10px 10px;
     position: relative;
     width: 100%;
+    color: var(--black-one);
   }
-
-  code {
-    font-size: .9rem;
-  }
+  code {font-size: .9rem;}
 }

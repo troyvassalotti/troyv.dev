@@ -1,25 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i|Quicksand:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="normalize.css">
-    <link rel="stylesheet" type="text/css" href="styleV2.css">
-    <link rel="icon" type="image/png" href="favicon.png">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Here are a collection of emails I have built upon.">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="robots" content="noindex, nofollow"/>
+    <link rel="stylesheet" type="text/css" href="normalize.css"/>
+    <link rel="stylesheet" type="text/css" href="styleV2.css"/>
     <title>Emails | Troy Vassalotti</title>
-
-    <!-- icons courtesy of FontAwesome: https://fontawesome.com/license/free -->
-    <script src="https://kit.fontawesome.com/4cb891a010.js"></script>
-    <script src="javascript.js"></script>
-
+    <meta name="description" content="Here are a collection of emails I have built upon."/>
+    <link rel="icon" type="image/png" href="favicon.png"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700|Quicksand:400,700&display=swap" rel="stylesheet"/>
+    <script src="javascript.js" async></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous"/>
   </head>
   <body id="main" class="emails">
     <div id="topNav">
-      <a href="#" onclick="openNav()">
+      <a href="javascript:void(0)" onclick="openNav()">
         <svg width="30" height="30" id="icoOpen">
           <path d="M0,5 30,5" stroke="#131112" stroke-width="5"/>
           <path d="M0,14 30,14" stroke="#131112" stroke-width="5"/>
@@ -30,27 +26,12 @@
     <nav id="sideNavigation" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
       <ul class="navbar" id="navbar">
-        <li>
-          <a href="index.html">Home</a>
-        </li>
-        <!-- <li>
-          <a href="https://troyvassalotti.wixsite.com/portfolio" target="_blank">About Me</a>
-        </li> -->
-        <li>
-          <a href="https://frontroyalmd.bandcamp.com" target="_blank">Front Royal</a>
-        </li>
-        <li>
-          <a href="https://actionhamilton.bandcamp.com" target="_blank">Action Hamilton</a>
-        </li>
-        <li>
-          <a href="https://github.com/actionhamilton" target="_blank">GitHub</a>
-        </li>
-        <li>
-          <a href="https://www.freecodecamp.org/actionhamilton" target="_blank">freeCodeCamp</a>
-        </li>
-        <li>
-          <a href="freecodecamp/responsive-web-design/fccportfolio.html">Projects</a>
-        </li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="https://frontroyalmd.bandcamp.com" target="_blank" rel="noreferrer">Front Royal</a></li>
+        <li><a href="https://actionhamilton.bandcamp.com" target="_blank" rel="noreferrer">Action Hamilton</a></li>
+        <li><a href="https://github.com/actionhamilton" target="_blank" rel="noreferrer">GitHub</a></li>
+        <li><a href="https://www.freecodecamp.org/actionhamilton" target="_blank" rel="noreferrer">freeCodeCamp</a></li>
+        <li><a href="freecodecamp/responsive-web-design/fccportfolio.html">Projects</a></li>
       </ul>
     </nav>
 
@@ -60,5 +41,22 @@
       <ul>
         <li><a href="emails/email1.html">Email 1</a></li>
     </section>
+
+    <footer id="footer">
+      <h2>Contact Me</h2>
+        <div class="footerRow" id="contact">
+          <div id="myEmail"><a href="mailto:troyvassalotti@gmail.com" target="_blank">troyvassalotti@gmail.com</a></div>
+          <a href="mailto:troyvassalotti@gmail.com" target="_blank"><i class="far fa-envelope fa-3x"></i></a>
+        </div>
+      <div class="footerRow" id="social">
+        <div id="icons">
+          <a href="https://github.com/actionhamilton" target="_blank" rel="noreferrer"><i class="fab fa-github fa-2x"></i></a>
+          <a href="https://www.freecodecamp.org/actionhamilton" target="_blank" rel="noreferrer"><i class="fab fa-free-code-camp fa-2x"></i></a>
+          <a href="https://www.instagram.com/actionhamilton/" target="_blank" rel="noreferrer"><i class="fab fa-instagram fa-2x"></i></a>
+          <a href="https://www.linkedin.com/in/troy-vassalotti-468053142/" target="_blank" rel="noreferrer"><i class="fab fa-linkedin fa-2x"></i></a>
+        </div>
+        <div id="builtByMe">Built by me in 2019</div>
+      </div>
+    </footer>
   </body>
 </html>

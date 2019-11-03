@@ -1,25 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i|Quicksand:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="normalize.css">
-    <link rel="stylesheet" type="text/css" href="styleV2.css">
-    <link rel="icon" type="image/png" href="favicon.png">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Watch as Troy Vassalotti learns his way around a computer.">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" href="normalize.css"/>
+    <link rel="stylesheet" type="text/css" href="styleV2.css"/>
     <title>Welcome | Troy Vassalotti</title>
-
-    <!-- icons courtesy of FontAwesome: https://fontawesome.com/license/free -->
-    <script src="https://kit.fontawesome.com/4cb891a010.js"></script>
-    <script src="javascript.js"></script>
-
+    <meta name="description" content="Watch as Troy Vassalotti learns his way around a computer."/>
+    <link rel="icon" type="image/png" href="favicon.png"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700|Quicksand:400,700&display=swap" rel="stylesheet"/>
+    <script src="javascript.js" async></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous"/>
   </head>
   <body id="main" class="homepage">
     <div id="topNav">
-      <a href="#" onclick="openNav()">
+      <a href="javascript:void(0)" onclick="openNav()">
         <svg width="30" height="30" id="icoOpen">
           <path d="M0,5 30,5" stroke="#131112" stroke-width="5"/>
           <path d="M0,14 30,14" stroke="#131112" stroke-width="5"/>
@@ -30,98 +25,59 @@
     <nav id="sideNavigation" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
       <ul class="navbar" id="navbar">
-        <li>
-          <a href="index.html">Home</a>
-        </li>
-        <!-- <li>
-          <a href="https://troyvassalotti.wixsite.com/portfolio" target="_blank">About Me</a>
-        </li> -->
-        <li>
-          <a href="https://frontroyalmd.bandcamp.com" target="_blank" rel="noreferrer">Front Royal</a>
-        </li>
-        <li>
-          <a href="https://actionhamilton.bandcamp.com" target="_blank" rel="noreferrer">Action Hamilton</a>
-        </li>
-        <li>
-          <a href="https://github.com/actionhamilton" target="_blank" rel="noreferrer">GitHub</a>
-        </li>
-        <li>
-          <a href="https://www.freecodecamp.org/actionhamilton" target="_blank" rel="noreferrer">freeCodeCamp</a>
-        </li>
-        <li>
-          <a href="freecodecamp/responsive-web-design/fccportfolio.html">Projects</a>
-        </li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="https://frontroyalmd.bandcamp.com" target="_blank" rel="noreferrer">Front Royal</a></li>
+        <li><a href="https://actionhamilton.bandcamp.com" target="_blank" rel="noreferrer">Action Hamilton</a></li>
+        <li><a href="https://github.com/actionhamilton" target="_blank" rel="noreferrer">GitHub</a></li>
+        <li><a href="https://www.freecodecamp.org/actionhamilton" target="_blank" rel="noreferrer">freeCodeCamp</a></li>
+        <li><a href="freecodecamp/responsive-web-design/fccportfolio.html">Projects</a></li>
       </ul>
     </nav>
     <section class="welcome">
       <h1>Hey, I'm Troy</h1>
       <div class="headshot">
         <picture>
-          <source srcset="images/headshot-arrow.webp" type="image/webp">
-          <img src="images/headshot-arrow.png" alt="This is me. I look like this." id="headshot">
+          <source srcset="images/headshot-arrow.webp" type="image/webp"/>
+          <img src="images/headshot-arrow.png" alt="This is me. I look like this." id="headshot"/>
         </picture>
       </div>
       <div id="welcomeButton">
         <h3>And I'm still figuring things out.</h3>
         <div id="resumeButton">
-          <a href="docs/resume.pdf" target="_blank" class="button">
-            View Resumé
-          </a>
+          <a href="docs/resume.pdf" target="_blank" class="button">View Resumé</a>
         </div>
       </div>
       <div id="blurb">
         Email marketer by day, aspiring musician and web developer by night...as long as I’m in bed at a reasonable time.
-        <div class="downArrow">
-          <i class="fas fa-arrow-down fa-3x"></i>
-        </div>
+        <div class="downArrow"><i class="fas fa-arrow-down fa-3x"></i></div>
       </div>
     </section>
     <section class="card" id="whatsThis">
       <h2>What's This?</h2>
-        <p>
-          I never expected to be doing what I’m doing today, but I’m enjoying every second of it.
-        </p>
-        <p>
-          Take a look at my projects, learn more about who I am, and don’t hesitate to say hi.
-        </p>
+        <p>I never expected to be doing what I’m doing today, but I’m enjoying every second of it.</p>
+        <p>Take a look at my projects, learn more about who I am, and don’t hesitate to say hi.</p>
       <div id="projectsButton">
-        <a class="button" href="freecodecamp/responsive-web-design/fccportfolio.html">
-          My Projects
-        </a>
+        <a class="button" href="freecodecamp/responsive-web-design/fccportfolio.html">My Projects</a>
       </div>
     </section>
     <section class="card" id="briefExplanation">
       <h2>A Brief Explanation of Me</h2>
       <div id="briefContent">
-        <p>
-          A Towson University graduate with a bachelor's degree in marketing. You can find me somewhere between Frederick and Baltimore. My passions include music, exercising, coding, behavioral economics, and always learning new things.
-        </p>
-        <p>
-          Since 2017, when I started my career, I've been working directly on email marketing and SEO, with additional projects in the ecommerce and CMS platform, Magento. It was through this experience that I found my love of coding.
-        </p>
-        <p>
-          So, let's talk. I'd love to talk, especially if it includes coffee.
-        </p>
+        <p>A Towson University graduate with a bachelor's degree in marketing. You can find me somewhere between Frederick and Baltimore. My passions include music, exercising, coding, behavioral economics, and always learning new things.</p>
+        <p>Since 2017, when I started my career, I've been working directly on email marketing and SEO, with additional projects in the ecommerce and CMS platform, Magento. It was through this experience that I found my love of coding.</p>
+        <p>So, let's talk. I'd love to talk, especially if it includes coffee.</p>
       </div>
       <div id="aboutButton">
-        <a class="button" href="mailto:troyvassalotti@gmail.com" target="_blank">
-          Email Me
-        </a>
+        <a class="button" href="mailto:troyvassalotti@gmail.com" target="_blank">Email Me</a>
       </div>
     </section>
     <div id="container-music">
     <section class="card" id="musicIntro">
       <div id="musicContent">
         <h2>Didn't You Say Music?</h2>
-        <p>
-          I did. I’ve been playing guitar since I was ~11, drums since I was ~18, and performing live since I was ~17.
-        </p>
-        <p>
-          I currently play and write in Front Royal and am the sole member of Action Hamilton.
-        </p>
-        <p>
-          Check out my music below - I love the feedback!
-        </p>
+        <p>I did. I’ve been playing guitar since I was ~11, drums since I was ~18, and performing live since I was ~17.</p>
+        <p>I currently play and write in Front Royal and am the sole member of Action Hamilton.</p>
+        <p>Check out my music below - I love the feedback!</p>
       </div>
     </section>
     <section class="card" id="myBands">
@@ -131,62 +87,42 @@
         <div>
           <a href="https://actionhamilton.bandcamp.com" target="_blank" rel="noreferrer">
             <picture>
-              <source srcset="images/Action-Hamilton-Logo.webp" type="image/webp">
-              <img src="images/Action-Hamilton-Logo.png" alt="Action Hamilton Logo" class="bandLogo" id="ahLogo">
+              <source srcset="images/Action-Hamilton-Logo.webp" type="image/webp"/>
+              <img src="images/Action-Hamilton-Logo.png" alt="Action Hamilton Logo" class="bandLogo" id="ahLogo"/>
             </picture>
           </a>
-          <a class="plate" id="ah" href="https://actionhamilton.bandcamp.com" target="_blank" rel="noreferrer">
-              Action Hamilton
-          </a>
+          <a class="plate" id="ah" href="https://actionhamilton.bandcamp.com" target="_blank" rel="noreferrer">Action Hamilton</a>
         </div>
       </div>
       <div id="frontroyal">
         <div>
           <a href="https://frontroyalmd.bandcamp.com" target="_blank" rel="noreferrer">
             <picture>
-              <source srcset="images/fr_logo.webp" type="image/webp">
-              <img src="images/fr_logo.png" alt="Front Royal Logo" class="bandLogo" id="frLogo">
+              <source srcset="images/fr_logo.webp" type="image/webp"/>
+              <img src="images/fr_logo.png" alt="Front Royal Logo" class="bandLogo" id="frLogo"/>
             </picture>
           </a>
-          <a class="plate" id="fr" href="https://frontroyalmd.bandcamp.com" target="_blank" rel="noreferrer">
-            Front Royal
-          </a>
+          <a class="plate" id="fr" href="https://frontroyalmd.bandcamp.com" target="_blank" rel="noreferrer">Front Royal</a>
         </div>
       </div>
       </div>
     </section>
     </div>
-    <section id="footer">
+    <footer id="footer">
       <h2>Contact Me</h2>
         <div class="footerRow" id="contact">
-          <div id="myEmail">
-            <a href="mailto:troyvassalotti@gmail.com" target="_blank">
-              troyvassalotti@gmail.com
-            </a>
-          </div>
-          <a href="mailto:troyvassalotti@gmail.com" target="_blank">
-            <i class="far fa-envelope fa-3x"></i>
-          </a>
+          <div id="myEmail"><a href="mailto:troyvassalotti@gmail.com" target="_blank">troyvassalotti@gmail.com</a></div>
+          <a href="mailto:troyvassalotti@gmail.com" target="_blank"><i class="far fa-envelope fa-3x"></i></a>
         </div>
       <div class="footerRow" id="social">
         <div id="icons">
-          <a href="https://github.com/actionhamilton" target="_blank" rel="noreferrer">
-            <i class="fab fa-github fa-2x"></i>
-          </a>
-          <a href="https://www.freecodecamp.org/actionhamilton" target="_blank" rel="noreferrer">
-            <i class="fab fa-free-code-camp fa-2x"></i>
-          </a>
-          <a href="https://www.instagram.com/actionhamilton/" target="_blank" rel="noreferrer">
-            <i class="fab fa-instagram fa-2x"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/troy-vassalotti-468053142/" target="_blank" rel="noreferrer">
-            <i class="fab fa-linkedin fa-2x"></i>
-          </a>
+          <a href="https://github.com/actionhamilton" target="_blank" rel="noreferrer"><i class="fab fa-github fa-2x"></i></a>
+          <a href="https://www.freecodecamp.org/actionhamilton" target="_blank" rel="noreferrer"><i class="fab fa-free-code-camp fa-2x"></i></a>
+          <a href="https://www.instagram.com/actionhamilton/" target="_blank" rel="noreferrer"><i class="fab fa-instagram fa-2x"></i></a>
+          <a href="https://www.linkedin.com/in/troy-vassalotti-468053142/" target="_blank" rel="noreferrer"><i class="fab fa-linkedin fa-2x"></i></a>
         </div>
-        <div id="builtByMe">
-          Built by me in 2019
-        </div>
+        <div id="builtByMe">Built by me in 2019</div>
       </div>
-    </section>
+    </footer>
   </body>
 </html>

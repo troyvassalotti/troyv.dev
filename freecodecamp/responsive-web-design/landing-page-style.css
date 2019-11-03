@@ -4,25 +4,19 @@
   right: 0;
   z-index: 1;
 }
-
 header {
-  border-bottom: 1px solid #131112;
+  border-bottom: 1px solid var(--black-one);
   padding-bottom: 5px;
   position: sticky;
   top: 0;
-  background-color: #fdfffc;
+  background-color: var(--white-two);
 }
-
-#logo-div {
-  margin: 0 auto;
-}
-
+#logo-div {margin: 0 auto;}
 #header-img {
   display: block;
   max-width: 150px;
   margin: 0 auto;
 }
-
 #nav-bar ul {
   margin: 0 auto;
   padding: 0;
@@ -32,93 +26,63 @@ header {
   text-align: center;
   font-size: .75rem;
 }
-
-#nav-bar a {
-  color: #131112;
-}
-
+#nav-bar a {color: var(--black-one);}
 #email-signup {
   margin: 0 auto;
   text-align: center;
 }
-
 #email-signup h1 {
   font-weight: bold;
   margin-bottom: 5px;
 }
-
-#intro-div {
-  margin: 2vh auto;
-}
-
+#intro-div {margin: 2vh auto;}
 #subtitle {
   font-size: 1.15rem;
   margin-bottom: 20px;
 }
-
-#video-div {
-  margin: 0 auto 20px;
-}
-
-#video {
-  width: 100vw;
-}
-
+#video-div {margin: 0 auto 20px;}
+#video {width: 100vw;}
 form {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   width: 80vw;
 }
-
 label {
   font-size: .9rem;
   margin-bottom: 10px;
 }
-
-input {
-  padding: 10px;
-}
-
+input {padding: 10px;}
 input#submit {
   border: none;
-  background-color: #131112;
-  color: #f7f7ff;
+  background-color: var(--black-one);
+  color: var(--white-one);
 }
-
 #products h2 {
   font-weight: bold;
   text-align: center;
 }
-
-.album {
-  margin: 0 auto 5vh;
-}
-
+.album {margin: 0 auto 5vh;}
 .artwork {
   max-width: 204px;
   margin: 10px auto;
   display: block;
 }
-
 .albumTitle h3 {
   font-weight: bold;
   text-align: center;
 }
-
 .tracks ol {
   margin: 7px auto;
   padding-left: 20vw;
 }
-
 .landingPage .button {
-  background-color: #131112;
-  color: #f7f7ff;
+  background-color: var(--black-one);
+  color: var(--white-one);
 }
-
 .landingPage .button:hover {
   background-color: var(--gold);
-  color: #131112;
+  color: var(--black-one);
 }
 
 @media only screen and (min-width: 850px) {
@@ -126,29 +90,17 @@ input#submit {
     justify-content: space-around;
     font-size: .85rem;
   }
-
-  #intro-div {
-    margin-top: 50px;
-  }
-
+  #intro-div {margin-top: 50px;}
   input {
     width: 70%;
     margin: 0 auto;
   }
-
-  .button {
-    margin: 3% auto;
-  }
-
+  .landingPage .button {margin: 3% auto;}
   .artwork {
     width: 40vw;
     max-width: 400px;
   }
-
-  #video {
-    width: 90%;
-  }
-
+  #video {width: 90%;}
   .tracks ol {
     padding-left: 35vw;
     width: 100%;
@@ -156,10 +108,7 @@ input#submit {
 }
 
 @media only screen and (min-width: 1024px) {
-  input {
-    max-width: 500px;
-  }
-
+  input {max-width: 500px;}
   #video {
     width: 70%;
     max-width: 700px;
@@ -167,22 +116,15 @@ input#submit {
 }
 
 @media only screen and (min-width: 1440px) {
-  .button {
-    margin: 20px auto;
-  }
-
+  .landingPage .button {margin: 20px auto;}
   #albums-container {
     display: flex;
     flex-wrap: wrap;
   }
-
   .album {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
-
-  .tracks ol {
-    padding-left: 40px;
-  }
+  .tracks ol {padding-left: 40px;}
 }

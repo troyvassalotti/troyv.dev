@@ -7,63 +7,45 @@
   margin: 0 auto;
   color: var(--white-one);
 }
-
-#welcome-section p {
-  font-size: 1.20rem;
-}
-
+#welcome-section p {font-size: 1.20rem;}
 #welcome-wrapper {
   background-color: var(--grey-one);
   padding: 2vh 3vw;
 }
-
 .projectsPage #topNav {
   position: absolute;
   top: 0;
   right: 0;
 }
-
 #projects h2 {
   text-align: center;
   margin-bottom: 5vh;
 }
-
 .wrapper {
   padding: 2vh 0;
   margin: 0 auto;
   width: 100%;
 }
-
 #projects-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-
 .project-tile {
   margin: 0 auto 4vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-
 .project-tile img {
   display: block;
   max-width: 80vw;
   margin: 0 auto 1vh;
 }
+.project-tile h3 {text-align: center;}
+.project-tile a {color: var(--black-one);}
 
-.project-tile h3 {
-  text-align: center;
-}
-
-.project-tile a {
-  color: #131112;
-}
-
-/*
-*** desktop styles ***
-*/
+/* desktop styles */
 @media only screen and (min-width: 850px) {
   /* make the navbar sticky for desktop on the projects page */
   .projectsPage #sideNavigation {
@@ -73,9 +55,7 @@
 }
 
 @media only screen and (min-width: 1024px) {
-  .project-tile img {
-    max-width: 50vw;
-  }
+  .project-tile img { max-width: 50vw;}
 }
 
 @media only screen and (min-width: 1440px) {
@@ -86,19 +66,13 @@
     display: flex;
     align-items: center;
   }
-
   #projects-container {
     flex-direction: row;
     flex-wrap: wrap;
   }
-
-  .project-tile img {
-    max-width: 40vw;
-  }
+  .project-tile img {max-width: 40vw;}
 }
 
 @media only screen and (min-width: 1800px) {
-  .project-tile img {
-    max-width: 20vw;
-  }
+  .project-tile img {max-width: 20vw;}
 }

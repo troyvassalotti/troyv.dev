@@ -1,27 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i|Quicksand:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="..\..\normalize.css">
-    <link rel="stylesheet" type="text/css" href="..\..\styleV2.css">
-    <link rel="stylesheet" type="text/css" href="tribute-style.css">
-    <link rel="icon" type="image/png" href="..\..\favicon.png">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="My tribute page project for freeCodeCamp.">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" href="..\..\normalize.css"/>
+    <link rel="stylesheet" type="text/css" href="..\..\styleV2.css"/>
+    <link rel="stylesheet" type="text/css" href="tribute-style.css"/>
     <title>Tribute Page | Troy Vassalotti</title>
-
-    <!-- icons courtesy of FontAwesome: https://fontawesome.com/license/free -->
-    <script src="https://kit.fontawesome.com/4cb891a010.js"></script>
-    <script src="..\..\javascript.js"></script>
-
+    <meta name="description" content="My tribute page project for freeCodeCamp."/>
+    <link rel="icon" type="image/png" href="..\..\favicon.png"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700|Quicksand:400,700&display=swap" rel="stylesheet"/>
+    <script src="..\..\javascript.js" async></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous"/>
   </head>
   <body id="main" class="tributePage">
-    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js" async></script>
     <div id="topNav">
-      <a href="#" onclick="openNav()">
+      <a href="javascript:void(0)" onclick="openNav()">
         <svg width="30" height="30" id="icoOpen">
           <path d="M0,5 30,5" stroke="#131112" stroke-width="5"/>
           <path d="M0,14 30,14" stroke="#131112" stroke-width="5"/>
@@ -35,20 +30,17 @@
         <li>
           <a href="..\..\index.html">Home</a>
         </li>
-        <!-- <li>
-          <a href="https://troyvassalotti.wixsite.com/portfolio" target="_blank">About Me</a>
-        </li> -->
         <li>
-          <a href="https://frontroyalmd.bandcamp.com" target="_blank">Front Royal</a>
+          <a href="https://frontroyalmd.bandcamp.com" target="_blank" rel="noreferrer">Front Royal</a>
         </li>
         <li>
-          <a href="https://actionhamilton.bandcamp.com" target="_blank">Action Hamilton</a>
+          <a href="https://actionhamilton.bandcamp.com" target="_blank" rel="noreferrer">Action Hamilton</a>
         </li>
         <li>
-          <a href="https://github.com/actionhamilton" target="_blank">GitHub</a>
+          <a href="https://github.com/actionhamilton" target="_blank" rel="noreferrer">GitHub</a>
         </li>
         <li>
-          <a href="https://www.freecodecamp.org/actionhamilton" target="_blank">freeCodeCamp</a>
+          <a href="https://www.freecodecamp.org/actionhamilton" target="_blank" rel="noreferrer">freeCodeCamp</a>
         </li>
         <li>
           <a href="fccportfolio.html">Projects</a>
@@ -61,13 +53,16 @@
         <div id="subtitle">From the chicken coop to the main stage</div>
       </div>
       <div id="img-div">
-        <img src="..\..\images\buckethead.jpg" id="image">
+        <picture>
+          <source srcset="..\..\images\buckethead.webp" type="image/webp"/>
+          <img src="..\..\images\buckethead.jpg" id="image" alt="Buckethead on stage, looking directly at the camera."/>
+        </picture>
         <div id="img-caption">Buckethead representing KFC and Michael Jordan at the same time.</div>
       </div>
     </section>
     <section id="tribute-info">
       <p>
-        As of writing this, Buckethead has released 305 studio albums, four special releases, and one EP. He's performed on more than 50 albums by other artists since 1988. If you want to check out his music before purchasing, you can find him on <a href="https://open.spotify.com/artist/0fDF0jjmdouCIeWhNnblwV" target="_blank">Spotify</a>.
+        As of writing this, Buckethead has released 305 studio albums, four special releases, and one EP. He's performed on more than 50 albums by other artists since 1988. If you want to check out his music before purchasing, you can find him on <a href="https://open.spotify.com/artist/0fDF0jjmdouCIeWhNnblwV" target="_blank" rel="noreferrer">Spotify</a>.
       </p>
       <div id="facts-container">
         <div class="tribute-fact">
@@ -157,7 +152,7 @@
             Since leaving his various bands between 2010 and 2013, Buckethead has returned to playing solo live shows. He recently released his first live album, <span class="italic">Live From Bucketheadland</span>.
           </p>
           <p>
-            More information about Buckethead can be found <a id="tribute-link" href="https://en.wikipedia.org/wiki/Buckethead" target="_blank">on his Wikipedia entry</a>.
+            More information about Buckethead can be found <a id="tribute-link" href="https://en.wikipedia.org/wiki/Buckethead" target="_blank" rel="noreferrer">on his Wikipedia entry</a>.
         </div>
       </div>
     </section>

@@ -1,27 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i|Quicksand:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="..\..\normalize.css">
-    <link rel="stylesheet" type="text/css" href="..\..\styleV2.css">
-    <link rel="stylesheet" type="text/css" href="survey-style.css">
-    <link rel="icon" type="image/png" href="..\..\favicon.png">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="My survey page project for freeCodeCamp.">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" href="..\..\normalize.css"/>
+    <link rel="stylesheet" type="text/css" href="..\..\styleV2.css"/>
+    <link rel="stylesheet" type="text/css" href="survey-style.css"/>
     <title>Breakfast Survey | Troy Vassalotti</title>
-
-    <!-- icons courtesy of FontAwesome: https://fontawesome.com/license/free -->
-    <script src="https://kit.fontawesome.com/4cb891a010.js"></script>
-    <script src="..\..\javascript.js"></script>
-
+    <meta name="description" content="My survey page project for freeCodeCamp."/>
+    <link rel="icon" type="image/png" href="..\..\favicon.png"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700|Quicksand:400,700&display=swap" rel="stylesheet"/>
+    <script src="..\..\javascript.js" async></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous"/>
   </head>
   <body id="main" class="surveyPage">
-    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js" async></script>
     <div id="topNav">
-      <a href="#" onclick="openNav()">
+      <a href="javascript:void(0)" onclick="openNav()">
         <svg width="30" height="30" id="icoOpen">
           <path d="M0,5 30,5" stroke="#131112" stroke-width="5"/>
           <path d="M0,14 30,14" stroke="#131112" stroke-width="5"/>
@@ -35,20 +30,17 @@
         <li>
           <a href="..\..\index.html">Home</a>
         </li>
-        <!-- <li>
-          <a href="https://troyvassalotti.wixsite.com/portfolio" target="_blank">About Me</a>
-        </li> -->
         <li>
-          <a href="https://frontroyalmd.bandcamp.com" target="_blank">Front Royal</a>
+          <a href="https://frontroyalmd.bandcamp.com" target="_blank" rel="noreferrer">Front Royal</a>
         </li>
         <li>
-          <a href="https://actionhamilton.bandcamp.com" target="_blank">Action Hamilton</a>
+          <a href="https://actionhamilton.bandcamp.com" target="_blank" rel="noreferrer">Action Hamilton</a>
         </li>
         <li>
-          <a href="https://github.com/actionhamilton" target="_blank">GitHub</a>
+          <a href="https://github.com/actionhamilton" target="_blank" rel="noreferrer">GitHub</a>
         </li>
         <li>
-          <a href="https://www.freecodecamp.org/actionhamilton" target="_blank">freeCodeCamp</a>
+          <a href="https://www.freecodecamp.org/actionhamilton" target="_blank" rel="noreferrer">freeCodeCamp</a>
         </li>
         <li>
           <a href="fccportfolio.html">Projects</a>
@@ -79,7 +71,7 @@
         </div>
         <div class="question">
           <div class="labels">
-            <label id="number-label" for="breakfasts">* Breakfasts Per Day:</label>
+            <label id="number-label" for="Breakfast total">* Breakfasts Per Day:</label>
           </div>
           <div class="answer">
             <input class="inputs" id="number" type="number" placeholder="Breakfasts per day" min="0" max="10" required>
@@ -87,11 +79,11 @@
         </div>
         <div class="question">
           <div class="labels">
-            <label for="time of day">When do you prefer to eat breakfast?</label>
+            <label for="Time of day">When do you prefer to eat breakfast?</label>
           </div>
           <div class="answer">
             <select class="dropdowns" id="dropdown" name="timeOfDay">
-              <option disabled value>Select Time</option>
+              <option disabled selected value="">Select Time</option>
               <option value="waking">As I Wake Up</option>
               <option value="early morning">At Work In The Morning</option>
               <option value="midday">Just Before Noon</option>
@@ -105,33 +97,33 @@
         </div>
         <div class="question">
           <div class="labels">
-            <label for="favorite">Which of these do you most prefer?</label>
+            <label for="Favorite Breakfast">Which of these do you most prefer?</label>
           </div>
           <div class="answer">
             <ul class="preference">
               <li>
-                <label>French Toast<input name="breakfast-preference" value="1" type="radio" class="userRatings"></label>
+                <label for="French Toast">French Toast<input name="breakfast-preference" value="1" type="radio" class="userRatings"></label>
               </li>
               <li>
-                <label>Cereal<input name="breakfast-preference" value="2" type="radio" class="userRatings"></label>
+                <label for="Cereal">Cereal<input name="breakfast-preference" value="2" type="radio" class="userRatings"></label>
               </li>
               <li>
-                <label>Eggs<input name="breakfast-preference" value="3" type="radio" class="userRatings"></label>
+                <label for="Eggs">Eggs<input name="breakfast-preference" value="3" type="radio" class="userRatings"></label>
               </li>
               <li>
-                <label>Oatmeal<input name="breakfast-preference" value="4" type="radio" class="userRatings"></label>
+                <label for="Oatmeal">Oatmeal<input name="breakfast-preference" value="4" type="radio" class="userRatings"></label>
               </li>
               <li>
-                <label>English Breakfast<input name="breakfast-preference" value="5" type="radio" class="userRatings"></label>
+                <label for="English Breakfast">English Breakfast<input name="breakfast-preference" value="5" type="radio" class="userRatings"></label>
               </li>
               <li>
-                <label>None of the above<input name="breakfast-preference" value="6" type="radio" class="userRatings"></label>
+                <label for="None of the above">None of the above<input name="breakfast-preference" value="6" type="radio" class="userRatings"></label>
               </li>
           </div>
         </div>
         <div class="question">
           <div class="labels">
-            <label for="explanation">Please Explain Your Reasoning:</label>
+            <label for="Provide an Explanation">Please Explain Your Reasoning:</label>
           </div>
           <div class="answer">
             <textarea placeholder="Write your reasoning here." class="textArea"></textarea>
@@ -144,26 +136,26 @@
           <div class="answer">
             <ul class="preference">
               <li>
-                <label>Denny's<input name="breakfast-place" value="1" type="checkbox"></label>
+                <label for="Denny's">Denny's<input name="breakfast-place" value="1" type="checkbox"></label>
               </li>
               <li>
-                <label>IHOP<input name="breakfast-place" value="2" type="checkbox"></label>
+                <label for="IHOP">IHOP<input name="breakfast-place" value="2" type="checkbox"></label>
               </li>
               <li>
-                <label>Bob Evans<input name="breakfast-place" value="3" type="checkbox"></label>
+                <label for="Bob Evans">Bob Evans<input name="breakfast-place" value="3" type="checkbox"></label>
               </li>
               <li>
-                <label>Waffle House<input name="breakfast-place" value="4" type="checkbox"></label>
+                <label for="Waffle House">Waffle House<input name="breakfast-place" value="4" type="checkbox"></label>
               </li>
               <li>
-                <label>McDonald's<input name="breakfast-place" value="5" type="checkbox"></label>
+                <label for="McDonald's">McDonald's<input name="breakfast-place" value="5" type="checkbox"></label>
               </li>
             </ul>
           </div>
         </div>
         <div class="question">
           <div class="labels">
-            <label for="comments">Any Additional Comments or Concerns?</label>
+            <label for="Additional Comments">Any Additional Comments or Concerns?</label>
           </div>
           <div class="answer">
             <textarea placeholder="Write your comments here." class="textArea"></textarea>
