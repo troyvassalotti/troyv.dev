@@ -1,21 +1,31 @@
+const sideNav = document.getElementById("sideNavigation");
+const main = document.getElementById("main");
+const icon = document.getElementById("icoOpen");
 function openNav() {
-    document.getElementById("sideNavigation").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
-    document.getElementById("icoOpen").classList.toggle("fade");
+    sideNav.style.width = "250px";
+    main.style.marginLeft = "250px";
+    icon.classList.toggle("fade");
 }
 function closeNav() {
-    document.getElementById("sideNavigation").style.width = "0";
-    document.getElementById("main").style.marginLeft = "0";
-    document.getElementById("icoOpen").classList.toggle("fade")
+    sideNav.style.width = "0";
+    main.style.marginLeft = "0";
+    icon.classList.toggle("fade")
 }
 
-var easterEgg1 = document.querySelector("#easterEgg1");
+var easterEgg1 = document.querySelector("#test-easterEgg1");
+// var buttons = Array.from(document.querySelector(".button"));
 function random(number) {
   return Math.floor(Math.random()*(number+1));
 };
 easterEgg1.onclick = function() {
-  var rndCol1 = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
-  var rndCol2 = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
-  document.querySelector(".button").style.backgroundColor = rndCol1;
-  document.querySelector(".button").style.color = rndCol2;
+  var rndCol1 = "rgb(" + random(255) + "," + random(255) + "," + random(255) + ")";
+  var rndCol2 = "rgb(" + random(255) + "," + random(255) + "," + random(255) + ")";
+  buttons.style.backgroundColor = rndCol1;
+  buttons.style.color = rndCol2;
 }
+
+// easterEgg1.onclick = function changeColor(){
+//   Array.from(document.querySelectorAll('button')).map(function(button) {
+//     button.style.backgroundColor="green";
+//   });
+// }

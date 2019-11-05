@@ -4,6 +4,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" type="text/css" href="..\normalize.css"/>
+    <link rel="stylesheet" type="text/css" href="..\styleV2.css"/>
     <link rel="stylesheet" type="text/css" href="testing-css.css"/>
     <title>Welcome To The Gridiron</title>
     <meta name="description" content="I come here to test things out."/>
@@ -11,25 +12,29 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700|Quicksand:400,700&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous"/>
     <link rel="canonical" href="..\index.html"/>
-    <script src="testing-javascript.js" async></script>
 
     <!-- JQuery Core from Google CDN -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" async></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- begin JQuery functions -->
     <script>
       $(document).ready(function() {
-        $("#header").css({
+        $("#test-header").css({
           "background-color": "orange",
           "text-align": "center"
         });
-        $("h1").clone().text("I'm A Clone").appendTo("h1");
+        $("h1").clone().text("JQuery Clone").appendTo("h1");
+        $("#test-section2").css({
+          "background-color": "pink"
+        });
       });
     </script>
     <!-- end JQuery functions -->
 
+
   </head>
   <body id="main" class="gridiron">
+
     <div id="topNav">
       <a href="javascript:void(0)" onclick="openNav()">
         <svg width="30" height="30" id="icoOpen">
@@ -51,14 +56,22 @@
       </ul>
     </nav>
 
-    <span id="easterEgg1">
-      <a href="javascript:void(0)">Click Me</a>
+    <span id="test-easterEgg1">
+      <a href="javascript:void(0)">secret button</a>
     </span>
 
-    <section id="header" class="container">
-      <h1>Currently Under Construction</h1>
+    <section id="test-header" class="test-container">
+      <h1>Under Construction</h1>
       <h4>Something Better Coming Soon</h4>
     </section>
+
+    <div class="test-container">
+      <a class="button" href="#">Button Time</a>
+    </div>
+
+    <div class="test-container" id="test-section2">
+      <a class="button" href="#">Second Button</a>
+    </div>
 
     <footer id="footer">
       <h2>Contact Me</h2>
@@ -76,5 +89,7 @@
         <div id="builtByMe">Built by me in 2019</div>
       </div>
     </footer>
+
+    <script src="testing-javascript.js"></script>
   </body>
 </html>
