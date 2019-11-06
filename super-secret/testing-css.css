@@ -10,11 +10,20 @@
 
 #test-easterEgg1 {
   z-index: 1;
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
-  font-size: .5rem;
-  padding: 5px 5px 0 0;
+  font-size: .6rem;
+  padding: 5px 10px 0 0;
+}
+#egg1btn {
+  color: var(--white-two);
+  background-color: var(--white-two);
+  border: none;
+}
+#egg1btn:hover {
+  color: var(--black-one);
+  border: 2px solid var(--black-one);
 }
 
 /* desktop styles */
