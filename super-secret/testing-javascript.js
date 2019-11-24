@@ -5,35 +5,21 @@ const open = document.getElementById("icoOpen");
 const close = document.getElementById("icoClose");
 var openCount = 0, closeCount = 0;
 function openNav() {
-    sideNav.style.width = "250px";
-    main.style.marginLeft = "250px";
+    sideNav.classList.toggle("openNavSide");
+    main.classList.toggle("openNavMain");
     open.classList.toggle("fade");
     openCount++;
     console.log("Navigation opened " + openCount + " times.");
 }
 function closeNav() {
-    sideNav.style.width = "0";
-    main.style.marginLeft = "0";
-    open.classList.toggle("fade");
+    sideNav.classList.remove("openNavSide");
+    main.classList.remove("openNavMain");
+    open.classList.remove("fade");
     closeCount++;
     console.log("Navigation closed " + closeCount + " times.");
 }
 open.addEventListener("click", openNav);
 close.addEventListener("click", closeNav);
-// create a new function to call openNav when closeNav has been called at least once and the viewport gets higher than 850px.
-
-/*
-function myFunction(x) {
-  if (x.matches) { // If media query matches
-    main.style.marginLeft = 0;
-    openNav();
-  };
-};
-
-var x = window.matchMedia("(min-width: 850px)")
-myFunction(x) // Call listener function at run time
-x.addListener(myFunction) // Attach listener function on state change
-*/
 
 
 // change the color of all buttons at once
