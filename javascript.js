@@ -20,3 +20,20 @@ function closeNav() {
 }
 open.addEventListener("click", openNav);
 close.addEventListener("click", closeNav);
+
+// create a secret button to change button colors
+var easterEgg1 = document.getElementById("egg1btn");
+var buttons = document.querySelectorAll(".button");
+function random(number) {
+  return Math.floor(Math.random()*(number+1));
+};
+function changeColor() {
+  var rndCol1 = "rgb(" + random(255) + "," + random(255) + "," + random(255) + ")";
+  var rndCol2 = "rgb(" + random(255) + "," + random(255) + "," + random(255) + ")";
+  buttons.forEach(function(btn) {
+    btn.style.backgroundColor = rndCol1;
+    btn.style.color = rndCol2;
+    btn.style.transition = ".3s linear";
+  });
+};
+easterEgg1.addEventListener("click", changeColor);
