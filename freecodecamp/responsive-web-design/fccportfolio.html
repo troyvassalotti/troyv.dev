@@ -16,23 +16,23 @@
   <body id="main" class="projectsPage">
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js" async></script>
     <div id="topNav">
-      <a href="javascript:void(0)" onclick="openNav()">
-        <svg width="30" height="30" id="icoOpen">
+      <button id="icoOpen" aria-label="Open the navigation menu">
+        <svg width="30" height="30">
           <path d="M0,5 30,5" stroke="#131112" stroke-width="5"/>
           <path d="M0,14 30,14" stroke="#131112" stroke-width="5"/>
           <path d="M0,23 30,23" stroke="#131112" stroke-width="5"/>
         </svg>
-      </a>
+      </button>
     </div>
     <nav id="sideNavigation" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <button class="closebtn" id="icoClose" aria-label=" Close the navigation menu">&times;</button>
       <ul class="navbar" id="navbar">
         <li><a href="..\..\index.html">Home</a></li>
         <li><a href="https://frontroyalmd.bandcamp.com" target="_blank" rel="noopener">Front Royal</a></li>
         <li><a href="https://actionhamilton.bandcamp.com" target="_blank" rel="noopener">Action Hamilton</a></li>
         <li><a href="https://github.com/troyvassalotti" target="_blank" rel="noopener">GitHub</a></li>
         <li><a href="https://www.freecodecamp.org/troyvassalotti" target="_blank" rel="noopener">freeCodeCamp</a></li>
-        <li><a href="#projects" onclick="closeNav()">Projects</a></li>
+        <li><a href="fccportfolio.html">Projects</a></li>
       </ul>
     </nav>
     <section id="welcome-section" class="center">

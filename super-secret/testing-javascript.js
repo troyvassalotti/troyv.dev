@@ -1,22 +1,25 @@
 // open and close the side navigation on mobile
 const sideNav = document.getElementById("sideNavigation");
 const main = document.getElementById("main");
-const icon = document.getElementById("icoOpen");
+const open = document.getElementById("icoOpen");
+const close = document.getElementById("icoClose");
 var openCount = 0, closeCount = 0;
 function openNav() {
     sideNav.style.width = "250px";
     main.style.marginLeft = "250px";
-    icon.classList.toggle("fade");
+    open.classList.toggle("fade");
     openCount++;
     console.log("Navigation opened " + openCount + " times.");
 }
 function closeNav() {
     sideNav.style.width = "0";
     main.style.marginLeft = "0";
-    icon.classList.toggle("fade");
+    open.classList.toggle("fade");
     closeCount++;
     console.log("Navigation closed " + closeCount + " times.");
 }
+open.addEventListener("click", openNav);
+close.addEventListener("click", closeNav);
 // create a new function to call openNav when closeNav has been called at least once and the viewport gets higher than 850px.
 
 /*
