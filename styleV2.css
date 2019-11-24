@@ -111,8 +111,15 @@ ul.navbar a:hover {
 #icoOpen {
   opacity: 1;
   transition: opacity .5s;
+  background-color: transparent;
+  border: none;
+  padding: 10px 0 0 10px;
 }
 #icoOpen.fade {opacity: 0;}
+#icoClose {
+  background-color: transparent;
+  border: none;
+}
 
 /* content styles */
 .center {text-align: center;}
