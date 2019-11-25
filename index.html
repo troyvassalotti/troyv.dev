@@ -3,13 +3,14 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" type="text/css" href="normalize.css"/>
-    <link rel="stylesheet" type="text/css" href="styleV2.css"/>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css"/>
+    <link rel="stylesheet" type="text/css" href="css/global-styles.css"/>
+    <link rel="stylesheet" type="text/css" href="css/homepage-styles.css"/>
     <title>Welcome | Troy Vassalotti</title>
     <meta name="description" content="Watch as Troy Vassalotti learns his way around a computer."/>
     <link rel="icon" type="image/png" href="favicon.png"/>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700|Quicksand:400,700&display=swap" rel="stylesheet"/>
-    <script src="javascript.js" async></script>
+    <script src="js/javascript.js" async></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous"/>
   </head>
   <body id="main" class="homepage">
@@ -125,5 +126,22 @@
         <div id="builtByMe">Built by me in 2019</div>
       </div>
     </footer>
+    <script>
+    var easterEgg1 = document.getElementById("egg1btn");
+    var buttons = document.querySelectorAll(".button");
+    function random(number) {
+      return Math.floor(Math.random()*(number+1));
+    };
+    function changeColor() {
+      var rndCol1 = "rgb(" + random(255) + "," + random(255) + "," + random(255) + ")";
+      var rndCol2 = "rgb(" + random(255) + "," + random(255) + "," + random(255) + ")";
+      buttons.forEach(function(btn) {
+        btn.style.backgroundColor = rndCol1;
+        btn.style.color = rndCol2;
+        btn.style.transition = ".3s linear";
+      });
+    };
+    easterEgg1.addEventListener("click", changeColor);
+    </script>
   </body>
 </html>

@@ -1,0 +1,242 @@
+:root {
+  --black-one: #131112;
+  --black-two: #011627;
+  --grey-one: #60656f;
+  --grey-two: #786c72;
+  --white-one: #f7f7ff;
+  --white-two: #fdfffc;
+  --red: #ff0022;
+  --orange: #f2994a;
+  --gold: #f2c94c;
+  --brown: #c49991;
+  --green: #27ae60;
+  --teal: #41ead4;
+  --blue-one: #279af1;
+  --blue-two: #2d53db;
+  --magenta: #b91372;
+  --purple-one: #9B51E0;
+  --purple-two: #bb6bd9;
+  --headingsFont: "Quicksand", sans-serif;
+  --bodyFont: "Montserrat", serif;
+}
+html {
+  font-size: 21px;
+  font-family: var(--bodyFont);
+  background-color: var(--white-two);
+  color: var(--black-one);
+}
+
+/* Style page content to push to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* heading styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--headingsFont);
+  margin: 0px;
+  font-weight: normal;
+}
+h1 {font-size: 2.25rem;}
+h2 {font-size: 1.75rem;}
+h3 {font-size: 1.30rem;}
+h4 {font-size: 1.05rem;}
+h5 {font-size: .9rem;}
+h6 {font-size: .75rem;}
+
+/* link styles */
+a {
+  color: var(--blue-one);
+  text-decoration: none;
+}
+a:hover {color: var(--magenta);}
+
+/* The side navigation menu */
+.sidenav {
+  height: 100%;
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: var(--black-one);
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 10vh;
+  transition: .5s;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  text-decoration: none;
+  color: var(--white-one);
+}
+ul.navbar {
+  display: block;
+  list-style: none;
+  margin-top: 0;
+  height: 35px;
+  margin: auto;
+  font-size: .85rem;
+}
+ul.navbar li {
+  display: block;
+  white-space: nowrap;
+}
+
+/* Style the links inside the navigation bar */
+#topNav a {
+  float: left;
+  padding: 14px 16px;
+}
+ul.navbar a {
+  color: var(--white-one);
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  font-family: var(--headingsFont);
+}
+ul.navbar a:hover {
+  background-color: var(--white-one);
+  color: var(--black-one);
+  transition: .3s;
+}
+#icoOpen {
+  opacity: 1;
+  transition: opacity .5s;
+  background-color: transparent;
+  border: none;
+  padding: 10px 0 0 10px;
+}
+#icoOpen.fade {opacity: 0;}
+#icoClose {
+  background-color: transparent;
+  border: none;
+}
+.openNavSide {width: 250px;}
+.openNavMain {margin-left: 250px;}
+
+/* content styles */
+.center {text-align: center;}
+.italic {font-style: italic;}
+.button {
+  display: block;
+  line-height: 1.42857143;
+  width: 70vw;
+  max-width: 300px;
+  white-space: nowrap;
+  text-align: center;
+  background-color: var(--blue-one);
+  border-radius: 20px;
+  border: 1px solid transparent;
+  font-size: 1.30rem;
+  padding: 9px 25px;
+  color: var(--white-one);
+  margin: 2% auto;
+}
+.button:hover, #ah:hover, #fr:hover {
+  transition: .3s;
+  color: var(--black-one);
+  background-color: var(--gold);
+}
+#footer {
+  background: url("../images/cleveland-blur_600x339.jpg") center;
+  background-size: cover;
+  width: 100vw;
+  height: 234px;
+  color: var(--white-one);
+  padding: 1% 2%;
+  display: flex;
+  flex-direction: column;
+}
+#footer h2 {
+  display: flex;
+  justify-content: flex-end;
+}
+#footer a {color: var(--white-one);}
+#footer a:hover {
+  color: var(--gold);
+  transition: .3s;
+}
+.footerRow {
+  display: flex;
+  flex-direction: row;
+}
+#contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#myEmail {font-size: 1.15rem;}
+#social {
+  margin-top: auto;
+  justify-content: space-between;
+  display: flex;
+  align-items: flex-end;
+}
+#icons {
+  width: 55%;
+  display: flex;
+  justify-content: space-between;
+}
+#builtByMe {
+  font-size: .8rem;
+  display: flex;
+  align-items: flex-end;
+}
+
+/* desktop styles */
+@media only screen and (min-width: 850px) {
+  /* begin desktop navigation */
+  #topNav, .closebtn {display: none;}
+  .sidenav {
+    height: 45px;
+    width: 100%;
+    background-color: var(--white-two);
+    overflow-y: hidden;
+    padding-top: 0;
+    display: block;
+    position: static;
+  }
+  ul.navbar {font-size: .9rem;}
+  ul.navbar li {display: inline-block;}
+  ul.navbar a {color: var(--black-one);}
+  ul.navbar a:hover {
+    background-color: var(--black-one);
+    color: var(--white-one);
+  }
+  /* end desktop navigation */
+}
+
+@media only screen and (min-width: 1024px) {
+  /* headings */
+  h1 {font-size: 64px;}
+  h2 {font-size: 46px;}
+  h3 {font-size: 32px;}
+  h4 {font-size: 30px;}
+  h5 {font-size: 26px;}
+  h6 {font-size: 24px;}
+  /* end headings*/
+  #footer {
+    background-image: none;
+    background-color: var(--white-one);
+    color: var(--black-one)
+  }
+  #footer a {color: var(--black-one);}
+  #contact {justify-content: flex-end;}
+  #myEmail {margin-right: 10px;}
+  #icons {width: 30%;}
+}
+
+@media only screen and (min-width: 1800px) {
+  #icons {width: 20%;}
+}
+/* end desktop styles */
