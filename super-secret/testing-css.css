@@ -1,3 +1,20 @@
+/*easter eggs*/
+#egg1btn {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: .6rem;
+  margin: 5px 5px 0 0;
+  color: var(--white-two);
+  background-color: var(--white-two);
+  border: none;
+}
+#egg1btn:hover {
+  color: var(--black-one);
+  border: 2px solid var(--black-one);
+}
+
 /* TESTING STYLES */
 .test-container {
   width: 100%;
