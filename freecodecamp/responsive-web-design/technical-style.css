@@ -1,10 +1,9 @@
 .technicalPage #topNav {
   position: fixed;
   top: 0;
-  right: 0;
+  right: 10px;
   z-index: 1;
 }
-.technicalPage {padding-top: 25px;}
 header {font-size: 2rem;}
 #navbar header {
   text-align: center;
@@ -18,20 +17,19 @@ header {font-size: 2rem;}
 }
 #navbar ul {
   overflow-y: auto;
-  border: 1px solid var(--black-one);;
   height: 20vh;
   padding: 1% 0 0 2%;
   list-style: none;
   margin: 2vh auto 0;
-  background-color: var(--black-one);;
+  background-color: var(--black-one);
 }
-#navbar ul a {color: var(--white-two);}
 #main-doc {padding: 3%;}
 .nav-link {
-  text-decoration: none;
-  color: var(--black-one);;
+  text-decoration: underline;
+  color: var(--white-two);
 }
 .main-section {padding: 0 0 2%;}
+#Fundamentals_of_Music_Theory {margin-top: 5vh;}
 code {
   white-space: pre-wrap;
   font-size: 12px;
@@ -42,6 +40,10 @@ code {
 }
 
 @media only screen and (min-width: 815px) {
+  .technicalPage .sidenav {
+    border-bottom: 1px solid var(--black-one);
+    position: fixed;
+  }
   #main-doc {
     position: absolute;
     left: 354px;
@@ -60,14 +62,18 @@ code {
   #navbar ul {
     height: 100%;
     border: none;
+    background-color: var(--white-one);
   }
   #navbar header {font-size: 36px;}
   #navbar li {
-    border-bottom: 1px solid var(--black-one);;
+    border-bottom: 1px solid var(--black-one);
     padding: 20px 10px 10px;
     position: relative;
     width: 100%;
+  }
+  .nav-link {
     color: var(--black-one);
+    text-decoration: none;
   }
   code {font-size: .9rem;}
 }
