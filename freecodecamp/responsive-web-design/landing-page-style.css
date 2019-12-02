@@ -1,7 +1,7 @@
 .landingPage #topNav {
   position: fixed;
   top: 0;
-  right: 0;
+  right: 10px;
   z-index: 1;
 }
 header {
@@ -104,6 +104,9 @@ input#submit {
   .tracks ol {
     padding-left: 35vw;
     width: 100%;
+  }
+  header {
+    z-index: 2;
   }
 }
 

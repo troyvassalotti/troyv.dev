@@ -21,7 +21,7 @@
 .tributePage #topNav {
   position: absolute;
   top: 0;
-  right: 0;
+  right: 10px;
 }
 #tribute-info {
   display: flex;
