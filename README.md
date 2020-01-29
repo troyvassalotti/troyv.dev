@@ -1,4 +1,2 @@
-# troyvassalotti.github.io
-Hey! This is my first website. As of January 13th, 2019, I don't entirely know what I'm doing with this site.
-
-It's a host for all my freeCodeCamp projects, as well as my initial pages from my weekend course on how to build a website.
+# troyv.dev
+Hey hey, this is my first website. Not sure what I'm doing yet, but it's a good start.
