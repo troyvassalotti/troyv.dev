@@ -1,5 +1,3 @@
 User-agent: *
 Disallow: /super-secret/
-Disallow: /figma-font-awesome/
-Disallow: /backups/
-Disallow /my-blog/
+Disallow: /paperwork/
