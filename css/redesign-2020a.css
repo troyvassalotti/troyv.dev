@@ -36,6 +36,40 @@
 	to {border-right-color: transparent;}
 }
 
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.section-container {
+	display: flex;
+	flex-direction: column;
+	width: 90vw;
+}
+
+.section-header p {
+	width: 75%;
+}
+
+.image-collection {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.image-collection figure {
+	width: 100%;
+	max-width: 260px;
+}
+
+.image-collection figcaption {
+	text-align: center;
+	font-size: 1.3rem;
+	color: var(--white);
+	padding: 1rem 0;
+}
+
 
 
 

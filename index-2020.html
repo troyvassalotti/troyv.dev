@@ -2,37 +2,83 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" href="css/global.min.css"/>
-    <link rel="stylesheet" href="css/redesign-2020a.min.css"/>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous"/>
-    <link rel="icon" type="image/png" href="favicon.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/global.min.css">
+    <link rel="stylesheet" href="css/redesign-2020a.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous" media="print" onload="this.media='all'">
+    <link rel="icon" type="image/png" href="favicon.png">
     <title>Welcome | Troy V.</title>
-    <meta name="description" content="Watch as Troy Vassalotti learns his way around a computer."/>
+    <meta name="description" content="Watch as Troy Vassalotti learns his way around a computer.">
     <script src="js/javascript.min.js" async></script>
   </head>
-  <body id="main" class="homepage">
-    <div id="menu">
-      <button id="open" aria-label="Open the navigation menu" title="Open the navigation menu">
-        <svg width="30" height="30">
-          <path d="M0,5 30,5"/>
-          <path d="M0,14 30,14"/>
-          <path d="M0,23 30,23"/>
-        </svg>
-      </button>
-    </div>
-    <nav class="sideNavigation" id="sideNavigation">
-      <button id="close" aria-label="Close the navigation menu" title="Close the navigation menu">&times;</button>
-      <ul class="navbar">
-        <li><a href="index.html">troy vassalotti.</a></li>
-        <li><a href="projects/index.html" target="_blank" rel="noopener">projects.</a></li>
-        <li><a href="music/index.html" target="_blank" rel="noopener">music.</a></li>
-        <li><a href="contact.html" target="_blank" rel="noopener">contact.</a></li>
-      </ul>
-    </nav>
-    <header class="animated-header">
-      <h1 class="typewriter type-animation__first">Hey, I'm Troy...</h1>
-      <p class="typewriter type-animation__second">...and I make things.</p>
+  <body class="homepage">
+    <header>
+      <div id="menu">
+        <button id="open" aria-label="Open the navigation menu" title="Open the navigation menu">
+          <svg width="30" height="30">
+            <path d="M0,5 30,5"/>
+            <path d="M0,14 30,14"/>
+            <path d="M0,23 30,23"/>
+          </svg>
+        </button>
+      </div>
+      <nav class="sideNavigation" id="sideNavigation">
+        <button id="close" aria-label="Close the navigation menu" title="Close the navigation menu">&times;</button>
+        <ul class="navbar">
+          <!-- display flex, margin-right auto on the home/name item to get it aligned on desktop -->
+          <!-- try using display flex for nav on mobile as well, but in column and change to row on desktop, adding the above margin note to keep things consistent -->
+          <li><a href="index.html">troy vassalotti.</a></li>
+          <li><a href="projects/index.html" target="_blank" rel="noopener">projects.</a></li>
+          <li><a href="music/index.html" target="_blank" rel="noopener">music.</a></li>
+          <li><a href="contact.html" target="_blank" rel="noopener">contact.</a></li>
+        </ul>
+      </nav>
     </header>
+    <main>
+      <section class="animated-header">
+        <h1 class="typewriter type-animation__first">Hey, I'm Troy...</h1>
+        <p class="typewriter type-animation__second">...and I make things.</p>
+      </section>
+      <section class="section-container">
+        <div class="section-header">
+          <h2>My Projects</h2>
+          <p>These are some of my favorite projects, but I have many more. Take a look!</p>
+        </div>
+        <!-- use the order: {{value}} for styling the button correctly? And use flex-grow-->
+        <div class="image-collection">
+            <figure>
+              <a href="https://codepen.io/troyvassalotti/full/BayqQGz" target="_blank" rel="noopener">
+                <picture>
+                  <source srcset="images\pomodoro-clock_ffss_600x299.webp" type="image/webp" loading="lazy"/>
+                  <img src="images\pomodoro-clock_ffss_600x299.jpg" alt="Pomodoro Clock" loading="lazy"/>
+                </picture>
+                <figcaption>Pomodoro Clock</figcaption>
+              </a>
+            </figure>
+            <figure>
+              <a href="https://codepen.io/troyvassalotti/full/eYmwBrQ" target="_blank" rel="noopener">
+                <picture>
+                  <source srcset="images\bandcamp-front-royal_ffss_600x299.webp" type="image/webp" loading="lazy"/>
+                  <img src="images\bandcamp-front-royal_ffss_600x299.jpg" alt="Product Landing Page" loading="lazy"/>
+                </picture>
+                <figcaption>React Component Bandcamp</figcaption>
+              </a>
+            </figure>
+            <figure>
+              <a href="https://codepen.io/troyvassalotti/full/eYmaRrZ" target="_blank" rel="noopener">
+                <picture>
+                  <source srcset="images\landing-page_ffss_600x302.webp" type="image/webp" loading="lazy"/>
+                  <img src="images\landing-page_ffss_600x302.jpg" alt="Product Landing Page" loading="lazy"/>
+                </picture>
+                <figcaption>Product Landing Page</figcaption>
+              </a>
+            </figure>
+        </div>
+
+        <div>
+          <a class="button" href="#" target="_blank" rel="noopener">{{button link}}</a>
+        </div>
+      </section>
+    </main>
   </body>
 </html>

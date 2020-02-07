@@ -163,7 +163,10 @@ template {
   display: none;
 }
 
-/* my styles */
+/* ======================
+  My Styles
+  ======================= */
+
 /* TODO: move redesign-2020a styles into here after they become global i.e. used across pages:
 this includes: side and top navigations, fonts, variables, reusable containers, etc */
 
@@ -192,21 +195,23 @@ html {
 }
 
 /* Style the page content to push to the right when you open the side navigation */
-#main {
+body {
   transition: margin-left .5s;
   width: 100%;
-  overflow-x: hidden;
   display: flex;
   flex-direction: column;
 }
 
-/* Headings */
+/* ======================
+  Headings Styles
+  ======================= */
 h1, h2, h3, h4, h5, h6 {
 	font-family: var(--headings);
 }
 
 h2, h3, h4, h5, h6 {
-	font-weight: medium;
+	font-weight: 500;
+  margin-bottom: 0;
 }
 
 h1 {
@@ -214,13 +219,15 @@ h1 {
 	font-weight: bold;
 }
 
-h2 {font-size: 3.5rem;}
-h3 {font-size: 3rem;}
-h4 {font-size: 2.75rem;}
-h5 {font-size: 2.25rem;}
-h6 {font-size: 2rem;}
+h2 {font-size: 3.6rem;}
+h3 {font-size: 2.8rem;}
+h4 {font-size: 2.4rem;}
+h5 {font-size: 2rem;}
+h6 {font-size: 1.6rem;}
 
-/* Navigation Styles */
+/* ======================
+  Navigation Styles
+  ======================= */
 /* The side navigation menu */
 .sideNavigation {
   height: 100%;
@@ -298,10 +305,12 @@ ul.navbar a:hover {
 
 .openNavMain {
 	margin-left: 220px;
+  overflow-x: hidden;
 }
-/* End all navigation styles */
 
-/* content styles */
+/* ======================
+  Content Styles
+  ======================= */
 .center {
 	text-align: center;
 }
@@ -313,4 +322,12 @@ ul.navbar a:hover {
 img {
   display: block;
   width: 100%;
+}
+
+p {
+  font-size: 1.4rem;
+}
+
+a {
+  text-decoration: none;
 }
