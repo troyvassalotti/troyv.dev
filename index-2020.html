@@ -27,6 +27,10 @@
         <ul class="navbar">
           <!-- display flex, margin-right auto on the home/name item to get it aligned on desktop -->
           <!-- try using display flex for nav on mobile as well, but in column and change to row on desktop, adding the above margin note to keep things consistent -->
+
+          <!-- use the order: {{value}} for styling the button correctly? And use flex-grow-->
+
+
           <li><a href="index.html">troy vassalotti.</a></li>
           <li><a href="projects/index.html" target="_blank" rel="noopener">projects.</a></li>
           <li><a href="music/index.html" target="_blank" rel="noopener">music.</a></li>
@@ -44,41 +48,92 @@
           <h2>My Projects</h2>
           <p>These are some of my favorite projects, but I have many more. Take a look!</p>
         </div>
-        <!-- use the order: {{value}} for styling the button correctly? And use flex-grow-->
-        <div class="image-collection">
-            <figure>
-              <a href="https://codepen.io/troyvassalotti/full/BayqQGz" target="_blank" rel="noopener">
-                <picture>
-                  <source srcset="images\pomodoro-clock_ffss_600x299.webp" type="image/webp" loading="lazy"/>
-                  <img src="images\pomodoro-clock_ffss_600x299.jpg" alt="Pomodoro Clock" loading="lazy"/>
-                </picture>
-                <figcaption>Pomodoro Clock</figcaption>
-              </a>
-            </figure>
-            <figure>
-              <a href="https://codepen.io/troyvassalotti/full/eYmwBrQ" target="_blank" rel="noopener">
-                <picture>
-                  <source srcset="images\bandcamp-front-royal_ffss_600x299.webp" type="image/webp" loading="lazy"/>
-                  <img src="images\bandcamp-front-royal_ffss_600x299.jpg" alt="Product Landing Page" loading="lazy"/>
-                </picture>
-                <figcaption>React Component Bandcamp</figcaption>
-              </a>
-            </figure>
-            <figure>
-              <a href="https://codepen.io/troyvassalotti/full/eYmaRrZ" target="_blank" rel="noopener">
-                <picture>
-                  <source srcset="images\landing-page_ffss_600x302.webp" type="image/webp" loading="lazy"/>
-                  <img src="images\landing-page_ffss_600x302.jpg" alt="Product Landing Page" loading="lazy"/>
-                </picture>
-                <figcaption>Product Landing Page</figcaption>
-              </a>
-            </figure>
+        <div class="image-collection projects">
+          <figure>
+            <a href="https://codepen.io/troyvassalotti/full/BayqQGz" target="_blank" rel="noopener">
+              <picture>
+                <source srcset="images\pomodoro-clock_ffss_600x299.webp" type="image/webp"/>
+                <img src="images\pomodoro-clock_ffss_600x299.jpg" alt="Pomodoro Clock" loading="lazy"/>
+              </picture>
+              <figcaption>Pomodoro Clock</figcaption>
+            </a>
+          </figure>
+          <figure>
+            <a href="https://codepen.io/troyvassalotti/full/eYmwBrQ" target="_blank" rel="noopener">
+              <picture>
+                <source srcset="images\bandcamp-front-royal_ffss_600x299.webp" type="image/webp"/>
+                <img src="images\bandcamp-front-royal_ffss_600x299.jpg" alt="Product Landing Page" loading="lazy"/>
+              </picture>
+              <figcaption>Bandcamp w/ React</figcaption>
+            </a>
+          </figure>
+          <figure>
+            <a href="https://codepen.io/troyvassalotti/full/eYmaRrZ" target="_blank" rel="noopener">
+              <picture>
+                <source srcset="images\landing-page_ffss_600x302.webp" type="image/webp"/>
+                <img src="images\landing-page_ffss_600x302.jpg" alt="Product Landing Page" loading="lazy"/>
+              </picture>
+              <figcaption>Product Landing Page</figcaption>
+            </a>
+          </figure>
         </div>
-
-        <div>
-          <a class="button" href="#" target="_blank" rel="noopener">{{button link}}</a>
+        <a class="button" href="/projects/" target="_blank" rel="noopener" title="View all my projects">My Projects</a>
+      </section>
+      <section class="section-container">
+        <div class="section-header">
+          <h2>My Music</h2>
+          <p>When I’m not building a new web project, you can hear me working on a band project.</p>
+          <p>My friends and I started Front Royal with the desire to make a name for ourselves.</p>
+          <p>I started troy. at a time when I felt the need to explore a whole new outlet.</p>
         </div>
+        <div class="image-collection music">
+          <figure id="troy">
+            <a href="https://justtroy.bandcamp.com/" target="_blank" rel="noopener">
+              <picture>
+                <source srcset="images\troy-logo-white.webp" type="image/webp"/>
+                <img src="images\troy-logo-white_400x400.png" alt="The logo for my band, troy." loading="lazy"/>
+              </picture>
+            </a>
+          </figure>
+          <figure id="frontRoyal">
+            <a href="https://frontroyalmd.bandcamp.com/" target="_blank" rel="noopener">
+              <picture>
+                <source srcset="images\front-royal-logo-white_400x240.webp" type="image/webp"/>
+                <img src="images\front-royal-logo-white_400x240.png" alt="The logo for my band, Front Royal." loading="lazy"/>
+              </picture>
+            </a>
+          </figure>
+        </div>
+        <a class="button" href="/projects/" target="_blank" rel="noopener" title="View my musical projects">My Music</a>
+      </section>
+      <section class="section-container">
+        <div class="section-header">
+          <h2>My Contact</h2>
+          <p>Take a look around, and if you like what you see then feel free to contact me.</p>
+        </div>
+        <form class="contact-form" name="contactForm" netlify netlify-honeypot="bot-field">
+          <label style="display: none;">Don’t fill this out: <input name="bot-field"></label>
+        	<label for="name">Name<input name="name" type="text" id="name" required></label>
+        	<label for="email">Email<input name="email" type="email" id="email" required></label>
+        	<label for="message">Message<textarea name="message" id="message" required placeholder="Say hi!"></textarea></label>
+          <input type="submit" value="Submit" class="button" id="submit">
+        </form>
       </section>
     </main>
+    <footer>
+      <div class="footer-wrapper">
+        <picture>
+          <source srcset="images/headshot-arrow.webp" type="image/webp">
+          <img src="images/headshot-arrow.png" alt="This is me. I look like this." loading="lazy" title="A picture of me.">
+        </picture>
+        <div class="footer-icons">
+          <a href="https://github.com/troyvassalotti" target="_blank" rel="noopener" title="Visit my GitHub."><i class="fab fa-github fa-3x"></i></a>
+          <a href="https://codepen.io/troyvassalotti" target="_blank" rel="noopener" title="Visit my CodePen."><i class="fab fa-codepen fa-3x"></i></a>
+          <a href="https://www.linkedin.com/in/troy-vassalotti-468053142/" target="_blank" rel="noopener" title="Visit my LinkedIn."><i class="fab fa-linkedin fa-3x"></i></a>
+          <a href="https://twitter.com/lowercasetroy" target="_blank" rel="noopener" title="Visit my Twitter."><i class="fab fa-twitter fa-3x"></i></a>
+        </div>
+      </div>
+      <p>&copy; troy vassalotti.</p>
+    </footer>
   </body>
 </html>

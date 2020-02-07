@@ -1,3 +1,7 @@
+.homepage main > section {
+	margin: 3rem auto;
+}
+
 .animated-header {
 	display: flex;
 	flex-direction: column;
@@ -36,12 +40,6 @@
 	to {border-right-color: transparent;}
 }
 
-main {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
 .section-container {
 	display: flex;
 	flex-direction: column;
@@ -52,22 +50,20 @@ main {
 	width: 75%;
 }
 
-.image-collection {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
+#troy {
+	width: 85px;
 }
 
-.image-collection figure {
-	width: 100%;
-	max-width: 260px;
+#frontRoyal {
+	width: 142px;
 }
 
-.image-collection figcaption {
-	text-align: center;
-	font-size: 1.3rem;
-	color: var(--white);
-	padding: 1rem 0;
+.music {
+	justify-content: space-between;
+}
+
+.music figure {
+	margin: 0;
 }
 
 
@@ -75,29 +71,6 @@ main {
 
 
 
-
-/* TODO Style the buttons better */
-.button {
-  display: block;
-  line-height: 1.42857143;
-  width: 70vw;
-  max-width: 300px;
-  white-space: nowrap;
-  text-align: center;
-  background-color: var(--blue);
-  border-radius: 20px;
-  border: 1px solid transparent;
-  font-size: 1.30rem;
-  padding: 9px 25px;
-  color: var(--white);
-  margin: 2% auto;
-}
-
-.button:hover {
-  transition: .3s;
-  color: var(--black);
-  background-color: var(--gold);
-}
 
 /* desktop styles */
 @media only screen and (min-width: 850px) {

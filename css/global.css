@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Quicksand:500,700&display=swap');
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 html {
   line-height: 1.15;
@@ -166,12 +168,6 @@ template {
 /* ======================
   My Styles
   ======================= */
-
-/* TODO: move redesign-2020a styles into here after they become global i.e. used across pages:
-this includes: side and top navigations, fonts, variables, reusable containers, etc */
-
-@import url('https://fonts.googleapis.com/css?family=Montserrat|Quicksand:500,700&display=swap');
-
 :root {
 	--black: rgba(19, 17, 18, 1);
 	--dark: rgba(1, 22, 39, 1);
@@ -194,7 +190,6 @@ html {
 	color: var(--white);
 }
 
-/* Style the page content to push to the right when you open the side navigation */
 body {
   transition: margin-left .5s;
   width: 100%;
@@ -228,21 +223,20 @@ h6 {font-size: 1.6rem;}
 /* ======================
   Navigation Styles
   ======================= */
-/* The side navigation menu */
 .sideNavigation {
   height: 100%;
   width: 0; /* change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
+  position: fixed;
+  z-index: 1;
   top: 0;
   left: 0;
   background-color: var(--white);
-  overflow-x: hidden; /* Disable horizontal scroll */
+  overflow-x: hidden;
   padding-top: 5rem;
   transition: .5s;
 }
 
-/* Position and style the close button (top right corner) */
+/* Position and style the close button */
 .sideNavigation #close {
   position: absolute;
   top: 1rem;
@@ -305,12 +299,18 @@ ul.navbar a:hover {
 
 .openNavMain {
 	margin-left: 220px;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 /* ======================
   Content Styles
   ======================= */
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
 .center {
 	text-align: center;
 }
@@ -330,4 +330,118 @@ p {
 
 a {
   text-decoration: none;
+}
+
+.button {
+	display: block;
+	line-height: 1.5;
+	white-space: nowrap;
+	background-color: var(--gold);
+	border-radius: 1.5rem;
+	font-size: 1.8rem;
+	padding: 1rem 2.5rem;
+	color: var(--black);
+	margin: 0 auto;
+}
+
+.button:hover {
+  transition: .3s;
+  color: var(--white);
+  background-color: var(--gray);
+}
+
+.image-collection {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.image-collection figure {
+	width: 100%;
+	max-width: 260px;
+}
+
+.image-collection figcaption {
+	text-align: center;
+	font-size: 1.4rem;
+	color: var(--white);
+	padding: 1rem 0;
+}
+
+.contact-form {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	border: 1px solid var(--white);
+  border-radius: 2rem;
+	padding: 2.5rem;
+  margin: auto;
+}
+
+#name, #email, #message {
+  padding: .5rem 0;
+  border-radius: 5px;
+  border-color: transparent;
+}
+
+.contact-form label {
+	display: flex;
+	flex-direction: column;
+  font-size: 1.4rem;
+  font-family: var(--headings);
+  font-weight: 500;
+  margin: 1rem 0;
+}
+
+#message {
+  height: 150px;
+}
+
+#submit {
+  border-color: transparent;
+	padding: .5rem 2.5rem;
+}
+
+footer {
+  background-color: var(--white);
+  color: var(--black);
+  width: 95vw;
+  margin: 3rem auto 1rem;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-wrapper {
+  width: 100%;
+  max-width: 200px;
+  display: flex;
+  justify-content: space-around;
+}
+
+footer img {
+  max-width: 88px;
+}
+
+.footer-icons {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-content: center;
+	gap: 1rem;
+}
+
+.footer-icons a {
+  color: var(--black);
+}
+
+.footer-icons a:hover {
+  transition: .3s;
+  color: var(--purple);
+}
+
+footer p {
+  margin: .5rem 0 0;
+  font-family: var(--headings);
 }
