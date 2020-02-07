@@ -376,6 +376,7 @@ a {
   border-radius: 2rem;
 	padding: 2.5rem;
   margin: auto;
+  max-width: 440px;
 }
 
 #name, #email, #message {
