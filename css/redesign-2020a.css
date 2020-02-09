@@ -5,7 +5,7 @@
 .animated-header {
 	display: flex;
 	flex-direction: column;
-	width: 29rem;
+	width: 28.7rem;
 	margin: 0 auto;
 }
 
@@ -74,24 +74,66 @@
 
 
 /* desktop styles */
-@media only screen and (min-width: 850px) {
+@media only screen and (min-width: 768px) {
   /* begin desktop navigation */
   #menu, #close {display: none;}
-  .sideNavigation {
-    height: 45px;
-    width: 100%;
-    /*background-color: SOME COLOR;*/
-    overflow-y: hidden;
-    padding-top: 0;
-    display: block;
-    position: static;
-  }
-  ul.navbar {font-size: .9rem;}
-  ul.navbar li {display: inline-block;}
-  /*ul.navbar a {color: SOME COLOR;}*/
-  ul.navbar a:hover {
-    /*background-color: SOME COLOR;*/
-    /*color: SOME COLOR;*/
-  }
+	.sideNavigation {
+		height: auto;
+		width: 100%;
+		padding: .5rem 1rem;
+		position: initial;
+		background-color: var(--dark);
+		font-weight: 700;
+	}
+  ul.navbar {
+		font-size: 1.6rem;
+		display: flex;
+		justify-content: space-between;
+	}
+	ul.navbar li {
+		display: inline-block;
+		padding: .5rem;
+	}
+	ul.navbar li:nth-child(1) {
+		margin-right: auto;
+	}
+	ul.navbar li:nth-child(1n+2) {
+		margin: 0 1rem;
+	}
+  ul.navbar a {
+		padding: .5rem;
+		color: var(--white);
+	}
+	#link__home:hover {
+		background-color: transparent;
+		text-decoration: underline;
+		text-decoration-color: var(--orange);
+	}
+	#link__projects:hover {
+		background-color: var(--gold);
+		color: var(--black);
+	}
+	#link__music:hover {
+		background-color: transparent;
+		text-decoration: underline;
+		text-decoration-color: var(--gold);
+	}
+	#link__contact:hover {
+		background-color: var(--blue);
+		border-radius: 1rem;
+		color: var(--black);
+	}
   /* end desktop navigation */
+
+	p {
+		font-size: 1.8rem;
+	}
+
+	.homepage main {
+		max-width: 1088px;
+	}
+}
+
+@media only screen and (min-width: 1152px) {
+	
 }

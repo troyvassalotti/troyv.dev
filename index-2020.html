@@ -14,7 +14,7 @@
   <body class="homepage">
     <header>
       <div id="menu">
-        <button id="open" aria-label="Open the navigation menu" title="Open the navigation menu">
+        <button id="open" aria-label="Open the navigation menu">
           <svg width="30" height="30">
             <path d="M0,5 30,5"/>
             <path d="M0,14 30,14"/>
@@ -23,7 +23,7 @@
         </button>
       </div>
       <nav class="sideNavigation" id="sideNavigation">
-        <button id="close" aria-label="Close the navigation menu" title="Close the navigation menu">&times;</button>
+        <button id="close" aria-label="Close the navigation menu">&times;</button>
         <ul class="navbar">
           <!-- display flex, margin-right auto on the home/name item to get it aligned on desktop -->
           <!-- try using display flex for nav on mobile as well, but in column and change to row on desktop, adding the above margin note to keep things consistent -->
@@ -31,10 +31,10 @@
           <!-- use the order: {{value}} for styling the button correctly? And use flex-grow-->
 
 
-          <li><a href="index.html">troy vassalotti.</a></li>
-          <li><a href="projects/index.html" target="_blank" rel="noopener">projects.</a></li>
-          <li><a href="music/index.html" target="_blank" rel="noopener">music.</a></li>
-          <li><a href="contact.html" target="_blank" rel="noopener">contact.</a></li>
+          <li id="link__home-container"><a href="index.html" aria-label="Go back to the homepage." id="link__home">troy vassalotti.</a></li>
+          <li id="link__projects-container"><a href="projects/index.html" id="link__projects">projects.</a></li>
+          <li id="link__music-container"><a href="music/index.html" id="link__music">music.</a></li>
+          <li id="link__contact-container"><a href="contact.html" id="link__contact">contact.</a></li>
         </ul>
       </nav>
     </header>
@@ -77,7 +77,7 @@
             </a>
           </figure>
         </div>
-        <a class="button" href="/projects/" target="_blank" rel="noopener" title="View all my projects">My Projects</a>
+        <a class="button" href="/projects/" target="_blank" rel="noopener" aria-label="View all my projects">My Projects</a>
       </section>
       <section class="section-container">
         <div class="section-header">
@@ -104,7 +104,7 @@
             </a>
           </figure>
         </div>
-        <a class="button" href="/projects/" target="_blank" rel="noopener" title="View my musical projects">My Music</a>
+        <a class="button" href="/projects/" target="_blank" rel="noopener" aria-label="View my musical projects">My Music</a>
       </section>
       <section class="section-container">
         <div class="section-header">
@@ -124,13 +124,13 @@
       <div class="footer-wrapper">
         <picture>
           <source srcset="images/headshot-arrow.webp" type="image/webp">
-          <img src="images/headshot-arrow.png" alt="This is me. I look like this." loading="lazy" title="A picture of me.">
+          <img src="images/headshot-arrow.png" alt="This is me. I look like this." loading="lazy">
         </picture>
         <div class="footer-icons">
-          <a href="https://github.com/troyvassalotti" target="_blank" rel="noopener" title="Visit my GitHub."><i class="fab fa-github fa-3x"></i></a>
-          <a href="https://codepen.io/troyvassalotti" target="_blank" rel="noopener" title="Visit my CodePen."><i class="fab fa-codepen fa-3x"></i></a>
-          <a href="https://www.linkedin.com/in/troy-vassalotti-468053142/" target="_blank" rel="noopener" title="Visit my LinkedIn."><i class="fab fa-linkedin fa-3x"></i></a>
-          <a href="https://twitter.com/lowercasetroy" target="_blank" rel="noopener" title="Visit my Twitter."><i class="fab fa-twitter fa-3x"></i></a>
+          <a href="https://github.com/troyvassalotti" target="_blank" rel="noopener" title="Visit my GitHub." aria-label="Visit my GitHub."><i class="fab fa-github fa-3x"></i></a>
+          <a href="https://codepen.io/troyvassalotti" target="_blank" rel="noopener" title="Visit my CodePen." aria-label="Visit my CodePen."><i class="fab fa-codepen fa-3x"></i></a>
+          <a href="https://www.linkedin.com/in/troy-vassalotti-468053142/" target="_blank" rel="noopener" title="Visit my LinkedIn." aria-label="Visit my LinkedIn."><i class="fab fa-linkedin fa-3x"></i></a>
+          <a href="https://twitter.com/lowercasetroy" target="_blank" rel="noopener" title="Visit my Twitter." aria-label="Visit my Twitter."><i class="fab fa-twitter fa-3x"></i></a>
         </div>
       </div>
       <p>&copy; troy vassalotti.</p>
