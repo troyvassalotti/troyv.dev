@@ -195,7 +195,12 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
+
+/* body > * {
+  flex: 1;
+} */
 
 /* ======================
   Headings Styles
@@ -247,7 +252,8 @@ h6 {font-size: 1.6rem;}
 }
 
 ul.navbar {
-  display: block;
+  display: flex;
+  flex-direction: column;
   list-style: none;
   margin: 0;
   font-size: 1.6rem;
@@ -311,7 +317,7 @@ main {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-  margin: auto;
+  /* margin: auto; */
 }
 
 .center {
@@ -411,12 +417,13 @@ footer {
   background-color: var(--white);
   color: var(--black);
   width: 95vw;
-  margin: 3rem auto 1rem;
+  margin: auto auto 1rem;
   display: flex;
   justify-content: center;
   padding: 1rem;
   flex-direction: column;
   align-items: center;
+  /* max-height: 162px; */
 }
 
 .footer-wrapper {
@@ -468,11 +475,10 @@ footer p {
 	}
   ul.navbar {
 		font-size: 1.6rem;
-		display: flex;
+    flex-direction: row;
 		justify-content: space-between;
 	}
 	ul.navbar li {
-		display: inline-block;
 		padding: .5rem;
 	}
 	ul.navbar li:nth-child(1) {

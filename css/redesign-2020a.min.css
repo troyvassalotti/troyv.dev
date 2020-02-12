@@ -1,0 +1,1 @@
+:root{--projectsBanner:url('../images/caution-bg.webp')}.hero-header{background:var(--projectsBanner) center / cover no-repeat var(--dark);width:100%;display:flex;flex-direction:column;margin-top:2rem;height:86px}.hero-header h1{margin:0}.projectsPage .hero-header{justify-content:flex-start}
