@@ -1,5 +1,53 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Quicksand:500,700&display=swap');
 
+@font-face {
+  font-family: 'Native';
+  src: url('../fonts/native/native-Regular.woff2') format('woff2'),
+  url('../fonts/native/native-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Native';
+  src: url('../fonts/native/native-Italic.woff2') format('woff2'),
+  url('../fonts/native/native-Italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Native';
+  src: url('../fonts/native/native-Light.woff2') format('woff2'),
+  url('../fonts/native/native-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Native';
+  src: url('../fonts/native/native-LightItalic.woff2') format('woff2'),
+  url('../fonts/native/native-LightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Native';
+  src: url('../fonts/native/native-Bold.woff2') format('woff2'),
+  url('../fonts/native/native-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Native';
+  src: url('../fonts/native/native-BoldItalic.woff2') format('woff2'),
+  url('../fonts/native/native-BoldItalic.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
+}
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 html {
   line-height: 1.15;
@@ -180,7 +228,7 @@ template {
 	--blue: rgba(39, 154, 241, 1);
 	--purple: rgba(155, 81, 224, 1);
 	--body: 'Montserrat', sans-serif;
-	--headings: 'Quicksand', serif;
+	--headings: 'Native', serif;
 }
 
 html {
