@@ -1,20 +1,34 @@
 :root {
-  --projectsBanner: url('../images/caution-bg.webp')
+  --banner: url('../images/caution-bg.webp')
+}
+
+/* this changes per page */
+.projectsPage .hero-header {
+  justify-content: flex-start;
+}
+
+/*
+keeping --banner and will change the variable per page, DO NOT add --banner to the global scope
+
+Keep global styles below here unless otherwise needed
+*/
+
+.header {
+  width: 100%;
+  margin: 1.8rem auto;
 }
 
 .hero-header {
-	background: var(--projectsBanner) center / cover no-repeat var(--dark);
+	background: var(--banner) center / cover no-repeat var(--dark);
 	width: 100%;
+  margin: 0;
 	display: flex;
 	flex-direction: column;
-	margin-top: 2rem;
-	height: 86px;
+	height: calc(3vh + 2em);
 }
 
-.hero-header h1 {
-  margin: 0;
-}
-
-.projectsPage .hero-header {
-  justify-content: flex-start;
+.row {
+  width: 95vw;
+  display: flex;
+  flex-direction: column;
 }
