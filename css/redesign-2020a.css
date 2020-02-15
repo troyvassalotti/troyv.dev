@@ -32,3 +32,12 @@ Keep global styles below here unless otherwise needed
   display: flex;
   flex-direction: column;
 }
+
+.data figure {
+  max-width: 220px;
+}
+
+.data figcaption {
+  font-size: 1.4rem;
+  text-align: left;
+}
