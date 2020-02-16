@@ -269,10 +269,6 @@ body {
   min-height: 100vh;
 }
 
-/* body > * {
-  flex: 1;
-} */
-
 /* ======================
   Headings Styles
   ======================= */
@@ -426,6 +422,12 @@ code {
   text-decoration: line-through;
 }
 
+.button-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .button {
 	display: block;
 	line-height: 1.5;
@@ -435,7 +437,7 @@ code {
 	font-size: 1.8rem;
 	padding: 1rem 2.5rem;
 	color: var(--black);
-	margin: 0 auto;
+	margin-bottom: 1rem;
 }
 
 .button:hover {
@@ -500,6 +502,8 @@ code {
 #submit {
   border-color: transparent;
 	padding: .5rem 2.5rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ======================
@@ -515,7 +519,6 @@ footer {
   padding: 1rem;
   flex-direction: column;
   align-items: center;
-  /* max-height: 162px; */
 }
 
 .footer-wrapper {
@@ -549,6 +552,30 @@ footer p {
   margin: .5rem 0 0;
   font-family: var(--headings);
   font-size: 1.4rem;
+}
+
+/* ======================
+  Misc. Page Styles
+  ======================= */
+.header {
+  width: 100%;
+  margin: 1.8rem auto;
+}
+
+.hero-header {
+	background: var(--banner) center / cover no-repeat var(--dark);
+	width: 100%;
+  margin: 0;
+	display: flex;
+	flex-direction: column;
+	height: calc(3vh + 2em);
+}
+
+.row {
+  width: 95vw;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3.5rem;
 }
 
 
@@ -618,6 +645,14 @@ footer p {
   .contact-form label {
     font-size: 1.8rem;
   }
+
+  .row-header p {
+    max-width: 60vw;
+  }
+
+  .button-wrapper {
+    justify-content: flex-start;
+  }
 }
 
 @media only screen and (min-width: 1152px) {
@@ -650,5 +685,27 @@ footer p {
 
   p {
     font-size: 2.1rem;
+  }
+
+  .header {
+    margin-bottom: 3rem;
+  }
+
+  .row {
+    margin-bottom: 7rem;
+  }
+
+  .row-header p {
+    max-width: 40vw;
+  }
+}
+
+@media only screen and (min-width: 1482px) {
+  .hero-header {
+    height: calc(3vh + 3em);
+  }
+
+  .collection {
+    justify-content: space-around;
   }
 }

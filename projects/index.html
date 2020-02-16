@@ -4,12 +4,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../css/global.min.css">
-    <link rel="stylesheet" href="../css/redesign-2020a.min.css">
     <link rel="stylesheet" href="../css/fa-5.0.13/css/fontawesome.min.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="../css/fa-5.0.13/css/fa-brands.min.css" media="print" onload="this.media='all'">
     <link rel="icon" type="image/png" href="../favicon.png">
     <title>Projects | Troy V.</title>
     <meta name="description" content="These are a few of the projects I've made, but there are many more.">
+
+    <style>
+    :root {--banner: url('../images/caution-bg.webp')}
+    .data figure {max-width: 220px;}
+    .data figcaption {text-align: left;}
+    @media only screen and (min-width: 768px) {
+      .data {justify-content: space-around;}
+      .data figure {max-width: 320px;}}
+    @media only screen and (min-width: 1152px) {
+      .data figure {max-width: 500px;}}
+    </style>
+
     <script src="../js/javascript.min.js" async></script>
   </head>
   <body class="projectsPage">
@@ -26,10 +37,10 @@
       <nav class="sideNavigation" id="sideNavigation">
         <button id="close" aria-label="Close the navigation menu">&times;</button>
         <ul class="navbar">
-          <li id="link__home-container"><a href="index.html" aria-label="Go back to the homepage." id="link__home">troy vassalotti.</a></li>
-          <li id="link__projects-container"><a href="projects/index.html" id="link__projects">projects.</a></li>
-          <li id="link__music-container"><a href="music/index.html" id="link__music">music.</a></li>
-          <li id="link__contact-container"><a href="contact.html" id="link__contact">contact.</a></li>
+          <li id="link__home-container"><a href="../index.html" aria-label="Go back to the homepage." id="link__home">troy vassalotti.</a></li>
+          <li id="link__projects-container"><a href="../projects/index.html" id="link__projects">projects.</a></li>
+          <li id="link__music-container"><a href="../music/index.html" id="link__music">music.</a></li>
+          <li id="link__contact-container"><a href="../contact/index.html" id="link__contact">contact.</a></li>
         </ul>
       </nav>
     </header>
@@ -37,11 +48,10 @@
       <section class="header">
         <h1 class="hero-header">Projects</h1>
       </section>
-
       <section class="row">
         <div class="row-header">
           <h2>Phase 1</h2>
-          <p>I started by <span class="strike">perfecting</span> nailing down responsive web design.</p>
+          <p>I started by <span class="strike">perfecting</span> getting the hang of responsive web design.</p>
         </div>
         <div class="collection">
           <figure>
@@ -149,7 +159,7 @@
           <h3>View More On CodePen</h3>
           <p>I create more, smaller projects and try to break your web browser over on CodePen.</p>
         </div>
-        <div class="flex__centered-col">
+        <div class="button-wrapper">
           <a class="button" href="https://codepen.io/troyvassalotti" target="_blank" rel="noopener" aria-label="View more experiements on CodePen">Visit My CodePen</a>
         </div>
       </section>
