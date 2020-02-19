@@ -1,0 +1,211 @@
+html {
+	font-size: 10px;
+	font-family: 'Montserrat';
+	color: rgba(19, 17, 18, 1);
+	background-color: rgba(247, 247, 255, 1);
+}
+
+a {
+	color: blue;
+}
+
+img {
+	display: block;
+	width: 100%;
+	margin: 0 auto;
+	max-width: 150px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	font-weight: bold;
+	font-family: 'Quicksand';
+}
+
+h1 {
+	font-size: 3.6rem;
+	text-align: center;
+}
+
+h2 {
+	border-top: 1px solid rgba(96, 101, 111, .5);
+	border-bottom: 1px solid rgba(96, 101, 111, 1);
+	padding: 1rem 0;
+}
+
+.section-title {
+	color: rgba(96, 101, 111, 1);
+	text-transform: uppercase;
+	font-size: 2.3rem;
+	text-align: center;
+}
+
+.center {text-align: center;}
+.subtitle {color: rgba(96, 101, 111, 1); font-style: italic;}
+
+p.subtitle {
+	margin: 0.5rem;
+	font-size: 1.6rem;
+	font-style: normal;
+}
+
+.personalInfo {
+	font-size: 1.2rem;
+}
+
+ul {
+	font-size: 1.3rem;
+	padding-left: 20px;
+	margin-top: 5px;
+	line-height: 2rem;
+}
+
+h3 {
+	font-size: 1.8rem;
+}
+
+h4 {
+	font-size: 1.3rem;
+}
+
+.dated-header {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	width: 100%;
+	// adjust the spacing later
+	justify-content: space-between;
+
+	p {
+		margin: 0;
+		color: rgba(96, 101, 111, 1);
+		font-style: italic;
+		font-size: 1.3rem;
+	}
+}
+
+.plaintext {
+	font-weight: normal;
+}
+
+.resume {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1rem 3rem;
+	padding: 10px;
+	grid-template-areas:
+		"photo"
+		"name"
+		"skills"
+		"work"
+		"education"
+		"certifications"
+		"proficiency";
+}
+
+.name {
+	grid-area: name;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.photo {
+	grid-area: photo;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.skills {
+	grid-area: skills;
+}
+
+.work {
+	grid-area: work;
+}
+
+.education {
+	grid-area: education;
+
+	h3 {
+		font-size: 1.4rem;
+		margin-top: .5rem;
+	}
+}
+
+.certifications {
+	grid-area: certifications;
+}
+
+.proficiency {
+	grid-area: proficiency;
+
+	p {
+		font-size: 1.3rem;
+		line-height: 2rem;
+		text-align: center;
+	}
+}
+
+@media (min-width: 900px) {
+	.resume {
+		padding: 15px 10px;
+		grid-template-columns: 2fr 1fr;
+		grid-template-areas:
+			"name photo"
+			"skills skills"
+			"work work"
+			"education education"
+			"certifications certifications"
+			"proficiency proficiency";
+	}
+
+	.skills ul {
+		column-count: 2;
+	}
+}
+
+@media (min-width: 1200px) {
+	html {
+		font-size: 11px;
+	}
+	.resume {
+		padding: 15px 10px;
+		grid-template-areas:
+			"name photo"
+			"work skills"
+			"work education"
+			"work certifications"
+			"proficiency proficiency";
+	}
+
+	.proficiency p {
+		text-align: left;
+	}
+
+	.section-title {
+		text-align: left;
+	}
+}
+
+/* for development only */
+// .resume {
+// 	width: 210mm;
+// 	height: 297mm;
+// 	border: 1px solid rgba(19, 17, 18, 1);
+// }
+
+@media print {
+	/* remove any screen only styles, for example link underline */
+	a {
+		text-decoration: none;
+		color: rgba(19, 17, 18, 1);
+	}
+}
+
+@page {
+	padding: 0;
+	margin: 0cm;
+	size: A4 portrait;
+}
