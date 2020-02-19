@@ -411,7 +411,21 @@ p {
 }
 
 a {
-  text-decoration: none;
+  color: var(--gold);
+}
+
+a:hover {
+  color: var(--green);
+  text-decoration-thickness: .3rem;
+}
+
+.icon-link {
+  color: var(--black);
+}
+
+.icon-link:hover {
+  transition: .2s;
+  color: var(--purple);
 }
 
 code {
@@ -438,6 +452,7 @@ code {
 	padding: 1rem 2.5rem;
 	color: var(--black);
 	margin-bottom: 1rem;
+  text-decoration: none;
 }
 
 .button:hover {
@@ -452,15 +467,22 @@ code {
 	justify-content: center;
 }
 
+.collection a {
+  text-decoration: none;
+}
+
 .collection figure {
 	width: 100%;
 	max-width: 123px;
   margin: 1rem;
 }
 
+figcaption {
+  font-size: 1.2rem;
+}
+
 .collection figcaption {
 	text-align: center;
-	font-size: 1.2rem;
 	color: var(--white);
 	padding: 1rem 0;
 }
@@ -539,15 +561,6 @@ footer img {
 	gap: 1rem;
 }
 
-.footer-icons a {
-  color: var(--black);
-}
-
-.footer-icons a:hover {
-  transition: .2s;
-  color: var(--purple);
-}
-
 footer p {
   margin: .5rem 0 0;
   font-family: var(--headings);
@@ -576,6 +589,28 @@ footer p {
   display: flex;
   flex-direction: column;
   margin-bottom: 3.5rem;
+}
+
+.row__not-fixed-width {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3.5rem;
+}
+
+.social-bar {
+	background-color: var(--white);
+	padding: 1rem 1.5rem;
+	border-radius: 3rem;
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+  max-width: 325px;
+  margin: auto;
+}
+
+.grid__1-col__2-col {
+	display: grid;
+	grid-template-columns: 1fr;
 }
 
 
@@ -614,6 +649,7 @@ footer p {
 		background-color: transparent;
 		text-decoration: underline;
 		text-decoration-color: var(--orange);
+    text-decoration-thickness: .3rem;
 	}
 	#link__projects:hover {
 		background-color: var(--gold);
@@ -623,6 +659,7 @@ footer p {
 		background-color: transparent;
 		text-decoration: underline;
 		text-decoration-color: var(--gold);
+    text-decoration-thickness: .3rem;
 	}
 	#link__contact:hover {
 		background-color: var(--blue);
@@ -638,7 +675,7 @@ footer p {
   	max-width: 260px;
   }
 
-  .collection figcaption {
+  figcaption {
   	font-size: 1.4rem;
   }
 
@@ -652,6 +689,22 @@ footer p {
 
   .button-wrapper {
     justify-content: flex-start;
+  }
+
+  .grid__1-col__2-col {
+  	display: grid;
+  	grid-template-columns: 1fr 1fr;
+  	align-items: first baseline;
+    width: 100%;
+    max-width: 1350px
+  }
+
+  .left-column__margin {
+    margin-right: auto;
+  }
+
+  .right-column__margin {
+    margin-left: auto;
   }
 }
 
@@ -671,7 +724,7 @@ footer p {
 		width: 100%;
 	}
 
-  .collection figcaption {
+  figcaption {
 		font-size: 1.8rem;
 	}
 
