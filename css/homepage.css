@@ -18,8 +18,6 @@
 
 .type-animation__first {
 	/* name, duration, number of steps, delay, repetitions */
-	-webkit-animation: typing 1.5s steps(25) 0.5s 1 normal both,
-		cursor 500ms steps(25) 5 normal;
 	animation: typing 1.5s steps(25) 0.5s 1 normal both,
 		cursor 500ms steps(25) 5 normal;
 }
@@ -29,41 +27,23 @@
 	font-weight: 700;
 	font-family: var(--headings);
 	margin: 0;
-	-webkit-animation: typing-2 1.5s steps(25) 3s 1 normal both,
-		cursor 500ms steps(25) 2.5s infinite normal;
 	animation: typing-2 1.5s steps(25) 3s 1 normal both,
 		cursor 500ms steps(25) 2.5s infinite normal;
 }
 
-@-webkit-keyframes typing {
-	from {width: 0;}
-	to {width: 28.7rem;}
-}
-
 @keyframes typing {
-	from {width: 0;}
-	to {width: 28.7rem;}
-}
-
-@-webkit-keyframes typing-2 {
-	from {width: 0;}
-	to {width: 26rem;}
+	0% {width: 0;}
+	100% {width: 28.7rem;}
 }
 
 @keyframes typing-2 {
-	from {width: 0;}
-	to {width: 26rem;}
-}
-
-@-webkit-keyframes cursor {
-	/* add width dimensions here to make it choppy */
-	from {border-right-color: var(--white);}
-	to {border-right-color: transparent;}
+	0% {width: 0;}
+	100% {width: 26rem;}
 }
 @keyframes cursor {
 	/* add width dimensions here to make it choppy */
-	from {border-right-color: var(--white);}
-	to {border-right-color: transparent;}
+	0% {border-right-color: var(--white);}
+	100% {border-right-color: transparent;}
 }
 
 .home-container {
