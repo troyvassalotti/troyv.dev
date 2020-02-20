@@ -100,14 +100,10 @@
 	.type-animation__first {
 		margin-bottom: 2rem;
 		width: 42.6rem;
-		animation: typing 1.2s steps(30) 0.5s 1 normal both,
-			cursor 500ms steps(25) 5 normal;
 	}
 	.type-animation__second {
 		font-size: 5rem;
 		width: 48rem;
-		animation: typing-2 1.2s steps(30) 3s 1 normal both,
-			cursor 500ms steps(25) 2.5s infinite normal;
 	}
 	@keyframes typing {
 		from {width: 0;}
