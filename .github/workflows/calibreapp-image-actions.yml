@@ -17,4 +17,9 @@ jobs:
           webpQuality: "80"
           ignorePaths: "node_modules/**,build"
           # No spaces allowed
-        
+        on:
+          pull_request:
+            paths:
+              - '**.jpg'
+              - '**.png'
+              - '**.webp'
