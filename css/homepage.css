@@ -31,7 +31,7 @@
 		cursor 500ms steps(25) 2.5s infinite normal;
 }
 
-/* @keyframes typing {
+@keyframes typing {
 	0% {width: 0;}
 	100% {width: 28.7rem;}
 }
@@ -43,7 +43,7 @@
 @keyframes cursor {
 	0% {border-right-color: var(--white);}
 	100% {border-right-color: transparent;}
-} */
+}
 
 .home-container {
 	display: flex;
@@ -104,14 +104,14 @@
 		font-size: 5rem;
 		width: 48rem;
 	}
-	/* @keyframes typing {
+	@keyframes typing {
 		from {width: 0;}
 		to {width: 42.5rem;}
 	}
 	@keyframes typing-2 {
 		from {width: 0;}
 	  to {width: 48rem;}
-	} */
+	}
 
 	.homepage main > section {
 		margin: 3rem 0 8rem;
