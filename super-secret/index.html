@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" href="..\css/redesign-2020a.css"/>
+    <title>Welcome To The Gridiron</title>
+    <meta name="description" content="I come here to test things out."/>
+    <link rel="icon" type="image/png" href="..\favicon.png"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700|Quicksand:400,700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous"/>
+    <link rel="canonical" href="..\index.html"/>
+  </head>
+  <body id="main" class="gridiron">
+
+    <section>
+      <h1>Under Construction</h1>
+      <p>Something Better Coming Soon</p>
+    </section>
+
+    <script>
+    var easterEgg1 = document.getElementById("egg1btn");
+    var buttons = document.querySelectorAll(".button");
+    function random(number) {
+      return Math.floor(Math.random()*(number+1));
+    };
+    function changeColor() {
+      var rndCol1 = "rgb(" + random(255) + "," + random(255) + "," + random(255) + ")";
+      var rndCol2 = "rgb(" + random(255) + "," + random(255) + "," + random(255) + ")";
+      buttons.forEach(function(btn) {
+        btn.style.backgroundColor = rndCol1;
+        btn.style.color = rndCol2;
+        btn.style.transition = ".3s linear";
+      });
+    };
+    easterEgg1.addEventListener("click", changeColor);
+    </script>
+  </body>
+</html>
