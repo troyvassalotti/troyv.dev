@@ -406,7 +406,7 @@ img {
   max-width: 100%;
 }
 
-p {
+p, ul {
   font-size: 1.6rem;
 }
 
@@ -417,6 +417,10 @@ a {
 a:hover {
   color: var(--green);
   text-decoration-thickness: .3rem;
+}
+
+a:focus {
+  outline-width: .3rem;
 }
 
 .icon-link {
@@ -459,6 +463,10 @@ code {
   transition: .2s;
   color: var(--white);
   background-color: var(--gray);
+}
+
+.button:focus {
+  outline-color: var(--white);
 }
 
 .collection {
@@ -506,6 +514,11 @@ figcaption {
   border-radius: 5px;
   border-color: transparent;
   margin-top: .7rem;
+}
+
+#name:focus, #email:focus, #message:focus {
+  border-color: var(--orange);
+  border-style: dotted;
 }
 
 .contact-form label {
@@ -613,6 +626,13 @@ footer p {
 	grid-template-columns: 1fr;
 }
 
+.list__nondescript {
+	line-height: 1.5;
+	margin-top: 1rem;
+	list-style: none;
+	padding: 0;
+}
+
 
 /* ======================
   Tablet and Desktop Styles
@@ -667,7 +687,7 @@ footer p {
 		color: var(--black);
 	}
 
-	p {
+	p, ul {
 		font-size: 1.8rem;
 	}
 
