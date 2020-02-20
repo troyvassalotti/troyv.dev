@@ -18,6 +18,8 @@
 
 .type-animation__first {
 	/* name, duration, number of steps, delay, repetitions */
+	-webkit-animation: typing 1.5s steps(25) 0.5s 1 normal both,
+		cursor 500ms steps(25) 5 normal;
 	animation: typing 1.5s steps(25) 0.5s 1 normal both,
 		cursor 500ms steps(25) 5 normal;
 }
@@ -27,8 +29,15 @@
 	font-weight: 700;
 	font-family: var(--headings);
 	margin: 0;
+	-webkit-animation: typing-2 1.5s steps(25) 3s 1 normal both,
+		cursor 500ms steps(25) 2.5s infinite normal;
 	animation: typing-2 1.5s steps(25) 3s 1 normal both,
 		cursor 500ms steps(25) 2.5s infinite normal;
+}
+
+@-webkit-keyframes typing {
+	0% {width: 0;}
+	100% {width: 28.7rem;}
 }
 
 @keyframes typing {
@@ -36,9 +45,19 @@
 	100% {width: 28.7rem;}
 }
 
+@-webkit-keyframes typing-2 {
+	0% {width: 0;}
+	100% {width: 26rem;}
+}
+
 @keyframes typing-2 {
 	0% {width: 0;}
 	100% {width: 26rem;}
+}
+@-webkit-keyframes cursor {
+	/* add width dimensions here to make it choppy */
+	0% {border-right-color: var(--white);}
+	100% {border-right-color: transparent;}
 }
 @keyframes cursor {
 	/* add width dimensions here to make it choppy */
@@ -85,8 +104,8 @@
   ======================= */
 @media only screen and (min-width: 768px) {
 	.homepage main {
-		width: 100%
-		max-width: 1152px;
+		width: 100%;
+		max-width: 1152px
 	}
 	.home-container {
 		max-width: 1152px;
@@ -100,18 +119,30 @@
 	.type-animation__first {
 		margin-bottom: 2rem;
 		width: 42.6rem;
-		animation: typing 1.2s steps(30) 0.5s 1 normal both,
+		-webkit-animation: typing 1.2s steps(30) 0.5s 1 normal both,
+			cursor 500ms steps(25) 5 normal;
+		        animation: typing 1.2s steps(30) 0.5s 1 normal both,
 			cursor 500ms steps(25) 5 normal;
 	}
 	.type-animation__second {
 		font-size: 5rem;
 		width: 48rem;
-		animation: typing-2 1.2s steps(30) 3s 1 normal both,
+		-webkit-animation: typing-2 1.2s steps(30) 3s 1 normal both,
 			cursor 500ms steps(25) 2.5s infinite normal;
+		        animation: typing-2 1.2s steps(30) 3s 1 normal both,
+			cursor 500ms steps(25) 2.5s infinite normal;
+	}
+	@-webkit-keyframes typing {
+		from {width: 0;}
+		to {width: 42.5rem;}
 	}
 	@keyframes typing {
 		from {width: 0;}
 		to {width: 42.5rem;}
+	}
+	@-webkit-keyframes typing-2 {
+		from {width: 0;}
+	  to {width: 48rem;}
 	}
 	@keyframes typing-2 {
 		from {width: 0;}
