@@ -20,7 +20,7 @@
 	/* name, duration, number of steps, delay, repetitions */
 	-webkit-animation: typing 1.5s steps(25) 0.5s 1 normal both,
 		cursor 500ms steps(25) 5 normal;
-	        animation: typing 1.5s steps(25) 0.5s 1 normal both,
+	animation: typing 1.5s steps(25) 0.5s 1 normal both,
 		cursor 500ms steps(25) 5 normal;
 }
 
@@ -31,7 +31,7 @@
 	margin: 0;
 	-webkit-animation: typing-2 1.5s steps(25) 3s 1 normal both,
 		cursor 500ms steps(25) 2.5s infinite normal;
-	        animation: typing-2 1.5s steps(25) 3s 1 normal both,
+	animation: typing-2 1.5s steps(25) 3s 1 normal both,
 		cursor 500ms steps(25) 2.5s infinite normal;
 }
 
@@ -55,6 +55,11 @@
 	to {width: 26rem;}
 }
 
+@-webkit-keyframes cursor {
+	/* add width dimensions here to make it choppy */
+	from {border-right-color: var(--white);}
+	to {border-right-color: transparent;}
+}
 @keyframes cursor {
 	/* add width dimensions here to make it choppy */
 	from {border-right-color: var(--white);}
