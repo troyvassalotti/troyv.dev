@@ -1,5 +1,10 @@
 name: Compress images
-on: pull_request
+on:
+  pull_request:
+    paths:
+      - '**.jpg'
+      - '**.png'
+      - '**.webp'
 jobs:
   build:
     name: calibreapp/image-actions
@@ -17,9 +22,3 @@ jobs:
           webpQuality: "80"
           ignorePaths: "node_modules/**,build"
           # No spaces allowed
-        on:
-          pull_request:
-            paths:
-              - '**.jpg'
-              - '**.png'
-              - '**.webp'
