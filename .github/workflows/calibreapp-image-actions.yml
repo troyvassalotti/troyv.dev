@@ -9,6 +9,12 @@ jobs:
         uses: actions/checkout@master
 
       - name: Compress Images
+        on:
+          pull_request:
+            paths:
+              - '**.jpg'
+              - '**.png'
+              - '**.webp'
         uses: calibreapp/image-actions@master
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
@@ -17,9 +23,3 @@ jobs:
           webpQuality: "80"
           ignorePaths: "node_modules/**,build"
           # No spaces allowed
-        on:
-          pull_request:
-            paths:
-              - '**.jpg'
-              - '**.png'
-              - '**.webp'
