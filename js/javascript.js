@@ -20,3 +20,12 @@ function closeNav() {
 }
 open.addEventListener("click", openNav);
 close.addEventListener("click", closeNav);
+
+function forceClose() {
+  if (openCount > closeCount && window.innerWidth >= 768) {
+    sideNav.classList.remove("openNavSide");
+    body.classList.remove("openNavMain");
+    open.classList.remove("fade");
+  }
+};
+window.addEventListener("resize", forceClose);
