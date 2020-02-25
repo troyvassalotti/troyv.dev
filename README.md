@@ -1,2 +1,2 @@
 # troyv.dev
-Hey hey, this is my first website. Not sure what I'm doing yet, but it's a good start.
+This is my portfolio, but it can really be whatever I want it to be.
