@@ -1,0 +1,26 @@
+{
+  "name": "troyvassalotti_github_io",
+  "version": "1.0.0",
+  "description": "This is my portfolio, but it can really be whatever I want it to be.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/actionhamilton/actionhamilton.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/actionhamilton/actionhamilton.github.io/issues"
+  },
+  "homepage": "https://github.com/actionhamilton/actionhamilton.github.io#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.10.0"
+  },
+  "dependencies": {
+    "core-js": "^3.6.4"
+  }
+}

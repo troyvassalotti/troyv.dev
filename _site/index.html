@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/global.min.css">
+    
+      <link rel="stylesheet" href="../css/homepage.min.css">
+    
+    <link rel="stylesheet" href="../css/fa-5.0.13/css/fontawesome.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="../css/fa-5.0.13/css/fa-brands.min.css" media="print" onload="this.media='all'">
+    
+      <script src="js/prefixfree.js"></script>
+    
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <title>Welcome | Troy V.</title>
+    <meta name="description" content="Watch as Troy Vassalotti learns his way around a computer.">
+    
+    <script src="../js/javascript.min.js" async></script>
+  </head>
+  <body class="homepage">
+    <header>
+      <div id="menu">
+        <button id="open" aria-label="Open the navigation menu">
+          <svg width="30" height="30">
+            <path d="M0,5 30,5"/>
+            <path d="M0,14 30,14"/>
+            <path d="M0,23 30,23"/>
+          </svg>
+        </button>
+      </div>
+      <nav class="sideNavigation" id="sideNavigation">
+        <button id="close" aria-label="Close the navigation menu">&times;</button>
+        <ul class="navbar">
+          <li id="link__home-container"><a href="/" aria-label="Go back to the homepage." id="link__home">troy vassalotti.</a></li>
+          <li id="link__projects-container"><a href="/projects/" id="link__projects">projects.</a></li>
+          <li id="link__music-container"><a href="/music/" id="link__music">music.</a></li>
+          <li id="link__contact-container"><a href="/contact/" id="link__contact">contact.</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="flex__centered-col">
+  <section class="animated-header">
+    <h1 class="typewriter type-animation__first">Hey, I'm Troy...</h1>
+    <p class="typewriter type-animation__second">...and I make things.</p>
+  </section>
+  <section class="home-container" id="home-projects">
+    <div class="home-header">
+      <h2>My Projects</h2>
+      <p>These are some of my favorite projects, but I have many more. Take a look!</p>
+    </div>
+    <div class="collection projects">
+      <figure>
+        <a href="https://codepen.io/troyvassalotti/full/BayqQGz" target="_blank" rel="noopener">
+          <picture>
+            <source srcset="images/pomodoro-clock_ffss_600x299.webp" type="image/webp"/>
+            <img src="images/pomodoro-clock_ffss_600x299.jpg" alt="Pomodoro Clock" loading="lazy"/>
+          </picture>
+          <figcaption>Pomodoro Clock</figcaption>
+        </a>
+      </figure>
+      <figure>
+        <a href="https://codepen.io/troyvassalotti/full/eYmwBrQ" target="_blank" rel="noopener">
+          <picture>
+            <source srcset="images/bandcamp-front-royal_ffss_600x299.webp" type="image/webp"/>
+            <img src="images/bandcamp-front-royal_ffss_600x299.jpg" alt="Product Landing Page" loading="lazy"/>
+          </picture>
+          <figcaption>Bandcamp w/ React</figcaption>
+        </a>
+      </figure>
+      <figure>
+        <a href="https://codepen.io/troyvassalotti/full/eYmaRrZ" target="_blank" rel="noopener">
+          <picture>
+            <source srcset="images/landing-page_ffss_600x302.webp" type="image/webp"/>
+            <img src="images/landing-page_ffss_600x302.jpg" alt="Product Landing Page" loading="lazy"/>
+          </picture>
+          <figcaption>Product Landing Page</figcaption>
+        </a>
+      </figure>
+    </div>
+    <div class="button-wrapper">
+      <a class="button" href="projects/index.html" aria-label="View all my projects">My Projects</a>
+    </div>
+  </section>
+  <section class="home-container" id="home-music">
+    <div class="home-header">
+      <h2>My Music</h2>
+      <p>When I’m not building a new web project, you can hear me working on a band project.</p>
+      <p>My friends and I started Front Royal with the desire to make a name for ourselves.</p>
+      <p>I started troy. at a time when I felt the need to explore a whole new outlet.</p>
+    </div>
+    <div class="collection music">
+      <figure id="troy">
+        <a href="https://justtroy.bandcamp.com/" target="_blank" rel="noopener">
+          <picture>
+            <source srcset="images/troy-logo-white.webp" type="image/webp"/>
+            <img src="images/troy-logo-white_400x400.png" alt="The logo for my band, troy." loading="lazy"/>
+          </picture>
+        </a>
+      </figure>
+      <figure id="frontRoyal">
+        <a href="https://frontroyalmd.bandcamp.com/" target="_blank" rel="noopener">
+          <picture>
+            <source srcset="images/front-royal-logo-white_400x240.webp" type="image/webp"/>
+            <img src="images/front-royal-logo-white_400x240.png" alt="The logo for my band, Front Royal." loading="lazy"/>
+          </picture>
+        </a>
+      </figure>
+    </div>
+    <div class="button-wrapper">
+      <a class="button" href="music/index.html" aria-label="View my musical projects">My Music</a>
+    </div>
+  </section>
+  <section class="home-container" id="home-contact">
+    <div class="home-header">
+      <h2>My Contact</h2>
+      <p>Take a look around, and if you like what you see then feel free to contact me.</p>
+    </div>
+    <form class="contact-form" name="contactForm" netlify netlify-honeypot="bot-field">
+      <label style="display: none;">Don’t fill this out: <input name="bot-field"></label>
+    	<label for="name">Name<input name="name" type="text" id="name" required></label>
+    	<label for="email">Email<input name="email" type="email" id="email" required></label>
+    	<label for="message">Message<textarea name="message" id="message" required placeholder="Say hi!"></textarea></label>
+      <input type="submit" value="Submit" class="button" id="submit">
+    </form>
+  </section>
+</main>
+    <footer>
+      <div class="footer-wrapper">
+        <picture>
+          <source srcset="https://troyv.dev/images/headshot-arrow.webp" type="image/webp">
+          <img src="https://troyv.dev/images/headshot-arrow_160x160.png" alt="This is me. I look like this." loading="lazy">
+        </picture>
+        <div class="footer-icons">
+          <a class="icon-link" href="https://github.com/troyvassalotti" target="_blank" rel="noopener" aria-label="Visit my GitHub."><i class="fab fa-github fa-3x"></i></a>
+          <a class="icon-link" href="https://codepen.io/troyvassalotti" target="_blank" rel="noopener" aria-label="Visit my CodePen."><i class="fab fa-codepen fa-3x"></i></a>
+          <a class="icon-link" href="https://www.linkedin.com/in/troy-vassalotti-468053142/" target="_blank" rel="noopener" aria-label="Visit my LinkedIn."><i class="fab fa-linkedin fa-3x"></i></a>
+          <a class="icon-link" href="https://twitter.com/lowercasetroy" target="_blank" rel="noopener" aria-label="Visit my Twitter."><i class="fab fa-twitter fa-3x"></i></a>
+        </div>
+      </div>
+      <p>&copy; troy vassalotti.</p>
+    </footer>
+  </body>
+</html>

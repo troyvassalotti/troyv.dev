@@ -1,6 +1,5 @@
 User-agent: *
 Disallow: /super-secret/
-Disallow: /paperwork/
 Disallow: /fonts/
 Disallow: /js/
 Disallow: /css/
