@@ -1,0 +1,170 @@
+.homepage main > section {
+	margin: 3rem auto;
+}
+
+.animated-header {
+	display: flex;
+	flex-direction: column;
+	width: 28.7rem;
+	margin: 0 auto;
+	align-items: flex-start;
+}
+
+.typewriter {
+	border-right: 2px solid transparent;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.type-animation__first {
+	/* name, duration, number of steps, delay, repetitions */
+	animation: typing 1.5s steps(25) 0.5s 1 normal both,
+		cursor 500ms steps(25) 5 normal;
+}
+
+.type-animation__second {
+	font-size: 2.7rem;
+	font-weight: 700;
+	font-family: var(--headings);
+	margin: 0;
+	animation: typing-2 1.5s steps(25) 3s 1 normal both,
+		cursor 500ms steps(25) 2.5s infinite normal;
+}
+
+@keyframes typing {
+	0% {width: 0;}
+	100% {width: 28.7rem;}
+}
+
+@keyframes typing-2 {
+	0% {width: 0;}
+	100% {width: 26rem;}
+}
+@keyframes cursor {
+	0% {border-right-color: var(--white);}
+	100% {border-right-color: transparent;}
+}
+
+.home-container {
+	display: flex;
+	flex-direction: column;
+	width: 90vw;
+}
+
+.home-header p {
+	width: 75%;
+}
+
+#troy {
+	width: 85px;
+}
+
+#frontRoyal {
+	width: 142px;
+}
+
+.music {
+	justify-content: space-around;
+	margin-bottom: 1rem;
+	align-items: center;
+}
+
+.music figure {
+	margin: 0;
+}
+
+.button-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* ======================
+  Tablet and Desktop Styles
+  ======================= */
+@media only screen and (min-width: 768px) {
+	.homepage main {
+		width: 100%
+		max-width: 1152px;
+	}
+	.home-container {
+		max-width: 1152px;
+	}
+}
+
+@media only screen and (min-width: 1152px) {
+	.animated-header {
+		width: 640px;
+	}
+	.type-animation__first {
+		margin-bottom: 2rem;
+		width: 42.6rem;
+	}
+	.type-animation__second {
+		font-size: 5rem;
+		width: 48rem;
+	}
+	@keyframes typing {
+		from {width: 0;}
+		to {width: 42.5rem;}
+	}
+	@keyframes typing-2 {
+		from {width: 0;}
+	  to {width: 48rem;}
+	}
+
+	.homepage main > section {
+		margin: 3rem 0 8rem;
+	}
+
+	.home-container {
+		display: grid;
+		/* grid-template-columns: 470px auto; */
+	}
+
+	.home-header {
+		grid-area: 1 / 1 / 2 / 2;
+		align-self: flex-end;
+	}
+	.button-wrapper {
+		grid-area: 2 / 1 / 3 / 2;
+	}
+	.button-wrapper .button {
+		align-self: flex-start;
+		margin: 0 auto 0 0;
+	}
+	.collection {
+		grid-area: 1 / 2 / 3 / 3;
+	}
+	.collection figure {
+		margin: 2rem 1.1rem;
+	}
+
+	.music {
+		justify-content: center;
+		margin-bottom: 0;
+		flex-direction: column;
+	}
+	#troy {
+		width: 180px;
+	}
+	#frontRoyal {
+		width: 300px;
+	}
+
+	#home-projects {
+		grid-template-columns: 470px auto;
+	}
+
+	#home-music {
+		grid-template-columns: 2fr 1fr;
+	}
+
+	#home-contact {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	#home-contact .home-header {
+		align-self: center;
+	}
+}

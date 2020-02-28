@@ -1,206 +1,152 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../css/global.min.css">
-    <link rel="stylesheet" href="../css/fa-5.0.13/css/fontawesome.min.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="../css/fa-5.0.13/css/fa-brands.min.css" media="print" onload="this.media='all'">
-    <link rel="icon" type="image/png" href="../favicon.png">
-    <title>Music | Troy V.</title>
-    <meta name="description" content="Music is one of my passions. Check out all my musical projects here.">
-
-    <style>
-      :root {--banner: url('../images/guitar-on-bed.webp');}
-      .hero-header {justify-content: flex-end;}
-      .band {margin-bottom: 5rem;}
-      .album {margin: auto;}
-      .album img {margin: 1rem auto;}
-      .album figcaption {font-size: 1.6rem;}
-      .album-description {
-        padding: 0 3rem;
-        max-width: 400px;
-      }
-      .album-listen {
-        display: block;
-        border: none;
-        width: 90%;
-        max-width: 350px;
-        margin: auto auto 2rem;
-      }
-      #troyImg, #frontRoyalImg {
-        max-width: 300px;
-        margin: auto;
-      }
-      #tth {height: 340px;}
-      #aiacr {height: 540px;}
-      .view-more h3 {
-        font-size: 1.8rem;
-        text-align: center;
-      }
-      @media only screen and (min-width: 768px) {
-        .view-more img {max-width: 150px;}
-        .row {margin-bottom: 0;}
-      }
-      @media only screen and (min-width: 1152px) {
-        .row-header p {max-width: 70vw;}
-      }
-    </style>
-
-    <script src="../js/javascript.min.js" async></script>
-  </head>
-  <body class="musicPage">
-    <header>
-      <div id="menu">
-        <button id="open" aria-label="Open the navigation menu">
-          <svg width="30" height="30">
-            <path d="M0,5 30,5"/>
-            <path d="M0,14 30,14"/>
-            <path d="M0,23 30,23"/>
-          </svg>
-        </button>
-      </div>
-      <nav class="sideNavigation" id="sideNavigation">
-        <button id="close" aria-label="Close the navigation menu">&times;</button>
-        <ul class="navbar">
-          <li id="link__home-container"><a href="../index.html" aria-label="Go back to the homepage." id="link__home">troy vassalotti.</a></li>
-          <li id="link__projects-container"><a href="../projects/index.html" id="link__projects">projects.</a></li>
-          <li id="link__music-container"><a href="../music/index.html" id="link__music">music.</a></li>
-          <li id="link__contact-container"><a href="../contact/index.html" id="link__contact">contact.</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main class="flex__centered-col">
-      <section class="header">
-        <h1 class="hero-header">Music</h1>
-      </section>
-      <section class="row">
-        <div class="row-header">
-          <p>I first picked up guitar after 11 years of life surrounded by two musical brothers. Seven years later, I decided to learn drumming.</p>
-          <p>I'm currently a guitarist and vocalist in Front Royal, and am the sole member of troy. (period included).</p>
-          <p>Check out my music below.</p>
-        </div>
-      </section>
-      <div class="grid__1-col__2-col">
-        <section class="flex__centered-col left-column__margin">
-          <div class="row__not-fixed-width" id="frontRoyal">
-            <a href="https://frontroyalmd.bandcamp.com/" target="_blank" rel="noopener">
-              <picture>
-                <source srcset="..\images\front-royal-logo-white_400x240.webp" type="image/webp"/>
-                <img src="..\images\front-royal-logo-white_400x240.png" alt="The logo for my band, Front Royal." id="frontRoyalImg" loading="lazy"/>
-              </picture>
-            </a>
-            <div class="social-bar">
-              <a class="icon-link" href="https://frontroyalmd.bandcamp.com/" target="_blank" rel="noopener" aria-label="Visit the Front Royal Bandcamp page."><i class="fab fa-bandcamp fa-4x"></i></a>
-              <a class="icon-link" href="https://www.instagram.com/frontroyal_official/" target="_blank" rel="noopener" aria-label="Visit the Front Royal Instagram."><i class="fab fa-instagram fa-4x"></i></a>
-              <a class="icon-link" href="https://www.youtube.com/channel/UCm-KryhT3o9NZSbpG-M1qCQ/feed" target="_blank" rel="noopener" aria-label="Visit the Front Royal YouTube channel."><i class="fab fa-youtube fa-4x"></i></a>
-              <a class="icon-link" href="https://www.facebook.com/FrontRoyalMD" target="_blank" rel="noopener" aria-label="Visit the Front Royal Facebook."><i class="fab fa-facebook fa-4x"></i></a>
-            </div>
-          </div>
-          <div class="flex__centered-col band">
-            <h2>Latest Release</h2>
-            <div class="album-player">
-              <div class="album-description">
-                <figure class="album">
-                  <a href="https://frontroyalmd.bandcamp.com/album/these-things-happen" target="_blank" rel="noopener">
-                    <picture>
-                      <source srcset="..\images\FR_TTH.webp" type="image/webp"/>
-                      <img src="..\images\FR_TTH_408x408.jpg" alt="These Things Happen" loading="lazy"/>
-                    </picture>
-                  </a>
-                  <figcaption>
-                    <span class="italic">These Things Happen</span>
-                    <br>
-                    6 Tracks
-                  </figcaption>
-                </figure>
-                <p>Our 3rd EP. Full Length LP debut The <span class="italic">Thought That Counts</span> coming 2020.</p>
-              </div>
-              <div class="album-embed">
-                <iframe class="album-listen" id="tth" loading="lazy" src="https://bandcamp.com/EmbeddedPlayer/album=3745012043/size=large/bgcol=333333/linkcol=f7f7ff/artwork=none/transparent=true/" seamless>
-                  <a href="http://frontroyalmd.bandcamp.com/album/these-things-happen" rel="noopener" target="_blank">These Things Happen by Front Royal</a>
-                </iframe>
-              </div>
-            </div>
-            <div class="view-more">
-              <h3>view more on <a href="https://frontroyalmd.bandcamp.com/" rel="noopener" target="_blank">bandcamp &gt;&gt;</a></h3>
-              <div class="collection">
-                <a href="https://frontroyalmd.bandcamp.com/album/all-down-hill-from-here" target="_blank" rel="noopener">
-                  <figure>
-                    <picture>
-                      <source srcset="..\images\FR_EP2_Cover.webp" type="image/webp"/>
-                      <img src="..\images\FR_EP2_Cover_408x408.jpg" alt="All Down Hill From Here" loading="lazy"/>
-                    </picture>
-                  </figure>
-                </a>
-                <a href="https://frontroyalmd.bandcamp.com/album/the-band-not-the-town" target="_blank" rel="noopener">
-                  <figure>
-                    <picture>
-                      <source srcset="..\images\FR_TBNTT.webp" type="image/webp"/>
-                      <img src="..\images\FR_TBNTT_408x408.jpg" alt="The Band, Not The Town" loading="lazy"/>
-                    </picture>
-                  </figure>
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="flex__centered-col right-column__margin">
-          <div class="row__not-fixed-width" id="troy">
-            <a href="https://frontroyalmd.bandcamp.com/" target="_blank" rel="noopener">
-              <picture>
-                <source srcset="..\images\troy-full.webp" type="image/webp"/>
-                <img src="..\images\troy-full.png" alt="The logo for my band, troy." id="troyImg" loading="lazy"/>
-              </picture>
-            </a>
-            <div class="social-bar">
-              <a class="icon-link" href="https://justtroy.bandcamp.com/" target="_blank" rel="noopener" aria-label="Visit the troy. Bandcamp page."><i class="fab fa-bandcamp fa-4x"></i></a>
-              <a class="icon-link" href="https://www.facebook.com/troyalllowercase/" target="_blank" rel="noopener" aria-label="Visit the troy. Facebook."><i class="fab fa-facebook fa-4x"></i></a>
-            </div>
-          </div>
-          <div class="flex__centered-col band">
-            <h2>Latest Release</h2>
-            <div class="album-player">
-              <div class="album-description">
-                <figure class="album">
-                  <a href="https://justtroy.bandcamp.com/" target="_blank" rel="noopener">
-                    <picture>
-                      <source srcset="..\images\aiacr.webp" type="image/webp"/>
-                      <img src="..\images\aiacr.jpg" alt="Alone In A Crowded Room" loading="lazy"/>
-                    </picture>
-                  </a>
-                  <figcaption>
-                    <span class="italic">Alone In A Crowded Room</span>
-                    <br>
-                    12 Tracks
-                  </figcaption>
-                </figure>
-                <p>My full length debut born from a summer of needing to make something of myself.</p>
-              </div>
-              <div class="album-embed">
-                <iframe class="album-listen" id="aiacr" src="https://bandcamp.com/EmbeddedPlayer/album=1057370408/size=large/bgcol=333333/linkcol=f7f7ff/artwork=none/transparent=true/" seamless loading="lazy">
-                  <a href="http://justtroy.bandcamp.com/album/alone-in-a-crowded-room">Alone In A Crowded Room by troy.</a>
-                </iframe>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-    </main>
-    <footer>
-      <div class="footer-wrapper">
-        <picture>
-          <source srcset="../images/headshot-arrow.webp" type="image/webp">
-          <img src="../images/headshot-arrow_160x160.png" alt="This is me. I look like this." loading="lazy">
-        </picture>
-        <div class="footer-icons">
-          <a class="icon-link" href="https://github.com/troyvassalotti" target="_blank" rel="noopener" aria-label="Visit my GitHub."><i class="fab fa-github fa-3x"></i></a>
-          <a class="icon-link" href="https://codepen.io/troyvassalotti" target="_blank" rel="noopener" aria-label="Visit my CodePen."><i class="fab fa-codepen fa-3x"></i></a>
-          <a class="icon-link" href="https://www.linkedin.com/in/troy-vassalotti-468053142/" target="_blank" rel="noopener" aria-label="Visit my LinkedIn."><i class="fab fa-linkedin fa-3x"></i></a>
-          <a class="icon-link" href="https://twitter.com/lowercasetroy" target="_blank" rel="noopener" aria-label="Visit my Twitter."><i class="fab fa-twitter fa-3x"></i></a>
+---
+title: Music
+description: Music is one of my passions. Check out all my musical projects here.
+layout: primary.liquid
+pageName: musicPage
+inline: >
+  :root {--banner:url('../images/guitar-on-bed.webp');}
+  .hero-header {justify-content:flex-end;}
+  .band {margin-bottom:5rem;}
+  .album {margin:auto;}
+  .album img {margin:1rem auto;}
+  .album figcaption {font-size:1.6rem;}
+  .album-description {
+  padding:0 3rem;
+  max-width:400px;}
+  .album-listen {
+  display:block;
+  border:none;
+  width:90%;
+  max-width:350px;
+  margin:auto auto 2rem;}
+  #troyImg, #frontRoyalImg {
+  max-width:300px;
+  margin:auto;}
+  #tth {height:340px;}
+  #aiacr {height:540px;}
+  .view-more h3 {
+  font-size:1.8rem;
+  text-align:center;}
+  @media only screen and (min-width:768px) {
+  .view-more img {max-width: 150px;}
+  .row {margin-bottom:0;}}
+  @media only screen and (min-width:1152px) {
+  .row-header p {max-width:70vw;}}
+---
+<main class="flex__centered-col">
+  <section class="header">
+    <h1 class="hero-header">Music</h1>
+  </section>
+  <section class="row">
+    <div class="row-header">
+      <p>I first picked up guitar after 11 years of life surrounded by two musical brothers. Seven years later, I decided to learn drumming.</p>
+      <p>I'm currently a guitarist and vocalist in Front Royal, and am the sole member of troy. (period included).</p>
+      <p>Check out my music below.</p>
+    </div>
+  </section>
+  <div class="grid__1-col__2-col">
+    <section class="flex__centered-col left-column__margin">
+      <div class="row__not-fixed-width" id="frontRoyal">
+        <a href="https://frontroyalmd.bandcamp.com/" target="_blank" rel="noopener">
+          <picture>
+            <source srcset="..\images\front-royal-logo-white_400x240.webp" type="image/webp"/>
+            <img src="..\images\front-royal-logo-white_400x240.png" alt="The logo for my band, Front Royal." id="frontRoyalImg" loading="lazy"/>
+          </picture>
+        </a>
+        <div class="social-bar">
+          <a class="icon-link" href="https://frontroyalmd.bandcamp.com/" target="_blank" rel="noopener" aria-label="Visit the Front Royal Bandcamp page."><i class="fab fa-bandcamp fa-4x"></i></a>
+          <a class="icon-link" href="https://www.instagram.com/frontroyal_official/" target="_blank" rel="noopener" aria-label="Visit the Front Royal Instagram."><i class="fab fa-instagram fa-4x"></i></a>
+          <a class="icon-link" href="https://www.youtube.com/channel/UCm-KryhT3o9NZSbpG-M1qCQ/feed" target="_blank" rel="noopener" aria-label="Visit the Front Royal YouTube channel."><i class="fab fa-youtube fa-4x"></i></a>
+          <a class="icon-link" href="https://www.facebook.com/FrontRoyalMD" target="_blank" rel="noopener" aria-label="Visit the Front Royal Facebook."><i class="fab fa-facebook fa-4x"></i></a>
         </div>
       </div>
-      <p>&copy; troy vassalotti.</p>
-    </footer>
-  </body>
-</html>
+      <div class="flex__centered-col band">
+        <h2>Latest Release</h2>
+        <div class="album-player">
+          <div class="album-description">
+            <figure class="album">
+              <a href="https://frontroyalmd.bandcamp.com/album/these-things-happen" target="_blank" rel="noopener">
+                <picture>
+                  <source srcset="..\images\FR_TTH.webp" type="image/webp"/>
+                  <img src="..\images\FR_TTH_408x408.jpg" alt="These Things Happen" loading="lazy"/>
+                </picture>
+              </a>
+              <figcaption>
+                <span class="italic">These Things Happen</span>
+                <br>
+                6 Tracks
+              </figcaption>
+            </figure>
+            <p>Our 3rd EP. Full Length LP debut The <span class="italic">Thought That Counts</span> coming 2020.</p>
+          </div>
+          <div class="album-embed">
+            <iframe class="album-listen" id="tth" loading="lazy" src="https://bandcamp.com/EmbeddedPlayer/album=3745012043/size=large/bgcol=333333/linkcol=f7f7ff/artwork=none/transparent=true/" seamless>
+              <a href="http://frontroyalmd.bandcamp.com/album/these-things-happen" rel="noopener" target="_blank">These Things Happen by Front Royal</a>
+            </iframe>
+          </div>
+        </div>
+        <div class="view-more">
+          <h3>view more on <a href="https://frontroyalmd.bandcamp.com/" rel="noopener" target="_blank">bandcamp &gt;&gt;</a></h3>
+          <div class="collection">
+            <a href="https://frontroyalmd.bandcamp.com/album/all-down-hill-from-here" target="_blank" rel="noopener">
+              <figure>
+                <picture>
+                  <source srcset="..\images\FR_EP2_Cover.webp" type="image/webp"/>
+                  <img src="..\images\FR_EP2_Cover_408x408.jpg" alt="All Down Hill From Here" loading="lazy"/>
+                </picture>
+              </figure>
+            </a>
+            <a href="https://frontroyalmd.bandcamp.com/album/the-band-not-the-town" target="_blank" rel="noopener">
+              <figure>
+                <picture>
+                  <source srcset="..\images\FR_TBNTT.webp" type="image/webp"/>
+                  <img src="..\images\FR_TBNTT_408x408.jpg" alt="The Band, Not The Town" loading="lazy"/>
+                </picture>
+              </figure>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="flex__centered-col right-column__margin">
+      <div class="row__not-fixed-width" id="troy">
+        <a href="https://justtroy.bandcamp.com/" target="_blank" rel="noopener">
+          <picture>
+            <source srcset="..\images\troy-full.webp" type="image/webp"/>
+            <img src="..\images\troy-full.png" alt="The logo for my band, troy." id="troyImg" loading="lazy"/>
+          </picture>
+        </a>
+        <div class="social-bar">
+          <a class="icon-link" href="https://justtroy.bandcamp.com/" target="_blank" rel="noopener" aria-label="Visit the troy. Bandcamp page."><i class="fab fa-bandcamp fa-4x"></i></a>
+          <a class="icon-link" href="https://www.facebook.com/troyalllowercase/" target="_blank" rel="noopener" aria-label="Visit the troy. Facebook."><i class="fab fa-facebook fa-4x"></i></a>
+        </div>
+      </div>
+      <div class="flex__centered-col band">
+        <h2>Latest Release</h2>
+        <div class="album-player">
+          <div class="album-description">
+            <figure class="album">
+              <a href="https://justtroy.bandcamp.com/" target="_blank" rel="noopener">
+                <picture>
+                  <source srcset="..\images\aiacr.webp" type="image/webp"/>
+                  <img src="..\images\aiacr.jpg" alt="Alone In A Crowded Room" loading="lazy"/>
+                </picture>
+              </a>
+              <figcaption>
+                <span class="italic">Alone In A Crowded Room</span>
+                <br>
+                12 Tracks
+              </figcaption>
+            </figure>
+            <p>My full length debut born from a summer of needing to make something of myself.</p>
+          </div>
+          <div class="album-embed">
+            <iframe class="album-listen" id="aiacr" src="https://bandcamp.com/EmbeddedPlayer/album=1057370408/size=large/bgcol=333333/linkcol=f7f7ff/artwork=none/transparent=true/" seamless loading="lazy">
+              <a href="http://justtroy.bandcamp.com/album/alone-in-a-crowded-room">Alone In A Crowded Room by troy.</a>
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
