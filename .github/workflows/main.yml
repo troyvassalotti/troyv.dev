@@ -8,8 +8,7 @@ jobs:
       - name: Audit URLs using Lighthouse
         uses: treosh/lighthouse-ci-action@v2
         with:
-          urls: |
-            https://troyv.dev/projects/
+          urls: | # no urls at this time to audit
       - name: Save results
         uses: actions/upload-artifact@v1
         with:
