@@ -4,13 +4,16 @@
   "description": "This is my portfolio, but it can really be whatever I want it to be.",
   "main": "_site/index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npx @11ty/eleventy",
+    "watch": "npx @11ty/eleventy --watch",
+    "serve": "npx @11ty/eleventy --serve",
+    "debug": "DEBUG=* npx @11ty/eleventy"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/troyvassalotti/personal-site.git"
   },
-  "keywords": [],
+  "keywords": ["portfolio","developer","front end","eleventy","11ty"],
   "author": {
     "name": "Troy Vassalotti",
     "email": "troyvassalotti@gmail.com",
@@ -23,8 +26,5 @@
   "homepage": "https://github.com/troyvassalotti/personal-site#readme",
   "devDependencies": {
     "@11ty/eleventy": "^0.10.0"
-  },
-  "dependencies": {
-    "core-js": "^3.6.4"
   }
 }
