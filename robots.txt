@@ -1,5 +1,1 @@
 User-agent: *
-Disallow: /super-secret/
-Disallow: /fonts/
-Disallow: /js/
-Disallow: /css/

@@ -1,10 +1,15 @@
 module.exports = function(eleventyConfig) {
+  eleventyConfig.addPassthroughCopy("images");
+  eleventyConfig.addPassthroughCopy("css");
+  eleventyConfig.addPassthroughCopy("js");
+  eleventyConfig.addPassthroughCopy("robots.txt");
+
   eleventyConfig.addShortcode("footer", function() {
     return `<footer>
       <div class="footer-wrapper">
         <picture>
-          <source srcset="https://troyv.dev/images/headshot-arrow.webp" type="image/webp">
-          <img src="https://troyv.dev/images/headshot-arrow_160x160.png" alt="This is me. I look like this." loading="lazy">
+          <source srcset="/images/headshot-arrow.webp" type="image/webp">
+          <img src="/images/headshot-arrow_160x160.png" alt="This is me. I look like this." loading="lazy">
         </picture>
         <div class="footer-icons">
           <a class="icon-link" href="https://github.com/troyvassalotti" target="_blank" rel="noopener" aria-label="Visit my GitHub."><i class="fab fa-github fa-3x"></i></a>

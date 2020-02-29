@@ -2,8 +2,8 @@
 
 @font-face {
   font-family: 'Native';
-  src: url('../fonts/native/native-Regular.woff2') format('woff2'),
-  url('../fonts/native/native-Regular.woff') format('woff');
+  src: url('fonts/native/native-Regular.woff2') format('woff2'),
+  url('fonts/native/native-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -12,8 +12,8 @@
 
 @font-face {
   font-family: 'Native';
-  src: url('../fonts/native/native-Italic.woff2') format('woff2'),
-  url('../fonts/native/native-Italic.woff') format('woff');
+  src: url('fonts/native/native-Italic.woff2') format('woff2'),
+  url('fonts/native/native-Italic.woff') format('woff');
   font-weight: 400;
   font-style: italic;
   font-display: swap;
@@ -22,8 +22,8 @@
 
 @font-face {
   font-family: 'Native';
-  src: url('../fonts/native/native-Light.woff2') format('woff2'),
-  url('../fonts/native/native-Light.woff') format('woff');
+  src: url('fonts/native/native-Light.woff2') format('woff2'),
+  url('fonts/native/native-Light.woff') format('woff');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -32,8 +32,8 @@
 
 @font-face {
   font-family: 'Native';
-  src: url('../fonts/native/native-LightItalic.woff2') format('woff2'),
-  url('../fonts/native/native-LightItalic.woff') format('woff');
+  src: url('fonts/native/native-LightItalic.woff2') format('woff2'),
+  url('fonts/native/native-LightItalic.woff') format('woff');
   font-weight: 300;
   font-style: italic;
   font-display: swap;
@@ -42,8 +42,8 @@
 
 @font-face {
   font-family: 'Native';
-  src: url('../fonts/native/native-Bold.woff2') format('woff2'),
-  url('../fonts/native/native-Bold.woff') format('woff');
+  src: url('fonts/native/native-Bold.woff2') format('woff2'),
+  url('fonts/native/native-Bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -52,8 +52,8 @@
 
 @font-face {
   font-family: 'Native';
-  src: url('../fonts/native/native-BoldItalic.woff2') format('woff2'),
-  url('../fonts/native/native-BoldItalic.woff') format('woff');
+  src: url('fonts/native/native-BoldItalic.woff2') format('woff2'),
+  url('fonts/native/native-BoldItalic.woff') format('woff');
   font-weight: 700;
   font-style: italic;
   font-display: swap;
@@ -62,8 +62,8 @@
 
 @font-face {
   font-family: 'Shackleton';
-  src: url('../fonts/shackleton/Shackleton-Extended.woff2') format('woff2'),
-  url('../fonts/shackleton/Shackleton-Extended.woff') format('woff');
+  src: url('fonts/shackleton/Shackleton-Extended.woff2') format('woff2'),
+  url('fonts/shackleton/Shackleton-Extended.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
