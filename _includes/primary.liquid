@@ -3,16 +3,16 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/global.min.css">
+    <link rel="stylesheet" href="../css/global.min.css">
     {% if pageCSS %}
-    <link rel="stylesheet" href="css/{{pageCSS}}.css">
+    <link rel="stylesheet" href="../css/{{pageCSS}}.css">
     {% endif %}
-    <link rel="stylesheet" href="css/fa-5.0.13/css/fontawesome.min.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="css/fa-5.0.13/css/fa-brands.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="../css/fa-5.0.13/css/fontawesome.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="../css/fa-5.0.13/css/fa-brands.min.css" media="print" onload="this.media='all'">
     {% if animation %}
-    <script src="js/prefixfree.js"></script>
+    <script src="../js/prefixfree.js"></script>
     {% endif %}
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="icon" type="image/png" href="../favicon.png">
     <title>{{title}} | Troy V.</title>
     <meta name="description" content="{{description}}">
     {% if inline %}
@@ -25,6 +25,6 @@
     {% mainNav %}
     {{content}}
     {% footer %}
-  <script src="js/javascript.min.js" async></script>
+  <script src="../js/javascript.min.js" async></script>
   </body>
 </html>
