@@ -13,10 +13,10 @@ module.exports = function(eleventyConfig) {
           <img src="/images/headshot-arrow_160x160.png" alt="This is me. I look like this." loading="lazy">
         </picture>
         <div class="footer-icons">
-          <a class="icon-link" href="https://github.com/troyvassalotti" target="_blank" rel="noopener" aria-label="Visit my GitHub."><i class="fab fa-github fa-3x"></i></a>
-          <a class="icon-link" href="https://codepen.io/troyvassalotti" target="_blank" rel="noopener" aria-label="Visit my CodePen."><i class="fab fa-codepen fa-3x"></i></a>
-          <a class="icon-link" href="https://www.linkedin.com/in/troy-vassalotti-468053142/" target="_blank" rel="noopener" aria-label="Visit my LinkedIn."><i class="fab fa-linkedin fa-3x"></i></a>
-          <a class="icon-link" href="https://twitter.com/lowercasetroy" target="_blank" rel="noopener" aria-label="Visit my Twitter."><i class="fab fa-twitter fa-3x"></i></a>
+          <a class="icon-link" href="https://github.com/troyvassalotti" target="_blank" rel="noopener" aria-label="Visit my GitHub."><img src="/images/github-black.svg" alt="Github"></a>
+          <a class="icon-link" href="https://codepen.io/troyvassalotti" target="_blank" rel="noopener" aria-label="Visit my CodePen."><img src="/images/codepen-black.svg" alt="Codepen"></a>
+          <a class="icon-link" href="https://www.linkedin.com/in/troy-vassalotti-468053142/" target="_blank" rel="noopener" aria-label="Visit my LinkedIn."><img src="/images/linkedin-black.svg" alt="Linkedin"></a>
+          <a class="icon-link" href="https://twitter.com/lowercasetroy" target="_blank" rel="noopener" aria-label="Visit my Twitter."><img src="/images/twitter-black.svg" alt="Twitter"></a>
         </div>
       </div>
       <p>&copy; troy vassalotti.</p>
