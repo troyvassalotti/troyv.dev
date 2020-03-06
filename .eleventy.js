@@ -10,7 +10,7 @@ module.exports = function(eleventyConfig) {
       <div class="footer-wrapper">
         <picture>
           <source srcset="/images/headshot-arrow.webp" type="image/webp">
-          <img src="/images/headshot-arrow_160x160.png" alt="This is me. I look like this." loading="lazy">
+          <img id="me" src="/images/headshot-arrow_160x160.png" alt="This is me. I look like this." loading="lazy">
         </picture>
         <div class="footer-icons">
           <a class="icon-link" href="https://github.com/troyvassalotti" target="_blank" rel="noopener" aria-label="Visit my GitHub."><img src="/images/github-black.svg" alt="Github"></a>

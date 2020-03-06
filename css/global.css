@@ -423,15 +423,6 @@ a:focus {
   outline-width: .3rem;
 }
 
-.icon-link {
-  color: var(--black);
-}
-
-.icon-link:hover {
-  transition: .2s;
-  color: var(--purple);
-}
-
 code {
   font-family: var(--code);
 }
@@ -563,7 +554,7 @@ footer {
   justify-content: space-around;
 }
 
-footer img {
+#me {
   max-width: 88px;
 }
 
@@ -572,6 +563,11 @@ footer img {
 	grid-template-columns: 1fr 1fr;
 	align-content: center;
 	gap: 1rem;
+  place-items: center;
+}
+
+.icon-link img {
+  max-width: 32px;
 }
 
 footer p {
@@ -619,6 +615,11 @@ footer p {
 	width: 100%;
   max-width: 325px;
   margin: auto;
+  align-items: center;
+}
+
+.social-bar img {
+  max-width: 48px;
 }
 
 .grid__1-col__2-col {
@@ -748,7 +749,7 @@ footer p {
 		font-size: 1.8rem;
 	}
 
-  footer img {
+  #me {
 		max-width: 130px;
 	}
 
