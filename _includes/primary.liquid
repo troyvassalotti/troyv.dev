@@ -4,16 +4,33 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/global.min.css">
-    {% if pageCSS %}<link rel="stylesheet" href="/css/{{pageCSS}}.css">{% endif %}
-    {% if animation %}<script src="/js/prefixfree.js"></script>{% endif %}
+    {%- if pageCSS -%}
+      <link rel="stylesheet" href="/css/{{pageCSS}}.css">
+    {%- endif -%}
+    {%- if animation -%}
+      <script src="/js/prefixfree.js"></script>
+    {%- endif -%}
     <link rel="icon" type="image/png" href="/favicon.png">
     <title>{{title}} | Troy V.</title>
     <meta name="description" content="{{description}}">
-    {% if inline %}
+
+    <meta name="og:locale" content="en_US">
+    {%- if pageType -%}
+    <meta name="og:type" content="{{pageType}}">
+    {%- else -%}
+    <meta name="og:type" content="website">
+    {%- endif -%}
+    <meta name="og:title" content="{{title}}">
+    <meta name="og:description" content="{{description}}">
+    <meta name="og:site_name" content="troyv.dev">
+    <meta name="twitter:title" content="{{title}}">
+    <meta name="twitter:description" content="{{description}}">
+    
+    {%- if inline -%}
     <style>
       {{inline}}
     </style>
-    {% endif %}
+    {%- endif -%}
   </head>
   <body class="{{pageName}}">
     {% mainNav %}

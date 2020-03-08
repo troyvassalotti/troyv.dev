@@ -1,0 +1,22 @@
+---
+title: Blog
+description: I occasionally write about things that enter my mind or the excessive amounts of data I keep on myself.
+layout: primary.liquid
+pageName: blogPage
+inline: >
+  :root {--banner:url('/images/filename.webp')}
+  .hero-header {justify-content:flex-end;}
+---
+<main class="flex__centered-col">
+  <section class="header">
+    <h1 class="hero-header">Blog</h1>
+  </section>
+  <ul class="blog-listing-container">
+  {%- for post in collections.post -%}
+    <li class="blog-listing">
+      <h2>{{post.data.title}}</h2>
+      <p>{{post.data.description}}</p>
+    </li>
+  {%- endfor -%}
+  </ul>
+</main>
