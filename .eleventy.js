@@ -38,6 +38,7 @@ module.exports = function(eleventyConfig) {
         <button id="close" aria-label="Close the navigation menu">&times;</button>
         <ul class="navbar">
           <li id="link__home-container"><a href="/" aria-label="Go back to the homepage." id="link__home">troy vassalotti.</a></li>
+          <li id="link__blog-container"><a href="/blog/" id="link__blog">blog.</a></li>
           <li id="link__projects-container"><a href="/projects/" id="link__projects">projects.</a></li>
           <li id="link__music-container"><a href="/music/" id="link__music">music.</a></li>
           <li id="link__contact-container"><a href="/contact/" id="link__contact">contact.</a></li>

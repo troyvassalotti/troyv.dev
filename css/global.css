@@ -604,6 +604,35 @@ footer p {
 	padding: 0;
 }
 
+.blog-listing-container {
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  max-width: 768px;
+  margin: auto;
+}
+
+.blog-listing {
+  margin-bottom: 4rem;
+  border-left: 5px solid var(--gold);
+  padding-left: 2rem;
+  display: block;
+}
+
+.blog-listing p {
+  margin: 1rem 0 0;
+}
+
+.article {
+  width: 95%;
+	max-width: 768px;
+	margin: auto;
+}
+
+.article img {
+  max-width: 400px;
+}
+
 
 /* ======================
   Tablet and Desktop Styles
@@ -652,11 +681,23 @@ footer p {
 		text-decoration-color: var(--gold);
     text-decoration-thickness: .3rem;
 	}
+  #link__music:hover {
+		background-color: transparent;
+		text-decoration: underline;
+		text-decoration-color: var(--gold);
+    text-decoration-thickness: .3rem;
+	}
 	#link__contact:hover {
 		background-color: var(--blue);
 		border-radius: 1rem;
 		color: var(--black);
 	}
+  #link__blog:hover {
+    background-color: transparent;
+		text-decoration: underline;
+    text-decoration-thickness: .3rem;
+	  text-decoration-color: var(--green);
+  }
 
 	p, ul {
 		font-size: 1.8rem;
@@ -741,6 +782,14 @@ footer p {
 
   .row-header p {
     max-width: 40vw;
+  }
+
+  .blogPage h2 {
+    font-size: 3.5rem;
+  }
+
+  .blogArticle h1 {
+    font-size: 5.5rem;
   }
 }
 
