@@ -4,6 +4,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("js");
   eleventyConfig.addPassthroughCopy("robots.txt");
   eleventyConfig.addPassthroughCopy("contact/resume.pdf");
+  eleventyConfig.addPassthroughCopy("favicon.png");
 
   eleventyConfig.addShortcode("footer", function() {
     return `<footer>

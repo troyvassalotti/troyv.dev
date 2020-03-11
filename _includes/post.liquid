@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700|Quicksand&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/global.min.css">
     {%- if animation -%}
       <script src="/js/prefixfree.js"></script>
@@ -15,8 +16,10 @@
     <meta name="og:title" content="{{title}}">
     <meta name="og:description" content="{{description}}">
     <meta name="og:site_name" content="troyv.dev">
+    <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="{{title}}">
     <meta name="twitter:description" content="{{description}}">
+    <meta name="twitter:creator" content="@lowercasetroy">
     {%- if inline -%}
     <style>
       {{inline}}
@@ -31,7 +34,7 @@
           <h1>{{title}}</h1>
         </div>
         <div class="blog-date">
-          <p>{{postDate}}</p>
+          <p>{{postDate}} <time datetime="{{page.date}}">({{page.date}})</time></p>
         </div>
       </div>
       {{content}}
