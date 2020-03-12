@@ -619,6 +619,10 @@ footer p {
   margin: 1rem 0 0;
 }
 
+.blog-header {
+  border-bottom: 2px solid var(--gold);
+}
+
 .article {
   width: 95%;
 	max-width: 768px;
