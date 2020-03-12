@@ -372,6 +372,7 @@ ul.navbar a:hover {
 img {
   display: block;
   max-width: 100%;
+  margin: auto;
 }
 
 p, ul {
@@ -624,7 +625,7 @@ footer p {
 }
 
 .article img {
-  max-width: 400px;
+  max-width: 600px;
 }
 
 
