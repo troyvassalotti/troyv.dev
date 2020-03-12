@@ -395,10 +395,6 @@ code {
   font-family: var(--code);
 }
 
-.strike {
-  text-decoration: line-through;
-}
-
 .button-wrapper {
 	display: flex;
 	justify-content: center;
