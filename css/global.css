@@ -1,9 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat|Quicksand:500,700&display=swap');
-
-/* @font-face {
-  font-family: 'Shackleton';
-  src: url('fonts/shackleton/Shackleton-Extended.woff2') format('woff2'),
-  url('fonts/shackleton/Shackleton-Extended.woff') format('woff');
+@font-face {
+  font-family: 'Native';
+  src: url('/css/fonts/native/native-Regular.woff2') format('woff2'),
+  url('/css/fonts/native/native-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -12,38 +10,8 @@
 
 @font-face {
   font-family: 'Native';
-  src: url('fonts/native/native-Light.woff2') format('woff2'),
-  url('fonts/native/native-Light.woff') format('woff');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-  font-family: 'Native';
-  src: url('fonts/native/native-LightItalic.woff2') format('woff2'),
-  url('fonts/native/native-LightItalic.woff') format('woff');
-  font-weight: 300;
-  font-style: italic;
-  font-display: swap;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-} */
-
-@font-face {
-  font-family: 'Native';
-  src: url('fonts/native/native-Regular.woff2') format('woff2'),
-  url('fonts/native/native-Regular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-  font-family: 'Native';
-  src: url('fonts/native/native-Italic.woff2') format('woff2'),
-  url('fonts/native/native-Italic.woff') format('woff');
+  src: url('/css/fonts/native/native-Italic.woff2') format('woff2'),
+  url('/css/fonts/native/native-Italic.woff') format('woff');
   font-weight: 400;
   font-style: italic;
   font-display: swap;
@@ -52,8 +20,8 @@
 
 @font-face {
   font-family: 'Native';
-  src: url('fonts/native/native-Bold.woff2') format('woff2'),
-  url('fonts/native/native-Bold.woff') format('woff');
+  src: url('/css/fonts/native/native-Bold.woff2') format('woff2'),
+  url('/css/fonts/native/native-Bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -62,8 +30,8 @@
 
 @font-face {
   font-family: 'Native';
-  src: url('fonts/native/native-BoldItalic.woff2') format('woff2'),
-  url('fonts/native/native-BoldItalic.woff') format('woff');
+  src: url('/css/fonts/native/native-BoldItalic.woff2') format('woff2'),
+  url('/css/fonts/native/native-BoldItalic.woff') format('woff');
   font-weight: 700;
   font-style: italic;
   font-display: swap;
@@ -403,7 +371,9 @@ ul.navbar a:hover {
 
 img {
   display: block;
+  width: 100%;
   max-width: 100%;
+  margin: auto;
 }
 
 p, ul {
@@ -425,10 +395,6 @@ a:focus {
 
 code {
   font-family: var(--code);
-}
-
-.strike {
-  text-decoration: line-through;
 }
 
 .button-wrapper {
@@ -634,6 +600,39 @@ footer p {
 	padding: 0;
 }
 
+.blog-listing-container {
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  max-width: 768px;
+  margin: auto;
+}
+
+.blog-listing {
+  margin-bottom: 4rem;
+  border-left: 5px solid var(--gold);
+  padding-left: 2rem;
+  display: block;
+}
+
+.blog-listing p {
+  margin: 1rem 0 0;
+}
+
+.blog-header {
+  border-bottom: 2px solid var(--gold);
+}
+
+.article {
+  width: 95%;
+	max-width: 768px;
+	margin: auto;
+}
+
+.article img {
+  max-width: 600px;
+}
+
 
 /* ======================
   Tablet and Desktop Styles
@@ -682,11 +681,23 @@ footer p {
 		text-decoration-color: var(--gold);
     text-decoration-thickness: .3rem;
 	}
+  #link__music:hover {
+		background-color: transparent;
+		text-decoration: underline;
+		text-decoration-color: var(--gold);
+    text-decoration-thickness: .3rem;
+	}
 	#link__contact:hover {
 		background-color: var(--blue);
 		border-radius: 1rem;
 		color: var(--black);
 	}
+  #link__blog:hover {
+    background-color: transparent;
+		text-decoration: underline;
+    text-decoration-thickness: .3rem;
+	  text-decoration-color: var(--green);
+  }
 
 	p, ul {
 		font-size: 1.8rem;
@@ -771,6 +782,14 @@ footer p {
 
   .row-header p {
     max-width: 40vw;
+  }
+
+  .blogPage h2 {
+    font-size: 3.5rem;
+  }
+
+  .blogArticle h1 {
+    font-size: 5.5rem;
   }
 }
 
