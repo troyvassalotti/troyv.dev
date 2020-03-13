@@ -376,8 +376,9 @@ img {
   margin: auto;
 }
 
-p, ul {
+p, ul, ol {
   font-size: 1.6rem;
+  line-height: 1.25;
 }
 
 a {
@@ -633,6 +634,10 @@ footer p {
   max-width: 600px;
 }
 
+.article h2 {
+  margin-top: 8%;
+}
+
 
 /* ======================
   Tablet and Desktop Styles
@@ -699,7 +704,7 @@ footer p {
 	  text-decoration-color: var(--green);
   }
 
-	p, ul {
+	p, ul, ol {
 		font-size: 1.8rem;
 	}
 
@@ -728,7 +733,7 @@ footer p {
   	grid-template-columns: 1fr 1fr;
   	align-items: first baseline;
     width: 100%;
-    max-width: 1350px
+    max-width: 1350px;
   }
 
   .left-column__margin {
@@ -737,6 +742,10 @@ footer p {
 
   .right-column__margin {
     margin-left: auto;
+  }
+
+  .article h1 {
+    font-size: 5.5rem;
   }
 }
 
@@ -768,7 +777,7 @@ footer p {
 		gap: 2rem;
 	}
 
-  p {
+  p, ul, ol {
     font-size: 2.1rem;
   }
 
@@ -786,10 +795,6 @@ footer p {
 
   .blogPage h2 {
     font-size: 3.5rem;
-  }
-
-  .blogArticle h1 {
-    font-size: 5.5rem;
   }
 }
 
