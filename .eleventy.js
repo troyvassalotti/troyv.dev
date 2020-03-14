@@ -4,26 +4,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("js");
   eleventyConfig.addPassthroughCopy("robots.txt");
   eleventyConfig.addPassthroughCopy("404.html");
+  eleventyConfig.addPassthroughCopy("_redirects");
   eleventyConfig.addPassthroughCopy("contact/resume.pdf");
   eleventyConfig.addPassthroughCopy("favicon.png");
-
-  eleventyConfig.addShortcode("footer", function() {
-    return `<footer>
-      <div class="footer-wrapper">
-        <picture>
-          <source srcset="/images/headshot-arrow.webp" type="image/webp">
-          <img id="me" src="/images/headshot-arrow_160x160.png" alt="This is me. I look like this." loading="lazy">
-        </picture>
-        <div class="footer-icons">
-          <a class="icon-link" href="https://github.com/troyvassalotti" target="_blank" rel="noopener" aria-label="Visit my GitHub."><img src="/images/github-black.svg" alt="Github"></a>
-          <a class="icon-link" href="https://codepen.io/troyvassalotti" target="_blank" rel="noopener" aria-label="Visit my CodePen."><img src="/images/codepen-black.svg" alt="Codepen"></a>
-          <a class="icon-link" href="https://www.linkedin.com/in/troy-vassalotti-468053142/" target="_blank" rel="noopener" aria-label="Visit my LinkedIn."><img src="/images/linkedin-black.svg" alt="Linkedin"></a>
-          <a class="icon-link" href="https://twitter.com/lowercasetroy" target="_blank" rel="noopener" aria-label="Visit my Twitter."><img src="/images/twitter-black.svg" alt="Twitter"></a>
-        </div>
-      </div>
-      <p>&copy; troy vassalotti.</p>
-    </footer>`
-  })
 
   eleventyConfig.addShortcode("mainNav", function() {
     return `<header>
@@ -48,4 +31,22 @@ module.exports = function(eleventyConfig) {
       </nav>
     </header>`
   })
-};
+
+  eleventyConfig.addShortcode("footer", function() {
+    return `<footer>
+      <div class="footer-wrapper">
+        <picture>
+          <source srcset="/images/headshot-arrow.webp" type="image/webp">
+          <img id="me" src="/images/headshot-arrow_160x160.png" alt="This is me. I look like this." loading="lazy">
+        </picture>
+        <div class="footer-icons">
+          <a class="icon-link" href="https://github.com/troyvassalotti" target="_blank" rel="noopener" aria-label="Visit my GitHub."><img src="/images/github-black.svg" alt="Github"></a>
+          <a class="icon-link" href="https://codepen.io/troyvassalotti" target="_blank" rel="noopener" aria-label="Visit my CodePen."><img src="/images/codepen-black.svg" alt="Codepen"></a>
+          <a class="icon-link" href="https://www.linkedin.com/in/troy-vassalotti-468053142/" target="_blank" rel="noopener" aria-label="Visit my LinkedIn."><img src="/images/linkedin-black.svg" alt="Linkedin"></a>
+          <a class="icon-link" href="https://twitter.com/lowercasetroy" target="_blank" rel="noopener" aria-label="Visit my Twitter."><img src="/images/twitter-black.svg" alt="Twitter"></a>
+        </div>
+      </div>
+      <p>&copy; troy vassalotti.</p>
+    </footer>`
+  })
+}
