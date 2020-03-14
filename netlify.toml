@@ -3,7 +3,7 @@
   publish = "_site/"
 
   # Build command
-  command = "eleventy"
+  command = "npx @11ty/eleventy"
 
 [build.processing]
   skip_processing = false
