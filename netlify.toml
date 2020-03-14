@@ -1,0 +1,25 @@
+# Build the site
+[build]
+  command = "eleventy"
+  publish = "_site"
+
+# Assign all the post-processing
+[build.processing]
+  skip_processing = false
+[build.processing.css]
+  bundle = true
+  minify = false
+[build.processing.js]
+  bundle = true
+  minify = false
+[build.processing.html]
+  pretty_urls = true
+[build.processing.images]
+  compress = true
+
+# Redirect from the default Netlify site to my custom domain
+[[redirects]]
+  from = "https://troyvassalotti.netlify.com/*"
+  to = "https://troyv.dev/:splat"
+  status = 301
+  force = true
