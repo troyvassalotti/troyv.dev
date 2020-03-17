@@ -18,7 +18,7 @@ I'm still figuring that out. For years, I've had a pretty basic understanding of
 * Bad sleep, or lack thereof: [healthy sleep and regular routines](https://americanmigrainefoundation.org/resource-library/sleep/), like going to bed and waking up at the same time each day, are positive habits.
 * Over-processed foods: it turns out a full year of soda and frozen, ready-to-eat corndogs in takes a toll on more than your gut.
 
-So while it hasn't been a mystery, a year of spreadsheet-tracking has surely helped. Just look at these _graphs!_
+So while it hasn't been a mystery, a year of spreadsheet-tracking surely helped. Just look at these _graphs!_
 
 ![Two charts I created with my migraine data](/images/migraines-charts.jpg)
 
@@ -28,7 +28,7 @@ I have this ~~potentially unhealthy~~ truly great relationship with data and spr
 2. Did one day of the week have a higher migraine occurrence? (_Mondays & Saturdays tied at 12_).
 3. Can I pinpoint a trigger or two and take my preventative care to the next level? (_Spoiler Alert: not quite_).
 
-I thought I'd have more graphs than I do, but I didn't want this project to consume me and I knew I'd be making improvements for next year anyway.
+I thought I'd have more graphs than I do, but I didn't want this project to consume me.
 
 ## What Did I Find?
 My main goal was to create calendar heat map detailing each migraine day, color coded by the main trigger, and I'd say I succeeded.
@@ -47,6 +47,6 @@ _Other than the actual pain?_ Yeah. The most difficult part of this project was 
 Getting poor sleep wasn't always enough to cause a migraine by itself; however, drinking the night before might put me in a bad situation. And I can't control the weather or tough times at work, so it's up to me to limit my exposure to other triggers as best I can. The more they stack up, the higher my chances are.
 
 ## Now What?
-Knowing what I know now, I'm taking precautions while also cutting myself some slack. For example, I'm meditating more and seeing a neurologist again. I can't get rid of the migraines entirely and I accept that. It's not worth it to get bent out of shape unless they get more extreme of happen way more often.
+Knowing what I know now, I'm taking precautions while also cutting myself some slack. For example, I'm meditating more and seeing a neurologist again. I can't get rid of the migraines entirely and I accept that. It's not worth it to get bent out of shape unless they get more extreme or happen way more often.
 
 As of writing this, I've had seven and that's pretty nice, all things considered. If you're keeping math at home, that's a month's worth of migraines in three months time. It's only uphill from here.
