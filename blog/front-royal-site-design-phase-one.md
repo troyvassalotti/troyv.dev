@@ -2,7 +2,7 @@
 title: Front Royal Site Design - Phase 1
 description: We want a website so we have a presence that isn't exclusively on social media. So, I'm whipping up a site and blogging about it in real time.
 layout: post.liquid
-postDate: INSERT DATE HERE
+postDate: March 16th, 2020
 tags: ['post', 'front royal', 'design']
 ---
 There was a point in time bands either had a myspace, PureVolume, or both. Nowadays, it's not so simple. People take up _so much_ space on the internet and bands have to spread their coverage out even further.
