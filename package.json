@@ -13,12 +13,18 @@
     "type": "git",
     "url": "git+https://github.com/troyvassalotti/personal-site.git"
   },
-  "keywords": ["portfolio","developer","front end","eleventy","11ty"],
+  "keywords": [
+    "portfolio",
+    "developer",
+    "front end",
+    "eleventy",
+    "11ty"
+  ],
   "author": {
     "name": "Troy Vassalotti",
     "email": "troyvassalotti@gmail.com",
     "url": "https://troyv.dev"
-    },
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/troyvassalotti/personal-site/issues"
@@ -26,5 +32,9 @@
   "homepage": "https://github.com/troyvassalotti/personal-site#readme",
   "devDependencies": {
     "@11ty/eleventy": "^0.10.0"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "dotenv": "^8.2.0"
   }
 }
