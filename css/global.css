@@ -453,6 +453,14 @@ figcaption {
 	padding: 1rem 0;
 }
 
+.collection__bigger figure {
+  max-width: 220px;
+}
+
+.collection__bigger figcaption {
+  text-align: left;
+}
+
 /* ======================
   Contact Form Styles
   ======================= */
@@ -716,6 +724,14 @@ footer p {
   	font-size: 1.4rem;
   }
 
+  .collection__bigger {
+    justify-content: space-around;
+  }
+
+  .collection__bigger figure {
+    max-width: 320px;
+  }
+
   .contact-form label {
     font-size: 1.8rem;
   }
@@ -768,6 +784,10 @@ footer p {
   figcaption {
 		font-size: 1.8rem;
 	}
+
+  .collection__bigger figure {
+    max-width: 500px;
+  }
 
   #me {
 		max-width: 130px;

@@ -5,17 +5,10 @@ layout: primary.liquid
 pageName: projectsPage
 inline: >
   :root {--banner:url('/images/caution-bg.webp')}
-  .data figure {max-width:220px;}
-  .data figcaption {text-align:left;}
-  @media only screen and (min-width:768px) {
-  .data {justify-content:space-around;}
-  .data figure {max-width:320px;}}
-  @media only screen and (min-width:1152px) {
-  .data figure {max-width:500px;}}
 ---
 <main class="flex__centered-col">
   <section class="header">
-    <h1 class="hero-header">Projects</h1>
+    <h1 class="hero-header">{{title}}</h1>
   </section>
   <section class="row">
     <div class="row-header">
@@ -137,7 +130,7 @@ inline: >
       <h2>Big Data</h2>
       <p>I enjoy tracking random parts of my life, such as my migraines or how my Spotify listening habits change with the season.</p>
     </div>
-    <div class="collection data">
+    <div class="collection collection__bigger">
       <figure>
         <a href="/blog/i-logged-my-migraines-for-a-year/">
           <picture>
@@ -161,7 +154,7 @@ inline: >
       <h2>Emails</h2>
       <p>My work with building and designing marketing emails are the reason I got into coding. They're a pain to work with, but fun to look at. Here are two templates I use in my own designs.</p>
     </div>
-    <div class="collection data">
+    <div class="collection collection__bigger">
       <figure>
         <a href="emails/classic.html">
           <picture>
@@ -187,7 +180,7 @@ inline: >
       <h2>Video Editing</h2>
       <p>I occasionally edit videos for fun. Here are two times I secretly took over the Front Royal band vlog.</p>
     </div>
-    <div class="collection data">
+    <div class="collection collection__bigger">
       <figure>
         <a href="https://www.youtube.com/watch?v=DN29m0xBCDg" target="_blank" rel="noopener">
           <picture>
