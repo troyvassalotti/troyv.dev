@@ -581,7 +581,7 @@ footer p {
   margin-bottom: 3.5rem;
 }
 
-.social-bar {
+.icon-bar {
 	background-color: var(--white);
 	padding: 1rem 1.5rem;
 	border-radius: 3rem;
@@ -593,7 +593,7 @@ footer p {
   align-items: center;
 }
 
-.social-bar img {
+.icon-bar img {
   max-width: 48px;
 }
 
