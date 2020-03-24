@@ -5,6 +5,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("robots.txt");
   eleventyConfig.addPassthroughCopy("404.html");
   eleventyConfig.addPassthroughCopy("contact/resume.pdf");
+  eleventyConfig.addPassthroughCopy("favicon.png");
 
   eleventyConfig.addShortcode("mainNav", function() {
     return `<header>
