@@ -5,9 +5,13 @@ layout: post.liquid
 postDate: March 16th, 2020
 tags: ['post', 'front royal', 'design']
 ---
-There was a point in time bands either had a myspace, PureVolume, or both. Nowadays, it's not so simple. People take up _so much_ space on the internet and bands have to spread their coverage out even further.
+There was a point in time bands either had a myspace, PureVolume, or both. Nowadays, it's not so simple.
 
-It's like, all of a sudden, you had to know how to play an instrument and be a stellar _content creator_ at the same time. That means you're not going to make it much of anywhere in the music industry if your band doesn't have a Facebook, Twitter, Instagram, YouTube, Tinder, **and** Mastodon (don't @ me because I don't even know what you do on Mastodon).
+People take up _so much_ space on the internet and bands have to spread their coverage out even further.
+
+It's like, all of a sudden, you had to know how to play an instrument and be a stellar _content creator_ at the same time.
+
+That means you're not going to make it much of anywhere in the music industry if your band doesn't have a Facebook, Twitter, Instagram, YouTube, Tinder, **and** Mastodon (don't @ me because I don't even know what you do on Mastodon).
 
 While that's all well and good I guess, it's not centralized and at any moment the algorithms could change and your band falls off the face of the Earth; that's where having your own website becomes the one-stop-shop for everything Your Band.
 
@@ -23,7 +27,9 @@ Looking at other approaches to band sites, it's pretty clear a single-page desig
 
 All a band's content lives elsewhere, so you don't need to host it all on your site...unless everything comes crashing down, but we'll all cross that bridge together later.
 
-A single page constrains you because it needs to concisely have all the content you need while also being fast. The latter can be hard to achieve when the page is loaded with widgets (media players, real-time tour dates), so everything else needs to be minimal (JavaScript, HTTP requests, even CSS).
+A single page constrains you because it needs to concisely have all the content you need while also being fast.
+
+The latter can be hard to achieve when the page is loaded with widgets (media players, real-time tour dates), so everything else needs to be minimal (JavaScript, HTTP requests, even CSS).
 
 I decided the these were the most important features to cover:
 * Ability to stream music
@@ -43,7 +49,9 @@ While I haven't done any actual coding yet, I plan on this being mostly flexbox 
 
 The tour dates will be a widget from bandsintown and the media players will either come from Spotify or Bandcamp, but I'm not sure which to go with yet.
 
-I want to avoid using Font Awesome to reduce unnecessary HTTP requests, so I'll opt for SVG instead. I'll also self-optimize the images that accompany the media players so I can control the amount of data they bring with them.
+I want to avoid using Font Awesome to reduce unnecessary HTTP requests, so I'll opt for SVG instead.
+
+I'll also self-optimize the images that accompany the media players so I can control the amount of data they bring with them.
 
 Oh, and I'm hoping to avoid any website builders like Squarespace or WordPress because I want the practice and think it'll be more fun.
 
