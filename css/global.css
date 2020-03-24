@@ -227,6 +227,7 @@ html {
 	font-family: var(--body);
 	background-color: var(--dark);
 	color: var(--white);
+  line-height: 1.5;
 }
 
 body {
@@ -378,7 +379,6 @@ img {
 
 p, ul, ol {
   font-size: 1.6rem;
-  line-height: 1.25;
 }
 
 a {
@@ -406,7 +406,6 @@ code {
 
 .button {
 	display: block;
-	line-height: 1.5;
 	white-space: nowrap;
 	background-color: var(--gold);
 	border-radius: 1.5rem;
@@ -603,7 +602,6 @@ footer p {
 }
 
 .list__nondescript {
-	line-height: 1.5;
 	margin-top: 1rem;
 	list-style: none;
 	padding: 0;
@@ -767,7 +765,7 @@ footer p {
 
 @media only screen and (min-width: 1152px) {
 	h1 {font-size: 6rem;}
-  h2 {font-size: 4.6rem;}
+  h2 {font-size: 4.4rem;}
   h3 {font-size: 3.8rem;}
   h4 {font-size: 3.4rem;}
   h5 {font-size: 3rem;}
@@ -798,7 +796,7 @@ footer p {
 	}
 
   p, ul, ol {
-    font-size: 2.1rem;
+    font-size: 1.9rem;
   }
 
   .header {
@@ -810,11 +808,15 @@ footer p {
   }
 
   .row-header p {
-    max-width: 40vw;
+    max-width: 50vw;
   }
 
   .blogPage h2 {
     font-size: 3.5rem;
+  }
+
+  .article h2 {
+    font-size: 4rem;
   }
 }
 
