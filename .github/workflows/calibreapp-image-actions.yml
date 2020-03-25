@@ -20,4 +20,4 @@ jobs:
           jpegQuality: "80"
           pngQuality: "80"
           webpQuality: "80"
-          ignorePaths: "node_modules/**,.eleventyignore,.eleventy.js,package.json,package-lock.json,images/*.svg"
+          ignorePaths: "node_modules/**,.eleventyignore,.eleventy.js,package.json,package-lock.json,images/**.svg"
