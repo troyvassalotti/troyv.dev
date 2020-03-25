@@ -1,7 +1,8 @@
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("images");
-  eleventyConfig.addPassthroughCopy("css");
-  eleventyConfig.addPassthroughCopy("js");
+  eleventyConfig.addPassthroughCopy("css/fonts");
+  eleventyConfig.addPassthroughCopy("css/compressed");
+  eleventyConfig.addPassthroughCopy("js/compressed");
   eleventyConfig.addPassthroughCopy("robots.txt");
   eleventyConfig.addPassthroughCopy("contact/resume.pdf");
   eleventyConfig.addPassthroughCopy("favicon.ico");
@@ -49,11 +50,11 @@ module.exports = function(eleventyConfig) {
   })
 
   eleventyConfig.addShortcode("scripts", function() {
-    return `<script src="/js/javascript.min.js" async></script>`
+    return `<script src="/js/compressed/javascript.min.js" async></script>`
   })
 
   eleventyConfig.addShortcode("contactForm", function() {
-    return `<form class="contact-form" name="contactForm" netlify netlify-honeypot="bot-field" action="/success/">
+    return `<form class="contact-form" name="contactForm" netlify netlify-honeypot="bot-field" action="/pages/success/">
       <label style="display: none;">Don’t fill this out: <input name="bot-field"></label>
     	<label for="name">Name<input name="name" type="text" id="name" required></label>
     	<label for="email">Email<input name="email" type="email" id="email" required></label>
