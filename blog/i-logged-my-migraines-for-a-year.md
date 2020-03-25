@@ -42,11 +42,19 @@ I created the calendar using [Tableau Public](https://public.tableau.com/profile
 * Secondary Trigger
 
 ## Any Difficulties?
-_Other than the actual pain?_ Yeah. The most difficult part of this project was assigning a trigger for myself. While sometimes I can say stress directly caused it in X cases, in Y cases it is not so clear. I realized over the year that it's less "what was the cause?" and more "what _were_ the _causes_?"
+_Other than the actual pain?_ Yeah. The most difficult part of this project was assigning a trigger for myself. While sometimes I can say stress directly caused it in X cases, in Y cases it is not so clear.
 
-Getting poor sleep wasn't always enough to cause a migraine by itself; however, drinking the night before might put me in a bad situation. And I can't control the weather or tough times at work, so it's up to me to limit my exposure to other triggers as best I can. The more they stack up, the higher my chances are.
+I realized over the year that it's less "what was the cause?" and more "what _were_ the _causes_?"
+
+Getting poor sleep wasn't always enough to cause a migraine by itself; however, drinking the night before might put me in a bad situation.
+
+And I can't control the weather or tough times at work, so it's up to me to limit my exposure to other triggers as best I can. The more they stack up, the higher my chances are.
 
 ## Now What?
-Knowing what I know now, I'm taking precautions while also cutting myself some slack. For example, I'm meditating more and seeing a neurologist again. I can't get rid of the migraines entirely and I accept that. It's not worth it to get bent out of shape unless they get more extreme or happen way more often.
+Knowing what I know now, I'm taking precautions while also cutting myself some slack. For example, I'm meditating more and seeing a neurologist again. I can't get rid of the migraines entirely and I accept that.
 
-As of writing this, I've had seven and that's pretty nice, all things considered. If you're keeping math at home, that's a month's worth of migraines in three months time. It's only uphill from here.
+It's not worth it to get bent out of shape unless they get more extreme or happen way more often.
+
+As of writing this, I've had seven and that's pretty nice, all things considered. If you're keeping math at home, that's a month's worth of migraines in three months time.
+
+It's only uphill from here.

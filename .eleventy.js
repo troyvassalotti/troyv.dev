@@ -1,11 +1,11 @@
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("images");
-  eleventyConfig.addPassthroughCopy("css");
-  eleventyConfig.addPassthroughCopy("js");
+  eleventyConfig.addPassthroughCopy("css/fonts");
+  eleventyConfig.addPassthroughCopy("css/compressed");
+  eleventyConfig.addPassthroughCopy("js/compressed");
   eleventyConfig.addPassthroughCopy("robots.txt");
-  eleventyConfig.addPassthroughCopy("404.html");
   eleventyConfig.addPassthroughCopy("contact/resume.pdf");
-  eleventyConfig.addPassthroughCopy("favicon.png");
+  eleventyConfig.addPassthroughCopy("favicon.ico");
 
   eleventyConfig.addShortcode("mainNav", function() {
     return `<header>
@@ -47,5 +47,19 @@ module.exports = function(eleventyConfig) {
       </div>
       <p>&copy; troy vassalotti.</p>
     </footer>`
+  })
+
+  eleventyConfig.addShortcode("scripts", function() {
+    return `<script src="/js/compressed/javascript.min.js" async></script>`
+  })
+
+  eleventyConfig.addShortcode("contactForm", function() {
+    return `<form class="contact-form" name="contactForm" netlify netlify-honeypot="bot-field" action="/pages/success/">
+      <label style="display: none;">Don’t fill this out: <input name="bot-field"></label>
+    	<label for="name">Name<input name="name" type="text" id="name" required></label>
+    	<label for="email">Email<input name="email" type="email" id="email" required></label>
+    	<label for="message">Message<textarea name="message" id="message" required placeholder="Say hi!"></textarea></label>
+      <input type="submit" value="Submit" class="button" id="submit">
+    </form>`
   })
 }
