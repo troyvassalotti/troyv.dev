@@ -11,6 +11,26 @@ pageName: homepage
     <h1 class="typewriter type-animation__first">Hey, I'm Troy...</h1>
     <p class="typewriter type-animation__second">...and I make things.</p>
   </section>
+  <section class="home-container" id="home-blog">
+    <div class="home-header">
+      <h2>My Blog</h2>
+      <p>Everyone's got a blog these days, and I've always stayed away from making my own.</p>
+      <p>Then I started thinking about bigger and better projects and realized a blog is a great way to showcase those.</p>
+    </div>
+    <div class="home-blog-container">
+      <ul class="blog-listing-container">
+      {%- for post in collections.post limit:2 -%}
+        <li class="blog-listing">
+          <h3><a href="{{post.url}}">{{post.data.title}}</a></h3>
+          <p>{{post.data.description}}</p>
+        </li>
+      {%- endfor -%}
+      </ul>
+    </div>
+    <div class="button-wrapper">
+      <a class="button" href="/blog/" aria-label="View my musical projects">My Blog</a>
+    </div>
+  </section>
   <section class="home-container" id="home-projects">
     <div class="home-header">
       <h2>My Projects</h2>
