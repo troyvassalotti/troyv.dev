@@ -50,20 +50,10 @@ pageName: homepage
     </div>
     <div class="collection music">
       <div id="troy">
-        <a href="https://justtroy.bandcamp.com/" target="_blank" rel="noopener">
-          <picture>
-            <source srcset="/images/troy-logo-white.webp" type="image/webp"/>
-            <img src="/images/troy-logo-white_400x400.png" alt="The logo for my band, troy." loading="lazy"/>
-          </picture>
-        </a>
+        {% hrefPic 'https://justtroy.bandcamp.com/', 'troy-logo-white_400x400', 'The logo for my band, troy.' %}
       </div>
       <div id="frontRoyal">
-        <a href="https://frontroyalmd.bandcamp.com/" target="_blank" rel="noopener">
-          <picture>
-            <source srcset="/images/front-royal-logo-white_400x240.webp" type="image/webp"/>
-            <img src="/images/front-royal-logo-white_400x240.png" alt="The logo for my band, Front Royal." loading="lazy"/>
-          </picture>
-        </a>
+        {% hrefPic 'https://frontroyalmd.bandcamp.com/', 'front-royal-logo-white_400x240', 'The logo for my band, Front Royal.' %}
       </div>
     </div>
     {% button '/music/', 'Learn more about my music.', 'My Music', '' %}

@@ -75,9 +75,18 @@ module.exports = function(eleventyConfig) {
     </figure>`
   })
 
-  eleventyConfig.addShortcode("button", function(link, aria, text, target='target="_blank" rel="noopener"') {
+  eleventyConfig.addShortcode("button", function(href, aria, text, target='target="_blank" rel="noopener"') {
     return `<div class="button-wrapper">
-      <a class="button" href="${link}" aria-label="${aria}" ${target}>${text}</a>
+      <a class="button" href="${href}" aria-label="${aria}" ${target}>${text}</a>
     </div>`
+  })
+
+  eleventyConfig.addShortcode("hrefPic", function(href, img, alt, target='target="_blank" rel="noopener"') {
+    return `<a href="${href}" ${target}>
+      <picture>
+        <source srcset="/images/${img}.webp" type="image/webp"/>
+        <img src="/images/${img}.png" alt="${alt}" loading="lazy"/>
+      </picture>
+    </a>`
   })
 }
