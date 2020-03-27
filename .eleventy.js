@@ -76,7 +76,7 @@ module.exports = function(eleventyConfig) {
   })
 
   eleventyConfig.addShortcode("button", function(link, aria, text) {
-    `<div class="button-wrapper">
+    return `<div class="button-wrapper">
       <a class="button" href="${link}" aria-label="${aria}">${text}</a>
     </div>`
   })
