@@ -63,7 +63,7 @@ module.exports = function(eleventyConfig) {
     </form>`
   })
 
-  eleventyConfig.addShortcode("collectionFigure", function(href, img, alt, caption, target='target="_blank" rel="noopener"') {
+  eleventyConfig.addShortcode("figure", function(href, img, alt, caption, target='target="_blank" rel="noopener"') {
     return `<figure>
       <a href="${href}" ${target}>
         <picture>
@@ -75,9 +75,9 @@ module.exports = function(eleventyConfig) {
     </figure>`
   })
 
-  eleventyConfig.addShortcode("button", function(link, aria, text) {
+  eleventyConfig.addShortcode("button", function(link, aria, text, target='target="_blank" rel="noopener"') {
     return `<div class="button-wrapper">
-      <a class="button" href="${link}" aria-label="${aria}">${text}</a>
+      <a class="button" href="${link}" aria-label="${aria}" ${target}>${text}</a>
     </div>`
   })
 }

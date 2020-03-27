@@ -16,51 +16,11 @@ inline: >
       <p>I started by <del>perfecting</del> getting the hang of responsive web design.</p>
     </div>
     <div class="collection">
-      <figure>
-        <a href="https://codepen.io/troyvassalotti/full/abzrWKb" target="_blank" rel="noopener">
-          <picture>
-            <source srcset="/images/tribute_ffss_600x302.webp" type="image/webp"/>
-            <img src="/images/tribute_ffss_600x302.jpg" alt="Screenshot of my project Tribute Page" loading="lazy"/>
-          </picture>
-          <figcaption>Tribute Page</figcaption>
-        </a>
-      </figure>
-      <figure>
-        <a href="https://codepen.io/troyvassalotti/full/RwNmVOg" target="_blank" rel="noopener">
-          <picture>
-            <source srcset="/images/survey_ffss_600x302.webp" type="image/webp"/>
-            <img src="/images/survey_ffss_600x302.jpg" alt="Screenshot of my project Breakfast Survey" loading="lazy"/>
-          </picture>
-          <figcaption>Breakfast Survey</figcaption>
-        </a>
-      </figure>
-      <figure>
-        <a href="https://codepen.io/troyvassalotti/full/eYmaRrZ" target="_blank" rel="noopener">
-          <picture>
-            <source srcset="/images/landing-page_ffss_600x302.webp" type="image/webp"/>
-            <img src="/images/landing-page_ffss_600x302.jpg" alt="Screenshot of my project Product Landing Page" loading="lazy"/>
-          </picture>
-          <figcaption>Product Landing Page</figcaption>
-        </a>
-      </figure>
-      <figure>
-        <a href="https://codepen.io/troyvassalotti/full/wvBbeOL" target="_blank" rel="noopener">
-          <picture>
-            <source srcset="/images/doc_ffss_600x302.webp" type="image/webp"/>
-            <img src="/images/doc_ffss_600x302.jpg" alt="Screenshot of my project Technical Documentation" loading="lazy"/>
-          </picture>
-          <figcaption>Technical Documentation</figcaption>
-        </a>
-      </figure>
-      <figure>
-        <a href="https://codepen.io/troyvassalotti/full/rNagmGR" target="_blank" rel="noopener">
-          <picture>
-            <source srcset="/images/portfolio_ffss_600x302.webp" type="image/webp"/>
-            <img src="/images/portfolio_ffss_600x302.jpg" alt="Screenshot of my project Personal Portfolio" loading="lazy"/>
-          </picture>
-          <figcaption>Personal Portfolio</figcaption>
-        </a>
-      </figure>
+      {% figure 'https://codepen.io/troyvassalotti/full/abzrWKb', 'tribute_ffss_600x302', 'Screenshot of my project Tribute Page', 'Tribute Page' %}
+      {% figure 'https://codepen.io/troyvassalotti/full/RwNmVOg', 'survey_ffss_600x302', 'Screenshot of my project Breakfast Survey', 'Breakfast Survey' %}
+      {% figure 'https://codepen.io/troyvassalotti/full/eYmaRrZ', 'landing-page_ffss_600x302', 'Screenshot of my project Product Landing Page', 'Product Landing Page' %}
+      {% figure 'https://codepen.io/troyvassalotti/full/wvBbeOL', 'doc_ffss_600x302', 'Screenshot of my project Technical Documentation', 'Technical Documentation' %}
+      {% figure 'https://codepen.io/troyvassalotti/full/rNagmGR', 'portfolio_ffss_600x302', 'Screenshot of my project Personal Portfolio', 'Personal Portfolio' %}
     </div>
   </section>
   <section class="row">
@@ -69,51 +29,11 @@ inline: >
       <p>Then I moved on to more advanced scripting, mostly with the use of frameworks like React.</p>
     </div>
     <div class="collection">
-      <figure>
-        <a href="https://codepen.io/troyvassalotti/full/WNbZYJM" target="_blank" rel="noopener">
-          <picture>
-            <source srcset="/images/random-quote_600.webp" type="image/webp"/>
-            <img src="/images/random-quote_600px.jpg" alt="Screenshot of my project Random Quote Generator" loading="lazy"/>
-          </picture>
-          <figcaption>Random Quote Generator</figcaption>
-        </a>
-      </figure>
-      <figure>
-        <a href="https://codepen.io/troyvassalotti/full/eYmjGvK" target="_blank" rel="noopener">
-          <picture>
-            <source srcset="/images/drum-machine_600.webp" type="image/webp"/>
-            <img src="/images/drum-machine_600.jpg" alt="Screenshot of my project Drum Machine" loading="lazy"/>
-          </picture>
-          <figcaption>Drum Machine</figcaption>
-        </a>
-      </figure>
-      <figure>
-        <a href="https://codepen.io/troyvassalotti/full/KKwxxLM" target="_blank" rel="noopener">
-          <picture>
-            <source srcset="/images/calculator_600.webp" type="image/webp"/>
-            <img src="/images/calculator_600.jpg" alt="Screenshot of my project JavaScript Calculator" loading="lazy"/>
-          </picture>
-          <figcaption>JavaScript Calculator</figcaption>
-        </a>
-      </figure>
-      <figure>
-        <a href="https://codepen.io/troyvassalotti/full/bGNajEV" target="_blank" rel="noopener">
-          <picture>
-            <source srcset="/images/markdown_600.webp" type="image/webp"/>
-            <img src="/images/markdown_600.jpg" alt="Screenshot of my project Markdown Previewer" loading="lazy"/>
-          </picture>
-          <figcaption>Markdown Previewer</figcaption>
-        </a>
-      </figure>
-      <figure>
-        <a href="https://codepen.io/troyvassalotti/full/BayqQGz" target="_blank" rel="noopener">
-          <picture>
-            <source srcset="/images/pomodoro-clock_ffss_600x299.webp" type="image/webp"/>
-            <img src="/images/pomodoro-clock_ffss_600x299.jpg" alt="Screenshot of my project Pomodoro Clock" loading="lazy"/>
-          </picture>
-          <figcaption>Pomodoro Clock</figcaption>
-        </a>
-      </figure>
+      {% figure 'https://codepen.io/troyvassalotti/full/WNbZYJM', 'random-quote_600px', 'Screenshot of my project Random Quote Generator', 'Random Quote Generator' %}
+      {% figure 'https://codepen.io/troyvassalotti/full/eYmjGvK', 'drum-machine_600', 'Screenshot of my project Drum Machine', 'Drum Machine' %}
+      {% figure 'https://codepen.io/troyvassalotti/full/KKwxxLM', 'calculator_600', 'Screenshot of my project JavaScript Calculator', 'JavaScript Calculator' %}
+      {% figure 'https://codepen.io/troyvassalotti/full/bGNajEV', 'markdown_600', 'Screenshot of my project Markdown Previewer', 'Markdown Previewer' %}
+      {% figure 'https://codepen.io/troyvassalotti/full/BayqQGz', 'pomodoro-clock_ffss_600x299', 'Screenshot of my project Pomodoro Clock', 'Pomodoro Clock' %}
     </div>
   </section>
   <section class="row">
@@ -121,9 +41,7 @@ inline: >
       <h3>View More On CodePen</h3>
       <p>I create more, smaller projects and try to break your web browser over on CodePen.</p>
     </div>
-    <div class="button-wrapper">
-      <a class="button" href="https://codepen.io/troyvassalotti" target="_blank" rel="noopener" aria-label="View more experiements on CodePen">Visit My CodePen</a>
-    </div>
+    {% button 'https://codepen.io/troyvassalotti', 'View more experiments on my CodePen', 'Visit My CodePen' %}
   </section>
   <section class="row">
     <div class="row-header">
@@ -131,15 +49,7 @@ inline: >
       <p>I enjoy tracking random parts of my life, such as my migraines or how my Spotify listening habits change with the season.</p>
     </div>
     <div class="collection collection__bigger">
-      <figure>
-        <a href="/blog/i-logged-my-migraines-for-a-year/">
-          <picture>
-            <source srcset="/images/Migraines-2019.webp" type="image/webp"/>
-            <img src="/images/Migraines-2019.jpg" alt="Screenshot of my a graph of my 2019 Migraine Calendar" loading="lazy"/>
-          </picture>
-          <figcaption>2019 Migraine Calendar</figcaption>
-        </a>
-      </figure>
+      {% figure '/blog/i-logged-my-migraines-for-a-year/', 'Migraines-2019', 'Screenshot of my a graph of my 2019 Migraine Calendar', '2019 Migraine Calendar', '' %}
       <figure>
         <picture>
           <source srcset="/images/coming-soon.webp" type="image/webp"/>
@@ -155,24 +65,8 @@ inline: >
       <p>My work with building and designing marketing emails are the reason I got into coding. They're a pain to work with, but fun to look at. Here are two templates I use in my own designs.</p>
     </div>
     <div class="collection collection__bigger">
-      <figure>
-        <a href="emails/classic/">
-          <picture>
-            <source srcset="/images/classic-template.webp" type="image/webp"/>
-            <img src="/images/classic-template.jpg" alt="Screenshot of a classic email template" loading="lazy"/>
-          </picture>
-          <figcaption>Classic Template</figcaption>
-        </a>
-      </figure>
-      <figure>
-        <a href="emails/simple/">
-          <picture>
-            <source srcset="/images/simple-template.webp" type="image/webp"/>
-            <img src="/images/simple-template.jpg" alt="Screenshot of a simple email template" loading="lazy"/>
-          </picture>
-          <figcaption>Simple Template</figcaption>
-        </a>
-      </figure>
+      {% figure 'emails/classic/', 'classic-template', 'Screenshot of a classic email template', 'Classic Template', '' %}
+      {% figure 'emails/simple/', 'simple-template', 'Screenshot of a simple email template', 'Simple Template', '' %}
     </div>
   </section>
   <section class="row">
@@ -181,24 +75,8 @@ inline: >
       <p>I occasionally edit videos for fun. Here are two times I secretly took over the Front Royal band vlog.</p>
     </div>
     <div class="collection collection__bigger">
-      <figure>
-        <a href="https://www.youtube.com/watch?v=DN29m0xBCDg" target="_blank" rel="noopener">
-          <picture>
-            <source srcset="/images/takeover-1.webp" type="image/webp"/>
-            <img src="/images/takeover-1.jpg" alt="Screenshot from my first real vlog" loading="lazy"/>
-          </picture>
-          <figcaption>Vlog Takeover #1</figcaption>
-        </a>
-      </figure>
-      <figure>
-        <a href="https://www.youtube.com/watch?v=8LUoVGik9g8" target="_blank" rel="noopener">
-          <picture>
-            <source srcset="/images/takeover-2.webp" type="image/webp"/>
-            <img src="/images/takeover-2.jpg" alt="Screenshot from my second real vlog" loading="lazy"/>
-          </picture>
-          <figcaption>Vlog Takeover #2</figcaption>
-        </a>
-      </figure>
+      {% figure 'https://www.youtube.com/watch?v=DN29m0xBCDg', 'takeover-1', 'Screenshot from my first real vlog', 'Vlog Takeover #1' %}
+      {% figure 'https://www.youtube.com/watch?v=8LUoVGik9g8', 'takeover-2', 'Screenshot from my second real vlog', 'Vlog Takeover #2' %}
     </div>
   </section>
 </main>

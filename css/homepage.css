@@ -63,6 +63,10 @@
 	width: 142px;
 }
 
+#troy, #frontRoyal {
+	margin: 2rem 1.1rem
+}
+
 .music {
 	justify-content: space-around;
 	margin-bottom: 1rem;

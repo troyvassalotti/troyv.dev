@@ -27,7 +27,7 @@ pageName: homepage
       {%- endfor -%}
       </ul>
     </div>
-    {% button '/blog/', 'Visit my blog', 'My Blog' %}
+    {% button '/blog/', 'Visit my blog', 'My Blog', '' %}
   </section>
   <section class="home-container" id="home-projects">
     <div class="home-header">
@@ -35,11 +35,11 @@ pageName: homepage
       <p>These are some of my favorite projects, but I have many more. Take a look!</p>
     </div>
     <div class="collection projects">
-      {% collectionFigure 'https://codepen.io/troyvassalotti/full/BayqQGz', 'pomodoro-clock_ffss_600x299', 'Pomodoro Clock example', 'Pomodoro Clock' %}
-      {% collectionFigure 'https://codepen.io/troyvassalotti/full/eYmwBrQ', 'bandcamp-front-royal_ffss_600x299', 'Bandcamp recreation built using React.js', 'Bandcamp w/ React' %}
-      {% collectionFigure 'https://codepen.io/troyvassalotti/full/eYmaRrZ', 'landing-page_ffss_600x302', 'Product Landing Page example', 'Product Landing Page' %}
+      {% figure 'https://codepen.io/troyvassalotti/full/BayqQGz', 'pomodoro-clock_ffss_600x299', 'Pomodoro Clock example', 'Pomodoro Clock' %}
+      {% figure 'https://codepen.io/troyvassalotti/full/eYmwBrQ', 'bandcamp-front-royal_ffss_600x299', 'Bandcamp recreation built using React.js', 'Bandcamp w/ React' %}
+      {% figure 'https://codepen.io/troyvassalotti/full/eYmaRrZ', 'landing-page_ffss_600x302', 'Product Landing Page example', 'Product Landing Page' %}
     </div>
-    {% button '/projects/', 'View all my projects.', 'My Projects' %}
+    {% button '/projects/', 'View all my projects.', 'My Projects', '' %}
   </section>
   <section class="home-container" id="home-music">
     <div class="home-header">
@@ -49,24 +49,24 @@ pageName: homepage
       <p>I started troy. at a time when I felt the need to explore a whole new outlet.</p>
     </div>
     <div class="collection music">
-      <figure id="troy">
+      <div id="troy">
         <a href="https://justtroy.bandcamp.com/" target="_blank" rel="noopener">
           <picture>
             <source srcset="/images/troy-logo-white.webp" type="image/webp"/>
             <img src="/images/troy-logo-white_400x400.png" alt="The logo for my band, troy." loading="lazy"/>
           </picture>
         </a>
-      </figure>
-      <figure id="frontRoyal">
+      </div>
+      <div id="frontRoyal">
         <a href="https://frontroyalmd.bandcamp.com/" target="_blank" rel="noopener">
           <picture>
             <source srcset="/images/front-royal-logo-white_400x240.webp" type="image/webp"/>
             <img src="/images/front-royal-logo-white_400x240.png" alt="The logo for my band, Front Royal." loading="lazy"/>
           </picture>
         </a>
-      </figure>
+      </div>
     </div>
-    {% button '/music/', 'Learn more about my music.', 'My Music' %}
+    {% button '/music/', 'Learn more about my music.', 'My Music', '' %}
   </section>
   <section class="home-container" id="home-contact">
     <div class="home-header">
