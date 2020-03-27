@@ -62,4 +62,28 @@ module.exports = function(eleventyConfig) {
       <input type="submit" value="Submit" class="button" id="submit">
     </form>`
   })
+
+  eleventyConfig.addShortCode("collectionFigure", function(href, target='target="_blank" rel="noopener"', img, alt, caption) {
+    return `<figure>
+      <a href="${href}" target="_blank" rel="noopener">
+        <picture>
+          <source srcset="/images/${img}.webp" type="image/webp"/>
+          <img src="/images/${img}.jpg" alt="${alt}" loading="lazy"/>
+        </picture>
+        <figcaption>${caption}</figcaption>
+      </a>
+    </figure>`
+  })
+
+  eleventyConfig.addShortCode("intFigure", function(href, img, alt, caption) {
+    return `<figure>
+      <a href="${href}">
+        <picture>
+          <source srcset="/images/${img}.webp" type="image/webp"/>
+          <img src="/images/${img}.jpg" alt="${alt}" loading="lazy"/>
+        </picture>
+        <figcaption>${caption}</figcaption>
+      </a>
+    </figure>`
+  })
 }
