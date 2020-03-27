@@ -63,9 +63,9 @@ module.exports = function(eleventyConfig) {
     </form>`
   })
 
-  eleventyConfig.addShortCode("collectionFigure", function(href, target='target="_blank" rel="noopener"', img, alt, caption) {
+  eleventyConfig.addShortCode("collectionFigure", function(href, img, alt, caption, target='target="_blank" rel="noopener"') {
     return `<figure>
-      <a href="${href}" target="_blank" rel="noopener">
+      <a href="${href}" ${target}>
         <picture>
           <source srcset="/images/${img}.webp" type="image/webp"/>
           <img src="/images/${img}.jpg" alt="${alt}" loading="lazy"/>
