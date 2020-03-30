@@ -16,11 +16,9 @@ inline: >
       <p>I started by <del>perfecting</del> getting the hang of responsive web design.</p>
     </div>
     <div class="collection">
-      {% figure 'https://codepen.io/troyvassalotti/full/abzrWKb', 'tribute_ffss_600x302', 'Screenshot of my project Tribute Page', 'Tribute Page' %}
-      {% figure 'https://codepen.io/troyvassalotti/full/RwNmVOg', 'survey_ffss_600x302', 'Screenshot of my project Breakfast Survey', 'Breakfast Survey' %}
-      {% figure 'https://codepen.io/troyvassalotti/full/eYmaRrZ', 'landing-page_ffss_600x302', 'Screenshot of my project Product Landing Page', 'Product Landing Page' %}
-      {% figure 'https://codepen.io/troyvassalotti/full/wvBbeOL', 'doc_ffss_600x302', 'Screenshot of my project Technical Documentation', 'Technical Documentation' %}
-      {% figure 'https://codepen.io/troyvassalotti/full/rNagmGR', 'portfolio_ffss_600x302', 'Screenshot of my project Personal Portfolio', 'Personal Portfolio' %}
+      {% for project in projects.phase1 -%}
+      {% figure project.href, project.img, project.alt, project.caption %}
+      {% endfor -%}
     </div>
   </section>
   <section class="row">
@@ -29,11 +27,9 @@ inline: >
       <p>Then I moved on to more advanced scripting, mostly with the use of frameworks like React.</p>
     </div>
     <div class="collection">
-      {% figure 'https://codepen.io/troyvassalotti/full/WNbZYJM', 'random-quote_600px', 'Screenshot of my project Random Quote Generator', 'Random Quote Generator' %}
-      {% figure 'https://codepen.io/troyvassalotti/full/eYmjGvK', 'drum-machine_600', 'Screenshot of my project Drum Machine', 'Drum Machine' %}
-      {% figure 'https://codepen.io/troyvassalotti/full/KKwxxLM', 'calculator_600', 'Screenshot of my project JavaScript Calculator', 'JavaScript Calculator' %}
-      {% figure 'https://codepen.io/troyvassalotti/full/bGNajEV', 'markdown_600', 'Screenshot of my project Markdown Previewer', 'Markdown Previewer' %}
-      {% figure 'https://codepen.io/troyvassalotti/full/BayqQGz', 'pomodoro-clock_ffss_600x299', 'Screenshot of my project Pomodoro Clock', 'Pomodoro Clock' %}
+      {% for project in projects.phase2 -%}
+      {% figure project.href, project.img, project.alt, project.caption %}
+      {% endfor -%}
     </div>
   </section>
   <section class="row">
