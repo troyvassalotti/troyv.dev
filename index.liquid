@@ -36,7 +36,7 @@ pageName: homepage
     </div>
     <div class="collection projects">
       {% for project in projects.homepage -%}
-      {% figure project.href, project.img, project.alt, project.caption %}
+        {% figure project.href, project.img, project.alt, project.caption %}
       {% endfor -%}
     </div>
     {% button '/projects/', 'View all my projects.', 'My Projects', '' %}
