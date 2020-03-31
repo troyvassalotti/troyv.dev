@@ -3,36 +3,6 @@ title: Music
 description: Music is one of my passions. Check out all my musical projects here.
 layout: primary.liquid
 pageName: musicPage
-inline: >
-  :root {--banner:url('/images/guitar-on-bed.webp');}
-  .hero-header {justify-content:flex-end;}
-  .band {margin-bottom:5rem;}
-  .album-description figure {margin:auto;}
-  .album-description img {margin:1rem auto;}
-  .album-description figcaption {font-size:1.6rem;}
-  .album-description {
-    padding:0 3rem;
-    max-width:400px;}
-  .album-listen {
-    display:block;
-    border:none;
-    width:90%;
-    max-width:350px;
-    margin:auto auto 2rem;}
-  #troy:nth-child(1), #frontRoyal:nth-child(1) {max-width:300px;}
-  #tth {height:340px;}
-  #aiacr {height:540px;}
-  .view-more h3 {
-    font-size:1.8rem;
-    text-align:center;}
-    .view-more .collection a {
-      max-width: 123px;
-      margin: 1rem;}
-  @media only screen and (min-width:768px) {
-    .view-more img {max-width: 150px;}
-    .row {margin-bottom:0;}}
-  @media only screen and (min-width:1152px) {
-    .row-header p {max-width:70vw;}}
 ---
 <main class="flex__centered-col">
   <section class="header">
@@ -50,10 +20,9 @@ inline: >
       <div class="row__not-fixed-width" id="frontRoyal">
         {% hrefPic 'https://frontroyalmd.bandcamp.com/', 'front-royal-logo-white_400x240', 'The logo for my band, Front Royal.' %}
         <div class="icon-bar">
-          <a class="icon-link" href="https://frontroyalmd.bandcamp.com/" target="_blank" rel="noopener" aria-label="Visit the Front Royal Bandcamp page."><img src="/images/bandcamp-button-bc-circle-black-64.png" alt="Bandcamp"></a>
-          <a class="icon-link" href="https://www.instagram.com/frontroyal_official/" target="_blank" rel="noopener" aria-label="Visit the Front Royal Instagram."><img src="/images/instagram-black.svg" alt="Instagram"></a>
-          <a class="icon-link" href="https://www.youtube.com/channel/UCm-KryhT3o9NZSbpG-M1qCQ/feed" target="_blank" rel="noopener" aria-label="Visit the Front Royal YouTube channel."><img src="/images/youtube-black.svg" alt="YouTube"></a>
-          <a class="icon-link" href="https://www.facebook.com/FrontRoyalMD" target="_blank" rel="noopener" aria-label="Visit the Front Royal Facebook."><img src="/images/facebook-black.svg" alt="Facebook"></a>
+          {% for social in music.frontRoyalSocial %}
+            <a class="icon-link" href="{{social.href}}" target="_blank" rel="noopener" aria-label="{{social.aria}}"><img src="/images/{{social.img}}" alt="{{social.alt}}"></a>
+          {% endfor %}
         </div>
       </div>
       <div class="flex__centered-col band">
@@ -83,8 +52,9 @@ inline: >
       <div class="row__not-fixed-width" id="troy">
         {% hrefPic 'https://justtroy.bandcamp.com/', 'troy-full', 'The logo for my band, troy.' %}
         <div class="icon-bar">
-          <a class="icon-link" href="https://justtroy.bandcamp.com/" target="_blank" rel="noopener" aria-label="Visit the troy. Bandcamp page."><img src="/images/bandcamp-button-bc-circle-black-64.png" alt="Bandcamp"></a>
-          <a class="icon-link" href="https://www.facebook.com/troyalllowercase/" target="_blank" rel="noopener" aria-label="Visit the troy. Facebook."><img src="/images/facebook-black.svg" alt="Facebook"></a>
+          {% for social in music.troySocial %}
+            <a class="icon-link" href="{{social.href}}" target="_blank" rel="noopener" aria-label="{{social.aria}}"><img src="/images/{{social.img}}" alt="{{social.alt}}"></a>
+          {% endfor %}
         </div>
       </div>
       <div class="flex__centered-col band">

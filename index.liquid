@@ -35,9 +35,9 @@ pageName: homepage
       <p>These are some of my favorite projects, but I have many more. Take a look!</p>
     </div>
     <div class="collection projects">
-      {% figure 'https://codepen.io/troyvassalotti/full/BayqQGz', 'pomodoro-clock_ffss_600x299', 'Pomodoro Clock example', 'Pomodoro Clock' %}
-      {% figure 'https://codepen.io/troyvassalotti/full/eYmwBrQ', 'bandcamp-front-royal_ffss_600x299', 'Bandcamp recreation built using React.js', 'Bandcamp w/ React' %}
-      {% figure 'https://codepen.io/troyvassalotti/full/eYmaRrZ', 'landing-page_ffss_600x302', 'Product Landing Page example', 'Product Landing Page' %}
+      {% for project in projects.homepage -%}
+        {% figure project.href, project.img, project.alt, project.caption %}
+      {% endfor -%}
     </div>
     {% button '/projects/', 'View all my projects.', 'My Projects', '' %}
   </section>

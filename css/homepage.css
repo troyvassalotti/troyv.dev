@@ -92,11 +92,12 @@
   ======================= */
 @media only screen and (min-width: 768px) {
 	.homepage main {
-		width: 100%
-		max-width: 1152px;
+		width: 100%;
+		max-width: 1200px;
+		margin: auto;
 	}
 	.home-container {
-		max-width: 1152px;
+		max-width: 1200px;
 	}
 }
 
