@@ -261,6 +261,26 @@ h4 {font-size: 2rem;}
 h5 {font-size: 1.8rem;}
 h6 {font-size: 1.4rem;}
 
+.blogPage {
+  --banner: url('/images/road.webp');
+}
+
+.projectsPage {
+  --banner: url('/images/caution-bg.webp');
+}
+
+.musicPage {
+  --banner: url('/images/guitar-on-bed.webp');
+}
+
+.contactPage {
+  --banner: url('/images/cleveland.webp');
+}
+
+.blogPage .hero-header, .musicPage .hero-header {
+  justify-content: flex-end;
+}
+
 /* ======================
   Navigation Styles
   ======================= */
@@ -644,6 +664,57 @@ footer p {
   margin-top: 8%;
 }
 
+.band {
+  margin-bottom: 5rem;
+}
+
+.album-description figure {
+  margin: auto;
+}
+
+.album-description img {
+  margin: 1rem auto;
+}
+
+.album-description figcaption {
+  font-size: 1.6rem;
+}
+
+.album-description {
+  padding: 0 3rem;
+  max-width: 400px;
+}
+
+.album-listen {
+  display: block;
+  border: none;
+  width: 90%;
+  max-width: 350px;
+  margin: auto auto 2rem;
+}
+
+.musicPage #troy:nth-child(1), .musicPage #frontRoyal:nth-child(1) {
+  max-width: 300px;
+}
+
+#tth {
+  height: 340px;
+}
+
+#aiacr {
+  height: 540px;
+}
+
+.view-more h3 {
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.view-more .collection a {
+  max-width: 123px;
+  margin: 1rem;
+}
+
 
 /* ======================
   Tablet and Desktop Styles
@@ -761,6 +832,14 @@ footer p {
   .article h1 {
     font-size: 5.5rem;
   }
+
+  .view-more img {
+    max-width: 150px;
+  }
+
+  .musicPage .row {
+    margin-bottom: 0;
+  }
 }
 
 @media only screen and (min-width: 1152px) {
@@ -818,11 +897,15 @@ footer p {
   .article h2 {
     font-size: 4rem;
   }
+
+  .musicPage .row-header p {
+    max-width: 70vw;
+  }
 }
 
 @media only screen and (min-width: 1482px) {
   .hero-header {
-    height: calc(3vh + 3em);
+    height: calc(3vh + 2.5em);
   }
 
   .collection {
