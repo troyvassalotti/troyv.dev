@@ -907,8 +907,4 @@ footer p {
   .hero-header {
     height: calc(3vh + 2.5em);
   }
-
-  .collection {
-    justify-content: space-around;
-  }
 }

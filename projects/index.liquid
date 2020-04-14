@@ -10,21 +10,14 @@ pageName: projectsPage
   </section>
   <section class="row">
     <div class="row-header">
-      <h2>Phase 1</h2>
-      <p>I started by <del>perfecting</del> getting the hang of responsive web design.</p>
+      <h2>Experiments & More</h2>
+      <p>Here are some of the things I've made. I started by <del>perfecting</del> understanding responsive design, then moved on to scripting and frameworks.</p>
+      <p>Now? I'm kinda just winging it.</p>
     </div>
     <div class="collection">
       {% for project in projects.phase1 -%}
         {% figure project.href, project.img, project.alt, project.caption %}
       {% endfor -%}
-    </div>
-  </section>
-  <section class="row">
-    <div class="row-header">
-      <h2>Phase 2</h2>
-      <p>Then I moved on to more advanced scripting, mostly with the use of frameworks like React.</p>
-    </div>
-    <div class="collection">
       {% for project in projects.phase2 -%}
         {% figure project.href, project.img, project.alt, project.caption %}
       {% endfor -%}
@@ -33,7 +26,7 @@ pageName: projectsPage
   <section class="row">
     <div class="row-header">
       <h3>View More On CodePen</h3>
-      <p>I create more, smaller projects and try to break your web browser over on CodePen.</p>
+      <p>I create even more projects (and see what I can do without breaking anything) over on CodePen.</p>
     </div>
     {% button 'https://codepen.io/troyvassalotti', 'View more experiments on my CodePen', 'Visit My CodePen' %}
   </section>
