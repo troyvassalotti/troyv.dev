@@ -14,7 +14,7 @@ pageName: projectsPage
       <p>Here are some of the things I've made. I started by <del>perfecting</del> understanding responsive design, then moved on to scripting and frameworks.</p>
       <p>Now? I'm kinda just winging it.</p>
     </div>
-    <div class="collection">
+    <div class="collection center">
       {% for project in projects.phase1 -%}
         {% figure project.href, project.img, project.alt, project.caption %}
       {% endfor -%}

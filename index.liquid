@@ -34,7 +34,7 @@ pageName: homepage
       <h2>My Projects</h2>
       <p>These are some of my favorite projects, but I have many more. Take a look!</p>
     </div>
-    <div class="collection projects">
+    <div class="collection projects center">
       {% for project in projects.homepage -%}
         {% figure project.href, project.img, project.alt, project.caption %}
       {% endfor -%}
