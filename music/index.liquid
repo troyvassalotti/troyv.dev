@@ -4,19 +4,20 @@ description: Music is one of my passions. Check out all my musical projects here
 layout: primary.liquid
 pageName: musicPage
 ---
-<main class="flex__centered-col">
+<main class="grid__centered">
   <section class="header">
     <h1 class="hero-header">{{title}}</h1>
   </section>
   <section class="row">
     <div class="row-header">
+      <h2>The Intro</h2>
       <p>I first picked up guitar after 11 years of life surrounded by two musical brothers. Seven years later, I decided to learn drumming.</p>
       <p>I'm currently a guitarist and vocalist in Front Royal, and am the sole member of troy. (period included).</p>
       <p>Check out my music below.</p>
     </div>
   </section>
   <div class="grid__1-col__2-col">
-    <section class="flex__centered-col left-column__margin">
+    <section class="flex__centered-col left-column">
       <div class="row__not-fixed-width" id="frontRoyal">
         {% hrefPic 'https://frontroyalmd.bandcamp.com/', 'front-royal-logo-white_400x240', 'The logo for my band, Front Royal.' %}
         <div class="icon-bar">
@@ -29,7 +30,7 @@ pageName: musicPage
         <h2>Latest Release</h2>
         <div class="album-player">
           <div class="album-description">
-            {% hrefPic 'https://frontroyalmd.bandcamp.com/album/these-things-happen', 'FR_TTH_408x408', 'These Things Happen' %}
+            {% hrefPic 'https://frontroyalmd.bandcamp.com/album/these-things-happen', 'fr_tth_408x408', 'These Things Happen' %}
             <p><span class="italic">These Things Happen</span><br>6 Tracks</p>
             <p>Our 3rd EP. Full Length LP debut The <span class="italic">Thought That Counts</span> coming 2020.</p>
           </div>
@@ -39,16 +40,16 @@ pageName: musicPage
             </iframe>
           </div>
         </div>
-        <div class="view-more">
-          <h3>view more on <a href="https://frontroyalmd.bandcamp.com/" rel="noopener" target="_blank">bandcamp &gt;&gt;</a></h3>
+        <div class="view-more center">
+          <p>view more on <a href="https://frontroyalmd.bandcamp.com/" rel="noopener" target="_blank">bandcamp &gt;&gt;</a></p>
           <div class="collection">
-            {% hrefPic 'https://frontroyalmd.bandcamp.com/album/all-down-hill-from-here', 'FR_EP2_Cover_408x408', 'All Down Hill From Here' %}
-            {% hrefPic 'https://frontroyalmd.bandcamp.com/album/the-band-not-the-town', 'FR_TBNTT_408x408', 'The Band, Not The Town' %}
+            {% hrefPic 'https://frontroyalmd.bandcamp.com/album/all-down-hill-from-here', 'fr_ep2_cover_408x408', 'All Down Hill From Here' %}
+            {% hrefPic 'https://frontroyalmd.bandcamp.com/album/the-band-not-the-town', 'fr_tbntt_408x408', 'The Band, Not The Town' %}
           </div>
         </div>
       </div>
     </section>
-    <section class="flex__centered-col right-column__margin">
+    <section class="flex__centered-col right-column">
       <div class="row__not-fixed-width" id="troy">
         {% hrefPic 'https://justtroy.bandcamp.com/', 'troy-full', 'The logo for my band, troy.' %}
         <div class="icon-bar">

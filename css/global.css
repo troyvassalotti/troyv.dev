@@ -220,8 +220,11 @@ template {
 	--body: 'Montserrat', "Segoe UI", "Helvetica", sans-serif;
 	--headings: 'Quicksand', Verdana, Tahoma, serif;
   --code: 'Native', monospace;
-  --headerPadding: 1.5rem;
-  --headerBorder: 2px dashed var(--white);
+  --headerPadding: 4rem;
+  --headerBorder: 2px solid var(--white);
+  --gap: 3rem;
+  --readingFont: 1.6rem;
+  --subFont: 1.4rem;
 }
 
 html {
@@ -238,7 +241,10 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  gap: var(--gap);
 }
+
+main {margin-bottom: 5rem /* only here because gap is not fully supported on flex containers */}
 
 /* ======================
   Headings Styles
@@ -255,6 +261,7 @@ h2, h3, h4, h5, h6 {
 h1 {
 	font-size: 4rem;
 	font-weight: 700;
+  margin: 0;
 }
 
 h2 {font-size: 2.8rem;}
@@ -264,19 +271,19 @@ h5 {font-size: 1.8rem;}
 h6 {font-size: 1.4rem;}
 
 .blogPage {
-  --banner: url('/images/road.webp');
+  --banner: url('/images/road.jpg');
 }
 
 .projectsPage {
-  --banner: url('/images/caution-bg.webp');
+  --banner: url('/images/caution-bg.jpg');
 }
 
 .musicPage {
-  --banner: url('/images/guitar-on-bed.webp');
+  --banner: url('/images/guitar-on-bed.jpg');
 }
 
 .contactPage {
-  --banner: url('/images/cleveland.webp');
+  --banner: url('/images/cleveland.jpg');
 }
 
 .projectsPage .hero-header,
@@ -284,7 +291,6 @@ h6 {font-size: 1.4rem;}
   margin-top: auto;
   border-bottom: var(--headerBorder);
 }
-
 .projectsPage .header,
 .contactPage .header {
   padding-bottom: var(--headerPadding);
@@ -295,7 +301,6 @@ h6 {font-size: 1.4rem;}
   margin-bottom: auto;
   border-top: var(--headerBorder);
 }
-
 .blogPage .header,
 .musicPage .header {
   padding-top: var(--headerPadding);
@@ -304,7 +309,7 @@ h6 {font-size: 1.4rem;}
 /* ======================
   Navigation Styles
   ======================= */
-.sideNavigation {
+.mainNavigation {
   height: 100%;
   width: 0;
   position: fixed;
@@ -318,26 +323,16 @@ h6 {font-size: 1.4rem;}
   font-family: var(--headings);
 }
 
-.sideNavigation #close {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  font-size: 4rem;
-  color: var(--dark);
-}
-
 ul.navbar {
   display: flex;
   flex-direction: column;
   list-style: none;
   margin: 0;
-  font-size: 1.6rem;
+  font-size: var(--readingFont);
 	padding: 0;
 }
 
-ul.navbar li {
-  white-space: nowrap;
-}
+ul.navbar li {white-space: nowrap;}
 
 ul.navbar a {
   color: var(--black);
@@ -357,13 +352,16 @@ ul.navbar a:focus {
   padding: 1rem 0 0 1rem;
 }
 
-#open.fade {
-	opacity: 0;
-}
+#open.fade {opacity: 0;}
 
 #open svg > path {
 	stroke: var(--white);
 	stroke-width: 4;
+}
+
+#close svg > path {
+  stroke: var(--dark);
+  stroke-width: 4;
 }
 
 #open, #close {
@@ -371,10 +369,14 @@ ul.navbar a:focus {
   border: none;
 }
 
-.openNavSide {
-	width: 220px;
+#close {
+  position: absolute;
+  top: .5rem;
+  right: 1rem;
 }
 
+/* classes added via JS */
+.openNavSide {width: 220px;}
 .openNavMain {
 	margin-left: 220px;
   overflow: hidden;
@@ -397,13 +399,14 @@ ul.navbar a:focus {
   flex-wrap: wrap;
 }
 
-.center {
-	text-align: center;
+.grid__centered {
+  display: grid;
+  place-items: center;
+  gap: var(--gap);
 }
 
-.italic {
-	font-style: italic;
-}
+.center {text-align: center;}
+.italic {font-style: italic;}
 
 img {
   display: block;
@@ -412,8 +415,8 @@ img {
   margin: auto;
 }
 
-p, ul, ol {
-  font-size: 1.6rem;
+p, ul, ol, figcaption {
+  font-size: var(--readingFont);
 }
 
 a {
@@ -434,20 +437,17 @@ code, .code {
 }
 
 .button-wrapper {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	display: grid;
+  place-items: center;
 }
 
 .button {
-	display: block;
 	white-space: nowrap;
 	background-color: var(--gold);
 	border-radius: 1.5rem;
-	font-size: 1.8rem;
+	font-size: var(--readingFont);
 	padding: 1rem 2.5rem;
 	color: var(--black);
-	margin-bottom: 1rem;
   text-decoration: none;
 }
 
@@ -472,19 +472,17 @@ code, .code {
 }
 
 .collection figure {
-	width: 100%;
-	max-width: 123px;
+	width: clamp(123px, 40%, 260px);
   margin: 1rem;
 }
 
 figcaption {
-  font-size: 1.2rem;
   color: var(--white);
   padding: 1rem 0;
 }
 
 .collection__bigger figure {
-  max-width: 220px;
+  width: clamp(220px, 45%, 500px);
 }
 
 /* ======================
@@ -503,7 +501,7 @@ figcaption {
 
 #name, #email, #message {
   padding: .5rem 0;
-  border-radius: 5px;
+  border-radius: .5rem;
   border-color: transparent;
   margin-top: .7rem;
 }
@@ -515,7 +513,7 @@ figcaption {
 .contact-form label {
 	display: flex;
 	flex-direction: column;
-  font-size: 1.4rem;
+  font-size: var(--subFont);
   font-family: var(--headings);
   font-weight: 500;
   margin: 1rem 0;
@@ -538,13 +536,11 @@ figcaption {
 footer {
   background-color: var(--white);
   color: var(--black);
-  width: 95vw;
+  width: 97vw;
   margin: auto auto 1rem;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  place-items: center;
   padding: 1rem;
-  flex-direction: column;
-  align-items: center;
 }
 
 .footer-wrapper {
@@ -573,14 +569,14 @@ footer {
 footer p {
   margin: .5rem 0 0;
   font-family: var(--headings);
-  font-size: 1.4rem;
+  font-size: var(--subFont);
 }
 
 /* ======================
   Misc. Page Styles
   ======================= */
 .header {
-  margin: 1.8rem auto;
+  margin: 0 auto;
   background: var(--banner) center / cover no-repeat var(--dark);
 	width: 100%;
 }
@@ -596,7 +592,6 @@ footer p {
   width: 95vw;
   display: flex;
   flex-direction: column;
-  margin-bottom: 3.5rem;
 }
 
 .row__not-fixed-width {
@@ -624,21 +619,21 @@ footer p {
 .grid__1-col__2-col {
 	display: grid;
 	grid-template-columns: 1fr;
+  margin: auto;
+  width: 95%;
+  gap: var(--gap);
 }
 
 .blog-listing-container {
-  padding: 0;
-  list-style: none;
+  display: grid;
+  gap: var(--gap);
   width: 100%;
   max-width: 768px;
-  margin: auto;
 }
 
 .blog-listing {
-  margin-bottom: 4rem;
   border-left: 5px solid var(--gold);
   padding-left: 2rem;
-  display: block;
 }
 
 .blog-listing p {
@@ -663,31 +658,13 @@ footer p {
   margin-top: 8%;
 }
 
-.band {
-  margin-bottom: 5rem;
-}
-
-.album-description figure {
-  margin: auto;
-}
-
-.album-description img {
-  margin: 1rem auto;
-}
-
-.album-description figcaption {
-  font-size: 1.6rem;
-}
-
 .album-description {
-  padding: 0 3rem;
   max-width: 400px;
 }
 
 .album-listen {
   display: block;
   border: none;
-  width: 90%;
   max-width: 350px;
   margin: auto auto 2rem;
 }
@@ -696,22 +673,24 @@ footer p {
   max-width: 300px;
 }
 
-#tth {
-  height: 340px;
+.left-column iframe {
+  height: 380px;
 }
 
-#aiacr {
-  height: 540px;
+.right-column iframe {
+  height: 565px;
 }
 
-.view-more h3 {
-  font-size: 1.8rem;
-  text-align: center;
+.view-more {
+  width: 95%;
+}
+
+.view-more .collection {
+  justify-content: space-around;
 }
 
 .view-more .collection a {
   max-width: 123px;
-  margin: 1rem;
 }
 
 
@@ -720,32 +699,40 @@ footer p {
   ======================= */
 @media only screen and (min-width: 768px) {
   :root {
-    --headerPadding: 3rem;
+    --headerPadding: 5.5rem;
+    --readingFont: 1.9rem;
+    --subFont: 1.7rem;
   }
+
   #menu, #close {display: none;}
-	.sideNavigation {
+
+	.mainNavigation {
 		height: auto;
 		width: 100%;
 		padding: .5rem 1rem;
-		position: initial;
-		background-color: var(--dark);
+		position: static;
+		background-color: transparent;
 		font-weight: 700;
 	}
+
   ul.navbar {
-		font-size: 1.6rem;
     flex-direction: row;
 	}
+
 	ul.navbar li {
-		padding: .5rem;
+		padding: .3rem;
 	}
+
 	ul.navbar li:nth-child(1) {
 		margin-right: auto;
 	}
+
 	ul.navbar li:nth-child(1n+2) {
 		margin: 0 1rem;
 	}
+
   ul.navbar a {
-		padding: .5rem;
+		padding: .3rem;
 		color: var(--white);
 	}
 
@@ -756,87 +743,56 @@ footer p {
 		text-decoration: underline;
     text-decoration-thickness: .3rem;
   }
+
 	#link__home:hover {
 		text-decoration-color: var(--orange);
 	}
+
 	#link__projects:hover {
 		background-color: var(--gold);
 		color: var(--black);
 	}
+
 	#link__music:hover {
 		text-decoration-color: var(--gold);
 	}
+
 	#link__contact:hover {
 		background-color: var(--blue);
 		border-radius: 1rem;
 		color: var(--black);
 	}
+
   #link__blog:hover {
 	  text-decoration-color: var(--green);
-  }
-
-	p, ul, ol {
-		font-size: 1.8rem;
-	}
-
-  .collection figure {
-  	max-width: 260px;
-  }
-
-  figcaption {
-  	font-size: 1.4rem;
   }
 
   .collection__bigger {
     justify-content: space-around;
   }
 
-  .collection__bigger figure {
-    max-width: 320px;
-  }
-
-  .contact-form label {
-    font-size: 1.8rem;
-  }
-
-  .row-header p {
-    max-width: 60vw;
-  }
-
   .button-wrapper {
-    justify-content: flex-start;
+    place-items: start;
   }
 
   .grid__1-col__2-col {
   	display: grid;
   	grid-template-columns: 1fr 1fr;
   	align-items: first baseline;
-    width: 100%;
     max-width: 1350px;
   }
 
-  .left-column__margin {
-    margin-right: auto;
-  }
-
-  .right-column__margin {
-    margin-left: auto;
-  }
-
-  .article h1 {
-    font-size: 5.5rem;
-  }
-
-  .view-more img {
-    max-width: 150px;
-  }
-
-  .musicPage .row {
-    margin-bottom: 0;
+  .contactPage .grid__1-col__2-col {
+    place-items: center;
+    width: 100%;
   }
 }
 
 @media only screen and (min-width: 1152px) {
+  :root {
+    --gap: 4rem;
+  }
+
 	h1 {font-size: 6rem;}
   h2 {font-size: 4.4rem;}
   h3 {font-size: 3.8rem;}
@@ -848,51 +804,19 @@ footer p {
     font-size: 2.1rem;
   }
 
-  .section-header p {
-		width: 100%;
-	}
-
-  figcaption {
-		font-size: 1.8rem;
-	}
-
-  .collection__bigger figure {
-    max-width: 500px;
-  }
-
   #me {
 		max-width: 130px;
 	}
+
+  .footer-wrapper {
+    max-width: 300px;
+  }
 
 	.footer-icons {
 		gap: 2rem;
 	}
 
-  p, ul, ol {
-    font-size: 1.9rem;
-  }
-
-  .header {
-    margin-bottom: 3rem;
-  }
-
-  .row {
-    margin-bottom: 7rem;
-  }
-
   .row-header p {
     max-width: 50vw;
-  }
-
-  .blogPage h2 {
-    font-size: 3.5rem;
-  }
-
-  .article h2 {
-    font-size: 4rem;
-  }
-
-  .musicPage .row-header p {
-    max-width: 70vw;
   }
 }
