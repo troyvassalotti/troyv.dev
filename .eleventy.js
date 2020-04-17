@@ -19,8 +19,13 @@ module.exports = function(eleventyConfig) {
           </svg>
         </button>
       </div>
-      <nav class="sideNavigation" id="sideNavigation">
-        <button id="close" aria-label="Close the navigation menu">&times;</button>
+      <nav class="mainNavigation" id="mainNavigation">
+        <button id="close" aria-label="Close the navigation menu">
+          <svg width="30" height="30">
+            <path d="M5,5 25,25"/>
+            <path d="M5,25 25,5"/>
+          </svg>
+        </button>
         <ul class="navbar">
           <li id="link__home-container"><a href="/" aria-label="Go to the homepage." id="link__home">troy vassalotti.</a></li>
           <li id="link__blog-container"><a href="/blog/" aria-label="Visit my blog." id="link__blog">blog.</a></li>
@@ -95,5 +100,19 @@ module.exports = function(eleventyConfig) {
         <img src="/images/${img}.png" alt="${alt}" loading="lazy"/>
       </picture>
     </a>`
+  })
+
+  // A reusable block of SEO meta tags
+  eleventyConfig.addShortcode("seoTags", function() {
+    return `<meta name="description" content="{{description}}">
+    <meta name="og:locale" content="en_US">
+    <meta name="og:type" content="article">
+    <meta name="og:title" content="{{title}}">
+    <meta name="og:description" content="{{description}}">
+    <meta name="og:site_name" content="troyv.dev">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{title}}">
+    <meta name="twitter:description" content="{{description}}">
+    <meta name="twitter:creator" content="@lowercasetroy">`
   })
 }

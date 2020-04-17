@@ -4,7 +4,7 @@ description: These are a few of the projects I've made, but there are many more.
 layout: primary.liquid
 pageName: projectsPage
 ---
-<main class="flex__centered-col">
+<main class="grid__centered">
   <section class="header">
     <h1 class="hero-header">{{title}}</h1>
   </section>
@@ -14,7 +14,7 @@ pageName: projectsPage
       <p>Here are some of the things I've made. I started by <del>perfecting</del> understanding responsive design, then moved on to scripting and frameworks.</p>
       <p>Now? I'm kinda just winging it.</p>
     </div>
-    <div class="collection">
+    <div class="collection center">
       {% for project in projects.phase1 -%}
         {% figure project.href, project.img, project.alt, project.caption %}
       {% endfor -%}
@@ -36,7 +36,7 @@ pageName: projectsPage
       <p>I enjoy tracking random parts of my life, such as my migraines or how my Spotify listening habits change with the season.</p>
     </div>
     <div class="collection collection__bigger">
-      {% figure '/blog/i-logged-my-migraines-for-a-year/', 'Migraines-2019', 'Screenshot of my a graph of my 2019 Migraine Calendar', '2019 Migraine Calendar', '' %}
+      {% figure '/blog/i-logged-my-migraines-for-a-year/', 'migraines-2019', 'Screenshot of my a graph of my 2019 Migraine Calendar', '2019 Migraine Calendar', '' %}
       <figure>
         <picture>
           <source srcset="/images/coming-soon.webp" type="image/webp"/>

@@ -1,5 +1,5 @@
 // open and close the side navigation on mobile
-const sideNav = document.getElementById("sideNavigation");
+const sideNav = document.getElementById("mainNavigation");
 const body = document.querySelector("body");
 const open = document.getElementById("open");
 const close = document.getElementById("close");

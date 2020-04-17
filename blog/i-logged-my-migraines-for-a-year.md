@@ -33,7 +33,7 @@ I thought I'd have more graphs than I do, but I didn't want this project to cons
 ## What Did I Find?
 My main goal was to create calendar heat map detailing each migraine day, color coded by the main trigger, and I'd say I succeeded.
 
-![My migraine calendar heat map](/images/Migraines-2019.jpg)
+![My migraine calendar heat map](/images/migraines-2019.jpg)
 
 I created the calendar using [Tableau Public](https://public.tableau.com/profile/troy.vassalotti#!/vizhome/Migraines2019/WorkingDash) with the following underlying data:
 * Date

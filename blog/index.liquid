@@ -4,16 +4,16 @@ description: I occasionally write about things that enter my mind or the excessi
 layout: primary.liquid
 pageName: blogPage
 ---
-<main class="flex__centered-col">
+<main class="grid__centered">
   <section class="header">
     <h1 class="hero-header">{{title}}</h1>
   </section>
-  <ul class="blog-listing-container">
+  <section class="blog-listing-container">
   {%- for post in collections.post -%}
-    <li class="blog-listing">
+    <article class="blog-listing">
       <h2><a href="{{post.url}}">{{post.data.title}}</a></h2>
       <p>{{post.data.description}}</p>
-    </li>
+    </article>
   {%- endfor -%}
-  </ul>
+</section>
 </main>
