@@ -96,4 +96,18 @@ module.exports = function(eleventyConfig) {
       </picture>
     </a>`
   })
+
+  // A reusable block of SEO meta tags
+  eleventyConfig.addShortcode("seoTags", function() {
+    return `<meta name="description" content="{{description}}">
+    <meta name="og:locale" content="en_US">
+    <meta name="og:type" content="article">
+    <meta name="og:title" content="{{title}}">
+    <meta name="og:description" content="{{description}}">
+    <meta name="og:site_name" content="troyv.dev">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{title}}">
+    <meta name="twitter:description" content="{{description}}">
+    <meta name="twitter:creator" content="@lowercasetroy">`
+  })
 }
