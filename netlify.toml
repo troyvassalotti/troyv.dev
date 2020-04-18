@@ -15,7 +15,7 @@
 [build.processing.html]
   pretty_urls = true
 [build.processing.images]
-  compress = false
+  compress = true
 
 # Redirect from the default Netlify site to my custom domain
 [[redirects]]
