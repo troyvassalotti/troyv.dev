@@ -472,7 +472,8 @@ code, .code {
 }
 
 .collection figure {
-	width: clamp(123px, 40%, 260px);
+  width: max(123px, min(100%, 260px));
+	width: clamp(123px, 100%, 260px);
   margin: 1rem;
 }
 
@@ -482,7 +483,8 @@ figcaption {
 }
 
 .collection__bigger figure {
-  width: clamp(220px, 45%, 500px);
+  width: max(220px, min(100%, 495px));
+  width: clamp(220px, 100%, 495px);
 }
 
 /* ======================

@@ -93,11 +93,11 @@ module.exports = function(eleventyConfig) {
   })
 
   // A reusable block, so it helps to have it maintainable in one place
-  eleventyConfig.addShortcode("hrefPic", function(href, img, alt, target='target="_blank" rel="noopener"') {
+  eleventyConfig.addShortcode("linkedPicture", function(href, img, alt, fallbackType, target='target="_blank" rel="noopener"') {
     return `<a href="${href}" ${target}>
       <picture>
         <source srcset="/images/${img}.webp" type="image/webp"/>
-        <img src="/images/${img}.png" alt="${alt}" loading="lazy"/>
+        <img src="/images/${img}.${fallbackType}" alt="${alt}" loading="lazy"/>
       </picture>
     </a>`
   })
