@@ -271,19 +271,19 @@ h5 {font-size: 1.8rem;}
 h6 {font-size: 1.4rem;}
 
 .blogPage {
-  --banner: url('/images/road.jpg');
+  --banner: url('https://troyv.dev/images/road.jpg');
 }
 
 .projectsPage {
-  --banner: url('/images/caution-bg.jpg');
+  --banner: url('https://troyv.dev/images/caution-bg.jpg');
 }
 
 .musicPage {
-  --banner: url('/images/guitar-on-bed.jpg');
+  --banner: url('https://troyv.dev/images/guitar-on-bed.jpg');
 }
 
 .contactPage {
-  --banner: url('/images/cleveland.jpg');
+  --banner: url('https://troyv.dev/images/cleveland.jpg');
 }
 
 .projectsPage .hero-header,
