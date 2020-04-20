@@ -21,8 +21,8 @@ No, I don't think social media will disappear and bands will be left with nothin
 This is the first time I'm designing a website from the ground up _(with the exception of image assets created by [DJ Greger](https://www.youtube.com/user/Flashgitzanimation))_ that isn't the site you're looking at right now.
 
 Looking at other approaches to band sites, it's pretty clear a single-page design is the way to go.
-* It's scrollable
-* It's navigable
+* It's scrollable;
+* It's navigable;
 * It does what it needs to do without all the bells and whistles
 
 All a band's content lives elsewhere, so you don't need to host it all on your site...unless everything comes crashing down, but we'll all cross that bridge together later.
@@ -32,9 +32,9 @@ A single page constrains you because it needs to concisely have all the content 
 The latter can be hard to achieve when the page is loaded with widgets (media players, real-time tour dates), so everything else needs to be minimal (JavaScript, HTTP requests, even CSS).
 
 I decided the these were the most important features to cover:
-* Ability to stream music
-* Real-time tour dates
-* Links to our social media and newsletter
+* Ability to stream music;
+* Real-time tour dates;
+* Links to our social media and newsletter;
 * Reusable components to make updates and new additions easier for me to code
 
 ## The Design

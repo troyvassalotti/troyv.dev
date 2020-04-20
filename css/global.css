@@ -86,7 +86,7 @@ b, strong {
   font-weight: bolder;
 }
 
-code, kbd, samp {
+kbd, samp {
   font-family: monospace, monospace;
   font-size: 1em;
 }
@@ -432,8 +432,15 @@ a:focus {
   outline-width: .3rem;
 }
 
-code, .code {
+code, .code, pre {
   font-family: var(--code);
+}
+
+pre {
+  white-space: pre-wrap;
+  font-size: calc(var(--readingFont) - .5em);
+  background-color: var(--white);
+  color: var(--black);
 }
 
 .button-wrapper {
