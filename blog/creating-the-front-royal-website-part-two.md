@@ -1,5 +1,5 @@
 ---
-title: Front Royal Site Design - Phase 2
+title: Creating The Front Royal Website, Part 2
 description: I created the first draft of the Front Royal band site, but had to make some changes to the original design after realizing my mockups were too small in reality...
 layout: post.liquid
 postDate: April 20th, 2020
