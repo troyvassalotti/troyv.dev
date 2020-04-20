@@ -9,25 +9,22 @@ I _really_ dropped the ball on this whole "blogging in real time" thing because 
 
 In [the first blog](/blog/front-royal-site-design-phase-one), I outlined my goals for the site with a screenshot of a few design ideas, and what stack I'll be using to build it.
 
-Well, over that weekend, boredom got the best of me and [I made the dang thing](https://priceless-shockley-84fcc2.netlify.app/). We haven't bought a domain yet, so ignore the randomly-selected words that Netlify has provided us.
+Well, over that weekend, boredom got the best of me and [I made the dang thing](https://priceless-shockley-84fcc2.netlify.app/). We haven't bought a domain yet, so ignore the randomly-selected words that Netlify provided.
 
 ## The Approach Pt. 2
 To recap, I set out to make it a simple, single-page site with little bells and whistles. It was supposed to be:
 * Scrollable;
 * Navigable;
-* And easy to follow
+* And easy to follow.
 
 And also cover:
 * Ability to stream music;
 * Real-time tour dates;
 * Links to our social media and newsletter;
-* Reusable components to make updates and new additions easier for me to code
-
-### Did I Accomplish All Those Things?
-Yes.
+* Reusable components to make updates and new additions easier for me to code.
 
 ## My Stack
-The repository is [fairly bare](https://github.com/troyvassalotti/front-royal); aside from the CSS and image assets, it's just an index, a Netlify config, and a custom 404 page.
+The repository is [fairly bare](https://github.com/troyvassalotti/front-royal); aside from the CSS and image assets, it's just an index page, a Netlify config, and a custom 404 page.
 
 The Lighthouse performance score is nothing to write home about since I'm using three separate third-party widgets (Spotify for album embedding, bandsintown for tour dates, and Mailchimp for our newsletter signup form), but the site works and it only requires a single page to download.
 
@@ -62,9 +59,7 @@ I put the bandsintown tour dates widget right after the music, which again requi
 
 It's sad to look at since it's so empty (we have no dates coming up), but it'll look great when things are back in motion.
 
-Finally, I listed links out to our various social media and embedded a signup form for our occasional newsletter that I also am in charge of.
-
-I used SVG for the icons since I figured that would look the best all around.
+Finally, I listed links out to our various social media and embedded a signup form for our newsletter that I also am in charge of.
 
 ## Feelings Overall
 Building websites is fun. I get chances to try new things I wouldn't normally do. In this case, I tried a new method for coding the main navigation on mobile and desktop.
