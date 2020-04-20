@@ -233,6 +233,7 @@ html {
 	background-color: var(--dark);
 	color: var(--white);
   line-height: 1.5;
+  word-wrap: break-word;
 }
 
 body {
@@ -371,7 +372,7 @@ ul.navbar a:focus {
 
 #close {
   position: absolute;
-  top: .5rem;
+  top: 1rem;
   right: 1rem;
 }
 
