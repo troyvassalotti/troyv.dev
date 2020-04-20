@@ -1,8 +1,9 @@
 ---
-title: Front Royal Site Design - Phase 1
+title: Creating The Front Royal Website, Part 1
 description: We want a website so we have a presence that isn't exclusively on social media. So, I'm whipping up a site and blogging about it in real time.
 layout: post.liquid
 postDate: March 16th, 2020
+date: 2020-03-16
 tags: ['post', 'front royal', 'design']
 ---
 There was a point in time bands either had a myspace, PureVolume, or both. Nowadays, it's not so simple.
@@ -21,9 +22,9 @@ No, I don't think social media will disappear and bands will be left with nothin
 This is the first time I'm designing a website from the ground up _(with the exception of image assets created by [DJ Greger](https://www.youtube.com/user/Flashgitzanimation))_ that isn't the site you're looking at right now.
 
 Looking at other approaches to band sites, it's pretty clear a single-page design is the way to go.
-* It's scrollable
-* It's navigable
-* It does what it needs to do without all the bells and whistles
+* It's scrollable;
+* It's navigable;
+* It does what it needs to do without all the bells and whistles.
 
 All a band's content lives elsewhere, so you don't need to host it all on your site...unless everything comes crashing down, but we'll all cross that bridge together later.
 
@@ -32,10 +33,10 @@ A single page constrains you because it needs to concisely have all the content 
 The latter can be hard to achieve when the page is loaded with widgets (media players, real-time tour dates), so everything else needs to be minimal (JavaScript, HTTP requests, even CSS).
 
 I decided the these were the most important features to cover:
-* Ability to stream music
-* Real-time tour dates
-* Links to our social media and newsletter
-* Reusable components to make updates and new additions easier for me to code
+* Ability to stream music;
+* Real-time tour dates;
+* Links to our social media and newsletter;
+* Reusable components to make updates and new additions easier for me to code.
 
 ## The Design
 After an afternoon of fiddling around in Figma, I created these four visuals that show some promise for covering [all that](https://en.wikipedia.org/wiki/All_That):
