@@ -7,7 +7,7 @@ tags: ['post', 'front royal', 'design']
 ---
 I _really_ dropped the ball on this whole "blogging in real time" thing because the site is basically done.
 
-In [the first blog](/blog/front-royal-site-design-phase-one), I outlined my goals for the site with a screenshot of a few design ideas, and what stack I'll be using to build it.
+In [the first blog](/blog/creating-the-front-royal-website-part-one), I outlined my goals for the site with a screenshot of a few design ideas, and what stack I'll be using to build it.
 
 Well, over that weekend, boredom got the best of me and [I made the dang thing](https://priceless-shockley-84fcc2.netlify.app/). We haven't bought a domain yet, so ignore the randomly-selected words that Netlify provided.
 
