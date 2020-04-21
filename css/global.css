@@ -225,6 +225,8 @@ template {
   --gap: 3rem;
   --readingFont: 1.6rem;
   --subFont: 1.4rem;
+  --figureMd: 340px;
+  --figureLg: 600px;
 }
 
 html {
@@ -242,7 +244,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  gap: var(--gap);
+  /* gap: var(--gap); */
 }
 
 main {margin-bottom: 5rem /* only here because gap is not fully supported on flex containers */}
@@ -266,7 +268,7 @@ h1 {
 }
 
 h2 {font-size: 2.8rem;}
-h3 {font-size: 2.4rem;}
+h3 {font-size: 2.25rem;}
 h4 {font-size: 2rem;}
 h5 {font-size: 1.8rem;}
 h6 {font-size: 1.4rem;}
@@ -480,8 +482,8 @@ pre {
 }
 
 .collection figure {
-  width: max(123px, min(100%, 260px));
-	width: clamp(123px, 100%, 260px);
+  width: max(123px, min(100%, var(--figureMd)));
+	width: clamp(123px, 100%, var(--figureMd));
   margin: 1rem;
 }
 
@@ -491,8 +493,8 @@ figcaption {
 }
 
 .collection__bigger figure {
-  width: max(220px, min(100%, 495px));
-  width: clamp(220px, 100%, 495px);
+  width: max(320px, min(45%, var(--figureLg)));
+  width: clamp(320px, 45%, var(--figureLg));
 }
 
 /* ======================
@@ -599,7 +601,7 @@ footer p {
 }
 
 .row {
-  width: 95vw;
+  width: 97vw;
   display: flex;
   flex-direction: column;
 }
@@ -657,7 +659,8 @@ footer p {
 .article {
   width: 95%;
 	max-width: 768px;
-	margin: auto;
+	margin-left: auto;
+  margin-right: auto;
 }
 
 .article img {

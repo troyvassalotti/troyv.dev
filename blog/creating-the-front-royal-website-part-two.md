@@ -35,7 +35,6 @@ Being a band, I figured listening to our music - our product - was most importan
 I had to make some adjustments to Spotify's code to get the `<iframe>` to do what I wanted it to do, but I'm used to that by now.
 
 ```css
-<style>
 .player {
   margin: auto;
   width: 100%;
@@ -44,18 +43,16 @@ I had to make some adjustments to Spotify's code to get the `<iframe>` to do wha
 .player__featured {
   max-width: 300px;
 }
-</style>
-
+```
+```html
 <iframe class="player player__featured" src="https://open.spotify.com/embed/album/17q2Qwv2jqrhVaX8iWX5wm" width="300" height="320" frameborder="0" allowtransparency="true" allow="encrypted-media" title="These Things Happen Spotify player" loading="lazy"></iframe>
 ```
 
 I put the bandsintown tour dates widget right after the music, which again required a small CSS adjustment.
 
 ```css
-<style>
 .bit-widget .bit-no-dates-container {
   padding: 5rem 0 !important;
-</style>
 ```
 
 It's sad to look at since it's so empty (we have no dates coming up), but it'll look great when things are back in motion.
@@ -67,8 +64,8 @@ Building websites is fun. I get chances to try new things I wouldn't normally do
 
 There's a background image in the design, but the text got hard to read upon expanding the nav links on mobile. To get around that, I had to add some extra JavaScript to make sure the image remained the same and didn't expand to block the text.
 
-```javascript
-// these functions remove and toggle classes for properly styling the background image
+```js
+/* these functions remove and toggle classes for properly styling the background image */
 const openMenu = () => {
   container.classList.remove("mobile-hide");
   nav.classList.remove("menu__closed");
@@ -81,7 +78,7 @@ const closeMenu = () => {
   nav.classList.toggle("menu__closed");
 };
 
-// this does the work of opening or closing the menu
+/* this does the work of opening or closing the menu */
 const animateMenu = () => {
   if (isEven(clickCount)) {
     menu.innerHTML = x;
@@ -93,7 +90,7 @@ const animateMenu = () => {
   clickCount++;
 };
 
-// look for that magic click
+/* look for that magic click */
 open.addEventListener("click", animateMenu);
 ```
 

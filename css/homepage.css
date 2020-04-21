@@ -59,6 +59,14 @@
 	align-items: center;
 }
 
+main {
+	margin-top: 2rem;
+}
+
+.collection figure {
+  --figureMd: 260px;
+}
+
 /* ======================
   Tablet and Desktop Styles
   ======================= */
@@ -74,6 +82,10 @@
 @media only screen and (min-width: 1152px) {
 	.homepage main > section {
 		margin-bottom: 6rem;
+	}
+
+	main {
+		margin-top: 5rem;
 	}
 
 	.animated-header {

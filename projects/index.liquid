@@ -11,14 +11,16 @@ pageName: projectsPage
   <section class="row">
     <div class="row-header">
       <h2>Experiments & More</h2>
-      <p>Here are some of the things I've made. I started by <del>perfecting</del> understanding responsive design, then moved on to scripting and frameworks.</p>
-      <p>Now? I'm kinda just winging it.</p>
+      <p>Here are some of the things I've made. From responsive design to JavaScript frameworks to Jamstack, I'm always creating new things. You could say I'm kinda just winging it.</p>
     </div>
     <div class="collection center">
       {% for project in projects.phase1 -%}
         {% figure project.href, project.img, project.alt, project.caption %}
       {% endfor -%}
       {% for project in projects.phase2 -%}
+        {% figure project.href, project.img, project.alt, project.caption %}
+      {% endfor -%}
+      {% for project in projects.phase3 -%}
         {% figure project.href, project.img, project.alt, project.caption %}
       {% endfor -%}
     </div>
