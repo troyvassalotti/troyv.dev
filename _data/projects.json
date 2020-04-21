@@ -36,31 +36,63 @@
       "href": "https://codepen.io/troyvassalotti/full/WNbZYJM",
       "img": "random-quote_600px",
       "alt": "Screenshot of my project Random Quote Generator",
-      "caption": "Random Quote Generator"
+      "caption": "React Quote Generator"
     },
     {
       "href": "https://codepen.io/troyvassalotti/full/eYmjGvK",
       "img": "drum-machine_600",
       "alt": "Screenshot of my project Drum Machine",
-      "caption": "Drum Machine"
+      "caption": "React Drum Machine"
     },
     {
       "href": "https://codepen.io/troyvassalotti/full/KKwxxLM",
       "img": "calculator_600",
       "alt": "Screenshot of my project JavaScript Calculator",
-      "caption": "JavaScript Calculator"
+      "caption": "React Calculator"
     },
     {
       "href": "https://codepen.io/troyvassalotti/full/bGNajEV",
       "img": "markdown_600",
       "alt": "Screenshot of my project Markdown Previewer",
-      "caption": "Markdown Previewer"
+      "caption": "React Markdown Previewer"
     },
     {
       "href": "https://codepen.io/troyvassalotti/full/BayqQGz",
       "img": "pomodoro-clock_ffss_600x299",
       "alt": "Screenshot of my project Pomodoro Clock",
-      "caption": "Pomodoro Clock"
+      "caption": "React Pomodoro Clock"
+    }
+  ],
+  "phase3": [
+    {
+      "href": "https://codepen.io/troyvassalotti/full/NWqVWyd",
+      "img": "barchart_600x302",
+      "alt": "Screenshot of my project Barchart using d3.js",
+      "caption": "D3.js Barchart"
+    },
+    {
+      "href": "https://codepen.io/troyvassalotti/full/XWbLzee",
+      "img": "scatterplot_600x302",
+      "alt": "Screenshot of my project Scatterplot using d3.js",
+      "caption": "D3.js Scatterplot"
+    },
+    {
+      "href": "https://codepen.io/troyvassalotti/full/GRJVZVB",
+      "img": "heatmap_600x302",
+      "alt": "Screenshot of my project Heatmap using d3.js",
+      "caption": "D3.js Heatmap"
+    },
+    {
+      "href": "https://codepen.io/troyvassalotti/full/VwvwZMe",
+      "img": "choropleth_600x302",
+      "alt": "Screenshot of my project Choropleth using d3.js",
+      "caption": "D3.js Choropleth"
+    },
+    {
+      "href": "https://codepen.io/troyvassalotti/full/RwWoWKJ",
+      "img": "treemap_600x302",
+      "alt": "Screenshot of my project Treemap using d3.js",
+      "caption": "D3.js Treemap"
     }
   ],
   "homepage": [
