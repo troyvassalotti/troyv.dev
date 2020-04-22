@@ -435,6 +435,7 @@ a:focus {
   outline-width: .3rem;
 }
 
+/* code snippet styling */
 code, .code, pre {
   font-family: var(--code);
 }
@@ -446,6 +447,7 @@ pre {
   color: var(--black);
 }
 
+/* button styling */
 .button-wrapper {
 	display: grid;
   place-items: center;
@@ -471,30 +473,25 @@ pre {
   outline-color: var(--white);
 }
 
+/* for image collections */
 .collection {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
+	display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
+	justify-items: center;
+}
+
+.collection figure {
+  margin: 1rem;
+  max-width: 600px;
 }
 
 .collection a {
   text-decoration: none;
 }
 
-.collection figure {
-  width: max(123px, min(100%, var(--figureMd)));
-	width: clamp(123px, 100%, var(--figureMd));
-  margin: 1rem;
-}
-
 figcaption {
   color: var(--white);
   padding: 1rem 0;
-}
-
-.collection__bigger figure {
-  width: max(320px, min(45%, var(--figureLg)));
-  width: clamp(320px, 45%, var(--figureLg));
 }
 
 /* ======================
@@ -699,6 +696,7 @@ footer p {
 }
 
 .view-more .collection {
+  display: flex;
   justify-content: space-around;
 }
 
@@ -778,10 +776,6 @@ footer p {
 
   #link__blog:hover {
 	  text-decoration-color: var(--green);
-  }
-
-  .collection__bigger {
-    justify-content: space-around;
   }
 
   .button-wrapper {
