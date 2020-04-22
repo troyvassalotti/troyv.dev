@@ -63,8 +63,16 @@ main {
 	margin-top: 2rem;
 }
 
+.collection {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
 .collection figure {
   --figureMd: 260px;
+	width: max(123px, min(100%, var(--figureMd)));
+	width: clamp(123px, 100%, var(--figureMd));
 }
 
 /* ======================
