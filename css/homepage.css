@@ -70,7 +70,7 @@ main {
 /* ======================
   Tablet and Desktop Styles
   ======================= */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 720px) {
 	.button-wrapper {
 		place-items: center;
 	}
@@ -79,7 +79,7 @@ main {
 	}
 }
 
-@media only screen and (min-width: 1152px) {
+@media only screen and (min-width: 1062px) {
 	.homepage main > section {
 		margin-bottom: 6rem;
 	}

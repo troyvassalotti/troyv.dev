@@ -710,7 +710,7 @@ footer p {
 /* ======================
   Tablet and Desktop Styles
   ======================= */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 720px) {
   :root {
     --headerPadding: 5.5rem;
     --readingFont: 1.9rem;
@@ -801,7 +801,7 @@ footer p {
   }
 }
 
-@media only screen and (min-width: 1152px) {
+@media only screen and (min-width: 1062px) {
   :root {
     --gap: 4rem;
   }
