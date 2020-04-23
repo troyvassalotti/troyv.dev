@@ -23,3 +23,7 @@
   to = "https://troyv.dev/:splat"
   status = 301
   force = true
+
+# Plugins
+[[plugins]]
+package = "netlify-plugin-subfont"
