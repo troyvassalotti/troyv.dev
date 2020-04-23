@@ -26,4 +26,4 @@
 
 # Plugins
 [[plugins]]
-package = "netlify-plugin-subfont"
+package = "@netlify/plugin-sitemap"
