@@ -677,7 +677,7 @@ footer p {
   display: block;
   border: none;
   max-width: 350px;
-  margin: auto auto 2rem;
+  margin: auto;
 }
 
 .musicPage #troy:nth-child(1), .musicPage #frontRoyal:nth-child(1) {
