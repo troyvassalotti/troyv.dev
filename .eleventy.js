@@ -48,13 +48,13 @@ module.exports = function(eleventyConfig) {
       <div class="footer-wrapper">
         <picture>
           <source srcset="/images/headshot-arrow.webp" type="image/webp">
-          <img id="me" src="/images/headshot-arrow_160x160.png" alt="This is me. I look like this." loading="lazy">
+          <img id="me" src="/images/headshot-arrow_160x160.png" width="160" height="160" alt="This is me. I look like this." loading="lazy">
         </picture>
         <div class="footer-icons">
-          <a class="icon-link" href="https://github.com/troyvassalotti" target="_blank" rel="noopener" aria-label="Visit my GitHub page."><img src="/images/github-black.svg" alt="Github"></a>
-          <a class="icon-link" href="https://codepen.io/troyvassalotti" target="_blank" rel="noopener" aria-label="View smaller projects on my CodePen."><img src="/images/codepen-black.svg" alt="Codepen"></a>
-          <a class="icon-link" href="https://www.linkedin.com/in/troy-vassalotti-468053142/" target="_blank" rel="noopener" aria-label="Visit my LinkedIn."><img src="/images/linkedin-black.svg" alt="Linkedin"></a>
-          <a class="icon-link" href="https://twitter.com/lowercasetroy" target="_blank" rel="noopener" aria-label="Follow me on Twitter."><img src="/images/twitter-black.svg" alt="Twitter"></a>
+          <a class="icon-link" href="https://github.com/troyvassalotti" target="_blank" rel="noopener" aria-label="Visit my GitHub page."><img src="/images/github-black.svg" alt="Github" width="32" height="32" loading="lazy"></a>
+          <a class="icon-link" href="https://codepen.io/troyvassalotti" target="_blank" rel="noopener" aria-label="View smaller projects on my CodePen."><img src="/images/codepen-black.svg" alt="Codepen" width="32" height="32" loading="lazy"></a>
+          <a class="icon-link" href="https://www.linkedin.com/in/troy-vassalotti-468053142/" target="_blank" rel="noopener" aria-label="Visit my LinkedIn."><img src="/images/linkedin-black.svg" alt="Linkedin" width="32" height="32" loading="lazy"></a>
+          <a class="icon-link" href="https://twitter.com/lowercasetroy" target="_blank" rel="noopener" aria-label="Follow me on Twitter."><img src="/images/twitter-black.svg" alt="Twitter" width="32" height="32" loading="lazy"></a>
         </div>
       </div>
       <p>&copy; troy vassalotti.</p>
@@ -78,12 +78,12 @@ module.exports = function(eleventyConfig) {
   })
 
   // Figures are meant to be self-contained content, so this component is created without the intent on adding IDs or Classes to them
-  eleventyConfig.addShortcode("figure", function(href, img, alt, caption, target='target="_blank" rel="noopener"') {
+  eleventyConfig.addShortcode("figure", function(href, img, alt, caption, w, h, target='target="_blank" rel="noopener"') {
     return `<figure>
       <a href="${href}" ${target}>
         <picture>
           <source srcset="/images/${img}.webp" type="image/webp"/>
-          <img src="/images/${img}.jpg" alt="${alt}" loading="lazy"/>
+          <img src="/images/${img}.jpg" alt="${alt}" width="${w}" height="${h}" loading="lazy"/>
         </picture>
         <figcaption>${caption}</figcaption>
       </a>
@@ -98,11 +98,11 @@ module.exports = function(eleventyConfig) {
   })
 
   // A reusable block, so it helps to have it maintainable in one place
-  eleventyConfig.addShortcode("linkedPicture", function(href, img, alt, fallbackType, target='target="_blank" rel="noopener"') {
+  eleventyConfig.addShortcode("linkedPicture", function(href, img, alt, fallbackType, w, h, target='target="_blank" rel="noopener"') {
     return `<a href="${href}" ${target}>
       <picture>
         <source srcset="/images/${img}.webp" type="image/webp"/>
-        <img src="/images/${img}.${fallbackType}" alt="${alt}" loading="lazy"/>
+        <img src="/images/${img}.${fallbackType}" alt="${alt}" width="${w}" height="${h}" loading="lazy"/>
       </picture>
     </a>`
   })

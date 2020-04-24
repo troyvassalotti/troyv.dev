@@ -19,10 +19,10 @@ pageName: musicPage
   <div class="grid__1-col__2-col">
     <section class="flex__centered-col left-column">
       <div class="row__not-fixed-width" id="frontRoyal">
-        {% linkedPicture 'https://frontroyalmd.bandcamp.com/', 'front-royal-logo-white_400x240', 'The logo for my band, Front Royal.', 'png' %}
+        {% linkedPicture 'https://frontroyalmd.bandcamp.com/', 'front-royal-logo-white_400x240', 'The logo for my band, Front Royal.', 'png', 400, 240 %}
         <div class="icon-bar">
           {% for social in music.frontRoyalSocial %}
-            <a class="icon-link" href="{{social.href}}" target="_blank" rel="noopener" aria-label="{{social.aria}}"><img src="/images/{{social.img}}" alt="{{social.alt}}"></a>
+            <a class="icon-link" href="{{social.href}}" target="_blank" rel="noopener" aria-label="{{social.aria}}"><img src="/images/{{social.img}}" alt="{{social.alt}}" loading="lazy" width="48" height="48"></a>
           {% endfor %}
         </div>
       </div>
@@ -30,7 +30,7 @@ pageName: musicPage
         <h2>Latest Release</h2>
         <div class="album-player">
           <div class="album-description">
-            {% linkedPicture 'https://frontroyalmd.bandcamp.com/album/these-things-happen', 'fr_tth_408x408', 'These Things Happen', 'jpg' %}
+            {% linkedPicture 'https://frontroyalmd.bandcamp.com/album/these-things-happen', 'fr_tth_408x408', 'These Things Happen', 'jpg', 408, 408 %}
             <p><span class="italic">These Things Happen</span><br>6 Tracks</p>
             <p>Our 3rd EP. Full Length LP debut The <span class="italic">Thought That Counts</span> coming 2020.</p>
           </div>
@@ -43,18 +43,18 @@ pageName: musicPage
         <div class="view-more center">
           <p>view more on <a href="https://frontroyalmd.bandcamp.com/" rel="noopener" target="_blank">bandcamp &gt;&gt;</a></p>
           <div class="collection">
-            {% linkedPicture 'https://frontroyalmd.bandcamp.com/album/all-down-hill-from-here', 'fr_ep2_cover_408x408', 'All Down Hill From Here', 'jpg' %}
-            {% linkedPicture 'https://frontroyalmd.bandcamp.com/album/the-band-not-the-town', 'fr_tbntt_408x408', 'The Band, Not The Town', 'jpg' %}
+            {% linkedPicture 'https://frontroyalmd.bandcamp.com/album/all-down-hill-from-here', 'fr_ep2_cover_408x408', 'All Down Hill From Here', 'jpg', 408, 408 %}
+            {% linkedPicture 'https://frontroyalmd.bandcamp.com/album/the-band-not-the-town', 'fr_tbntt_408x408', 'The Band, Not The Town', 'jpg', 408, 408 %}
           </div>
         </div>
       </div>
     </section>
     <section class="flex__centered-col right-column">
       <div class="row__not-fixed-width" id="troy">
-        {% linkedPicture 'https://justtroy.bandcamp.com/', 'troy-full', 'The logo for my band, troy.', 'png' %}
+        {% linkedPicture 'https://justtroy.bandcamp.com/', 'troy-full', 'The logo for my band, troy.', 'png', 600, 300 %}
         <div class="icon-bar">
           {% for social in music.troySocial %}
-            <a class="icon-link" href="{{social.href}}" target="_blank" rel="noopener" aria-label="{{social.aria}}"><img src="/images/{{social.img}}" alt="{{social.alt}}"></a>
+            <a class="icon-link" href="{{social.href}}" target="_blank" rel="noopener" aria-label="{{social.aria}}"><img src="/images/{{social.img}}" alt="{{social.alt}}" loading="lazy" width="48" height="48"></a>
           {% endfor %}
         </div>
       </div>
@@ -62,7 +62,7 @@ pageName: musicPage
         <h2>Latest Release</h2>
         <div class="album-player">
           <div class="album-description">
-            {% linkedPicture 'https://justtroy.bandcamp.com/', 'aiacr', 'Alone In A Crowded Room', 'jpg' %}
+            {% linkedPicture 'https://justtroy.bandcamp.com/', 'aiacr', 'Alone In A Crowded Room', 'jpg', 408, 408 %}
             <p><span class="italic">Alone In A Crowded Room</span><br>12 Tracks</p>
             <p>My full length debut born from a summer of needing to make something of myself.</p>
           </div>

@@ -15,13 +15,13 @@ pageName: projectsPage
     </div>
     <div class="collection center">
       {% for project in projects.phase1 -%}
-        {% figure project.href, project.img, project.alt, project.caption %}
+        {% figure project.href, project.img, project.alt, project.caption, 600, 302 %}
       {% endfor -%}
       {% for project in projects.phase2 -%}
-        {% figure project.href, project.img, project.alt, project.caption %}
+        {% figure project.href, project.img, project.alt, project.caption, 600, 302 %}
       {% endfor -%}
       {% for project in projects.phase3 -%}
-        {% figure project.href, project.img, project.alt, project.caption %}
+        {% figure project.href, project.img, project.alt, project.caption, 600, 302 %}
       {% endfor -%}
     </div>
   </section>
@@ -38,11 +38,11 @@ pageName: projectsPage
       <p>I enjoy tracking random parts of my life, such as my migraines or how my Spotify listening habits change with the season.</p>
     </div>
     <div class="collection collection__bigger">
-      {% figure '/blog/i-logged-my-migraines-for-a-year/', 'migraines-2019', 'Screenshot of my a graph of my 2019 Migraine Calendar', '2019 Migraine Calendar', '' %}
+      {% figure '/blog/i-logged-my-migraines-for-a-year/', 'migraines-2019', 'Screenshot of my a graph of my 2019 Migraine Calendar', '2019 Migraine Calendar', 600, 302, '' %}
       <figure>
         <picture>
           <source srcset="/images/coming-soon.webp" type="image/webp"/>
-          <img src="/images/coming-soon.jpg" alt="" loading="lazy"/>
+          <img src="/images/coming-soon.jpg" alt="" width="600" height="302" loading="lazy"/>
         </picture>
         <figcaption>More Coming Soon...</figcaption>
       </figure>
@@ -54,8 +54,8 @@ pageName: projectsPage
       <p>My work with building and designing marketing emails are the reason I got into coding. They're a pain to work with, but fun to look at. Here are two templates I use in my own designs.</p>
     </div>
     <div class="collection collection__bigger">
-      {% figure 'emails/classic/', 'classic-template', 'Screenshot of a classic email template', 'Classic Template', '' %}
-      {% figure 'emails/simple/', 'simple-template', 'Screenshot of a simple email template', 'Simple Template', '' %}
+      {% figure 'emails/classic/', 'classic-template', 'Screenshot of a classic email template', 'Classic Template', 600, 302, '' %}
+      {% figure 'emails/simple/', 'simple-template', 'Screenshot of a simple email template', 'Simple Template', 600, 302, '' %}
     </div>
   </section>
   <section class="row">
@@ -64,8 +64,8 @@ pageName: projectsPage
       <p>I occasionally edit videos for fun. Here are two times I secretly took over the Front Royal band vlog.</p>
     </div>
     <div class="collection collection__bigger">
-      {% figure 'https://www.youtube.com/watch?v=DN29m0xBCDg', 'takeover-1', 'Screenshot from my first real vlog', 'Vlog Takeover #1' %}
-      {% figure 'https://www.youtube.com/watch?v=8LUoVGik9g8', 'takeover-2', 'Screenshot from my second real vlog', 'Vlog Takeover #2' %}
+      {% figure 'https://www.youtube.com/watch?v=DN29m0xBCDg', 'takeover-1', 'Screenshot from my first real vlog', 'Vlog Takeover #1', 600, 302 %}
+      {% figure 'https://www.youtube.com/watch?v=8LUoVGik9g8', 'takeover-2', 'Screenshot from my second real vlog', 'Vlog Takeover #2', 600, 302 %}
     </div>
   </section>
 </main>

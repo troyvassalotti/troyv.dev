@@ -226,7 +226,6 @@ template {
   --readingFont: 1.6rem;
   --subFont: 1.4rem;
   --figureMd: 340px;
-  --figureLg: 600px;
 }
 
 html {
@@ -417,6 +416,12 @@ img {
   width: 100%;
   max-width: 100%;
   margin: auto;
+  height: auto;
+}
+
+/* Keep this so aspect ratios can be set on images while maintaining proper image display */
+main img[height], footer img[height] {
+  height: auto;
 }
 
 p, ul, ol, figcaption {
