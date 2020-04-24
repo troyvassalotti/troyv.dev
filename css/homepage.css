@@ -51,8 +51,8 @@
 }
 
 #troy, #frontRoyal {
-	width: max(150px, min(40%, 420px));
-	width: clamp(150px, 40%, 420px);
+	width: max(150px, min(40%, 400px));
+	width: clamp(150px, 40%, 400px);
 }
 
 .music {

@@ -37,7 +37,7 @@ pageName: homepage
     </div>
     <div class="collection projects center">
       {% for project in projects.homepage -%}
-        {% figure project.href, project.img, project.alt, project.caption %}
+        {% figure project.href, project.img, project.alt, project.caption, 600, 302 %}
       {% endfor -%}
     </div>
     {% button '/projects/', 'View all my projects.', 'My Projects', '' %}
@@ -51,10 +51,10 @@ pageName: homepage
     </div>
     <div class="collection music">
       <div id="troy">
-        {% linkedPicture 'https://justtroy.bandcamp.com/', 'troy-full', 'The logo for my band, troy.', 'png' %}
+        {% linkedPicture 'https://justtroy.bandcamp.com/', 'troy-full', 'The logo for my band, troy.', 'png', 600, 300 %}
       </div>
       <div id="frontRoyal">
-        {% linkedPicture 'https://frontroyalmd.bandcamp.com/', 'front-royal-logo-white_400x240', 'The logo for my band, Front Royal.', 'png' %}
+        {% linkedPicture 'https://frontroyalmd.bandcamp.com/', 'front-royal-logo-white_400x240', 'The logo for my band, Front Royal.', 'png', 400, 240 %}
       </div>
     </div>
     {% button '/music/', 'Learn more about my music.', 'My Music', '' %}
