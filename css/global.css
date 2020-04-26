@@ -876,7 +876,7 @@ footer p {
   }
 
   a:hover {
-    color: var(--blue);
+    color: var(--cobalt);
   }
 
   .button {
@@ -885,7 +885,7 @@ footer p {
   }
 
   .button:hover {
-    background-color: var(--blue);
+    background-color: var(--cobalt);
   }
 
   .button:focus {
@@ -954,10 +954,11 @@ footer p {
 	}
 
   #link__contact:hover {
+    background-color: var(--blue);
     color: var(--light);
   }
 
   #link__blog:hover {
-	  text-decoration-color: var(--dark);
+	  text-decoration-color: var(--cobalt);
   }
 }
