@@ -218,7 +218,7 @@ template {
 	--blue: rgba(39, 154, 241, 1);
 	--purple: rgba(155, 81, 224, 1);
 	--body: 'Montserrat', "Segoe UI", "Helvetica", sans-serif;
-	--headings: 'Quicksand', Verdana, serif;
+	--headings: 'Quicksand', sans-serif;
   --code: 'Native', monospace;
   --headerPadding: 4rem;
   --headerBorder: 2px solid var(--white);
@@ -842,6 +842,7 @@ footer p {
   --cobalt: #3D348B;
   --blue: #006992;
   --headerBorder: 2px solid var(--black);
+  --headings: 'Lora', sans-serif;
   }
 
   html {
