@@ -156,3 +156,9 @@ main {
 		100% {border-right-color: transparent;}
 	}
 }
+
+@media (prefers-reduced-motion) {
+	.type-animation__first, .type-animation__second {
+		animation: none;
+	}
+}

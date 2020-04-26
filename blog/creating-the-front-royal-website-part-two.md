@@ -5,6 +5,7 @@ layout: post.liquid
 postDate: April 20th, 2020
 date: 2020-04-20
 tags: ['post', 'front royal', 'design']
+codeblock: true
 ---
 I _really_ dropped the ball on this whole "blogging in real time" thing because the site is basically done.
 
