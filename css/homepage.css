@@ -149,3 +149,10 @@ main {
 		align-self: center;
 	}
 }
+
+@media (prefers-color-scheme: light) {
+	@keyframes cursor {
+		0% {border-right-color: var(--black);}
+		100% {border-right-color: transparent;}
+	}
+}

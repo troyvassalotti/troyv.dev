@@ -218,7 +218,7 @@ template {
 	--blue: rgba(39, 154, 241, 1);
 	--purple: rgba(155, 81, 224, 1);
 	--body: 'Montserrat', "Segoe UI", "Helvetica", sans-serif;
-	--headings: 'Quicksand', Verdana, Tahoma, serif;
+	--headings: 'Quicksand', Verdana, serif;
   --code: 'Native', monospace;
   --headerPadding: 4rem;
   --headerBorder: 2px solid var(--white);
@@ -449,8 +449,6 @@ code, .code, pre {
 pre {
   white-space: pre-wrap;
   font-size: calc(var(--readingFont) - .5em);
-  background-color: var(--white);
-  color: var(--black);
 }
 
 /* button styling */
@@ -831,5 +829,134 @@ footer p {
 
   .row-header p {
     max-width: 50vw;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+  --light: #F0E9E9;
+  --black: #02040F;
+  --dark: #3A435E;
+  --bright: #E59500;
+  --red: #7d002d;
+  --cobalt: #3D348B;
+  --blue: #006992;
+  --headerBorder: 2px solid var(--black);
+  }
+
+  html {
+  	background-color: var(--light);
+  	color: var(--black);
+  }
+
+  .mainNavigation {
+    background-color: var(--dark);
+  }
+
+  ul.navbar a {
+    color: var(--light);
+  }
+
+  ul.navbar a:focus {
+    background-color: var(--light);
+    color: var(--dark);
+  }
+
+  #open svg > path {
+  	stroke: var(--black);
+  }
+
+  #close svg > path {
+    stroke: var(--light);
+  }
+
+  a {
+    color: var(--red);
+  }
+
+  a:hover {
+    color: var(--blue);
+  }
+
+  .button {
+  	background-color: var(--red);
+  	color: var(--light);
+  }
+
+  .button:hover {
+    background-color: var(--blue);
+  }
+
+  .button:focus {
+    outline-color: var(--black);
+  }
+
+  figcaption {
+    color: var(--black);
+  }
+
+  .contact-form {
+  	border: 1px solid var(--black);
+    background-color: var(--black);
+    color: var(--light);
+  }
+
+  #name:focus, #email:focus, #message:focus {
+    border: 2px dashed var(--bright);
+  }
+
+  .header {
+    background-color: var(--light);
+  }
+
+  .hero-header {
+  	background-color: var(--light);
+  }
+
+  .icon-bar {
+  	background-color: var(--black);
+  }
+
+  .blog-listing, .blog-header {
+    border-color: var(--red);
+  }
+
+  #frontRoyal img, #troy img {
+    filter: invert(100%);
+  }
+
+  footer {
+    background-color: transparent;
+  }
+}
+
+@media (prefers-color-scheme: light) and (min-width: 720px) {
+  .mainNavigation {
+		background-color: transparent;
+	}
+
+  ul.navbar a {
+		color: var(--black);
+	}
+
+  #link__home:hover {
+		text-decoration-color: var(--blue);
+	}
+
+	#link__projects:hover {
+		background-color: var(--bright);
+		color: var(--black);
+	}
+
+	#link__music:hover {
+		text-decoration-color: var(--red);
+	}
+
+  #link__contact:hover {
+    color: var(--light);
+  }
+
+  #link__blog:hover {
+	  text-decoration-color: var(--dark);
   }
 }
