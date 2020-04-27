@@ -149,3 +149,16 @@ main {
 		align-self: center;
 	}
 }
+
+@media (prefers-color-scheme: light) {
+	@keyframes cursor {
+		0% {border-right-color: var(--black);}
+		100% {border-right-color: transparent;}
+	}
+}
+
+@media (prefers-reduced-motion) {
+	.type-animation__first, .type-animation__second {
+		animation: none;
+	}
+}

@@ -1,39 +1,8 @@
 @font-face {
   font-family: 'Native';
-  src: url('/css/fonts/native/native-Regular.woff2') format('woff2'),
-  url('/css/fonts/native/native-Regular.woff') format('woff');
-  font-weight: 400;
+  src: '/css/fonts/native/Native-Light.woff2' format('woff2');
+  font-weight: 300;
   font-style: normal;
-  font-display: swap;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-  font-family: 'Native';
-  src: url('/css/fonts/native/native-Italic.woff2') format('woff2'),
-  url('/css/fonts/native/native-Italic.woff') format('woff');
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-  font-family: 'Native';
-  src: url('/css/fonts/native/native-Bold.woff2') format('woff2'),
-  url('/css/fonts/native/native-Bold.woff') format('woff');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-  font-family: 'Native';
-  src: url('/css/fonts/native/native-BoldItalic.woff2') format('woff2'),
-  url('/css/fonts/native/native-BoldItalic.woff') format('woff');
-  font-weight: 700;
-  font-style: italic;
   font-display: swap;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
@@ -218,7 +187,7 @@ template {
 	--blue: rgba(39, 154, 241, 1);
 	--purple: rgba(155, 81, 224, 1);
 	--body: 'Montserrat', "Segoe UI", "Helvetica", sans-serif;
-	--headings: 'Quicksand', Verdana, Tahoma, serif;
+	--headings: 'Quicksand', sans-serif;
   --code: 'Native', monospace;
   --headerPadding: 4rem;
   --headerBorder: 2px solid var(--white);
@@ -231,6 +200,7 @@ template {
 html {
 	font-size: 10px;
 	font-family: var(--body);
+  font-weight: 300;
 	background-color: var(--dark);
 	color: var(--white);
   line-height: 1.5;
@@ -444,13 +414,12 @@ a:focus {
 /* code snippet styling */
 code, .code, pre {
   font-family: var(--code);
+  font-weight: 300;
 }
 
 pre {
   white-space: pre-wrap;
   font-size: calc(var(--readingFont) - .5em);
-  background-color: var(--white);
-  color: var(--black);
 }
 
 /* button styling */
@@ -585,6 +554,7 @@ footer p {
   margin: .5rem 0 0;
   font-family: var(--headings);
   font-size: var(--subFont);
+  font-weight: 500;
 }
 
 /* ======================
@@ -831,5 +801,133 @@ footer p {
 
   .row-header p {
     max-width: 50vw;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+  --light: #F0E9E9;
+  --black: #02040F;
+  --dark: #3A435E;
+  --bright: #E59500;
+  --red: #7d002d;
+  --cobalt: #3D348B;
+  --blue: #006992;
+  --headerBorder: 2px solid var(--black);
+  --headings: 'Lora', sans-serif;
+  }
+
+  html {
+  	background-color: var(--light);
+  	color: var(--black);
+    font-weight: 400;
+  }
+
+  .mainNavigation {
+    background-color: var(--dark);
+  }
+
+  ul.navbar a {
+    color: var(--light);
+  }
+
+  ul.navbar a:focus {
+    background-color: var(--light);
+    color: var(--dark);
+  }
+
+  #open svg > path {
+  	stroke: var(--black);
+  }
+
+  #close svg > path {
+    stroke: var(--light);
+  }
+
+  a {
+    color: var(--red);
+  }
+
+  a:hover {
+    color: var(--cobalt);
+  }
+
+  .button {
+  	background-color: var(--red);
+  	color: var(--light);
+  }
+
+  .button:hover {
+    background-color: var(--cobalt);
+  }
+
+  .button:focus {
+    outline-color: var(--black);
+  }
+
+  figcaption {
+    color: var(--black);
+  }
+
+  .contact-form {
+  	border: 1px solid var(--black);
+    background-color: var(--black);
+    color: var(--light);
+  }
+
+  #name:focus, #email:focus, #message:focus {
+    border: 2px dashed var(--bright);
+  }
+
+  .header {
+    background-color: var(--light);
+  }
+
+  .hero-header {
+  	background-color: var(--light);
+  }
+
+  .icon-bar {
+  	background-color: var(--black);
+  }
+
+  .blog-listing, .blog-header {
+    border-color: var(--red);
+  }
+
+  #frontRoyal img, #troy img {
+    filter: invert(100%);
+  }
+}
+
+@media (prefers-color-scheme: light) and (min-width: 720px) {
+  .mainNavigation {
+		background-color: transparent;
+	}
+
+  ul.navbar a {
+		color: var(--black);
+	}
+
+  #link__home:hover {
+		text-decoration-color: var(--blue);
+	}
+
+	#link__projects:hover {
+		background-color: var(--bright);
+		color: var(--black);
+	}
+
+	#link__music:hover {
+		text-decoration-color: var(--red);
+	}
+
+  #link__contact:hover {
+    background-color: var(--blue);
+    color: var(--light);
+  }
+
+  #link__blog:hover {
+	  text-decoration-color: var(--cobalt);
   }
 }
