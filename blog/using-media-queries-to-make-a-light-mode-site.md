@@ -20,7 +20,7 @@ I don't know how to get the lot of you back to the original color scheme I inten
 ## Dark Reader vs. troyv.dev
 Take a look at my homepage in its default form compared to the dark and light emulation from Dark Reader:
 
-![What my site looks like without any sort of color scheme emulation, a dark color scheme, and a light color scheme](/images/mobile-all-three.png)
+![What my site looks like without any sort of color scheme emulation, a dark color scheme, and a light color scheme](/images/mobile-all-three.jpg)
 
 As you might expect, using Dark Reader turned my site into a dark-but-not-too-dark wonderland. _But_, changing the settings in the add-on to a "light" scheme causes a handful of problems. Mainly, some of the work I did making sure my colors were properly contrasting was just thrown out the window.
 
