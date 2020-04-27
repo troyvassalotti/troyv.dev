@@ -52,7 +52,7 @@ abbr[title] {
 }
 
 b, strong {
-  font-weight: bolder;
+  font-weight: bold;
 }
 
 kbd, samp {
@@ -383,7 +383,6 @@ ul.navbar a:focus {
 
 img {
   display: block;
-  width: 100%;
   max-width: 100%;
   margin: auto;
   height: auto;
@@ -631,13 +630,9 @@ footer p {
 
 .article {
   width: 95%;
-	max-width: 768px;
+	max-width: 800px;
 	margin-left: auto;
   margin-right: auto;
-}
-
-.article img {
-  max-width: 600px;
 }
 
 .article h2 {
@@ -779,9 +774,9 @@ footer p {
 	h1 {font-size: 6rem;}
   h2 {font-size: 4.4rem;}
   h3 {font-size: 3.2rem;}
-  h4 {font-size: 3rem;}
-  h5 {font-size: 2.7rem;}
-  h6 {font-size: 2.3rem;}
+  h4 {font-size: 2.8rem;}
+  h5 {font-size: 2.5rem;}
+  h6 {font-size: 2.2rem;}
 
   ul.navbar {
     font-size: 2.1rem;
@@ -808,7 +803,6 @@ footer p {
   :root {
   --light: #F0E9E9;
   --black: #02040F;
-  --dark: #3A435E;
   --bright: #E59500;
   --red: #7d002d;
   --cobalt: #3D348B;
@@ -824,7 +818,7 @@ footer p {
   }
 
   .mainNavigation {
-    background-color: var(--dark);
+    background-color: var(--black);
   }
 
   ul.navbar a {
@@ -833,7 +827,7 @@ footer p {
 
   ul.navbar a:focus {
     background-color: var(--light);
-    color: var(--dark);
+    color: var(--black);
   }
 
   #open svg > path {
