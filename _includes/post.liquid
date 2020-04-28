@@ -1,50 +1,15 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="preconnect" href="https://d33wubrfki0l68.cloudfront.net">
-    <link rel="dns-prefetch" href="https://d33wubrfki0l68.cloudfront.net">
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;700&family=Montserrat:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/compressed/global.min.css">
-    {% if codeblock %}
-    <link rel="stylesheet" href="/css/compressed/prism.min.css">
-    {% endif %}
-    {%- if animation -%}
-      <script src="/js/compressed/prefixfree.js"></script>
-    {%- endif -%}
-    <title>{{title}} | Troy V.</title>
-    <meta name="description" content="{{description}}">
-    <meta name="og:locale" content="en_US">
-    <meta name="og:type" content="article">
-    <meta name="og:title" content="{{title}}">
-    <meta name="og:description" content="{{description}}">
-    <meta name="og:site_name" content="troyv.dev">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="{{title}}">
-    <meta name="twitter:description" content="{{description}}">
-    <meta name="twitter:creator" content="@lowercasetroy">
-    {%- if inline -%}
-    <style>
-      {{inline}}
-    </style>
-    {%- endif -%}
-  </head>
-  <body class="blogArticle">
-    {% mainNav %}
-    <main class="article">
-      <div class="blog-header">
-        <div>
-          <h1>{{title}}</h1>
-        </div>
-        <div>
-          <p><time datetime="{{page.date}}">{{postDate}}</time></p>
-        </div>
-      </div>
-      {{content}}
-    </main>
-    {% footer %}
-  <script src="/js/compressed/prism.js" async></script>
-  {% scripts %}
-  </body>
-</html>
+---
+layout: primary.liquid
+pageName: blogArticle
+---
+<main class="article">
+  <section class="blog-header">
+    <div>
+      <h1>{{title}}</h1>
+    </div>
+    <div>
+      <p><time datetime="{{page.date}}">{{postDate}}</time></p>
+    </div>
+  </section>
+  {{content}}
+</main>
