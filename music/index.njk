@@ -1,12 +1,12 @@
 ---
 title: Music
 description: Music is one of my passions. Check out all my musical projects here.
-layout: primary.liquid
+layout: primary
 pageName: musicPage
 ---
 <main class="grid__centered">
   <section class="header">
-    <h1 class="hero-header">{{title}}</h1>
+    <h1 class="hero-header">{{ title }}</h1>
   </section>
   <section class="row">
     <div class="row-header">
@@ -22,7 +22,7 @@ pageName: musicPage
         {% linkedPicture 'https://frontroyalmd.bandcamp.com/', 'front-royal-logo-white_400x240', 'The logo for my band, Front Royal.', 'png', 400, 240 %}
         <div class="icon-bar">
           {% for social in music.frontRoyalSocial %}
-            <a class="icon-link" href="{{social.href}}" target="_blank" rel="noopener" aria-label="{{social.aria}}"><img src="/images/{{social.img}}" alt="{{social.alt}}" loading="lazy" width="48" height="48"></a>
+            <a class="icon-link" href="{{ social.href }}" target="_blank" rel="noopener" aria-label="{{ social.aria }}"><img src="/images/{{ social.img }}" alt="{{ social.alt }}" loading="lazy" width="48" height="48"></a>
           {% endfor %}
         </div>
       </div>
@@ -54,7 +54,7 @@ pageName: musicPage
         {% linkedPicture 'https://justtroy.bandcamp.com/', 'troy-full', 'The logo for my band, troy.', 'png', 600, 300 %}
         <div class="icon-bar">
           {% for social in music.troySocial %}
-            <a class="icon-link" href="{{social.href}}" target="_blank" rel="noopener" aria-label="{{social.aria}}"><img src="/images/{{social.img}}" alt="{{social.alt}}" loading="lazy" width="48" height="48"></a>
+            <a class="icon-link" href="{{ social.href }}" target="_blank" rel="noopener" aria-label="{{ social.aria }}"><img src="/images/{{ social.img }}" alt="{{ social.alt }}" loading="lazy" width="48" height="48"></a>
           {% endfor %}
         </div>
       </div>

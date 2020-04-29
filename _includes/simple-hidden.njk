@@ -7,17 +7,17 @@
     <meta name="robots" content="noindex">
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;700&family=Montserrat:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/compressed/global.min.css">
-    <title>{{title}} | Troy V.</title>
+    <title>{{ title }} | Troy V.</title>
     <meta name="description" content="{{description}}">
     {%- if inline -%}
     <style>
-      {{inline}}
+      {{ inline }}
     </style>
     {%- endif -%}
   </head>
   <body class="{{pageName}}">
     {% mainNav %}
-    {{content}}
+    {{ content | safe }}
     {% footer %}
   {% scripts %}
   </body>

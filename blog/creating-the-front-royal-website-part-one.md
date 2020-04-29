@@ -1,7 +1,7 @@
 ---
 title: Creating The Front Royal Website, Part 1
 description: We want a website so we have a presence that isn't exclusively on social media. So, I'm whipping up a site and blogging about it in real time.
-layout: post.liquid
+layout: post
 postDate: March 16th, 2020
 date: 2020-03-16
 tags: ['post', 'front royal', 'design']
