@@ -1,19 +1,19 @@
 ---
 title: Blog
 description: I occasionally write about things that enter my mind or the excessive amounts of data I keep on myself.
-layout: primary.liquid
+layout: primary
 pageName: blogPage
 ---
 <main class="grid__centered">
   <section class="header">
-    <h1 class="hero-header">{{title}}</h1>
+    <h1 class="hero-header">{{ title }}</h1>
   </section>
   <section class="blog-listing-container">
   {%- for post in collections.post -%}
     <article class="blog-listing">
-      <h2><a href="{{post.url}}">{{post.data.title}}</a></h2>
-      <p>{{post.data.description}}</p>
+      <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+      <p>{{ post.data.description }}</p>
     </article>
   {%- endfor -%}
-</section>
+  </section>
 </main>

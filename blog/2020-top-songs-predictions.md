@@ -1,7 +1,7 @@
 ---
 title: I'm Predicting My Favorite Songs of 2020
 description: Sometimes, I hear a new song that is such a jam that I can't imagine life without it. We'll see if they hold up at the end of the year.
-layout: post.liquid
+layout: post
 postDate: April 02nd, 2020
 date: 2020-04-02
 tags: ['post', 'spotify', 'music']

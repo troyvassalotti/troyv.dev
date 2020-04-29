@@ -20,7 +20,7 @@
     <script src="/js/compressed/prefixfree.js"></script>
     {%- endif -%}
 
-    <title>{{title}} | Troy V.</title>
+    <title>{{ title }} | Troy V.</title>
     <meta name="description" content="{{description}}">
     <meta name="og:locale" content="en_US">
     <meta name="og:type" content="article">
@@ -41,7 +41,7 @@
   </head>
   <body class="{{pageName}}">
     {% mainNav %}
-    {{ content }}
+    {{ content | safe }}
     {% footer %}
 
   {%- if codeblock -%}
