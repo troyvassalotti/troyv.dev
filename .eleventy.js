@@ -63,7 +63,7 @@ module.exports = function(eleventyConfig) {
 
   // Any global scripts, external or internal, can be placed here
   eleventyConfig.addShortcode("scripts", function() {
-    return `<script src="/js/compressed/javascript.min.js" async></script>`
+    return `<script src="/js/compressed/main.min.js" async></script>`
   })
 
   // A reusable block, so it helps to have it maintainable in one place
