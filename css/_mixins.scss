@@ -1,0 +1,20 @@
+@mixin colors($bg, $txt) {
+  background-color: $bg;
+  color: $txt;
+}
+
+@mixin flexCenter {
+  display: flex;
+	align-items: center;
+  justify-content: center;
+}
+
+@mixin gridCenter {
+  display: grid;
+  place-items: center;
+}
+
+@mixin svgSize($color) {
+  stroke: $color;
+  stroke-width: 4;
+}
