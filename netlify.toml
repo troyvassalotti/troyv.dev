@@ -24,6 +24,15 @@
   status = 301
   force = true
 
+# Custom headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    X-XSS-Protection = "1"
+    Content-Security-Policy = "default-src 'self' https://d33wubrfki0l68.cloudfront.net https://open.spotify.com/embed/ https://bandcamp.com/EmbeddedPlayer/ data: 'unsafe-inline'"
+
 # Plugins
 [[plugins]]
 package = "@netlify/plugin-sitemap"
