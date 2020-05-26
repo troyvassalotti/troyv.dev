@@ -11,7 +11,7 @@ I _really_ dropped the ball on this whole "blogging in real time" thing because 
 
 In [the first blog](/blog/creating-the-front-royal-website-part-one), I outlined my goals for the site with a screenshot of a few design ideas, and what stack I'll be using to build it.
 
-Well, over that weekend, boredom got the best of me and [I made the dang thing](https://frontroyalmusic.netlify.app/). We haven't bought a domain yet, so ignore the randomly-selected words that Netlify provided.
+Well, over that weekend, boredom got the best of me and [I made the dang thing](https://frontroyalband.com/). We haven't bought a domain yet, so ignore the randomly-selected words that Netlify provided.
 
 ## The Approach Pt. 2
 To recap, I set out to make it a simple, single-page site with little bells and whistles. It was supposed to be:
