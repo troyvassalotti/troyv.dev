@@ -1,2 +1,2 @@
 # troyv.dev
-This is my portfolio, but it can really be whatever I want it to be.
+This is my personal site. I like to think of it as a portfolio, but it's really a playground.

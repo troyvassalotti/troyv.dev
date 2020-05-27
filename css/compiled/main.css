@@ -253,6 +253,123 @@ template {
 	display: none;
 }
 
+/* PrismJS 1.20.0
+https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript */
+/**
+ * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
+ * Based on https://github.com/chriskempson/tomorrow-theme
+ * @author Rose Pritchard
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #ccc;
+	background: none;
+	white-space: pre-wrap;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: break-word;
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #2d2d2d;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #999;
+}
+
+.token.punctuation {
+	color: #ccc;
+}
+
+.token.tag,
+.token.attr-name,
+.token.namespace,
+.token.deleted {
+	color: #e2777a;
+}
+
+.token.function-name {
+	color: #6196cc;
+}
+
+.token.boolean,
+.token.number,
+.token.function {
+	color: #f08d49;
+}
+
+.token.property,
+.token.class-name,
+.token.constant,
+.token.symbol {
+	color: #f8c555;
+}
+
+.token.selector,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin {
+	color: #cc99cd;
+}
+
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.variable {
+	color: #7ec699;
+}
+
+.token.operator,
+.token.entity,
+.token.url {
+	color: #67cdcc;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+
+.token.inserted {
+	color: green;
+}
+
 /* ======================
   My Styles
   ======================= */
@@ -291,11 +408,20 @@ main {
 /* ======================
   Headings Styles
   ======================= */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	font-family: var(--headings);
 }
 
-h2, h3, h4, h5, h6 {
+h2,
+h3,
+h4,
+h5,
+h6 {
 	font-weight: 500;
 	margin: 0;
 }
@@ -328,29 +454,29 @@ h6 {
 
 .blogPage {
 	/* Photo by Mike Kus made available by being a user of Team Treehouse via https://teamtreehouse.com/perks */
-	--banner: url('https://troyv.dev/images/road.jpg');
+	--banner: url("https://troyv.dev/images/road.jpg");
 }
 
 .projectsPage {
-	--banner: url('https://troyv.dev/images/caution-bg.jpg');
+	--banner: url("https://troyv.dev/images/caution-bg.jpg");
 }
 
 .musicPage {
-	--banner: url('https://troyv.dev/images/guitar-on-bed.jpg');
+	--banner: url("https://troyv.dev/images/guitar-on-bed.jpg");
 }
 
 .contactPage {
-	--banner: url('https://troyv.dev/images/cleveland.jpg');
+	--banner: url("https://troyv.dev/images/cleveland.jpg");
 }
 
-.projectsPage .hero-header,
-.contactPage .hero-header {
+.contactPage .hero-header,
+.projectsPage .hero-header {
 	margin-top: auto;
 	border-bottom: var(--headerBorder);
 }
 
-.projectsPage .header,
-.contactPage .header {
+.contactPage .header,
+.projectsPage .header {
 	padding-bottom: var(--headerPadding);
 }
 
@@ -434,7 +560,8 @@ ul.navbar a:focus {
 	stroke-width: 4;
 }
 
-#open, #close {
+#close,
+#open {
 	background-color: transparent;
 	border: none;
 }
@@ -486,11 +613,15 @@ img {
 	height: auto;
 }
 
-main img[height], footer img[height] {
+footer img[height],
+main img[height] {
 	height: auto;
 }
 
-p, ul, ol, figcaption {
+figcaption,
+ol,
+p,
+ul {
 	font-size: var(--readingFont);
 }
 
@@ -507,7 +638,9 @@ a:focus {
 	outline-width: .3rem;
 }
 
-code, .code, pre {
+.code,
+code,
+pre {
 	font-family: "Native", monospace;
 	font-weight: 300;
 }
@@ -586,7 +719,9 @@ figcaption {
 	margin: 1rem 0;
 }
 
-#name, #email, #message {
+#email,
+#message,
+#name {
 	padding: .5rem;
 	border-radius: .5rem;
 	border-color: transparent;
@@ -663,7 +798,8 @@ footer p {
 	border-right: var(--headerBorder);
 }
 
-.row, .row__not-fixed-width {
+.row,
+.row__not-fixed-width {
 	display: flex;
 	flex-direction: column;
 }
@@ -741,7 +877,8 @@ footer p {
 	margin: auto;
 }
 
-.musicPage #troy:nth-child(1), .musicPage #frontRoyal:nth-child(1) {
+.musicPage #frontRoyal:nth-child(1),
+.musicPage #troy:nth-child(1) {
 	max-width: 300px;
 }
 
@@ -775,7 +912,8 @@ footer p {
 		--readingFont: 1.9rem;
 		--subFont: 1.7rem;
 	}
-	#menu, #close {
+	#close,
+	#menu {
 		display: none;
 	}
 	.mainNavigation {
@@ -802,9 +940,9 @@ footer p {
 		padding: .3rem;
 		color: #f7f7ff;
 	}
+	#link__blog:hover,
 	#link__home:hover,
-	#link__music:hover,
-	#link__blog:hover {
+	#link__music:hover {
 		background-color: transparent;
 		text-decoration: underline;
 		text-decoration-thickness: .3rem;
@@ -931,16 +1069,19 @@ footer p {
 		color: #f0e9e9;
 		border: 1px solid #02040f;
 	}
-	.header, .hero-header {
+	.header,
+	.hero-header {
 		background-color: #f0e9e9;
 	}
 	.icon-bar {
 		background-color: #02040f;
 	}
-	.blog-listing, .blog-header {
+	.blog-header,
+	.blog-listing {
 		border-color: #7d002d;
 	}
-	#frontRoyal img, #troy img {
+	#frontRoyal img,
+	#troy img {
 		filter: invert(100%);
 	}
 }

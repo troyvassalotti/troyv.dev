@@ -5,7 +5,6 @@ layout: post
 postDate: April 27th, 2020
 date: 2020-04-27
 tags: ['post', 'media queries', 'light mode', 'a11y', 'design']
-codeblock: true
 ---
 I was having a normal Saturday morning of exploring the latest features in [Firefox Preview Nightly](https://play.google.com/store/apps/details?id=org.mozilla.fenix.nightly) and installed the Dark Reader add-on to see what it does to my site.
 
