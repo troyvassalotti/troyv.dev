@@ -36,8 +36,8 @@
 [[plugins]]
 package = "@netlify/plugin-sitemap"
 
-[[plugins]]
-package = "netlify-plugin-inline-source"
+# [[plugins]]
+# package = "netlify-plugin-inline-source"
 
 [[plugins]]
 package = "netlify-plugin-inline-critical-css"
