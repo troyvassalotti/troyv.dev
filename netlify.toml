@@ -32,3 +32,18 @@
     X-Frame-Options = "SAMEORIGIN"
     X-XSS-Protection = "1"
     Content-Security-Policy = "default-src 'self' https://d33wubrfki0l68.cloudfront.net https://open.spotify.com/embed/ https://bandcamp.com/EmbeddedPlayer/ data: 'unsafe-inline'"
+
+[[plugins]]
+package = "@netlify/plugin-sitemap"
+
+[[plugins]]
+package = "netlify-plugin-inline-source"
+
+[[plugins]]
+package = "netlify-plugin-inline-critical-css"
+
+[[plugins]]
+package = "netlify-plugin-image-optim"
+
+[[plugins]]
+package = "netlify-plugin-checklinks"
