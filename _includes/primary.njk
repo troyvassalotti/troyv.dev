@@ -3,20 +3,21 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    {%- if noindex -%}
+    <meta name="robots" content="noindex">
+    {%- endif -%}
+    
     <link rel="preconnect" href="https://d33wubrfki0l68.cloudfront.net">
     <link rel="dns-prefetch" href="https://d33wubrfki0l68.cloudfront.net">
-
-    {%- if noindex -%}
-      <meta name="robots" content="noindex">
-    {%- endif -%}
-
     <link rel="stylesheet" href="/css/compressed/main.min.css">
     {%- if pageCSS -%}
-      <link rel="stylesheet" href="/css/compressed/{{pageCSS}}.min.css">
+    <link rel="stylesheet" href="/css/compressed/{{pageCSS}}.min.css">
     {%- endif -%}
-
+    {%- if codeblock -%}
+    <link rel="stylesheet" href="/css/compressed/prism.min.css">
+    {%- endif -%}
     {%- if animation -%}
-      <script src="/js/compressed/prefixfree.js"></script>
+    <script src="/js/compressed/prefixfree.js"></script>
     {%- endif -%}
 
     <title>{{ title }} | Troy V.</title>
@@ -43,6 +44,9 @@
     {{ content | safe }}
     {% footer %}
 
+    {%- if codeblock -%}
+    <script src="/js/compressed/prism.js" async></script>
+    {%- endif -%}
     {% scripts %}
   </body>
 </html>

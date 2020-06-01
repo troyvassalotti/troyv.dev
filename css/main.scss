@@ -2,7 +2,6 @@
 @import "_mixins";
 @import "localfonts";
 @import "normalize";
-@import "prism";
 /* ======================
   My Styles
   ======================= */
@@ -43,6 +42,7 @@ main {
 /* ======================
   Headings Styles
   ======================= */
+
 h1,
 h2,
 h3,
@@ -130,6 +130,7 @@ h6 {
 /* ======================
   Navigation Styles
   ======================= */
+
 .mainNavigation {
   height: 100%;
   width: 0;
@@ -213,6 +214,7 @@ ul.navbar {
 /* ======================
   Content Styles
   ======================= */
+
 .center {
   text-align: center;
 }
@@ -334,6 +336,7 @@ figcaption {
 /* ======================
   Contact Form Styles
   ======================= */
+
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -382,6 +385,7 @@ figcaption {
 /* ======================
   Footer Styles
   ======================= */
+
 footer {
   @include gridCenter;
   @include colors($whitePrimary, $blackPrimary);
@@ -423,6 +427,7 @@ footer {
 /* ======================
   Misc. Page Styles
   ======================= */
+
 .header {
   margin: 0 auto;
   background: var(--banner) center / cover no-repeat $darkPrimary;
