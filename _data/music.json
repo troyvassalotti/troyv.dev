@@ -1,6 +1,5 @@
 {
-  "frontRoyalSocial": [
-    {
+  "frontRoyalSocial": [{
       "href": "https://frontroyalmd.bandcamp.com/",
       "aria": "Visit the Front Royal Bandcamp page.",
       "img": "bandcamp-button-bc-circle-black-64.png",
@@ -25,18 +24,10 @@
       "alt": "Facebook"
     }
   ],
-  "troySocial": [
-    {
-      "href": "https://justtroy.bandcamp.com/",
-      "aria": "Visit the troy. Bandcamp page.",
-      "img": "bandcamp-button-bc-circle-black-64.png",
-      "alt": "Bandcamp"
-    },
-    {
-      "href": "https://www.facebook.com/troyalllowercase/",
-      "aria": "Visit the troy. Facebook.",
-      "img": "facebook-black.svg",
-      "alt": "Facebook"
-    }
-  ]
+  "troySocial": [{
+    "href": "https://justtroy.bandcamp.com/",
+    "aria": "Visit the troy. Bandcamp page.",
+    "img": "bandcamp-button-bc-circle-black-64.png",
+    "alt": "Bandcamp"
+  }]
 }

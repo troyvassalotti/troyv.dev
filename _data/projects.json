@@ -1,6 +1,5 @@
 {
-  "phase1": [
-    {
+  "phase1": [{
       "href": "https://codepen.io/troyvassalotti/full/abzrWKb",
       "img": "tribute_ffss_600x302",
       "alt": "Screenshot of my project Tribute Page",
@@ -31,8 +30,7 @@
       "caption": "Personal Portfolio"
     }
   ],
-  "phase2": [
-    {
+  "phase2": [{
       "href": "https://codepen.io/troyvassalotti/full/WNbZYJM",
       "img": "random-quote_600px",
       "alt": "Screenshot of my project Random Quote Generator",
@@ -63,8 +61,7 @@
       "caption": "React Pomodoro Clock"
     }
   ],
-  "phase3": [
-    {
+  "phase3": [{
       "href": "https://codepen.io/troyvassalotti/full/NWqVWyd",
       "img": "barchart_600x302",
       "alt": "Screenshot of my project Barchart using d3.js",
@@ -95,8 +92,7 @@
       "caption": "D3.js Treemap"
     }
   ],
-  "homepage": [
-    {
+  "homepage": [{
       "href": "https://codepen.io/troyvassalotti/full/WNbZYJM",
       "img": "random-quote_600px",
       "alt": "Screenshot of my project Random Quote Generator",
