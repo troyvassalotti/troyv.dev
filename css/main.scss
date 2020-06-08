@@ -549,6 +549,16 @@ footer {
     }
   }
 }
+
+blockquote {
+  margin: 0 2rem;
+  font-style: italic;
+  border-left: 2px solid $goldPrimary;
+
+  p {
+    padding: 1.5rem;
+  }
+}
 /* ======================
   Tablet and Desktop Styles
   ======================= */
@@ -762,7 +772,8 @@ footer {
   }
 
   .blog-header,
-  .blog-listing {
+  .blog-listing,
+  blockquote {
     border-color: $redLight;
   }
 

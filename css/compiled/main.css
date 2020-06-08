@@ -786,6 +786,16 @@ footer p {
 	max-width: 123px;
 }
 
+blockquote {
+	margin: 0 2rem;
+	font-style: italic;
+	border-left: 2px solid #f2c94c;
+}
+
+blockquote p {
+	padding: 1.5rem;
+}
+
 /* ======================
   Tablet and Desktop Styles
   ======================= */
@@ -960,7 +970,8 @@ footer p {
 		background-color: #02040f;
 	}
 	.blog-header,
-	.blog-listing {
+	.blog-listing,
+	blockquote {
 		border-color: #7d002d;
 	}
 	#frontRoyal img,
