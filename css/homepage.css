@@ -1,56 +1,13 @@
 /* ======================
-  Animation Styles
-  ======================= */
-.animated-header {
-	display: flex;
-	flex-direction: column;
-	width: 28.5rem;
-}
-
-.typewriter {
-	border-right: 2px solid transparent;
-	white-space: nowrap;
-	overflow: hidden;
-}
-
-.type-animation__first {
-	/* name, duration, number of steps, delay, repetitions */
-	animation: typing 1.5s steps(25) 0.5s 1 normal both,
-		cursor 500ms steps(25) 5 normal;
-}
-
-.type-animation__second {
-	font-size: 2.7rem;
-	font-weight: 700;
-	font-family: var(--headings);
-	margin: 0;
-	animation: typing-2 1.5s steps(25) 3s 1 normal both,
-		cursor 500ms steps(25) 2.5s infinite normal;
-}
-
-@keyframes typing {
-	0% {width: 0;}
-	100% {width: 28.5rem;}
-}
-
-@keyframes typing-2 {
-	0% {width: 0;}
-	100% {width: 26rem;}
-}
-
-@keyframes cursor {
-	0% {border-right-color: var(--white);}
-	100% {border-right-color: transparent;}
-}
-
-/* ======================
   Page Styles
   ======================= */
+
 #blog .button-wrapper {
 	margin-top: 2rem;
 }
 
-#troy, #frontRoyal {
+#frontRoyal,
+#troy {
 	width: max(150px, min(40%, 400px));
 	width: clamp(150px, 40%, 400px);
 }
@@ -71,33 +28,25 @@ main {
 }
 
 .collection figure {
-  --figureMd: 240px;
+	--figureMd: 240px;
 	width: max(123px, min(100%, var(--figureMd)));
 	width: clamp(123px, 100%, var(--figureMd));
 }
-
 /* ======================
   Tablet and Desktop Styles
   ======================= */
 @media only screen and (min-width: 720px) {
-	.button-wrapper {place-items: center;}
-}
-
-@media only screen and (min-width: 1062px) {
-	.homepage main > section {margin-bottom: 6rem;}
-	main {margin-top: 5rem;}
-
-	.animated-header {width: 48rem;}
-	.type-animation__first {margin-bottom: 2rem;}
-	.type-animation__second {font-size: 5rem;}
-
-	@keyframes typing {
-		from {width: 0;}
-		to {width: 42.5rem;}
+	.button-wrapper {
+		place-items: center;
 	}
-	@keyframes typing-2 {
-		from {width: 0;}
-	  to {width: 48rem;}
+}
+@media only screen and (min-width: 1062px) {
+	.homepage main > section {
+		margin-bottom: 6rem;
+	}
+
+	main {
+		margin-top: 5rem;
 	}
 
 	.row {
@@ -119,7 +68,8 @@ main {
 		place-items: start;
 	}
 
-	.collection, .blog-container {
+	.blog-container,
+	.collection {
 		grid-area: 1 / 2 / 3 / 3;
 	}
 
@@ -137,7 +87,8 @@ main {
 		margin-bottom: 0;
 	}
 
-	#troy, #frontRoyal {
+	#frontRoyal,
+	#troy {
 		width: 100%;
 	}
 
@@ -147,18 +98,5 @@ main {
 
 	#home-contact .home-header {
 		align-self: center;
-	}
-}
-
-@media (prefers-color-scheme: light) {
-	@keyframes cursor {
-		0% {border-right-color: var(--black);}
-		100% {border-right-color: transparent;}
-	}
-}
-
-@media (prefers-reduced-motion) {
-	.type-animation__first, .type-animation__second {
-		animation: none;
 	}
 }

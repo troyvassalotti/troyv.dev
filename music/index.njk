@@ -18,7 +18,7 @@ pageName: musicPage
   </section>
   <div class="grid__1-col__2-col">
     <section class="flex__centered-col left-column">
-      <div class="row__not-fixed-width" id="frontRoyal">
+      <div class="flex__col" id="frontRoyal">
         {% linkedPicture 'https://frontroyalmd.bandcamp.com/', 'front-royal-logo-white_400x240', 'The logo for my band, Front Royal.', 'png', 400, 240 %}
         <div class="icon-bar">
           {% for social in music.frontRoyalSocial %}
@@ -50,7 +50,7 @@ pageName: musicPage
       </div>
     </section>
     <section class="flex__centered-col right-column">
-      <div class="row__not-fixed-width" id="troy">
+      <div class="flex__col" id="troy">
         {% linkedPicture 'https://justtroy.bandcamp.com/', 'troy-full', 'The logo for my band, troy.', 'png', 600, 300 %}
         <div class="icon-bar">
           {% for social in music.troySocial %}
