@@ -1160,6 +1160,15 @@ blockquote p {
 	#troy img {
 		filter: invert(100%);
 	}
+	.website::before {
+		background: #02040f;
+	}
+	.website > div {
+		color: #f0e9e9;
+	}
+	#pang::before {
+		background: #7d002d;
+	}
 }
 
 @media (prefers-color-scheme: light) and (min-width: 720px) {
