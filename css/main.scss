@@ -52,15 +52,6 @@ main {
   }
 }
 
-.projectsPage {
-  --animateWidthLg: 23rem;
-  --animateWidthSm: 21rem;
-
-  .animated-header {
-    padding: 0 1rem;
-  }
-}
-
 .animated-header {
   display: flex;
   flex-direction: column;
@@ -641,7 +632,7 @@ blockquote {
 }
 
 .skew {
-  margin: 2rem auto 4rem;
+  margin-bottom: 4rem;
 }
 
 .skew__up {
@@ -796,16 +787,6 @@ blockquote {
 
     .type-animation__second {
       font-size: 5rem;
-    }
-  }
-
-  .projectsPage {
-    --animateWidthLg: 21rem;
-    --animateWidthSm: 36rem;
-
-    .animated-header {
-      margin-bottom: 3rem;
-      width: var(--animateWidthSm);
     }
   }
   @keyframes typing {
