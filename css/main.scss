@@ -43,6 +43,7 @@ main {
 /* ======================
   Animation Styles
   ======================= */
+
 .homepage {
   --animateWidthLg: 28.5rem;
   --animateWidthSm: 26rem;
@@ -116,6 +117,7 @@ main {
 /* ======================
   Headings Styles
   ======================= */
+
 h1,
 h2,
 h3,
@@ -203,6 +205,7 @@ h6 {
 /* ======================
   Navigation Styles
   ======================= */
+
 .mainNavigation {
   height: 100%;
   width: 0;
@@ -286,6 +289,7 @@ ul.navbar {
 /* ======================
   Content Styles
   ======================= */
+
 .center {
   text-align: center;
 }
@@ -414,6 +418,7 @@ figcaption {
 /* ======================
   Contact Form Styles
   ======================= */
+
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -462,6 +467,7 @@ figcaption {
 /* ======================
   Footer Styles
   ======================= */
+
 footer {
   @include gridCenter;
   @include colors($whitePrimary, $blackPrimary);
@@ -503,6 +509,7 @@ footer {
 /* ======================
   Misc. Page Styles
   ======================= */
+
 .header {
   margin: 0 auto;
   background: var(--banner) center / cover no-repeat $darkPrimary;
@@ -632,8 +639,16 @@ blockquote {
   }
 }
 
+.websites {
+  display: grid;
+
+  h3 {
+    width: 100%;
+  }
+}
+
 .skew {
-  margin: 2rem auto;
+  margin: 2rem auto 4rem;
 }
 
 .skew__up {
@@ -663,14 +678,20 @@ blockquote {
 
   .content {
     margin: 1rem auto;
-    padding: 1rem;
+    padding: 3vw;
     display: grid;
     gap: var(--gap);
+    place-items: center;
   }
 
-  img {
+  img.site__example {
+    width: 100%;
     max-width: 350px;
   }
+}
+
+#pang::before {
+  background: $goldPrimary;
 }
 
 .website__description {
@@ -786,8 +807,13 @@ blockquote {
   }
 
   .projectsPage {
-    --animateWidthLg: 52rem;
-    --animateWidthSm: 46rem;
+    --animateWidthLg: 21rem;
+    --animateWidthSm: 36rem;
+
+    .animated-header {
+      margin-bottom: 3rem;
+      width: var(--animateWidthSm);
+    }
   }
   @keyframes typing {
     from {
@@ -850,6 +876,12 @@ blockquote {
 
   .row-header p {
     max-width: 50vw;
+  }
+
+  .website {
+    .content {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 }
 @media (prefers-color-scheme: light) {

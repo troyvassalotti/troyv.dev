@@ -9,32 +9,43 @@ animation: true
   <section class="header">
     <h1 class="hero-header">{{ title }}</h1>
   </section>
-  <article class="flex__col full-width">
+  <article class="websites full-width">
     <header class="animated-header">
       <h2 class="typewriter type-animation__first">I make websites...</h2>
       <p class="typewriter type-animation__second">...here are a few.</p>
     </header>
     <section class="flex__col full-width skew skew__up">
-      <h3>Front Royal (The Band)</h3>
+      <h3>Front Royal (The Band, Not The Town)</h3>
       <section class="website skew__down">
         <div class="content">
           <div>
-            <p>When we decided to take the plunge and have a website of our own, I signed myself up to make it.</p>
+            <p>When we decided to take the plunge and have a website of our own, I signed myself up to make it. It gave me the opportunity to try some new things out and I'm proud of the result.</p>
             <div class="website__description">
-              <p><b>Built With:</b> HTML, CSS, JS</p>
+              <p><b>Built With:</b> HTML, CSS, JS (only for widgets)</p>
               <p><b>Hosted On:</b> Netlify</p>
             </div>
           </div>
           <div>
-            <img src="/images/frorosite.png" alt="">
+            {% linkedPicture 'https://frontroyalband.com', 'frorosite', 'Screenshot of the Front Royal website', 'jpg', '350', '235' %}
           </div>
         </div>
       </section>
     </section>
-    <section class="flex__col full-width skew skew__down">
+    <section class="flex__col full-width skew skew__up">
       <h3>Pang: A New Type of Social Media</h3>
-      <section class="website skew__up">
-
+      <section class="website skew__down" id="pang">
+        <div class="content">
+          <div>
+            <p>You ever wish you had a social media platform that didn't consume your life, but still gave you entertainment? Look no further than Pang.</p>
+            <div class="website__description">
+              <p><b>Built With:</b> HTML, CSS, Vue</p>
+              <p><b>Hosted On:</b> Netlify</p>
+            </div>
+          </div>
+          <div>
+            {% linkedPicture 'https://pang.netlify.app', 'pangsite', 'Screenshot of Pang', 'jpg', '350', '235' %}
+          </div>
+        </div>
       </section>
     </section>
   </article>

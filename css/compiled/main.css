@@ -876,8 +876,16 @@ blockquote p {
 	padding: 1.5rem;
 }
 
+.websites {
+	display: grid;
+}
+
+.websites h3 {
+	width: 100%;
+}
+
 .skew {
-	margin: 2rem auto;
+	margin: 2rem auto 4rem;
 }
 
 .skew__up {
@@ -908,13 +916,19 @@ blockquote p {
 
 .website .content {
 	margin: 1rem auto;
-	padding: 1rem;
+	padding: 3vw;
 	display: grid;
 	gap: var(--gap);
+	place-items: center;
 }
 
-.website img {
+.website img.site__example {
+	width: 100%;
 	max-width: 350px;
+}
+
+#pang::before {
+	background: #f2c94c;
 }
 
 .website__description p {
@@ -1011,8 +1025,12 @@ blockquote p {
 		font-size: 5rem;
 	}
 	.projectsPage {
-		--animateWidthLg: 52rem;
-		--animateWidthSm: 46rem;
+		--animateWidthLg: 21rem;
+		--animateWidthSm: 36rem;
+	}
+	.projectsPage .animated-header {
+		margin-bottom: 3rem;
+		width: var(--animateWidthSm);
 	}
 	@keyframes typing {
 		from {
@@ -1062,6 +1080,9 @@ blockquote p {
 	}
 	.row-header p {
 		max-width: 50vw;
+	}
+	.website .content {
+		grid-template-columns: 1fr 1fr;
 	}
 }
 
