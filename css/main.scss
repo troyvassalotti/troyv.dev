@@ -13,6 +13,8 @@
   --readingFont: 1.6rem;
   --subFont: 1.4rem;
   --figureMd: 340px;
+  --skewUp: skewy(-3deg);
+  --skewDown: skewy(3deg);
 }
 
 html {
@@ -34,15 +36,86 @@ body {
   min-height: 100vh;
   // gap: var(--gap);
 }
-// only here because gap is not fully supported on flex containers
 
 main {
-  margin-bottom: 5rem;
+  margin-bottom: 5rem; // only here because gap is not fully supported on flex containers
+}
+/* ======================
+  Animation Styles
+  ======================= */
+.homepage {
+  --animateWidthLg: 28.5rem;
+  --animateWidthSm: 26rem;
+
+  .type-animation__second {
+    font-weight: 700;
+  }
+}
+
+.projectsPage {
+  --animateWidthLg: 23rem;
+  --animateWidthSm: 21rem;
+
+  .animated-header {
+    padding: 0 1rem;
+  }
+}
+
+.animated-header {
+  display: flex;
+  flex-direction: column;
+  width: var(--animateWidthLg);
+}
+
+.typewriter {
+  border-right: 2px solid transparent;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.type-animation__first {
+  /* name, duration, number of steps, delay, repetitions */
+  animation: typing 1.5s steps(25) .5s 1 normal both, cursor 500ms steps(25) 5 normal;
+}
+
+.type-animation__second {
+  font: {
+    size: 2.7rem;
+    family: var(--headings);
+  }
+  margin: 0;
+  animation: typing-2 1.5s steps(25) 3s 1 normal both, cursor 500ms steps(25) 2.5s infinite normal;
+}
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: var(--animateWidthLg);
+  }
+}
+@keyframes typing-2 {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: var(--animateWidthSm);
+  }
+}
+@keyframes cursor {
+  0% {
+    border-right-color: var(--white);
+  }
+
+  100% {
+    border-right-color: transparent;
+  }
 }
 /* ======================
   Headings Styles
   ======================= */
-
 h1,
 h2,
 h3,
@@ -130,7 +203,6 @@ h6 {
 /* ======================
   Navigation Styles
   ======================= */
-
 .mainNavigation {
   height: 100%;
   width: 0;
@@ -214,13 +286,21 @@ ul.navbar {
 /* ======================
   Content Styles
   ======================= */
-
 .center {
   text-align: center;
 }
 
 .italic {
   font-style: italic;
+}
+
+.flex__col {
+  display: flex;
+  flex-direction: column;
+}
+
+.full-width {
+  width: 100%;
 }
 
 .flex__centered-col {
@@ -244,11 +324,10 @@ img {
   margin: auto;
   height: auto;
 }
-// Keep this so aspect ratios can be set on images while maintaining proper image display
 
 footer img[height],
 main img[height] {
-  height: auto;
+  height: auto; // Keep this so aspect ratios can be set on images while maintaining proper image display
 }
 
 figcaption,
@@ -285,10 +364,9 @@ pre {
   white-space: pre-wrap;
   font-size: calc(var(--readingFont) - .5em);
 }
-// button styling
 
 .button-wrapper {
-  @include gridCenter;
+  @include gridCenter; // button styling
 }
 
 .button {
@@ -336,7 +414,6 @@ figcaption {
 /* ======================
   Contact Form Styles
   ======================= */
-
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -385,7 +462,6 @@ figcaption {
 /* ======================
   Footer Styles
   ======================= */
-
 footer {
   @include gridCenter;
   @include colors($whitePrimary, $blackPrimary);
@@ -427,7 +503,6 @@ footer {
 /* ======================
   Misc. Page Styles
   ======================= */
-
 .header {
   margin: 0 auto;
   background: var(--banner) center / cover no-repeat $darkPrimary;
@@ -441,18 +516,10 @@ footer {
   border-right: var(--headerBorder);
 }
 
-.row,
-.row__not-fixed-width {
+.row {
   display: flex;
   flex-direction: column;
-}
-
-.row {
   width: 97vw;
-}
-
-.row__not-fixed-width {
-  margin-bottom: 3.5rem;
 }
 
 .icon-bar {
@@ -523,6 +590,11 @@ footer {
 }
 
 .musicPage {
+  #frontRoyal,
+  #troy {
+    margin-bottom: 3.5rem;
+  }
+
   #frontRoyal:nth-child(1),
   #troy:nth-child(1) {
     max-width: 300px;
@@ -557,6 +629,54 @@ blockquote {
 
   p {
     padding: 1.5rem;
+  }
+}
+
+.skew {
+  margin: 2rem auto;
+}
+
+.skew__up {
+  transform: var(--skewUp);
+}
+
+.skew__down {
+  transform: var(--skewDown);
+}
+
+.website {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: $whitePrimary;
+    transform: var(--skewUp);
+  }
+
+  > div {
+    color: $blackPrimary;
+    position: relative;
+  }
+
+  .content {
+    margin: 1rem auto;
+    padding: 1rem;
+    display: grid;
+    gap: var(--gap);
+  }
+
+  img {
+    max-width: 350px;
+  }
+}
+
+.website__description {
+  p {
+    margin: 0;
+    font-size: var(--subFont);
   }
 }
 /* ======================
@@ -656,6 +776,38 @@ blockquote {
     --gap: 4rem;
   }
 
+  .homepage {
+    --animateWidthLg: 48rem;
+    --animateWidthSm: 42.5rem;
+
+    .type-animation__second {
+      font-size: 5rem;
+    }
+  }
+
+  .projectsPage {
+    --animateWidthLg: 52rem;
+    --animateWidthSm: 46rem;
+  }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+
+    to {
+      width: var(--animateWidthSm);
+    }
+  }
+  @keyframes typing-2 {
+    from {
+      width: 0;
+    }
+
+    to {
+      width: var(--animateWidthLg);
+    }
+  }
+
   h1 {
     font-size: 6rem;
   }
@@ -709,6 +861,15 @@ blockquote {
   html {
     @include colors($lightLight, $blackLight);
     font-weight: 400;
+  }
+  @keyframes cursor {
+    0% {
+      border-right-color: var(--black);
+    }
+
+    100% {
+      border-right-color: transparent;
+    }
   }
 
   .mainNavigation {
@@ -809,5 +970,11 @@ blockquote {
 
   #link__blog:hover {
     text-decoration-color: $cobaltLight;
+  }
+}
+@media (prefers-reduced-motion) {
+  .type-animation__first,
+  .type-animation__second {
+    animation: none;
   }
 }

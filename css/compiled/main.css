@@ -264,6 +264,8 @@ template {
 	--readingFont: 1.6rem;
 	--subFont: 1.4rem;
 	--figureMd: 340px;
+	--skewUp: skewy(-3deg);
+	--skewDown: skewy(3deg);
 }
 
 html {
@@ -286,6 +288,78 @@ body {
 
 main {
 	margin-bottom: 5rem;
+}
+
+/* ======================
+  Animation Styles
+  ======================= */
+.homepage {
+	--animateWidthLg: 28.5rem;
+	--animateWidthSm: 26rem;
+}
+
+.homepage .type-animation__second {
+	font-weight: 700;
+}
+
+.projectsPage {
+	--animateWidthLg: 23rem;
+	--animateWidthSm: 21rem;
+}
+
+.projectsPage .animated-header {
+	padding: 0 1rem;
+}
+
+.animated-header {
+	display: flex;
+	flex-direction: column;
+	width: var(--animateWidthLg);
+}
+
+.typewriter {
+	border-right: 2px solid transparent;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.type-animation__first {
+	/* name, duration, number of steps, delay, repetitions */
+	animation: typing 1.5s steps(25) 0.5s 1 normal both, cursor 500ms steps(25) 5 normal;
+}
+
+.type-animation__second {
+	font-size: 2.7rem;
+	font-family: var(--headings);
+	margin: 0;
+	animation: typing-2 1.5s steps(25) 3s 1 normal both, cursor 500ms steps(25) 2.5s infinite normal;
+}
+
+@keyframes typing {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: var(--animateWidthLg);
+	}
+}
+
+@keyframes typing-2 {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: var(--animateWidthSm);
+	}
+}
+
+@keyframes cursor {
+	0% {
+		border-right-color: var(--white);
+	}
+	100% {
+		border-right-color: transparent;
+	}
 }
 
 /* ======================
@@ -467,6 +541,15 @@ ul.navbar a:focus {
 
 .italic {
 	font-style: italic;
+}
+
+.flex__col {
+	display: flex;
+	flex-direction: column;
+}
+
+.full-width {
+	width: 100%;
 }
 
 .flex__centered-col {
@@ -681,18 +764,10 @@ footer p {
 	border-right: var(--headerBorder);
 }
 
-.row,
-.row__not-fixed-width {
+.row {
 	display: flex;
 	flex-direction: column;
-}
-
-.row {
 	width: 97vw;
-}
-
-.row__not-fixed-width {
-	margin-bottom: 3.5rem;
 }
 
 .icon-bar {
@@ -760,6 +835,11 @@ footer p {
 	margin: auto;
 }
 
+.musicPage #frontRoyal,
+.musicPage #troy {
+	margin-bottom: 3.5rem;
+}
+
 .musicPage #frontRoyal:nth-child(1),
 .musicPage #troy:nth-child(1) {
 	max-width: 300px;
@@ -794,6 +874,52 @@ blockquote {
 
 blockquote p {
 	padding: 1.5rem;
+}
+
+.skew {
+	margin: 2rem auto;
+}
+
+.skew__up {
+	transform: var(--skewUp);
+}
+
+.skew__down {
+	transform: var(--skewDown);
+}
+
+.website {
+	position: relative;
+}
+
+.website::before {
+	position: absolute;
+	content: "";
+	width: 100%;
+	height: 100%;
+	background: #f7f7ff;
+	transform: var(--skewUp);
+}
+
+.website > div {
+	color: #131112;
+	position: relative;
+}
+
+.website .content {
+	margin: 1rem auto;
+	padding: 1rem;
+	display: grid;
+	gap: var(--gap);
+}
+
+.website img {
+	max-width: 350px;
+}
+
+.website__description p {
+	margin: 0;
+	font-size: var(--subFont);
 }
 
 /* ======================
@@ -877,6 +1003,33 @@ blockquote p {
 	:root {
 		--gap: 4rem;
 	}
+	.homepage {
+		--animateWidthLg: 48rem;
+		--animateWidthSm: 42.5rem;
+	}
+	.homepage .type-animation__second {
+		font-size: 5rem;
+	}
+	.projectsPage {
+		--animateWidthLg: 52rem;
+		--animateWidthSm: 46rem;
+	}
+	@keyframes typing {
+		from {
+			width: 0;
+		}
+		to {
+			width: var(--animateWidthSm);
+		}
+	}
+	@keyframes typing-2 {
+		from {
+			width: 0;
+		}
+		to {
+			width: var(--animateWidthLg);
+		}
+	}
 	h1 {
 		font-size: 6rem;
 	}
@@ -921,6 +1074,14 @@ blockquote p {
 		background-color: #f0e9e9;
 		color: #02040f;
 		font-weight: 400;
+	}
+	@keyframes cursor {
+		0% {
+			border-right-color: var(--black);
+		}
+		100% {
+			border-right-color: transparent;
+		}
 	}
 	.mainNavigation {
 		background-color: #02040f;
@@ -1003,5 +1164,12 @@ blockquote p {
 	}
 	#link__blog:hover {
 		text-decoration-color: #3d348b;
+	}
+}
+
+@media (prefers-reduced-motion) {
+	.type-animation__first,
+	.type-animation__second {
+		animation: none;
 	}
 }
