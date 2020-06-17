@@ -43,12 +43,11 @@ main {
 /* ======================
   Animation Styles
   ======================= */
-
 .homepage {
   --animateWidthLg: 28.5rem;
   --animateWidthSm: 26rem;
 
-  .type-animation__second {
+  .typewriter__2 {
     font-weight: 700;
   }
 }
@@ -65,12 +64,12 @@ main {
   overflow: hidden;
 }
 
-.type-animation__first {
+.typewriter__1 {
   /* name, duration, number of steps, delay, repetitions */
   animation: typing 1.5s steps(25) .5s 1 normal both, cursor 500ms steps(25) 5 normal;
 }
 
-.type-animation__second {
+.typewriter__2 {
   font: {
     size: 2.7rem;
     family: var(--headings);
@@ -108,7 +107,6 @@ main {
 /* ======================
   Headings Styles
   ======================= */
-
 h1,
 h2,
 h3,
@@ -196,7 +194,6 @@ h6 {
 /* ======================
   Navigation Styles
   ======================= */
-
 .mainNavigation {
   height: 100%;
   width: 0;
@@ -280,7 +277,6 @@ ul.navbar {
 /* ======================
   Content Styles
   ======================= */
-
 .center {
   text-align: center;
 }
@@ -409,7 +405,6 @@ figcaption {
 /* ======================
   Contact Form Styles
   ======================= */
-
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -458,7 +453,6 @@ figcaption {
 /* ======================
   Footer Styles
   ======================= */
-
 footer {
   @include gridCenter;
   @include colors($whitePrimary, $blackPrimary);
@@ -500,7 +494,6 @@ footer {
 /* ======================
   Misc. Page Styles
   ======================= */
-
 .header {
   margin: 0 auto;
   background: var(--banner) center / cover no-repeat $darkPrimary;
@@ -792,7 +785,7 @@ blockquote {
     --animateWidthLg: 48rem;
     --animateWidthSm: 42.5rem;
 
-    .type-animation__second {
+    .typewriter__2 {
       font-size: 5rem;
     }
   }
@@ -1000,8 +993,8 @@ blockquote {
   }
 }
 @media (prefers-reduced-motion) {
-  .type-animation__first,
-  .type-animation__second {
+  .typewriter__1,
+  .typewriter__2 {
     animation: none;
   }
 }

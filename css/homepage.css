@@ -1,7 +1,6 @@
 /* ======================
   Page Styles
   ======================= */
-
 #blog .button-wrapper {
 	margin-top: 2rem;
 }
@@ -49,17 +48,17 @@ main {
 		margin-top: 5rem;
 	}
 
-	.row {
+	.section {
 		display: grid;
 		max-width: 1250px;
 	}
 
-	.home-header {
+	.header {
 		grid-area: 1 / 1 / 2 / 2;
 		align-self: end;
 	}
 
-	.home-header p {
+	.header p {
 		width: 75%;
 	}
 
@@ -77,12 +76,12 @@ main {
 		justify-content: space-evenly;
 	}
 
-	#home-projects {
+	#projects {
 		grid-template-columns: 500px auto;
 		margin-bottom: 0;
 	}
 
-	#home-music {
+	#music {
 		grid-template-columns: 2fr 1fr;
 		margin-bottom: 0;
 	}
@@ -92,11 +91,11 @@ main {
 		width: 100%;
 	}
 
-	#home-contact {
+	#contact {
 		grid-template-columns: 1fr 1fr;
 	}
 
-	#home-contact .home-header {
+	#contact .header {
 		align-self: center;
 	}
 }

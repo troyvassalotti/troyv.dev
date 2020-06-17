@@ -1,9 +1,9 @@
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-module.exports = function(eleventyConfig) {
+module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
 };
 
-module.exports = function(eleventyConfig) {
+module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("css/fonts");
   eleventyConfig.addPassthroughCopy("css/compressed");
@@ -13,7 +13,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("favicon.ico");
 
   // A reusable block, so it helps to have it maintainable in one place
-  eleventyConfig.addShortcode("mainNav", function() {
+  eleventyConfig.addShortcode("mainNav", function () {
     return `<header>
       <div id="menu">
         <button id="open" aria-label="Open the navigation menu">
@@ -43,14 +43,14 @@ module.exports = function(eleventyConfig) {
   })
 
   // A reusable block, so it helps to have it maintainable in one place
-  eleventyConfig.addShortcode("footer", function() {
-    return `<footer>
-      <div class="footer-wrapper">
+  eleventyConfig.addShortcode("footer", function () {
+    return `<footer class="grid place-center contain">
+      <div class="flex footer__wrapper">
         <picture>
           <source srcset="/images/headshot-arrow.webp" type="image/webp">
           <img id="me" src="/images/headshot-arrow_160x160.png" width="160" height="160" alt="This is me. I look like this." loading="lazy">
         </picture>
-        <div class="footer-icons">
+        <div class="grid place-center footer__icons">
           <a class="icon-link" href="https://github.com/troyvassalotti" target="_blank" rel="noopener" aria-label="Visit my GitHub page."><img src="/images/github-black.svg" alt="Github" width="32" height="32" loading="lazy"></a>
           <a class="icon-link" href="https://codepen.io/troyvassalotti" target="_blank" rel="noopener" aria-label="View smaller projects on my CodePen."><img src="/images/codepen-black.svg" alt="Codepen" width="32" height="32" loading="lazy"></a>
           <a class="icon-link" href="https://www.linkedin.com/in/troy-vassalotti-468053142/" target="_blank" rel="noopener" aria-label="Visit my LinkedIn."><img src="/images/linkedin-black.svg" alt="Linkedin" width="32" height="32" loading="lazy"></a>
@@ -62,12 +62,12 @@ module.exports = function(eleventyConfig) {
   })
 
   // Any global scripts, external or internal, can be placed here
-  eleventyConfig.addShortcode("scripts", function() {
+  eleventyConfig.addShortcode("scripts", function () {
     return `<script src="/js/compressed/main.min.js" async></script>`
   })
 
   // A reusable block, so it helps to have it maintainable in one place
-  eleventyConfig.addShortcode("contactForm", function() {
+  eleventyConfig.addShortcode("contactForm", function () {
     return `<form class="contact-form" name="contactForm" netlify netlify-honeypot="bot-field" action="/pages/success/">
       <label style="display: none;">Don’t fill this out: <input name="bot-field"></label>
     	<label for="name">Name<input name="name" type="text" id="name" required></label>
@@ -78,7 +78,7 @@ module.exports = function(eleventyConfig) {
   })
 
   // Figures are meant to be self-contained content, so this component is created without the intent on adding IDs or Classes to them
-  eleventyConfig.addShortcode("figure", function(href, img, alt, caption, w, h, target='target="_blank" rel="noopener"') {
+  eleventyConfig.addShortcode("figure", function (href, img, alt, caption, w, h, target = 'target="_blank" rel="noopener"') {
     return `<figure>
       <a href="${href}" ${target}>
         <picture>
@@ -91,14 +91,14 @@ module.exports = function(eleventyConfig) {
   })
 
   // A reusable block, so it helps to have it maintainable in one place
-  eleventyConfig.addShortcode("button", function(href, aria, text, target='target="_blank" rel="noopener"') {
+  eleventyConfig.addShortcode("button", function (href, aria, text, target = 'target="_blank" rel="noopener"') {
     return `<div class="button-wrapper">
       <a class="button" href="${href}" aria-label="${aria}" ${target}>${text}</a>
     </div>`
   })
 
   // A reusable block, so it helps to have it maintainable in one place
-  eleventyConfig.addShortcode("linkedPicture", function(href, img, alt, fallbackType, w, h, target='target="_blank" rel="noopener"') {
+  eleventyConfig.addShortcode("linkedPicture", function (href, img, alt, fallbackType, w, h, target = 'target="_blank" rel="noopener"') {
     return `<a href="${href}" ${target}>
       <picture>
         <source srcset="/images/${img}.webp" type="image/webp"/>
