@@ -1,7 +1,7 @@
 /* ======================
   Page Styles
   ======================= */
-#blog .button-wrapper {
+#blog .button__container {
 	margin-top: 2rem;
 }
 
@@ -33,7 +33,8 @@ main {
 .collection {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: space-around !important;
+	--scale: 1.05;
 }
 
 .collection figure {
@@ -44,6 +45,11 @@ main {
 /* ======================
   Tablet and Desktop Styles
   ======================= */
+@media only screen and (min-width: 720px) {
+	.button__container {
+		place-items: center;
+	}
+}
 @media only screen and (min-width: 1062px) {
 	.homepage main > section {
 		margin-bottom: 6rem;
@@ -67,7 +73,7 @@ main {
 		width: 75%;
 	}
 
-	.button-wrapper {
+	.button__container {
 		grid-area: 2 / 1 / 3 / 2;
 		place-items: start;
 	}

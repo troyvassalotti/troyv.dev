@@ -46,13 +46,13 @@ pageName: projectsPage
       <p>Here are some of the things I've made. From responsive design to JavaScript frameworks to Jamstack, I'm always creating new things. You could say I'm kinda just winging it.</p>
     </header>
     <section class="collection center-txt">
-      {% for project in projects.phase1 -%}
+      {% for project in projects.phase3 -%}
         {% figure project.href, project.img, project.alt, project.caption, 600, 302 %}
       {% endfor -%}
       {% for project in projects.phase2 -%}
         {% figure project.href, project.img, project.alt, project.caption, 600, 302 %}
       {% endfor -%}
-      {% for project in projects.phase3 -%}
+      {% for project in projects.phase1 -%}
         {% figure project.href, project.img, project.alt, project.caption, 600, 302 %}
       {% endfor -%}
     </section>
@@ -74,7 +74,7 @@ pageName: projectsPage
       <figure>
         <picture>
           <source srcset="/images/coming-soon.webp" type="image/webp"/>
-          <img src="/images/coming-soon.jpg" alt="" width="600" height="302" loading="lazy"/>
+          <img src="/images/coming-soon.jpg" alt="" width="600" height="302" loading="lazy" data-state="stay"/>
         </picture>
         <figcaption>More Coming Soon...</figcaption>
       </figure>

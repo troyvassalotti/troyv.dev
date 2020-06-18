@@ -1,0 +1,170 @@
+@media only screen and (min-width: 720px) {
+  :root {
+    --headerPadding: 5.5rem;
+    --readingFont: 1.9rem;
+    --subFont: 1.7rem;
+  }
+
+  #close,
+  #menu {
+    display: none;
+  }
+
+  .mainNavigation {
+    height: auto;
+    width: 100%;
+    padding: .5rem 1rem;
+    position: static;
+    background-color: transparent;
+    font-weight: 700;
+  }
+
+  ul.navbar {
+    flex-direction: row;
+
+    li {
+      padding: .3rem;
+
+      &:nth-child(1) {
+        margin-right: auto;
+      }
+
+      &:nth-child(1n+2) {
+        margin: 0 1rem;
+      }
+    }
+
+    a {
+      padding: .3rem;
+      color: $whitePrimary;
+    }
+  }
+
+  #link__blog:hover,
+  #link__home:hover,
+  #link__music:hover {
+    background-color: transparent;
+    text: {
+      decoration: underline;
+      decoration-thickness: .3rem;
+    }
+  }
+
+  #link__home:hover {
+    text-decoration-color: $redPrimary;
+  }
+
+  #link__projects:hover {
+    background: $goldPrimary;
+    color: $blackPrimary;
+  }
+
+  #link__music:hover {
+    text-decoration-color: $goldPrimary;
+  }
+
+  #link__contact:hover {
+    background: $bluePrimary;
+    color: $blackPrimary;
+    border-radius: 1rem;
+  }
+
+  #link__blog:hover {
+    text-decoration-color: $greenPrimary;
+  }
+
+  .button__container {
+    place-items: start;
+  }
+
+  .split {
+    grid-template-columns: 1fr 1fr;
+    align-items: first baseline;
+    max-width: 1350px;
+  }
+
+  .contactPage .split {
+    place-items: center;
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1062px) {
+  :root {
+    --gap: 4rem;
+  }
+
+  .homepage {
+    --animateWidthLg: 48rem;
+    --animateWidthSm: 42.5rem;
+
+    .typewriter__2 {
+      font-size: 5rem;
+    }
+  }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+
+    to {
+      width: var(--animateWidthSm);
+    }
+  }
+  @keyframes typing-2 {
+    from {
+      width: 0;
+    }
+
+    to {
+      width: var(--animateWidthLg);
+    }
+  }
+
+  h1 {
+    font-size: 6rem;
+  }
+
+  h2 {
+    font-size: 4.4rem;
+  }
+
+  h3 {
+    font-size: 3.2rem;
+  }
+
+  h4 {
+    font-size: 2.8rem;
+  }
+
+  h5 {
+    font-size: 2.5rem;
+  }
+
+  h6 {
+    font-size: 2.2rem;
+  }
+
+  ul.navbar {
+    font-size: 2.1rem;
+  }
+
+  #me {
+    max-width: 130px;
+  }
+
+  .footer__wrapper {
+    max-width: 300px;
+  }
+
+  .footer__icons {
+    --gap: 2rem;
+  }
+
+  .section-header p {
+    max-width: 50vw;
+  }
+
+  .skew .content {
+    grid-template-columns: 1fr 1fr;
+  }
+}
