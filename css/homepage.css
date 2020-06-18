@@ -38,7 +38,7 @@ main {
 }
 
 .collection figure {
-	--figureMd: 240px;
+	--figureMd: 250px;
 	width: max(123px, min(100%, var(--figureMd)));
 	width: clamp(123px, 100%, var(--figureMd));
 }
@@ -61,7 +61,7 @@ main {
 
 	.section {
 		display: grid;
-		max-width: 1250px;
+		max-width: 1400px;
 	}
 
 	.header {
@@ -88,7 +88,7 @@ main {
 	}
 
 	#projects {
-		grid-template-columns: 500px auto;
+		grid-template-columns: 1fr 1.25fr;
 		margin-bottom: 0;
 	}
 
@@ -99,7 +99,7 @@ main {
 
 	#frontRoyal,
 	#troy {
-		width: 100%;
+		width: 75%;
 	}
 
 	#contact {

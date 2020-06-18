@@ -511,6 +511,11 @@ h6 {
 	border-right: var(--headerBorder);
 }
 
+.banner {
+	background: #f7f7ff;
+	color: #131112;
+}
+
 /* ======================
   Navigation Styles
   ======================= */
@@ -762,12 +767,12 @@ img[data-state='stay']:hover {
 }
 
 .collection figure img {
-	transition: .3s;
+	transition: .2s;
 }
 
 .collection figure img:hover {
 	transform: scale(var(--scale));
-	transition: .3s;
+	transition: .2s;
 }
 
 /* ======================
@@ -1086,5 +1091,131 @@ footer p {
 	}
 	.skew .content {
 		grid-template-columns: 1fr 1fr;
+		--readingFont: 2.1rem;
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--headings: 'Lora', sans-serif;
+		--headerBorder: 2px solid rgba(2, 4, 15, 1);
+	}
+	html {
+		background: #f0e9e9;
+		color: #02040f;
+		font-weight: 400;
+	}
+	@keyframes cursor {
+		0% {
+			border-right-color: #02040f;
+		}
+		100% {
+			border-right-color: transparent;
+		}
+	}
+	.mainNavigation {
+		background-color: #02040f;
+	}
+	.banner {
+		background: #02040f;
+		color: #f0e9e9;
+	}
+	ul.navbar a {
+		color: #f0e9e9;
+	}
+	ul.navbar a:focus {
+		background: #f0e9e9;
+		color: #02040f;
+	}
+	#open svg > path {
+		stroke: #02040f;
+	}
+	#close svg > path {
+		stroke: #f0e9e9;
+	}
+	a {
+		color: #7d002d;
+	}
+	a:hover {
+		color: #3d348b;
+	}
+	.button {
+		background: #7d002d;
+		color: #f0e9e9;
+	}
+	.button:hover {
+		background-color: #3d348b;
+	}
+	.button:focus {
+		outline-color: #02040f;
+	}
+	figcaption {
+		color: #02040f;
+	}
+	.contact-form {
+		background: #02040f;
+		color: #f0e9e9;
+		border: 1px solid #02040f;
+	}
+	.hero,
+	.hero__header {
+		background-color: #f0e9e9;
+	}
+	.icon-bar {
+		background: #02040f;
+	}
+	.blog-listing,
+	.blog__header,
+	blockquote {
+		border-color: #7d002d;
+	}
+	#frontRoyal img,
+	#troy img {
+		filter: invert(100%);
+	}
+	#froro::before {
+		background: #02040f;
+	}
+	#froro .content {
+		color: #f0e9e9;
+	}
+	#pang::before {
+		background: #7d002d;
+	}
+	#pang .content {
+		color: #f0e9e9;
+	}
+}
+
+@media (prefers-color-scheme: light) and (min-width: 720px) {
+	.mainNavigation {
+		background-color: transparent;
+	}
+	ul.navbar a {
+		color: #02040f;
+	}
+	#link__home:hover {
+		text-decoration-color: #006088;
+	}
+	#link__projects:hover {
+		background: #e59500;
+		color: #02040f;
+	}
+	#link__music:hover {
+		text-decoration-color: #7d002d;
+	}
+	#link__contact:hover {
+		background: #006088;
+		color: #f0e9e9;
+	}
+	#link__blog:hover {
+		text-decoration-color: #3d348b;
+	}
+}
+
+@media (prefers-reduced-motion) {
+	.animated-header .typewriter__1,
+	.animated-header .typewriter__2 {
+		animation: none;
 	}
 }

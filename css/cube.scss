@@ -143,6 +143,7 @@ blockquote {
 /* ======================
   Animation Styles
   ======================= */
+
 .homepage {
   /* set the widths of the keyboard animation on the homepage */
   --animateWidthLg: 28.5rem;
@@ -208,6 +209,7 @@ blockquote {
 /* ======================
   Heading Styles
   ======================= */
+
 h1,
 h2,
 h3,
@@ -265,9 +267,15 @@ h6 {
   padding: 0 1.5rem;
   border-right: var(--headerBorder);
 }
+
+.banner {
+  background: $whitePrimary;
+  color: $blackPrimary;
+}
 /* ======================
   Navigation Styles
   ======================= */
+
 .mainNavigation {
   height: 100%;
   width: 0;
@@ -340,6 +348,7 @@ ul.navbar {
   border: none;
 }
 /* these two classes get added via JS */
+
 .openNavSide {
   width: 220px;
 }
@@ -351,6 +360,7 @@ ul.navbar {
 /* ======================
   Composition
   ======================= */
+
 .flex {
   display: flex;
 }
@@ -467,7 +477,6 @@ img[data-state='stay'] {
 /* ======================
   Content Styles
   ======================= */
-
 .center-txt {
   text-align: center;
 }
@@ -518,18 +527,19 @@ img[data-state='stay'] {
     max-width: 600px;
 
     img {
-      transition: .3s;
+      transition: .2s;
     }
 
     img:hover {
       transform: scale(var(--scale));
-      transition: .3s;
+      transition: .2s;
     }
   }
 }
 /* ======================
   Contact Form Styles
   ======================= */
+
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -579,6 +589,7 @@ img[data-state='stay'] {
 /* ======================
   Footer Styles
   ======================= */
+
 footer {
   display: grid;
   place-items: center;
@@ -618,7 +629,6 @@ footer {
 /* ======================
   Misc. Page Styles
   ======================= */
-
 .icon-bar {
   background-color: $whitePrimary;
   padding: 1rem 1.5rem;

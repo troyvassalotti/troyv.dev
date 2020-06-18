@@ -166,5 +166,165 @@
 
   .skew .content {
     grid-template-columns: 1fr 1fr;
+    --readingFont: 2.1rem;
+  }
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --headings: 'Lora', sans-serif;
+    --headerBorder: 2px solid rgba(2, 4, 15, 1);
+  }
+
+  html {
+    background: $lightLight;
+    color: $blackLight;
+    font-weight: 400;
+  }
+  @keyframes cursor {
+    0% {
+      border-right-color: $blackLight;
+    }
+
+    100% {
+      border-right-color: transparent;
+    }
+  }
+
+  .mainNavigation {
+    background-color: $blackLight;
+  }
+
+  .banner {
+    background: $blackLight;
+    color: $lightLight;
+  }
+
+  ul.navbar {
+    a {
+      color: $lightLight;
+
+      &:focus {
+        background: $lightLight;
+        color: $blackLight;
+      }
+    }
+  }
+
+  #open svg > path {
+    stroke: $blackLight;
+  }
+
+  #close svg > path {
+    stroke: $lightLight;
+  }
+
+  a {
+    color: $redLight;
+
+    &:hover {
+      color: $cobaltLight;
+    }
+  }
+
+  .button {
+    background: $redLight;
+    color: $lightLight;
+
+    &:hover {
+      background-color: $cobaltLight;
+    }
+
+    &:focus {
+      outline-color: $blackLight;
+    }
+  }
+
+  figcaption {
+    color: $blackLight;
+  }
+
+  .contact-form {
+    background: $blackLight;
+    color: $lightLight;
+    border: 1px solid $blackLight;
+  }
+
+  .hero,
+  .hero__header {
+    background-color: $lightLight;
+  }
+
+  .icon-bar {
+    background: $blackLight;
+  }
+
+  .blog-listing,
+  .blog__header,
+  blockquote {
+    border-color: $redLight;
+  }
+
+  #frontRoyal img,
+  #troy img {
+    filter: invert(100%);
+  }
+
+  #froro {
+    &::before {
+      background: $blackLight;
+    }
+
+    .content {
+      color: $lightLight;
+    }
+  }
+
+  #pang {
+    &::before {
+      background: $redLight;
+    }
+
+    .content {
+      color: $lightLight;
+    }
+  }
+}
+@media (prefers-color-scheme: light) and (min-width: 720px) {
+  .mainNavigation {
+    background-color: transparent;
+  }
+
+  ul.navbar a {
+    color: $blackLight;
+  }
+
+  #link__home:hover {
+    text-decoration-color: $blueLight;
+  }
+
+  #link__projects:hover {
+    background: $brightLight;
+    color: $blackLight;
+  }
+
+  #link__music:hover {
+    text-decoration-color: $redLight;
+  }
+
+  #link__contact:hover {
+    background: $blueLight;
+    color: $lightLight;
+  }
+
+  #link__blog:hover {
+    text-decoration-color: $cobaltLight;
+  }
+}
+@media (prefers-reduced-motion) {
+  .animated-header {
+    .typewriter__1,
+    .typewriter__2 {
+      animation: none;
+    }
   }
 }
