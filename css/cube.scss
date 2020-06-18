@@ -142,7 +142,6 @@ blockquote {
 /* ======================
   Animation Styles
   ======================= */
-
 .homepage {
   /* set the widths of the keyboard animation on the homepage */
   --animateWidthLg: 28.5rem;
@@ -208,7 +207,6 @@ blockquote {
 /* ======================
   Heading Styles
   ======================= */
-
 h1,
 h2,
 h3,
@@ -269,7 +267,6 @@ h6 {
 /* ======================
   Navigation Styles
   ======================= */
-
 .mainNavigation {
   height: 100%;
   width: 0;
@@ -342,7 +339,6 @@ ul.navbar {
   border: none;
 }
 /* these two classes get added via JS */
-
 .openNavSide {
   width: 220px;
 }
@@ -354,7 +350,6 @@ ul.navbar {
 /* ======================
   Composition
   ======================= */
-
 .flex {
   display: flex;
 }
@@ -462,6 +457,7 @@ ul.navbar {
 /* ======================
   Content Styles
   ======================= */
+
 .center-txt {
   text-align: center;
 }
@@ -505,10 +501,10 @@ ul.navbar {
 .collection {
   display: grid;
   justify-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(305px, 1fr));
 
   figure {
-    margin: 1rem;
+    margin: 1rem .5rem;
     max-width: 600px;
 
     img {
@@ -516,7 +512,7 @@ ul.navbar {
     }
 
     img:hover {
-      transform: scale(1.05);
+      transform: scale(1.025);
       transition: .3s;
     }
   }
@@ -524,7 +520,6 @@ ul.navbar {
 /* ======================
   Contact Form Styles
   ======================= */
-
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -574,7 +569,6 @@ ul.navbar {
 /* ======================
   Footer Styles
   ======================= */
-
 footer {
   display: grid;
   place-items: center;
@@ -614,6 +608,7 @@ footer {
 /* ======================
   Misc. Page Styles
   ======================= */
+
 .icon-bar {
   background-color: $whitePrimary;
   padding: 1rem 1.5rem;
@@ -668,7 +663,6 @@ footer {
   .embed {
     display: block;
     border: none;
-    max-width: 350px;
     margin: auto;
   }
 }
@@ -683,6 +677,11 @@ footer {
   #troy:nth-child(1) {
     max-width: 300px;
   }
+}
+
+.split {
+  margin: auto;
+  width: 95%;
 }
 
 .left-column iframe {
@@ -700,8 +699,14 @@ footer {
     display: flex;
     justify-content: space-around;
 
-    a > img {
+    a {
       max-width: 123px;
+      transition: .1s;
+
+      &:hover {
+        transform: scale(1.025);
+        transition: .1s;
+      }
     }
   }
 }

@@ -743,11 +743,11 @@ ul.navbar a:focus {
 .collection {
 	display: grid;
 	justify-items: center;
-	grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(305px, 1fr));
 }
 
 .collection figure {
-	margin: 1rem;
+	margin: 1rem .5rem;
 	max-width: 600px;
 }
 
@@ -756,7 +756,7 @@ ul.navbar a:focus {
 }
 
 .collection figure img:hover {
-	transform: scale(1.05);
+	transform: scale(1.025);
 	transition: .3s;
 }
 
@@ -896,7 +896,6 @@ footer p {
 .album .embed {
 	display: block;
 	border: none;
-	max-width: 350px;
 	margin: auto;
 }
 
@@ -908,6 +907,11 @@ footer p {
 .musicPage #frontRoyal:nth-child(1),
 .musicPage #troy:nth-child(1) {
 	max-width: 300px;
+}
+
+.split {
+	margin: auto;
+	width: 95%;
 }
 
 .left-column iframe {
@@ -927,6 +931,12 @@ footer p {
 	justify-content: space-around;
 }
 
-.view-more .collection a > img {
+.view-more .collection a {
 	max-width: 123px;
+	transition: .1s;
+}
+
+.view-more .collection a:hover {
+	transform: scale(1.025);
+	transition: .1s;
 }

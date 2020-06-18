@@ -4,75 +4,67 @@ description: Music is one of my passions. Check out all my musical projects here
 layout: primary
 pageName: musicPage
 ---
-<main class="grid__centered">
-  <section class="header">
-    <h1 class="hero-header">{{ title }}</h1>
+<main class="grid place-center">
+  <section class="hero">
+    <h1 class="hero__header">{{ title }}</h1>
   </section>
-  <section class="row">
-    <div class="row-header">
+  <section class="flex col contain">
+    <header class="section-header">
       <h2>The Intro</h2>
       <p>I first picked up guitar after 11 years of life surrounded by two musical brothers. Seven years later, I decided to learn drumming.</p>
       <p>I'm currently a guitarist and vocalist in Front Royal, and am the sole member of troy. (period included).</p>
       <p>Check out my music below.</p>
-    </div>
+    </header>
   </section>
-  <div class="grid__1-col__2-col">
-    <section class="flex__centered-col left-column">
-      <div class="flex__col" id="frontRoyal">
+  <section class="grid split">
+    <article class="flex-center col left-column">
+      <header class="flex col" id="frontRoyal">
         {% linkedPicture 'https://frontroyalmd.bandcamp.com/', 'front-royal-logo-white_400x240', 'The logo for my band, Front Royal.', 'png', 400, 240 %}
-        <div class="icon-bar">
+        <aside class="icon-bar">
           {% for social in music.frontRoyalSocial %}
             <a class="icon-link" href="{{ social.href }}" target="_blank" rel="noopener" aria-label="{{ social.aria }}"><img src="/images/{{ social.img }}" alt="{{ social.alt }}" loading="lazy" width="48" height="48"></a>
           {% endfor %}
-        </div>
-      </div>
-      <div class="flex__centered-col band">
+        </aside>
+      </header>
+      <section class="flex-center col album">
         <h2>Latest Release</h2>
-        <div class="album-player">
-          <div class="album-description">
-            {% linkedPicture 'https://frontroyalmd.bandcamp.com/album/these-things-happen', 'fr_tth_408x408', 'These Things Happen', 'jpg', 408, 408 %}
-            <p><span class="italic">These Things Happen</span><br>6 Tracks</p>
-            <p>Our 3rd EP. Full Length LP debut The <span class="italic">Thought That Counts</span> coming 2020.</p>
-          </div>
-          <div class="album-embed">
-            <iframe title="Bandcamp album player for These Things Happen by Front Royal" class="album-listen" id="tth" src="https://bandcamp.com/EmbeddedPlayer/album=3745012043/size=large/bgcol=f7f7ff/linkcol=131112/artwork=none/transparent=true/" seamless>
-              <a href="http://frontroyalmd.bandcamp.com/album/these-things-happen" rel="noopener" target="_blank">These Things Happen by Front Royal</a>
-            </iframe>
-          </div>
-        </div>
-        <div class="view-more center">
+        <article class="description">
+          {% linkedPicture 'https://frontroyalmd.bandcamp.com/album/these-things-happen', 'fr_tth_408x408', 'These Things Happen', 'jpg', 408, 408 %}
+          <p><span class="italic">These Things Happen</span><br>6 Tracks</p>
+          <p>Full Length LP debut <span class="italic">The Thought That Counts</span> coming 2020.</p>
+        </article>
+        <iframe title="Bandcamp album player for These Things Happen by Front Royal" class="embed" src="https://bandcamp.com/EmbeddedPlayer/album=3745012043/size=large/bgcol=f7f7ff/linkcol=131112/artwork=none/transparent=true/" seamless>
+          <a href="http://frontroyalmd.bandcamp.com/album/these-things-happen" rel="noopener" target="_blank">These Things Happen by Front Royal</a>
+        </iframe>
+        <aside class="view-more center-txt">
           <p>view more on <a href="https://frontroyalmd.bandcamp.com/" rel="noopener" target="_blank">bandcamp &gt;&gt;</a></p>
           <div class="collection">
             {% linkedPicture 'https://frontroyalmd.bandcamp.com/album/all-down-hill-from-here', 'fr_ep2_cover_408x408', 'All Down Hill From Here', 'jpg', 408, 408 %}
             {% linkedPicture 'https://frontroyalmd.bandcamp.com/album/the-band-not-the-town', 'fr_tbntt_408x408', 'The Band, Not The Town', 'jpg', 408, 408 %}
           </div>
-        </div>
-      </div>
-    </section>
-    <section class="flex__centered-col right-column">
-      <div class="flex__col" id="troy">
+        </aside>
+      </section>
+    </article>
+    <article class="flex-center col right-column">
+      <header class="flex col" id="troy">
         {% linkedPicture 'https://justtroy.bandcamp.com/', 'troy-full', 'The logo for my band, troy.', 'png', 600, 300 %}
-        <div class="icon-bar">
+        <aside class="icon-bar">
           {% for social in music.troySocial %}
             <a class="icon-link" href="{{ social.href }}" target="_blank" rel="noopener" aria-label="{{ social.aria }}"><img src="/images/{{ social.img }}" alt="{{ social.alt }}" loading="lazy" width="48" height="48"></a>
           {% endfor %}
-        </div>
-      </div>
-      <div class="flex__centered-col band">
+        </aside>
+      </header>
+      <section class="flex-center col album">
         <h2>Latest Release</h2>
-        <div class="album-player">
-          <div class="album-description">
-            {% linkedPicture 'https://justtroy.bandcamp.com/', 'aiacr', 'Alone In A Crowded Room', 'jpg', 408, 408 %}
-            <p><span class="italic">Alone In A Crowded Room</span><br>12 Tracks</p>
-            <p>My full length debut born from a summer of needing to make something of myself.</p>
-          </div>
-          <div class="album-embed">
-            <iframe title="Bandcamp album player for Alone In A Crowded Room by troy." class="album-listen" id="aiacr" src="https://bandcamp.com/EmbeddedPlayer/album=1057370408/size=large/bgcol=f7f7ff/linkcol=131112/artwork=none/transparent=true/" seamless>
-              <a href="http://justtroy.bandcamp.com/album/alone-in-a-crowded-room">Alone In A Crowded Room by troy.</a>
-            </iframe>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
+        <article class="description">
+          {% linkedPicture 'https://justtroy.bandcamp.com/', 'aiacr', 'Alone In A Crowded Room', 'jpg', 408, 408 %}
+          <p><span class="italic">Alone In A Crowded Room</span><br>12 Tracks</p>
+          <p>My full length debut born from a summer of needing to make something of myself.</p>
+        </article>
+        <iframe title="Bandcamp album player for Alone In A Crowded Room by troy." class="embed" src="https://bandcamp.com/EmbeddedPlayer/album=1057370408/size=large/bgcol=f7f7ff/linkcol=131112/artwork=none/transparent=true/" seamless>
+          <a href="http://justtroy.bandcamp.com/album/alone-in-a-crowded-room" rel="noopener" target="_blank">Alone In A Crowded Room by troy.</a>
+        </iframe>
+      </section>
+    </article>
+  </section>
 </main>
