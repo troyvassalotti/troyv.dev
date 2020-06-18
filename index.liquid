@@ -11,13 +11,13 @@ pageName: homepage
     <h1 class="typewriter typewriter__1">Hey, I'm Troy...</h1>
     <p class="typewriter typewriter__2">...and I make things.</p>
   </section>
-  <section class="section" id="blog">
+  <section class="section contain" id="blog">
     <div class="header">
       <h2>My Blog</h2>
       <p>Everyone's got a blog these days, and I've always stayed away from making my own.</p>
       <p>Then I started thinking about bigger and better projects and realized a blog is a great way to showcase those.</p>
     </div>
-    <div class="blog-container">
+    <div class="blogs">
       <div class="grid full-width blog-listing__container">
       {%- assign posts = collections.post reverse -%}
       {%- for post in posts limit:2 -%}
@@ -30,7 +30,7 @@ pageName: homepage
     </div>
     {% button '/blog/', 'Visit my blog', 'My Blog', '' %}
   </section>
-  <section class="section" id="projects">
+  <section class="section contain" id="projects">
     <div class="header">
       <h2>My Projects</h2>
       <p>These are some of my favorite projects, but I have many more. Take a look!</p>
@@ -42,7 +42,7 @@ pageName: homepage
     </div>
     {% button '/projects/', 'View all my projects.', 'My Projects', '' %}
   </section>
-  <section class="section" id="music">
+  <section class="section contain" id="music">
     <div class="header">
       <h2>My Music</h2>
       <p>When I’m not building a new web project, you can hear me working on a band project.</p>
@@ -59,7 +59,7 @@ pageName: homepage
     </div>
     {% button '/music/', 'Learn more about my music.', 'My Music', '' %}
   </section>
-  <section class="section" id="contact">
+  <section class="section contain" id="contact">
     <div class="header">
       <h2>My Contact</h2>
       <p>Take a look around, and if you like what you see then feel free to contact me.</p>

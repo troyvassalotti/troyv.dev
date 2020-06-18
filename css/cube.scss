@@ -12,7 +12,6 @@
   --gap: 3rem;
   --readingFont: 1.6rem;
   --subFont: 1.4rem;
-  --figureMd: 340px;
   --skewUp: skewy(-3deg);
   --skewDown: skewy(3deg);
 }
@@ -381,7 +380,7 @@ ul.navbar {
   gap: var(--gap);
 }
 
-.2-col {
+.two-col {
   grid-template-columns: 1fr 1fr;
 }
 
@@ -390,6 +389,7 @@ ul.navbar {
 }
 
 .flex-center {
+  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -421,6 +421,43 @@ ul.navbar {
   img {
     max-width: 350px;
   }
+
+  &.skew__down::before {
+    transform: var(--skewUp);
+  }
+
+  .description {
+    margin: 0;
+    font-size: var(--subFont);
+  }
+}
+
+#froro {
+  &::before {
+    background: $whitePrimary;
+  }
+
+  .content {
+    color: $blackPrimary;
+  }
+}
+
+#pang {
+  &::before {
+    background: $goldPrimary;
+  }
+
+  .content {
+    color: $blackPrimary;
+  }
+}
+
+.skew__up {
+  transform: var(--skewUp);
+}
+
+.skew__down {
+  transform: var(--skewDown);
 }
 /* ======================
   Content Styles
@@ -435,6 +472,11 @@ ul.navbar {
 
 .bold {
   font-weight: 700;
+}
+
+.button-wrapper {
+  display: grid;
+  place-items: center;
 }
 
 .button {
@@ -468,6 +510,15 @@ ul.navbar {
   figure {
     margin: 1rem;
     max-width: 600px;
+
+    img {
+      transition: .3s;
+    }
+
+    img:hover {
+      transform: scale(1.05);
+      transition: .3s;
+    }
   }
 }
 /* ======================
@@ -514,6 +565,7 @@ ul.navbar {
 #submit {
   border-color: transparent;
   padding: .5rem 2.5rem;
+  cursor: pointer;
   margin: {
     left: auto;
     right: auto;
@@ -524,6 +576,8 @@ ul.navbar {
   ======================= */
 
 footer {
+  display: grid;
+  place-items: center;
   background: $whitePrimary;
   color: $blackPrimary;
   margin: auto auto 1rem;
@@ -578,6 +632,7 @@ footer {
 
 .blog-listing {
   padding-left: 2rem;
+  border-left: 2px solid $goldPrimary;
 
   p {
     margin: 1rem 0 0;

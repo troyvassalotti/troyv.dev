@@ -7,13 +7,23 @@
 
 #frontRoyal,
 #troy {
-	width: max(150px, min(40%, 400px));
-	width: clamp(150px, 40%, 400px);
+	--imgSize: 400px;
+	width: max(150px, min(40%, var(--imgSize)));
+	width: clamp(150px, 40%, var(--imgSize));
 }
 
 .music {
 	justify-content: space-around;
 	align-items: center;
+}
+
+.music img {
+	transition: .3s;
+}
+
+.music img:hover {
+	transform: scale(1.1);
+	transition: .3s;
 }
 
 main {
@@ -34,11 +44,6 @@ main {
 /* ======================
   Tablet and Desktop Styles
   ======================= */
-@media only screen and (min-width: 720px) {
-	.button-wrapper {
-		place-items: center;
-	}
-}
 @media only screen and (min-width: 1062px) {
 	.homepage main > section {
 		margin-bottom: 6rem;
@@ -67,7 +72,7 @@ main {
 		place-items: start;
 	}
 
-	.blog-container,
+	.blogs,
 	.collection {
 		grid-area: 1 / 2 / 3 / 3;
 	}

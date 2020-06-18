@@ -44,13 +44,13 @@ module.exports = function (eleventyConfig) {
 
   // A reusable block, so it helps to have it maintainable in one place
   eleventyConfig.addShortcode("footer", function () {
-    return `<footer class="grid place-center contain">
+    return `<footer class="contain">
       <div class="flex footer__wrapper">
         <picture>
           <source srcset="/images/headshot-arrow.webp" type="image/webp">
           <img id="me" src="/images/headshot-arrow_160x160.png" width="160" height="160" alt="This is me. I look like this." loading="lazy">
         </picture>
-        <div class="grid place-center footer__icons">
+        <div class="grid place-center two-col footer__icons">
           <a class="icon-link" href="https://github.com/troyvassalotti" target="_blank" rel="noopener" aria-label="Visit my GitHub page."><img src="/images/github-black.svg" alt="Github" width="32" height="32" loading="lazy"></a>
           <a class="icon-link" href="https://codepen.io/troyvassalotti" target="_blank" rel="noopener" aria-label="View smaller projects on my CodePen."><img src="/images/codepen-black.svg" alt="Codepen" width="32" height="32" loading="lazy"></a>
           <a class="icon-link" href="https://www.linkedin.com/in/troy-vassalotti-468053142/" target="_blank" rel="noopener" aria-label="Visit my LinkedIn."><img src="/images/linkedin-black.svg" alt="Linkedin" width="32" height="32" loading="lazy"></a>
@@ -85,8 +85,8 @@ module.exports = function (eleventyConfig) {
           <source srcset="/images/${img}.webp" type="image/webp"/>
           <img src="/images/${img}.jpg" alt="${alt}" width="${w}" height="${h}" loading="lazy"/>
         </picture>
-        <figcaption>${caption}</figcaption>
       </a>
+      <figcaption>${caption}</figcaption>
     </figure>`
   })
 

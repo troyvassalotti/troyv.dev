@@ -4,38 +4,34 @@ description: These are a few of the projects I've made, but there are many more.
 layout: primary
 pageName: projectsPage
 ---
-<main class="grid__centered">
-  <section class="header">
-    <h1 class="hero-header">{{ title }}</h1>
+<main class="grid place-center">
+  <section class="hero">
+    <h1 class="hero__header">{{ title }}</h1>
   </section>
-  <article class="websites full-width">
-    <section class="flex__col full-width skew skew__up">
-      <h2>Front Royal (The Band, Not The Town)</h2>
-      <section class="website skew__down">
-        <div class="content">
+  <article class="grid full-width">
+    <section class="flex col full-width skew__up">
+      <h2 class="full-width">Front Royal (The Band, Not The Town)</h2>
+      <section class="skew skew__down" id="froro">
+        <div class="grid place-center content">
           <div>
             <p>When we decided to take the plunge and have a website of our own, I signed myself up to make it. It gave me the opportunity to try some new things out and I'm proud of the result.</p>
-            <div class="website__description">
-              <p><b>Built With:</b> HTML, CSS, JS (only for widgets)</p>
-              <p><b>Hosted On:</b> Netlify</p>
-            </div>
+            <p class="description"><b>Built With:</b> HTML, CSS, JS (only for widgets).</p>
+            <p class="description"><b>Hosted On:</b> Netlify.</p>
           </div>
           <div>
-            {% linkedPicture 'https://frontroyalband.com', 'frorosite', 'Screenshot of the Front Royal website', 'jpg', '350', '235' %}
+            {% linkedPicture 'https://frontroyalband.com', 'frorosite', 'Screenshot of the Front Royal site', 'jpg', '350', '235' %}
           </div>
         </div>
       </section>
     </section>
-    <section class="flex__col full-width skew skew__up">
-      <h2>Pang: A New Type of Social Media</h2>
-      <section class="website skew__down" id="pang">
-        <div class="content">
+    <section class="flex col full-width skew__up">
+      <h2 class="full-width">Pang: A New Type of Social Media</h2>
+      <section class="skew skew__down" id="pang">
+        <div class="grid place-center content">
           <div>
             <p>You ever wish you had a social media platform that didn't consume your life, but still gave you entertainment? Look no further than Pang.</p>
-            <div class="website__description">
-              <p><b>Built With:</b> HTML, CSS, Vue</p>
-              <p><b>Hosted On:</b> Netlify</p>
-            </div>
+            <p class="description"><b>Built With:</b> HTML, CSS, Vue.</p>
+            <p class="description"><b>Hosted On:</b> Netlify.</p>
           </div>
           <div>
             {% linkedPicture 'https://pang.netlify.app', 'pangsite', 'Screenshot of Pang', 'jpg', '350', '235' %}
@@ -44,12 +40,12 @@ pageName: projectsPage
       </section>
     </section>
   </article>
-  <article class="row">
-    <header class="row-header">
+  <article class="flex col contain">
+    <header class="section-header">
       <h2>Experiments & More</h2>
       <p>Here are some of the things I've made. From responsive design to JavaScript frameworks to Jamstack, I'm always creating new things. You could say I'm kinda just winging it.</p>
     </header>
-    <section class="collection center">
+    <section class="collection center-txt">
       {% for project in projects.phase1 -%}
         {% figure project.href, project.img, project.alt, project.caption, 600, 302 %}
       {% endfor -%}
@@ -61,19 +57,19 @@ pageName: projectsPage
       {% endfor -%}
     </section>
   </article>
-  <article class="row">
-    <header class="row-header">
+  <article class="flex col contain">
+    <header class="section-header">
       <h3>View More On CodePen</h3>
       <p>I create even more projects (and see what I can do without breaking anything) over on CodePen.</p>
     </header>
     {% button 'https://codepen.io/troyvassalotti', 'View more experiments on my CodePen', 'Visit My CodePen' %}
   </article>
-  <article class="row">
-    <header class="row-header">
+  <article class="flex col contain">
+    <header class="section-header">
       <h2>Big Data</h2>
       <p>I enjoy tracking random parts of my life, such as my migraines or how my Spotify listening habits change with the season.</p>
     </header>
-    <section class="collection collection__bigger">
+    <section class="collection">
       {% figure '/blog/i-logged-my-migraines-for-a-year/', 'migraines-2019', 'Screenshot of my a graph of my 2019 Migraine Calendar', '2019 Migraine Calendar', 600, 302, '' %}
       <figure>
         <picture>
@@ -84,22 +80,22 @@ pageName: projectsPage
       </figure>
     </section>
   </article>
-  <article class="row">
-    <header class="row-header">
+  <article class="flex col contain">
+    <header class="section-header">
       <h2>Emails</h2>
       <p>My work with building and designing marketing emails are the reason I got into coding. They're a pain to work with, but fun to look at. Here are two templates I use in my own designs.</p>
     </header>
-    <section class="collection collection__bigger">
+    <section class="collection">
       {% figure 'emails/classic/', 'classic-template', 'Screenshot of a classic email template', 'Classic Template', 600, 302, '' %}
       {% figure 'emails/simple/', 'simple-template', 'Screenshot of a simple email template', 'Simple Template', 600, 302, '' %}
     </section>
   </article>
-  <article class="row">
-    <header class="row-header">
+  <article class="flex col contain">
+    <header class="section-header">
       <h2>Video Editing</h2>
       <p>I occasionally edit videos for fun. Here are two times I secretly took over the Front Royal band vlog.</p>
     </header>
-    <section class="collection collection__bigger">
+    <section class="collection">
       {% figure 'https://www.youtube.com/watch?v=DN29m0xBCDg', 'takeover-1', 'Screenshot from my first real vlog', 'Vlog Takeover #1', 600, 302 %}
       {% figure 'https://www.youtube.com/watch?v=8LUoVGik9g8', 'takeover-2', 'Screenshot from my second real vlog', 'Vlog Takeover #2', 600, 302 %}
     </section>

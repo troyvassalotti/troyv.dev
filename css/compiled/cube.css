@@ -263,7 +263,6 @@ template {
 	--gap: 3rem;
 	--readingFont: 1.6rem;
 	--subFont: 1.4rem;
-	--figureMd: 340px;
 	--skewUp: skewy(-3deg);
 	--skewDown: skewy(3deg);
 }
@@ -624,7 +623,7 @@ ul.navbar a:focus {
 	gap: var(--gap);
 }
 
-.2-col {
+.two-col {
 	grid-template-columns: 1fr 1fr;
 }
 
@@ -633,6 +632,7 @@ ul.navbar a:focus {
 }
 
 .flex-center {
+	display: flex;
 	align-items: center;
 	justify-content: center;
 }
@@ -666,6 +666,39 @@ ul.navbar a:focus {
 	max-width: 350px;
 }
 
+.skew.skew__down::before {
+	transform: var(--skewUp);
+}
+
+.skew .description {
+	margin: 0;
+	font-size: var(--subFont);
+}
+
+#froro::before {
+	background: #f7f7ff;
+}
+
+#froro .content {
+	color: #131112;
+}
+
+#pang::before {
+	background: #f2c94c;
+}
+
+#pang .content {
+	color: #131112;
+}
+
+.skew__up {
+	transform: var(--skewUp);
+}
+
+.skew__down {
+	transform: var(--skewDown);
+}
+
 /* ======================
   Content Styles
   ======================= */
@@ -679,6 +712,11 @@ ul.navbar a:focus {
 
 .bold {
 	font-weight: 700;
+}
+
+.button-wrapper {
+	display: grid;
+	place-items: center;
 }
 
 .button {
@@ -711,6 +749,15 @@ ul.navbar a:focus {
 .collection figure {
 	margin: 1rem;
 	max-width: 600px;
+}
+
+.collection figure img {
+	transition: .3s;
+}
+
+.collection figure img:hover {
+	transform: scale(1.05);
+	transition: .3s;
 }
 
 /* ======================
@@ -752,6 +799,7 @@ ul.navbar a:focus {
 #submit {
 	border-color: transparent;
 	padding: .5rem 2.5rem;
+	cursor: pointer;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -760,6 +808,8 @@ ul.navbar a:focus {
   Footer Styles
   ======================= */
 footer {
+	display: grid;
+	place-items: center;
 	background: #f7f7ff;
 	color: #131112;
 	margin: auto auto 1rem;
@@ -813,6 +863,7 @@ footer p {
 
 .blog-listing {
 	padding-left: 2rem;
+	border-left: 2px solid #f2c94c;
 }
 
 .blog-listing p {
