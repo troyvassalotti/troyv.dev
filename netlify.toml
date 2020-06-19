@@ -34,13 +34,16 @@
     Content-Security-Policy = "default-src 'self' https://d33wubrfki0l68.cloudfront.net https://open.spotify.com/embed/ https://bandcamp.com/EmbeddedPlayer/ data: 'unsafe-inline'"
 
 [[plugins]]
-package = "@netlify/plugin-sitemap"
+  package = "@netlify/plugin-sitemap"
 
-# [[plugins]]
-# package = "netlify-plugin-image-optim"
+[[plugins]]
+  package = "@netlify/plugin-lighthouse"
 
-# [[plugins]]
-# package = "netlify-plugin-inline-source"
+[[plugins]]
+  package = "netlify-plugin-minify-html"
 
-# [[plugins]]
-# package = "netlify-plugin-inline-critical-css"
+  [plugins.inputs]
+    contexts = [
+      'production',
+      'deploy-preview'
+    ]

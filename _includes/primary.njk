@@ -3,12 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {%- if noindex -%}
+    {% if noindex -%}
     <meta name="robots" content="noindex">
-    {%- endif -%}
+    {%- endif %}
 
     <link rel="preconnect" href="https://d33wubrfki0l68.cloudfront.net">
     <link rel="dns-prefetch" href="https://d33wubrfki0l68.cloudfront.net">
+    <link rel="canonical" href="https://troyv.dev{{page.url}}">
     <link rel="stylesheet" href="/css/compressed/cube.min.css">
     {%- if pageCSS -%}
     <link rel="stylesheet" href="/css/compressed/{{pageCSS}}.min.css">
