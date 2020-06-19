@@ -1,20 +1,29 @@
 /* ======================
   Page Styles
   ======================= */
-
-#blog .button-wrapper {
+#blog .button__container {
 	margin-top: 2rem;
 }
 
 #frontRoyal,
 #troy {
-	width: max(150px, min(40%, 400px));
-	width: clamp(150px, 40%, 400px);
+	--imgSize: 400px;
+	width: max(150px, min(40%, var(--imgSize)));
+	width: clamp(150px, 40%, var(--imgSize));
 }
 
 .music {
 	justify-content: space-around;
 	align-items: center;
+}
+
+.music img {
+	transition: .3s;
+}
+
+.music img:hover {
+	transform: scale(1.1);
+	transition: .3s;
 }
 
 main {
@@ -24,11 +33,12 @@ main {
 .collection {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: space-around !important;
+	--scale: 1.05;
 }
 
 .collection figure {
-	--figureMd: 240px;
+	--figureMd: 250px;
 	width: max(123px, min(100%, var(--figureMd)));
 	width: clamp(123px, 100%, var(--figureMd));
 }
@@ -36,7 +46,7 @@ main {
   Tablet and Desktop Styles
   ======================= */
 @media only screen and (min-width: 720px) {
-	.button-wrapper {
+	.button__container {
 		place-items: center;
 	}
 }
@@ -49,26 +59,26 @@ main {
 		margin-top: 5rem;
 	}
 
-	.row {
+	.section {
 		display: grid;
-		max-width: 1250px;
+		max-width: 1400px;
 	}
 
-	.home-header {
+	.header {
 		grid-area: 1 / 1 / 2 / 2;
 		align-self: end;
 	}
 
-	.home-header p {
+	.header p {
 		width: 75%;
 	}
 
-	.button-wrapper {
+	.button__container {
 		grid-area: 2 / 1 / 3 / 2;
 		place-items: start;
 	}
 
-	.blog-container,
+	.blogs,
 	.collection {
 		grid-area: 1 / 2 / 3 / 3;
 	}
@@ -77,26 +87,26 @@ main {
 		justify-content: space-evenly;
 	}
 
-	#home-projects {
-		grid-template-columns: 500px auto;
+	#projects {
+		grid-template-columns: 1fr 1.25fr;
 		margin-bottom: 0;
 	}
 
-	#home-music {
+	#music {
 		grid-template-columns: 2fr 1fr;
 		margin-bottom: 0;
 	}
 
 	#frontRoyal,
 	#troy {
-		width: 100%;
+		width: 75%;
 	}
 
-	#home-contact {
+	#contact {
 		grid-template-columns: 1fr 1fr;
 	}
 
-	#home-contact .home-header {
+	#contact .header {
 		align-self: center;
 	}
 }

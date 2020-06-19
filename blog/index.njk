@@ -4,11 +4,11 @@ description: I occasionally write about things that enter my mind or the excessi
 layout: primary
 pageName: blogPage
 ---
-<main class="grid__centered">
-  <section class="header">
-    <h1 class="hero-header">{{ title }}</h1>
+<main class="grid place-center">
+  <section class="hero">
+    <h1 class="hero__header">{{ title }}</h1>
   </section>
-  <section class="blog-listing-container">
+  <section class="grid full-width blog-listing__container">
   {%- for post in collections.post -%}
     <article class="blog-listing">
       <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>

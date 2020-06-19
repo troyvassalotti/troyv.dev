@@ -4,26 +4,26 @@ description: I'd love to work with you on your next big project. Fill out this f
 layout: primary
 pageName: contactPage
 ---
-<main class="grid__centered">
-  <section class="header">
-    <h1 class="hero-header">{{ title }}</h1>
+<main class="grid place-center">
+  <section class="hero">
+    <h1 class="hero__header">{{ title }}</h1>
   </section>
-  <section class="row">
-    <div class="row-header">
+  <section class="flex col contain">
+    <header class="section-header">
       <h2>Let's Work Together</h2>
       <p>{{ description }}</p>
-    </div>
+    </header>
   </section>
-  <section class="row">
-    <div class="grid__1-col__2-col">
+  <article class="flex col contain">
+    <section class="grid split">
       {% contactForm %}
-      <div class="row-header">
+      <aside class="section-header">
         <h2>View My R&eacute;sum&eacute;</h2>
         <ul>
           <li><a href="resume/">As a webpage</a></li>
           <li><a href="resume.pdf" download>As a PDF</a></li>
         </ul>
-      </div>
-    </div>
-  </section>
+      </aside>
+    </section>
+  </article>
 </main>
