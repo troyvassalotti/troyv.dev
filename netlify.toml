@@ -31,7 +31,7 @@
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "SAMEORIGIN"
     X-XSS-Protection = "1"
-    Content-Security-Policy = "default-src 'self' https://d33wubrfki0l68.cloudfront.net https://open.spotify.com/embed/ https://bandcamp.com/EmbeddedPlayer/ data: 'unsafe-inline'"
+    Content-Security-Policy = "default-src 'self' https://d33wubrfki0l68.cloudfront.net https://open.spotify.com/embed/ https://bandcamp.com/EmbeddedPlayer/ https://www.google.com/recaptcha/ data: 'unsafe-inline'"
 
 [[plugins]]
   package = "@netlify/plugin-sitemap"
