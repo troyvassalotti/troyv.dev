@@ -38,12 +38,3 @@
 
 [[plugins]]
   package = "@netlify/plugin-lighthouse"
-
-[[plugins]]
-  package = "netlify-plugin-minify-html"
-
-  [plugins.inputs]
-    contexts = [
-      'production',
-      'deploy-preview'
-    ]
