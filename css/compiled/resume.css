@@ -1,7 +1,6 @@
 .section-title {
 	text-align: center;
-	background: #f7f7ff;
-	color: #131112;
+	border-bottom: 2px dashed #f7f7ff;
 }
 
 .content {
@@ -18,6 +17,7 @@
 
 .profile {
 	max-width: 150px;
+	border-radius: 50%;
 }
 
 .dated-header {
@@ -116,7 +116,6 @@
 
 @media (prefers-color-scheme: light) {
 	.section-title {
-		background: #02040f;
-		color: #f0e9e9;
+		border-color: #02040f;
 	}
 }
