@@ -10,7 +10,7 @@ I recently learned how to use deploy contexts and multiple deploys within Netlif
 
 Going along with that, I also learned the value of maintaining a stable development branch in GitHub on which to make changes.
 
-All that said, you can watch me make changes to this site in real time by going on over to https://dev.troyv.dev/.
+All that said, you can watch me make changes to this site in real time by going on over to [https://dev.troyv.dev/](https://dev.troyv.dev/).
 
 Sure, you could just keep coming back to my published site and looking around for changes. But I think it's fun to open up the development process.
 
