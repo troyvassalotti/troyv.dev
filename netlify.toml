@@ -32,6 +32,7 @@
     X-Frame-Options = "SAMEORIGIN"
     X-XSS-Protection = "1"
     Content-Security-Policy = "default-src 'self' https://troyv.dev/ https://d33wubrfki0l68.cloudfront.net https://open.spotify.com/ https://bandcamp.com/ https://www.google.com/ https://www.gstatic.com/ https://instant.page/ data: 'unsafe-inline'"
+    Access-Control-Allow-Origin: https://instant.page
 
 [[plugins]]
   package = "@netlify/plugin-sitemap"
