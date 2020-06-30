@@ -31,12 +31,7 @@
   },
   "homepage": "https://github.com/troyvassalotti/personal-site#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^0.10.0",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1"
+    "@11ty/eleventy": "^0.10.0"
   },
-  "dependencies": {
-    "axios": "^0.19.2",
-    "dotenv": "^8.2.0",
-    "instant.page": "^5.1.0"
-  }
+  "dependencies": {}
 }

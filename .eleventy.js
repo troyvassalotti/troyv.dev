@@ -1,8 +1,3 @@
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-module.exports = function (eleventyConfig) {
-  eleventyConfig.addPlugin(syntaxHighlight);
-};
-
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("css/fonts");
@@ -64,7 +59,7 @@ module.exports = function (eleventyConfig) {
   // Any global scripts, external or internal, can be placed here
   eleventyConfig.addShortcode("scripts", function () {
     return `<script src="/js/compressed/main.min.js" async></script>
-      <script src="instantpage-5.1.0.js" type="module" defer></script>`
+      <script src="/js/compressed/instantpage-5.1.0.js" type="module" defer></script>`
   })
 
   // A reusable block, so it helps to have it maintainable in one place
