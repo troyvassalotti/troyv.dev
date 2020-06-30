@@ -1,8 +1,3 @@
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-module.exports = function (eleventyConfig) {
-  eleventyConfig.addPlugin(syntaxHighlight);
-};
-
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("css/fonts");
@@ -14,7 +9,7 @@ module.exports = function (eleventyConfig) {
 
   // A reusable block, so it helps to have it maintainable in one place
   eleventyConfig.addShortcode("mainNav", function () {
-    return `<header>
+    return `<header class="hideOnPrint">
       <div id="menu">
         <button id="open" aria-label="Open the navigation menu">
           <svg width="30" height="30">
@@ -44,7 +39,7 @@ module.exports = function (eleventyConfig) {
 
   // A reusable block, so it helps to have it maintainable in one place
   eleventyConfig.addShortcode("footer", function () {
-    return `<footer class="contain">
+    return `<footer class="contain hideOnPrint">
       <div class="flex footer__wrapper">
         <picture>
           <source srcset="/images/headshot-arrow.webp" type="image/webp">
@@ -63,7 +58,8 @@ module.exports = function (eleventyConfig) {
 
   // Any global scripts, external or internal, can be placed here
   eleventyConfig.addShortcode("scripts", function () {
-    return `<script src="/js/compressed/main.min.js" async></script>`
+    return `<script src="/js/compressed/main.min.js" async></script>
+      <script src="/js/compressed/instantpage-5.1.0.js" type="module" defer></script>`
   })
 
   // A reusable block, so it helps to have it maintainable in one place

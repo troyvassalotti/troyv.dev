@@ -8,8 +8,8 @@
 #frontRoyal,
 #troy {
 	--imgSize: 400px;
-	width: max(150px, min(40%, var(--imgSize)));
-	width: clamp(150px, 40%, var(--imgSize));
+	width: Max(150px, Min(40%, var(--imgSize)));
+	width: Clamp(150px, 40%, var(--imgSize));
 }
 
 .music {
@@ -39,9 +39,10 @@ main {
 
 .collection figure {
 	--figureMd: 250px;
-	width: max(123px, min(100%, var(--figureMd)));
-	width: clamp(123px, 100%, var(--figureMd));
+	width: Max(123px, Min(100%, var(--figureMd)));
+	width: Clamp(123px, 100%, var(--figureMd));
 }
+
 /* ======================
   Tablet and Desktop Styles
   ======================= */
@@ -50,62 +51,51 @@ main {
 		place-items: center;
 	}
 }
+
 @media only screen and (min-width: 1062px) {
 	.homepage main > section {
 		margin-bottom: 6rem;
 	}
-
 	main {
 		margin-top: 5rem;
 	}
-
 	.section {
 		display: grid;
 		max-width: 1400px;
 	}
-
 	.header {
 		grid-area: 1 / 1 / 2 / 2;
 		align-self: end;
 	}
-
 	.header p {
 		width: 75%;
 	}
-
 	.button__container {
 		grid-area: 2 / 1 / 3 / 2;
 		place-items: start;
 	}
-
 	.blogs,
 	.collection {
 		grid-area: 1 / 2 / 3 / 3;
 	}
-
 	.collection {
 		justify-content: space-evenly;
 	}
-
 	#projects {
 		grid-template-columns: 1fr 1.25fr;
 		margin-bottom: 0;
 	}
-
 	#music {
 		grid-template-columns: 2fr 1fr;
 		margin-bottom: 0;
 	}
-
 	#frontRoyal,
 	#troy {
 		width: 75%;
 	}
-
 	#contact {
 		grid-template-columns: 1fr 1fr;
 	}
-
 	#contact .header {
 		align-self: center;
 	}

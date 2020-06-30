@@ -1,0 +1,2 @@
+1) Get the syntax highlighting plugin working instead of hosting prism locally
+2) Figure out how to install instant.page through npm instead of hosting locally
