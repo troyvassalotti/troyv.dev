@@ -123,10 +123,19 @@
 @media print {
 	@page {
 		size: letter;
+	}
+	html {
+		font-size: 5.25px;
+	}
+	body {
 		padding: 0;
-		margin: 1in .67in;
+		margin: 0;
 	}
 	.hideOnPrint {
 		display: none;
+	}
+	.resume {
+		grid-template-columns: 2fr 1fr;
+		grid-template-areas: "name photo" "work skills" "work education" "work certifications";
 	}
 }
