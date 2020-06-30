@@ -2,7 +2,8 @@
 title: Watch Me Design My Site In Real Time
 description: Netlify opened the door to branch deploys and that's changed my development process for the better. Watch me make this site better in real time!
 layout: post
-postDate: June 30th, 2020
+postDate: July 1st, 2020
+date: 2020-07-01
 tags: ['post', 'design']
 ---
 I recently learned how to use deploy contexts and multiple deploys within Netlify. It's always so fulfilling being able to take advantage of a new technology (_new_ relative to my brain).
