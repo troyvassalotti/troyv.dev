@@ -117,4 +117,10 @@
     border-color: $blackLight;
   }
 }
-@media print {}
+@media print {
+  @page {
+    size: letter;
+    padding: 0;
+    margin: 1in .67in;
+  }
+}

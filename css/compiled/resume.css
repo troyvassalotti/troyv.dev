@@ -119,3 +119,11 @@
 		border-color: #02040f;
 	}
 }
+
+@media print {
+	@page {
+		size: letter;
+		padding: 0;
+		margin: 1in .67in;
+	}
+}
