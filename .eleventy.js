@@ -14,7 +14,7 @@ module.exports = function (eleventyConfig) {
 
   // A reusable block, so it helps to have it maintainable in one place
   eleventyConfig.addShortcode("mainNav", function () {
-    return `<header>
+    return `<header class="hideOnPrint">
       <div id="menu">
         <button id="open" aria-label="Open the navigation menu">
           <svg width="30" height="30">
@@ -44,7 +44,7 @@ module.exports = function (eleventyConfig) {
 
   // A reusable block, so it helps to have it maintainable in one place
   eleventyConfig.addShortcode("footer", function () {
-    return `<footer class="contain">
+    return `<footer class="contain hideOnPrint">
       <div class="flex footer__wrapper">
         <picture>
           <source srcset="/images/headshot-arrow.webp" type="image/webp">
