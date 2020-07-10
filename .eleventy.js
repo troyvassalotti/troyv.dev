@@ -52,7 +52,7 @@ module.exports = function (eleventyConfig) {
           <a class="icon-link" href="https://twitter.com/lowercasetroy" target="_blank" rel="noopener" aria-label="Follow me on Twitter."><img src="/images/twitter-black.svg" alt="Twitter" width="32" height="32" loading="lazy"></a>
         </div>
       </div>
-      <p>&copy; troy vassalotti.</p>
+      <p>&copy; troy vassalotti. | Built with <a href="https://www.11ty.dev" target="_blank" rel="noopener">Eleventy</a>.</p>
     </footer>`
   })
 
