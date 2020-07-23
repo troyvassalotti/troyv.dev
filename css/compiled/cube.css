@@ -281,8 +281,8 @@ html {
 body {
 	display: flex;
 	flex-direction: column;
-	min-height: 100vh;
 	width: 100%;
+	min-height: 100vh;
 	transition: margin-left .5s;
 }
 
@@ -704,6 +704,14 @@ img[data-state='stay']:hover {
 
 #pang .content {
 	color: #131112;
+}
+
+#abandoned::before {
+	background: #60656f;
+}
+
+#abandoned .content {
+	color: #f7f7ff;
 }
 
 .skew__up {
