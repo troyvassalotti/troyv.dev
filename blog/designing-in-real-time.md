@@ -6,6 +6,11 @@ postDate: July 1st, 2020
 date: 2020-07-01
 tags: ['post', 'design']
 ---
+## Update September 2020
+While I do some backend configuration changes, I am removing this fun little feature for the time being.
+
+<hr>
+
 I recently learned how to use deploy contexts and multiple deploys within Netlify. It's always so fulfilling being able to take advantage of a new technology (_new_ relative to my brain).
 
 Going along with that, I also learned the value of maintaining a stable development branch in GitHub on which to make changes.
