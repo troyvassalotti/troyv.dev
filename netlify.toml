@@ -11,7 +11,7 @@
   minify = false
 [build.processing.js]
   bundle = true
-  minify = false
+  minify = true
 [build.processing.html]
   pretty_urls = true
 [build.processing.images]
@@ -21,6 +21,12 @@
 [[redirects]]
   from = "https://troyvassalotti.netlify.com/*"
   to = "https://www.troyv.dev/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contact/resume"
+  to = "/contact/resume-v2"
   status = 301
   force = true
 
