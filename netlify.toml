@@ -8,14 +8,14 @@
   skip_processing = false
 [build.processing.css]
   bundle = true
-  minify = false
+  minify = true
 [build.processing.js]
   bundle = true
   minify = true
 [build.processing.html]
   pretty_urls = true
 [build.processing.images]
-  compress = false
+  compress = true
 
 # Redirect from the default Netlify site to my custom domain
 [[redirects]]

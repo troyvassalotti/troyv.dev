@@ -6,8 +6,7 @@ module.exports = function (eleventyConfig) {
   // Passthroughs
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("css/fonts");
-  eleventyConfig.addPassthroughCopy("css/compressed");
-  eleventyConfig.addPassthroughCopy("js/compressed");
+  eleventyConfig.addPassthroughCopy("js");
   eleventyConfig.addPassthroughCopy("robots.txt");
   eleventyConfig.addPassthroughCopy("contact/resume.pdf");
   eleventyConfig.addPassthroughCopy("favicon.ico");
