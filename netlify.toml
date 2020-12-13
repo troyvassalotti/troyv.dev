@@ -1,6 +1,6 @@
 # Build the site
 [build]
-  command = "eleventy"
+  command = "npx @11ty/eleventy"
   publish = "_site"
 
 # Assign all the post-processing
