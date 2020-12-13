@@ -21,7 +21,6 @@ jobs:
       matrix:
         url: ['https://www.frontroyalband.com', 'https://pang.netlify.app', 'https://www.abandoned.website']
         name: [frorosite, pangsite, abandonedwebsite]
-    runs-on: ubuntu-latest
 
     steps:
 
