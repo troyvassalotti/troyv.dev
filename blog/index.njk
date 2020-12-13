@@ -9,7 +9,7 @@ pageName: blogPage
     <h1 class="hero__header">{{ title }}</h1>
   </section>
   <section class="grid full-width blog-listing__container">
-  {%- for post in collections.post -%}
+  {%- for post in collections.post | reverse -%}
     <article class="blog-listing">
       <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
       <p>{{ post.data.description }}</p>

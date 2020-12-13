@@ -1,11 +1,8 @@
-const pluginSass = require("eleventy-plugin-sass");
 module.exports = function (eleventyConfig) {
-  // Plugins
-  eleventyConfig.addPlugin(pluginSass);
-
   // Passthroughs
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("css/fonts");
+  eleventyConfig.addPassthroughCopy("css/compressed");
   eleventyConfig.addPassthroughCopy("js");
   eleventyConfig.addPassthroughCopy("robots.txt");
   eleventyConfig.addPassthroughCopy("contact/resume.pdf");
@@ -105,6 +102,13 @@ module.exports = function (eleventyConfig) {
         <source srcset="/images/${img}.webp" type="image/webp"/>
         <img src="/images/${img}.${fallbackType}" alt="${alt}" width="${w}" height="${h}" loading="lazy"/>
       </picture>
+    </a>`
+  })
+
+  // A reusable block, so it helps to have it maintainable in one place
+  eleventyConfig.addShortcode("screenshot", function (href, img, alt, target = 'target="_blank" rel="noopener"') {
+    return `<a href="${href}" ${target}>
+        <img src="/images/screenshot-${img}.png" alt="${alt}" width="320" height="180" loading="lazy"/>
     </a>`
   })
 }
