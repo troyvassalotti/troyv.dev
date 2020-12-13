@@ -39,8 +39,8 @@
     X-XSS-Protection = "1"
     Content-Security-Policy = "default-src 'self' https://www.troyv.dev/ https://d33wubrfki0l68.cloudfront.net https://open.spotify.com/ https://bandcamp.com/ https://www.google.com/ https://www.gstatic.com/ data: 'unsafe-inline'"
 
-[[plugins]]
-  package = "@netlify/plugin-sitemap"
+# [[plugins]]
+#   package = "@netlify/plugin-sitemap"
 
-[[plugins]]
-  package = "@netlify/plugin-lighthouse"
+# [[plugins]]
+#   package = "@netlify/plugin-lighthouse"
