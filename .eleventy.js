@@ -1,11 +1,8 @@
-const pluginSass = require("eleventy-plugin-sass");
 module.exports = function (eleventyConfig) {
-  // Plugins
-  eleventyConfig.addPlugin(pluginSass);
-
   // Passthroughs
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("css/fonts");
+  eleventyConfig.addPassthroughCopy("css/compressed");
   eleventyConfig.addPassthroughCopy("js");
   eleventyConfig.addPassthroughCopy("robots.txt");
   eleventyConfig.addPassthroughCopy("contact/resume.pdf");
