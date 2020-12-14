@@ -30,7 +30,7 @@ jobs:
         url: https://www.frontroyalband.com/
     - uses: actions/upload-artifact@v2
       with:
-        name: Download-screenshots
+        name: Download-frontroyal-screenshots
         path: screenshots
     - run: rm ./screenshots/*
 
@@ -40,7 +40,7 @@ jobs:
         url: https://pang.netlify.app/
     - uses: actions/upload-artifact@v2
       with:
-        name: Download-screenshots
+        name: Download-pang-screenshots
         path: screenshots
     - run: rm ./screenshots/*
       
@@ -50,6 +50,6 @@ jobs:
         url: https://www.abandoned.website/
     - uses: actions/upload-artifact@v2
       with:
-        name: Download-screenshots
+        name: Download-abandoned-screenshots
         path: screenshots
     - run: rm ./screenshots/*
