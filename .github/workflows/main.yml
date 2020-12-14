@@ -1,31 +1,55 @@
-# This is a basic workflow to help you get started with Actions
-name: CI
+name: Screenshots-ci
 
-# Controls when the action will run.
-on:
-  # Triggers the workflow on push or pull request events but only for the master branch
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+on: [pull_request]
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  screenshot:
-    name: Screenshot
-    strategy:
-      matrix:
-        url: ['https://www.frontroyalband.com', 'https://pang.netlify.app', 'https://www.abandoned.website']
-        name: [frorosite, pangsite, abandonedwebsite]
-
+  screenshots:
+    runs-on: ubuntu-latest
     steps:
-
-    - name: Screenshot Website
-      uses: swinton/screenshot-website@v1.x
+    - name: Wait for Pages changed to neutral
+      uses: fountainhead/action-wait-for-check@v1.0.0
+      id: wait-for-Netlify
       with:
-        source: ${{ matrix.url }}
-        destination: /images/screenshot-${{ matrix.name }}.png
+        token: ${{ secrets.GITHUB_TOKEN }}
+        ref: ${{ github.event.pull_request.head.sha || github.sha }}
+        checkName: 'Pages changed - troyvassalotti'
+    - name: Get Preview URL and generate screenshot after Netlify check done
+      if: steps.wait-for-Netlify.outputs.conclusion == 'neutral'
+      uses: jakepartusch/wait-for-netlify-action@v1
+      id: waitFor200
+      with:
+        site_name: 'troyvassalotti'
+    - uses: actions/checkout@v2
+    - name: install puppeteer-headful
+      uses: mujo-code/puppeteer-headful@master
+      env:
+        CI: 'true'
+    - name: screenshots-frontroyal
+      uses: flameddd/screenshots-ci-action@v1.1.1
+      with:
+        url: https://www.frontroyalband.com/
+    - uses: actions/upload-artifact@v2
+      with:
+        name: Download-screenshots
+        path: screenshots
+    - run: rm ./screenshots/*
+
+    - name: screenshots-pang
+      uses: flameddd/screenshots-ci-action@v1.1.1
+      with:
+        url: https://pang.netlify.app/
+    - uses: actions/upload-artifact@v2
+      with:
+        name: Download-screenshots
+        path: screenshots
+    - run: rm ./screenshots/*
+      
+    - name: screenshots-abandoned
+      uses: flameddd/screenshots-ci-action@v1.1.1
+      with:
+        url: https://www.abandoned.website/
+    - uses: actions/upload-artifact@v2
+      with:
+        name: Download-screenshots
+        path: screenshots
+    - run: rm ./screenshots/*
