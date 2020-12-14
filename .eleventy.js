@@ -106,9 +106,9 @@ module.exports = function (eleventyConfig) {
   })
 
   // A reusable block, so it helps to have it maintainable in one place
-  eleventyConfig.addShortcode("screenshot", function (href, img, alt, target = 'target="_blank" rel="noopener"') {
+  eleventyConfig.addShortcode("screenshot", function (href, website, alt, target = 'target="_blank" rel="noopener"') {
     return `<a href="${href}" ${target}>
-        <img src="/images/screenshot-${img}.png" alt="${alt}" width="320" height="180" loading="lazy"/>
+        <img src="/images/screenshots/${website}/desktopPage1920x1080.jpeg" alt="${alt}" width="320" height="180" loading="lazy"/>
     </a>`
   })
 }
