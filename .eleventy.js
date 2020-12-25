@@ -49,7 +49,7 @@ module.exports = function (eleventyConfig) {
         <div class="grid place-center two-col footer__icons">
           <a class="icon-link" href="https://github.com/troyvassalotti" target="_blank" rel="noopener" aria-label="Visit my GitHub page."><img src="/images/github-black.svg" alt="Github" width="32" height="32" loading="lazy"></a>
           <a class="icon-link" href="https://codepen.io/troyvassalotti" target="_blank" rel="noopener" aria-label="View smaller projects on my CodePen."><img src="/images/codepen-black.svg" alt="Codepen" width="32" height="32" loading="lazy"></a>
-          <a class="icon-link" href="https://www.linkedin.com/in/troy-vassalotti-468053142/" target="_blank" rel="noopener" aria-label="Visit my LinkedIn."><img src="/images/linkedin-black.svg" alt="Linkedin" width="32" height="32" loading="lazy"></a>
+          <a class="icon-link" href="https://www.linkedin.com/in/troyvassalotti" target="_blank" rel="noopener" aria-label="Visit my LinkedIn."><img src="/images/linkedin-black.svg" alt="Linkedin" width="32" height="32" loading="lazy"></a>
           <a class="icon-link" href="https://twitter.com/validcharacters" target="_blank" rel="noopener" aria-label="Follow me on Twitter."><img src="/images/twitter-black.svg" alt="Twitter" width="32" height="32" loading="lazy"></a>
         </div>
       </div>
