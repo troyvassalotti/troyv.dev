@@ -36,7 +36,12 @@ pageName: homepage
     </div>
     <div class="collection center-txt">
       {% for project in projects.homepage -%}
-        {% figure project.href, project.img, project.alt, project.caption, 600, 302 %}
+        <figure>
+          <a href="{{ project.href }}" target="_blank" rel="noopener">
+            <img src="/images/{{ project.img }}.jpeg" alt="{{ project.alt }}" width="320" height="180" loading="lazy"/>
+          </a>
+          <figcaption>{{ project.caption }}</figcaption>
+        </figure>
       {% endfor -%}
     </div>
     {% button '/projects/', 'View all my projects.', 'My Projects', '' %}

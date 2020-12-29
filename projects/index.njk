@@ -57,25 +57,9 @@ pageName: projectsPage
   </article>
   <article class="flex col contain">
     <header class="section-header">
-      <h2>Experiments & More</h2>
-      <p>Here are some of the things I've made. From responsive design to JavaScript frameworks to Jamstack, I'm always creating new things. You could say I'm kinda just winging it.</p>
-    </header>
-    <section class="collection center-txt">
-      {% for project in projects.phase3 -%}
-        {% figure project.href, project.img, project.alt, project.caption, 600, 302 %}
-      {% endfor -%}
-      {% for project in projects.phase2 -%}
-        {% figure project.href, project.img, project.alt, project.caption, 600, 302 %}
-      {% endfor -%}
-      {% for project in projects.phase1 -%}
-        {% figure project.href, project.img, project.alt, project.caption, 600, 302 %}
-      {% endfor -%}
-    </section>
-  </article>
-  <article class="flex col contain">
-    <header class="section-header">
-      <h3>View More On CodePen</h3>
-      <p>I create even more projects (and see what I can do without breaking anything) over on CodePen.</p>
+      <h3>View More on CodePen</h3>
+      <p>I've made a lot of things - bigger and smaller - that would be impossible to keep track of on here. From practicing responsive design and JavaScript frameworks, to even coding emails (yikes!), I'm always creating new things.</p>
+      <p>You could say I'm kinda just winging it, but those random projects tend to live over on CodePen.</p>
     </header>
     {% button 'https://codepen.io/troyvassalotti', 'View more experiments on my CodePen', 'Visit My CodePen' %}
   </article>
@@ -93,16 +77,6 @@ pageName: projectsPage
         </picture>
         <figcaption>More Coming Soon...</figcaption>
       </figure>
-    </section>
-  </article>
-  <article class="flex col contain">
-    <header class="section-header">
-      <h2>Emails</h2>
-      <p>My work with building and designing marketing emails are the reason I got into coding. They're a pain to work with, but fun to look at. Here are two templates I use in my own designs.</p>
-    </header>
-    <section class="collection">
-      {% figure 'emails/classic/', 'classic-template', 'Screenshot of a classic email template', 'Classic Template', 600, 302, '' %}
-      {% figure 'emails/simple/', 'simple-template', 'Screenshot of a simple email template', 'Simple Template', 600, 302, '' %}
     </section>
   </article>
   <article class="flex col contain">

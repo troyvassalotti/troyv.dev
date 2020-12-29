@@ -65,7 +65,7 @@ module.exports = function (eleventyConfig) {
 
   // A reusable block, so it helps to have it maintainable in one place
   eleventyConfig.addShortcode("contactForm", function () {
-    return `<form class="contact-form" name="contactForm" netlify netlify-honeypot="bot-field" data-netlify-recaptcha="true" action="/pages/success/">
+    return `<form class="contact-form" name="contactForm" netlify netlify-honeypot="bot-field" action="/pages/success/">
       <label style="display: none;">Don’t fill this out: <input name="bot-field"></label>
     	<label for="name">Name<input name="name" type="text" id="name" required></label>
     	<label for="email">Email<input name="email" type="email" id="email" required></label>
