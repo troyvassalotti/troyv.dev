@@ -25,6 +25,8 @@ plvylist: true
           {% endfor %}
         </aside>
       </div>
+    </article>
+    <article class="flex-center col right-column">
       <div class="flex col" id="troy">
         {% linkedPicture 'https://justtroy.bandcamp.com/', 'troy-full', 'The logo for my band, troy.', 'png', 600, 300 %}
         <aside class="icon-bar">
@@ -33,15 +35,13 @@ plvylist: true
           {% endfor %}
         </aside>
       </div>
-      <section class="flex-center col album">
-        <h2>Stream <em>Alone In A Crowded Room</em></h2>
-        <article class="description">
-          <p>I created my own embedded streaming player, called <span class="italic">Plvylist</span>, because I wanted to understand how audio on the web works. Check it out in action.</p>
-        </article>
-      </section>
     </article>
-    <article class="flex-center col right-column">
-      <div class="plvylist"></div>
-    </article>
+  </section>
+  <section class="wrapper" data-constrain="more">
+    <header class="flex col center-txt">
+      <h2>Stream <em>Alone In A Crowded Room</em></h2>
+      <p>I created my own embedded streaming player, called <span class="italic">Plvylist</span>, because I wanted to understand how web audio works. Check it out in action.</p>
+    </header>
+    <div class="plvylist"></div>
   </section>
 </main>
