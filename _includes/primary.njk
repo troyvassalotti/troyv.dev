@@ -10,16 +10,12 @@
     <link rel="preconnect" href="https://d33wubrfki0l68.cloudfront.net">
     <link rel="dns-prefetch" href="https://d33wubrfki0l68.cloudfront.net">
     <link rel="canonical" href="https://www.troyv.dev{{page.url}}">
-    <link rel="stylesheet" href="/css/compressed/cube.css">
-    {%- if pageCSS -%}
-    <link rel="stylesheet" href="/css/compressed/{{pageCSS}}.css">
-    {%- endif -%}
-    {%- if codeblock -%}
-    <link rel="stylesheet" href="/css/compressed/prism.css">
-    {%- endif -%}
-    {%- if animation -%}
-    <script src="/js/prefixfree.js"></script>
-    {%- endif -%}
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/cube.css">
+    {%- if pageCSS -%}<link rel="stylesheet" href="/css/{{pageCSS}}.css">{%- endif -%}
+    {%- if codeblock -%}<link rel="stylesheet" href="/css/prism.css">{%- endif -%}
+    {%- if plvylist -%}<link rel="stylesheet" href="/css/plvylist.css">{%- endif -%}
+    {%- if animation -%}<script src="/js/prefixfree.js"></script>{%- endif -%}
 
     <title>{{ title }} | Troy V.</title>
     <meta name="description" content="{{description}}">
@@ -34,20 +30,61 @@
     <meta name="twitter:creator" content="@validcharacters">
 
     {%- if inline -%}
-      <style>
-        {{inline}}
-      </style>
+    <style>
+      {{inline}}
+    </style>
     {%- endif -%}
 
   </head>
   <body class="{{pageName}}">
-    {% mainNav %}
-    {{ content | safe }}
-    {% footer %}
+    <header class="hideOnPrint">
+      <div id="menu">
+        <button id="open" aria-label="Open the navigation menu">
+          <svg width="30" height="30">
+            <path d="M0,5 30,5"/>
+            <path d="M0,14 30,14"/>
+            <path d="M0,23 30,23"/>
+          </svg>
+        </button>
+      </div>
+      <nav class="mainNavigation" id="mainNavigation">
+        <button id="close" aria-label="Close the navigation menu">
+          <svg width="30" height="30">
+            <path d="M5,5 25,25"/>
+            <path d="M5,25 25,5"/>
+          </svg>
+        </button>
+        <ul class="navbar">
+          <li id="link__home-container"><a href="/" aria-label="Go to the homepage." id="link__home">troy vassalotti.</a></li>
+          <li id="link__blog-container"><a href="/blog/" aria-label="Visit my blog." id="link__blog">blog.</a></li>
+          <li id="link__projects-container"><a href="/projects/" aria-label="View my various projects." id="link__projects">projects.</a></li>
+          <li id="link__music-container"><a href="/music/" aria-label="Learn more about my music." id="link__music">music.</a></li>
+          <li id="link__contact-container"><a href="/contact/" aria-label="View my resume and more on my contact page." id="link__contact">contact.</a></li>
+        </ul>
+      </nav>
+    </header>
 
-    {%- if codeblock -%}
-    <script src="/js/prism.js" async></script>
-    {%- endif -%}
-    {% scripts %}
+    {{ content | safe }}
+
+    <footer class="contain hideOnPrint">
+      <div class="flex footer__wrapper">
+        <picture>
+          <source srcset="/images/headshot-arrow.webp" type="image/webp">
+          <img id="me" src="/images/headshot-arrow_160x160.png" width="160" height="160" alt="This is me. I look like this." loading="lazy">
+        </picture>
+        <div class="grid place-center two-col footer__icons">
+          <a class="icon-link" href="https://github.com/troyvassalotti" target="_blank" rel="noopener" aria-label="Visit my GitHub page."><img src="/images/github-black.svg" alt="Github" width="32" height="32" loading="lazy"></a>
+          <a class="icon-link" href="https://codepen.io/troyvassalotti" target="_blank" rel="noopener" aria-label="View smaller projects on my CodePen."><img src="/images/codepen-black.svg" alt="Codepen" width="32" height="32" loading="lazy"></a>
+          <a class="icon-link" href="https://www.linkedin.com/in/troyvassalotti" target="_blank" rel="noopener" aria-label="Visit my LinkedIn."><img src="/images/linkedin-black.svg" alt="Linkedin" width="32" height="32" loading="lazy"></a>
+          <a class="icon-link" href="https://twitter.com/validcharacters" target="_blank" rel="noopener" aria-label="Follow me on Twitter."><img src="/images/twitter-black.svg" alt="Twitter" width="32" height="32" loading="lazy"></a>
+        </div>
+      </div>
+      <p>&copy; troy vassalotti. | Built with <a href="https://www.11ty.dev" target="_blank" rel="noopener">Eleventy</a>.</p>
+    </footer>
+
+    {%- if codeblock -%}<script src="/js/prism.js" async></script>{%- endif -%}
+    {%- if plvylist -%}<script src="/js/plvylist.js"></script>{%- endif -%}
+    <script src="/js/main.js" async></script>
+    <script src="/js/instantpage-5.1.0.js" type="module" defer></script>
   </body>
 </html>

@@ -3,6 +3,7 @@ title: Music
 description: Music is one of my passions. Check out all my musical projects here.
 layout: primary
 pageName: musicPage
+plvylist: true
 ---
 <main class="grid place-center">
   <section class="hero">
@@ -16,53 +17,31 @@ pageName: musicPage
   </section>
   <section class="grid split">
     <article class="flex-center col left-column">
-      <header class="flex col" id="frontRoyal">
+      <div class="flex col" id="frontRoyal">
         {% linkedPicture 'https://frontroyalmd.bandcamp.com/', 'front-royal-logo-white_400x240', 'The logo for my band, Front Royal.', 'png', 400, 240 %}
         <aside class="icon-bar">
           {% for social in music.frontRoyalSocial %}
             <a class="icon-link" href="{{ social.href }}" target="_blank" rel="noopener" aria-label="{{ social.aria }}"><img src="/images/{{ social.img }}" alt="{{ social.alt }}" loading="lazy" width="48" height="48"></a>
           {% endfor %}
         </aside>
-      </header>
-      <section class="flex-center col album">
-        <h2>Latest Release</h2>
-        <article class="description">
-          {% linkedPicture 'https://frontroyalmd.bandcamp.com/album/these-things-happen', 'fr_tth_408x408', 'These Things Happen', 'jpg', 408, 408 %}
-          <p><span class="italic">These Things Happen</span><br>6 Tracks</p>
-          <p>Full Length LP debut <span class="italic">The Thought That Counts</span> coming 2020.</p>
-        </article>
-        <iframe title="Bandcamp album player for These Things Happen by Front Royal" class="embed" src="https://bandcamp.com/EmbeddedPlayer/album=3745012043/size=large/bgcol=f7f7ff/linkcol=131112/artwork=none/transparent=true/" seamless>
-          <a href="http://frontroyalmd.bandcamp.com/album/these-things-happen" rel="noopener" target="_blank">These Things Happen by Front Royal</a>
-        </iframe>
-        <aside class="view-more center-txt">
-          <p>view more on <a href="https://frontroyalmd.bandcamp.com/" rel="noopener" target="_blank">bandcamp &gt;&gt;</a></p>
-          <div class="collection">
-            {% linkedPicture 'https://frontroyalmd.bandcamp.com/album/all-down-hill-from-here', 'fr_ep2_cover_408x408', 'All Down Hill From Here', 'jpg', 408, 408 %}
-            {% linkedPicture 'https://frontroyalmd.bandcamp.com/album/the-band-not-the-town', 'fr_tbntt_408x408', 'The Band, Not The Town', 'jpg', 408, 408 %}
-          </div>
-        </aside>
-      </section>
+      </div>
     </article>
     <article class="flex-center col right-column">
-      <header class="flex col" id="troy">
+      <div class="flex col" id="troy">
         {% linkedPicture 'https://justtroy.bandcamp.com/', 'troy-full', 'The logo for my band, troy.', 'png', 600, 300 %}
         <aside class="icon-bar">
           {% for social in music.troySocial %}
             <a class="icon-link" href="{{ social.href }}" target="_blank" rel="noopener" aria-label="{{ social.aria }}"><img src="/images/{{ social.img }}" alt="{{ social.alt }}" loading="lazy" width="48" height="48"></a>
           {% endfor %}
         </aside>
-      </header>
-      <section class="flex-center col album">
-        <h2>Latest Release</h2>
-        <article class="description">
-          {% linkedPicture 'https://justtroy.bandcamp.com/', 'aiacr', 'Alone In A Crowded Room', 'jpg', 408, 408 %}
-          <p><span class="italic">Alone In A Crowded Room</span><br>12 Tracks</p>
-          <p>My full length debut born from a summer of needing to make something of myself.</p>
-        </article>
-        <iframe title="Bandcamp album player for Alone In A Crowded Room by troy." class="embed" src="https://bandcamp.com/EmbeddedPlayer/album=1057370408/size=large/bgcol=f7f7ff/linkcol=131112/artwork=none/transparent=true/" seamless>
-          <a href="http://justtroy.bandcamp.com/album/alone-in-a-crowded-room" rel="noopener" target="_blank">Alone In A Crowded Room by troy.</a>
-        </iframe>
-      </section>
+      </div>
     </article>
+  </section>
+  <section class="wrapper" data-constrain="more">
+    <header class="flex col center-txt">
+      <h2>Stream <em>Alone In A Crowded Room</em></h2>
+      <p>I created my own embedded streaming player, called <span class="italic">Plvylist</span>, because I wanted to understand how web audio works. Check it out in action.</p>
+    </header>
+    <div class="plvylist"></div>
   </section>
 </main>

@@ -1,114 +1,21 @@
 {
-  "phase1": [{
-      "href": "https://codepen.io/troyvassalotti/full/abzrWKb",
-      "img": "tribute_ffss_600x302",
-      "alt": "Screenshot of my project Tribute Page",
-      "caption": "Tribute Page"
-    },
-    {
-      "href": "https://codepen.io/troyvassalotti/full/RwNmVOg",
-      "img": "survey_ffss_600x302",
-      "alt": "Screenshot of my project Breakfast Survey",
-      "caption": "Breakfast Survey"
-    },
-    {
-      "href": "https://codepen.io/troyvassalotti/full/eYmaRrZ",
-      "img": "landing-page_ffss_600x302",
-      "alt": "Screenshot of my project Product Landing Page",
-      "caption": "Product Landing Page"
-    },
-    {
-      "href": "https://codepen.io/troyvassalotti/full/wvBbeOL",
-      "img": "doc_ffss_600x302",
-      "alt": "Screenshot of my project Technical Documentation",
-      "caption": "Technical Documentation"
-    },
-    {
-      "href": "https://codepen.io/troyvassalotti/full/rNagmGR",
-      "img": "portfolio_ffss_600x302",
-      "alt": "Screenshot of my project Personal Portfolio",
-      "caption": "Personal Portfolio"
-    }
-  ],
-  "phase2": [{
-      "href": "https://codepen.io/troyvassalotti/full/WNbZYJM",
-      "img": "random-quote_600px",
-      "alt": "Screenshot of my project Random Quote Generator",
-      "caption": "React Quote Generator"
-    },
-    {
-      "href": "https://codepen.io/troyvassalotti/full/eYmjGvK",
-      "img": "drum-machine_600",
-      "alt": "Screenshot of my project Drum Machine",
-      "caption": "React Drum Machine"
-    },
-    {
-      "href": "https://codepen.io/troyvassalotti/full/KKwxxLM",
-      "img": "calculator_600",
-      "alt": "Screenshot of my project JavaScript Calculator",
-      "caption": "React Calculator"
-    },
-    {
-      "href": "https://codepen.io/troyvassalotti/full/bGNajEV",
-      "img": "markdown_600",
-      "alt": "Screenshot of my project Markdown Previewer",
-      "caption": "React Markdown Previewer"
-    },
-    {
-      "href": "https://codepen.io/troyvassalotti/full/BayqQGz",
-      "img": "pomodoro-clock_ffss_600x299",
-      "alt": "Screenshot of my project Pomodoro Clock",
-      "caption": "React Pomodoro Clock"
-    }
-  ],
-  "phase3": [{
-      "href": "https://codepen.io/troyvassalotti/full/NWqVWyd",
-      "img": "barchart_600x302",
-      "alt": "Screenshot of my project Barchart using d3.js",
-      "caption": "D3.js Barchart"
-    },
-    {
-      "href": "https://codepen.io/troyvassalotti/full/XWbLzee",
-      "img": "scatterplot_600x302",
-      "alt": "Screenshot of my project Scatterplot using d3.js",
-      "caption": "D3.js Scatterplot"
-    },
-    {
-      "href": "https://codepen.io/troyvassalotti/full/GRJVZVB",
-      "img": "heatmap_600x302",
-      "alt": "Screenshot of my project Heatmap using d3.js",
-      "caption": "D3.js Heatmap"
-    },
-    {
-      "href": "https://codepen.io/troyvassalotti/full/VwvwZMe",
-      "img": "choropleth_600x302",
-      "alt": "Screenshot of my project Choropleth using d3.js",
-      "caption": "D3.js Choropleth"
-    },
-    {
-      "href": "https://codepen.io/troyvassalotti/full/RwWoWKJ",
-      "img": "treemap_600x302",
-      "alt": "Screenshot of my project Treemap using d3.js",
-      "caption": "D3.js Treemap"
-    }
-  ],
   "homepage": [{
-      "href": "https://codepen.io/troyvassalotti/full/WNbZYJM",
-      "img": "random-quote_600px",
-      "alt": "Screenshot of my project Random Quote Generator",
-      "caption": "Random Quote Generator"
+      "href": "https://www.frontroyalband.com/",
+      "img": "screenshots/front-royal/desktopPage1920x1080",
+      "alt": "Screenshot of the homepage for my band, Front Royal.",
+      "caption": "Front Royal: The Band"
     },
     {
-      "href": "https://codepen.io/troyvassalotti/full/eYmwBrQ",
-      "img": "bandcamp-front-royal_ffss_600x299",
-      "alt": "Bandcamp recreation built using React.js",
-      "caption": "Bandcamp w/ React"
+      "href": "https://pang.netlify.app/",
+      "img": "screenshots/pang/desktopPage1920x1080",
+      "alt": "Screenshot of Pang, a fake social media site I made.",
+      "caption": "Pang: Social Media?"
     },
     {
-      "href": "https://codepen.io/troyvassalotti/full/BayqQGz",
-      "img": "pomodoro-clock_ffss_600x299",
-      "alt": "Screenshot of my project Pomodoro Clock",
-      "caption": "Pomodoro Clock"
+      "href": "https://www.abandoned.website/",
+      "img": "screenshots/abandoned-website/desktopPage1920x1080",
+      "alt": "Screenshot of the homepage for a concept I called Abandoned Website.",
+      "caption": "An Abandoned Website"
     }
   ]
 }
