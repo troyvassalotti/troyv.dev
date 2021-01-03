@@ -4,7 +4,7 @@ description: Social media is overwhelming, which is why I quit using a lot of it
 layout: post
 postDate: August 27th, 2020
 date: 2020-08-27
-tags: ['post', 'design', 'pang', 'project']
+tags: ['post', 'design', 'pang', 'project', 'nuxt']
 ---
 # Pang: A New Type of Social Media?
 We can all agree that social media is a lot to handle sometimes. I know I have a habit of scrolling on Reddit for far too long before I realize just how long it's been, and it isn't isolated to just Reddit. Twitter, Instagram, and the like are all in this bucket.

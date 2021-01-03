@@ -24,7 +24,7 @@
 /* ALL VARIABLES ABOVE */
 /* PLVYLIST BELOW */
 .plvylist {
-  /* padding: .5rem; */
+  padding: 1rem;
   font-family: var(--plvyFont);
   font-size: 16px;
   color: var(--plvyFontColor);
@@ -39,6 +39,7 @@
   display: block;
   margin: auto;
   height: auto;
+  width: initial;
 }
 
 .plvylist img#artwork {
