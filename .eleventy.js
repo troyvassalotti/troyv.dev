@@ -2,7 +2,7 @@ module.exports = function (eleventyConfig) {
   // Passthroughs
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("robots.txt");
-  eleventyConfig.addPassthroughCopy("contact/resume.pdf");
+  eleventyConfig.addPassthroughCopy("about/resume.pdf");
   eleventyConfig.addPassthroughCopy("favicon.ico");
 
   // A reusable block, so it helps to have it maintainable in one place
