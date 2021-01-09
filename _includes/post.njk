@@ -1,15 +1,17 @@
 ---
 layout: primary
-pageName: blogArticle
+pageName: postArticle
 ---
 <main class="article">
-  <section class="blog__header">
+  <header class="post__header">
     <div>
       <h1>{{ title }}</h1>
     </div>
     <div>
       <p>{{ postDate }}</p>
     </div>
-  </section>
-  {{ content | safe }}
+  </header>
+  <article>
+    {{ content | safe }}
+  </article>
 </main>

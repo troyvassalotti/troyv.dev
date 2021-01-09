@@ -1,5 +1,5 @@
 ---
-title: 'Project: Plvylist'
+title: 'Plvylist: Using Media Element API'
 description: I wanted to learn web audio, specifically the Media Element API. At first it was daunting and made no sense, but I realized it wasn't so bad after all.
 layout: post
 postDate: November 20th, 2020
@@ -7,7 +7,6 @@ date: 2020-11-20
 tags: ['post', 'design', 'plvylist', 'project', 'music', 'javascript']
 codeblock: true
 ---
-# Plvylist: A Web Audio Component
 At work, I'm surrounded by different web audio components. They're integral to the business, but they're also integral to so many businesses, and I barely understood how they get made.
 
 The basics made sense. Putting an `<audio>` or `<video>` element on a page with the proper attributes gives you a native song or movie with built-in controls, got it. Beyond that? No clue. So, I got to work learning and created [Plvylist - my own component for web audio](https://github.com/troyvassalotti/plvylist).

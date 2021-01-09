@@ -21,7 +21,7 @@ I'm still figuring that out. For years, I've had a pretty basic understanding of
 
 So while it hasn't been a mystery, a year of spreadsheet-tracking surely helped. Just look at these _graphs!_
 
-![Two charts I created with my migraine data](/images/migraines-charts.jpg)
+![Two charts I created with my migraine data](/assets/img/migraines-charts.jpg)
 
 ## What Was I Looking To Find?
 I have this ~~potentially unhealthy~~ truly great relationship with data and spreadsheets. Any and all data I thought could be useful I tracked; however, I was most excited for these:
@@ -34,7 +34,7 @@ I thought I'd have more graphs than I do, but I didn't want this project to cons
 ## What Did I Find?
 My main goal was to create calendar heat map detailing each migraine day, color coded by the main trigger, and I'd say I succeeded.
 
-![My migraine calendar heat map](/images/migraines-2019.jpg)
+![My migraine calendar heat map](/assets/img/migraines-2019.jpg)
 
 I created the calendar with the following underlying data:
 * Date

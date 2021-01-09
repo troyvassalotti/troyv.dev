@@ -1,12 +1,11 @@
 ---
-title: 'Project: Pang - A Social Media Revolution'
+title: 'Pang: A Social Media Revolution'
 description: Social media is overwhelming, which is why I quit using a lot of it, but that didn't stop me from creating my own app where I can enjoy it all alone. This is Pang.
 layout: post
 postDate: August 27th, 2020
 date: 2020-08-27
 tags: ['post', 'design', 'pang', 'project', 'nuxt']
 ---
-# Pang: A New Type of Social Media?
 We can all agree that social media is a lot to handle sometimes. I know I have a habit of scrolling on Reddit for far too long before I realize just how long it's been, and it isn't isolated to just Reddit. Twitter, Instagram, and the like are all in this bucket.
 
 Since deleting myself from Facebook, I've realized a few things about myself and others, but that's not what this post is about. This post is about [_Pang_](https://pang.netlify.app/).

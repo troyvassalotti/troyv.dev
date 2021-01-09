@@ -1,9 +1,6 @@
 module.exports = function (eleventyConfig) {
   // Passthroughs
-  eleventyConfig.addPassthroughCopy("images");
-  eleventyConfig.addPassthroughCopy("css");
-  eleventyConfig.addPassthroughCopy("js");
-  eleventyConfig.addPassthroughCopy("audio");
+  eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("robots.txt");
   eleventyConfig.addPassthroughCopy("contact/resume.pdf");
   eleventyConfig.addPassthroughCopy("favicon.ico");
@@ -24,8 +21,8 @@ module.exports = function (eleventyConfig) {
     return `<figure>
       <a href="${href}" ${target}>
         <picture>
-          <source srcset="/images/${img}.webp" type="image/webp"/>
-          <img src="/images/${img}.jpg" alt="${alt}" width="${w}" height="${h}" loading="lazy"/>
+          <source srcset="/assets/img/${img}.webp" type="image/webp"/>
+          <img src="/assets/img/${img}.jpg" alt="${alt}" width="${w}" height="${h}" loading="lazy"/>
         </picture>
       </a>
       <figcaption>${caption}</figcaption>
@@ -43,8 +40,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addShortcode("linkedPicture", function (href, img, alt, fallbackType, w, h, target = 'target="_blank" rel="noopener"') {
     return `<a href="${href}" ${target}>
       <picture>
-        <source srcset="/images/${img}.webp" type="image/webp"/>
-        <img src="/images/${img}.${fallbackType}" alt="${alt}" width="${w}" height="${h}" loading="lazy"/>
+        <source srcset="/assets/img/${img}.webp" type="image/webp"/>
+        <img src="/assets/img/${img}.${fallbackType}" alt="${alt}" width="${w}" height="${h}" loading="lazy"/>
       </picture>
     </a>`
   })
@@ -52,7 +49,7 @@ module.exports = function (eleventyConfig) {
   // A reusable block, so it helps to have it maintainable in one place
   eleventyConfig.addShortcode("screenshot", function (href, website, alt, target = 'target="_blank" rel="noopener"') {
     return `<a href="${href}" ${target}>
-        <img src="/images/screenshots/${website}/desktopPage1920x1080.jpeg" alt="${alt}" width="320" height="180" loading="lazy"/>
+        <img src="/assets/img/screenshots/${website}/desktopPage1920x1080.jpeg" alt="${alt}" width="320" height="180" loading="lazy"/>
     </a>`
   })
 }

@@ -6,34 +6,28 @@ pageName: musicPage
 plvylist: true
 ---
 <main class="grid place-center">
-  <section class="hero">
+  <header class="hero">
     <h1 class="hero__header">{{ title }}</h1>
-  </section>
-  <section class="flex col banner full-width">
-    <header class="center-txt">
-      <h2>I Write Sounds</h2>
-      <h3>Check out my bands below.</h3>
-    </header>
-  </section>
+  </header>
   <section class="grid split">
     <article class="flex-center col left-column">
       <div class="flex col" id="frontRoyal">
         {% linkedPicture 'https://frontroyalmd.bandcamp.com/', 'front-royal-logo-white_400x240', 'The logo for my band, Front Royal.', 'png', 400, 240 %}
-        <aside class="icon-bar">
+        <div class="icon-bar">
           {% for social in music.frontRoyalSocial %}
-            <a class="icon-link" href="{{ social.href }}" target="_blank" rel="noopener" aria-label="{{ social.aria }}"><img src="/images/{{ social.img }}" alt="{{ social.alt }}" loading="lazy" width="48" height="48"></a>
+            <a class="icon-link" href="{{ social.href }}" target="_blank" rel="noopener" aria-label="{{ social.aria }}"><img src="/assets/img/{{ social.img }}" alt="{{ social.alt }}" loading="lazy" width="48" height="48"></a>
           {% endfor %}
-        </aside>
+        </div>
       </div>
     </article>
     <article class="flex-center col right-column">
       <div class="flex col" id="troy">
         {% linkedPicture 'https://justtroy.bandcamp.com/', 'troy-full', 'The logo for my band, troy.', 'png', 600, 300 %}
-        <aside class="icon-bar">
+        <div class="icon-bar">
           {% for social in music.troySocial %}
-            <a class="icon-link" href="{{ social.href }}" target="_blank" rel="noopener" aria-label="{{ social.aria }}"><img src="/images/{{ social.img }}" alt="{{ social.alt }}" loading="lazy" width="48" height="48"></a>
+            <a class="icon-link" href="{{ social.href }}" target="_blank" rel="noopener" aria-label="{{ social.aria }}"><img src="/assets/img/{{ social.img }}" alt="{{ social.alt }}" loading="lazy" width="48" height="48"></a>
           {% endfor %}
-        </aside>
+        </div>
       </div>
     </article>
   </section>

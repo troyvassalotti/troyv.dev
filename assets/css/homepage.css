@@ -1,7 +1,7 @@
 /* ======================
   Page Styles
   ======================= */
-#blog .button__container {
+#posts .button__container {
   margin-top: 2rem;
 }
 
@@ -78,8 +78,8 @@ main {
     place-items: start;
   }
 
-  .blogs,
-  .collection {
+  .collection,
+  .posts {
     grid-area: 1 / 2 / 3 / 3;
   }
 

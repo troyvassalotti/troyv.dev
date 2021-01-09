@@ -1,0 +1,28 @@
+---
+title: About
+description: I'd love to work with you on your next big project. Learn more about me and let's talk.
+layout: primary
+pageName: aboutPage
+---
+<main class="grid place-center">
+  <header class="hero">
+    <h1 class="hero__header">{{ title }}</h1>
+  </header>
+  <section class="flex col contain center-txt">
+    <h2>Let's Work Together</h2>
+    <p>{{ description }}</p>
+  </section>
+  <article class="flex col contain">
+    <div class="grid split">
+      {% contactForm %}
+      <aside>
+        <h2>View My Résumé</h2>
+        <p>It's updated about as often as anyone else's résumé, but it looks nice and prints well, so it should suffice.</p>
+        <ul>
+          <li><a href="resume-v2/">As a webpage</a></li>
+          <li><a href="resume.pdf">As a PDF</a></li>
+        </ul>
+      </aside>
+    </div>
+  </article>
+</main>

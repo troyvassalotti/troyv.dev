@@ -1,5 +1,5 @@
 ---
-title: 'Project: troy. is a band'
+title: 'troy. is a band'
 description: I decided to give troy. - a band I have - a website.
 layout: post
 postDate: November 28th, 2020
@@ -7,7 +7,6 @@ date: 2020-11-28
 tags: ['post', 'design', 'plvylist', 'project', 'music']
 codeblock: true
 ---
-# troy. is a band
 If you've looked around here, you would've noticed I write music under the name [_troy._](https://justtroy.bandcamp.com), which I call a band but it's really just me. I used to be called Action Hamilton until I decided that was too weird and people around me convinced me to change it.
 
 I don't do anything serious with troy..

@@ -1,12 +1,11 @@
 ---
-title: 'Project: An Abandoned Website'
+title: 'An Abandoned Website'
 description: We've all come across an abandoned website that was left to wither away and never be thought about again. Well, what if it actually looked that way too?
 layout: post
 postDate: September 12th, 2020
 date: 2020-09-12
 tags: ['post', 'design', 'abandoned', 'project', 'hugo']
 ---
-# An Abandoned Website
 Websites can be bought and live on forever...or so long as the domain name continues to be renewed. As a result, some sites just become abandoned, living in the aether, but because of backwards compatibility they don't really _look abandoned_.
 
 Well, what if they did? What if the website deteriorated over time, things fell apart, and the darkness came to consume it? That's where my new project, [www.abandoned.website](https://www.abandoned.website), comes in.

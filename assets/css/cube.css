@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Native';
-  src: url("/css/fonts/native/Native-Light.woff2") format("woff2");
+  src: url("/assets/css/fonts/native/Native-Light.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -8,7 +8,7 @@
 }
 @font-face {
   font-family: 'Lora';
-  src: url("/css/fonts/lora/lora-v15-latin-500.woff2") format("woff2");
+  src: url("/assets/css/fonts/lora/lora-v15-latin-500.woff2") format("woff2");
   font-style: normal;
   font-weight: 500;
   font-display: swap;
@@ -16,7 +16,7 @@
 }
 @font-face {
   font-family: 'Lora';
-  src: url("/css/fonts/lora/lora-v15-latin-700.woff2") format("woff2");
+  src: url("/assets/css/fonts/lora/lora-v15-latin-700.woff2") format("woff2");
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -24,7 +24,7 @@
 }
 @font-face {
   font-family: 'Montserrat';
-  src: url("/css/fonts/montserrat/montserrat-v14-latin-300.woff2") format("woff2");
+  src: url("/assets/css/fonts/montserrat/montserrat-v14-latin-300.woff2") format("woff2");
   font-style: normal;
   font-weight: 300;
   font-display: swap;
@@ -32,7 +32,7 @@
 }
 @font-face {
   font-family: 'Montserrat';
-  src: url("/css/fonts/montserrat/montserrat-v14-latin-300italic.woff2") format("woff2");
+  src: url("/assets/css/fonts/montserrat/montserrat-v14-latin-300italic.woff2") format("woff2");
   font-style: italic;
   font-weight: 300;
   font-display: swap;
@@ -40,7 +40,7 @@
 }
 @font-face {
   font-family: 'Montserrat';
-  src: url("/css/fonts/montserrat/montserrat-v14-latin-regular.woff2") format("woff2");
+  src: url("/assets/css/fonts/montserrat/montserrat-v14-latin-regular.woff2") format("woff2");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -48,7 +48,7 @@
 }
 @font-face {
   font-family: 'Montserrat';
-  src: url("/css/fonts/montserrat/montserrat-v14-latin-italic.woff2") format("woff2");
+  src: url("/assets/css/fonts/montserrat/montserrat-v14-latin-italic.woff2") format("woff2");
   font-style: italic;
   font-weight: 400;
   font-display: swap;
@@ -56,7 +56,7 @@
 }
 @font-face {
   font-family: 'Montserrat';
-  src: url("/css/fonts/montserrat/montserrat-v14-latin-700.woff2") format("woff2");
+  src: url("/assets/css/fonts/montserrat/montserrat-v14-latin-700.woff2") format("woff2");
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -64,7 +64,7 @@
 }
 @font-face {
   font-family: 'Quicksand';
-  src: url("/css/fonts/quicksand/quicksand-v20-latin-500.woff2") format("woff2");
+  src: url("/assets/css/fonts/quicksand/quicksand-v20-latin-500.woff2") format("woff2");
   font-style: normal;
   font-weight: 500;
   font-display: swap;
@@ -72,7 +72,7 @@
 }
 @font-face {
   font-family: 'Quicksand';
-  src: url("/css/fonts/quicksand/quicksand-v20-latin-700.woff2") format("woff2");
+  src: url("/assets/css/fonts/quicksand/quicksand-v20-latin-700.woff2") format("woff2");
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -131,42 +131,42 @@ main {
   margin-bottom: 5rem;
 }
 
-.blogPage {
+.postsPage {
   /* Photo by Mike Kus made available by Team Treehouse */
-  --banner: url("https://www.troyv.dev/images/road.jpg");
+  --banner: url("https://www.troyv.dev/assets/img/road.jpg");
 }
 
 .projectsPage {
-  --banner: url("https://www.troyv.dev/images/caution-bg.jpg");
+  --banner: url("https://www.troyv.dev/assets/img/caution-bg.jpg");
 }
 
 .musicPage {
-  --banner: url("https://www.troyv.dev/images/guitar-on-bed.jpg");
+  --banner: url("https://www.troyv.dev/assets/img/guitar-on-bed.jpg");
 }
 
-.contactPage {
-  --banner: url("https://www.troyv.dev/images/cleveland.jpg");
+.aboutPage {
+  --banner: url("https://www.troyv.dev/assets/img/cleveland.jpg");
 }
 
-.contactPage .hero__header,
+.aboutPage .hero__header,
 .projectsPage .hero__header {
   margin-top: auto;
   border-bottom: var(--headerBorder);
 }
 
-.contactPage .hero,
+.aboutPage .hero,
 .projectsPage .hero {
   padding-bottom: var(--headerPadding);
 }
 
-.blogPage .hero__header,
-.musicPage .hero__header {
+.musicPage .hero__header,
+.postsPage .hero__header {
   margin-bottom: auto;
   border-top: var(--headerBorder);
 }
 
-.blogPage .hero,
-.musicPage .hero {
+.musicPage .hero,
+.postsPage .hero {
   padding-top: var(--headerPadding);
 }
 
@@ -379,11 +379,6 @@ h6 {
   background-color: var(--darkPrimary);
   padding: 0 1.5rem;
   border-right: var(--headerBorder);
-}
-
-.banner {
-  background: var(--whitePrimary);
-  color: var(--blackPrimary);
 }
 /* ======================
   Navigation Styles
@@ -749,20 +744,20 @@ footer p {
   max-width: 48px;
 }
 
-.blog-listing {
+.post-listing {
   padding-left: 2rem;
   border-left: 2px solid var(--goldPrimary);
 }
 
-.blog-listing p {
+.post-listing p {
   margin: 1rem 0 0;
 }
 
-.blog-listing__container {
+.post-listing__container {
   max-width: 90em;
 }
 
-.blog__header {
+.post__header {
   border-bottom: 2px solid var(--goldPrimary);
 }
 
@@ -773,8 +768,10 @@ footer p {
   margin-right: auto;
 }
 
-.article h2 {
-  margin-top: 8%;
+.article h2,
+.article h3,
+.article h4 {
+  margin-top: revert;
 }
 
 .album .description {
@@ -870,9 +867,9 @@ footer p {
     color: var(--whitePrimary);
   }
 
-  #link__blog:hover,
   #link__home:hover,
-  #link__music:hover {
+  #link__music:hover,
+  #link__posts:hover {
     background-color: transparent;
     text-decoration: underline;
     text-decoration-thickness: .3rem;
@@ -891,13 +888,13 @@ footer p {
     text-decoration-color: var(--goldPrimary);
   }
 
-  #link__contact:hover {
+  #link__about:hover {
     background: var(--bluePrimary);
     color: var(--blackPrimary);
     border-radius: 1rem;
   }
 
-  #link__blog:hover {
+  #link__posts:hover {
     text-decoration-color: var(--greenPrimary);
   }
 
@@ -911,7 +908,7 @@ footer p {
     max-width: 1350px;
   }
 
-  .contactPage .split {
+  .aboutPage .split {
     place-items: center;
     width: 100%;
   }
@@ -1022,11 +1019,6 @@ footer p {
     background-color: var(--blackLight);
   }
 
-  .banner {
-    background: var(--blackLight);
-    color: var(--lightLight);
-  }
-
   ul.navbar a {
     color: var(--lightLight);
   }
@@ -1084,8 +1076,8 @@ footer p {
     background: var(--blackLight);
   }
 
-  .blog-listing,
-  .blog__header,
+  .post-listing,
+  .post__header,
   blockquote {
     border-color: var(--redLight);
   }
@@ -1133,12 +1125,12 @@ footer p {
     text-decoration-color: var(--redLight);
   }
 
-  #link__contact:hover {
+  #link__about:hover {
     background: var(--blueLight);
     color: var(--lightLight);
   }
 
-  #link__blog:hover {
+  #link__posts:hover {
     text-decoration-color: var(--cobaltLight);
   }
 }

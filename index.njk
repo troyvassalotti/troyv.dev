@@ -11,62 +11,60 @@ pageName: homepage
     <h1 class="typewriter typewriter__1">Hey, I'm Troy...</h1>
     <p class="typewriter typewriter__2">...and I make things.</p>
   </section>
-  <section class="section contain" id="blog">
+  <section class="section contain" id="posts">
     <div class="header">
-      <h2>My Blog</h2>
-      <p>Everyone's got a blog these days, and I've always stayed away from making my own.</p>
-      <p>Then I started thinking about bigger and better projects and realized a blog is a great way to showcase those.</p>
+      <h2>Recent Posts</h2>
+      <p>Everyone's got a blog these days, am I right? Keep up with my latest projects and what's happening in the very particular piece of my life I decide to share with you.</p>
     </div>
-    <div class="blogs">
-      <div class="grid full-width blog-listing__container">
+    <div class="posts">
+      <div class="grid full-width post-listing__container">
       {%- for post in collections.post.slice(collections.post.length - 2, collections.post.length) | reverse -%}
-        <article class="blog-listing">
+        <article class="post-listing">
           <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
           <p>{{ post.data.description }}</p>
         </article>
       {%- endfor -%}
       </div>
     </div>
-    {% button '/blog/', 'Visit my blog', 'My Blog', '' %}
+    {% button '/posts/', 'Read my posts', 'My Posts', '' %}
   </section>
   <section class="section contain" id="projects">
     <div class="header">
-      <h2>My Projects</h2>
-      <p>These are some of my favorite projects, but I have many more. Take a look!</p>
+      <h2>Projects</h2>
+      <p>These are some of my favorite projects, but I have many more.</p>
     </div>
     <div class="collection center-txt">
       {% for project in projects.homepage -%}
         <figure>
           <a href="{{ project.href }}" target="_blank" rel="noopener">
-            <img src="/images/{{ project.img }}.jpeg" alt="{{ project.alt }}" width="320" height="180" loading="lazy"/>
+            <img src="/assets/img/{{ project.img }}.jpeg" alt="{{ project.alt }}" width="320" height="180" loading="lazy"/>
           </a>
           <figcaption>{{ project.caption }}</figcaption>
         </figure>
       {% endfor -%}
     </div>
-    {% button '/projects/', 'View all my projects.', 'My Projects', '' %}
+    {% button '/projects/', 'View my projects.', 'My Projects', '' %}
   </section>
   <section class="section contain" id="music">
     <div class="header">
-      <h2>My Music</h2>
-      <p>When I’m not building a new web project, you can hear me working on a band project.</p>
-      <p>My friends and I started Front Royal with the desire to make a name for ourselves.</p>
-      <p>I started troy. at a time when I felt the need to explore a whole new outlet.</p>
+      <h2>Music</h2>
+      <p>When I’m not coding, maybe I'm writing.</p>
+      <p>My friends and I started Front Royal with the desire to make a name for ourselves, and I started troy. to explore a new outlet.</p>
     </div>
     <div class="collection music">
-      <div id="troy">
-        {% linkedPicture 'https://justtroy.bandcamp.com/', 'troy-full', 'The logo for my band, troy.', 'png', 600, 300 %}
-      </div>
       <div id="frontRoyal">
         {% linkedPicture 'https://frontroyalmd.bandcamp.com/', 'front-royal-logo-white_400x240', 'The logo for my band, Front Royal.', 'png', 400, 240 %}
+      </div>
+      <div id="troy">
+        {% linkedPicture 'https://justtroy.bandcamp.com/', 'troy-full', 'The logo for my band, troy.', 'png', 600, 300 %}
       </div>
     </div>
     {% button '/music/', 'Learn more about my music.', 'My Music', '' %}
   </section>
   <section class="section contain" id="contact">
     <div class="header">
-      <h2>My Contact</h2>
-      <p>Take a look around, and if you like what you see then feel free to contact me.</p>
+      <h2>Reach Me</h2>
+      <p>Take a look around and if you like what you see then feel free to get in touch.</p>
     </div>
     {% contactForm %}
   </section>
