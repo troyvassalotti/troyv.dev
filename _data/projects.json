@@ -3,19 +3,19 @@
       "href": "https://www.frontroyalband.com/",
       "img": "screenshots/front-royal/desktopPage1920x1080",
       "alt": "Screenshot of the homepage for my band, Front Royal.",
-      "caption": "Front Royal: The Band"
+      "caption": "frontroyalband.com"
     },
     {
-      "href": "https://pang.netlify.app/",
-      "img": "screenshots/pang/desktopPage1920x1080",
-      "alt": "Screenshot of Pang, a fake social media site I made.",
-      "caption": "Pang: Social Media?"
+      "href": "https://www.notsocial.app/",
+      "img": "screenshots/notsocial/desktopPage1920x1080",
+      "alt": "Screenshot of NotSocial, a fake social media site I made.",
+      "caption": "notsocial.app"
     },
     {
       "href": "https://www.abandoned.website/",
       "img": "screenshots/abandoned-website/desktopPage1920x1080",
       "alt": "Screenshot of the homepage for a concept I called Abandoned Website.",
-      "caption": "An Abandoned Website"
+      "caption": "abandoned.website"
     }
   ]
 }

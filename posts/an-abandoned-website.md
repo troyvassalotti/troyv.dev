@@ -25,7 +25,7 @@ As with every project, the final product never quite lives up to the vision in y
 
 Anyway, with everything that was 2020, it came time to pick this project up! I created this site with the intention of - as I mentioned - making a website look abandoned, but it turned out to also be a journey into the world of building a website [using Hugo](https://gohugo.io/).
 
-Hugo's great. I was really worried for a while that I chose the wrong static site generator when I actually read the docs (should've learned my [lesson from Pang](../pang-social-media)), but I accepted the challenge and made it anyway.
+Hugo's great. I was really worried for a while that I chose the wrong static site generator when I actually read the docs (should've learned my [lesson from fake social media app](../not-social-media)), but I accepted the challenge and made it anyway.
 
 It wasn't a complete mistake! Now, Hugo might not be the best suited option here:
 - This site isn't really a blog.
