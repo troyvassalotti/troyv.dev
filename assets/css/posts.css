@@ -1,0 +1,16 @@
+.postsPage .post-listing {
+  padding-inline-start: 1ch;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.postsPage .all-posts h2 {
+  font-size: var(--step-2);
+}
+
+.postsPage .posts-container {
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  align-items: center;
+}

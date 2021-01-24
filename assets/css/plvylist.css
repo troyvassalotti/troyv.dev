@@ -268,7 +268,7 @@ ALL THE STYLES FOR THE SLIDER INPUTS ABOVE HERE
     align-items: end;
   }
 }
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   :root {
     --plvyBlue: var(--blueLight);
     --plvyRed: var(--redLight);
@@ -286,6 +286,5 @@ ALL THE STYLES FOR THE SLIDER INPUTS ABOVE HERE
     --plvyMainBG: var(--plvyWhite);
     --plvyLoopColor: var(--plvyRed);
     --plvyArtShadow: var(--plvyBlack);
-    /* --plvyResponsiveFont: clamp(0.9113rem, 0.8922rem + 0.0951vw, 0.96rem); */
   }
-}
+} */

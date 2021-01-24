@@ -1,0 +1,52 @@
+/* .musicPage .page-header {
+  color: var(--blackPrimary);
+} */
+.bands-container .section-header p {
+  max-width: 60ch;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+}
+
+.bands {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.band {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  margin-inline-start: 1ex;
+  margin-inline-end: 1ex;
+}
+
+.band-logo img {
+  max-width: 300px;
+}
+
+.icon-bar {
+  background-color: var(--whitePrimary);
+  padding: 1ex 2ex;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 325px;
+  margin: auto;
+  align-items: center;
+}
+
+.icon-bar img {
+  max-width: 48px;
+}
+
+.music-player {
+  margin-block-start: 2em;
+  margin-block-end: 2em;
+}
+
+.music-player header p {
+  max-width: 60ch;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+}

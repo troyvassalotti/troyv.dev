@@ -1,0 +1,26 @@
+.main-info {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.aboutPage .resumes {
+  flex: 1 0 40%;
+}
+
+.aboutPage .resumes header p {
+  max-width: 45ch;
+}
+
+.aboutPage .form .wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.aboutPage .form {
+  flex: 1 0 50%;
+}
+
+.aboutPage .form .content header {
+  text-align: end;
+}

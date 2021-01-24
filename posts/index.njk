@@ -3,17 +3,25 @@ title: Posts
 description: I occasionally write about things that enter my mind or the excessive amounts of data I keep on myself.
 layout: primary
 pageName: postsPage
+pageCSS: posts
+pageJS: posts
 ---
-<main class="grid place-center">
-  <header class="hero">
-    <h1 class="hero__header">{{ title }}</h1>
+<main class="layout">
+  <header class="page-header center">
+    <div class="wrapper">
+      <h1><span id="posts-title">{{ title }}</span></h1>
+    </div>
   </header>
-  <div class="grid full-width post-listing__container">
-  {%- for post in collections.post | reverse -%}
-    <article class="post-listing">
-      <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
-      <p>{{ post.data.description }}</p>
-    </article>
-  {%- endfor -%}
-  </div>
+  <section class="all-posts full">
+    <div class="wrapper">
+      <div class="grid posts-container">
+      {%- for post in collections.post | reverse -%}
+        <article class="post-listing">
+          <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+          <p>{{ post.data.description }}</p>
+        </article>
+      {%- endfor -%}
+      </div>
+    </div>
+  </section>
 </main>

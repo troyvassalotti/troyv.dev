@@ -30,10 +30,8 @@ module.exports = function (eleventyConfig) {
   })
 
   // A reusable block, so it helps to have it maintainable in one place
-  eleventyConfig.addShortcode("button", function (href, aria, text, target = 'target="_blank" rel="noopener"') {
-    return `<div class="button__container">
-      <a class="button" href="${href}" aria-label="${aria}" ${target}>${text}</a>
-    </div>`
+  eleventyConfig.addShortcode("button", function (href, text, target = 'target="_blank" rel="noopener"') {
+    return `<a class="button" href="${href}" ${target}>${text}</a>`
   })
 
   // A reusable block, so it helps to have it maintainable in one place

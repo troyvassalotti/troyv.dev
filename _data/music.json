@@ -1,32 +1,27 @@
 {
   "frontRoyalSocial": [{
       "href": "https://frontroyalmd.bandcamp.com/",
-      "aria": "Visit the Front Royal Bandcamp page.",
       "img": "bandcamp-button-bc-circle-black-64.png",
       "alt": "Bandcamp"
     },
     {
       "href": "https://www.instagram.com/frontroyal_official/",
-      "aria": "Visit the Front Royal Instagram.",
       "img": "instagram-black.svg",
       "alt": "Instagram"
     },
     {
       "href": "https://www.youtube.com/channel/UCm-KryhT3o9NZSbpG-M1qCQ/feed",
-      "aria": "Visit the Front Royal YouTube channel.",
       "img": "youtube-black.svg",
       "alt": "YouTube"
     },
     {
       "href": "https://www.facebook.com/FrontRoyalMD",
-      "aria": "Visit the Front Royal Facebook.",
       "img": "facebook-black.svg",
       "alt": "Facebook"
     }
   ],
   "troySocial": [{
     "href": "https://justtroy.bandcamp.com/",
-    "aria": "Visit the troy. Bandcamp page.",
     "img": "bandcamp-button-bc-circle-black-64.png",
     "alt": "Bandcamp"
   }]

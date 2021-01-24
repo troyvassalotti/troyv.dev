@@ -1,17 +1,18 @@
 ---
 layout: primary
-pageName: postArticle
 ---
-<main class="article">
-  <header class="post__header">
-    <div>
-      <h1>{{ title }}</h1>
-    </div>
-    <div>
-      <p>{{ postDate }}</p>
-    </div>
-  </header>
-  <article>
-    {{ content | safe }}
-  </article>
+<main class="post">
+  <div class="wrapper">
+    <header class="post-header">
+      <div>
+        <h1 id="post-title">{{ title }}</h1>
+      </div>
+      <div>
+        <p id="post-date">{{ postDate }}</p>
+      </div>
+    </header>
+    <article class="post-body">
+      {{ content | safe }}
+    </article>
+  </div>
 </main>

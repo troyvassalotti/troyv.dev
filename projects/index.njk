@@ -3,101 +3,138 @@ title: Projects
 description: These are a few of the projects I've made, but there are many more.
 layout: primary
 pageName: projectsPage
+pageCSS: projects
+pageJS: projects
 ---
-<main class="grid place-center">
-  <header class="hero">
-    <h1 class="hero__header">{{ title }}</h1>
+<main class="layout">
+  <header class="page-header center">
+    <div class="wrapper">
+      <h1><span id="proj-title">{{ title }}</span></h1>
+    </div>
   </header>
-  <section class="grid full-width">
-    <article class="flex col full-width skew__up">
-      <h2 class="full-width">Front Royal (The Band, Not The Town)</h2>
-      <section class="skew skew__down" id="froro">
-        <div class="grid place-center content">
-          <div>
-            <p>When we decided to take the plunge and have a website of our own, I signed myself up to make it. It gave me the opportunity to try some new things out and I'm proud of the result.</p>
-            <p class="description"><b>Built With:</b> Eleventy.</p>
-          </div>
-          <div>
-            {% screenshot 'https://www.frontroyalband.com', 'front-royal', 'Screenshot of the Front Royal website' %}
+  <section class="projects__focus">
+    <article class="project" id="project_fr">
+      <h2>Front Royal (The Band, Not The Town)</h2>
+      <div class="skewed-background col full">
+        <div class="wrapper" data-constrain="some">
+          <div class="content">
+            <section class="project-image">
+              {% screenshot 'https://www.frontroyalband.com', 'front-royal', 'Screenshot of the Front Royal website' %}
+            </section>
+            <section class="project-description">
+              <p>When we decided to take the plunge and have a website of our own, I signed myself up to make it. It gave me the opportunity to try some new things out and I'm proud of the result.</p>
+              <p class="details">Built With: Eleventy.</p>
+            </section>
           </div>
         </div>
-      </section>
+      </div>
     </article>
-    <article class="flex col full-width skew__up">
-      <h2 class="full-width">NotSocial: A New Type of Social Media</h2>
-      <section class="skew skew__down" id="pang">
-        <div class="grid place-center content">
-          <div>
-            <p>You ever wish you had a social media platform that didn't consume your life, but still gave you entertainment? Look no further than NotSocial.</p>
-            <p class="description"><b>Built With:</b> Nuxt.</p>
-          </div>
-          <div>
-            {% screenshot 'https://www.notsocial.app/', 'notsocial', 'Screenshot of the NotSocial website' %}
+    <article class="project" id="project_ns">
+      <h2>NotSocial: A New Type of Social Media</h2>
+      <div class="skewed-background col full">
+        <div class="wrapper" data-constrain="some">
+          <div class="content">
+            <section class="project-image">
+              {% screenshot 'https://www.notsocial.app/', 'notsocial', 'Screenshot of the NotSocial website' %}
+            </section>
+            <section class="project-description">
+              <p>You ever wish you had a social media platform that didn't consume your life, but still gave you entertainment? Look no further than NotSocial.</p>
+              <p class="details">Built With: Nuxt.</p>
+            </section>
           </div>
         </div>
-      </section>
+      </div>
     </article>
-    <article class="flex col full-width skew__up">
-      <h2 class="full-width">Abandoned.Website</h2>
-      <section class="skew skew__down" id="abandoned">
-        <div class="grid place-center content">
-          <div>
-            <p>What if a website, left to wither away and be forgotten, actually looked abandoned over time?</p>
-            <p class="description"><b>Built With:</b> Hugo.</p>
-          </div>
-          <div>
-            {% screenshot 'https://www.abandoned.website', 'abandoned-website', 'Screenshot of the Abandoned Website homepage' %}
+    <article class="project" id="project_aw">
+      <h2>An Abandoned Website</h2>
+      <div class="skewed-background col full">
+        <div class="wrapper" data-constrain="some">
+          <div class="content">
+            <section class="project-image">
+              {% screenshot 'https://www.abandoned.website', 'abandoned-website', 'Screenshot of the Abandoned Website homepage' %}
+            </section>
+            <section class="project-description">
+              <p>What if a website, left to wither away and be forgotten, actually looked abandoned over time?</p>
+              <p class="details">Built With: Hugo.</p>
+            </section>
           </div>
         </div>
-      </section>
+      </div>
     </article>
-    <article class="flex col full-width skew__up">
-      <h2 class="full-width">troy. is a band</h2>
-      <section class="skew skew__down" id="validcharacters">
-        <div class="grid place-center content">
-          <div>
-            <p>I decided to give troy. - a band I have - a website. While I don't do anything serious with the band, it was fun to make something.</p>
-            <p class="description"><b>Built With:</b> Eleventy.</p>
-          </div>
-          <div>
-            {% screenshot 'https://validcharacters.netlify.app', 'validcharacters', 'Screenshot of the troy. homepage' %}
+    <article class="project" id="project_tr">
+      <h2>troy. is a band</h2>
+      <div class="skewed-background col full">
+        <div class="wrapper" data-constrain="some">
+          <div class="content">
+            <section class="project-image">
+              {% screenshot 'https://validcharacters.netlify.app', 'validcharacters', 'Screenshot of the troy. homepage' %}
+            </section>
+            <section class="project-description">
+              <p>i decided to give troy. - a band I have - a website. while i don't do anything serious with the band, it was fun to make something.</p>
+              <p class="details">built with: eleventy.</p>
+            </section>
           </div>
         </div>
-      </section>
+      </div>
     </article>
   </section>
-  <section class="flex col contain">
-    <header class="section-header">
+  <section class="codepen">
+    <div class="wrapper">
       <h3>View More on CodePen</h3>
-      <p>I've made a lot of things - bigger and smaller - that would be impossible to keep track of on here. From practicing responsive design and JavaScript frameworks, to even coding emails (yikes!), I'm always creating new things.</p>
-      <p>You could say I'm kinda just winging it, but those random projects tend to live over on CodePen.</p>
-    </header>
-    {% button 'https://codepen.io/troyvassalotti', 'View more experiments on my CodePen', 'Visit My CodePen' %}
+      <p>I've made a lot of things - bigger and smaller - that would be impossible to keep track of on here. From experimenting with JavaScript frameworks, to making things animate for no good reason, to even coding emails (yikes!). You could say I'm winging it over there.</p>
+      {% button 'https://codepen.io/troyvassalotti', 'See My CodePen' %}
+    </div>
   </section>
-  <article class="flex col contain">
-    <header class="section-header">
-      <h2>Big Data</h2>
-      <p>I enjoy tracking random parts of my life, such as my migraines or how my Spotify listening habits change with the season.</p>
+  <section class="misc">
+    <header>
+      <h2>Other Fun Stuff</h2>
+      <p>These projects don't really have a home, but I've done them so I'm going to show them off.</p>
     </header>
-    <section class="collection">
-      {% figure '/posts/i-logged-my-migraines-for-a-year/', 'migraines-2019', 'Screenshot of my a graph of my 2019 Migraine Calendar', '2019 Migraine Calendar', 600, 302, '' %}
-      <figure>
-        <picture>
-          <source srcset="/assets/img/coming-soon.webp" type="image/webp"/>
-          <img src="/assets/img/coming-soon.jpg" alt="" width="600" height="302" loading="lazy" data-state="stay"/>
-        </picture>
-        <figcaption>More Coming Soon...</figcaption>
+    <div class="projects__misc">
+      <figure class="caption-overlay">
+        <a class="caption-link" href="/posts/i-logged-my-migraines-for-a-year/">
+          <picture>
+            <source srcset="/assets/img/migraines-2019.webp" type="image/webp"/>
+            <img class="caption-image" src="/assets/img/migraines-2019.jpg" alt="Screenshot of my a graph of my 2019 Migraine Calendar" width="600" height="302" loading="lazy"/>
+          </picture>
+          <div class="caption">
+            <figcaption>
+              <h3>2019 Migraine Calendar</h3>
+            </figcaption>
+          </div>
+        </a>
       </figure>
-    </section>
-  </article>
-  <article class="flex col contain">
-    <header class="section-header">
-      <h2>Video Editing</h2>
-      <p>I occasionally edit videos for fun. Here are two times I secretly took over the Front Royal band vlog.</p>
-    </header>
-    <section class="collection">
-      {% figure 'https://www.youtube.com/watch?v=DN29m0xBCDg', 'takeover-1', 'Screenshot from my first real vlog', 'Vlog Takeover #1', 600, 302 %}
-      {% figure 'https://www.youtube.com/watch?v=8LUoVGik9g8', 'takeover-2', 'Screenshot from my second real vlog', 'Vlog Takeover #2', 600, 302 %}
-    </section>
-  </article>
+      <figure class="caption-overlay">
+        <a class="caption-link" href="https://www.youtube.com/watch?v=DN29m0xBCDg" target="_blank" rel="noopener">
+          <picture>
+            <source srcset="/assets/img/takeover-1.webp" type="image/webp"/>
+            <img class="caption-image" src="/assets/img/takeover-1.jpg" alt="Screenshot from my first real vlog" width="600" height="302" loading="lazy"/>
+          </picture>
+          <div class="caption">
+            <figcaption>
+              <h3>Front Royal Vlog Edit #1</h3>
+            </figcaption>
+          </div>
+        </a>
+      </figure>
+      <figure class="caption-overlay">
+        <a class="caption-link" href="https://www.youtube.com/watch?v=8LUoVGik9g8" target="_blank" rel="noopener">
+          <picture>
+            <source srcset="/assets/img/takeover-2.webp" type="image/webp"/>
+            <img class="caption-image" src="/assets/img/takeover-2.jpg" alt="Screenshot from my second real vlog" width="600" height="302" loading="lazy"/>
+          </picture>
+          <div class="caption">
+            <figcaption>
+              <h3>Front Royal Vlog Edit #2</h3>
+            </figcaption>
+          </div>
+        </a>
+      </figure>
+      <figure class="caption-overlay">
+        <div class="full flex-center col tall">
+          <h3>More Coming Soon...</h3>
+        </div>
+      </figure>
+    </div>
+  </section>
 </main>

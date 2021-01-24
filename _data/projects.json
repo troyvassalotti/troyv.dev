@@ -1,21 +1,24 @@
 {
   "homepage": [{
-      "href": "https://www.frontroyalband.com/",
-      "img": "screenshots/front-royal/desktopPage1920x1080",
-      "alt": "Screenshot of the homepage for my band, Front Royal.",
-      "caption": "frontroyalband.com"
+      "href": "https://www.abandoned.website/",
+      "img": "screenshots/abandoned-website/desktopPage1920x1080",
+      "alt": "Screenshot of the homepage for a concept I called Abandoned Website.",
+      "title": "An Abandoned Website",
+      "desc": "Forgotten in time."
     },
     {
       "href": "https://www.notsocial.app/",
       "img": "screenshots/notsocial/desktopPage1920x1080",
       "alt": "Screenshot of NotSocial, a fake social media site I made.",
-      "caption": "notsocial.app"
+      "title": "NotSocial",
+      "desc": "Kind of like social media."
     },
     {
-      "href": "https://www.abandoned.website/",
-      "img": "screenshots/abandoned-website/desktopPage1920x1080",
-      "alt": "Screenshot of the homepage for a concept I called Abandoned Website.",
-      "caption": "abandoned.website"
+      "href": "https://www.frontroyalband.com/",
+      "img": "screenshots/front-royal/desktopPage1920x1080",
+      "alt": "Screenshot of the homepage for my band, Front Royal.",
+      "title": "Front Royal",
+      "desc": "The band, not the town."
     }
   ]
 }

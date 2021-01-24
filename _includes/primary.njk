@@ -10,8 +10,10 @@
     <link rel="preconnect" href="https://d33wubrfki0l68.cloudfront.net">
     <link rel="dns-prefetch" href="https://d33wubrfki0l68.cloudfront.net">
     <link rel="canonical" href="https://www.troyv.dev{{page.url}}">
+    <link rel="stylesheet" href="https://fonts.typotheque.com/WF-036345-011398.css" type="text/css" />
     <link rel="stylesheet" href="/assets/css/normalize.css">
-    <link rel="stylesheet" href="/assets/css/cube.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+
     {%- if pageCSS -%}<link rel="stylesheet" href="/assets/css/{{pageCSS}}.css">{%- endif -%}
     {%- if codeblock -%}<link rel="stylesheet" href="/assets/css/prism.css">{%- endif -%}
     {%- if plvylist -%}<link rel="stylesheet" href="/assets/css/plvylist.css">{%- endif -%}
@@ -37,54 +39,37 @@
 
   </head>
   <body class="{{pageName}}">
-    <header class="hideOnPrint">
-      <div id="menu">
-        <button id="open" aria-label="Open the navigation menu">
-          <svg width="30" height="30">
-            <path d="M0,5 30,5"/>
-            <path d="M0,14 30,14"/>
-            <path d="M0,23 30,23"/>
-          </svg>
-        </button>
-      </div>
-      <nav class="mainNavigation" id="mainNavigation">
-        <button id="close" aria-label="Close the navigation menu">
-          <svg width="30" height="30">
-            <path d="M5,5 25,25"/>
-            <path d="M5,25 25,5"/>
-          </svg>
-        </button>
-        <ul class="navbar">
-          <li id="link__home-container"><a href="/" aria-label="Go to the homepage." id="link__home">troy vassalotti.</a></li>
-          <li id="link__posts-container"><a href="/posts/" id="link__posts">posts.</a></li>
-          <li id="link__projects-container"><a href="/projects/" id="link__projects">projects.</a></li>
-          <li id="link__music-container"><a href="/music/" id="link__music">music.</a></li>
-          <li id="link__about-container"><a href="/about/" id="link__about">about.</a></li>
+    <header class="site-header hideOnPrint">
+      <nav class="main-navigation" id="main-navigation">
+        <ul class="main-navigation__links">
+          <li id="link__home-container"><a class="main-navigation__link animated-link" href="/" aria-label="homepage" id="link__home">troy vassalotti.</a></li>
+          <li id="link__posts-container"><a class="main-navigation__link animated-link" href="/posts/" id="link__posts">posts.</a></li>
+          <li id="link__projects-container"><a class="main-navigation__link animated-link" href="/projects/" id="link__projects">projects.</a></li>
+          <li id="link__music-container"><a class="main-navigation__link animated-link" href="/music/" id="link__music">music.</a></li>
+          <li id="link__about-container"><a class="main-navigation__link animated-link" href="/about/" id="link__about">about.</a></li>
         </ul>
       </nav>
     </header>
 
     {{ content | safe }}
 
-    <footer class="contain hideOnPrint">
-      <div class="flex footer__wrapper">
-        <picture>
-          <source srcset="/assets/img/headshot-arrow.webp" type="image/webp">
-          <img id="me" src="/assets/img/headshot-arrow_160x160.png" width="160" height="160" alt="This is me. I look like this." loading="lazy">
-        </picture>
-        <div class="grid place-center two-col footer__icons">
-          <a class="icon-link" href="https://github.com/troyvassalotti" target="_blank" rel="noopener"><img src="/assets/img/github-black.svg" alt="Github" width="32" height="32" loading="lazy"></a>
-          <a class="icon-link" href="https://codepen.io/troyvassalotti" target="_blank" rel="noopener"><img src="/assets/img/codepen-black.svg" alt="Codepen" width="32" height="32" loading="lazy"></a>
-          <a class="icon-link" href="https://www.linkedin.com/in/troyvassalotti" target="_blank" rel="noopener"><img src="/assets/img/linkedin-black.svg" alt="Linkedin" width="32" height="32" loading="lazy"></a>
-          <a class="icon-link" href="https://twitter.com/validcharacters" target="_blank" rel="noopener"><img src="/assets/img/twitter-black.svg" alt="Twitter" width="32" height="32" loading="lazy"></a>
-        </div>
-      </div>
-      <p>&copy; troy vassalotti. | Built with <a href="https://www.11ty.dev" target="_blank" rel="noopener">Eleventy</a>.</p>
+    <footer class="site-footer hideOnPrint" id="site-footer">
+      <nav class="footer-navigation" id="footer-navigation">
+        <ul class="footer-navigation__links">
+          <li><a class="footer-navigation__link animated-link" href="https://github.com/troyvassalotti" target="_blank" rel="noopener">Github</a></li>
+          <li><a class="footer-navigation__link animated-link" href="https://codepen.io/troyvassalotti" target="_blank" rel="noopener">CodePen</a></li>
+          <li><a class="footer-navigation__link animated-link" href="https://www.linkedin.com/in/troyvassalotti" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a class="footer-navigation__link animated-link" href="https://twitter.com/validcharacters" target="_blank" rel="noopener">Twitter</a></li>
+        </ul>
+      </nav>
+      <p>&copy; troy vassalotti. | Built with <a class="footer-navigation__link animated-link" id="eleventy" href="https://www.11ty.dev" target="_blank" rel="noopener">Eleventy</a>.</p>
     </footer>
 
-    {%- if codeblock -%}<script src="/assets/js/prism.js" async></script>{%- endif -%}
-    {%- if plvylist -%}<script src="/assets/js/plvylist.js"></script>{%- endif -%}
     <script src="/assets/js/main.js" async></script>
     <script src="/assets/js/instantpage-5.1.0.js" type="module" defer></script>
+    {%- if codeblock -%}<script src="/assets/js/prism.js" async></script>{%- endif -%}
+    {%- if plvylist -%}<script src="/assets/js/plvylist.js"></script>{%- endif -%}
+    {%- if pageJS -%}<script src="/assets/js/{{pageJS}}.js" async type="module"></script>{%- endif -%}
+    {# {%- if roughnotation -%}<script type="module" src="https://unpkg.com/rough-notation?module" defer></script>{%- endif -%} #}
   </body>
 </html>
