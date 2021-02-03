@@ -1,4 +1,28 @@
+const CleanCSS = require("clean-css");
+const {
+  minify
+} = require("terser");
+
 module.exports = function (eleventyConfig) {
+  // add a css minifier filter from clean-css
+  eleventyConfig.addFilter("cssmin", function (code) {
+    return new CleanCSS({}).minify(code).styles;
+  });
+  // add javascript minifier
+  eleventyConfig.addNunjucksAsyncFilter("jsmin", async function (
+    code,
+    callback
+  ) {
+    try {
+      const minified = await minify(code);
+      callback(null, minified.code);
+    } catch (err) {
+      console.error("Terser error: ", err);
+      // Fail gracefully.
+      callback(null, code);
+    }
+  });
+
   // Passthroughs
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("robots.txt");
@@ -32,16 +56,6 @@ module.exports = function (eleventyConfig) {
   // A reusable block, so it helps to have it maintainable in one place
   eleventyConfig.addShortcode("button", function (href, text, target = 'target="_blank" rel="noopener"') {
     return `<a class="button" href="${href}" ${target}>${text}</a>`
-  })
-
-  // A reusable block, so it helps to have it maintainable in one place
-  eleventyConfig.addShortcode("linkedPicture", function (href, img, alt, fallbackType, w, h, target = 'target="_blank" rel="noopener"') {
-    return `<a href="${href}" ${target}>
-      <picture>
-        <source srcset="/assets/img/${img}.webp" type="image/webp"/>
-        <img src="/assets/img/${img}.${fallbackType}" alt="${alt}" width="${w}" height="${h}" loading="lazy"/>
-      </picture>
-    </a>`
   })
 
   // A reusable block, so it helps to have it maintainable in one place
