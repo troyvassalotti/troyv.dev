@@ -35,7 +35,7 @@
     {%- set prefix -%}
       {%- include "js/prefixfree.js" -%}
     {%- endset -%}
-    <script>
+    <script async>
       {{ prefix | safe }}
     </script>
     {%- endif -%}
@@ -79,14 +79,15 @@
       <p>&copy; troy vassalotti. | Built with <a class="footer-navigation__link animated-link" id="eleventy" href="https://www.11ty.dev" target="_blank" rel="noopener">Eleventy</a>.</p>
     </footer>
 
+    {# ADD ALL THE SCRIPTS #}
     {% set mainJS %}
       {%- include "js/main.js" -%}
     {% endset %}
     <script>
       {{ mainJS | safe }}
     </script>
-    
-    {%- if addJS or codeblock or plvylist or page.fileSlug === "" -%}
+
+    {%- if addJS or codeblock or page.fileSlug === "" -%}
     {%- set js -%}
       {%- if addJS -%}
         {%- include "js/" + page.fileSlug + ".js" -%}
@@ -99,14 +100,12 @@
       {%- if codeblock -%}
         {%- include "js/prism.js" -%}
       {%- endif -%}
-
-      {%- if plvylist -%}
-        {%- include "js/plvylist.js" -%}
-      {%- endif -%}
     {%- endset -%}
     <script type="module" async>
       {{ js | jsmin | safe }}
     </script>
     {%- endif -%}
+
+    {% if plvylist %}<script src="/assets/js/plvylist.js" defer></script>{% endif %}
   </body>
 </html>
