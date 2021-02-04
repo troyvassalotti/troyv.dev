@@ -2,7 +2,6 @@
 title: 'troy. is a band'
 description: I decided to give troy. - a band I have - a website.
 layout: post
-postDate: November 28th, 2020
 date: 2020-11-28
 tags: ['post', 'design', 'plvylist', 'project', 'music']
 codeblock: true

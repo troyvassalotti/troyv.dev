@@ -2,7 +2,6 @@
 title: 'An Abandoned Website'
 description: We've all come across an abandoned website that was left to wither away and never be thought about again. Well, what if it actually looked that way too?
 layout: post
-postDate: September 12th, 2020
 date: 2020-09-12
 tags: ['post', 'design', 'abandoned', 'project', 'hugo']
 ---

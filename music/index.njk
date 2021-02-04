@@ -31,9 +31,9 @@ plvylist: true
               </a>
             </div>
             <div class="icon-bar">
-              {% for social in music.frontRoyalSocial %}
+              {%- for social in music.frontRoyalSocial -%}
                 <a class="icon-link" href="{{ social.href }}" target="_blank" rel="noopener"><img src="/assets/img/{{ social.img }}" alt="{{ social.alt }}" loading="lazy" width="48" height="48"></a>
-              {% endfor %}
+              {%- endfor -%}
             </div>
           </div>
           <div class="band">
@@ -46,9 +46,9 @@ plvylist: true
               </a>
             </div>
             <div class="icon-bar">
-              {% for social in music.troySocial %}
+              {%- for social in music.troySocial -%}
                 <a class="icon-link" href="{{ social.href }}" target="_blank" rel="noopener"><img src="/assets/img/{{ social.img }}" alt="{{ social.alt }}" loading="lazy" width="48" height="48"></a>
-              {% endfor %}
+              {%- endfor -%}
             </div>
           </div>
         </section>

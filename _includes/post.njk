@@ -1,5 +1,12 @@
----
-layout: primary
+---js
+{
+  layout: "primary",
+  dateString: function(date) {
+    let d = date.toUTCString();
+    let gmt = /\s00:00:00\sGMT/g;
+    return d.replace(gmt, "");
+  }
+}
 ---
 <main class="post">
   <div class="wrapper">
@@ -8,7 +15,7 @@ layout: primary
         <h1 id="post-title">{{ title }}</h1>
       </div>
       <div>
-        <p id="post-date">{{ postDate }}</p>
+        <p id="post-date">{{ dateString(page.date) }}</p>
       </div>
     </header>
     <article class="post-body">

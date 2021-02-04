@@ -1,6 +1,6 @@
 {
   "name": "troyv.dev",
-  "version": "2.0.0",
+  "version": "2.5.0",
   "description": "This is my portfolio, but it can really be whatever I want it to be.",
   "main": "_site/index.html",
   "scripts": {
@@ -13,13 +13,6 @@
     "type": "git",
     "url": "git+https://github.com/troyvassalotti/personal-site.git"
   },
-  "keywords": [
-    "portfolio",
-    "developer",
-    "front end",
-    "eleventy",
-    "11ty"
-  ],
   "author": {
     "name": "Troy Vassalotti",
     "url": "https://www.troyv.dev"
@@ -30,10 +23,11 @@
   },
   "homepage": "https://github.com/troyvassalotti/personal-site#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^0.11.1"
-  },
-  "dependencies": {
+    "@11ty/eleventy": "^0.11.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.6",
     "clean-css": "^5.0.1",
+    "common-tags": "^1.8.0",
     "terser": "^5.5.1"
-  }
+  },
+  "dependencies": {}
 }
