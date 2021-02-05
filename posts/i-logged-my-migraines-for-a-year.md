@@ -4,6 +4,7 @@ description: I kept a log of every migraine I had in 2019 in an effort to better
 layout: post
 date: 2020-03-12
 tags: ['post', 'migraines', 'big data']
+featuredImage: url('/assets/img/migraines-2019.jpg')
 ---
 I've been having migraines for as long as I can remember, so it's not surprising to get a few here and there. But 2019 was not an average year; it was more like 3x my average.
 

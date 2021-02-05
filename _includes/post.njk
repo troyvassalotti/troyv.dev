@@ -9,15 +9,17 @@
 }
 ---
 <main class="post">
-  <div class="wrapper">
-    <header class="post-header">
+  <header class="post-header {{ 'featured-image' if featuredImage  }}" {% if featuredImage %} style="--featuredImage: {{ featuredImage }}" {% endif %}>
+    <div class="wrapper">
       <div>
         <h1 id="post-title">{{ title }}</h1>
       </div>
       <div>
         <p id="post-date">{{ dateString(page.date) }}</p>
       </div>
-    </header>
+    </div>
+  </header>
+  <div class="wrapper">
     <article class="post-body">
       {{ content | safe }}
     </article>

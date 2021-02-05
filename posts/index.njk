@@ -16,7 +16,7 @@ addJS: true
     <div class="wrapper">
       <div class="grid posts-container">
       {%- for post in collections.post | reverse -%}
-        <article class="post-listing">
+        <article class="post-listing {{ 'featured-image' if post.data.featuredImage  }}" {% if post.data.featuredImage %} style="--featuredImage: {{ post.data.featuredImage }}" {% endif %}>
           <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
           <p>{{ post.data.description }}</p>
         </article>

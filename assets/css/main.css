@@ -155,9 +155,9 @@ pre {
 
 blockquote {
   -webkit-border-end: 2px solid var(--goldPrimary);
-          border-inline-end: 2px solid var(--goldPrimary);
+  border-inline-end: 2px solid var(--goldPrimary);
   -webkit-border-start: 2px solid var(--goldPrimary);
-          border-inline-start: 2px solid var(--goldPrimary);
+  border-inline-start: 2px solid var(--goldPrimary);
   font-style: italic;
 }
 
@@ -240,17 +240,17 @@ h6 {
 
 .main-navigation li:first-of-type {
   -webkit-margin-before: 1ch;
-          margin-block-start: 1ch;
+  margin-block-start: 1ch;
   -webkit-margin-after: 1ch;
-          margin-block-end: 1ch;
+  margin-block-end: 1ch;
 }
 
 .main-navigation__links li:not(:first-of-type) {
   display: inline-flex;
   -webkit-margin-start: 1ch;
-          margin-inline-start: 1ch;
+  margin-inline-start: 1ch;
   -webkit-margin-end: 1ch;
-          margin-inline-end: 1ch;
+  margin-inline-end: 1ch;
 }
 
 .main-navigation__link {
@@ -297,12 +297,12 @@ h6 {
 .site-footer {
   text-align: end;
   -webkit-padding-start: 1ch;
-          padding-inline-start: 1ch;
+  padding-inline-start: 1ch;
   -webkit-padding-end: 1ch;
-          padding-inline-end: 1ch;
+  padding-inline-end: 1ch;
   font-size: var(--step--1);
   -webkit-margin-before: auto;
-          margin-block-start: auto;
+  margin-block-start: auto;
 }
 
 .footer-navigation__links {
@@ -313,9 +313,9 @@ h6 {
 .footer-navigation__links li {
   display: inline-flex;
   -webkit-margin-start: 1ex;
-          margin-inline-start: 1ex;
+  margin-inline-start: 1ex;
   -webkit-margin-end: 1ex;
-          margin-inline-end: 1ex;
+  margin-inline-end: 1ex;
 }
 
 .footer-navigation__link {
@@ -424,9 +424,9 @@ img[data-state="stay"]:hover {
 
 body:not(.homepage) main.layout {
   -webkit-margin-before: 1em;
-          margin-block-start: 1em;
+  margin-block-start: 1em;
   -webkit-margin-after: 2em;
-          margin-block-end: 2em;
+  margin-block-end: 2em;
 }
 
 .skewed-background {
@@ -454,7 +454,7 @@ body:not(.homepage) main.layout {
 .video-embed {
   display: block;
   -webkit-margin-after: clamp(1ex, 5vw, 6ex);
-          margin-block-end: clamp(1ex, 5vw, 6ex);
+  margin-block-end: clamp(1ex, 5vw, 6ex);
   contain: content;
   position: relative;
   width: 100%;
@@ -464,7 +464,7 @@ body:not(.homepage) main.layout {
   content: "";
   display: block;
   -webkit-padding-after: calc(100% / (16 / 9));
-          padding-block-end: calc(100% / (16 / 9));
+  padding-block-end: calc(100% / (16 / 9));
 }
 
 .video-embed iframe {
@@ -501,7 +501,7 @@ body:not(.homepage) main.layout {
 
 .caption-overlay:hover > .caption-link .caption-image {
   -webkit-filter: opacity(0.3);
-          filter: opacity(0.3);
+  filter: opacity(0.3);
 }
 
 .caption-overlay:hover > .caption-link .caption {
@@ -599,6 +599,11 @@ body:not(.homepage) main.layout {
 }
 
 .post-header {
+  -webkit-padding-before: 2em;
+  padding-block-start: 2em;
+}
+
+.post-header .wrapper {
   border-bottom: 2px solid var(--goldPrimary);
 }
 
@@ -623,6 +628,42 @@ body:not(.homepage) main.layout {
 .post h4 {
   margin-top: revert;
 }
+
+.featured-image::before {
+  background-image: var(--featuredImage);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: soft-light;
+  z-index: -1;
+}
+
+.featured-image::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: overlay;
+  z-index: -1;
+  background: linear-gradient(
+    130deg,
+    var(--redPrimary),
+    var(--bluePrimary) 46.07%,
+    var(--goldPrimary) 78.05%
+  );
+}
+
+.featured-image {
+  position: relative;
+}
 @media only screen and (min-width: 720px) {
   /* ======================
     Navigation Styles
@@ -633,14 +674,14 @@ body:not(.homepage) main.layout {
 
   .main-navigation__links {
     -webkit-padding-start: 1ch;
-            padding-inline-start: 1ch;
+    padding-inline-start: 1ch;
   }
 
   .main-navigation__links li:not(:first-of-type) {
     -webkit-margin-start: 0;
-            margin-inline-start: 0;
+    margin-inline-start: 0;
     -webkit-margin-end: 1ch;
-            margin-inline-end: 1ch;
+    margin-inline-end: 1ch;
   }
 }
 @media (prefers-reduced-motion) {
@@ -651,7 +692,7 @@ body:not(.homepage) main.layout {
 
   .typewriter {
     -webkit-animation: none !important;
-            animation: none !important;
+    animation: none !important;
   }
 
   a.animated-link {

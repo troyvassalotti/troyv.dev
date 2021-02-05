@@ -4,6 +4,7 @@ description: We want a website so we have a presence that isn't exclusively on s
 layout: post
 date: 2020-03-16
 tags: ['post', 'front royal', 'design']
+featuredImage: url('/assets/img/froro-des-phase1.jpg')
 ---
 There was a point in time bands either had a myspace, PureVolume, or both. Nowadays, it's not so simple.
 
