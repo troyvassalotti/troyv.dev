@@ -2,7 +2,6 @@
 title: Thanks, Spotify...
 description: I greatly appreciate you lifting your 10,000 song library limit, but couldn't you have told us this was happening sooner?
 layout: post
-postDate: June 08th, 2020
 date: 2020-06-08
 tags: ['post', 'spotify', 'big data', 'music']
 ---

@@ -2,7 +2,6 @@
 title: Using Media Queries to Make a Light Mode Website
 description: My site is designed with dark mode in mind, but after reading about the latest in media query news, I was antsy to give light mode users a unique experience.
 layout: post
-postDate: April 27th, 2020
 date: 2020-04-27
 tags: ['post', 'media queries', 'light mode', 'a11y', 'design']
 codeblock: true

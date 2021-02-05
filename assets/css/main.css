@@ -1,42 +1,55 @@
 @font-face {
-  font-family: 'Native';
+  font-family: "Native";
   src: url("/assets/css/fonts/native/Native-Light.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
   font-display: fallback;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
 }
 @font-face {
-  font-family: 'Native';
+  font-family: "Native";
   src: url("/assets/css/fonts/native/Native-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: fallback;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
 }
 @font-face {
-  font-family: 'DM Sans';
-  src: url("/assets/css/fonts/dmsans/dm-sans-v6-latin-regular.woff2") format("woff2");
+  font-family: "DM Sans";
+  src: url("/assets/css/fonts/dmsans/dm-sans-v6-latin-regular.woff2")
+    format("woff2");
   font-style: normal;
   font-weight: 400;
   font-display: fallback;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
 }
 @font-face {
-  font-family: 'DM Sans';
-  src: url("/assets/css/fonts/dmsans/dm-sans-v6-latin-500.woff2") format("woff2");
+  font-family: "DM Sans";
+  src: url("/assets/css/fonts/dmsans/dm-sans-v6-latin-500.woff2")
+    format("woff2");
   font-style: normal;
   font-weight: 500;
   font-display: fallback;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
 }
 @font-face {
-  font-family: 'DM Sans';
-  src: url("/assets/css/fonts/dmsans/dm-sans-v6-latin-700.woff2") format("woff2");
+  font-family: "DM Sans";
+  src: url("/assets/css/fonts/dmsans/dm-sans-v6-latin-700.woff2")
+    format("woff2");
   font-style: normal;
   font-weight: 700;
   font-display: fallback;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
 }
 /* ======================
   Globals
@@ -54,9 +67,12 @@
   --step-5: clamp(2.7994rem, 2.5567rem + 1.2134vw, 3.4213rem);
   --step-6: clamp(3.3594rem, 3.0682rem + 1.4561vw, 4.1056rem);
   /* font styles */
-  --body: Oli Grotesk, DejaVu Sans, sans-serif;
+  --fallback: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
+    Segoe UI Symbol;
+  --body: Oli Grotesk, var(--fallback);
   --code: Native, Monospace, monospace;
-  --headings: DM Sans, Tahoma, Liberation Serif, sans-serif;
+  --headings: DM Sans, var(--fallback);
   /* main palette colors */
   --colorOpacity: 1;
   --black: 19, 17, 18;
@@ -138,7 +154,9 @@ pre {
 }
 
 blockquote {
+  -webkit-border-end: 2px solid var(--goldPrimary);
   border-inline-end: 2px solid var(--goldPrimary);
+  -webkit-border-start: 2px solid var(--goldPrimary);
   border-inline-start: 2px solid var(--goldPrimary);
   font-style: italic;
 }
@@ -157,7 +175,7 @@ a.animated-link::before {
   position: absolute;
   bottom: 0;
   left: 0;
-  height: .06em;
+  height: 0.06em;
   width: 100%;
   background-color: currentColor;
   transition: transform 400ms ease-out;
@@ -221,13 +239,17 @@ h6 {
 }
 
 .main-navigation li:first-of-type {
+  -webkit-margin-before: 1ch;
   margin-block-start: 1ch;
+  -webkit-margin-after: 1ch;
   margin-block-end: 1ch;
 }
 
 .main-navigation__links li:not(:first-of-type) {
   display: inline-flex;
+  -webkit-margin-start: 1ch;
   margin-inline-start: 1ch;
+  -webkit-margin-end: 1ch;
   margin-inline-end: 1ch;
 }
 
@@ -274,9 +296,12 @@ h6 {
   ======================= */
 .site-footer {
   text-align: end;
+  -webkit-padding-start: 1ch;
   padding-inline-start: 1ch;
+  -webkit-padding-end: 1ch;
   padding-inline-end: 1ch;
   font-size: var(--step--1);
+  -webkit-margin-before: auto;
   margin-block-start: auto;
 }
 
@@ -287,7 +312,9 @@ h6 {
 
 .footer-navigation__links li {
   display: inline-flex;
+  -webkit-margin-start: 1ex;
   margin-inline-start: 1ex;
+  -webkit-margin-end: 1ex;
   margin-inline-end: 1ex;
 }
 
@@ -396,7 +423,9 @@ img[data-state="stay"]:hover {
 }
 
 body:not(.homepage) main.layout {
+  -webkit-margin-before: 1em;
   margin-block-start: 1em;
+  -webkit-margin-after: 2em;
   margin-block-end: 2em;
 }
 
@@ -424,6 +453,7 @@ body:not(.homepage) main.layout {
 
 .video-embed {
   display: block;
+  -webkit-margin-after: clamp(1ex, 5vw, 6ex);
   margin-block-end: clamp(1ex, 5vw, 6ex);
   contain: content;
   position: relative;
@@ -433,6 +463,7 @@ body:not(.homepage) main.layout {
 .video-embed::after {
   content: "";
   display: block;
+  -webkit-padding-after: calc(100% / (16 / 9));
   padding-block-end: calc(100% / (16 / 9));
 }
 
@@ -454,7 +485,7 @@ body:not(.homepage) main.layout {
 }
 
 .caption-overlay .caption-link .caption-image {
-  transition: .3s ease;
+  transition: 0.3s ease;
 }
 
 .caption-overlay .caption {
@@ -465,10 +496,11 @@ body:not(.homepage) main.layout {
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: .3s ease;
+  transition: 0.3s ease;
 }
 
 .caption-overlay:hover > .caption-link .caption-image {
+  -webkit-filter: opacity(0.3);
   filter: opacity(0.3);
 }
 
@@ -511,7 +543,7 @@ body:not(.homepage) main.layout {
   padding: 1ex 2ex;
   color: var(--whitePrimary);
   text-decoration: none;
-  transition: .3s ease-out;
+  transition: 0.3s ease-out;
 }
 
 .button:hover {
@@ -534,7 +566,7 @@ body:not(.homepage) main.layout {
 .contact-form label {
   display: flex;
   flex-direction: column;
-  margin: .5ex 0;
+  margin: 0.5ex 0;
   font-family: var(--headings);
   font-weight: 500;
 }
@@ -567,6 +599,11 @@ body:not(.homepage) main.layout {
 }
 
 .post-header {
+  -webkit-padding-before: 2em;
+  padding-block-start: 2em;
+}
+
+.post-header .wrapper {
   border-bottom: 2px solid var(--goldPrimary);
 }
 
@@ -591,6 +628,43 @@ body:not(.homepage) main.layout {
 .post h4 {
   margin-top: revert;
 }
+
+/* Keeping this here for future reference as I might try to use it again later */
+/* .featured-image::before {
+  background-image: var(--featuredImage);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: soft-light;
+  z-index: -1;
+}
+
+.featured-image::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: overlay;
+  z-index: -1;
+  background: linear-gradient(
+    130deg,
+    var(--redPrimary),
+    var(--bluePrimary) 46.07%,
+    var(--goldPrimary) 78.05%
+  );
+}
+
+.featured-image {
+  position: relative;
+} */
 @media only screen and (min-width: 720px) {
   /* ======================
     Navigation Styles
@@ -600,11 +674,14 @@ body:not(.homepage) main.layout {
   }
 
   .main-navigation__links {
+    -webkit-padding-start: 1ch;
     padding-inline-start: 1ch;
   }
 
   .main-navigation__links li:not(:first-of-type) {
+    -webkit-margin-start: 0;
     margin-inline-start: 0;
+    -webkit-margin-end: 1ch;
     margin-inline-end: 1ch;
   }
 }
@@ -615,6 +692,7 @@ body:not(.homepage) main.layout {
   }
 
   .typewriter {
+    -webkit-animation: none !important;
     animation: none !important;
   }
 

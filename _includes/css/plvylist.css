@@ -5,7 +5,7 @@
   --plvyBlack: var(--blackPrimary);
   --plvyWhite: var(--whitePrimary);
   --plvyTrack-w: 100%;
-  --plvyTrack-h: .25em;
+  --plvyTrack-h: 0.25em;
   --plvyThumb-d: 1em;
   --plvyTrack-c: var(--grayPrimary);
   --plvyFill-c: var(--goldPrimary);
@@ -19,7 +19,6 @@
   --plvyMainBG: var(--plvyWhite);
   --plvyLoopColor: var(--plvyRed);
   --plvyArtShadow: var(--plvyBlack);
-  /* --plvyResponsiveFont: clamp(0.9113rem, 0.8922rem + 0.0951vw, 0.96rem); */
 }
 /* ALL VARIABLES ABOVE */
 /* PLVYLIST BELOW */
@@ -28,7 +27,6 @@
   font-family: var(--plvyFont);
   font-size: 16px;
   color: var(--plvyFontColor);
-  /* background-color: var(--plvyMainBG); */
   width: 100%;
   max-width: 45em;
   margin: auto;
@@ -80,19 +78,19 @@
 .plvylist .plvy--controls .controls__secondary .plvy--volume {
   display: inline-flex;
   align-items: center;
-  gap: .5em;
+  gap: 0.5em;
 }
 
 .plvylist .plvy--controls button {
   border: none;
   border-radius: 25%;
   background: none;
-  transition: background .1s ease-in-out;
+  transition: background 0.1s ease-in-out;
 }
 
 .plvylist .plvy--controls button svg {
   stroke: var(--plvyFontColor);
-  transition: stroke .1s ease-in-out;
+  transition: stroke 0.1s ease-in-out;
 }
 
 .plvylist .plvy--controls button:hover svg {
@@ -115,7 +113,7 @@
 }
 
 .plvylist .plvy--tracklist #plvy--songs .plvy--song {
-  padding: 0 .5em;
+  padding: 0 0.5em;
 }
 
 .plvylist .plvy--tracklist #plvy--songs .plvy--song:hover {
@@ -132,7 +130,9 @@ ALL THE STYLES FOR THE SLIDER INPUTS BELOW HERE
 .plvylist input[type="range"] {
   --range: calc(var(--max) - var(--min));
   --ratio: calc((var(--val) - var(--min)) / var(--range));
-  --sx: calc(0.5 * var(--plvyThumb-d) + var(--ratio) * (100% - var(--plvyThumb-d)));
+  --sx: calc(
+    0.5 * var(--plvyThumb-d) + var(--ratio) * (100% - var(--plvyThumb-d))
+  );
   margin: 0;
   padding: 0;
   max-width: var(--plvyTrack-w);
@@ -165,7 +165,8 @@ ALL THE STYLES FOR THE SLIDER INPUTS BELOW HERE
   border-radius: 6px;
   padding-top: 1.5px;
   padding-bottom: 1.5px;
-  background: linear-gradient(var(--plvyFill-c), var(--plvyFill-c)) 0/var(--sx) 100% no-repeat var(--plvyTrack-c);
+  background: linear-gradient(var(--plvyFill-c), var(--plvyFill-c)) 0 /
+    var(--sx) 100% no-repeat var(--plvyTrack-c);
 }
 
 .plvylist input[type="range"]::-moz-range-track {
@@ -268,23 +269,3 @@ ALL THE STYLES FOR THE SLIDER INPUTS ABOVE HERE
     align-items: end;
   }
 }
-/* @media (prefers-color-scheme: light) {
-  :root {
-    --plvyBlue: var(--blueLight);
-    --plvyRed: var(--redLight);
-    --plvyBlack: var(--blackLight);
-    --plvyWhite: var(--whitePrimary);
-    --plvyTrack-c: var(--plvyBlack);
-    --plvyFill-c: var(--plvyRed);
-    --plvyThumb-c: var(--plvyBlack);
-    --plvyButtonColor: var(--plvyBlue);
-    --plvyActiveColor: var(--redLight);
-    --plvyActiveBG: var(--plvyWhite);
-    --plvyActiveText: var(--blueLight);
-    --plvyFont: "Native", Monospace, monospace;
-    --plvyFontColor: var(--blackLight);
-    --plvyMainBG: var(--plvyWhite);
-    --plvyLoopColor: var(--plvyRed);
-    --plvyArtShadow: var(--plvyBlack);
-  }
-} */

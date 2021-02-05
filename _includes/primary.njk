@@ -3,22 +3,35 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {% if noindex -%}
-    <meta name="robots" content="noindex">
-    {%- endif %}
-
+    {%- if noindex -%}<meta name="robots" content="noindex">{%- endif -%}
     <link rel="preconnect" href="https://d33wubrfki0l68.cloudfront.net">
     <link rel="dns-prefetch" href="https://d33wubrfki0l68.cloudfront.net">
     <link rel="canonical" href="https://www.troyv.dev{{page.url}}">
     <link rel="stylesheet" href="https://fonts.typotheque.com/WF-036345-011398.css" type="text/css" />
     <link rel="stylesheet" href="/assets/css/normalize.css">
     <link rel="stylesheet" href="/assets/css/main.css">
+    {% if page.fileSlug === "" %}<link rel="stylesheet" href="/assets/css/homepage.css">{% endif %}
 
-    {%- if pageCSS -%}<link rel="stylesheet" href="/assets/css/{{pageCSS}}.css">{%- endif -%}
-    {%- if codeblock -%}<link rel="stylesheet" href="/assets/css/prism.css">{%- endif -%}
-    {%- if plvylist -%}<link rel="stylesheet" href="/assets/css/plvylist.css">{%- endif -%}
-    {%- if animation -%}<script src="/assets/js/prefixfree.js"></script>{%- endif -%}
+    {%- if addCSS or codeblock or plvylist -%}
+    {%- set css -%}
+      {%- if addCSS -%}
+        {%- include "css/" + page.fileSlug + ".css" -%}
+      {%- endif -%}
 
+      {%- if codeblock -%}
+        {%- include "css/prism.css" -%}
+      {%- endif -%}
+
+      {%- if plvylist -%}
+        {%- include "css/plvylist.css" -%}
+      {%- endif -%}
+    {%- endset -%}
+    <style>
+      {{ css | cssmin | safe }}
+    </style>
+    {%- endif -%}
+
+    {% if animation %}<script src="/assets/js/prefixfree.js"></script>{% endif %}
     <title>{{ title }} | Troy V.</title>
     <meta name="description" content="{{description}}">
     <meta name="og:locale" content="en_US">
@@ -30,13 +43,6 @@
     <meta name="twitter:title" content="{{title}}">
     <meta name="twitter:description" content="{{description}}">
     <meta name="twitter:creator" content="@validcharacters">
-
-    {%- if inline -%}
-    <style>
-      {{inline}}
-    </style>
-    {%- endif -%}
-
   </head>
   <body class="{{pageName}}">
     <header class="site-header hideOnPrint">
@@ -50,9 +56,7 @@
         </ul>
       </nav>
     </header>
-
     {{ content | safe }}
-
     <footer class="site-footer hideOnPrint" id="site-footer">
       <nav class="footer-navigation" id="footer-navigation">
         <ul class="footer-navigation__links">
@@ -65,11 +69,29 @@
       <p>&copy; troy vassalotti. | Built with <a class="footer-navigation__link animated-link" id="eleventy" href="https://www.11ty.dev" target="_blank" rel="noopener">Eleventy</a>.</p>
     </footer>
 
-    <script src="/assets/js/main.js" async></script>
-    <script src="/assets/js/instantpage-5.1.0.js" type="module" defer></script>
-    {%- if codeblock -%}<script src="/assets/js/prism.js" async></script>{%- endif -%}
-    {%- if plvylist -%}<script src="/assets/js/plvylist.js"></script>{%- endif -%}
-    {%- if pageJS -%}<script src="/assets/js/{{pageJS}}.js" async type="module"></script>{%- endif -%}
-    {# {%- if roughnotation -%}<script type="module" src="https://unpkg.com/rough-notation?module" defer></script>{%- endif -%} #}
+    {# ADD ALL THE SCRIPTS #}
+    {%- set mainJS -%}
+      {%- include "js/main.js" -%}
+    {%- endset -%}
+    <script>
+      {{ mainJS | safe }}
+    </script>
+
+    {%- if addJS or page.fileSlug === "" -%}
+    {%- set js -%}
+      {%- if addJS -%}
+        {%- include "js/" + page.fileSlug + ".js" -%}
+      {%- endif -%}
+
+      {% if page.fileSlug === "" %}
+        {%- include "js/homepage.js" -%}
+      {% endif %}
+    {%- endset -%}
+    <script type="module" async>
+      {{ js | jsmin | safe }}
+    </script>
+    {%- endif -%}
+
+    {% if plvylist %}<script src="/assets/js/plvylist.js" defer></script>{% endif %}
   </body>
 </html>
