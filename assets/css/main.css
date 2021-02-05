@@ -629,7 +629,8 @@ body:not(.homepage) main.layout {
   margin-top: revert;
 }
 
-.featured-image::before {
+/* Keeping this here for future reference as I might try to use it again later */
+/* .featured-image::before {
   background-image: var(--featuredImage);
   background-position: center;
   background-repeat: no-repeat;
@@ -663,7 +664,7 @@ body:not(.homepage) main.layout {
 
 .featured-image {
   position: relative;
-}
+} */
 @media only screen and (min-width: 720px) {
   /* ======================
     Navigation Styles
