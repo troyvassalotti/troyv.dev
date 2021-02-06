@@ -1,7 +1,6 @@
 const {html} = require('common-tags');
 
 module.exports = function (content, title, id) {
-  let image
   return html `
   <article class="project" id="project_${id}">
     <h2>${title}</h2>
