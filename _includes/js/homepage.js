@@ -1,26 +1,22 @@
 // This is for the handdrawn annotations from Rough Notation
-import {
-  annotate
-} from 'https://unpkg.com/rough-notation?module';
-import {
-  annotationGroup
-} from 'https://unpkg.com/rough-notation?module';
+import {annotate} from 'https://unpkg.com/rough-notation?module';
+import {annotationGroup} from 'https://unpkg.com/rough-notation?module';
 
 const e1 = document.querySelector('#cool-anim');
 const a1 = annotate(e1, {
   type: 'box',
-  color: 'var(--bluePrimary)'
+  color: 'var(--bluePrimary)',
 });
 
 const e2 = document.querySelector('#proj-anim');
 const a2 = annotate(e2, {
   type: 'underline',
   color: 'var(--redPrimary)',
-  padding: 10
+  padding: 10,
 });
 
 // create an annotation group
-const ag = annotationGroup([a1, a2]);
+const ag = annotationGroup([a1, a2,]);
 
 // create the intersection observer for the annoations
 function handleHandrawing(entries) {
@@ -35,7 +31,7 @@ function handleHandrawing(entries) {
 const options = {
   root: null,
   rootMargin: "0px",
-  threshold: .5
+  threshold: .5,
 }
 
 const handDrawObserver = new IntersectionObserver(handleHandrawing, options);

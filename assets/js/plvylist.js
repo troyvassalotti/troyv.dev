@@ -15,7 +15,7 @@ const artworkAttributes = {
   width: "300",
   height: "300",
   alt: "album artwork",
-  id: "artwork"
+  id: "artwork",
 };
 const artworkAttributesKeys = Object.keys(artworkAttributes);
 artworkAttributesKeys.forEach((key, index) => {
@@ -66,7 +66,7 @@ const seekerAttributes = {
   step: "0.01",
   value: "0",
   "aria-label": "seek through the track",
-  style: "--min: 0; --max: 100; --val: 0"
+  style: "--min: 0; --max: 100; --val: 0",
 };
 const seekerAttributesKeys = Object.keys(seekerAttributes);
 seekerAttributesKeys.forEach((key, index) => {
@@ -105,7 +105,7 @@ const actionSvgAttributes = {
   "stroke-width": "1.5",
   "stroke-linecap": "round",
   "stroke-linejoin": "round",
-  fill: "none"
+  fill: "none",
 };
 const actionSvgAttributesKeys = Object.keys(actionSvgAttributes);
 actionSvgAttributesKeys.forEach((key, index) => {
@@ -152,10 +152,7 @@ plvyVolumeDiv.classList.add("plvy--volume");
 
 const volumeBtn = document.createElement("button");
 volumeBtn.setAttribute("id", "volumeBtn");
-const volumeBtnSvg = document.createElementNS(
-  "http://www.w3.org/2000/svg",
-  "svg"
-);
+const volumeBtnSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 const volIconMid = `<title>Volume</title><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 8a5 5 0 0 1 0 8" /><path d="M17.7 5a9 9 0 0 1 0 14" /><path d="M6 15h-2a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h2l3.5 -4.5a.8 .8 0 0 1 1.5 .5v14a.8 .8 0 0 1 -1.5 .5l-3.5 -4.5" />`;
 const volIconOff = `<title>Volume</title><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 15h-2a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h2l3.5 -4.5a.8 .8 0 0 1 1.5 .5v14a.8 .8 0 0 1 -1.5 .5l-3.5 -4.5" /><path d="M16 10l4 4m0 -4l-4 4" />`;
 const volIconLow = `<title>Volume</title><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 8a5 5 0 0 1 0 8" /><path d="M6 15h-2a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h2l3.5 -4.5a.8 .8 0 0 1 1.5 .5v14a.8 .8 0 0 1 -1.5 .5l-3.5 -4.5" />`;
@@ -167,7 +164,7 @@ const volumeBtnSvgAttributes = {
   "stroke-width": "1.5",
   "stroke-linecap": "round",
   "stroke-linejoin": "round",
-  fill: "none"
+  fill: "none",
 };
 const volumeBtnSvgAttributesKeys = Object.keys(volumeBtnSvgAttributes);
 volumeBtnSvgAttributesKeys.forEach((key, index) => {
@@ -182,7 +179,7 @@ const volumeAttributes = {
   max: "1",
   step: "0.01",
   "aria-label": "volume control",
-  style: "--min: 0; --max: 100; --val: 50"
+  style: "--min: 0; --max: 100; --val: 50",
 };
 const volumeAttributesKeys = Object.keys(volumeAttributes);
 volumeAttributesKeys.forEach((key, index) => {
@@ -231,97 +228,87 @@ const artworkForTracks = "/assets/img/aiacr.jpg",
   artistForTracks = "troy.",
   filePrefix = "/assets/audio/"; // you want this to make sure the linking works, trust me. I put this /assets/audio/ directory as an example. This comes in to play when deciding what is the active song and how to highlight it with CSS.
 var allTracks = [],
-  tracks = [{
+  tracks = [
+    {
       file: filePrefix + "01_I_Know_I'm_Not.mp3",
       title: "I Know I'm Not",
       artist: artistForTracks,
       album: albumForTracks,
-      artwork: artworkForTracks
-    },
-    {
+      artwork: artworkForTracks,
+    }, {
       file: filePrefix + "02_Baby_Blue.mp3",
       title: "Baby Blue",
       artist: artistForTracks,
       album: albumForTracks,
-      artwork: artworkForTracks
-    },
-    {
+      artwork: artworkForTracks,
+    }, {
       file: filePrefix + "03_Insincerity.mp3",
       title: "Insincerity",
       artist: artistForTracks,
       album: albumForTracks,
-      artwork: artworkForTracks
-    },
-    {
+      artwork: artworkForTracks,
+    }, {
       file: filePrefix + "04_Like_Sinking.mp3",
       title: "Like Sinking",
       artist: artistForTracks,
       album: albumForTracks,
-      artwork: artworkForTracks
-    },
-    {
+      artwork: artworkForTracks,
+    }, {
       file: filePrefix + "05_Do_Better.mp3",
       title: "Do Better",
       artist: artistForTracks,
       album: albumForTracks,
-      artwork: artworkForTracks
-    },
-    {
+      artwork: artworkForTracks,
+    }, {
       file: filePrefix + "06_Market_Street.mp3",
       title: "Market Street",
       artist: artistForTracks,
       album: albumForTracks,
-      artwork: artworkForTracks
-    },
-    {
+      artwork: artworkForTracks,
+    }, {
       file: filePrefix + "07_Alone_In_a_Crowded_Room.mp3",
       title: "Alone In A Crowded Room",
       artist: artistForTracks,
       album: albumForTracks,
-      artwork: artworkForTracks
-    },
-    {
+      artwork: artworkForTracks,
+    }, {
       file: filePrefix + "08_Long_Time_Caller_First Time List.mp3",
       title: "Long Time Caller, First Time Listener",
       artist: artistForTracks,
       album: albumForTracks,
-      artwork: artworkForTracks
-    },
-    {
+      artwork: artworkForTracks,
+    }, {
       file: filePrefix + "09_Detroit.mp3",
       title: "Detroit",
       artist: artistForTracks,
       album: albumForTracks,
-      artwork: artworkForTracks
-    },
-    {
+      artwork: artworkForTracks,
+    }, {
       file: filePrefix + "10_We_Can't_Rush_These_Things.mp3",
       title: "We Can't Rush These Things",
       artist: artistForTracks,
       album: albumForTracks,
-      artwork: artworkForTracks
-    },
-    {
+      artwork: artworkForTracks,
+    }, {
       file: filePrefix + "11_Closure.mp3",
       title: "Closure",
       artist: artistForTracks,
       album: albumForTracks,
-      artwork: artworkForTracks
-    },
-    {
+      artwork: artworkForTracks,
+    }, {
       file: filePrefix + "12_Like_Drowning_(Bonus_Track).mp3",
       title: "Like Drowning (Bonus Track)",
       artist: artistForTracks,
       album: albumForTracks,
-      artwork: artworkForTracks
-    }
+      artwork: artworkForTracks,
+    },
   ],
   trackCount = tracks.length,
   settings = {
     startingVolume: 0.5,
     startingTime: 0,
     audioOverride: false,
-    currentTrack: undefined
+    currentTrack: undefined,
   };
 
 // function to load the custom settings
@@ -353,19 +340,17 @@ function loadTrackList() {
   });
   songs.innerHTML = list;
   allTracks = document.querySelectorAll(".plvy--song__title");
-  allTracks.forEach((track, index) =>
-    track.addEventListener("click", () => {
-      if (settings.currentTrack === undefined) {
-        loadTrack(index);
-        pressPlay();
-      } else if (audio.paused) {
-        loadTrack(index);
-      } else {
-        loadTrack(index);
-        audio.play();
-      }
-    })
-  );
+  allTracks.forEach((track, index) => track.addEventListener("click", () => {
+    if (settings.currentTrack === undefined) {
+      loadTrack(index);
+      pressPlay();
+    } else if (audio.paused) {
+      loadTrack(index);
+    } else {
+      loadTrack(index);
+      audio.play();
+    }
+  }));
 }
 
 // master Pause button
@@ -422,9 +407,13 @@ function nextTrack() {
 function loadDuration() {
   let time = audio.duration;
   let minutes = Math.floor(time / 60);
-  minutes < 10 ? (minutes = `0${minutes}`) : minutes;
+  minutes < 10
+    ? (minutes = `0${minutes}`)
+    : minutes;
   let seconds = Math.floor(time % 60);
-  seconds < 10 ? (seconds = `0${seconds}`) : seconds;
+  seconds < 10
+    ? (seconds = `0${seconds}`)
+    : seconds;
   duration.innerHTML = `${minutes}:${seconds}`;
 }
 
@@ -434,9 +423,13 @@ function loadCurrentTime(time = audio.currentTime) {
     return false;
   }
   let minutes = Math.floor(time / 60);
-  minutes < 10 ? (minutes = `0${minutes}`) : minutes;
+  minutes < 10
+    ? (minutes = `0${minutes}`)
+    : minutes;
   let seconds = Math.floor(time % 60);
-  seconds < 10 ? (seconds = `0${seconds}`) : seconds;
+  seconds < 10
+    ? (seconds = `0${seconds}`)
+    : seconds;
   current.innerHTML = `${minutes}:${seconds}`;
 }
 
@@ -487,9 +480,8 @@ function shuffleTracks() {
 audio.addEventListener("loadstart", () => {
   let getter = settings.currentTrack;
   document
-    // .querySelector(`[data-file="${audio.src}"]`)
-    .querySelector(`[data-file="${tracks[getter].file}"]`)
-    .classList.add("plvy--song__active");
+  // .querySelector(`[data-file="${audio.src}"]`)
+    .querySelector(`[data-file="${tracks[getter].file}"]`).classList.add("plvy--song__active");
 });
 
 // load in the duration of the track when the metadata finishes loading
@@ -519,9 +511,7 @@ audio.addEventListener("timeupdate", () => {
 
 // when the track gets emptied, remove the active track class
 audio.addEventListener("emptied", () => {
-  document
-    .querySelector(".plvy--song__active")
-    .classList.remove("plvy--song__active");
+  document.querySelector(".plvy--song__active").classList.remove("plvy--song__active");
 });
 
 seeker.addEventListener("change", () => {
@@ -530,7 +520,9 @@ seeker.addEventListener("change", () => {
   } else {
     audio.currentTime = (seeker.value * audio.duration) / 100;
     seeker.style.setProperty("--val", seeker.value);
-    settings.audioOverride ? audio.play() : false;
+    settings.audioOverride
+      ? audio.play()
+      : false;
   }
 });
 
@@ -568,9 +560,7 @@ loop.addEventListener("click", toggleLoop);
 
 // turn on the shuffle button
 shuffle.addEventListener("click", () => {
-  window.alert(
-    "This will stop your current track and start you over fresh, okay?"
-  );
+  window.alert("This will stop your current track and start you over fresh, okay?");
   shuffleTracks();
   loadTrackList();
   if (!audio.paused) {
@@ -585,14 +575,10 @@ shuffle.addEventListener("click", () => {
 volumeBtn.addEventListener("click", toggleVolume);
 
 // these are needed to apply css overrides to the range inputs
-volume.addEventListener(
-  "input",
-  (e) => {
-    audio.volume = volume.value;
-    volume.style.setProperty("--val", volume.value * 100);
-  },
-  false
-);
+volume.addEventListener("input", (e) => {
+  audio.volume = volume.value;
+  volume.style.setProperty("--val", volume.value * 100);
+}, false);
 
 // get the ball rolling
 (() => {

@@ -1,6 +1,4 @@
-const {
-  html
-} = require('common-tags');
+const {html} = require('common-tags');
 
 module.exports = function (href, img, alt, caption, w, h, target = 'target="_blank" rel="noopener"') {
   return html `

@@ -13,70 +13,49 @@ addJS: true
     </div>
   </header>
   <section class="projects__focus">
-    <article class="project" id="project_fr">
-      <h2>Front Royal (The Band, Not The Town)</h2>
-      <div class="skewed-background col full">
-        <div class="wrapper" data-constrain="some">
-          <div class="content">
-            <section class="project-image">
-              {% screenshot 'https://www.frontroyalband.com', 'front-royal', 'Screenshot of the Front Royal website' %}
-            </section>
-            <section class="project-description">
-              <p>When we decided to take the plunge and have a website of our own, I signed myself up to make it. It gave me the opportunity to try some new things out and I'm proud of the result.</p>
-              <p class="details">Built With: Eleventy.</p>
-            </section>
-          </div>
-        </div>
-      </div>
-    </article>
-    <article class="project" id="project_ns">
-      <h2>NotSocial: A New Type of Social Media</h2>
-      <div class="skewed-background col full">
-        <div class="wrapper" data-constrain="some">
-          <div class="content">
-            <section class="project-image">
-              {% screenshot 'https://www.notsocial.app/', 'notsocial', 'Screenshot of the NotSocial website' %}
-            </section>
-            <section class="project-description">
-              <p>You ever wish you had a social media platform that didn't consume your life, but still gave you entertainment? Look no further than NotSocial.</p>
-              <p class="details">Built With: Nuxt.</p>
-            </section>
-          </div>
-        </div>
-      </div>
-    </article>
-    <article class="project" id="project_aw">
-      <h2>An Abandoned Website</h2>
-      <div class="skewed-background col full">
-        <div class="wrapper" data-constrain="some">
-          <div class="content">
-            <section class="project-image">
-              {% screenshot 'https://www.abandoned.website', 'abandoned-website', 'Screenshot of the Abandoned Website homepage' %}
-            </section>
-            <section class="project-description">
-              <p>What if a website, left to wither away and be forgotten, actually looked abandoned over time?</p>
-              <p class="details">Built With: Hugo.</p>
-            </section>
-          </div>
-        </div>
-      </div>
-    </article>
-    <article class="project" id="project_tr">
-      <h2>troy. is a band</h2>
-      <div class="skewed-background col full">
-        <div class="wrapper" data-constrain="some">
-          <div class="content">
-            <section class="project-image">
-              {% screenshot 'https://validcharacters.netlify.app', 'validcharacters', 'Screenshot of the troy. homepage' %}
-            </section>
-            <section class="project-description">
-              <p>i decided to give troy. - a band I have - a website. while i don't do anything serious with the band, it was fun to make something.</p>
-              <p class="details">built with: eleventy.</p>
-            </section>
-          </div>
-        </div>
-      </div>
-    </article>
+
+    {%- projectFeature 'Front Royal (The Band, Not The Town)', 'fr' -%}
+      <section class="project-image">
+        {%- screenshot 'https://www.frontroyalband.com', 'front-royal', 'Screenshot of the Front Royal website' -%}
+      </section>
+      <section class="project-description">
+        <p>When we decided to take the plunge and have a website of our own, I signed myself up to make it. It gave me the opportunity to try some new things out and I'm proud of the result.</p>
+        <p class="details">Built With: Eleventy.</p>
+      </section>
+    {%- endprojectFeature -%}
+
+    {%- projectFeature 'NotSocial: A New Type of Social Media', 'ns' -%}
+      <section class="project-image">
+        {%- screenshot 'https://www.notsocial.app/', 'notsocial', 'Screenshot of the NotSocial website' -%}
+      </section>
+      <section class="project-description">
+        <p>You ever wish you had a social media platform that didn't consume your life, but still gave you entertainment? Look no further than NotSocial.</p>
+        <p class="details">Built With: Nuxt.</p>
+      </section>
+    {%- endprojectFeature -%}
+
+    {%- projectFeature 'An Abandoned Website', 'aw' -%}
+      <section class="project-image">
+        {%- screenshot 'https://www.abandoned.website', 'abandoned-website', 'Screenshot of the Abandoned Website homepage' -%}
+      </section>
+      <section class="project-description">
+        <p>What if a website, left to wither away and be forgotten, actually looked abandoned over time?</p>
+        <p class="details">Built With: Hugo.</p>
+      </section>
+    {%- endprojectFeature -%}
+
+    {%- projectFeature 'troy. is a band', 'tr' -%}
+      <section class="project-image">
+        <a href="https://validcharacters.netlify.app" target="_blank" rel="noopener">
+          <img src="/assets/img/validcharacters1920x1080.jpeg" alt="Screenshot of the troy homepage" width="320" height="180" loading="lazy"/>
+        </a>
+      </section>
+      <section class="project-description">
+        <p>i decided to give troy. - a band I have - a website. while i don't do anything serious with the band, it was fun to make something.</p>
+        <p class="details">built with: eleventy.</p>
+      </section>
+    {%- endprojectFeature -%}
+
   </section>
   <section class="codepen">
     <div class="wrapper">
@@ -91,45 +70,24 @@ addJS: true
       <p>These projects don't really have a home, but I've done them so I'm going to show them off.</p>
     </header>
     <div class="projects__misc">
-      <figure class="caption-overlay">
-        <a class="caption-link" href="/posts/i-logged-my-migraines-for-a-year/">
-          <picture>
-            <source srcset="/assets/img/migraines-2019.webp" type="image/webp"/>
-            <img class="caption-image" src="/assets/img/migraines-2019.jpg" alt="Screenshot of my a graph of my 2019 Migraine Calendar" width="600" height="302" loading="lazy"/>
-          </picture>
-          <div class="caption">
-            <figcaption>
-              <h3>2019 Migraine Calendar</h3>
-            </figcaption>
-          </div>
-        </a>
-      </figure>
-      <figure class="caption-overlay">
-        <a class="caption-link" href="https://www.youtube.com/watch?v=DN29m0xBCDg" target="_blank" rel="noopener">
-          <picture>
-            <source srcset="/assets/img/takeover-1.webp" type="image/webp"/>
-            <img class="caption-image" src="/assets/img/takeover-1.jpg" alt="Screenshot from my first real vlog" width="600" height="302" loading="lazy"/>
-          </picture>
-          <div class="caption">
-            <figcaption>
-              <h3>Front Royal Vlog Edit #1</h3>
-            </figcaption>
-          </div>
-        </a>
-      </figure>
-      <figure class="caption-overlay">
-        <a class="caption-link" href="https://www.youtube.com/watch?v=8LUoVGik9g8" target="_blank" rel="noopener">
-          <picture>
-            <source srcset="/assets/img/takeover-2.webp" type="image/webp"/>
-            <img class="caption-image" src="/assets/img/takeover-2.jpg" alt="Screenshot from my second real vlog" width="600" height="302" loading="lazy"/>
-          </picture>
-          <div class="caption">
-            <figcaption>
-              <h3>Front Royal Vlog Edit #2</h3>
-            </figcaption>
-          </div>
-        </a>
-      </figure>
+      {%- captionOverlay '/posts/i-logged-my-migraines-for-a-year/', '2019 Migraine Calendar', '' -%}
+        <picture>
+          <source srcset="/assets/img/migraines-2019.webp" type="image/webp"/>
+          <img class="caption-image" src="/assets/img/migraines-2019.jpg" alt="Screenshot of my a graph of my 2019 Migraine Calendar" width="600" height="302" loading="lazy"/>
+        </picture>
+      {%- endcaptionOverlay -%}
+      {%- captionOverlay 'https://www.youtube.com/watch?v=DN29m0xBCDg', 'Front Royal Vlog Edit #1', '' -%}
+        <picture>
+          <source srcset="/assets/img/takeover-1.webp" type="image/webp"/>
+          <img class="caption-image" src="/assets/img/takeover-1.jpg" alt="Screenshot from my first real vlog" width="600" height="302" loading="lazy"/>
+        </picture>
+      {%- endcaptionOverlay -%}
+      {%- captionOverlay 'https://www.youtube.com/watch?v=8LUoVGik9g8', 'Front Royal Vlog Edit #2', '' -%}
+        <picture>
+          <source srcset="/assets/img/takeover-2.webp" type="image/webp"/>
+          <img class="caption-image" src="/assets/img/takeover-2.jpg" alt="Screenshot from my second real vlog" width="600" height="302" loading="lazy"/>
+        </picture>
+      {%- endcaptionOverlay -%}
       <figure class="caption-overlay">
         <div class="full flex-center col tall">
           <h3>More Coming Soon...</h3>

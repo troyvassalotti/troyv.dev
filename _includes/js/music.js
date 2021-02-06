@@ -1,17 +1,13 @@
 // This is for the handdrawn annotations from Rough Notation
-import {
-  annotate
-} from 'https://unpkg.com/rough-notation?module';
-import {
-  annotationGroup
-} from 'https://unpkg.com/rough-notation?module';
+import {annotate} from 'https://unpkg.com/rough-notation?module';
+import {annotationGroup} from 'https://unpkg.com/rough-notation?module';
 
 const musicTitle = document.querySelector('#music-title');
 musicTitle.setAttribute("style", "color: var(--blackPrimary)");
 const musicAnnotation = annotate(musicTitle, {
   type: 'highlight',
   color: 'var(--musicColor)',
-  padding: 15
+  padding: 15,
 });
 
 musicAnnotation.show();
@@ -20,7 +16,7 @@ const albumTitle = document.querySelector('#album-title');
 const albumAnnotation = annotate(albumTitle, {
   type: 'box',
   color: 'var(--redPrimary)',
-  multiline: true
+  multiline: true,
 });
 
 function handleAlbum(entries) {

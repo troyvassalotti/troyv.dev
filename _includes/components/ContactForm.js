@@ -1,6 +1,4 @@
-const {
-  html
-} = require('common-tags');
+const {html} = require('common-tags');
 
 module.exports = function () {
   return html `

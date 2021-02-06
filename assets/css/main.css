@@ -154,9 +154,7 @@ pre {
 }
 
 blockquote {
-  -webkit-border-end: 2px solid var(--goldPrimary);
   border-inline-end: 2px solid var(--goldPrimary);
-  -webkit-border-start: 2px solid var(--goldPrimary);
   border-inline-start: 2px solid var(--goldPrimary);
   font-style: italic;
 }
@@ -239,17 +237,13 @@ h6 {
 }
 
 .main-navigation li:first-of-type {
-  -webkit-margin-before: 1ch;
   margin-block-start: 1ch;
-  -webkit-margin-after: 1ch;
   margin-block-end: 1ch;
 }
 
 .main-navigation__links li:not(:first-of-type) {
   display: inline-flex;
-  -webkit-margin-start: 1ch;
   margin-inline-start: 1ch;
-  -webkit-margin-end: 1ch;
   margin-inline-end: 1ch;
 }
 
@@ -296,12 +290,9 @@ h6 {
   ======================= */
 .site-footer {
   text-align: end;
-  -webkit-padding-start: 1ch;
   padding-inline-start: 1ch;
-  -webkit-padding-end: 1ch;
   padding-inline-end: 1ch;
   font-size: var(--step--1);
-  -webkit-margin-before: auto;
   margin-block-start: auto;
 }
 
@@ -312,9 +303,7 @@ h6 {
 
 .footer-navigation__links li {
   display: inline-flex;
-  -webkit-margin-start: 1ex;
   margin-inline-start: 1ex;
-  -webkit-margin-end: 1ex;
   margin-inline-end: 1ex;
 }
 
@@ -423,9 +412,7 @@ img[data-state="stay"]:hover {
 }
 
 body:not(.homepage) main.layout {
-  -webkit-margin-before: 1em;
   margin-block-start: 1em;
-  -webkit-margin-after: 2em;
   margin-block-end: 2em;
 }
 
@@ -453,7 +440,6 @@ body:not(.homepage) main.layout {
 
 .video-embed {
   display: block;
-  -webkit-margin-after: clamp(1ex, 5vw, 6ex);
   margin-block-end: clamp(1ex, 5vw, 6ex);
   contain: content;
   position: relative;
@@ -463,7 +449,6 @@ body:not(.homepage) main.layout {
 .video-embed::after {
   content: "";
   display: block;
-  -webkit-padding-after: calc(100% / (16 / 9));
   padding-block-end: calc(100% / (16 / 9));
 }
 
@@ -500,7 +485,6 @@ body:not(.homepage) main.layout {
 }
 
 .caption-overlay:hover > .caption-link .caption-image {
-  -webkit-filter: opacity(0.3);
   filter: opacity(0.3);
 }
 
@@ -599,7 +583,6 @@ body:not(.homepage) main.layout {
 }
 
 .post-header {
-  -webkit-padding-before: 2em;
   padding-block-start: 2em;
 }
 
@@ -674,14 +657,11 @@ body:not(.homepage) main.layout {
   }
 
   .main-navigation__links {
-    -webkit-padding-start: 1ch;
     padding-inline-start: 1ch;
   }
 
   .main-navigation__links li:not(:first-of-type) {
-    -webkit-margin-start: 0;
     margin-inline-start: 0;
-    -webkit-margin-end: 1ch;
     margin-inline-end: 1ch;
   }
 }
@@ -692,7 +672,6 @@ body:not(.homepage) main.layout {
   }
 
   .typewriter {
-    -webkit-animation: none !important;
     animation: none !important;
   }
 

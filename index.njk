@@ -46,16 +46,15 @@ pageName: homepage
       <div class="showcase-container">
         <div class="showcase">
         {% for project in projects.homepage -%}
-          <figure class="caption-overlay">
-            <a class="caption-link" href="{{ project.href }}" target="_blank" rel="noopener">
-              <img class="caption-image" src="/assets/img/{{ project.img }}.jpeg" alt="{{ project.alt }}" width="320" height="180" loading="lazy"/>
-              <div class="caption">
-                <figcaption>
-                  <h3>{{ project.title }}</h3>
-                </figcaption>
-              </div>
-            </a>
-          </figure>
+          {% set projhref %}{{ project.href }}{% endset %}
+          {% set projtitle %}{{ project.title }}{% endset %}
+          {% captionOverlay projhref, projtitle %}
+          <picture>
+            <source srcset="/assets/img/{{ project.img }}1280x720.jpeg" media="(min-width: 800px)">
+            <source srcset="/assets/img/{{ project.img }}1920x1080.jpeg" media="(min-width: 1400px)">
+            <img class="caption-image" src="/assets/img/{{ project.img }}1140x640.jpeg" alt="{{ project.alt }}" width="320" height="180" loading="lazy"/>
+          </picture>
+          {% endcaptionOverlay %}
         {% endfor -%}
         </div>
         <section class="flex-center col center content">
