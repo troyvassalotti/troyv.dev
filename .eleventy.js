@@ -6,9 +6,10 @@ const componentsDir = "_includes/components";
 const ContactForm = require(`./${componentsDir}/ContactForm`);
 const Figure = require(`./${componentsDir}/Figure`);
 const Button = require(`./${componentsDir}/Button`);
-const Screenshot = require(`./${componentsDir}/Screenshot`);
 const CaptionOverlay = require(`./${componentsDir}/CaptionOverlay`);
 const ProjectFeature = require(`./${componentsDir}/ProjectFeature`);
+const ImageShortcode = require(`./${componentsDir}/ImageShortcode`);
+const ImageShortcodeSync = require(`./${componentsDir}/ImageShortcodeSync`);
 
 // Do all the 11ty stuff
 module.exports = function (eleventyConfig) {
@@ -44,10 +45,11 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("favicon.ico");
 
   // A reusable block, so it helps to have it maintainable in one place
+  eleventyConfig.addNunjucksAsyncShortcode("image", ImageShortcode);
+  eleventyConfig.addNunjucksShortcode("imageSync", ImageShortcodeSync);
   eleventyConfig.addShortcode("contactForm", ContactForm);
   eleventyConfig.addShortcode("figure", Figure);
   eleventyConfig.addShortcode("button", Button);
-  eleventyConfig.addShortcode("screenshot", Screenshot);
   eleventyConfig.addPairedShortcode("captionOverlay", CaptionOverlay);
   eleventyConfig.addPairedShortcode("projectFeature", ProjectFeature);
 };

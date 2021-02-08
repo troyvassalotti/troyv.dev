@@ -14,10 +14,7 @@ pageName: homepage
           <p class="typewriter typewriter_2">...and I make things.</p>
         </div>
         <div class="portrait">
-          <picture>
-            <source srcset="/assets/img/me-on-set.webp" type="image/webp">
-            <img id="me" src="/assets/img/me-on-set.jpg" width="160" height="160" alt="This is me. I look like this." loading="lazy">
-          </picture>
+          {% image './assets/img/me-on-set.jpg', 'This is me. I look like this.', [300, 600], ['webp', 'avif', 'jpg'], '(max-width: 700px) 100vw, 50vw', 'me'%}
         </div>
         <div class="content">
           <p>I'm glad you could make it. Peruse my wares* and <a href="/about/">send me a letter</a> if you're so inclined.</p>
@@ -45,16 +42,17 @@ pageName: homepage
       <h2><span id="cool-anim">Cool</span> <span id="proj-anim">Projects</span></h2>
       <div class="showcase-container">
         <div class="showcase">
+        {%- set imgWidths = [300, 800, 1400] -%}
+        {%- set imgFormats = ['webp', 'jpg'] -%}
         {% for project in projects.homepage -%}
-          {% set projhref %}{{ project.href }}{% endset %}
-          {% set projtitle %}{{ project.title }}{% endset %}
-          {% captionOverlay projhref, projtitle %}
-          <picture>
-            <source srcset="/assets/img/{{ project.img }}1280x720.jpeg" media="(min-width: 800px)">
-            <source srcset="/assets/img/{{ project.img }}1920x1080.jpeg" media="(min-width: 1400px)">
-            <img class="caption-image" src="/assets/img/{{ project.img }}1140x640.jpeg" alt="{{ project.alt }}" width="320" height="180" loading="lazy"/>
-          </picture>
-          {% endcaptionOverlay %}
+          {%- set projhref -%}{{ project.href }}{%- endset -%}
+          {%- set projtitle -%}{{ project.title }}{%- endset -%}
+          {%- set projimg -%}{{ project.img }}{%- endset -%}
+          {%- set projalt -%}{{ project.alt }}{%- endset -%}
+          {%- set projsrc = "./assets/img/" + projimg + "1920x1080.jpeg" -%}
+          {%- captionOverlay projhref, projtitle -%}
+            {%- imageSync projsrc, projalt, imgWidths, imgFormats, '(max-width: 700px) 100vw, 1200px', 'caption-image' -%}
+          {%- endcaptionOverlay -%}
         {% endfor -%}
         </div>
         <section class="flex-center col center content">
