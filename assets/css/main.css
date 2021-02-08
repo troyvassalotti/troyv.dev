@@ -123,7 +123,8 @@ body {
 
 img {
   display: block;
-  width: 100%;
+  /* width: 100%; */
+  /* if you remove the above width rule, remember to clean up the full width classes on all your images. you commented it out so that your blog post images would stay their normal size, but also so small images would not be overly large. */
   max-width: 100%;
   margin: auto;
   height: auto;

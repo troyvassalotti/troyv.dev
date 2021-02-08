@@ -7,6 +7,9 @@ addCSS: true
 addJS: true
 plvylist: true
 ---
+{%- set logoWidths = [300, 600] -%}
+{%- set logoFormats = ['webp', 'png'] -%}
+{%- set logoSizes = '(max-width: 700px) 96vw, 300px' -%}
 <main class="layout">
   <header class="page-header center">
     <div class="wrapper">
@@ -24,10 +27,7 @@ plvylist: true
           <div class="band">
             <div class="band-logo">
               <a href="https://frontroyalmd.bandcamp.com/" target="_blank" rel="noopener">
-                <picture>
-                  <source srcset="/assets/img/front-royal-logo-white_400x240.webp" type="image/webp"/>
-                  <img src="/assets/img/front-royal-logo-white_400x240.png" alt="The logo for my band, Front Royal." width="400" height="240" loading="lazy"/>
-                </picture>
+                {% image './assets/img/front-royal-logo-white_400x240.png', 'the logo for my band, Front Royal', logoWidths, logoFormats, logoSizes, 'full' %}
               </a>
             </div>
             <div class="icon-bar">
@@ -39,10 +39,7 @@ plvylist: true
           <div class="band">
             <div class="band-logo">
               <a href="https://justtroy.bandcamp.com/" target="_blank" rel="noopener">
-                <picture>
-                  <source srcset="/assets/img/troy-full.webp" type="image/webp"/>
-                  <img src="/assets/img/troy-full.png" alt="The logo for my band, troy." width="600" height="300" loading="lazy"/>
-                </picture>
+                {% image './assets/img/troy-full.png', 'the logo for my band, troy', logoWidths, logoFormats, logoSizes, 'full' %}
               </a>
             </div>
             <div class="icon-bar">

@@ -6,6 +6,23 @@ pageName: projectsPage
 addCSS: true
 addJS: true
 ---
+{%- set frontroyal -%}
+  {%- include "front-royal-project-description.html" -%}
+{%- endset -%}
+{%- set notsocial -%}
+  {%- include "notsocial-project-description.html" -%}
+{%- endset -%}
+{%- set abandoned -%}
+  {%- include "abandoned-website-project-description.html" -%}
+{%- endset -%}
+{%- set troy -%}
+  {%- include "troy-band-project-description.html" -%}
+{%- endset -%}
+{%- set projWidths = [300, 800, 1400] -%}
+{%- set projSizes = '(max-width: 700px) 100vw, 1000px' -%}
+{%- set miscSizes = '33vw' -%}
+{%- set miscWidths = [300, 600, 900] -%}
+{%- set imgFormats = ['webp', 'jpg'] -%}
 <main class="layout">
   <header class="page-header center">
     <div class="wrapper">
@@ -13,49 +30,18 @@ addJS: true
     </div>
   </header>
   <section class="projects__focus">
-
-    {%- projectFeature 'Front Royal (The Band, Not The Town)', 'fr' -%}
-      <section class="project-image">
-        {%- screenshot 'https://www.frontroyalband.com', 'front-royal', 'Screenshot of the Front Royal website' -%}
-      </section>
-      <section class="project-description">
-        <p>When we decided to take the plunge and have a website of our own, I signed myself up to make it. It gave me the opportunity to try some new things out and I'm proud of the result.</p>
-        <p class="details">Built With: Eleventy.</p>
-      </section>
+    {%- projectFeature 'Front Royal (The Band, Not The Town)', frontroyal, 'https://www.frontroyalband.com', 'fr' -%}
+      {%- imageSync './assets/img/front-royal1920x1080.jpeg', 'Screenshot of the Front Royal website', projWidths, imgFormats, projSizes, 'full' -%}
     {%- endprojectFeature -%}
-
-    {%- projectFeature 'NotSocial: A New Type of Social Media', 'ns' -%}
-      <section class="project-image">
-        {%- screenshot 'https://www.notsocial.app/', 'notsocial', 'Screenshot of the NotSocial website' -%}
-      </section>
-      <section class="project-description">
-        <p>You ever wish you had a social media platform that didn't consume your life, but still gave you entertainment? Look no further than NotSocial.</p>
-        <p class="details">Built With: Nuxt.</p>
-      </section>
+    {%- projectFeature 'NotSocial: A New Type of Social Media', notsocial, 'https://www.notsocial.app/', 'ns' -%}
+      {%- imageSync './assets/img/notsocial1920x1080.jpeg', 'Screenshot of the NotSocial website', projWidths, imgFormats, projSizes, 'full' -%}
     {%- endprojectFeature -%}
-
-    {%- projectFeature 'An Abandoned Website', 'aw' -%}
-      <section class="project-image">
-        {%- screenshot 'https://www.abandoned.website', 'abandoned-website', 'Screenshot of the Abandoned Website homepage' -%}
-      </section>
-      <section class="project-description">
-        <p>What if a website, left to wither away and be forgotten, actually looked abandoned over time?</p>
-        <p class="details">Built With: Hugo.</p>
-      </section>
+    {%- projectFeature 'An Abandoned Website', abandoned, 'https://www.abandoned.website', 'aw' -%}
+      {%- imageSync './assets/img/abandoned-website1920x1080.jpeg', 'Screenshot of the Abandoned Website website', projWidths, imgFormats, projSizes, 'full' -%}
     {%- endprojectFeature -%}
-
-    {%- projectFeature 'troy. is a band', 'tr' -%}
-      <section class="project-image">
-        <a href="https://validcharacters.netlify.app" target="_blank" rel="noopener">
-          <img src="/assets/img/validcharacters1920x1080.jpeg" alt="Screenshot of the troy homepage" width="320" height="180" loading="lazy"/>
-        </a>
-      </section>
-      <section class="project-description">
-        <p>i decided to give troy. - a band I have - a website. while i don't do anything serious with the band, it was fun to make something.</p>
-        <p class="details">built with: eleventy.</p>
-      </section>
+    {%- projectFeature 'troy. is a band', troy, 'https://validcharacters.netlify.app', 'tr' -%}
+      {%- imageSync './assets/img/validcharacters1920x1080.jpeg', 'Screenshot of the troy website', projWidths, imgFormats, projSizes, 'full' -%}
     {%- endprojectFeature -%}
-
   </section>
   <section class="codepen">
     <div class="wrapper">
@@ -71,22 +57,13 @@ addJS: true
     </header>
     <div class="projects__misc">
       {%- captionOverlay '/posts/i-logged-my-migraines-for-a-year/', '2019 Migraine Calendar', '' -%}
-        <picture>
-          <source srcset="/assets/img/migraines-2019.webp" type="image/webp"/>
-          <img class="caption-image" src="/assets/img/migraines-2019.jpg" alt="Screenshot of my a graph of my 2019 Migraine Calendar" width="600" height="302" loading="lazy"/>
-        </picture>
+        {%- imageSync './assets/img/migraines-2019.jpg', 'Screenshot of my a graph of my 2019 Migraine Calendar', miscWidths, imgFormats, miscSizes, 'caption-image full' -%}
       {%- endcaptionOverlay -%}
       {%- captionOverlay 'https://www.youtube.com/watch?v=DN29m0xBCDg', 'Front Royal Vlog Edit #1', '' -%}
-        <picture>
-          <source srcset="/assets/img/takeover-1.webp" type="image/webp"/>
-          <img class="caption-image" src="/assets/img/takeover-1.jpg" alt="Screenshot from my first real vlog" width="600" height="302" loading="lazy"/>
-        </picture>
+        {%- imageSync './assets/img/takeover-1.jpg', 'Screenshot from my first real vlog', miscWidths, imgFormats, miscSizes, 'caption-image full' -%}
       {%- endcaptionOverlay -%}
       {%- captionOverlay 'https://www.youtube.com/watch?v=8LUoVGik9g8', 'Front Royal Vlog Edit #2', '' -%}
-        <picture>
-          <source srcset="/assets/img/takeover-2.webp" type="image/webp"/>
-          <img class="caption-image" src="/assets/img/takeover-2.jpg" alt="Screenshot from my second real vlog" width="600" height="302" loading="lazy"/>
-        </picture>
+        {%- imageSync './assets/img/takeover-2.jpg', 'Screenshot from my second real vlog', miscWidths, imgFormats, miscSizes, 'caption-image full' -%}
       {%- endcaptionOverlay -%}
       <figure class="caption-overlay">
         <div class="full flex-center col tall">

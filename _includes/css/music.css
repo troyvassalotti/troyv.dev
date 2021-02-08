@@ -1,9 +1,9 @@
 .bands-container .section-header p {
   max-width: 60ch;
   -webkit-margin-start: auto;
-          margin-inline-start: auto;
+  margin-inline-start: auto;
   -webkit-margin-end: auto;
-          margin-inline-end: auto;
+  margin-inline-end: auto;
 }
 
 .bands {
@@ -17,9 +17,9 @@
   flex-direction: column;
   flex: 1 1 auto;
   -webkit-margin-start: 1ex;
-          margin-inline-start: 1ex;
+  margin-inline-start: 1ex;
   -webkit-margin-end: 1ex;
-          margin-inline-end: 1ex;
+  margin-inline-end: 1ex;
 }
 
 .band-logo img {
@@ -43,15 +43,15 @@
 
 .music-player {
   -webkit-margin-before: 2em;
-          margin-block-start: 2em;
+  margin-block-start: 2em;
   -webkit-margin-after: 2em;
-          margin-block-end: 2em;
+  margin-block-end: 2em;
 }
 
 .music-player header p {
   max-width: 60ch;
   -webkit-margin-start: auto;
-          margin-inline-start: auto;
+  margin-inline-start: auto;
   -webkit-margin-end: auto;
-          margin-inline-end: auto;
+  margin-inline-end: auto;
 }

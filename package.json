@@ -29,5 +29,7 @@
     "common-tags": "^1.8.0",
     "terser": "^5.5.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@11ty/eleventy-img": "^0.7.8"
+  }
 }
