@@ -8,7 +8,7 @@
     <link rel="dns-prefetch" href="https://d33wubrfki0l68.cloudfront.net">
     <link rel="canonical" href="https://www.troyv.dev{{page.url}}">
     <link rel="stylesheet" href="https://fonts.typotheque.com/WF-036345-011398.css" type="text/css" />
-    <link rel="stylesheet" href="/assets/css/normalize.css">
+    {# <link rel="stylesheet" href="/assets/css/normalize.css"> #}
     <link rel="stylesheet" href="/assets/css/main.css">
     {% if page.fileSlug === "" %}<link rel="stylesheet" href="/assets/css/homepage.css">{% endif %}
 
@@ -31,7 +31,7 @@
     </style>
     {%- endif -%}
 
-    {% if animation %}<script src="/assets/js/prefixfree.js"></script>{% endif %}
+    {# {% if animation %}<script src="/assets/js/prefixfree.js"></script>{% endif %} #}
     <title>{{ title }} | Troy V.</title>
     <meta name="description" content="{{description}}">
     <meta name="og:locale" content="en_US">
@@ -77,6 +77,9 @@
       {{ mainJS | safe }}
     </script>
 
+    {# Don't load this async or defer because it needs to come in prior to the actual data it manipulates #}
+    {% if d3 %}<script src="/assets/js/d3.min.js"></script>{% endif %}
+
     {%- if addJS or page.fileSlug === "" -%}
     {%- set js -%}
       {%- if addJS -%}
@@ -87,7 +90,7 @@
         {%- include "js/homepage.js" -%}
       {% endif %}
     {%- endset -%}
-    <script type="module" async>
+    <script type="module">
       {{ js | jsmin | safe }}
     </script>
     {%- endif -%}
