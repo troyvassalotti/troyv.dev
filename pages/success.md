@@ -3,5 +3,5 @@ title: I'll Be In Touch
 description: Thanks for reaching out! I'll be in touch soon.
 layout: responsecode
 ---
-<h1>200 OK</h1>
-<p>Sit back, relax, and I'll be in touch soon.</p>
+# 200 OK
+Sit back, relax, and I'll be in touch soon.
