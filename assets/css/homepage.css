@@ -60,15 +60,17 @@
 .typewriter_1 {
   font-size: var(--step-4);
   /* name, duration, number of steps, delay, repetitions */
-  animation: typing 1.5s steps(25) .5s 1 normal both, cursor 500ms steps(25) 5 normal;
+  animation: typing 1.5s steps(25) 0.5s 1 normal both,
+    cursor 500ms steps(25) 5 normal;
 }
 
 .typewriter_2 {
   font-family: var(--headings);
   font-size: var(--step-2);
   font-weight: bold;
-  margin-block-start: .5ex;
-  animation: typing 1.5s steps(35) 3s 1 normal both, cursor 500ms steps(25) 2.5s infinite normal;
+  margin-block-start: 0.5ex;
+  animation: typing 1.5s steps(35) 3s 1 normal both,
+    cursor 500ms steps(25) 2.5s infinite normal;
 }
 @keyframes typing {
   0% {
@@ -81,7 +83,7 @@
 }
 @keyframes cursor {
   0% {
-    border-right-color: rgba(255, 255, 255, .75);
+    border-right-color: currentColor;
   }
 
   100% {
@@ -117,7 +119,6 @@
 .showcase-container {
   --skew-padding: 1em 0 2em;
   --skew-color: transparent;
-  --skew-text: var(--whitePrimary);
   --skew-direction: var(--skewDown);
 }
 
@@ -126,7 +127,7 @@
 }
 
 .showcase-container .skewed-background::before {
-  border: 2px solid var(--whitePrimary);
+  border: 2px solid currentColor;
 }
 
 .supplemental {
@@ -183,6 +184,8 @@
   border: none;
   padding: 0;
   cursor: pointer;
+  color: currentColor;
+  stroke: currentColor;
 }
 
 #clouds {
@@ -313,7 +316,7 @@
 
 .cloud.background:nth-child(7) {
   animation-duration: 122s;
-  height: .34090909%;
+  height: 0.34090909%;
 }
 
 .cloud:nth-child(6) {
@@ -426,5 +429,14 @@
 
   .showcase-container .content {
     flex: 0 1 clamp(400px, 35vw, 600px);
+  }
+}
+@media (prefers-color-scheme: light) {
+  .post-listing {
+    border-color: var(--blackPrimary);
+  }
+
+  .supplemental .curve path {
+    fill: var(--greenPrimary);
   }
 }

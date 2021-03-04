@@ -15,7 +15,7 @@
   --plvyActiveBG: var(--grayPrimary);
   --plvyActiveText: var(--plvyWhite);
   --plvyFont: "Native", Monospace, monospace;
-  --plvyFontColor: var(--plvyWhite);
+  --plvyFontColor: currentColor;
   --plvyMainBG: var(--plvyWhite);
   --plvyLoopColor: var(--plvyRed);
   --plvyArtShadow: var(--plvyBlack);
@@ -267,5 +267,17 @@ ALL THE STYLES FOR THE SLIDER INPUTS ABOVE HERE
     display: grid;
     grid-template-columns: 300px 1fr;
     align-items: end;
+  }
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --plvyTrack-c: var(--plvyBlack);
+    --plvyFill-c: var(--plvyBlue);
+    --plvyThumb-c: var(--plvyBlack);
+    --plvyButtonColor: var(--plvyBlue);
+    --plvyActiveColor: var(--plvyBlue);
+    --plvyActiveBG: var(--goldPrimary);
+    --plvyActiveText: var(--plvyBlack);
+    --plvyFontColor: currentColor;
   }
 }
