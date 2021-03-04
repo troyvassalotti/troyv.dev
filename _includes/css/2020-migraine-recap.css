@@ -1,7 +1,6 @@
 div#calendar-heatmap {
   overflow: auto;
   background-color: var(--whitePrimary);
-  color: var(--blackPrimary);
   -webkit-padding-before: 1em;
   padding-block-start: 1em;
   -webkit-padding-after: 1em;
@@ -10,4 +9,5 @@ div#calendar-heatmap {
 
 div#calendar-heatmap svg.calendar {
   width: max(900px, 100%);
+  color: var(--blackPrimary);
 }

@@ -1,4 +1,4 @@
-.bands-container .section-header p {
+:is(.music-player header, .bands-container .section-header) p {
   max-width: 60ch;
   -webkit-margin-start: auto;
   margin-inline-start: auto;
@@ -27,7 +27,7 @@
 }
 
 .icon-bar {
-  background-color: var(--whitePrimary);
+  background-color: currentColor;
   padding: 1ex 2ex;
   display: flex;
   justify-content: space-around;
@@ -48,10 +48,12 @@
   margin-block-end: 2em;
 }
 
-.music-player header p {
-  max-width: 60ch;
-  -webkit-margin-start: auto;
-  margin-inline-start: auto;
-  -webkit-margin-end: auto;
-  margin-inline-end: auto;
+@media (prefers-color-scheme: light) {
+  .band-logo img {
+    filter: drop-shadow(2px 4px 6px black);
+  }
+
+  .icon-bar img {
+    filter: invert(1);
+  }
 }

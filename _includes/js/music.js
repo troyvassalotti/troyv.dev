@@ -2,8 +2,16 @@
 import {annotate} from 'https://unpkg.com/rough-notation?module';
 import {annotationGroup} from 'https://unpkg.com/rough-notation?module';
 
+let mq = '(prefers-color-scheme: light)';
+
 const musicTitle = document.querySelector('#music-title');
-musicTitle.setAttribute("style", "color: var(--blackPrimary)");
+
+const changeTitleColor = () => {
+  console.log(matchMedia(mq));
+  matchMedia(mq).matches ? musicTitle.setAttribute("style", "color: var(--whitePrimary)") : musicTitle.setAttribute("style", "color: var(--blackPrimary)");
+}
+
+matchMedia(mq).addEventListener("change", changeTitleColor());
 const musicAnnotation = annotate(musicTitle, {
   type: 'highlight',
   color: 'var(--musicColor)',

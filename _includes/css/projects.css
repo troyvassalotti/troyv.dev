@@ -17,17 +17,17 @@
   -webkit-margin-after: 1ex;
   margin-block-end: 1ex;
   font-size: var(--step-3);
-  -webkit-padding-start: .5ex;
-  padding-inline-start: .5ex;
+  -webkit-padding-start: 0.5ex;
+  padding-inline-start: 0.5ex;
 }
 
 .projects__focus .project-image img {
-  transition: .3s ease;
+  transition: 0.3s ease;
 }
 
 .projects__focus .project-image img:hover {
-  -webkit-filter: brightness(.5);
-  filter: brightness(.5);
+  -webkit-filter: brightness(0.5);
+  filter: brightness(0.5);
   transform: scale(1.02);
 }
 
@@ -47,7 +47,6 @@
 }
 
 #project_ns {
-  --colorOpacity: .2;
   --skew-color: var(--bluePrimary);
   --skew-text: var(--blackPrimary);
 }
@@ -100,5 +99,12 @@
     place-items: center;
     grid-template-columns: 1.5fr 1fr;
     gap: 1.5em;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  #project_fr {
+    --skew-color: currentColor;
+    --skew-text: var(--whitePrimary);
   }
 }

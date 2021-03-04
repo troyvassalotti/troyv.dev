@@ -96,7 +96,7 @@
   --aboutColor: var(--bluePrimary);
   --postsColor: var(--greenPrimary);
   --projectsColor: var(--goldPrimary);
-  --musicColor: var(--whitePrimary);
+  --musicColor: currentColor;
   /* other things */
   --gap: 1em;
   --skewUp: skewy(-3deg);
@@ -251,7 +251,7 @@ h6 {
 }
 
 .main-navigation__link {
-  color: var(--whitePrimary);
+  color: currentColor;
   text-decoration: none;
 }
 
@@ -311,7 +311,7 @@ h6 {
 }
 
 .footer-navigation__link {
-  color: var(--whitePrimary);
+  color: currentColor;
   text-decoration: none;
 }
 
@@ -421,7 +421,7 @@ body:not(.homepage) main.layout {
 
 .skewed-background {
   position: relative;
-  padding: var(--skew-padding);
+  padding: var(--skew-padding, 1em 0 2em);
   display: inline-flex;
 }
 
@@ -431,13 +431,13 @@ body:not(.homepage) main.layout {
   content: "";
   width: 100%;
   height: 100%;
-  background: var(--skew-color);
-  transform: var(--skew-direction);
+  background: var(--skew-color, currentColor);
+  transform: var(--skew-direction, var(--skewUp));
 }
 
 .skewed-background .content {
   position: relative;
-  color: var(--skew-text);
+  color: var(--skew-text, currentColor);
   background: var(--skew-color);
 }
 
@@ -488,24 +488,17 @@ body:not(.homepage) main.layout {
 }
 
 .caption-overlay:hover > .caption-link .caption-image {
-  filter: opacity(0.3);
+  filter: brightness(0.5);
 }
 
 .caption-overlay:hover > .caption-link .caption {
   opacity: 1;
 }
 
-.caption-overlay .caption-link {
-  color: var(--blackPrimary);
-}
-
-.caption-overlay .caption-link:hover {
-  color: var(--blackPrimary);
-}
-
 .caption-overlay .caption figcaption {
   background: var(--whitePrimary);
   padding: 0 1ch;
+  color: var(--blackPrimary);
 }
 /* ======================
   Content Styles
@@ -523,12 +516,12 @@ body:not(.homepage) main.layout {
 }
 
 .button {
-  --buttonColor: var(--whitePrimary);
+  --buttonColor: currentColor;
   display: inline-block;
   background-color: transparent;
   border: 1px solid var(--buttonColor);
   padding: 1ex 2ex;
-  color: var(--whitePrimary);
+  color: currentColor;
   text-decoration: none;
   transition: 0.3s ease-out;
 }
@@ -545,7 +538,7 @@ body:not(.homepage) main.layout {
   display: flex;
   flex-direction: column;
   width: 100%;
-  border: 1px solid var(--whitePrimary);
+  border: 1px solid currentColor;
   padding: 1ch;
   max-width: 500px;
 }
@@ -572,12 +565,8 @@ body:not(.homepage) main.layout {
   cursor: pointer;
   margin-left: auto;
   margin-right: auto;
-  --buttonColor: var(--whitePrimary);
 }
 
-#submit:hover {
-  --buttonColor: var(--goldPrimary);
-}
 /* ======================
   Post Page Styles
   ======================= */
@@ -682,5 +671,42 @@ body:not(.homepage) main.layout {
 
   a.animated-link::before {
     display: none !important;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  html {
+    background: var(--whitePrimary);
+    color: var(--blackPrimary);
+  }
+
+  a {
+    color: var(--bluePrimary);
+  }
+
+  a:hover {
+    color: var(--redPrimary);
+  }
+
+  blockquote {
+    border-color: currentColor;
+  }
+
+  #eleventy {
+    color: var(--redPrimary);
+  }
+
+  .button {
+    font-weight: bold;
+  }
+
+  .button:hover {
+    --buttonColor: var(--bluePrimary);
+    color: var(--whitePrimary);
+  }
+
+  .contact-form {
+    color: var(--whitePrimary);
+    background-color: var(--blackPrimary);
   }
 }
