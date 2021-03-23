@@ -15,7 +15,7 @@
   --plvyActiveBG: var(--grayPrimary);
   --plvyActiveText: var(--plvyWhite);
   --plvyFont: "Native", Monospace, monospace;
-  --plvyFontColor: currentColor;
+  --plvyFontColor: var(--whitePrimary);
   --plvyMainBG: var(--plvyWhite);
   --plvyLoopColor: var(--plvyRed);
   --plvyArtShadow: var(--plvyBlack);
