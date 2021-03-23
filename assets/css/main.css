@@ -119,10 +119,6 @@ a.animated-link {
   text-decoration: underline;
 }
 
-a.animated-link:hover {
-  color: var(--bluePrimary);
-}
-
 /* ======================
   Heading Styles
   ======================= */
