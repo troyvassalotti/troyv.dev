@@ -1,0 +1,71 @@
+/* ======================
+  Post Page Styles
+  ======================= */
+.post .wrapper {
+  max-width: 75ch;
+}
+
+.post-header {
+  padding-block-start: 2em;
+}
+
+.post-header .wrapper {
+  border-bottom: 2px solid var(--goldPrimary);
+}
+
+.post h1 {
+  font-size: var(--step-4);
+}
+
+.post h2 {
+  font-size: var(--step-3);
+}
+
+.post h3 {
+  font-size: var(--step-2);
+}
+
+.post h4 {
+  font-size: var(--step-1);
+}
+
+.post :is(h2, h3, h4) {
+  margin-top: revert;
+}
+
+/* Keeping this here for future reference as I might try to use it again later */
+/* .featured-image::before {
+  background-image: var(--featuredImage);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: soft-light;
+  z-index: -1;
+}
+
+.featured-image::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: overlay;
+  z-index: -1;
+  background: linear-gradient(
+    130deg,
+    var(--redPrimary),
+    var(--bluePrimary) 46.07%,
+    var(--goldPrimary) 78.05%
+  );
+}
+
+.featured-image {
+  position: relative;
+} */

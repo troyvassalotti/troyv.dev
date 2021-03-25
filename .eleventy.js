@@ -2,7 +2,9 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const CleanCSS = require("clean-css");
 const {minify} = require("terser");
 
-const componentsDir = "_includes/components";
+const inputDir = "src";
+
+const componentsDir = `${inputDir}/_includes/components`;
 const ContactForm = require(`./${componentsDir}/ContactForm`);
 const Figure = require(`./${componentsDir}/Figure`);
 const Button = require(`./${componentsDir}/Button`);
@@ -39,10 +41,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLayoutAlias("responsecode", "layouts/responsecode.njk");
 
   // Passthroughs
-  eleventyConfig.addPassthroughCopy("assets");
-  eleventyConfig.addPassthroughCopy("robots.txt");
-  eleventyConfig.addPassthroughCopy("about/resume.pdf");
-  eleventyConfig.addPassthroughCopy("favicon.ico");
+  eleventyConfig.addPassthroughCopy(`${inputDir}/assets`);
+  eleventyConfig.addPassthroughCopy(`${inputDir}/robots.txt`);
+  eleventyConfig.addPassthroughCopy(`${inputDir}/about/resume.pdf`);
+  eleventyConfig.addPassthroughCopy(`${inputDir}/favicon.ico`);
 
   // A reusable block, so it helps to have it maintainable in one place
   eleventyConfig.addNunjucksAsyncShortcode("image", ImageShortcode);
@@ -52,4 +54,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addShortcode("button", Button);
   eleventyConfig.addPairedShortcode("captionOverlay", CaptionOverlay);
   eleventyConfig.addPairedShortcode("projectFeature", ProjectFeature);
+
+  return {
+    dir: {
+      input: "src"
+    }
+  }
 };

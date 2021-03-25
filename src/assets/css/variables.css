@@ -1,0 +1,53 @@
+/* ======================
+  Variables
+  ======================= */
+:root {
+  /* @link https://utopia.fyi/generator-mk-ii?c=320,18,1.2,1140,21,1.25,6,3, */
+  --step--3: clamp(0.6513rem, 0.5949rem + 0.2817vw, 0.7956rem);
+  --step--2: clamp(0.7813rem, 0.7134rem + 0.339vw, 0.955rem);
+  --step--1: clamp(0.9375rem, 0.8563rem + 0.4061vw, 1.1456rem);
+  --step-0: clamp(1.125rem, 1.0762rem + 0.2439vw, 1.25rem);
+  --step-1: clamp(1.35rem, 1.2329rem + 0.5854vw, 1.65rem);
+  --step-2: clamp(1.62rem, 1.4795rem + 0.7024vw, 1.98rem);
+  --step-3: clamp(1.9438rem, 1.775rem + 0.8439vw, 2.3763rem);
+  --step-4: clamp(2.3325rem, 2.1301rem + 1.0122vw, 2.8513rem);
+  --step-5: clamp(2.7994rem, 2.5567rem + 1.2134vw, 3.4213rem);
+  --step-6: clamp(3.3594rem, 3.0682rem + 1.4561vw, 4.1056rem);
+  /* font styles */
+  --fallback: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
+    Segoe UI Symbol;
+  --body: Oli Grotesk, var(--fallback);
+  --code: Native, Monospace, monospace;
+  --headings: DM Sans, var(--fallback);
+  /* main palette colors */
+  --colorOpacity: 1;
+  --black: 19, 17, 18;
+  --gray: 96, 101, 111;
+  --white: 247, 247, 255;
+  --red: 255, 0, 34;
+  --gold: 229, 149, 0;
+  --green: 39, 174, 96;
+  --blue: 35, 138, 221;
+  --blackPrimary: rgba(var(--black), var(--colorOpacity));
+  --grayPrimary: rgba(var(--gray), var(--colorOpacity));
+  --whitePrimary: rgba(var(--white), var(--colorOpacity));
+  --redPrimary: rgba(var(--red), var(--colorOpacity));
+  --goldPrimary: rgba(var(--gold), var(--colorOpacity));
+  --greenPrimary: rgba(var(--green), var(--colorOpacity));
+  --bluePrimary: rgba(var(--blue), var(--colorOpacity));
+  /* use these colors to determine the nav underlines and roughnotation effects */
+  --homeColor: var(--redPrimary);
+  --aboutColor: var(--bluePrimary);
+  --postsColor: var(--greenPrimary);
+  --projectsColor: var(--goldPrimary);
+  --musicColor: currentColor;
+  /* other things */
+  --gap: 1em;
+  --skewUp: skewy(-3deg);
+  --skewDown: skewy(3deg);
+  --linkStateRest: scaleX(1);
+  --linkStartRest: left;
+  --linkStateHover: scaleX(0);
+  --linkStartHover: right;
+}

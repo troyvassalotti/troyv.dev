@@ -1,0 +1,65 @@
+/* ======================
+  Globals
+  ======================= */
+html {
+  line-height: 1.5;
+  word-wrap: break-word;
+  background: var(--blackPrimary);
+  color: var(--whitePrimary);
+  font-family: var(--body);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  font-size: var(--step-0);
+}
+
+img {
+  display: block;
+  /* width: 100%; */
+  /* if you remove the above width rule, remember to clean up the full width classes on all your images. you commented it out so that your blog post images would stay their normal size, but also so small images would not be overly large. */
+  max-width: 100%;
+  margin: auto;
+  height: auto;
+}
+
+img[height] {
+  height: auto;
+}
+
+a {
+  color: var(--goldPrimary);
+}
+
+a:hover {
+  color: var(--bluePrimary);
+}
+
+.code,
+code,
+pre {
+  font-family: var(--code);
+}
+
+pre {
+  white-space: pre-wrap;
+  font-size: var(--step--2);
+  font-weight: 300;
+}
+
+blockquote {
+  border-inline-end: 2px solid var(--goldPrimary);
+  border-inline-start: 2px solid var(--goldPrimary);
+  font-style: italic;
+}
+
+blockquote p {
+  padding: 1ch;
+}
+
+a.animated-link {
+  text-decoration: underline;
+}
