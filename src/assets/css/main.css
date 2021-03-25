@@ -6,6 +6,7 @@
 @import "headings.css";
 @import "navigations.css";
 @import "composition.css";
+@import "contactform.css";
 @import "posts.css";
 
 @media only screen and (min-width: 720px) {
