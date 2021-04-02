@@ -1,0 +1,22 @@
+{# Don't load this async or defer because it needs to come in prior to the actual data it manipulates #}
+{% if d3 %}
+    <script src="/assets/js/d3.min.js"></script>
+{% endif %}
+{% if addJS or page.fileSlug === "" %}
+    {%- set js -%}
+        {% include "js/main.js" %}
+        {%- if addJS -%}
+            {%- include "js/" + page.fileSlug + ".js" -%}
+        {%- endif -%}
+
+        {% if page.fileSlug === "" %}
+            {%- include "js/homepage.js" -%}
+        {% endif %}
+    {%- endset -%}
+    <script type="module">
+        {{ js | jsmin | safe }}
+    </script>
+{% endif %}
+{% if plvylist %}
+    <script src="/assets/js/plvylist.js" defer></script>
+{% endif %}

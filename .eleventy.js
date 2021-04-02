@@ -55,6 +55,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPairedShortcode("captionOverlay", CaptionOverlay);
   eleventyConfig.addPairedShortcode("projectFeature", ProjectFeature);
 
+  // Change the location for 11ty to enter
   return {
     dir: {
       input: "src"
