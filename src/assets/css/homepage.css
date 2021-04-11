@@ -8,7 +8,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex: 1 1 320px;
+    flex: 1 1 20rem;
     margin-block-end: 3ch;
 }
 
@@ -24,7 +24,7 @@
 .feed {
     max-width: 75ch;
     text-align: end;
-    flex: 1 1 600px;
+    flex: 1 1 37.5rem;
 }
 
 .posts {
@@ -46,7 +46,7 @@
 }
 
 .portrait img {
-    max-width: 400px;
+    max-width: 25rem;
     border-radius: 50%;
 }
 
@@ -101,7 +101,7 @@
 
 .showcase .caption-overlay {
     margin: 1em;
-    flex: 1 1 300px;
+    flex: 1 1 18.75rem;
 }
 
 .showcase .caption-overlay h3 {
@@ -172,7 +172,7 @@
 
 @media (min-width: 68.75em) {
     .welcome-screen {
-        flex: 0 1 440px;
+        flex: 0 1 27.5rem;
     }
 }
 
@@ -186,7 +186,7 @@
     }
 
     .showcase-container .content {
-        flex: 0 1 clamp(400px, 35vw, 600px);
+        flex: 0 1 clamp(25rem, 35vw, 37.5rem);
     }
 }
 

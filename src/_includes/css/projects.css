@@ -78,7 +78,7 @@
 }
 
 .projects__misc .caption-overlay {
-    flex: 0 0 clamp(200px, 30vw, 600px);
+    flex: 0 0 clamp(12.5rem, 30vw, 37.5rem);
     -webkit-margin-start: 1em;
     margin-inline-start: 1em;
     -webkit-margin-end: 1em;

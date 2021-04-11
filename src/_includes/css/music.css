@@ -23,7 +23,7 @@
 }
 
 .band-logo img {
-  max-width: 300px;
+  max-width: 18.75rem;
 }
 
 .icon-bar {
@@ -32,7 +32,7 @@
   display: flex;
   justify-content: space-around;
   width: 100%;
-  max-width: 325px;
+  max-width: 20.3rem;
   margin: auto;
   align-items: center;
 }

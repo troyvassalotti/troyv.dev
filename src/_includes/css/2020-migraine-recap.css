@@ -8,6 +8,6 @@ div#calendar-heatmap {
 }
 
 div#calendar-heatmap svg.calendar {
-  width: max(900px, 100%);
+  width: max(56.25rem, 100%);
   color: var(--blackPrimary);
 }

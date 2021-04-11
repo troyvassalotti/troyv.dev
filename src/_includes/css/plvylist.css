@@ -271,7 +271,7 @@ ALL THE STYLES FOR THE SLIDER INPUTS ABOVE HERE
 @media (min-width: 43.75em) {
     .plvylist .plvy--meta {
         display: grid;
-        grid-template-columns: 300px 1fr;
+        grid-template-columns: 18.75rem 1fr;
         align-items: end;
     }
 }
