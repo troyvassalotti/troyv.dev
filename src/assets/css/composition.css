@@ -2,198 +2,199 @@
   Composition
   ======================= */
 .flex {
-  display: flex;
+    display: flex;
 }
 
 .col {
-  flex-direction: column;
+    flex-direction: column;
 }
 
 .wrapper {
-  width: 95%;
-  max-width: 1600px;
-  margin: auto;
+    width: 95%;
+    max-width: 1600px;
+    margin: auto;
 }
 
 .wrapper[data-constrain="some"] {
-  max-width: 1300px !important;
+    max-width: 1300px !important;
 }
 
 .wrapper[data-constrain="more"] {
-  max-width: 1100px !important;
+    max-width: 1100px !important;
 }
 
 .wrapper[data-constrain="most"] {
-  max-width: 600px !important;
+    max-width: 600px !important;
 }
 
 .full {
-  width: 100%;
+    width: 100%;
 }
 
 .tall {
-  height: 100%;
+    height: 100%;
 }
 
 .marginalize {
-  margin: auto;
+    margin: auto;
 }
 
 *[data-state="reversed"] {
-  flex-direction: column-reverse !important;
+    flex-direction: column-reverse !important;
 }
 
 img[data-state="stay"] {
-  transition: none !important;
+    transition: none !important;
 }
 
 img[data-state="stay"]:hover {
-  transition: none !important;
-  transform: none !important;
+    transition: none !important;
+    transform: none !important;
 }
 
 .grid {
-  display: grid;
-  gap: var(--gap);
+    display: grid;
+    gap: var(--gap);
 }
 
 .two-col {
-  grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 }
 
 .place-center {
-  place-items: center;
+    place-items: center;
 }
 
 .flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .wrap {
-  flex-wrap: wrap;
+    flex-wrap: wrap;
 }
 
 .layout {
-  display: grid;
-  gap: 2em;
+    display: grid;
+    gap: 2em;
 }
 
 body:not(.homepage) main.layout {
-  margin-block-start: 1em;
-  margin-block-end: 2em;
+    margin-block-start: 1em;
+    margin-block-end: 2em;
 }
 
 .skewed-background {
-  position: relative;
-  padding: var(--skew-padding, 1em 0 2em);
-  display: inline-flex;
+    position: relative;
+    padding: var(--skew-padding, 1em 0 2em);
+    display: inline-flex;
 }
 
 .skewed-background::before {
-  position: absolute;
-  top: -10px;
-  content: "";
-  width: 100%;
-  height: 100%;
-  background: var(--skew-color, currentColor);
-  transform: var(--skew-direction, var(--skewUp));
+    position: absolute;
+    top: -10px;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: var(--skew-color, currentColor);
+    transform: var(--skew-direction, var(--skewUp));
 }
 
 .skewed-background .content {
-  position: relative;
-  color: var(--skew-text, currentColor);
-  background: var(--skew-color);
+    position: relative;
+    color: var(--skew-text, currentColor);
+    background: var(--skew-color);
 }
 
 .video-embed {
-  display: block;
-  margin-block-end: clamp(1ex, 5vw, 6ex);
-  contain: content;
-  position: relative;
-  width: 100%;
+    display: block;
+    margin-block-end: clamp(1ex, 5vw, 6ex);
+    contain: content;
+    position: relative;
+    width: 100%;
 }
 
 .video-embed::after {
-  content: "";
-  display: block;
-  padding-block-end: calc(100% / (16 / 9));
+    content: "";
+    display: block;
+    padding-block-end: calc(100% / (16 / 9));
 }
 
 .video-embed iframe {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .caption-overlay {
-  position: relative;
-  margin: 0;
+    position: relative;
+    margin: 0;
 }
 
 .caption-link {
-  display: grid;
+    display: grid;
 }
 
 .caption-overlay .caption-link .caption-image {
-  transition: 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .caption-overlay .caption {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: 0.3s ease;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.3s ease;
 }
 
 .caption-overlay:hover > .caption-link .caption-image {
-  filter: brightness(0.5);
+    filter: brightness(0.5);
 }
 
 .caption-overlay:hover > .caption-link .caption {
-  opacity: 1;
+    opacity: 1;
 }
 
 .caption-overlay .caption figcaption {
-  background: var(--whitePrimary);
-  padding: 0 1ch;
-  color: var(--blackPrimary);
+    background: var(--whitePrimary);
+    padding: 0 1ch;
+    color: var(--blackPrimary);
 }
+
 /* ======================
   Content Styles
   ======================= */
 .center {
-  text-align: center;
+    text-align: center;
 }
 
 .italic {
-  font-style: italic;
+    font-style: italic;
 }
 
 .bold {
-  font-weight: 700;
+    font-weight: 700;
 }
 
 .button {
-  --buttonColor: currentColor;
-  display: inline-block;
-  background-color: transparent;
-  border: 1px solid var(--buttonColor);
-  padding: 1ex 2ex;
-  color: currentColor;
-  text-decoration: none;
-  transition: 0.3s ease-out;
+    --buttonColor: currentColor;
+    display: inline-block;
+    background-color: transparent;
+    border: 1px solid var(--buttonColor);
+    padding: 1ex 2ex;
+    color: currentColor;
+    text-decoration: none;
+    transition: 0.3s ease-out;
 }
 
 .button:hover {
-  --buttonColor: var(--goldPrimary);
-  background: var(--buttonColor);
-  color: var(--blackPrimary);
+    --buttonColor: var(--goldPrimary);
+    background: var(--buttonColor);
+    color: var(--blackPrimary);
 }

@@ -2,35 +2,35 @@
   Post Page Styles
   ======================= */
 .post .wrapper {
-  max-width: 75ch;
+    max-width: 75ch;
 }
 
 .post-header {
-  padding-block-start: 2em;
+    padding-block-start: 2em;
 }
 
 .post-header .wrapper {
-  border-bottom: 2px solid var(--goldPrimary);
+    border-bottom: 2px solid var(--goldPrimary);
 }
 
 .post h1 {
-  font-size: var(--step-4);
+    font-size: var(--step-4);
 }
 
 .post h2 {
-  font-size: var(--step-3);
+    font-size: var(--step-3);
 }
 
 .post h3 {
-  font-size: var(--step-2);
+    font-size: var(--step-2);
 }
 
 .post h4 {
-  font-size: var(--step-1);
+    font-size: var(--step-1);
 }
 
 .post :is(h2, h3, h4) {
-  margin-top: revert;
+    margin-top: revert;
 }
 
 /* Keeping this here for future reference as I might try to use it again later */

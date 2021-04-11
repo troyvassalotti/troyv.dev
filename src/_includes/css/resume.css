@@ -1,135 +1,139 @@
 .section-title {
-  text-align: center;
-  border-bottom: 2px dashed var(--whitePrimary);
+    text-align: center;
+    border-bottom: 2px dashed var(--whitePrimary);
 }
 
 .content {
-  padding: 1em;
+    padding: 1em;
 }
 
 .skills__list {
-  display: grid;
+    display: grid;
 }
 
 .skillset {
-  margin: 0;
+    margin: 0;
 }
 
 .profile {
-  max-width: 150px;
-  border-radius: 50%;
+    max-width: 150px;
+    border-radius: 50%;
 }
 
 .dated-header {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 .dated-header p {
-  margin: 0;
+    margin: 0;
 }
 
 .dated-header > * {
-  font-size: var(--step--1);
-  font-style: italic;
+    font-size: var(--step--1);
+    font-style: italic;
 }
 
 .resume {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--gap);
-  grid-template-areas: "photo" "name" "skills" "work" "education" "certifications";
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--gap);
+    grid-template-areas: "photo" "name" "skills" "work" "education" "certifications";
 }
 
 .resume ul {
-  padding-left: 20px;
-  display: grid;
-  gap: 1em;
+    padding-left: 20px;
+    display: grid;
+    gap: 1em;
 }
 
 .resume ul[data-state="tight"] {
-  gap: 0;
+    gap: 0;
 }
 
 .name {
-  grid-area: name;
-  display: grid;
-  place-items: center;
+    grid-area: name;
+    display: grid;
+    place-items: center;
 }
 
 .name p {
-  margin: 1ch;
+    margin: 1ch;
 }
 
 .photo {
-  grid-area: photo;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    grid-area: photo;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .skills {
-  grid-area: skills;
+    grid-area: skills;
 }
 
 .work {
-  grid-area: work;
+    grid-area: work;
 }
 
 .work .content {
-  display: grid;
-  gap: 1em;
+    display: grid;
+    gap: 1em;
 }
 
 .job h3 {
-  font-weight: 700;
+    font-weight: 700;
 }
 
 .education {
-  grid-area: education;
+    grid-area: education;
 }
 
 .certifications {
-  grid-area: certifications;
+    grid-area: certifications;
 }
-@media (min-width: 720px) {
-  .skills__list {
-    grid-template-columns: 1fr 1fr;
-    justify-items: center;
-  }
+
+@media (min-width: 45em) {
+    .skills__list {
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+    }
 }
-@media (min-width: 900px) {
-  .resume {
-    grid-template-columns: 2fr 1fr;
-    grid-template-areas: "name photo" "skills skills" "work work" "education education" "certifications certifications";
-  }
+
+@media (min-width: 56.25em) {
+    .resume {
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas: "name photo" "skills skills" "work work" "education education" "certifications certifications";
+    }
 }
-@media (min-width: 1150px) {
-  .resume {
-    grid-template-areas: "name photo" "work skills" "work education" "work certifications";
-  }
+
+@media (min-width: 71em) {
+    .resume {
+        grid-template-areas: "name photo" "work skills" "work education" "work certifications";
+    }
 }
+
 @media print {
-  @page {
-    size: letter;
-  }
+    @page {
+        size: letter;
+    }
 
-  html {
-    font-size: 5.25px;
-  }
+    html {
+        font-size: 5.25px;
+    }
 
-  body {
-    padding: 0;
-    margin: 0;
-  }
+    body {
+        padding: 0;
+        margin: 0;
+    }
 
-  .hideOnPrint {
-    display: none;
-  }
+    .hideOnPrint {
+        display: none;
+    }
 
-  .resume {
-    grid-template-columns: 2fr 1fr;
-    grid-template-areas: "name photo" "work skills" "work education" "work certifications";
-  }
+    .resume {
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas: "name photo" "work skills" "work education" "work certifications";
+    }
 }

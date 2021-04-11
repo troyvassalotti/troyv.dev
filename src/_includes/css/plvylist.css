@@ -1,283 +1,290 @@
 /* ALL VARIABLES */
 :root {
-  --plvyBlue: var(--bluePrimary);
-  --plvyRed: var(--redPrimary);
-  --plvyBlack: var(--blackPrimary);
-  --plvyWhite: var(--whitePrimary);
-  --plvyTrack-w: 100%;
-  --plvyTrack-h: 0.25em;
-  --plvyThumb-d: 1em;
-  --plvyTrack-c: var(--grayPrimary);
-  --plvyFill-c: var(--goldPrimary);
-  --plvyThumb-c: var(--plvyWhite);
-  --plvyButtonColor: var(--plvyBlue);
-  --plvyActiveColor: var(--goldPrimary);
-  --plvyActiveBG: var(--grayPrimary);
-  --plvyActiveText: var(--plvyWhite);
-  --plvyFont: "Native", Monospace, monospace;
-  --plvyFontColor: var(--whitePrimary);
-  --plvyMainBG: var(--plvyWhite);
-  --plvyLoopColor: var(--plvyRed);
-  --plvyArtShadow: var(--plvyBlack);
+    --plvyBlue: var(--bluePrimary);
+    --plvyRed: var(--redPrimary);
+    --plvyBlack: var(--blackPrimary);
+    --plvyWhite: var(--whitePrimary);
+    --plvyTrack-w: 100%;
+    --plvyTrack-h: 0.25em;
+    --plvyThumb-d: 1em;
+    --plvyTrack-c: var(--grayPrimary);
+    --plvyFill-c: var(--goldPrimary);
+    --plvyThumb-c: var(--plvyWhite);
+    --plvyButtonColor: var(--plvyBlue);
+    --plvyActiveColor: var(--goldPrimary);
+    --plvyActiveBG: var(--grayPrimary);
+    --plvyActiveText: var(--plvyWhite);
+    --plvyFont: "Native", Monospace, monospace;
+    --plvyFontColor: var(--whitePrimary);
+    --plvyMainBG: var(--plvyWhite);
+    --plvyLoopColor: var(--plvyRed);
+    --plvyArtShadow: var(--plvyBlack);
 }
+
 /* ALL VARIABLES ABOVE */
 /* PLVYLIST BELOW */
 .plvylist {
-  padding: 1rem;
-  font-family: var(--plvyFont);
-  font-size: 16px;
-  color: var(--plvyFontColor);
-  width: 100%;
-  max-width: 45em;
-  margin: auto;
+    padding: 1rem;
+    font-family: var(--plvyFont);
+    font-size: 16px;
+    color: var(--plvyFontColor);
+    width: 100%;
+    max-width: 45em;
+    margin: auto;
 }
 
 .plvylist img {
-  max-width: 100%;
-  display: block;
-  margin: auto;
-  height: auto;
-  width: initial;
+    max-width: 100%;
+    display: block;
+    margin: auto;
+    height: auto;
+    width: initial;
 }
 
 .plvylist img#artwork {
-  box-shadow: 0 0 5px 1px var(--plvyArtShadow);
+    box-shadow: 0 0 5px 1px var(--plvyArtShadow);
 }
 
 .plvylist .plvy--meta {
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  gap: 1em;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    gap: 1em;
 }
 
 .plvylist .plvy--track-info p {
-  margin: 0;
-  font-size: var(--plvyResponsiveFont);
+    margin: 0;
+    font-size: var(--plvyResponsiveFont);
 }
 
 .plvylist .plvy--controls {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .plvylist .plvy--controls .controls__primary {
-  display: flex;
-  width: 100%;
-  flex: 1;
+    display: flex;
+    width: 100%;
+    flex: 1;
 }
 
 .plvylist .plvy--controls .controls__primary #fwd {
-  margin-right: auto;
+    margin-right: auto;
 }
 
 .plvylist .plvy--controls .controls__primary #loop.loop--active svg {
-  stroke: var(--plvyLoopColor);
+    stroke: var(--plvyLoopColor);
 }
 
 .plvylist .plvy--controls .controls__secondary .plvy--volume {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5em;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
 }
 
 .plvylist .plvy--controls button {
-  border: none;
-  border-radius: 25%;
-  background: none;
-  transition: background 0.1s ease-in-out;
+    border: none;
+    border-radius: 25%;
+    background: none;
+    transition: background 0.1s ease-in-out;
 }
 
 .plvylist .plvy--controls button svg {
-  stroke: var(--plvyFontColor);
-  transition: stroke 0.1s ease-in-out;
+    stroke: var(--plvyFontColor);
+    transition: stroke 0.1s ease-in-out;
 }
 
 .plvylist .plvy--controls button:hover svg {
-  stroke: var(--plvyButtonColor);
+    stroke: var(--plvyButtonColor);
 }
 
 .plvylist .plvy--seeker {
-  margin: 1em auto;
+    margin: 1em auto;
 }
 
 .plvylist .plvy--tracklist .plvy--song__title:hover {
-  text-decoration: underline;
-  cursor: pointer;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .plvylist .plvy--tracklist #plvy--songs {
-  padding-left: 2em;
-  line-height: 1.5;
-  font-size: var(--plvyResponsiveFont);
+    padding-left: 2em;
+    line-height: 1.5;
+    font-size: var(--plvyResponsiveFont);
 }
 
 .plvylist .plvy--tracklist #plvy--songs .plvy--song {
-  padding: 0 0.5em;
+    padding: 0 0.5em;
 }
 
 .plvylist .plvy--tracklist #plvy--songs .plvy--song:hover {
-  background: var(--plvyActiveBG);
-  color: var(--plvyActiveText);
+    background: var(--plvyActiveBG);
+    color: var(--plvyActiveText);
 }
 
 .plvylist .plvy--tracklist #plvy--songs .plvy--song__active {
-  color: var(--plvyActiveColor);
+    color: var(--plvyActiveColor);
 }
+
 /* ==============
 ALL THE STYLES FOR THE SLIDER INPUTS BELOW HERE
 =============== */
 .plvylist input[type="range"] {
-  --range: calc(var(--max) - var(--min));
-  --ratio: calc((var(--val) - var(--min)) / var(--range));
-  --sx: calc(
-    0.5 * var(--plvyThumb-d) + var(--ratio) * (100% - var(--plvyThumb-d))
-  );
-  margin: 0;
-  padding: 0;
-  max-width: var(--plvyTrack-w);
-  height: var(--plvyTrack-h);
-  background: transparent;
-  font: 1em/1 arial, sans-serif;
-  display: inline-block;
-  width: 100%;
-  height: 31px;
-  padding: 0;
+    --range: calc(var(--max) - var(--min));
+    --ratio: calc((var(--val) - var(--min)) / var(--range));
+    --sx: calc(
+            0.5 * var(--plvyThumb-d) + var(--ratio) * (100% - var(--plvyThumb-d))
+    );
+    margin: 0;
+    padding: 0;
+    max-width: var(--plvyTrack-w);
+    height: var(--plvyTrack-h);
+    background: transparent;
+    font: 1em/1 arial, sans-serif;
+    display: inline-block;
+    width: 100%;
+    height: 31px;
+    padding: 0;
 }
 
 .plvylist input[type="range"],
 .plvylist input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
+    -webkit-appearance: none;
 }
 
 .plvylist input[type="range"],
 .plvylist input[type="range"]:focus {
-  border: none;
-  box-shadow: none;
-  -webkit-appearance: none;
+    border: none;
+    box-shadow: none;
+    -webkit-appearance: none;
 }
 
 .plvylist input[type="range"]::-webkit-slider-runnable-track {
-  box-sizing: border-box;
-  max-width: var(--plvyTrack-w);
-  height: var(--plvyTrack-h);
-  background: var(--plvyTrack-c);
-  border-radius: 6px;
-  padding-top: 1.5px;
-  padding-bottom: 1.5px;
-  background: linear-gradient(var(--plvyFill-c), var(--plvyFill-c)) 0 /
+    box-sizing: border-box;
+    max-width: var(--plvyTrack-w);
+    height: var(--plvyTrack-h);
+    background: var(--plvyTrack-c);
+    border-radius: 6px;
+    padding-top: 1.5px;
+    padding-bottom: 1.5px;
+    background: linear-gradient(var(--plvyFill-c), var(--plvyFill-c)) 0 /
     var(--sx) 100% no-repeat var(--plvyTrack-c);
 }
 
 .plvylist input[type="range"]::-moz-range-track {
-  box-sizing: border-box;
-  max-width: var(--plvyTrack-w);
-  height: var(--plvyTrack-h);
-  background: var(--plvyTrack-c);
-  border-radius: 6px;
-  padding-top: 1.5px;
-  padding-bottom: 1.5px;
+    box-sizing: border-box;
+    max-width: var(--plvyTrack-w);
+    height: var(--plvyTrack-h);
+    background: var(--plvyTrack-c);
+    border-radius: 6px;
+    padding-top: 1.5px;
+    padding-bottom: 1.5px;
 }
 
 .plvylist input[type="range"]::-ms-track {
-  box-sizing: border-box;
-  max-width: var(--plvyTrack-w);
-  height: var(--plvyTrack-h);
-  background: var(--plvyTrack-c);
-  border-radius: 6px;
+    box-sizing: border-box;
+    max-width: var(--plvyTrack-w);
+    height: var(--plvyTrack-h);
+    background: var(--plvyTrack-c);
+    border-radius: 6px;
 }
 
 .plvylist input[type="range"]::-moz-range-progress {
-  height: var(--plvyTrack-h);
-  background: var(--plvyFill-c);
-  border-radius: 6px;
+    height: var(--plvyTrack-h);
+    background: var(--plvyFill-c);
+    border-radius: 6px;
 }
 
 .plvylist input[type="range"]::-webkit-slider-thumb {
-  margin-top: -9px;
-  box-sizing: border-box;
-  background: var(--plvyThumb-c);
-  width: var(--plvyThumb-d);
-  height: var(--plvyThumb-d);
-  border-radius: 50%;
+    margin-top: -9px;
+    box-sizing: border-box;
+    background: var(--plvyThumb-c);
+    width: var(--plvyThumb-d);
+    height: var(--plvyThumb-d);
+    border-radius: 50%;
 }
 
 .plvylist input[type="range"]::-moz-range-thumb {
-  border: none;
-  box-sizing: border-box;
-  background: var(--plvyThumb-c);
-  width: var(--plvyThumb-d);
-  height: var(--plvyThumb-d);
-  border-radius: 50%;
+    border: none;
+    box-sizing: border-box;
+    background: var(--plvyThumb-c);
+    width: var(--plvyThumb-d);
+    height: var(--plvyThumb-d);
+    border-radius: 50%;
 }
 
 .plvylist input[type="range"]:focus {
-  outline: none;
+    outline: none;
 }
+
 /*** Firefox Code Needed ***/
 .plvylist input[type="range"]::-moz-focus-outer {
-  border: none !important;
+    border: none !important;
 }
+
 /*** IE/Edge code needed ***/
 .plvylist input[type="range"]::-ms-track {
-  color: transparent;
-  border: none !important;
+    color: transparent;
+    border: none !important;
 }
 
 .plvylist input[type="range"]::-ms-tooltip {
-  display: none;
+    display: none;
 }
 
 .plvylist input[type="range"]::-ms-fill-lower {
-  background: var(--plvyFill-c);
+    background: var(--plvyFill-c);
 }
 
 .plvylist input[type="range"]::-ms-fill-upper {
-  background: var(--plvyTrack-c);
+    background: var(--plvyTrack-c);
 }
 
 .plvylist input[type="range"]::-ms-thumb {
-  margin-top: 1px !important;
-  height: 10px !important;
-  width: 10px !important;
-  border-radius: 50%;
-  background: var(--plvyThumb-c);
-  cursor: pointer;
-  border: 10px solid var(--plvyThumb-c) !important;
-  box-shadow: none !important;
+    margin-top: 1px !important;
+    height: 10px !important;
+    width: 10px !important;
+    border-radius: 50%;
+    background: var(--plvyThumb-c);
+    cursor: pointer;
+    border: 10px solid var(--plvyThumb-c) !important;
+    box-shadow: none !important;
 }
+
 /* ==============
 ALL THE STYLES FOR THE SLIDER INPUTS ABOVE HERE
 =============== */
-@media only screen and (max-width: 375px) {
-  .plvylist .plvy--controls {
-    flex-direction: column;
-  }
+@media (max-width: 23em) {
+    .plvylist .plvy--controls {
+        flex-direction: column;
+    }
 
-  .plvylist .plvy--controls .controls__primary {
-    justify-content: center;
-  }
+    .plvylist .plvy--controls .controls__primary {
+        justify-content: center;
+    }
 
-  .plvylist .plvy--controls .controls__primary #fwd {
-    margin-right: 0;
-  }
+    .plvylist .plvy--controls .controls__primary #fwd {
+        margin-right: 0;
+    }
 }
-@media only screen and (min-width: 700px) {
-  .plvylist .plvy--meta {
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    align-items: end;
-  }
+
+@media (min-width: 43.75em) {
+    .plvylist .plvy--meta {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        align-items: end;
+    }
 }
+
 @media (prefers-color-scheme: light) {
-  :root {
-    --plvyTrack-c: var(--plvyBlack);
-    --plvyFill-c: var(--plvyBlue);
-    --plvyThumb-c: var(--plvyBlack);
-    --plvyButtonColor: var(--plvyBlue);
-    --plvyActiveColor: var(--plvyBlue);
-    --plvyActiveBG: var(--goldPrimary);
-    --plvyActiveText: var(--plvyBlack);
-    --plvyFontColor: currentColor;
-  }
+    :root {
+        --plvyTrack-c: var(--plvyBlack);
+        --plvyFill-c: var(--plvyBlue);
+        --plvyThumb-c: var(--plvyBlack);
+        --plvyButtonColor: var(--plvyBlue);
+        --plvyActiveColor: var(--plvyBlue);
+        --plvyActiveBG: var(--goldPrimary);
+        --plvyActiveText: var(--plvyBlack);
+        --plvyFontColor: currentColor;
+    }
 }
