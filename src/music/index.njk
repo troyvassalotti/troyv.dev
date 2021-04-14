@@ -58,7 +58,13 @@ plvylist: true
         <h2>Stream <span class="italic" id="album-title">Alone In A Crowded Room</span></h2>
         <p>I created my own embedded streaming player, called <span class="italic">Plvylist</span>, because I wanted to understand how web audio works. Check it out in action.</p>
       </header>
-      <div class="plvylist"></div>
+      <plvylist-player
+              audio-location="/assets/audio/"
+              artist-name="troy."
+              album-name="Alone In A Crowded Room"
+              cover-art="/assets/img/aiacr.jpg"
+              placeholder-image="/assets/img/missingart.png">
+      </plvylist-player>
     </div>
   </section>
 </main>

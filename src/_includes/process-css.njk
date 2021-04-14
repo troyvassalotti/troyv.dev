@@ -7,10 +7,6 @@
         {%- if codeblock -%}
             {%- include "css/prism.css" -%}
         {%- endif -%}
-
-        {%- if plvylist -%}
-            {%- include "css/plvylist.css" -%}
-        {%- endif -%}
     {%- endset -%}
     <style>
         {{ css | cssmin | safe }}

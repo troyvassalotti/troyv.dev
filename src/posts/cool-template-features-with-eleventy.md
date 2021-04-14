@@ -63,7 +63,7 @@ module.exports = async function (src, alt, widthArray, formatArray, sizes, class
 }
 ```
 
-I encountered a few hiccups when figuring out how to tell it where my image was. I changed my project structure so that all the source files live in `src` and all the config files (`package.json`,  `.eleventy.js`, etc. ) live in the root, so that was a tiny wrench in my system.; however, I use it like so in my templates:
+I encountered a few hiccups when figuring out how to tell it where my image was. I changed my project structure so that all the source files live in `src` and all the config files (`package.json`,  `.eleventy.js`, etc. ) live in the root, so that was a tiny wrench in my system; however, I use it like so in my templates:
 
 ```twig
 {# index.njk #}
