@@ -15,50 +15,52 @@ const ImageShortcodeSync = require(`./${componentsDir}/ImageShortcodeSync`);
 
 // Do all the 11ty stuff
 module.exports = function (eleventyConfig) {
-  // add the syntax highlighting plugin
-  eleventyConfig.addPlugin(syntaxHighlight);
+    // add the syntax highlighting plugin
+    eleventyConfig.addPlugin(syntaxHighlight);
 
-  // add a css minifier filter from clean-css
-  eleventyConfig.addFilter("cssmin", function (code) {
-    return new CleanCSS({}).minify(code).styles;
-  });
+    // add a css minifier filter from clean-css
+    eleventyConfig.addFilter("cssmin", function (code) {
+        return new CleanCSS({}).minify(code).styles;
+    });
 
-  // add javascript minifier
-  eleventyConfig.addNunjucksAsyncFilter("jsmin", async function (code, callback) {
-    try {
-      const minified = await minify(code);
-      callback(null, minified.code);
-    } catch (err) {
-      console.error("Terser error: ", err);
-      // Fail gracefully.
-      callback(null, code);
+    // add javascript minifier
+    eleventyConfig.addNunjucksAsyncFilter("jsmin", async function (code, callback) {
+        try {
+            const minified = await minify(code);
+            callback(null, minified.code);
+        } catch (err) {
+            console.error("Terser error: ", err);
+            // Fail gracefully.
+            callback(null, code);
+        }
+    });
+
+    // Add aliases for layouts in the includes folder
+    eleventyConfig.addLayoutAlias("primary", "layouts/primary.njk");
+    eleventyConfig.addLayoutAlias("post", "layouts/post.njk");
+    eleventyConfig.addLayoutAlias("responsecode", "layouts/responsecode.njk");
+
+    // Passthroughs
+    eleventyConfig.addPassthroughCopy(`${inputDir}/assets`);
+    eleventyConfig.addPassthroughCopy(`${inputDir}/robots.txt`);
+    eleventyConfig.addPassthroughCopy(`${inputDir}/about/resume.pdf`);
+    eleventyConfig.addPassthroughCopy(`${inputDir}/favicon.ico`);
+
+    // A reusable block, so it helps to have it maintainable in one place
+    eleventyConfig.addNunjucksAsyncShortcode("image", ImageShortcode);
+    eleventyConfig.addNunjucksShortcode("imageSync", ImageShortcodeSync);
+    eleventyConfig.addShortcode("contactForm", ContactForm);
+    eleventyConfig.addShortcode("figure", Figure);
+    eleventyConfig.addShortcode("button", Button);
+    eleventyConfig.addPairedShortcode("captionOverlay", CaptionOverlay);
+    eleventyConfig.addPairedShortcode("projectFeature", ProjectFeature);
+
+    markdownTemplateEngine: "njk"
+
+    // Change the location for 11ty to enter
+    return {
+        dir: {
+            input: "src"
+        }
     }
-  });
-
-  // Add aliases for layouts in the includes folder
-  eleventyConfig.addLayoutAlias("primary", "layouts/primary.njk");
-  eleventyConfig.addLayoutAlias("post", "layouts/post.njk");
-  eleventyConfig.addLayoutAlias("responsecode", "layouts/responsecode.njk");
-
-  // Passthroughs
-  eleventyConfig.addPassthroughCopy(`${inputDir}/assets`);
-  eleventyConfig.addPassthroughCopy(`${inputDir}/robots.txt`);
-  eleventyConfig.addPassthroughCopy(`${inputDir}/about/resume.pdf`);
-  eleventyConfig.addPassthroughCopy(`${inputDir}/favicon.ico`);
-
-  // A reusable block, so it helps to have it maintainable in one place
-  eleventyConfig.addNunjucksAsyncShortcode("image", ImageShortcode);
-  eleventyConfig.addNunjucksShortcode("imageSync", ImageShortcodeSync);
-  eleventyConfig.addShortcode("contactForm", ContactForm);
-  eleventyConfig.addShortcode("figure", Figure);
-  eleventyConfig.addShortcode("button", Button);
-  eleventyConfig.addPairedShortcode("captionOverlay", CaptionOverlay);
-  eleventyConfig.addPairedShortcode("projectFeature", ProjectFeature);
-
-  // Change the location for 11ty to enter
-  return {
-    dir: {
-      input: "src"
-    }
-  }
 };
