@@ -12,7 +12,7 @@
             {%- include "../js/homepage.js" -%}
         {%- endif -%}
     {%- endset -%}
-    {%- if myProject.environment == "production" -%}
+    {%- if site.environment == "production" -%}
         <script type="module">
             {{ js | jsmin | safe }}
         </script>

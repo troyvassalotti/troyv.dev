@@ -7,7 +7,7 @@
             {%- include "../css/prism.css" -%}
         {%- endif -%}
     {%- endset -%}
-    {%- if myProject.environment == "production" -%}
+    {%- if site.environment == "production" -%}
         <style>{{ css | cssmin | safe }}</style>
     {%- else -%}
         <style>{{ css | safe }}</style>

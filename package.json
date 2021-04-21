@@ -4,9 +4,9 @@
   "description": "This is my portfolio, but it can really be whatever I want it to be.",
   "main": "_site/index.html",
   "scripts": {
-    "build": "npx @11ty/eleventy",
+    "build": "ELEVENTY_ENV=production npx eleventy",
     "watch": "npx @11ty/eleventy --watch",
-    "serve": "npx @11ty/eleventy --serve",
+    "serve": "ELEVENTY_ENV=development npx eleventy --serve",
     "debug": "DEBUG=* npx @11ty/eleventy"
   },
   "repository": {

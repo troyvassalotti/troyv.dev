@@ -2,16 +2,17 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const CleanCSS = require("clean-css");
 const {minify} = require("terser");
 
-const inputDir = "src";
+const inputDir = "./src";
+const env = require(`${inputDir}/_data/site`);
 
 const componentsDir = `${inputDir}/_includes/components`;
-const ContactForm = require(`./${componentsDir}/ContactForm`);
-const Figure = require(`./${componentsDir}/Figure`);
-const Button = require(`./${componentsDir}/Button`);
-const CaptionOverlay = require(`./${componentsDir}/CaptionOverlay`);
-const ProjectFeature = require(`./${componentsDir}/ProjectFeature`);
-const ImageShortcode = require(`./${componentsDir}/ImageShortcode`);
-const ImageShortcodeSync = require(`./${componentsDir}/ImageShortcodeSync`);
+const ContactForm = require(`${componentsDir}/ContactForm`);
+const Figure = require(`${componentsDir}/Figure`);
+const Button = require(`${componentsDir}/Button`);
+const CaptionOverlay = require(`${componentsDir}/CaptionOverlay`);
+const ProjectFeature = require(`${componentsDir}/ProjectFeature`);
+const ImageShortcode = require(`${componentsDir}/ImageShortcode`);
+const ImageShortcodeSync = require(`${componentsDir}/ImageShortcodeSync`);
 
 // Do all the 11ty stuff
 module.exports = function (eleventyConfig) {
