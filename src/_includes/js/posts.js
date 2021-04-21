@@ -1,6 +1,5 @@
 // This is for the handdrawn annotations from Rough Notation
-import {annotate} from 'https://unpkg.com/rough-notation?module';
-import {annotationGroup} from 'https://unpkg.com/rough-notation?module';
+import {annotate} from '/assets/js/rough-notation.js';
 
 const postsTitle = document.querySelector('#posts-title');
 const postsAnnotation = annotate(postsTitle, {

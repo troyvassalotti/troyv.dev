@@ -1,5 +1,3 @@
-"use strict";
-
 class Plvylist extends HTMLElement {
     constructor() {
         super();

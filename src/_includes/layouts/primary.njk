@@ -14,13 +14,13 @@
     {% if page.fileSlug === "" -%}
         <link rel="stylesheet" href="/assets/css/homepage.css">
     {%- endif %}
-    {% include "process-css.njk" %}
-    {% include "seo.njk" %}
+    {% include "partials/process-css.njk" %}
+    {% include "partials/seo.njk" %}
 </head>
 <body class="{{ pageName }}">
-    {% include "header.html" %}
+    {% include "partials/header.html" %}
     {{ content | safe }}
-    {% include "footer.html" %}
-    {% include "process-js.njk" %}
+    {% include "partials/footer.html" %}
+    {% include "partials/process-js.njk" %}
 </body>
 </html>

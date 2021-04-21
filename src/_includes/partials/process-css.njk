@@ -1,0 +1,15 @@
+{%- if addCSS or codeblock or plvylist -%}
+    {%- set css -%}
+        {%- if addCSS -%}
+            {%- include "../css/" + page.fileSlug + ".css" -%}
+        {%- endif -%}
+        {%- if codeblock -%}
+            {%- include "../css/prism.css" -%}
+        {%- endif -%}
+    {%- endset -%}
+    {%- if myProject.environment == "production" -%}
+        <style>{{ css | cssmin | safe }}</style>
+    {%- else -%}
+        <style>{{ css | safe }}</style>
+    {%- endif -%}
+{%- endif -%}
