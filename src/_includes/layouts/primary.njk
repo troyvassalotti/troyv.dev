@@ -8,19 +8,13 @@
     {%- endif -%}
     <link rel="preconnect" href="https://d33wubrfki0l68.cloudfront.net">
     <link rel="dns-prefetch" href="https://d33wubrfki0l68.cloudfront.net">
-    <link rel="canonical" href="https://www.troyv.dev{{ page.url }}">
-    <link rel="stylesheet" href="https://fonts.typotheque.com/WF-036345-011398.css" type="text/css"/>
-    <link rel="stylesheet" href="/assets/css/main.css">
-    {% if page.fileSlug === "" -%}
-        <link rel="stylesheet" href="/assets/css/homepage.css">
-    {%- endif %}
     {% include "partials/process-css.njk" %}
     {% include "partials/seo.njk" %}
 </head>
 <body class="{{ pageName }}">
-    {% include "partials/header.html" %}
-    {{ content | safe }}
-    {% include "partials/footer.html" %}
-    {% include "partials/process-js.njk" %}
+{% include "partials/header.html" %}
+{{ content | safe }}
+{% include "partials/footer.html" %}
+{% include "partials/process-js.njk" %}
 </body>
 </html>

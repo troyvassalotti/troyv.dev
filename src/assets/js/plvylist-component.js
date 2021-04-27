@@ -127,7 +127,6 @@ class Plvylist extends HTMLElement {
                     --main-background: var(--color-layout);
                     --loop-color: var(--color-changed);
                     --artwork-shadow: var(--color-layout);
-                    padding: .5em;
                     font-family: var(--font-family);
                     font-size: 16px;
                     color: var(--font-color);

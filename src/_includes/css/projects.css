@@ -4,61 +4,31 @@
 
 .projects__focus {
     display: grid;
-    gap: 2em;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    gap: 2rem;
 }
 
-.projects__focus .project .skewed-background .content {
-    background: transparent;
-    padding: 1em;
+.projects__focus h2 {
+    font-size: var(--step-2);
 }
 
-.projects__focus .project h2 {
-    transform: var(--skew-direction);
-    -webkit-margin-after: 1ex;
-    margin-block-end: 1ex;
-    font-size: var(--step-3);
-    -webkit-padding-start: 0.5ex;
-    padding-inline-start: 0.5ex;
+.projects__focus .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+    box-shadow: inset 5px 5px 10px #080707,
+    inset -5px -5px 10px #1e1b1d;
 }
 
-.projects__focus .project-image img {
+.projects__focus img {
     transition: 0.3s ease;
 }
 
-.projects__focus .project-image img:hover {
+.projects__focus img:hover {
     -webkit-filter: brightness(0.5);
     filter: brightness(0.5);
     transform: scale(1.02);
-}
-
-.projects__focus .project-description .details {
-    font-size: var(--step--2);
-    font-weight: 700;
-}
-
-.projects__focus .project {
-    --skew-padding: 1em 0;
-    --skew-direction: var(--skewUp);
-}
-
-#project_fr {
-    --skew-color: var(--whitePrimary);
-    --skew-text: var(--blackPrimary);
-}
-
-#project_ns {
-    --skew-color: var(--bluePrimary);
-    --skew-text: var(--blackPrimary);
-}
-
-#project_aw {
-    --skew-color: var(--grayPrimary);
-    --skew-text: var(--whitePrimary);
-}
-
-#project_tr {
-    --skew-color: var(--goldPrimary);
-    --skew-text: var(--blackPrimary);
 }
 
 .codepen .wrapper {
@@ -78,10 +48,8 @@
 }
 
 .projects__misc .caption-overlay {
-    flex: 0 0 clamp(12.5rem, 30vw, 37.5rem);
-    -webkit-margin-start: 1em;
+    flex: 0 0 clamp(12.5rem, 20vw, 30rem);
     margin-inline-start: 1em;
-    -webkit-margin-end: 1em;
     margin-inline-end: 1em;
 }
 
@@ -90,22 +58,12 @@
 }
 
 .misc header {
-    -webkit-padding-start: 1em;
     padding-inline-start: 1em;
 }
 
-@media (min-width: 65.5em) {
-    .projects__focus .project .skewed-background .content {
-        display: grid;
-        place-items: center;
-        grid-template-columns: 1.5fr 1fr;
-        gap: 1.5em;
-    }
-}
-
 @media (prefers-color-scheme: light) {
-    #project_fr {
-        --skew-color: currentColor;
-        --skew-text: var(--whitePrimary);
+    .projects__focus .container {
+        box-shadow: inset 5px 5px 10px #d2d2d9,
+        inset -5px -5px 10px #ffffff;
     }
 }

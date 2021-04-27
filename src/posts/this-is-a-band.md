@@ -3,7 +3,7 @@ title: 'troy. is a band'
 description: I decided to give troy. - a band I have - a website.
 layout: post
 date: 2020-11-28
-tags: ['post', 'design', 'plvylist', 'project', 'music']
+tags: ['post', 'project', 'music']
 codeblock: true
 featuredImage: url('/assets/img/caution-bg.jpg')
 ---
