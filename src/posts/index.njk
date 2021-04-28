@@ -7,21 +7,21 @@ addCSS: true
 addJS: true
 ---
 <main class="layout">
-  <header class="page-header center">
-    <div class="wrapper">
-      <h1><span id="posts-title">{{ title }}</span></h1>
-    </div>
-  </header>
-  <section class="all-posts full">
-    <div class="wrapper">
-      <div class="grid posts-container">
-      {%- for post in collections.post | reverse -%}
-        <article class="post-listing">
-          <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
-          <p>{{ post.data.description }}</p>
-        </article>
-      {%- endfor -%}
-      </div>
-    </div>
-  </section>
+    <header class="page-header center">
+        <div class="wrapper">
+            <h1><span id="posts-title">{{ title }}</span></h1>
+        </div>
+    </header>
+    <section class="all-posts full">
+        <div class="wrapper">
+            <div class="grid posts-container">
+                {%- for post in collections.post | reverse -%}
+                    <article class="post-listing">
+                        <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+                        <p>{{ post.data.description }}</p>
+                    </article>
+                {%- endfor -%}
+            </div>
+        </div>
+    </section>
 </main>

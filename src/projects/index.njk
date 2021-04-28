@@ -6,73 +6,60 @@ pageName: projectsPage
 addCSS: true
 addJS: true
 ---
-{%- set frontroyal -%}
-  {%- include "partials/front-royal-project-description.html" -%}
-{%- endset -%}
-{%- set notsocial -%}
-  {%- include "partials/notsocial-project-description.html" -%}
-{%- endset -%}
-{%- set abandoned -%}
-  {%- include "partials/abandoned-website-project-description.html" -%}
-{%- endset -%}
-{%- set troy -%}
-  {%- include "partials/troy-band-project-description.html" -%}
-{%- endset -%}
-{%- set projWidths = [300, 800, 1400] -%}
-{%- set projSizes = '(max-width: 700px) 100vw, 1000px' -%}
-{%- set miscSizes = '33vw' -%}
-{%- set miscWidths = [300, 600, 900] -%}
 {%- set imgFormats = ['webp', 'jpg'] -%}
 <main class="layout">
-  <header class="page-header center">
-    <div class="wrapper">
-      <h1><span id="proj-title">{{ title }}</span></h1>
-    </div>
-  </header>
-  <section class="projects__focus">
-    {%- projectFeature 'Front Royal (The Band, Not The Town)', frontroyal, 'https://www.frontroyalband.com', 'fr' -%}
-      {%- imageSync './src/assets/img/front-royal1920x1080.jpeg', 'Screenshot of the Front Royal website', projWidths, imgFormats, projSizes, 'full' -%}
-    {%- endprojectFeature -%}
-    {%- projectFeature 'NotSocial: A New Type of Social Media', notsocial, 'https://notsocial.app/', 'ns' -%}
-      {%- imageSync './src/assets/img/notsocial1920x1080.jpeg', 'Screenshot of the NotSocial website', projWidths, imgFormats, projSizes, 'full' -%}
-    {%- endprojectFeature -%}
-    {%- projectFeature 'An Abandoned Website', abandoned, 'https://abandoned.website', 'aw' -%}
-      {%- imageSync './src/assets/img/abandoned-website1920x1080.jpeg', 'Screenshot of the Abandoned Website website', projWidths, imgFormats, projSizes, 'full' -%}
-    {%- endprojectFeature -%}
-    {%- projectFeature 'troy. is a band', troy, 'https://thisisa.band', 'tr' -%}
-      {%- imageSync './src/assets/img/validcharacters1920x1080.jpeg', 'Screenshot of the troy website', projWidths, imgFormats, projSizes, 'full' -%}
-    {%- endprojectFeature -%}
-  </section>
-  <section class="codepen">
-    <div class="wrapper">
-      <h3>View More on CodePen</h3>
-      <p>I've made a lot of things - bigger and smaller - that would be impossible to keep track of on here. From experimenting with JavaScript frameworks, to making things animate for no good reason, to even coding emails (yikes!). You could say I'm winging it over there.</p>
-      {% button 'https://codepen.io/troyvassalotti', 'See My CodePen' %}
-    </div>
-  </section>
-  <section class="misc">
-    <header>
-      <h2>Other Fun Stuff</h2>
-      <p>These projects don't really have a home, but I've done them so I'm going to show them off.</p>
-    </header>
-    <div class="projects__misc">
-      {%- captionOverlay '/posts/i-logged-my-migraines-for-a-year/', '2019 Migraine Calendar', '' -%}
-        {%- imageSync './src/assets/img/migraines-2019.jpg', 'Screenshot of my a graph of my 2019 Migraine Calendar', miscWidths, imgFormats, miscSizes, 'caption-image full' -%}
-      {%- endcaptionOverlay -%}
-      {%- captionOverlay 'https://www.youtube.com/watch?v=DN29m0xBCDg', 'Front Royal Vlog Edit #1', '' -%}
-        {%- imageSync './src/assets/img/takeover-1.jpg', 'Screenshot from my first real vlog', miscWidths, imgFormats, miscSizes, 'caption-image full' -%}
-      {%- endcaptionOverlay -%}
-      {%- captionOverlay 'https://www.youtube.com/watch?v=8LUoVGik9g8', 'Front Royal Vlog Edit #2', '' -%}
-        {%- imageSync './src/assets/img/takeover-2.jpg', 'Screenshot from my second real vlog', miscWidths, imgFormats, miscSizes, 'caption-image full' -%}
-      {%- endcaptionOverlay -%}
-      {%- captionOverlay '/posts/2020-migraine-recap/', '2020 Migraine Calendar', '' -%}
-        {%- imageSync './src/assets/img/2020-by-triggers.png', 'A graph showing my migraines from 2020', miscWidths, imgFormats, miscSizes, 'caption-image full' -%}
-      {%- endcaptionOverlay -%}
-      <figure class="caption-overlay">
-        <div class="full flex-center col tall">
-          <h3>More Coming Soon...</h3>
+    <header class="page-header center">
+        <div class="wrapper">
+            <h1><span id="proj-title">{{ title }}</span></h1>
         </div>
-      </figure>
+    </header>
+    <div class="wrapper">
+        <section class="projects__focus">
+            {% for project in collections['featured project'] | reverse %}
+                <div class="container">
+                    <div class="content">
+                        <h2>{{ project.data.title }}</h2>
+                        <p>{{ project.data.description }}</p>
+                    </div>
+                    <a href="{{ project.url }}">
+                        {% image project.data.featuredImage, project.data.title, [600, 900, 1200], imgFormats, '(max-width: 700px) 100vw, 1200px' %}
+                    </a>
+                </div>
+            {% endfor %}
+        </section>
     </div>
-  </section>
+    <section class="codepen">
+        <div class="wrapper">
+            <h3>View More on CodePen</h3>
+            <p>I've made a lot of things - bigger and smaller - that would be impossible to keep track of on here. From
+                experimenting with JavaScript frameworks, to making things animate for no good reason, to even coding
+                emails (yikes!). You could say I'm winging it over there.</p>
+            <a class="button" href="https://codepen.io/troyvassalotti">See My CodePen</a>
+        </div>
+    </section>
+    <section class="misc">
+        <header>
+            <h2>Other Fun Stuff</h2>
+            <p>These projects don't really have a home, but I've done them so I'm going to show them off.</p>
+        </header>
+        <div class="projects__misc">
+            {%- for project in collections['small project'] | reverse -%}
+                <figure class="caption-overlay">
+                    <a class="caption-link" href="{{ project.url }}">
+                        {%- image project.data.featuredImage, project.data.title, [300, 600], imgFormats, '33vw', 'caption-image' -%}
+                        <div class="caption">
+                            <figcaption>
+                                <h3>{{ project.data.shortname }}</h3>
+                            </figcaption>
+                        </div>
+                    </a>
+                </figure>
+            {%- endfor -%}
+            <figure class="caption-overlay">
+                <div class="full flex-center col tall">
+                    <h3>More Coming Soon...</h3>
+                </div>
+            </figure>
+        </div>
+    </section>
 </main>

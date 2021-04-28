@@ -7,39 +7,40 @@ addCSS: true
 addJS: true
 ---
 <main class="layout">
-  <header class="page-header center">
+    <header class="page-header center">
+        <div class="wrapper">
+            <h1><span id="about-title">{{ title }}</span></h1>
+            <p>Developer, musician, and all-around dork.</p>
+        </div>
+    </header>
     <div class="wrapper">
-      <h1><span id="about-title">{{ title }}</span></h1>
-      <p>Developer, musician, and all-around dork.</p>
+        <section class="main-info">
+            <section class="resumes">
+                <div class="wrapper">
+                    <div class="content">
+                        <header>
+                            <h2>View My Résumé</h2>
+                            <p>It's updated about as often as anyone else's résumé, but it looks nice and prints
+                                well.</p>
+                        </header>
+                        <ul>
+                            <li><a href="resume/">As a webpage</a></li>
+                            <li><a href="resume.pdf">As a PDF</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="form">
+                <div class="wrapper">
+                    <div class="content flex-center col">
+                        <header>
+                            <h2>Let's Talk</h2>
+                            <p>If you've liked what you've seen, let's talk about stuff.</p>
+                        </header>
+                        {% include "partials/contact-form.html" %}
+                    </div>
+                </div>
+            </section>
+        </section>
     </div>
-  </header>
-  <div class="wrapper">
-    <section class="main-info">
-      <section class="resumes">
-        <div class="wrapper">
-          <div class="content">
-            <header>
-              <h2>View My Résumé</h2>
-              <p>It's updated about as often as anyone else's résumé, but it looks nice and prints well.</p>
-            </header>
-            <ul>
-              <li><a href="resume/">As a webpage</a></li>
-              <li><a href="resume.pdf">As a PDF</a></li>
-            </ul>
-          </div>
-        </div>
-      </section>
-      <section class="form">
-        <div class="wrapper">
-          <div class="content flex-center col">
-            <header>
-              <h2>Let's Talk</h2>
-              <p>If you've liked what you've seen, let's talk about stuff.</p>
-            </header>
-            {% contactForm %}
-          </div>
-        </div>
-      </section>
-    </section>
-  </div>
 </main>

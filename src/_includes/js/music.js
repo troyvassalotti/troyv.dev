@@ -19,21 +19,21 @@ const musicAnnotation = annotate(musicTitle, {
 
 musicAnnotation.show();
 
-const albumTitle = document.querySelector('#album-title');
-const albumAnnotation = annotate(albumTitle, {
-  type: 'box',
-  color: 'var(--redPrimary)',
-  multiline: true,
-});
-
-function handleAlbum(entries) {
-  entries.map((entry) => {
-    if (entry.isIntersecting) {
-      albumAnnotation.show();
-      albumObserver.unobserve(entry.target);
-    }
-  });
-}
-
-const albumObserver = new IntersectionObserver(handleAlbum);
-albumObserver.observe(albumTitle);
+// const albumTitle = document.querySelector('#album-title');
+// const albumAnnotation = annotate(albumTitle, {
+//   type: 'box',
+//   color: 'var(--redPrimary)',
+//   multiline: true,
+// });
+//
+// function handleAlbum(entries) {
+//   entries.map((entry) => {
+//     if (entry.isIntersecting) {
+//       albumAnnotation.show();
+//       albumObserver.unobserve(entry.target);
+//     }
+//   });
+// }
+//
+// const albumObserver = new IntersectionObserver(handleAlbum);
+// albumObserver.observe(albumTitle);

@@ -1,3 +1,8 @@
+<link rel="stylesheet" href="https://fonts.typotheque.com/WF-036345-011398.css" type="text/css"/>
+<link rel="stylesheet" href="/assets/css/main.css">
+{% if page.fileSlug === "" -%}
+    <link rel="stylesheet" href="/assets/css/homepage.css">
+{%- endif %}
 {%- if addCSS or codeblock or plvylist -%}
     {%- set css -%}
         {%- if addCSS -%}

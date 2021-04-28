@@ -25,3 +25,17 @@
 {%- if plvylist -%}
     <script src="/assets/js/plvylist-component.js" async></script>
 {%- endif -%}
+{%- if lightbox -%}
+    <script src="/assets/js/zooming.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const zooming = new Zooming({
+                bgColor: 'rgb(0, 0, 0)',
+                bgOpacity: .5,
+                customSize: '135%'
+            })
+
+            zooming.listen('.img-zoomable')
+        })
+    </script>
+{%- endif -%}

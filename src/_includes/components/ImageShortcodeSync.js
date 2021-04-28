@@ -1,6 +1,7 @@
 // Use this one when needed inside a paired shortcode
 const Image = require("@11ty/eleventy-img");
 
+
 module.exports = function (src, alt, widthArray, formatArray, sizes, className = '') {
     let options = {
         widths: widthArray,

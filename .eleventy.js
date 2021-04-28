@@ -1,21 +1,21 @@
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 const CleanCSS = require("clean-css");
 const {minify} = require("terser");
-
+const fs = require("fs");
 const inputDir = "./src";
 const env = require(`${inputDir}/_data/site`);
 
 const componentsDir = `${inputDir}/_includes/components`;
-const ContactForm = require(`${componentsDir}/ContactForm`);
-const Figure = require(`${componentsDir}/Figure`);
-const Button = require(`${componentsDir}/Button`);
 const CaptionOverlay = require(`${componentsDir}/CaptionOverlay`);
-const ProjectFeature = require(`${componentsDir}/ProjectFeature`);
 const ImageShortcode = require(`${componentsDir}/ImageShortcode`);
 const ImageShortcodeSync = require(`${componentsDir}/ImageShortcodeSync`);
 
 // Do all the 11ty stuff
 module.exports = function (eleventyConfig) {
+    // add RSS feed
+    eleventyConfig.addPlugin(pluginRss);
+
     // add the syntax highlighting plugin
     eleventyConfig.addPlugin(syntaxHighlight);
 
@@ -36,11 +36,6 @@ module.exports = function (eleventyConfig) {
         }
     });
 
-    // Add aliases for layouts in the includes folder
-    eleventyConfig.addLayoutAlias("primary", "layouts/primary.njk");
-    eleventyConfig.addLayoutAlias("post", "layouts/post.njk");
-    eleventyConfig.addLayoutAlias("responsecode", "layouts/responsecode.njk");
-
     // Passthroughs
     eleventyConfig.addPassthroughCopy(`${inputDir}/assets`);
     eleventyConfig.addPassthroughCopy(`${inputDir}/robots.txt`);
@@ -50,18 +45,15 @@ module.exports = function (eleventyConfig) {
     // A reusable block, so it helps to have it maintainable in one place
     eleventyConfig.addNunjucksAsyncShortcode("image", ImageShortcode);
     eleventyConfig.addNunjucksShortcode("imageSync", ImageShortcodeSync);
-    eleventyConfig.addShortcode("contactForm", ContactForm);
-    eleventyConfig.addShortcode("figure", Figure);
-    eleventyConfig.addShortcode("button", Button);
     eleventyConfig.addPairedShortcode("captionOverlay", CaptionOverlay);
-    eleventyConfig.addPairedShortcode("projectFeature", ProjectFeature);
 
-    markdownTemplateEngine: "njk"
+    markdownTemplateEngine: "njk";
 
     // Change the location for 11ty to enter
     return {
         dir: {
-            input: "src"
+            input: "src",
+            layouts: "_includes/layouts"
         }
     }
 };

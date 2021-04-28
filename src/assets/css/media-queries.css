@@ -16,6 +16,27 @@
     }
 }
 
+@media (min-width: 60em) {
+    .project-solo {
+        grid-template-areas:
+        "img summary"
+        "details summary"
+    }
+
+    .project-solo__img {
+        grid-area: img;
+    }
+
+    .project-solo__summary {
+        grid-area: summary;
+        place-self: center;
+    }
+
+    .project-solo__details {
+        grid-area: details;
+    }
+}
+
 @media (prefers-reduced-motion: no-preference) {
     a.animated-link {
         position: relative;
