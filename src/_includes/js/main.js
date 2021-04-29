@@ -1,13 +1,13 @@
 import Confetti from "https://cdn.skypack.dev/confetti-js@0.0.18";
 
 document.body.classList.add("js");
-document.getElementById("confetti-holder").style.display = "inline";
+document.getElementById("confetti").style.display = "inline";
 
 let logger = [];
 let lastKeyTime = Date.now();
 
 const confettiSettings = {
-    target: "confetti-holder",
+    target: "confetti",
     max: "80",
     size: "1",
     animate: true,
