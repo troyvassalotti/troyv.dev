@@ -64,19 +64,6 @@ a.animated-link {
     text-decoration: underline;
 }
 
-canvas#confetti-holder {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-    max-width: 100%;
-}
-
-.js canvas#confetti-holder {
-    display: inline-block;
-}
-
 /* ======================
   Composition
   ======================= */
@@ -311,4 +298,17 @@ body:not(.homepage) main.layout {
 .no-list {
     list-style: none;
     padding: 0;
+}
+
+canvas {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.js canvas {
+    display: inline-block;
 }
