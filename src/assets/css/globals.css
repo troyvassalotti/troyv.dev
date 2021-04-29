@@ -64,7 +64,7 @@ a.animated-link {
     text-decoration: underline;
 }
 
-#confetti-holder {
+canvas#confetti-holder {
     display: none;
     position: absolute;
     top: 0;
@@ -73,7 +73,7 @@ a.animated-link {
     max-width: 100%;
 }
 
-.js #confetti-holder {
+.js canvas#confetti-holder {
     display: inline-block;
 }
 
