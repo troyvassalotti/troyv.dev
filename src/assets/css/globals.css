@@ -64,6 +64,19 @@ a.animated-link {
     text-decoration: underline;
 }
 
+#confetti-holder {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.js #confetti-holder {
+    display: inline-block;
+}
+
 /* ======================
   Composition
   ======================= */
