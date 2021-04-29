@@ -1,8 +1,6 @@
+import Confetti from "https://cdn.skypack.dev/confetti-js@0.0.18";
+
 document.body.classList.add("js");
-
-// import * as ConfettiGenerator from "/assets/js/confetti.js";
-
-import confettiJs from "https://cdn.skypack.dev/confetti-js@0.0.18";
 
 let logger = [];
 let lastKeyTime = Date.now();
@@ -25,7 +23,7 @@ const confettiSettings = {
     respawn: false
 };
 
-const confetti = new confettiJs(confettiSettings);
+const confetti = new Confetti(confettiSettings);
 
 function konamiCode(e) {
     const key = e.key.toLowerCase();
