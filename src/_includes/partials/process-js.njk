@@ -2,9 +2,9 @@
 {%- if d3 -%}
     <script src="/assets/js/d3.min.js"></script>
 {%- endif -%}
+<script type="module" src="/assets/js/main.js"></script>
 {%- if addJS or page.fileSlug === "" -%}
     {%- set js -%}
-        {%- include "../js/main.js" -%}
         {%- if addJS -%}
             {%- include "../js/" + page.fileSlug + ".js" -%}
         {%- endif -%}
