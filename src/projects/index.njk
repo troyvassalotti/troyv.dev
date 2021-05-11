@@ -1,65 +1,23 @@
 ---
 title: Projects
 description: These are a few of the projects I've made, but there are many more.
-layout: primary
-pageName: projectsPage
-addCSS: true
-addJS: true
+layout: page
+pageName: projects
 ---
-{%- set imgFormats = ['webp', 'jpg'] -%}
-<main class="layout">
-    <header class="page-header center">
-        <div class="wrapper">
-            <h1><span id="proj-title">{{ title }}</span></h1>
-        </div>
-    </header>
+{% include 'partials/projects-focus.njk' %}
+<section class="codepen">
     <div class="wrapper">
-        <section class="projects__focus">
-            {% for project in collections['featured project'] | reverse %}
-                <div class="container">
-                    <div class="content">
-                        <h2>{{ project.data.title }}</h2>
-                        <p>{{ project.data.description }}</p>
-                    </div>
-                    <a href="{{ project.url }}">
-                        {% image project.data.featuredImage, project.data.title, [600, 900, 1200], imgFormats, '(max-width: 700px) 100vw, 1200px' %}
-                    </a>
-                </div>
-            {% endfor %}
-        </section>
+        <h3>View More on CodePen</h3>
+        <p>I've made a lot of things - bigger and smaller - that would be impossible to keep track of on here. From
+            experimenting with JavaScript frameworks, to making things animate for no good reason, to even coding
+            emails (yikes!). You could say I'm winging it over there.</p>
+        <a class="button" href="https://codepen.io/troyvassalotti">See My CodePen</a>
     </div>
-    <section class="codepen">
-        <div class="wrapper">
-            <h3>View More on CodePen</h3>
-            <p>I've made a lot of things - bigger and smaller - that would be impossible to keep track of on here. From
-                experimenting with JavaScript frameworks, to making things animate for no good reason, to even coding
-                emails (yikes!). You could say I'm winging it over there.</p>
-            <a class="button" href="https://codepen.io/troyvassalotti">See My CodePen</a>
-        </div>
-    </section>
-    <section class="misc">
-        <header>
-            <h2>Other Fun Stuff</h2>
-            <p>These projects don't really have a home, but I've done them so I'm going to show them off.</p>
-        </header>
-        <div class="projects__misc">
-            {%- for project in collections['small project'] | reverse -%}
-                <figure class="caption-overlay">
-                    <a class="caption-link" href="{{ project.url }}">
-                        {%- image project.data.featuredImage, project.data.title, [300, 600], imgFormats, '33vw', 'caption-image' -%}
-                        <div class="caption">
-                            <figcaption>
-                                <h3>{{ project.data.shortname }}</h3>
-                            </figcaption>
-                        </div>
-                    </a>
-                </figure>
-            {%- endfor -%}
-            <figure class="caption-overlay">
-                <div class="full flex-center col tall">
-                    <h3>More Coming Soon...</h3>
-                </div>
-            </figure>
-        </div>
-    </section>
-</main>
+</section>
+<section class="misc">
+    <header>
+        <h2>Other Fun Stuff</h2>
+        <p>These projects don't really have a home, but I've done them so I'm going to show them off.</p>
+    </header>
+    {% include 'partials/projects-misc.njk' %}
+</section>

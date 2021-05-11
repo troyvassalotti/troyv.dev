@@ -12,9 +12,9 @@
     {% include "partials/seo.njk" %}
 </head>
 <body class="{{ pageName }}">
-{% include "partials/header.html" %}
+{% include "partials/header.njk" %}
 {{ content | safe }}
-{% include "partials/footer.html" %}
+{% include "partials/footer.njk" %}
 {% include "partials/process-js.njk" %}
 </body>
 </html>

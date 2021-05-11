@@ -4,23 +4,23 @@
   flex-wrap: wrap;
 }
 
-.aboutPage .resumes {
+.about .resumes {
   flex: 1 0 40%;
 }
 
-.aboutPage .resumes header p {
+.about .resumes header p {
   max-width: 45ch;
 }
 
-.aboutPage .form .wrapper {
+.about .form .wrapper {
   display: flex;
   justify-content: flex-end;
 }
 
-.aboutPage .form {
+.about .form {
   flex: 1 0 50%;
 }
 
-.aboutPage .form .content header {
+.about .form .content header {
   text-align: end;
 }

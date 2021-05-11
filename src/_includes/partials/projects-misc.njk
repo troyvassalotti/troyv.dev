@@ -1,0 +1,19 @@
+<div class="projects__misc">
+    {%- for project in collections['small project'] | reverse -%}
+        <figure class="caption-overlay">
+            <a class="caption-link" href="{{ project.url }}">
+                {%- image project.data.featuredImage, project.data.title, [300, 600], ['webp', 'jpg'], '33vw', 'caption-image' -%}
+                <div class="caption">
+                    <figcaption>
+                        <h3>{{ project.data.shortname }}</h3>
+                    </figcaption>
+                </div>
+            </a>
+        </figure>
+    {%- endfor -%}
+    <figure class="caption-overlay">
+        <div class="full flex-center col tall">
+            <h3>More Coming Soon...</h3>
+        </div>
+    </figure>
+</div>

@@ -26,7 +26,6 @@
 }
 
 .projects__focus img:hover {
-    -webkit-filter: brightness(0.5);
     filter: brightness(0.5);
     transform: scale(1.02);
 }

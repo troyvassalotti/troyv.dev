@@ -3,15 +3,15 @@ import {annotate} from '/assets/js/rough-notation.js';
 
 let mq = '(prefers-color-scheme: light)';
 
-const musicTitle = document.querySelector('#music-title');
+const pageTitle = document.querySelector('#page-title');
 
 const changeTitleColor = () => {
   console.log(matchMedia(mq));
-  matchMedia(mq).matches ? musicTitle.setAttribute("style", "color: var(--whitePrimary)") : musicTitle.setAttribute("style", "color: var(--blackPrimary)");
+  matchMedia(mq).matches ? pageTitle.setAttribute("style", "color: var(--whitePrimary)") : pageTitle.setAttribute("style", "color: var(--blackPrimary)");
 }
 
 matchMedia(mq).addEventListener("change", changeTitleColor());
-const musicAnnotation = annotate(musicTitle, {
+const musicAnnotation = annotate(pageTitle, {
   type: 'highlight',
   color: 'var(--musicColor)',
   padding: 15,

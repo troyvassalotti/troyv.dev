@@ -24,7 +24,7 @@ pageName: homepage
             </section>
             <section class="feed" id="posts">
                 <h2>Recent Posts</h2>
-                <div class="posts">
+                <div class="posts-section">
                     <div class="grid full">
                         {%- for post in collections.post.slice(collections.post.length - 5, collections.post.length) | reverse -%}
                             <article class="post-listing">
@@ -38,7 +38,7 @@ pageName: homepage
             </section>
         </div>
     </div>
-    <section class="projects" id="projects">
+    <section class="projects-section" id="projects">
         <div class="wrapper">
             <h2><span id="cool-anim">Cool</span> <span id="proj-anim">Projects</span></h2>
             <div class="showcase-container">
@@ -81,14 +81,14 @@ pageName: homepage
                 </button>
             </div>
             <div class="content">
-                <div class="music" id="music">
+                <div class="music-section" id="music">
                     <h2>I Also Have Music</h2>
                     <p>When I’m not coding, maybe I'm writing. My friends and I started <span
                                 class="bold">Front Royal</span> with the desire to make a name for ourselves, and I
                         started <span class="bold">troy.</span> to explore a new outlet.</p>
                     <a class="button" href="/music/">Peek That Music</a>
                 </div>
-                <div class="about" id="about">
+                <div class="about-section" id="about">
                     <h2>Looking For More?</h2>
                     <p>You can find more on my <a class="animated-link" href="/about/">about</a> page.</p>
                 </div>

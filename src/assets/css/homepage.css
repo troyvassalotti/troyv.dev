@@ -27,7 +27,7 @@
     flex: 1 1 37.5rem;
 }
 
-.posts {
+.posts-section {
     margin-block-end: 2em;
 }
 
@@ -148,18 +148,18 @@
     fill: var(--grayPrimary);
 }
 
-.music {
+.music-section {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
 }
 
-.music p {
+.music-section p {
     max-width: 45ch;
 }
 
-.about {
+.about-section {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
