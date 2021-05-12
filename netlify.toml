@@ -8,9 +8,9 @@
   skip_processing = false
 [build.processing.css]
   bundle = false
-  minify = true
+  minify = false
 [build.processing.js]
-  bundle = false
+  bundle = true
   minify = true
 [build.processing.html]
   pretty_urls = true

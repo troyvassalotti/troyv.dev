@@ -1,0 +1,7 @@
+---
+permalink: /assets/js/plvylist-component.js
+---
+{%- set js -%}
+    {%- include 'js/plvylist-component.js' -%}
+{%- endset -%}
+{{ js | jsmin | safe }}

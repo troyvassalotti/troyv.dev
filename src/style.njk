@@ -1,0 +1,8 @@
+---
+permalink: /assets/css/style.css
+---
+{%- set css -%}
+    {%- include 'css/normalize.css' -%}
+    {%- include 'css/style.css' -%}
+{%- endset -%}
+{{ css | cssminmore | safe }}

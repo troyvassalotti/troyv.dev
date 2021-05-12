@@ -1,0 +1,8 @@
+---
+permalink: /assets/js/script.js
+---
+{%- set js -%}
+    {%- include 'js/canvas-confetti.js' -%}
+    {%- include 'js/script.js' -%}
+{%- endset -%}
+{{ js | jsmin | safe }}
