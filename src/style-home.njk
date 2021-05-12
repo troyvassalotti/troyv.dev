@@ -1,0 +1,7 @@
+---
+permalink: /assets/css/homepage.css
+---
+{%- set css -%}
+    {%- include 'css/homepage.css' -%}
+{%- endset -%}
+{{ css | cssminmore | safe }}

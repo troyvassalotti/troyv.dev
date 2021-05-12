@@ -24,6 +24,11 @@ module.exports = function (eleventyConfig) {
         return new CleanCSS({}).minify(code).styles;
     });
 
+    // add an optimized css minifier filter from clean-css
+    eleventyConfig.addFilter("cssminmore", function (code) {
+        return new CleanCSS({level: 2}).minify(code).styles;
+    });
+
     // add javascript minifier
     eleventyConfig.addNunjucksAsyncFilter("jsmin", async function (code, callback) {
         try {
