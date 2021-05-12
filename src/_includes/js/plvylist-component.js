@@ -103,7 +103,6 @@ class Plvylist extends HTMLElement {
         const {shadowRoot} = this;
         shadowRoot.innerHTML = `
             <style>
-                @import "/assets/css/variables.css";
                 .container {
                     --color-primary: var(--bluePrimary);
                     --color-changed: var(--redPrimary);

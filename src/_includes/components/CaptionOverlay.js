@@ -1,6 +1,6 @@
 const {html} = require('common-tags');
 
-module.exports = function (content, href, caption, target = 'target="_blank" rel="noopener"') {
+module.exports = function (content, href, caption, target = '') {
     return html`
         <figure class="caption-overlay">
             <a class="caption-link" href="${href}" ${target}>

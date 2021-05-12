@@ -44,7 +44,7 @@ pageName: homepage
             <div class="showcase-container">
                 <div class="showcase">
                     {% for project in collections['featured project'].slice(collections['featured project'].length - 3, collections['featured project'].length) | reverse %}
-                        {% captionOverlay project.url, project.data.title, '' %}
+                        {% captionOverlay project.url, project.data.title %}
                         {% imageSync project.data.featuredImage, project.data.title, [300, 800, 1400], ['webp', 'jpg'], '(max-width: 700px) 100vw, 1200px', 'caption-image full' %}
                         {% endcaptionOverlay %}
                     {% endfor %}

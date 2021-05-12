@@ -8,40 +8,13 @@ module.exports = async function (src, alt, widthArray, formatArray, sizes, class
         outputDir: "./_site/assets/img/",
     });
 
-    let imageAttributes;
-
-    if (id === '' && className === '') {
-        imageAttributes = {
-            alt,
-            sizes,
-            loading: "lazy",
-            decoding: "async"
-        }
-    } else if (id !== '' && className === '') {
-        imageAttributes = {
-            id,
-            alt,
-            sizes,
-            loading: "lazy",
-            decoding: "async"
-        }
-    } else if (id === '' && className !== '') {
-        imageAttributes = {
-            class: className,
-            alt,
-            sizes,
-            loading: "lazy",
-            decoding: "async"
-        }
-    } else if (id !== '' && className !== '') {
-        imageAttributes = {
-            id,
-            class: className,
-            alt,
-            sizes,
-            loading: "lazy",
-            decoding: "async"
-        }
+    let imageAttributes = {
+        id,
+        class: className,
+        alt,
+        sizes,
+        loading: "lazy",
+        decoding: "async"
     }
 
     return Image.generateHTML(metadata, imageAttributes, {whitespaceMode: "inline"});

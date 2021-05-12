@@ -1,3 +1,4 @@
+{# This partial doesn't use the CaptionOverlay component because caching remote images in the Image plugin requires asynchronous functionality, but the paired shortcode requires synchronous functions #}
 <div class="projects__misc">
     {%- for project in collections['small project'] | reverse -%}
         <figure class="caption-overlay">
@@ -17,3 +18,5 @@
         </div>
     </figure>
 </div>
+
+
