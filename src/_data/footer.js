@@ -20,4 +20,8 @@ module.exports = [
         'url': 'https://fosstodon.org/@rest',
         'rel': 'me'
     },
+    {
+        'name': 'RSS',
+        'url': 'https://www.troyv.dev/feed.xml'
+    }
 ]
