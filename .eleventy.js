@@ -46,11 +46,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy(`${inputDir}/robots.txt`);
     eleventyConfig.addPassthroughCopy(`${inputDir}/about/resume.pdf`);
     eleventyConfig.addPassthroughCopy(`${inputDir}/favicon.ico`);
-    eleventyConfig.addPassthroughCopy(`${inputDir}/favicon-16x16.png`);
-    eleventyConfig.addPassthroughCopy(`${inputDir}/favicon-32x32.png`);
-    eleventyConfig.addPassthroughCopy(`${inputDir}/apple-touch-icon.png`);
-    eleventyConfig.addPassthroughCopy(`${inputDir}/android-chrome-192x192.png`);
-    eleventyConfig.addPassthroughCopy(`${inputDir}/android-chrome-512x512.png`);
+    eleventyConfig.addPassthroughCopy(`${inputDir}/icons`);
     eleventyConfig.addPassthroughCopy(`${inputDir}/manifest.webmanifest`);
 
     // A reusable block, so it helps to have it maintainable in one place

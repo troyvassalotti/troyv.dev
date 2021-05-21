@@ -451,6 +451,7 @@ h6 {
   ======================= */
 .main-navigation {
     text-align: center;
+    font-size: var(--step--1);
 }
 
 .main-navigation__links {

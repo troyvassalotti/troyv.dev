@@ -4,8 +4,6 @@ description: Sometimes, I hear a new song that is such a jam that I can't imagin
 layout: post
 date: 2020-04-02
 tags: ['post', 'music']
-inline: >
-  iframe {width: 100%;}
 ---
 You know that feeling when a song comes out and you can't believe it took this long in the history of music for a jam that good to be written?
 
