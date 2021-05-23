@@ -46,7 +46,6 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy(`${inputDir}/robots.txt`);
     eleventyConfig.addPassthroughCopy(`${inputDir}/about/resume.pdf`);
     eleventyConfig.addPassthroughCopy(`${inputDir}/favicon.ico`);
-    eleventyConfig.addPassthroughCopy(`${inputDir}/icons`);
     eleventyConfig.addPassthroughCopy(`${inputDir}/manifest.webmanifest`);
 
     // A reusable block, so it helps to have it maintainable in one place
