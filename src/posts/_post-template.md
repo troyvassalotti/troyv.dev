@@ -11,4 +11,5 @@ codeblock:
 permalink: false
 shortname: ''
 featuredImage: ''
+eleventyExcludeFromCollections: true
 ---

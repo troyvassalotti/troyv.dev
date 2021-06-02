@@ -1,6 +1,5 @@
 // This is for the handdrawn annotations from Rough Notation
-import {annotate} from '/assets/js/rough-notation.js';
-import {annotationGroup} from '/assets/js/rough-notation.js';
+import {annotate, annotationGroup} from '/assets/js/rough-notation.js';
 
 const e1 = document.querySelector('#cool-anim');
 const a1 = annotate(e1, {

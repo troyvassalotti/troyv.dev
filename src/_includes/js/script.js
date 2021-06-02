@@ -1,3 +1,5 @@
+import confetti from 'https://cdn.skypack.dev/canvas-confetti';
+
 // add a class to the body for the sake of styling maybe
 document.body.classList.add("js");
 

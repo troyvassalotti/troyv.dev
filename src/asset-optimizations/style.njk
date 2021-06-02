@@ -1,8 +1,9 @@
 ---
 permalink: /assets/css/style.css
+eleventyExcludeFromCollections: true
 ---
 {%- set css -%}
     {%- include 'css/normalize.css' -%}
     {%- include 'css/style.css' -%}
 {%- endset -%}
-{{ css | cssminmore | safe }}
+{{ css | cssmin | safe }}

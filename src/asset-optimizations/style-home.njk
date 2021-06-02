@@ -1,7 +1,8 @@
 ---
 permalink: /assets/css/homepage.css
+eleventyExcludeFromCollections: true
 ---
 {%- set css -%}
     {%- include 'css/homepage.css' -%}
 {%- endset -%}
-{{ css | cssminmore | safe }}
+{{ css | cssmin | safe }}

@@ -2,6 +2,7 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const CleanCSS = require("clean-css");
 const {minify} = require("terser");
+const sitemap = require("@quasibit/eleventy-plugin-sitemap");
 const fs = require("fs");
 const inputDir = "./src";
 const env = require(`${inputDir}/_data/site`);
@@ -21,12 +22,14 @@ module.exports = function (eleventyConfig) {
 
     // add a css minifier filter from clean-css
     eleventyConfig.addFilter("cssmin", function (code) {
-        return new CleanCSS({}).minify(code).styles;
+        return new CleanCSS({level: 2}).minify(code).styles;
     });
 
-    // add an optimized css minifier filter from clean-css
-    eleventyConfig.addFilter("cssminmore", function (code) {
-        return new CleanCSS({level: 2}).minify(code).styles;
+    // add a sitemap plugin
+    eleventyConfig.addPlugin(sitemap, {
+        sitemap: {
+            hostname: "https://www.troyv.dev",
+        },
     });
 
     // add javascript minifier

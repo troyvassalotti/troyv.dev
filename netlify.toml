@@ -31,4 +31,4 @@
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "SAMEORIGIN"
     X-XSS-Protection = "1"
-    Content-Security-Policy = "default-src 'self' https://www.troyv.dev/ https://d33wubrfki0l68.cloudfront.net https://img.youtube.com/ https://www.youtube-nocookie.com/ https://bandcamp.com/ https://fonts.typotheque.com https://s3.amazonaws.com/fonts.typotheque.com/ data: 'unsafe-inline'"
+    Content-Security-Policy = "default-src 'self' https://www.troyv.dev/ https://d33wubrfki0l68.cloudfront.net https://img.youtube.com/ https://www.youtube-nocookie.com/ https://bandcamp.com/ https://fonts.typotheque.com https://s3.amazonaws.com/fonts.typotheque.com/ https://cdn.skypack.dev/ data: 'unsafe-inline'"
