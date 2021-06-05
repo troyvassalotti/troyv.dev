@@ -15,7 +15,7 @@ home: true
                     <p class="typewriter typewriter_2">...and I make things.</p>
                 </div>
                 <div class="portrait">
-                    {% image './src/assets/img/me-on-set.jpg', 'This is me. I look like this.', [300, 600], ['webp', 'jpg'], '(max-width: 700px) 100vw, 50vw', 'full', 'me' %}
+                    {% image './src/assets/img/me-on-set.jpg', 'A picture of me holding my guitar', [300, 600], ['webp', 'jpg'], '(max-width: 700px) 100vw, 50vw', 'full', 'me', 'eager' %}
                 </div>
                 <div class="content">
                     <p>I'm glad you could make it. Peruse my wares* and <a href="/about/">send me a letter</a> if you're
@@ -46,7 +46,7 @@ home: true
                 <div class="showcase">
                     {% for project in collections['featured project'].slice(collections['featured project'].length - 3, collections['featured project'].length) | reverse %}
                         {% captionOverlay project.url, project.data.title %}
-                        {% imageSync project.data.featuredImage, project.data.title, [300, 800, 1400], ['webp', 'jpg'], '(max-width: 700px) 100vw, 1200px', 'caption-image full' %}
+                        {% imageSync project.data.featuredImage, project.data.title + " Screenshot", [300, 800, 1400], ['webp', 'jpg'], '(max-width: 700px) 100vw, 1200px', 'caption-image full' %}
                         {% endcaptionOverlay %}
                     {% endfor %}
                 </div>

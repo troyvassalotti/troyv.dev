@@ -80,10 +80,10 @@
     --black: 19, 17, 18;
     --gray: 96, 101, 111;
     --white: 247, 247, 255;
-    --red: 255, 0, 34;
+    --red: 227, 0, 30;
     --gold: 229, 149, 0;
     --green: 39, 174, 96;
-    --blue: 35, 138, 221;
+    --blue: 35, 128, 231;
     --blackPrimary: rgba(var(--black), var(--colorOpacity));
     --grayPrimary: rgba(var(--gray), var(--colorOpacity));
     --whitePrimary: rgba(var(--white), var(--colorOpacity));
@@ -722,7 +722,7 @@ hr {
     }
 
     a {
-        color: var(--bluePrimary);
+        color: var(--blackPrimary);
     }
 
     a:hover {

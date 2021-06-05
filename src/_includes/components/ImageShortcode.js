@@ -1,6 +1,6 @@
 const Image = require("@11ty/eleventy-img");
 
-module.exports = async function (src, alt, widthArray, formatArray, sizes, className = '', id = '') {
+module.exports = async function (src, alt, widthArray, formatArray, sizes, className = '', id = '', loading = 'lazy') {
     let metadata = await Image(src, {
         widths: widthArray,
         formats: formatArray,
@@ -13,7 +13,7 @@ module.exports = async function (src, alt, widthArray, formatArray, sizes, class
         class: className,
         alt,
         sizes,
-        loading: "lazy",
+        loading,
         decoding: "async"
     }
 

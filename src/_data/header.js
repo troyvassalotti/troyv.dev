@@ -1,6 +1,6 @@
 module.exports = [
     {
-        'name': 'troy vassalotti',
+        'name': 'home',
         get url() {return `/`}
     },
     {
