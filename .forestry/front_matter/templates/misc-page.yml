@@ -1,4 +1,33 @@
 ---
 label: Misc. Page
 hide_body: false
-fields: []
+fields:
+- name: title
+  type: text
+  config:
+    required: true
+  label: Title
+  default: ''
+- name: description
+  type: text
+  config:
+    required: false
+  label: Description
+- name: new_location
+  type: boolean
+  label: New Location
+  description: Set this if the page has a specific permalink instead of _/pages/something.html
+- name: permalink
+  type: text
+  config:
+    required: false
+  label: Permalink
+  showOnly:
+    field: new_location
+    value: true
+- name: layout
+  type: text
+  config:
+    required: true
+  label: Layout
+  default: responsecode
