@@ -1,0 +1,70 @@
+---
+label: Blog post
+hide_body: false
+display_field: title
+fields:
+- name: layout
+  type: text
+  config:
+    required: true
+  label: Layout
+  default: post
+  hidden: true
+- name: title
+  type: text
+  config:
+    required: true
+  label: Title
+- name: description
+  type: text
+  config:
+    required: true
+  label: Description
+  description: Simple description for underneath the title.
+- name: date
+  type: datetime
+  label: Date
+  description: This is needed to override the default page dates.
+  config:
+    required: true
+    date_format: YYYY-MM-DD
+    time_format: ''
+    display_utc: true
+    export_format: YYYY-MM-DD
+  default: now
+- name: tags
+  type: tag_list
+  default:
+  - post
+  label: Tags
+  description: 'Required: post<br>Other: "small project" will also populate the slider.'
+- name: d3
+  type: boolean
+  label: D3
+  description: Does this use d3.js?
+- name: addCSS
+  type: boolean
+  label: Custom CSS
+  description: Does this use custom CSS? You'll have to create this later.
+- name: addJS
+  type: boolean
+  label: Custom JS
+  description: Does this use custom JS? You'll have to add this later.
+- name: codeblock
+  type: boolean
+  label: Codeblock
+  description: Does this use codeblocks? If so, prism CSS will be added.
+- name: shortname
+  type: text
+  config:
+    required: false
+  label: Shortname
+  description: This is used for posts tagged "small project" as the overlay caption.
+- name: featuredImage
+  type: file
+  config:
+    maxSize: 64
+  label: Featured Image
+  description: If this is tagged "small project" then please provide a featured image.
+pages:
+- src/posts/i-m-using-forestry-now.md
