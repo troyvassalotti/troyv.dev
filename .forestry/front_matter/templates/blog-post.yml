@@ -65,3 +65,5 @@ fields:
     maxSize: 64
   label: Featured Image
   description: If this is tagged "small project" then please provide a featured image.
+pages:
+- src/posts/i-m-using-forestry-now.md
