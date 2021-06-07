@@ -2,6 +2,12 @@
 label: Misc. Page
 hide_body: false
 fields:
+- name: layout
+  type: text
+  config:
+    required: true
+  label: Layout
+  default: responsecode
 - name: title
   type: text
   config:
@@ -25,9 +31,3 @@ fields:
   showOnly:
     field: new_location
     value: true
-- name: layout
-  type: text
-  config:
-    required: true
-  label: Layout
-  default: responsecode
