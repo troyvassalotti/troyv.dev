@@ -4,7 +4,7 @@ date: 2021-06-07
 tags:
 - post
 title: I'm Using Forestry Now
-description: This is going to be revolutionize everything.
+description: This is going to revolutionize everything.
 d3: false
 addCSS: false
 addJS: false
