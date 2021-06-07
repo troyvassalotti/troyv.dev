@@ -5,15 +5,14 @@ admin_path: ''
 webhook_url: 
 sections:
 - type: heading
-  label: Misc. Pages
-- type: document
-  path: src/pages/success.md
-  label: Form Success
-- type: document
-  path: src/pages/404.md
-  label: '404'
-- type: heading
   label: Pages
+- type: directory
+  path: src/posts
+  label: Posts
+  create: all
+  match: "**/*"
+  templates:
+  - blog-post
 - type: directory
   path: src/projects
   label: Projects
@@ -22,12 +21,12 @@ sections:
   templates:
   - projects
 - type: directory
-  path: src/posts
-  label: Posts
+  path: src/pages
+  label: Misc. Pages
   create: all
   match: "**/*"
   templates:
-  - blog-post
+  - misc-page
 upload_dir: src/assets/img
 public_path: "/assets/img"
 front_matter_path: "./src/assets/img"
