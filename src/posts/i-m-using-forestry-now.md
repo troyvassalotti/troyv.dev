@@ -11,9 +11,9 @@ addCSS: false
 addJS: false
 codeblock: false
 shortname: Forestry
-featuredImage: "./src/assets/img/screenshot-troy-is-a-band.jpg"
+featuredImage: ''
 
 ---
-I can just type literally anything here.
+I
 
 ## WOW
