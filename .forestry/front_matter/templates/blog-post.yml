@@ -3,6 +3,13 @@ label: Blog post
 hide_body: false
 display_field: title
 fields:
+- name: layout
+  type: text
+  config:
+    required: true
+  label: Layout
+  default: post
+  hidden: true
 - name: title
   type: text
   config:
@@ -14,12 +21,6 @@ fields:
     required: true
   label: Description
   description: Simple description for underneath the title.
-- name: layout
-  type: text
-  config:
-    required: true
-  label: Layout
-  default: post
 - name: date
   type: datetime
   label: Date
