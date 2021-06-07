@@ -1,4 +1,46 @@
 ---
 label: Projects
 hide_body: false
-fields: []
+fields:
+- name: layout
+  type: text
+  config:
+    required: true
+  label: Layout
+  hidden: true
+  default: project
+- name: title
+  type: text
+  config:
+    required: true
+  label: Title
+- name: description
+  type: text
+  config:
+    required: true
+  label: Description
+- name: featuredImage
+  type: file
+  config:
+    maxSize: 64
+  label: Featured Image
+- name: repo
+  type: text
+  config:
+    required: true
+  label: Repo
+  description: Where can the repository be found?
+  default: https://github.com/troyvassalotti/
+- name: framework
+  type: text
+  config:
+    required: true
+  label: Framework
+  description: What did you use to make it?
+- name: website
+  type: text
+  config:
+    required: true
+  label: Website
+  description: Where is it hosted?
+  default: https://github.com/troyvassalotti/
