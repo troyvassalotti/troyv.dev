@@ -5,6 +5,17 @@ admin_path: ''
 webhook_url: 
 sections:
 - type: heading
+  label: Misc. Pages
+- type: document
+  path: src/pages/success.md
+  label: Form Success
+  match: "**/*"
+- type: document
+  path: src/pages/404.md
+  label: '404'
+  match: "**/*"
+  read_only: false
+- type: heading
   label: Pages
 - type: directory
   path: src/projects
