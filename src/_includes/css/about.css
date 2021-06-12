@@ -4,11 +4,11 @@
   flex-wrap: wrap;
 }
 
-.about .resumes {
+.about .view-resume {
   flex: 1 0 40%;
 }
 
-.about .resumes header p {
+.about .view-resume p {
   max-width: 45ch;
 }
 

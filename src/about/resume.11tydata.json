@@ -1,0 +1,172 @@
+{
+  "meta": {
+    "name": "Troy Vassalotti",
+    "pronouns": "he/him",
+    "picture": "",
+    "title": "Web Developer",
+    "location": "Maryland, US",
+    "contact": {
+      "phone": "2404467613",
+      "email-masked": "troy&#xFF20;troyv&#x2024;dev",
+      "email-true": "troy@troyv.dev",
+      "website": "https://www.troyv.dev"
+    },
+    "socials": {
+      "hideonprint": true,
+      "accounts": {
+        "github": "troyvassalotti",
+        "linkedin": "troyvassalotti"
+      }
+    }
+  },
+  "experience": [
+    {
+      "job": "Bakery Associate",
+      "employer": {
+        "name": "Weis Markets",
+        "city": "Damascus, MD",
+        "website": "https://www.weismarkets.com/"
+      },
+      "dates": {
+        "start": "2013-03-01",
+        "end": "2017-08-24"
+      },
+      "hideonprint": true
+    },
+    {
+      "job": "Songwriter, Guitarist",
+      "employer": {
+        "name": "Front Royal",
+        "city": "Baltimore, MD",
+        "website": "https://www.frontroyalband.com/"
+      },
+      "dates": {
+        "start": "2014-04-01"
+      },
+      "hideonprint": true
+    },
+    {
+      "job": "Intern",
+      "employer": {
+        "name": "Terra's Kitchen",
+        "city": "Baltimore, MD",
+        "website": "https://thedailyrecord.com/2019/09/25/baltimore-based-terras-kitchen-files-for-bankruptcy/"
+      },
+      "dates": {
+        "start": "2017-05-30",
+        "end": "2017-09-01"
+      },
+      "hideonprint": true
+    },
+    {
+      "job": "Marketing Production Coordinator",
+      "employer": {
+        "name": "Terra's Kitchen",
+        "city": "Baltimore, MD",
+        "website": "https://thedailyrecord.com/2019/09/25/baltimore-based-terras-kitchen-files-for-bankruptcy/"
+      },
+      "dates": {
+        "start": "2017-09-02",
+        "end": "2019-08-28"
+      }
+    },
+    {
+      "job": "Tech Compliance Specialist",
+      "employer": {
+        "name": "NewMarket Health",
+        "city": "Baltimore, MD",
+        "website": "https://www.newmarkethealth.com/"
+      },
+      "dates": {
+        "start": "2019-10-14"
+      }
+    },
+    {
+      "job": "Web Developer & Designer",
+      "employer": {
+        "name": "Goucher College",
+        "city": "Baltimore, MD",
+        "website": "https://www.goucher.edu/"
+      },
+      "dates": {
+        "start": "2021-06-07"
+      }
+    }
+  ],
+  "education": [
+    {
+      "school": {
+        "name": "Towson University",
+        "city": "Towson, MD"
+      },
+      "degree": "B.S., Business Administration",
+      "dates": {
+        "start": "2013-08-24",
+        "end": "2017-08-07"
+      }
+    }
+  ],
+  "skills": [
+    "HTML, CSS, JavaScript",
+    "Data Visualization",
+    "Git",
+    "SEO",
+    "Vue",
+    "Jamstack",
+    "WordPress",
+    "End-to-End Testing"
+  ],
+  "certifications": [
+    {
+      "issuer": "Moz",
+      "types": [
+        "SEO Fundamentals"
+      ]
+    },
+    {
+      "issuer": "HubSpot",
+      "types": [
+        "Inbound Marketing",
+        "Email Marketing",
+        "Content Marketing"
+      ]
+    },
+    {
+      "issuer": "Google",
+      "types": [
+        "Advanced Google Analytics",
+        "Google Tag Manager Fundamentals"
+      ]
+    },
+    {
+      "issuer": "freeCodeCamp.org",
+      "types": [
+        "Responsive Web Design",
+        "JavaScript Algorithms and Data Structures",
+        "Front End Frameworks",
+        "Data Visualization",
+        "APIs and Microservices"
+      ]
+    }
+  ],
+  "interests": {
+    "blurb": "When I'm not writing code, I'm probably writing music, or learning about literally anything new.",
+    "links": [
+      {
+        "name": "Front Royal",
+        "url": "https://www.frontroyalband.com/",
+        "desc": "A somewhat punk band with a splash of indie."
+      },
+      {
+        "name": "troy",
+        "url": "https://justtroy.bandcamp.com/",
+        "desc": "My solo music project."
+      }
+    ],
+    "items": [
+      "Reading",
+      "Cooking",
+      "Baking"
+    ]
+  }
+}

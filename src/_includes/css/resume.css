@@ -1,116 +1,346 @@
-.section-title {
-    text-align: center;
-    border-bottom: 2px dashed var(--whitePrimary);
+@import url("https://fonts.googleapis.com/css?family=Lora:300,400,400i,500&display=swap");
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
-.content {
-    padding: 1em;
-}
-
-.skills__list {
-    display: grid;
-}
-
-.skillset {
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
     margin: 0;
 }
 
-.profile {
-    max-width: 9.375rem;
-    border-radius: 50%;
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+    list-style: none;
 }
 
-.dated-header {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
 }
 
-.dated-header p {
-    margin: 0;
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
 }
 
-.dated-header > * {
-    font-size: var(--step--1);
-    font-style: italic;
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
 
 .resume {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--gap);
-    grid-template-areas: "photo" "name" "skills" "work" "education" "certifications";
+    --heading-color: hsl(0, 0%, 5%);
+    --text-color: hsl(0, 0%, 25%);
+    --subtext-color: hsl(0, 0%, 35%);
+    --primary-color: hsl(349, 100%, 50%);
+    --fallback: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+    --serif: Lora, var(--fallback);
+    --sans-serif: Oli Grotesk, var(--fallback);
+    --monospace: Native, Monospace, monospace;
+    font-family: var(--sans-serif);
+    color: var(--text-color);
 }
 
-.resume ul {
-    padding-left: 20px;
-    display: grid;
-    gap: 1em;
+.resume :is(h1, h2, h3, h4) {
+    font-family: var(--serif);
+    color: var(--heading-color);
+    font-weight: 500;
 }
 
-.resume ul[data-state="tight"] {
-    gap: 0;
+.resume h1 {
+    font-size: 3rem;
+    line-height: 1.25;
 }
 
-.name {
-    grid-area: name;
-    display: grid;
-    place-items: center;
+.resume h2 {
+    font-size: 2.25rem;
+    border-block-end: 1px solid black;
 }
 
-.name p {
-    margin: 1ch;
+.resume h3 {
+    font-size: 1.25rem;
 }
 
-.photo {
-    grid-area: photo;
+.resume :is(a, .print-this button) {
+    --lightness: 40%;
+    --link-color: hsl(222, 100%, var(--lightness));
+    --transition: 0.2s ease;
+    color: var(--link-color);
+    transition: color var(--transition);
+    text-decoration: underline;
+}
+
+.resume :is(a:hover, .print-this button:hover) {
+    --lightness: 70%;
+}
+
+@media print {
+    .resume :is(a, .print-this button) {
+        text-decoration: none;
+    }
+}
+
+.resume :is(a svg, .print-this button svg) {
+    fill: var(--link-color);
+    transition: fill var(--transition);
+}
+
+.resume :is(.contact__links, .contact__info, .contact__social) {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: start;
+    gap: 1ch;
+}
+
+.resume :is(.contact__links, .contact__info, .contact__social) :is(a, .print-this button) {
+    display: flex;
+    align-items: center;
+    width: max-content;
+}
+
+.resume :is(.contact__links, .contact__info, .contact__social) :is(a svg, .print-this button svg) {
+    margin-inline-end: 0.5ch;
+}
+
+.resume .print-this button {
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    -webkit-appearance: none;
+    background-color: transparent;
+}
+
+@media (min-width: 668px) {
+    .resume :is(.contact__info, .contact__social) {
+        flex-direction: row;
+    }
+}
+
+.resume .contact__links {
+    margin-block-start: 1rem;
+    margin-block-end: 1rem;
+}
+
+.resume .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.resume .header {
+    padding-block-start: 2rem;
+    padding-block-end: 2rem;
+}
+
+.resume .name {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+}
+
+.resume .name h1 {
+    margin-inline-end: 0.5ex;
+}
+
+.resume .photo {
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 8px 8px 40px -10px rgba(0, 0, 0, 0.3);
+    max-width: 11rem;
+    max-height: 11rem;
+}
+
+.resume .pronouns {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--subtext-color);
+}
+
+.resume .my-title {
+    font-size: 1.25rem;
+    margin-block-start: 1ex;
+    margin-block-end: 0;
+    font-weight: 300;
+}
+
+.resume .container {
+    padding-inline-start: 5%;
+    padding-inline-end: 5%;
+}
+
+.resume .entrylist {
+    position: relative;
+    padding-inline-start: 1rem;
+}
+
+.resume .entrylist > * + * {
+    margin-block-start: 2rem;
+}
+
+.resume .entrylist::before {
+    content: "";
+    display: block;
+    width: 1px;
+    background: #818a91;
+    background: linear-gradient(to top, rgba(129, 138, 145, 0) 0, #818a91 100px, #818a91 100%);
+    position: absolute;
+    top: 2.25rem;
+    left: 1rem;
+    bottom: 0;
+}
+
+.resume .entrylist li {
+    position: relative;
+    padding-inline-start: 1rem;
+}
+
+.resume .entrylist li::before {
+    content: "";
+    display: block;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 2.25rem;
+    left: 0;
+    transform: translate(-50%, 0);
+}
+
+.resume .entrylist li .entrylist__header {
     display: flex;
     flex-direction: column;
-    justify-content: center;
 }
 
-.skills {
-    grid-area: skills;
+.resume .entrylist li .entry__content {
+    max-width: 70ch;
 }
 
-.work {
-    grid-area: work;
+.resume .dates {
+    order: -1;
+    color: var(--subtext-color);
+    font-family: var(--monospace);
 }
 
-.work .content {
-    display: grid;
-    gap: 1em;
+.resume .organization {
+    font-style: italic;
+    font-weight: 300;
 }
 
-.job h3 {
-    font-weight: 700;
+.resume ul:not([class]) li::marker {
+    color: var(--primary-color);
 }
 
-.education {
-    grid-area: education;
+.resume .bold {
+    font-weight: bold;
 }
 
-.certifications {
-    grid-area: certifications;
+.resume .footer {
+    background-color: #f2f2f2;
+    font-size: 0.9rem;
+    text-align: center;
+    padding-block-start: 2rem;
+    padding-block-end: 2rem;
 }
 
-@media (min-width: 45em) {
-    .skills__list {
+@media (min-width: 668px) {
+    .resume .footer .container {
+        display: flex;
+        justify-content: space-between;
+        max-width: 60ch;
+        margin: auto;
+    }
+}
+
+@media print, (min-width: 668px) {
+    .resume .skills-certs {
+        display: grid;
         grid-template-columns: 1fr 1fr;
-        justify-items: center;
+        gap: 4rem;
     }
 }
 
-@media (min-width: 56.25em) {
-    .resume {
-        grid-template-columns: 2fr 1fr;
-        grid-template-areas: "name photo" "skills skills" "work work" "education education" "certifications certifications";
-    }
+.resume .skills-certs .certifications li {
+    max-width: 60ch;
 }
 
-@media (min-width: 71em) {
+@media (min-width: 950px) {
     .resume {
-        grid-template-areas: "name photo" "work skills" "work education" "work certifications";
+        position: relative;
+        display: grid;
+        grid-template-areas: "sidebar main" "sidebar footer";
+        grid-template-columns: 30% 70%;
+    }
+
+    .resume .footer {
+        grid-area: footer;
+    }
+
+    .resume .main {
+        grid-area: main;
+        padding-block-start: 2rem;
+        padding-block-end: 2rem;
+    }
+
+    .resume .header {
+        grid-area: sidebar;
+        height: 100%;
+        background-color: rgba(148, 209, 255, 0.2);
+    }
+
+    .resume .header .container {
+        position: sticky;
+        top: 2rem;
+        padding-inline-end: 2%;
     }
 }
 
@@ -119,21 +349,94 @@
         size: letter;
     }
 
-    html {
-        font-size: 5.25px;
-    }
-
-    body {
-        padding: 0;
-        margin: 0;
-    }
-
-    .hideOnPrint {
-        display: none;
-    }
-
     .resume {
-        grid-template-columns: 2fr 1fr;
-        grid-template-areas: "name photo" "work skills" "work education" "work certifications";
+        font-size: 10pt;
+    }
+
+    .resume .header {
+        padding-block-start: 0;
+        padding-block-end: 1rem;
+    }
+
+    .resume h1 {
+        font-size: 20pt;
+    }
+
+    .resume h2 {
+        font-size: 14pt;
+    }
+
+    .resume h3 {
+        font-size: 12pt;
+    }
+
+    .resume .meta {
+        justify-content: space-evenly;
+    }
+
+    .resume .my-title {
+        font-size: 12pt;
+    }
+
+    .resume .contact__links {
+        margin-block-end: 0;
+        margin-block-start: 0.5rem;
+    }
+
+    .resume :is(.contact__info, .contact__social) {
+        font-size: 9pt;
+        flex-direction: row;
+    }
+
+    .resume .entrylist {
+        padding-inline-start: 0.5rem;
+    }
+
+    .resume .entrylist > * + * {
+        margin-block-start: 1rem;
+    }
+
+    .resume .entrylist li .entry__content {
+        max-width: 100%;
+    }
+
+    .resume .additional-info {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .resume .additional-info h3 {
+        font-size: 10pt;
+    }
+
+    .resume .additional-info .dates {
+        width: max-content;
+    }
+
+    .resume .skills-certs {
+        gap: 1.5rem;
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .resume .skills-certs li {
+        font-size: 9pt;
+    }
+
+    .resume .photo {
+        max-width: 6rem;
+        max-height: 6rem;
+    }
+
+    .resume .interests ul {
+        margin-block-end: 0;
+    }
+
+    .hide-on-print {
+        display: none !important;
+    }
+
+    *::before,
+    *::after {
+        display: none !important;
     }
 }
