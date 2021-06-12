@@ -2,9 +2,9 @@
 title: Résumé
 description: An online version of my résumé. Easily printable!.
 layout: primary
-pageName: resume
 addCSS: true
 addJS: true
+date: Last Modified
 ---
 <div id="icon-sprite" hidden aria-hidden="true">
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -42,16 +42,16 @@ addJS: true
                 <div>
                     <div class="name">
                         <h1 class="p-name">{{ meta.name }}</h1>
-                        <p class="pronouns">{{ meta.pronouns }}</p>
+                        <p class="pronouns">({{ meta.pronouns }})</p>
                     </div>
                     <p class="my-title">{{ meta.title }} <span aria-hidden="true">·</span> {{ meta.location }}</p>
                     <div class="p-contact contact__links">
                         <div class="contact__info">
-                            <a href="mailto:{{ meta.contact[email-true] }}">
+                            <a href="mailto:{{ meta.contact.email }}">
                                 <svg title="email" role="img" aria-hidden="true" width="24" height="24">
                                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-email"></use>
                                 </svg>
-                                <span>{{ meta.contact[email-masked] }}</span>
+                                <span>{{ meta.contact.emailMask | safe }}</span>
                             </a>
                             <a href="tel:{{ meta.contact.phone }}">
                                 <svg title="phone" role="img" aria-hidden="true" width="24" height="24">
@@ -66,21 +66,17 @@ addJS: true
                                 <span>{{ meta.contact.website }}</span>
                             </a>
                         </div>
-                        <div class="contact__social {% if meta.socials.hideonprint %} hide-on-print {% endif %}">
-                            <a href="https://github.com/{{ meta.socials.accounts.github }}">
-                                <svg title="github" role="img" aria-hidden="true" width="24" height="24">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-github"></use>
+                        <div class="contact__social {% if meta.socials.hideonprint %} hideOnPrint {% endif %}">
+                            {%- for site, url in meta.socials.accounts %}
+                            <a href="{{ url }}">
+                                <svg title="{{ site }}" role="img" aria-hidden="true" width="24" height="24">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-{{ site }}"></use>
                                 </svg>
-                                <span>@{{ meta.socials.accounts.github }}</span>
+                                <span>{{ site | capitalize }}</span>
                             </a>
-                            <a href="https://linkedin.com/in/{{ meta.socials.accounts.linkedin }}">
-                                <svg title="linkedin" role="img" aria-hidden="true" width="24" height="24">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-linkedin"></use>
-                                </svg>
-                                <span>@{{ meta.socials.accounts.linkedin }}</span>
-                            </a>
+                            {% endfor -%}
                         </div>
-                        <div class="print-this hide-on-print">
+                        <div class="print-this hideOnPrint">
                             <button type="button" id="print-this">
                                 <svg title="print" role="img" aria-hidden="true" width="24" height="24">
                                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-print"></use>
@@ -99,7 +95,7 @@ addJS: true
                 <h2>Work Experience</h2>
                 <ol class="entrylist" role="list" reversed>
                     {%- for job in experience | reverse %}
-                    <li class="h-event p-experience">
+                    <li class="h-event p-experience {% if job.hideonprint %} hideOnPrint {% endif %}">
                         <article>
                             <div class="entrylist__header">
                                 <h3 class="p-name">{{ job.job }}</h3>
@@ -125,73 +121,57 @@ addJS: true
                 <section>
                     <h2>Education</h2>
                     <ol class="entrylist" role="list" reversed>
+                        {%- for item in education %}
                         <li class="h-event p-education">
                             <article>
                                 <div class="entrylist__header">
-                                    <h3 class="p-name">B.S., Business Administration</h3>
+                                    <h3 class="p-name">{{ item.degree }}</h3>
                                     <p class="dates">
-                                        <time datetime="2013-08-24">08/2013</time>
-                                        <span> - </span>
-                                        <time datetime="2017-08-07">08/2017</time>
+                                        <time datetime="{{ item.dates.start }}">{{ item.dates.start | mmyyyy }}</time> - {% if item.dates.end %}<time datetime="{{ item.dates.end }}">{{ item.dates.end | mmyyyy }}</time>{% else %}<span>Present</span>{% endif %}
                                     </p>
-                                    <p class="organization h-card p-org"><a class="p-name u-url"
-                                                                            href="https://www.towson.edu"
-                                                                            rel="noreferrer nofollow">Towson
-                                            University</a> <span aria-hidden="true">·</span> <span class="p-location">Baltimore, MD</span>
+                                    <p class="organization h-card p-org">
+                                        <a href="{{ item.school.website }}" class="p-name u-url" rel="noreferrer nofollow">{{ item.school.name }}</a> <span aria-hidden="true">·</span> <span class="p-location">{{ item.school.city }}</span>
                                     </p>
                                 </div>
                             </article>
                         </li>
+                        {% endfor -%}
                     </ol>
                 </section>
                 <div class="skills-certs">
-                    <section>
+                    <section class="skills">
                         <h2>Skills</h2>
                         <ul>
-                            <li class="p-skill">HTML, CSS, JavaScript</li>
-                            <li class="p-skill">Data Visualization</li>
-                            <li class="p-skill">Git</li>
-                            <li class="p-skill">SEO</li>
-                            <li class="p-skill">Vue</li>
-                            <li class="p-skill">Jamstack</li>
-                            <li class="p-skill">WordPress</li>
-                            <li class="p-skill">End-to-End Testing</li>
+                            {% for skill in skills %}
+                            <li class="p-skill">{{ skill }}</li>
+                            {% endfor %}
                         </ul>
                     </section>
                     <section class="certifications">
                         <h2>Certifications</h2>
                         <ul>
-                            <li class="p-skill"><strong>Moz</strong>: SEO Fundamentals</li>
-                            <li class="p-skill"><strong>HubSpot</strong>: Inbound, Email, and Content Marketing</li>
-                            <li class="p-skill"><strong>Google</strong>: Advanced Google Analytics, Google Tag Manager
-                                Fundamentals
-                            </li>
-                            <li class="p-skill"><strong>freeCodeCamp.org</strong>: Responsive Web Design, JavaScript
-                                Algorithms and Data Structures, Front End Frame Works, Data Visualization, APIs and
-                                Microservices
-                            </li>
+                            {% for cert in certifications %}
+                            <li class="p-skill"><strong>{{ cert.issuer }}</strong>: {% for type in cert.types %}{{ type }}, {% endfor %}</li>
+                            {% endfor %}
                         </ul>
                     </section>
                 </div>
             </div>
             <section class="interests">
                 <h2>Interests</h2>
-                <p>When I'm not writing code, I'm probably writing music, or learning about literally anything new.</p>
+                <p>{{ interests.blurb }}</p>
                 <ul>
-                    <li><a class="bold" href="https://www.frontroyalband.com" rel="noreferrer nofollow">Front Royal</a>:
-                        A somewhat punk band with a splash of indie.
-                    </li>
-                    <li><a class="bold" href="https://justtroy.bandcamp.com" rel="noreferrer nofollow">troy</a>: My solo
-                        music project.
-                    </li>
+                    {%- for link in interests.links %}
+                    <li><a href="{{ link.url }}" class="bold" rel="noreferrer nofollow">{{ link.name }}</a>: {{ link.desc }}</li>
+                    {% endfor -%}
                 </ul>
             </section>
         </div>
     </main>
-    <footer class="footer hide-on-print">
+    <footer class="footer hideOnPrint">
         <div class="container">
-            <p>&copy; Troy Vassalotti</p>
-            <p>Last Updated: Today</p>
+            <p>&copy; {{ meta.name }}</p>
+            <p>Last Updated: {{ page.date.toUTCString() }}</p>
         </div>
     </footer>
 </main>

@@ -7,15 +7,15 @@
     "location": "Maryland, US",
     "contact": {
       "phone": "2404467613",
-      "email-masked": "troy&#xFF20;troyv&#x2024;dev",
-      "email-true": "troy@troyv.dev",
+      "emailMask": "troy&#xFF20;troyv&#x2024;dev",
+      "email": "troy@troyv.dev",
       "website": "https://www.troyv.dev"
     },
     "socials": {
       "hideonprint": true,
       "accounts": {
-        "github": "troyvassalotti",
-        "linkedin": "troyvassalotti"
+        "github": "https://github.com/troyvassalotti",
+        "linkedin": "https://linkedin.com/in/troyvassalotti"
       }
     }
   },
@@ -97,7 +97,8 @@
     {
       "school": {
         "name": "Towson University",
-        "city": "Towson, MD"
+        "city": "Towson, MD",
+        "website": "https://www.towson.edu"
       },
       "degree": "B.S., Business Administration",
       "dates": {
