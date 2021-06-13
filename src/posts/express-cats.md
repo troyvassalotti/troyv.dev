@@ -4,7 +4,6 @@ description: What better way to practice Express, Pug, and Tailwind than a cat a
 layout: post
 date: 2021-04-25
 tags: ['post', 'small project', 'express']
-codeblock: true
 shortname: Express With Cats
 featuredImage: './src/assets/img/express-cats.png'
 ---

@@ -4,7 +4,6 @@ description: I wanted to learn web audio, specifically the Media Element API. At
 layout: post
 date: 2020-11-20
 tags: ['post', 'project', 'music']
-codeblock: true
 ---
 At work, I'm surrounded by different web audio components. They're integral to the business, but they're also integral to so many businesses, and I barely understood how they get made.
 

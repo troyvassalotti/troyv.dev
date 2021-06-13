@@ -4,7 +4,6 @@ description: I gave this site a full-blown refresh for 2021, so I'm going to tal
 layout: post
 date: 2021-04-14
 tags: ['post', 'redesign']
-codeblock: true
 ---
 You know what's great about having a personal website? The fact that I can configure it as simply or as complicated as I please. Sure, it isn't _ideal_ to make things complicated, but would I really consider myself a developer if I wasn't spending hours upon hours trying to automate something that's otherwise just a slight inconvenience?
 

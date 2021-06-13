@@ -4,7 +4,6 @@ description: I created the first draft of the Front Royal band site, but had to 
 layout: post
 date: 2020-04-20
 tags: ['post', 'music', 'front royal', 'project']
-codeblock: true
 ---
 I _really_ dropped the ball on this whole "blogging in real time" thing because the site is basically done.
 

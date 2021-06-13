@@ -8,7 +8,6 @@ description: This is going to revolutionize everything.
 d3: false
 addCSS: false
 addJS: false
-codeblock: false
 shortname: ''
 featuredImage: ''
 

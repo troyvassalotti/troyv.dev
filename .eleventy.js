@@ -25,6 +25,12 @@ module.exports = function (eleventyConfig) {
         return new CleanCSS({level: 2}).minify(code).styles;
     });
 
+    // add filter to transform a date to only mm-yyyy
+    eleventyConfig.addFilter("mmyyyy", (date) => {
+        let d = new Date(date);
+        return `${d.getMonth() + 1}/${d.getUTCFullYear()}`;
+    });
+
     // add a sitemap plugin
     eleventyConfig.addPlugin(sitemap, {
         sitemap: {

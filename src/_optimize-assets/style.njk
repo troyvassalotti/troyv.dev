@@ -3,7 +3,8 @@ permalink: /assets/css/style.css
 eleventyExcludeFromCollections: true
 ---
 {%- set css -%}
-    {%- include 'css/normalize.css' -%}
+    {%- include 'css/modern-reset.css' -%}
     {%- include 'css/style.css' -%}
+    {%- include 'css/prism.css' -%}
 {%- endset -%}
 {{ css | cssmin | safe }}

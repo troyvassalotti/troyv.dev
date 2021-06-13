@@ -4,7 +4,6 @@ description: My site is designed with dark mode in mind, but after reading about
 layout: post
 date: 2020-04-27
 tags: ['post', 'redesign']
-codeblock: true
 ---
 I was having a normal Saturday morning of exploring the latest features in [Firefox Preview Nightly](https://play.google.com/store/apps/details?id=org.mozilla.fenix.nightly) and installed the Dark Reader add-on to see what it does to my site.
 
