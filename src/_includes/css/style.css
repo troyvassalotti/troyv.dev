@@ -76,21 +76,13 @@
     --code: Native, Monospace, monospace;
     --headings: DM Sans, var(--fallback);
     /* main palette colors */
-    --colorOpacity: 1;
-    --black: 19, 17, 18;
-    --gray: 96, 101, 111;
-    --white: 247, 247, 255;
-    --red: 227, 0, 30;
-    --gold: 229, 149, 0;
-    --green: 39, 174, 96;
-    --blue: 35, 128, 231;
-    --blackPrimary: rgba(var(--black), var(--colorOpacity));
-    --grayPrimary: rgba(var(--gray), var(--colorOpacity));
-    --whitePrimary: rgba(var(--white), var(--colorOpacity));
-    --redPrimary: rgba(var(--red), var(--colorOpacity));
-    --goldPrimary: rgba(var(--gold), var(--colorOpacity));
-    --greenPrimary: rgba(var(--green), var(--colorOpacity));
-    --bluePrimary: rgba(var(--blue), var(--colorOpacity));
+    --blackPrimary: hsl(330, 5%, 7%);
+    --grayPrimary: hsl(220, 7.2%, 40%);
+    --whitePrimary: hsl(240, 100%, 98%);
+    --redPrimary: hsl(352, 100%, 44%);
+    --goldPrimary: hsl(39, 100%, 45%);
+    --greenPrimary: hsl(145, 63%, 42%);
+    --bluePrimary: hsl(212, 74%, 46%);
     /* use these colors to determine the nav underlines and roughnotation effects */
     --homeColor: var(--redPrimary);
     --aboutColor: var(--bluePrimary);
@@ -99,12 +91,6 @@
     --musicColor: currentColor;
     /* other things */
     --gap: 1em;
-    --skewUp: skewy(-3deg);
-    --skewDown: skewy(3deg);
-    --linkStateRest: scaleX(1);
-    --linkStartRest: left;
-    --linkStateHover: scaleX(0);
-    --linkStartHover: right;
 }
 
 /* ======================
@@ -140,11 +126,13 @@ img[height] {
 }
 
 a {
-    color: var(--goldPrimary);
+    --lightness: 45%;
+    color: hsl(39, 100%, var(--lightness));
+    transition: color .3s ease;
 }
 
 a:hover {
-    color: var(--bluePrimary);
+    --lightness: 65%;
 }
 
 .code,
@@ -170,6 +158,10 @@ blockquote p {
 }
 
 a.animated-link {
+    --linkStateRest: scaleX(1);
+    --linkStartRest: left;
+    --linkStateHover: scaleX(0);
+    --linkStartHover: right;
     text-decoration: underline;
 }
 
@@ -273,6 +265,8 @@ body:not(.homepage) main.layout {
 }
 
 .skewed-background {
+    --skewUp: skewy(-3deg);
+    --skewDown: skewy(3deg);
     position: relative;
     padding: var(--skew-padding, 1em 0 2em);
     display: inline-flex;
@@ -358,18 +352,6 @@ body:not(.homepage) main.layout {
 
 .project-solo h2 {
     font-size: var(--step-4);
-}
-
-.masonry-flex {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.masonry-flex div {
-    margin-inline-start: 1rem;
-    margin-inline-end: 1rem;
-    flex: 1 0 auto;
-    width: var(--masonryWidth);
 }
 
 /* ======================
@@ -552,10 +534,6 @@ h6 {
     --linkStartHover: right;
 }
 
-#eleventy {
-    color: var(--goldPrimary);
-}
-
 /* ======================
   Contact Form Styles
   ======================= */
@@ -722,19 +700,11 @@ hr {
     }
 
     a {
-        color: var(--blackPrimary);
-    }
-
-    a:hover {
-        color: var(--redPrimary);
+        color: hsl(212, 74%, var(--lightness));
     }
 
     blockquote {
         border-color: currentColor;
-    }
-
-    #eleventy {
-        color: var(--redPrimary);
     }
 
     .button {

@@ -1,5 +1,5 @@
 <header class="site-header hideOnPrint">
-    <nav class="main-navigation" id="main-navigation">
+    <nav class="main-navigation" id="main-navigation" aria-label="main navigation">
         <ul class="main-navigation__links">
             {%- for link in nav.header %}
                 <li><a href="{{ link.url }}" class="main-navigation__link animated-link" id="link__{{ link.name }}">{{ link.name }}</a></li>
