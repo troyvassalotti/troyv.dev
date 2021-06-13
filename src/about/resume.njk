@@ -53,12 +53,14 @@ date: Last Modified
                                 </svg>
                                 <span>{{ meta.contact.emailMask | safe }}</span>
                             </a>
+                            {% if meta.contact.phone %}
                             <a href="tel:{{ meta.contact.phone }}">
                                 <svg title="phone" role="img" aria-hidden="true" width="24" height="24">
                                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-telephone"></use>
                                 </svg>
                                 <span>{{ meta.contact.phone }}</span>
                             </a>
+                            {% endif %}
                             <a href="{{ meta.contact.website }}">
                                 <svg title="laptop" role="img" aria-hidden="true" width="24" height="24">
                                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-laptop"></use>

@@ -4,13 +4,10 @@
     <link rel="stylesheet" href="/assets/css/homepage.css">
 {%- endif %}
 
-{%- if addCSS or codeblock or plvylist -%}
+{%- if addCSS -%}
     {%- set css -%}
         {%- if addCSS -%}
             {%- include "../css/" + page.fileSlug + ".css" -%}
-        {%- endif -%}
-        {%- if codeblock -%}
-            {%- include "../css/prism.css" -%}
         {%- endif -%}
     {%- endset -%}
 
