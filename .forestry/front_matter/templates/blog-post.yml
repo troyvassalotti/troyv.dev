@@ -3,6 +3,10 @@ label: Blog post
 hide_body: false
 display_field: title
 fields:
+- name: draft
+  type: boolean
+  label: Draft
+  default: false
 - name: layout
   type: text
   config:
@@ -62,9 +66,5 @@ fields:
     maxSize: 64
   label: Featured Image
   description: If this is tagged "small project" then please provide a featured image.
-- name: draft
-  type: boolean
-  label: Draft
-  default: false
 pages:
 - src/posts/i-m-using-forestry-now.md
