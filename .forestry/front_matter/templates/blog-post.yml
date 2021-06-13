@@ -50,10 +50,6 @@ fields:
   type: boolean
   label: Custom JS
   description: Does this use custom JS? You'll have to add this later.
-- name: codeblock
-  type: boolean
-  label: Codeblock
-  description: Does this use codeblocks? If so, prism CSS will be added.
 - name: shortname
   type: text
   config:

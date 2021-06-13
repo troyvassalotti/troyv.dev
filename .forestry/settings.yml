@@ -9,7 +9,6 @@ sections:
 - type: document
   path: src/_data/nav.json
   label: Navigations
-  match: "**/*"
 - type: heading
   label: Pages
 - type: directory
