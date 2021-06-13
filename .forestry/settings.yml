@@ -32,6 +32,10 @@ sections:
   match: "**/*"
   templates:
   - misc-page
+- type: document
+  path: src/about/resume.11tydata.json
+  label: Resume
+  match: "**/*"
 upload_dir: src/assets/img
 public_path: "/assets/img"
 front_matter_path: "./src/assets/img"
