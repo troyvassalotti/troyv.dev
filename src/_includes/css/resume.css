@@ -339,6 +339,10 @@
         gap: 1.5rem;
     }
 
+    .resume .education ol {
+        padding: 0;
+    }
+
     .resume .additional-info h3 {
         font-size: 10pt;
     }
