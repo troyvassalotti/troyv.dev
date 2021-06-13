@@ -64,6 +64,13 @@ module.exports = function (eleventyConfig) {
 
     markdownTemplateEngine: "njk";
 
+    eleventyConfig.addCollection('posts', collection => {
+        if (process.env.ELEVENTY_ENV !== 'production')
+            return [...collection.getFilteredByGlob('./src/posts/*.md')];
+        else
+            return [...collection.getFilteredByGlob('./src/posts/*.md')].filter((post) => !post.data.draft);
+    });
+
     // Change the location for 11ty to enter
     return {
         dir: {
