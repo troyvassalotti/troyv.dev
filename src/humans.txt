@@ -1,0 +1,8 @@
+/* TEAM */
+Owner: Troy Vassalotti
+GitHub: troyvassalotti
+Twitter: @validcharacters
+Location: Maryland, US
+
+/* THANKS */
+Shaw for the clouds animation: https://codepen.io/shshaw/pen/DxJka

@@ -199,7 +199,7 @@
 
     .typewriter_2 {
         animation: typing 1.5s steps(35) 3s 1 normal both,
-        cursor 500ms steps(25) 2.5s infinite normal;
+        cursor 500ms steps(25) 2.5s 10 normal;
     }
 
     /* CLOUDS from this codepen https://codepen.io/shshaw/pen/DxJka */
