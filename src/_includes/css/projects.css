@@ -3,8 +3,9 @@
 }
 
 .projects__focus {
+    --min: 20rem;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(var(--min), 1fr));
     gap: 2rem;
 }
 
@@ -58,6 +59,12 @@
 
 .misc header {
     padding-inline-start: 1em;
+}
+
+@media (min-width: 1200px) {
+    .projects__focus {
+        --min: 30rem;
+    }
 }
 
 @media (prefers-color-scheme: light) {

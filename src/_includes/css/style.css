@@ -573,6 +573,11 @@ h6 {
 /* ======================
   Post Page Styles
   ======================= */
+.post-container {
+    width: 70%;
+    flex-grow: 1;
+}
+
 .post-container .wrapper {
     max-width: 75ch;
 }
@@ -605,17 +610,34 @@ h6 {
     margin-top: revert;
 }
 
+#post-navigation {
+    flex-grow: 1;
+}
+
+#post-navigation .wrapper {
+    position: sticky;
+    top: 30%;
+}
+
 .post-navigation {
     font-size: var(--step--2);
     text-align: center;
     display: flex;
     justify-content: space-evenly;
+    height: clamp(8rem, 50vh, 10rem);
+    align-items: center;
+    gap: 3rem;
 }
 
 .post-navigation li {
     display: flex;
     flex-direction: column;
     max-width: 20ch;
+}
+
+.with-sidebar {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 hr {
