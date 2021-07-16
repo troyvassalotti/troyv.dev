@@ -193,13 +193,13 @@
 @media (prefers-reduced-motion: no-preference) {
     .typewriter_1 {
         /* name, duration, number of steps, delay, repetitions */
-        animation: typing 1.5s steps(25) 0.5s 1 normal both,
-        cursor 500ms steps(25) 5 normal;
+        animation: typing 1.5s steps(25) 1s 1 normal both,
+        cursor 500ms steps(25) 6 normal;
     }
 
     .typewriter_2 {
-        animation: typing 1.5s steps(35) 3s 1 normal both,
-        cursor 500ms steps(25) 2.5s 10 normal;
+        animation: typing 1.5s steps(35) 3.5s 1 normal both,
+        cursor 500ms steps(25) 3s 10 normal;
     }
 
     /* CLOUDS from this codepen https://codepen.io/shshaw/pen/DxJka */
@@ -219,8 +219,10 @@
         border: none;
         padding: 0;
         cursor: pointer;
-        color: currentColor;
-        stroke: currentColor;
+    }
+
+    #sundial img {
+        filter: invert(1);
     }
 
     #clouds {
@@ -454,5 +456,9 @@
 
     .supplemental .curve path {
         fill: var(--greenPrimary);
+    }
+
+    #sundial img {
+        filter: none;
     }
 }

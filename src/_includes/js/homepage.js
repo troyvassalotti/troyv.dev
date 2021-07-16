@@ -17,7 +17,7 @@ const a2 = annotate(e2, {
 // create an annotation group
 const ag = annotationGroup([a1, a2,]);
 
-// create the intersection observer for the annoations
+// create the intersection observer for the annotations
 function handleHandrawing(entries) {
   entries.map((entry) => {
     if (entry.isIntersecting) {
@@ -54,18 +54,20 @@ const cloudsObserver = new IntersectionObserver(handleClouds);
 cloudsObserver.observe(more);
 
 const sundial = document.querySelector("#sundial");
-const sundialIcon = sundial.querySelector("svg");
-
-const sun = `<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>`;
-
-const moon = `<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>`;
+const sundialIcon = sundial.querySelector("img");
+const sun = "sun"
+const moon = "moon";
 
 sundial.addEventListener("click", () => {
-    if (sundialIcon.innerHTML === sun) {
+    if (sundialIcon.classList.contains(sun)) {
         clouds.classList.add("sunset");
-        sundialIcon.innerHTML = moon;
-    } else if (sundialIcon.innerHTML === moon) {
+        sundialIcon.setAttribute('src', `/assets/img/${moon}.svg`);
+        sundialIcon.classList.remove(sun);
+        sundialIcon.classList.add(moon);
+    } else if (sundialIcon.classList.contains(moon)) {
         clouds.classList.remove("sunset");
-        sundialIcon.innerHTML = sun;
+        sundialIcon.setAttribute('src', `/assets/img/${sun}.svg`);
+        sundialIcon.classList.remove(moon);
+        sundialIcon.classList.add(sun);
     }
 });

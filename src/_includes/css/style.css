@@ -259,9 +259,13 @@ picture {
     gap: 2em;
 }
 
-body:not(.homepage) main.layout {
+body:not(.home) main.layout {
     margin-block-start: 1em;
-    margin-block-end: 2em;
+    margin-block-end: 3em;
+}
+
+body.home main.layout {
+    margin-block-start: 3em;
 }
 
 .skewed-background {
@@ -404,27 +408,27 @@ h6 {
     margin: 0;
 }
 
-h1 {
+h1, .h1 {
     font-size: var(--step-6);
 }
 
-h2 {
+h2, .h2 {
     font-size: var(--step-5);
 }
 
-h3 {
+h3, .h3 {
     font-size: var(--step-3);
 }
 
-h4 {
+h4, .h4 {
     font-size: var(--step-2);
 }
 
-h5 {
+h5, .h5 {
     font-size: var(--step-1);
 }
 
-h6 {
+h6, .h6 {
     font-size: var(--step-0);
 }
 
@@ -513,6 +517,10 @@ h6 {
     margin-inline-end: 1ex;
     padding-block-start: .5rem;
     padding-block-end: .5rem;
+}
+
+.footer-navigation__links li img {
+    margin-inline-end: 1ch;
 }
 
 .footer-navigation__link {
@@ -611,7 +619,9 @@ h6 {
 }
 
 #post-navigation {
+    --padding: 2rem;
     flex-grow: 1;
+    padding: var(--padding);
 }
 
 #post-navigation .wrapper {
@@ -621,16 +631,16 @@ h6 {
 
 .post-navigation {
     font-size: var(--step--2);
-    text-align: center;
+    text-align: start;
     display: flex;
     justify-content: space-evenly;
-    height: clamp(8rem, 50vh, 10rem);
-    align-items: center;
+    flex-direction: column;
     gap: 3rem;
+    padding: var(--padding);
 }
 
 .post-navigation li {
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     max-width: 20ch;
 }
@@ -649,6 +659,18 @@ hr {
     filter: invert(80%);
     background-size: contain;
     background-position: center;
+}
+
+.neumorphism {
+    --first-color: #080707;
+    --second-color: #1e1b1d;
+    box-shadow: inset 5px 5px 10px var(--first-color),
+    inset -5px -5px 10px var(--second-color);
+}
+
+.has-box-shadow {
+    --shadow: var(--grayPrimary);
+    box-shadow: 8px 8px 15px -10px var(--shadow);
 }
 
 @media (min-width: 45em) {
@@ -741,5 +763,14 @@ hr {
     .contact-form {
         color: var(--whitePrimary);
         background-color: var(--blackPrimary);
+    }
+
+    .neumorphism {
+        --first-color: #d2d2d9;
+        --second-color: #ffffff;
+    }
+
+    .has-box-shadow {
+        --shadow: var(--blackPrimary);
     }
 }

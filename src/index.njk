@@ -12,7 +12,7 @@ home: true
             <section class="welcome-screen" id="welcome">
                 <div class="typewriter-container">
                     <h1 class="typewriter typewriter_1">Hey, I'm Troy...</h1>
-                    <p class="typewriter typewriter_2">...and I make things.</p>
+                    <p class="typewriter typewriter_2">...and this is a website.</p>
                 </div>
                 <div class="portrait">
                     {% image './src/assets/img/me-on-set.jpg', 'A picture of me holding my guitar', [300, 600], ['webp', 'jpg'], '(max-width: 700px) 100vw, 50vw', 'full', 'me', 'eager' %}
@@ -46,7 +46,7 @@ home: true
                 <div class="showcase">
                     {% for project in collections['featured project'].slice(collections['featured project'].length - 3, collections['featured project'].length) | reverse %}
                         {% captionOverlay project.url, project.data.title %}
-                        {% imageSync project.data.featuredImage, project.data.title + " Screenshot", [300, 800, 1400], ['webp', 'jpg'], '(max-width: 700px) 100vw, 1200px', 'caption-image full' %}
+                        {% imageSync project.data.featuredImage, project.data.title + " Screenshot", [300, 800, 1400], ['webp', 'jpg'], '(max-width: 700px) 100vw, 1200px', 'caption-image full has-box-shadow' %}
                         {% endcaptionOverlay %}
                     {% endfor %}
                 </div>
@@ -76,9 +76,8 @@ home: true
         </div>
         <div class="wrapper">
             <div class="sundial">
-                <!-- DO NOT REFACTOR THIS SUNDIAL CODE OR ELSE THINGS WILL BREAK IN THE JS -->
-                <button title="Turn the clouds on or off." id="sundial" type="button" name="sundial">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <button title="Turn the clouds animation on or off." id="sundial" type="button" name="sundial">
+                    <img class="sun" src="/assets/img/sun.svg" alt="">
                 </button>
             </div>
             <div class="content">
