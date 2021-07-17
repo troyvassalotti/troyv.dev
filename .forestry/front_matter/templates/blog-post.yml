@@ -67,4 +67,5 @@ fields:
   label: Featured Image
   description: If this is tagged "small project" then please provide a featured image.
 pages:
+- src/posts/front-royal-made-a-covers-album.md
 - src/posts/i-m-using-forestry-now.md
