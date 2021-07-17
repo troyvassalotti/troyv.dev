@@ -7,9 +7,9 @@ tags: ['post', 'project']
 ---
 We can all agree that social media is a lot to handle sometimes. I know I have a habit of scrolling on Reddit for far too long before I realize just how long it's been, and it isn't isolated to just Reddit. Twitter, Instagram, and the like are all in this bucket.
 
-Since deleting myself from Facebook, I've realized a few things about myself and others, but that's not what this post is about. This post is about [NotSocial](https://www.notsocial.app).
+Since deleting myself from Facebook, I've realized a few things about myself and others, but that's not what this post is about. This post is about [NotSocial](https://pang.netlify.app/).
 
-NotSocial is my new passion; it's more than an app - it's an ideology. You may be thinking that this is exactly the problem that other social media platforms have: they become more than just an app and grow into a cultural phenomenon, and I'm not here to tell you whether or not you're right or wrong.
+NotSocial is my new passion; it's more than an app - it's an ideology. You may be thinking that this is exactly the problem that other social media platforms have: they become more than just an app and grow into a cultural phenomenon, and I'm not here to tell you whether you're right or wrong.
 
 But I am here to tell you how NotSocial is a new kind of social media platform where it is only you that exists in its world. It's a section of the internet for you - and only you - to be social with yourself while feeling connected with the rest of the world.
 

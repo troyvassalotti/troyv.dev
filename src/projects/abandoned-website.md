@@ -5,7 +5,7 @@ description: 'Designed to eventually break, but gracefully.'
 featuredImage: './src/assets/img/screenshot-abandoned.jpg'
 framework: 'Hugo'
 repo: 'https://github.com/troyvassalotti/abandoned-website'
-website: 'https://abandoned.website'
+website: 'https://abandoned-website.netlify.app/'
 ---
 > What if a website, left to wither away and be forgotten, actually looked abandoned over time?
 

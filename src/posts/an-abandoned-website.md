@@ -7,9 +7,7 @@ tags: ['post', 'project', 'hugo']
 ---
 Websites can be bought and live on forever...or so long as the domain name continues to be renewed. As a result, some sites just become abandoned, living in the aether, but because of backwards compatibility they don't really _look abandoned_.
 
-Well, what if they did? What if the website deteriorated over time, things fell apart, and the darkness came to consume it? That's where my new project, [www.abandoned.website](https://www.abandoned.website), comes in.
-
-> Brief intermission to talk about how cool domain names are and that I can literally choose the domain abandoned.website for a project that is an abandoned website.
+Well, what if they did? What if the website deteriorated over time, things fell apart, and the darkness came to consume it? That's where my new project, [Abandoned Website](https://abandoned-website.netlify.app/), comes in.
 
 I don't know when, why, or how I came up with the idea to create this project. If I'm remembering correctly, it was way back in my early stages of learning to code - you know, when you're just full of ideas that sound _fun_ and _exciting_ and _definitely not hard to implement_ - and I just jotted it down as a note in my phone.
 
@@ -31,7 +29,7 @@ It wasn't a complete mistake! Now, Hugo might not be the best suited option here
 - It's only a few pages.
 - Not a lot gets reused.
 
-Only later in the build process did I realize those were shortcomings, but once I understood the way the directory structure works in Hugo it all made sense and I was able to make it work for me.
+Only later in the build process did I realize those were shortcomings, but once I understood the way the directory structure works in Hugo it all made sense, and I was able to make it work for me.
 
 Honestly, the hardest parts became the following:
 1. Getting the favicon to appear when in the root directory (I gave up and put it in the `/img/` directory instead).
