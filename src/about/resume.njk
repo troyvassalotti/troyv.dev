@@ -38,7 +38,7 @@ date: Last Modified
             <div class="meta h-card">
                 <img class="photo u-photo"
                      src="/assets/img/{{ meta.picture }}"
-                     alt="">
+                     alt="Troy standing in front of a brick wall, posing for a professional photo.">
                 <div>
                     <div class="name">
                         <h1 class="p-name">{{ meta.name }}</h1>
@@ -51,7 +51,7 @@ date: Last Modified
                                 <svg title="email" role="img" aria-hidden="true" width="24" height="24">
                                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-email"></use>
                                 </svg>
-                                <span>{{ meta.contact.emailMask | safe }}</span>
+                                <span class="hideOnPrint">Email Me</span><span class="showOnPrint">{{ meta.contact.email }}</span>
                             </a>
                             {% if meta.contact.phone %}
                             <a href="tel:{{ meta.contact.phone }}">

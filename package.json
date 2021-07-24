@@ -6,7 +6,7 @@
   "scripts": {
     "build": "ELEVENTY_ENV=production npx eleventy",
     "watch": "npx @11ty/eleventy --watch",
-    "serve": "ELEVENTY_ENV=development npx eleventy --serve",
+    "serve": "ELEVENTY_ENV=development npx eleventy --quiet --serve",
     "debug": "DEBUG=* npx @11ty/eleventy",
     "forestry:preview": "npx @11ty/eleventy --serve"
   },

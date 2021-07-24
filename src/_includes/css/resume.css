@@ -226,6 +226,10 @@
     padding-block-end: 2rem;
 }
 
+.showOnPrint {
+    display: none;
+}
+
 @media (min-width: 668px) {
     .resume .footer .container {
         display: flex;
@@ -371,6 +375,10 @@
 
     .hideOnPrint {
         display: none !important;
+    }
+
+    .showOnPrint {
+        display: initial;
     }
 
     *::before,
