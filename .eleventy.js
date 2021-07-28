@@ -3,6 +3,8 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 const CleanCSS = require("clean-css");
 const {minify} = require("terser");
 const sitemap = require("@quasibit/eleventy-plugin-sitemap");
+const timeToRead = require('eleventy-plugin-time-to-read');
+const embedYouTube = require("eleventy-plugin-youtube-embed");
 const fs = require("fs");
 const inputDir = "./src";
 const env = require(`${inputDir}/_data/site`);
@@ -19,6 +21,12 @@ module.exports = function (eleventyConfig) {
 
     // add the syntax highlighting plugin
     eleventyConfig.addPlugin(syntaxHighlight);
+
+    // add time to read plugin
+    eleventyConfig.addPlugin(timeToRead);
+
+    // add youtube embed plugin
+    eleventyConfig.addPlugin(embedYouTube);
 
     // add a css minifier filter from clean-css
     eleventyConfig.addFilter("cssmin", function (code) {
@@ -53,7 +61,7 @@ module.exports = function (eleventyConfig) {
     // Passthroughs
     eleventyConfig.addPassthroughCopy(`${inputDir}/assets`);
     eleventyConfig.addPassthroughCopy(`${inputDir}/robots.txt`);
-    eleventyConfig.addPassthroughCopy(`${inputDir}/about/resume.pdf`);
+    eleventyConfig.addPassthroughCopy(`${inputDir}/humans.txt`);
     eleventyConfig.addPassthroughCopy(`${inputDir}/favicon.ico`);
     eleventyConfig.addPassthroughCopy(`${inputDir}/manifest.webmanifest`);
 

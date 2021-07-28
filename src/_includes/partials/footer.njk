@@ -3,7 +3,7 @@
         <ul class="footer-navigation__links">
             {%- for link in nav.footer %}
                 <li>
-                    <img src="/assets/img/{{ link.name | lower }}.svg" width="24" height="24" alt="{{ link.name }} logo">
+                    <img src="/assets/img/{{ link.name | lower }}.svg" width="24" height="24" alt="{{ link.name }} logo" loading="lazy">
                     <a href="{{ link.url }}"
                        class="footer-navigation__link animated-link" {% if link.rel %} rel="{{ link.rel }}" {% endif %}>{{ link.name }}</a>
                 </li>

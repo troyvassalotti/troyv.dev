@@ -19,6 +19,9 @@
                 <div>
                     <p id="post-date">{{ dateString(page.date) }}</p>
                 </div>
+                <div>
+                    <p id="post-time-to-read">Reading Time: {{ content | timeToRead }}</p>
+                </div>
             </div>
         </header>
         <div class="wrapper">
