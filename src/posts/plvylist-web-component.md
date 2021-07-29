@@ -11,7 +11,7 @@ It wasn't super flexible unless you, as the user of it, went in and did a lot of
 
 ## Why a Web Component Made More Sense
 As a web component, I get all the functionality I was looking for with the added flexibility of customization, and a clearer vision of what pieces affect other pieces.
-- Everything is contained in a single file, `plvylist-component.js` - including the CSS, global variables, scripts/functions, and HTML (through the use of template literals).
+- Everything is contained in a single file, `plvylist-player.js` - including the CSS, global variables, scripts/functions, and HTML (through the use of template literals).
 - It's a single `<plvylist-player></plvylist-player>` on your HTML with some values passed in as attributes, so the component knows where to look for audio files, images, and artist or album names.
     - For example, `<plvylist-player audio-location="path/to/tracks/">` tells Plvylist that your songs are located in `path/to/tracks/` and will use said path when populating the audio source.
 

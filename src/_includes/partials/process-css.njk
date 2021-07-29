@@ -4,14 +4,14 @@
 <noscript>
     <link rel="stylesheet" href="https://fonts.typotheque.com/WF-036345-011398.css">
 </noscript>
-{% if home -%}
-    <link rel="stylesheet" href="/assets/css/homepage.css">
-{%- endif %}
 
-{%- if addCSS -%}
+{%- if addCSS or home -%}
     {%- set css -%}
         {%- if addCSS -%}
             {%- include "../css/" + page.fileSlug + ".css" -%}
+        {%- endif -%}
+        {%- if home -%}
+            {%- include "../css/homepage.css" -%}
         {%- endif -%}
     {%- endset -%}
 
@@ -20,5 +20,4 @@
     {%- else -%}
         <style>{{ css | safe }}</style>
     {%- endif -%}
-
 {%- endif -%}

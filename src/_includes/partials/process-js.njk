@@ -1,7 +1,4 @@
-{% if d3 -%}
-    <script src="/assets/js/d3-modules.js" defer></script>
-{% endif -%}
-<script type="module" src="/assets/js/script.js" async></script>
+<script type="module" src="/assets/js/script.js"></script>
 {%- if addJS or home -%}
     {%- set js -%}
         {%- if addJS -%}
@@ -18,10 +15,6 @@
         {{ js | safe }}
         {%- endif -%}
     </script>
-{%- endif -%}
-
-{%- if plvylist -%}
-    <script src="/assets/js/plvylist-component.js" async></script>
 {%- endif -%}
 
 {%- if lightbox -%}

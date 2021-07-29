@@ -5,6 +5,7 @@ const {minify} = require("terser");
 const sitemap = require("@quasibit/eleventy-plugin-sitemap");
 const timeToRead = require('eleventy-plugin-time-to-read');
 const embedYouTube = require("eleventy-plugin-youtube-embed");
+const addWebComponentDefinitions = require('eleventy-plugin-add-web-component-definitions');
 const fs = require("fs");
 const inputDir = "./src";
 const env = require(`${inputDir}/_data/site`);
@@ -27,6 +28,12 @@ module.exports = function (eleventyConfig) {
 
     // add youtube embed plugin
     eleventyConfig.addPlugin(embedYouTube);
+
+    // add web components definitions
+    eleventyConfig.addPlugin(addWebComponentDefinitions, {
+            path: tag => `/assets/js/components/${tag}.js`
+        }
+    )
 
     // add a css minifier filter from clean-css
     eleventyConfig.addFilter("cssmin", function (code) {

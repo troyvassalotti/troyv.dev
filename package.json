@@ -29,6 +29,7 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.0",
     "clean-css": "^5.1.2",
     "common-tags": "^1.8.0",
+    "eleventy-plugin-add-web-component-definitions": "^2.0.3",
     "terser": "^5.7.0"
   },
   "dependencies": {
