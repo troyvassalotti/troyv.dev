@@ -77,8 +77,6 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addNunjucksShortcode("imageSync", ImageShortcodeSync);
     eleventyConfig.addPairedShortcode("captionOverlay", CaptionOverlay);
 
-    markdownTemplateEngine: "njk";
-
     eleventyConfig.addCollection('posts', collection => {
         if (process.env.ELEVENTY_ENV !== 'production')
             return [...collection.getFilteredByGlob('./src/posts/*.md')];
@@ -88,6 +86,7 @@ module.exports = function (eleventyConfig) {
 
     // Change the location for 11ty to enter
     return {
+        markdownTemplateEngine: "njk",
         dir: {
             input: "src",
             layouts: "_includes/layouts"

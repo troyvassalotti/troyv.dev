@@ -19,18 +19,16 @@
         <link rel="stylesheet" href="https://fonts.typotheque.com/WF-036345-011398.css">
     </noscript>
 
-    <style>
-        {%- if addCSS -%}
-            {%- set css -%}
-                {%- include "../css/" + page.fileSlug + ".css" -%}
-            {%- endset -%}
-            {%- if site.environment == "production" -%}
-                {{ css | cssmin | safe }}
-            {%- else -%}
-                {{ css | safe }}
-            {%- endif -%}
+    {%- if addCSS -%}
+        {%- set css -%}
+            {%- include "../css/" + page.fileSlug + ".css" -%}
+        {%- endset -%}
+        {%- if site.environment == "production" -%}
+            <style>{{ css | cssmin | safe }}</style>
+        {%- else -%}
+            <style>{{ css | safe }}</style>
         {%- endif -%}
-    </style>
+    {%- endif -%}
 
     <title>{{ title }} | Troy Vassalotti</title>
     <meta name="description" content="{{ description }}">
@@ -76,8 +74,7 @@
             {% endfor -%}
         </ul>
     </nav>
-    <p>Built with <a class="footer-navigation__link animated-link" id="eleventy"
-                     href="https://www.11ty.dev">Eleventy</a>. View <a href="https://speedlify.troyv.dev">Speedlify</a> scores.</p>
+    <p>View <a href="https://speedlify.troyv.dev">Speedlify</a> scores.</p>
 </footer>
 
 <script type="module" src="/assets/js/script.js"></script>

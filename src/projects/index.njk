@@ -48,6 +48,10 @@ pageName: projects
         text-align: end;
     }
 
+    .misc h2 {
+        margin-block-end: 2rem;
+    }
+
     .projects__misc {
         display: flex;
         overflow-x: auto;
@@ -101,14 +105,12 @@ pageName: projects
         <h3>View More on CodePen</h3>
         <p>I've made a lot of things - bigger and smaller - that would be impossible to keep track of on here. From
             experimenting with JavaScript frameworks, to making things animate for no good reason, to even coding
-            emails (yikes!). You could say I'm winging it over there.</p>
-        <a class="button" href="https://codepen.io/troyvassalotti">See My CodePen</a>
+            emails (yikes!). You could say I'm winging it <a href="https://codepen.io/troyvassalotti">over there</a>.</p>
     </div>
 </section>
 <section class="misc">
     <header>
         <h2>Other Fun Stuff</h2>
-        <p>These projects don't really have a home, but I've done them so I'm going to show them off.</p>
     </header>
     {# This partial doesn't use the CaptionOverlay component because caching remote images in the Image plugin requires asynchronous functionality, but the paired shortcode requires synchronous functions #}
     <div class="projects__misc">
@@ -124,11 +126,6 @@ pageName: projects
                 </a>
             </figure>
         {%- endfor -%}
-        <figure class="caption-overlay">
-            <div class="full flex-center col tall">
-                <h3>More Coming Soon...</h3>
-            </div>
-        </figure>
     </div>
 </section>
 

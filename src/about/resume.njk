@@ -432,9 +432,7 @@ date: Last Modified
     <header class="header">
         <div class="container">
             <div class="meta h-card">
-                <img class="photo u-photo"
-                     src="/assets/img/{{ meta.picture }}"
-                     alt="Troy standing in front of a brick wall, posing for a professional photo.">
+                {% image meta.picture, 'Troy standing in front of a brick wall, posing for a professional photo.', [300, 600], ['webp', 'jpg'], '(max-width: 400px) 100vw, 50vw', 'photo u-photo', '', 'eager' %}
                 <div>
                     <div class="name">
                         <h1 class="p-name">{{ meta.name }}</h1>

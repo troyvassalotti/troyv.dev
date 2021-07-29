@@ -192,9 +192,9 @@ img[data-state="stay"]:hover {
     transform: none !important;
 }
 
-picture {
-    display: inline-block;
-}
+/*picture {*/
+/*    display: inline-block;*/
+/*}*/
 
 .grid {
     display: grid;

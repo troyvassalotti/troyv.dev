@@ -33,7 +33,7 @@ Only later in the build process did I realize those were shortcomings, but once 
 
 Honestly, the hardest parts became the following:
 1. Getting the favicon to appear when in the root directory (I gave up and put it in the `/img/` directory instead).
-2. Templating the page titles the way I wanted them to be (Learning about the `{{ .Page.Title }}` variable changed everything for me).
+2. Templating the page titles the way I wanted them to be (Learning about the `{% raw %}{{ .Page.Title }}{% endraw %}` variable changed everything for me).
 3. Setting up the 404 page to work within the `baseof.html` template while still having its own special treatment (inline `<style>` blocks and `noindex` directive).
 
 I hope to continue working on it. Side projects are hard to find the time for, but this one is more than just a proof-of-concept. Hell, I bought a domain name for it. I'd like to really take things I learn over time and make this thing better with every iteration.

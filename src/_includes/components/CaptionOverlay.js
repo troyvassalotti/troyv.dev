@@ -1,9 +1,9 @@
 const {html} = require('common-tags');
 
-module.exports = function (content, href, caption, target = '') {
+module.exports = function (content, href, caption) {
     return html`
         <figure class="caption-overlay">
-            <a class="caption-link" href="${href}" ${target}>
+            <a class="caption-link" href="${href}">
                 ${content}
                 <div class="caption">
                     <figcaption>
