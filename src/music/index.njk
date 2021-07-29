@@ -3,8 +3,75 @@ title: Music
 description: Music is one of my passions. Check out all my musical projects here.
 layout: page
 pageName: music
-plvylist: true
 ---
+<style>
+    {% set criticalCSS %}
+    :is(.music-player header, .bands-container .section-header) p {
+        max-width: 60ch;
+        margin-inline-start: auto;
+        margin-inline-end: auto;
+    }
+
+    .bands {
+        display: flex;
+        align-items: flex-end;
+        flex-wrap: wrap;
+    }
+
+    .band {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 auto;
+        margin-inline-start: 1ex;
+        margin-inline-end: 1ex;
+    }
+
+    .band-logo img {
+        max-width: 18.75rem;
+    }
+
+    .icon-bar {
+        background-color: currentColor;
+        padding: 1ex 2ex;
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        max-width: 20.3rem;
+        margin: auto;
+        align-items: center;
+    }
+
+    .icon-bar img {
+        max-width: 48px;
+        transition: opacity .1s ease;
+    }
+
+    .icon-bar img:hover {
+        opacity: .5;
+    }
+
+    .music-player {
+        margin-block-start: 2em;
+        margin-block-end: 2em;
+    }
+
+    @media (prefers-color-scheme: light) {
+        .band-logo img {
+            filter: drop-shadow(2px 4px 6px black);
+        }
+
+        .icon-bar img {
+            filter: invert(1);
+        }
+    }
+    {% endset %}
+
+    {%- if site.environment == "production" -%}
+        {{ criticalCSS | cssmin | safe }}
+    {%- else -%}
+        {{ criticalCSS | safe }}
+    {%- endif -%}
+</style>
 <section class="bands-container">
     <div class="wrapper">
         <div class="content center">
@@ -13,7 +80,39 @@ plvylist: true
                 <p>I write for a few projects, so here they are with all the important links. Music is best managed
                     elsewhere than my personal website, so you're better off visiting those places.</p>
             </section>
-            {% include 'partials/bands.njk' %}
+            {%- set logoWidths = [300, 600] -%}
+            {%- set logoFormats = ['webp', 'png'] -%}
+            {%- set logoSizes = '(max-width: 700px) 96vw, 300px' -%}
+            <section class="bands">
+                <div class="band">
+                    <div class="band-logo">
+                        <a href="https://frontroyalmd.bandcamp.com/">
+                            {% image './src/assets/img/front-royal-logo-white_400x240.png', 'the logo for my band, Front Royal', logoWidths, logoFormats, logoSizes, 'full' %}
+                        </a>
+                    </div>
+                    <div class="icon-bar">
+                        {%- for social in frontRoyalSocial -%}
+                            <a class="icon-link" href="{{ social.href }}"><img
+                                        src="/assets/img/{{ social.img }}" alt="{{ social.alt }}" loading="lazy"
+                                        width="48" height="48"></a>
+                        {%- endfor -%}
+                    </div>
+                </div>
+                <div class="band">
+                    <div class="band-logo">
+                        <a href="https://justtroy.bandcamp.com/">
+                            {% image './src/assets/img/troy-full.png', 'the logo for my band, troy', logoWidths, logoFormats, logoSizes, 'full' %}
+                        </a>
+                    </div>
+                    <div class="icon-bar">
+                        {%- for social in troySocial -%}
+                            <a class="icon-link" href="{{ social.href }}"><img
+                                        src="/assets/img/{{ social.img }}" alt="{{ social.alt }}" loading="lazy"
+                                        width="48" height="48"></a>
+                        {%- endfor -%}
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
 </section>
@@ -33,3 +132,34 @@ plvylist: true
         </plvylist-player>
     </div>
 </section>
+
+<script type="module">
+    {% set js %}
+    // This is for the handdrawn annotations from Rough Notation
+    import {annotate} from 'https://unpkg.com/rough-notation?module';
+
+    let mq = '(prefers-color-scheme: light)';
+
+    const pageTitle = document.querySelector('#page-title');
+
+    const changeTitleColor = () => {
+        console.log(matchMedia(mq));
+        matchMedia(mq).matches ? pageTitle.setAttribute("style", "color: var(--whitePrimary)") : pageTitle.setAttribute("style", "color: var(--blackPrimary)");
+    }
+
+    matchMedia(mq).addEventListener("change", changeTitleColor());
+    const musicAnnotation = annotate(pageTitle, {
+        type: 'highlight',
+        color: 'var(--musicColor)',
+        padding: 15,
+    });
+
+    musicAnnotation.show();
+    {% endset %}
+
+    {%- if site.environment == "production" -%}
+        {{ js | jsmin | safe }}
+    {%- else -%}
+        {{ js | safe }}
+    {%- endif -%}
+</script>

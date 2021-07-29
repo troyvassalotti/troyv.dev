@@ -616,6 +616,20 @@ hr {
     box-shadow: 8px 8px 15px -10px var(--shadow);
 }
 
+ div#calendar-heatmap {
+     overflow: auto;
+     background-color: var(--whitePrimary);
+     -webkit-padding-before: 1em;
+     padding-block-start: 1em;
+     -webkit-padding-after: 1em;
+     padding-block-end: 1em;
+ }
+
+div#calendar-heatmap svg.calendar {
+    width: max(56.25rem, 100%);
+    color: var(--blackPrimary);
+}
+
 @media (min-width: 45em) {
     /* ======================
       Navigation Styles

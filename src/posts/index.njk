@@ -4,6 +4,40 @@ description: I occasionally write about things.
 layout: page
 pageName: posts
 ---
+<style>
+    {% set criticalCSS %}
+    .posts .post-listing {
+        padding-inline-start: 1ex;
+        padding-inline-end: 1ex;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .posts .all-posts h2 {
+        font-size: var(--step-2);
+    }
+
+    .posts .posts-container {
+        grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+        /* align-items: center; */
+    }
+
+    @media (prefers-color-scheme: light) {
+        h2 a {
+            color: currentColor;
+        }
+    }
+    {% endset %}
+
+    {%- if site.environment == "production" -%}
+        {{ criticalCSS | cssmin | safe }}
+    {%- else -%}
+        {{ criticalCSS | safe }}
+    {%- endif -%}
+</style>
 <section class="all-posts full">
     <div class="wrapper">
         <div class="grid posts-container">
@@ -19,3 +53,25 @@ pageName: posts
 <aside>
     <p class="center">Like RSS? <a href="https://www.troyv.dev/feed.xml">Subscribe to this feed</a>.</p>
 </aside>
+
+<script type="module">
+    {% set js %}
+    // This is for the handdrawn annotations from Rough Notation
+    import {annotate} from 'https://unpkg.com/rough-notation?module';
+
+    const pageTitle = document.querySelector('#page-title');
+    const postsAnnotation = annotate(pageTitle, {
+        type: 'circle',
+        color: 'var(--postsColor)',
+        padding: 15,
+    });
+
+    postsAnnotation.show();
+    {% endset %}
+
+    {%- if site.environment == "production" -%}
+        {{ js | jsmin | safe }}
+    {%- else -%}
+        {{ js | safe }}
+    {%- endif -%}
+</script>

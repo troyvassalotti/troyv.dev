@@ -4,7 +4,98 @@ description: These are a few of the projects I've made, but there are many more.
 layout: page
 pageName: projects
 ---
-{% include 'partials/projects-focus.njk' %}
+<style>
+    {% set criticalCSS %}
+    #proj-title {
+        display: inline-block;
+    }
+
+    .projects__focus {
+        --min: 20rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(var(--min), 1fr));
+        gap: 2rem;
+    }
+
+    .projects__focus h2 {
+        font-size: var(--step-2);
+    }
+
+    .projects__focus .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+
+    .projects__focus img {
+        transition: 0.3s ease;
+    }
+
+    .projects__focus img:hover {
+        filter: brightness(0.5);
+        transform: scale(1.02);
+    }
+
+    .codepen .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .codepen .wrapper p {
+        max-width: 45ch;
+        text-align: end;
+    }
+
+    .projects__misc {
+        display: flex;
+        overflow-x: auto;
+    }
+
+    .projects__misc .caption-overlay {
+        flex: 0 0 clamp(12.5rem, 20vw, 30rem);
+        margin-inline-start: 1em;
+        margin-inline-end: 1em;
+    }
+
+    .projects__misc .caption-overlay h3 {
+        font-size: var(--step-1);
+    }
+
+    .misc header {
+        padding-inline-start: 1em;
+    }
+
+    @media (min-width: 1200px) {
+        .projects__focus {
+            --min: 30rem;
+        }
+    }
+    {% endset %}
+
+    {%- if site.environment == "production" -%}
+        {{ criticalCSS | cssmin | safe }}
+    {%- else -%}
+        {{ criticalCSS | safe }}
+    {%- endif -%}
+</style>
+
+<div class="wrapper">
+    <section class="projects__focus">
+        {% for project in collections['featured project'] | reverse %}
+            <div class="container neumorphism">
+                <div class="content">
+                    <h2>{{ project.data.title }}</h2>
+                    <p>{{ project.data.description }}</p>
+                </div>
+                <a href="{{ project.url }}">
+                    {% image project.data.featuredImage, project.data.title, [600, 900, 1200], ['webp', 'jpg'], '(max-width: 700px) 100vw, 1200px', 'has-box-shadow' %}
+                </a>
+            </div>
+        {% endfor %}
+    </section>
+</div>
 <section class="codepen">
     <div class="wrapper">
         <h3>View More on CodePen</h3>
@@ -19,5 +110,47 @@ pageName: projects
         <h2>Other Fun Stuff</h2>
         <p>These projects don't really have a home, but I've done them so I'm going to show them off.</p>
     </header>
-    {% include 'partials/projects-misc.njk' %}
+    {# This partial doesn't use the CaptionOverlay component because caching remote images in the Image plugin requires asynchronous functionality, but the paired shortcode requires synchronous functions #}
+    <div class="projects__misc">
+        {%- for project in collections['small project'] | reverse -%}
+            <figure class="caption-overlay">
+                <a class="caption-link" href="{{ project.url }}">
+                    {%- image project.data.featuredImage, project.data.title, [300, 600], ['webp', 'jpg'], '33vw', 'caption-image' -%}
+                    <div class="caption">
+                        <figcaption>
+                            <h3>{{ project.data.shortname }}</h3>
+                        </figcaption>
+                    </div>
+                </a>
+            </figure>
+        {%- endfor -%}
+        <figure class="caption-overlay">
+            <div class="full flex-center col tall">
+                <h3>More Coming Soon...</h3>
+            </div>
+        </figure>
+    </div>
 </section>
+
+<script type="module">
+    {% set js %}
+    // This is for the handdrawn annotations from Rough Notation
+    import {annotate} from 'https://unpkg.com/rough-notation?module';
+
+    const pageTitle = document.querySelector('#page-title');
+    pageTitle.setAttribute("style", "color: var(--blackPrimary)");
+    const projectsAnnotation = annotate(pageTitle, {
+        type: 'highlight',
+        color: 'var(--projectsColor)',
+        padding: 15,
+    });
+
+    projectsAnnotation.show();
+    {% endset %}
+
+    {%- if site.environment == "production" -%}
+        {{ js | jsmin | safe }}
+    {%- else -%}
+        {{ js | safe }}
+    {%- endif -%}
+</script>
