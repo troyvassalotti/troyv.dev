@@ -42,10 +42,6 @@ fields:
   - post
   label: Tags
   description: 'Required: post<br>Other: "small project" will also populate the slider.'
-- name: d3
-  type: boolean
-  label: D3
-  description: Does this use d3.js?
 - name: addCSS
   type: boolean
   label: Custom CSS
