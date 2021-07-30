@@ -125,9 +125,9 @@
 {% endblock %}
 
 <script type="module">
-{% set js %}
-    {% if addJS %}
+{% if addJS %}
+    {% set js %}
         {% include '../js/' + page.fileSlug + '.js' %}
-    {% endif %}
-{% endset %}
+    {% endset %}
+{% endif %}
 </script>
