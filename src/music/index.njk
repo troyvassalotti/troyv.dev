@@ -1,11 +1,12 @@
 ---
 title: Music
 description: Music is one of my passions. Check out all my musical projects here.
-layout: page
 pageName: music
 ---
+{% extends 'layouts/page.njk' %}
+
+{% set css %}
 <style>
-    {% set criticalCSS %}
     :is(.music-player header, .bands-container .section-header) p {
         max-width: 60ch;
         margin-inline-start: auto;
@@ -64,14 +65,10 @@ pageName: music
             filter: invert(1);
         }
     }
-    {% endset %}
-
-    {%- if site.environment == "production" -%}
-        {{ criticalCSS | cssmin | safe }}
-    {%- else -%}
-        {{ criticalCSS | safe }}
-    {%- endif -%}
 </style>
+{% endset %}
+
+{% block main %}
 <section class="bands-container">
     <div class="wrapper">
         <div class="content center">
@@ -132,11 +129,12 @@ pageName: music
         </plvylist-player>
     </div>
 </section>
+{% endblock %}
 
+{% set js %}
 <script type="module">
-    {% set js %}
     // This is for the handdrawn annotations from Rough Notation
-    import {annotate} from 'https://unpkg.com/rough-notation?module';
+    import {annotate} from 'https://cdn.skypack.dev/rough-notation';
 
     let mq = '(prefers-color-scheme: light)';
 
@@ -155,11 +153,5 @@ pageName: music
     });
 
     musicAnnotation.show();
-    {% endset %}
-
-    {%- if site.environment == "production" -%}
-        {{ js | jsmin | safe }}
-    {%- else -%}
-        {{ js | safe }}
-    {%- endif -%}
 </script>
+{% endset %}

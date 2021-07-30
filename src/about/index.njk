@@ -1,11 +1,12 @@
 ---
 title: About
 description: Normal person stuck in a computer. Do things like view my resume and contact me here.
-layout: page
 pageName: about
 ---
+{% extends 'layouts/page.njk' %}
+
+{% set css %}
 <style>
-    {% set criticalCSS %}
     .main-info {
         display: flex;
         justify-content: space-between;
@@ -32,14 +33,46 @@ pageName: about
     .about .form .content header {
         text-align: end;
     }
-    {% endset %}
 
-    {%- if site.environment == "production" -%}
-        {{ criticalCSS | cssmin | safe }}
-    {%- else -%}
-        {{ criticalCSS | safe }}
-    {%- endif -%}
+    /* ======================
+      Contact Form Styles
+      ======================= */
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border: 1px solid currentColor;
+        padding: 1ch;
+        max-width: 31.25rem;
+    }
+
+    .contact-form label {
+        display: flex;
+        flex-direction: column;
+        margin: 0.5ex 0;
+        font-family: var(--headings);
+        font-weight: 500;
+    }
+
+    #email,
+    #message,
+    #name {
+        padding: 1ex;
+    }
+
+    #message {
+        height: 10em;
+    }
+
+    #submit {
+        cursor: pointer;
+        margin-left: auto;
+        margin-right: auto;
+    }
 </style>
+{% endset %}
+
+{% block main %}
 <div class="wrapper">
     <section class="main-info">
         <section class="view-resume">
@@ -70,11 +103,12 @@ pageName: about
         </section>
     </section>
 </div>
+{% endblock %}
 
+{% set js %}
 <script type="module">
-    {% set js %}
     // This is for the handdrawn annotations from Rough Notation
-    import {annotate} from 'https://unpkg.com/rough-notation?module';
+    import {annotate} from 'https://cdn.skypack.dev/rough-notation';
 
     const pageTitle = document.querySelector('#page-title');
     const aboutAnnotation = annotate(pageTitle, {
@@ -86,11 +120,5 @@ pageName: about
     });
 
     aboutAnnotation.show();
-    {% endset %}
-
-    {%- if site.environment == "production" -%}
-        {{ js | jsmin | safe }}
-    {%- else -%}
-        {{ js | safe }}
-    {%- endif -%}
 </script>
+{% endset %}

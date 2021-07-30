@@ -1,11 +1,12 @@
 ---
 title: Posts
 description: I occasionally write about things.
-layout: page
 pageName: posts
 ---
+{% extends 'layouts/page.njk' %}
+
+{% set css %}
 <style>
-    {% set criticalCSS %}
     .posts .post-listing {
         padding-inline-start: 1ex;
         padding-inline-end: 1ex;
@@ -30,14 +31,10 @@ pageName: posts
             color: currentColor;
         }
     }
-    {% endset %}
-
-    {%- if site.environment == "production" -%}
-        {{ criticalCSS | cssmin | safe }}
-    {%- else -%}
-        {{ criticalCSS | safe }}
-    {%- endif -%}
 </style>
+{% endset %}
+
+{% block main %}
 <section class="all-posts full">
     <div class="wrapper">
         <div class="grid posts-container">
@@ -53,11 +50,12 @@ pageName: posts
 <aside>
     <p class="center">Like RSS? <a href="https://www.troyv.dev/feed.xml">Subscribe to this feed</a>.</p>
 </aside>
+{% endblock %}
 
+{% set js %}
 <script type="module">
-    {% set js %}
     // This is for the handdrawn annotations from Rough Notation
-    import {annotate} from 'https://unpkg.com/rough-notation?module';
+    import {annotate} from 'https://cdn.skypack.dev/rough-notation';
 
     const pageTitle = document.querySelector('#page-title');
     const postsAnnotation = annotate(pageTitle, {
@@ -67,11 +65,5 @@ pageName: posts
     });
 
     postsAnnotation.show();
-    {% endset %}
-
-    {%- if site.environment == "production" -%}
-        {{ js | jsmin | safe }}
-    {%- else -%}
-        {{ js | safe }}
-    {%- endif -%}
 </script>
+{% endset %}

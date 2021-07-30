@@ -1,11 +1,12 @@
 ---
 title: Projects
 description: These are a few of the projects I've made, but there are many more.
-layout: page
 pageName: projects
 ---
+{% extends 'layouts/page.njk' %}
+
+{% set css %}
 <style>
-    {% set criticalCSS %}
     #proj-title {
         display: inline-block;
     }
@@ -76,15 +77,10 @@ pageName: projects
             --min: 30rem;
         }
     }
-    {% endset %}
-
-    {%- if site.environment == "production" -%}
-        {{ criticalCSS | cssmin | safe }}
-    {%- else -%}
-        {{ criticalCSS | safe }}
-    {%- endif -%}
 </style>
+{% endset %}
 
+{% block main %}
 <div class="wrapper">
     <section class="projects__focus">
         {% for project in collections['featured project'] | reverse %}
@@ -128,11 +124,12 @@ pageName: projects
         {%- endfor -%}
     </div>
 </section>
+{% endblock %}
 
+{% set js %}
 <script type="module">
-    {% set js %}
     // This is for the handdrawn annotations from Rough Notation
-    import {annotate} from 'https://unpkg.com/rough-notation?module';
+    import {annotate} from 'https://cdn.skypack.dev/rough-notation';
 
     const pageTitle = document.querySelector('#page-title');
     pageTitle.setAttribute("style", "color: var(--blackPrimary)");
@@ -143,11 +140,5 @@ pageName: projects
     });
 
     projectsAnnotation.show();
-    {% endset %}
-
-    {%- if site.environment == "production" -%}
-        {{ js | jsmin | safe }}
-    {%- else -%}
-        {{ js | safe }}
-    {%- endif -%}
 </script>
+{% endset %}

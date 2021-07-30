@@ -19,16 +19,13 @@
         <link rel="stylesheet" href="https://fonts.typotheque.com/WF-036345-011398.css">
     </noscript>
 
-    {%- if addCSS -%}
-        {%- set css -%}
-            {%- include "../css/" + page.fileSlug + ".css" -%}
-        {%- endset -%}
+    {% block style %}
         {%- if site.environment == "production" -%}
-            <style>{{ css | cssmin | safe }}</style>
+            {{ css | cssmin | safe }}
         {%- else -%}
-            <style>{{ css | safe }}</style>
+            {{ css | safe }}
         {%- endif -%}
-    {%- endif -%}
+    {% endblock %}
 
     <title>{{ title }} | Troy Vassalotti</title>
     <meta name="description" content="{{ description }}">
@@ -60,7 +57,7 @@
     </nav>
 </header>
 
-{{ content | safe }}
+{% block content %}{% endblock %}
 
 <footer class="site-footer hideOnPrint" id="site-footer">
     <nav class="footer-navigation" id="footer-navigation" aria-label="footer navigation">
@@ -79,31 +76,12 @@
 
 <script type="module" src="/assets/js/script.js"></script>
 
-{%- if addJS -%}
-    {%- set js -%}
-        {%- include "../js/" + page.fileSlug + ".js" -%}
-    {%- endset -%}
-    <script type="module">
-        {%- if site.environment == "production" -%}
-            {{ js | jsmin | safe }}
-        {%- else -%}
-            {{ js | safe }}
-        {%- endif -%}
-    </script>
-{%- endif -%}
-
-{%- if lightbox -%}
-    <script type="module">
-        import Zooming from 'https://cdn.skypack.dev/zooming';
-        document.addEventListener('DOMContentLoaded', function () {
-            const zooming = new Zooming({
-                bgColor: 'rgb(0, 0, 0)',
-                bgOpacity: .5,
-                customSize: '135%'
-            })
-            zooming.listen('.img-zoomable')
-        })
-    </script>
-{%- endif -%}
+{% block script %}
+    {%- if site.environment == "production" -%}
+        {{ js | jsmin | safe }}
+    {%- else -%}
+        {{ js | safe }}
+    {%- endif -%}
+{% endblock %}
 </body>
 </html>
