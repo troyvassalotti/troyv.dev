@@ -3,8 +3,38 @@ tags: ['featured project']
 ---
 {% extends 'layouts/base.njk' %}
 
+{% block content %}
+    <main>
+        <div class="grid wrapper">
+            <div class="grid project-solo">
+                <section class="project-solo__img">
+                    <h1>{{ title }}</h1>
+                    <p class="rm-m-bs">{{ description }}</p>
+                    {% image featuredImage, title, [600, 1200, 1800], ['webp', 'jpg'], '(max-width: 1500px) 100vw, 60vw', 'img-zoomable' %}
+                </section>
+                <section class="project-solo__summary">
+                    {{ content | safe }}
+                </section>
+                <section class="project-solo__details">
+                    <h2>Details</h2>
+                    <ul class="no-list rm-m-bs" role="list">
+                        <li><span class="bold">Built With:</span> {{ framework }}</li>
+                        {% if website %}
+                            <li><span class="bold">Visit Live Website:</span> <a href="{{ website }}">{{ website }}</a>
+                            </li>
+                        {% endif %}
+                        {% if repo %}
+                            <li><span class="bold">Repository:</span> <a href="{{ repo }}">{{ repo }}</a></li>
+                        {% endif %}
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </main>
+{% endblock %}
+
 <style>
-{% set css %}
+    {% set css %}
     .project-solo h2 {
         font-size: var(--step-4);
     }
@@ -29,41 +59,14 @@ tags: ['featured project']
             grid-area: details;
         }
     }
-{% endset %}
+
+    {% endset %}
 </style>
 
-{% block content %}
-<main>
-    <div class="grid wrapper">
-        <div class="grid project-solo">
-            <section class="project-solo__img">
-                <h1>{{ title }}</h1>
-                <p class="rm-m-bs">{{ description }}</p>
-                {% image featuredImage, title, [600, 1200, 1800], ['webp', 'jpg'], '(max-width: 1500px) 100vw, 60vw', 'img-zoomable' %}
-            </section>
-            <section class="project-solo__summary">
-                {{ content | safe }}
-            </section>
-            <section class="project-solo__details">
-                <h2>Details</h2>
-                <ul class="no-list rm-m-bs" role="list">
-                    <li><span class="bold">Built With:</span> {{ framework }}</li>
-                    {% if website %}
-                        <li><span class="bold">Visit Live Website:</span> <a href="{{ website }}">{{ website }}</a></li>
-                    {% endif %}
-                    {% if repo %}
-                        <li><span class="bold">Repository:</span> <a href="{{ repo }}">{{ repo }}</a></li>
-                    {% endif %}
-                </ul>
-            </section>
-        </div>
-    </div>
-</main>
-{% endblock %}
-
 <script type="module">
-{% set js %}
+    {% set js %}
     import Zooming from 'https://cdn.skypack.dev/zooming';
+
     document.addEventListener('DOMContentLoaded', function () {
         const zooming = new Zooming({
             bgColor: 'rgb(0, 0, 0)',
@@ -72,5 +75,5 @@ tags: ['featured project']
         })
         zooming.listen('.img-zoomable')
     })
-{% endset %}
+    {% endset %}
 </script>

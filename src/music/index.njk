@@ -5,8 +5,72 @@ pageName: music
 ---
 {% extends 'layouts/page.njk' %}
 
+{% block main %}
+    <section class="bands-container">
+        <div class="wrapper">
+            <div class="content center">
+                <section class="section-header">
+                    <h2>Here Are My Bands</h2>
+                    <p>I write for a few projects, so here they are with all the important links. Music is best managed
+                        elsewhere than my personal website, so you're better off visiting those places.</p>
+                </section>
+                {%- set logoWidths = [300, 600] -%}
+                {%- set logoFormats = ['webp', 'png'] -%}
+                {%- set logoSizes = '(max-width: 700px) 96vw, 300px' -%}
+                <section class="bands">
+                    <div class="band">
+                        <div class="band-logo">
+                            <a href="https://frontroyalmd.bandcamp.com/">
+                                {% image './src/assets/img/front-royal-logo-white_400x240.png', 'the logo for my band, Front Royal', logoWidths, logoFormats, logoSizes, 'full' %}
+                            </a>
+                        </div>
+                        <div class="icon-bar">
+                            {%- for social in frontRoyalSocial -%}
+                                <a class="icon-link" href="{{ social.href }}"><img
+                                            src="/assets/img/{{ social.img }}" alt="{{ social.alt }}" loading="lazy"
+                                            width="48" height="48"></a>
+                            {%- endfor -%}
+                        </div>
+                    </div>
+                    <div class="band">
+                        <div class="band-logo">
+                            <a href="https://justtroy.bandcamp.com/">
+                                {% image './src/assets/img/troy-full.png', 'the logo for my band, troy', logoWidths, logoFormats, logoSizes, 'full' %}
+                            </a>
+                        </div>
+                        <div class="icon-bar">
+                            {%- for social in troySocial -%}
+                                <a class="icon-link" href="{{ social.href }}"><img
+                                            src="/assets/img/{{ social.img }}" alt="{{ social.alt }}" loading="lazy"
+                                            width="48" height="48"></a>
+                            {%- endfor -%}
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+    <section class="music-player">
+        <div class="wrapper" data-constrain="more">
+            <header class="center">
+                <h2>Stream <span class="italic" id="album-title">Alone In A Crowded Room</span></h2>
+                <p>I <a href="/posts/plvylist-web-component">created my own</a> embedded streaming player, called <a
+                            href="https://github.com/troyvassalotti/plvylist" class="italic">Plvylist</a>. Check it out!
+                </p>
+            </header>
+            <plvylist-player
+                    audio-location="/assets/audio/"
+                    artist-name="troy."
+                    album-name="Alone In A Crowded Room"
+                    cover-art="/assets/img/aiacr.jpg"
+                    placeholder-image="/assets/img/missingart.png">
+            </plvylist-player>
+        </div>
+    </section>
+{% endblock %}
+
 <style>
-{% set css %}
+    {% set css %}
     :is(.music-player header, .bands-container .section-header) p {
         max-width: 60ch;
         margin-inline-start: auto;
@@ -65,74 +129,12 @@ pageName: music
             filter: invert(1);
         }
     }
-{% endset %}
+
+    {% endset %}
 </style>
 
-{% block main %}
-<section class="bands-container">
-    <div class="wrapper">
-        <div class="content center">
-            <section class="section-header">
-                <h2>Here Are My Bands</h2>
-                <p>I write for a few projects, so here they are with all the important links. Music is best managed
-                    elsewhere than my personal website, so you're better off visiting those places.</p>
-            </section>
-            {%- set logoWidths = [300, 600] -%}
-            {%- set logoFormats = ['webp', 'png'] -%}
-            {%- set logoSizes = '(max-width: 700px) 96vw, 300px' -%}
-            <section class="bands">
-                <div class="band">
-                    <div class="band-logo">
-                        <a href="https://frontroyalmd.bandcamp.com/">
-                            {% image './src/assets/img/front-royal-logo-white_400x240.png', 'the logo for my band, Front Royal', logoWidths, logoFormats, logoSizes, 'full' %}
-                        </a>
-                    </div>
-                    <div class="icon-bar">
-                        {%- for social in frontRoyalSocial -%}
-                            <a class="icon-link" href="{{ social.href }}"><img
-                                        src="/assets/img/{{ social.img }}" alt="{{ social.alt }}" loading="lazy"
-                                        width="48" height="48"></a>
-                        {%- endfor -%}
-                    </div>
-                </div>
-                <div class="band">
-                    <div class="band-logo">
-                        <a href="https://justtroy.bandcamp.com/">
-                            {% image './src/assets/img/troy-full.png', 'the logo for my band, troy', logoWidths, logoFormats, logoSizes, 'full' %}
-                        </a>
-                    </div>
-                    <div class="icon-bar">
-                        {%- for social in troySocial -%}
-                            <a class="icon-link" href="{{ social.href }}"><img
-                                        src="/assets/img/{{ social.img }}" alt="{{ social.alt }}" loading="lazy"
-                                        width="48" height="48"></a>
-                        {%- endfor -%}
-                    </div>
-                </div>
-            </section>
-        </div>
-    </div>
-</section>
-<section class="music-player">
-    <div class="wrapper" data-constrain="more">
-        <header class="center">
-            <h2>Stream <span class="italic" id="album-title">Alone In A Crowded Room</span></h2>
-            <p>I <a href="/posts/plvylist-web-component">created my own</a> embedded streaming player, called <a
-                        href="https://github.com/troyvassalotti/plvylist" class="italic">Plvylist</a>. Check it out!</p>
-        </header>
-        <plvylist-player
-                audio-location="/assets/audio/"
-                artist-name="troy."
-                album-name="Alone In A Crowded Room"
-                cover-art="/assets/img/aiacr.jpg"
-                placeholder-image="/assets/img/missingart.png">
-        </plvylist-player>
-    </div>
-</section>
-{% endblock %}
-
 <script type="module">
-{% set js %}
+    {% set js %}
     // This is for the handdrawn annotations from Rough Notation
     import {annotate} from 'https://cdn.skypack.dev/rough-notation';
 
@@ -153,5 +155,5 @@ pageName: music
     });
 
     musicAnnotation.show();
-{% endset %}
+    {% endset %}
 </script>

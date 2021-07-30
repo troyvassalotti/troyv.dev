@@ -5,8 +5,55 @@ pageName: projects
 ---
 {% extends 'layouts/page.njk' %}
 
+{% block main %}
+    <div class="wrapper">
+        <section class="projects__focus">
+            {% for project in collections['featured project'] | reverse %}
+                <div class="container neumorphism">
+                    <div class="content">
+                        <h2>{{ project.data.title }}</h2>
+                        <p>{{ project.data.description }}</p>
+                    </div>
+                    <a href="{{ project.url }}">
+                        {% image project.data.featuredImage, project.data.title, [600, 900, 1200], ['webp', 'jpg'], '(max-width: 700px) 100vw, 1200px', 'has-box-shadow' %}
+                    </a>
+                </div>
+            {% endfor %}
+        </section>
+    </div>
+    <section class="codepen">
+        <div class="wrapper">
+            <h3>View More on CodePen</h3>
+            <p>I've made a lot of things - bigger and smaller - that would be impossible to keep track of on here. From
+                experimenting with JavaScript frameworks, to making things animate for no good reason, to even coding
+                emails (yikes!). You could say I'm winging it <a href="https://codepen.io/troyvassalotti">over there</a>.
+            </p>
+        </div>
+    </section>
+    <section class="misc">
+        <header>
+            <h2>Other Fun Stuff</h2>
+        </header>
+        {# This partial doesn't use the CaptionOverlay component because caching remote images in the Image plugin requires asynchronous functionality, but the paired shortcode requires synchronous functions #}
+        <div class="projects__misc">
+            {%- for project in collections['small project'] | reverse -%}
+                <figure class="caption-overlay">
+                    <a class="caption-link" href="{{ project.url }}">
+                        {%- image project.data.featuredImage, project.data.title, [300, 600], ['webp', 'jpg'], '33vw', 'caption-image' -%}
+                        <div class="caption">
+                            <figcaption>
+                                <h3>{{ project.data.shortname }}</h3>
+                            </figcaption>
+                        </div>
+                    </a>
+                </figure>
+            {%- endfor -%}
+        </div>
+    </section>
+{% endblock %}
+
 <style>
-{% set css %}
+    {% set css %}
     #proj-title {
         display: inline-block;
     }
@@ -77,57 +124,12 @@ pageName: projects
             --min: 30rem;
         }
     }
-{% endset %}
+
+    {% endset %}
 </style>
 
-{% block main %}
-<div class="wrapper">
-    <section class="projects__focus">
-        {% for project in collections['featured project'] | reverse %}
-            <div class="container neumorphism">
-                <div class="content">
-                    <h2>{{ project.data.title }}</h2>
-                    <p>{{ project.data.description }}</p>
-                </div>
-                <a href="{{ project.url }}">
-                    {% image project.data.featuredImage, project.data.title, [600, 900, 1200], ['webp', 'jpg'], '(max-width: 700px) 100vw, 1200px', 'has-box-shadow' %}
-                </a>
-            </div>
-        {% endfor %}
-    </section>
-</div>
-<section class="codepen">
-    <div class="wrapper">
-        <h3>View More on CodePen</h3>
-        <p>I've made a lot of things - bigger and smaller - that would be impossible to keep track of on here. From
-            experimenting with JavaScript frameworks, to making things animate for no good reason, to even coding
-            emails (yikes!). You could say I'm winging it <a href="https://codepen.io/troyvassalotti">over there</a>.</p>
-    </div>
-</section>
-<section class="misc">
-    <header>
-        <h2>Other Fun Stuff</h2>
-    </header>
-    {# This partial doesn't use the CaptionOverlay component because caching remote images in the Image plugin requires asynchronous functionality, but the paired shortcode requires synchronous functions #}
-    <div class="projects__misc">
-        {%- for project in collections['small project'] | reverse -%}
-            <figure class="caption-overlay">
-                <a class="caption-link" href="{{ project.url }}">
-                    {%- image project.data.featuredImage, project.data.title, [300, 600], ['webp', 'jpg'], '33vw', 'caption-image' -%}
-                    <div class="caption">
-                        <figcaption>
-                            <h3>{{ project.data.shortname }}</h3>
-                        </figcaption>
-                    </div>
-                </a>
-            </figure>
-        {%- endfor -%}
-    </div>
-</section>
-{% endblock %}
-
 <script type="module">
-{% set js %}
+    {% set js %}
     // This is for the handdrawn annotations from Rough Notation
     import {annotate} from 'https://cdn.skypack.dev/rough-notation';
 
@@ -140,5 +142,5 @@ pageName: projects
     });
 
     projectsAnnotation.show();
-{% endset %}
+    {% endset %}
 </script>

@@ -13,7 +13,8 @@
     <link rel="dns-prefetch" href="https://s3.amazonaws.com/">
 
     <link rel="preload" href="https://fonts.typotheque.com/WF-036345-011398.css" as="style">
-    <link rel="stylesheet" href="https://fonts.typotheque.com/WF-036345-011398.css" media="not all" onload="this.media='all'">
+    <link rel="stylesheet" href="https://fonts.typotheque.com/WF-036345-011398.css" media="not all"
+          onload="this.media='all'">
     <link rel="stylesheet" href="/assets/css/style.css">
     <noscript>
         <link rel="stylesheet" href="https://fonts.typotheque.com/WF-036345-011398.css">
@@ -21,11 +22,11 @@
 
     {% block style %}
         {%- if css -%}
-        {%- if site.environment == "production" -%}
-            <style>{{ css | cssmin | safe }}</style>
-        {%- elseif site.environment == "development" -%}
-            <style>{{ css | safe }}</style>
-        {%- endif -%}
+            {%- if site.environment == "production" -%}
+                <style>{{ css | cssmin | safe }}</style>
+            {%- elseif site.environment == "development" -%}
+                <style>{{ css | safe }}</style>
+            {%- endif -%}
         {%- endif -%}
     {% endblock %}
 
@@ -53,7 +54,8 @@
     <nav class="main-navigation" id="main-navigation" aria-label="main navigation">
         <ul class="main-navigation__links">
             {%- for link in nav.header %}
-                <li><a href="{{ link.url }}" class="main-navigation__link animated-link" id="link__{{ link.name }}">{{ link.name }}</a></li>
+                <li><a href="{{ link.url }}" class="main-navigation__link animated-link"
+                       id="link__{{ link.name }}">{{ link.name }}</a></li>
             {% endfor -%}
         </ul>
     </nav>
@@ -66,7 +68,8 @@
         <ul class="footer-navigation__links">
             {%- for link in nav.footer %}
                 <li>
-                    <img src="/assets/img/{{ link.name | lower }}.svg" width="24" height="24" alt="{{ link.name }} logo" loading="lazy">
+                    <img src="/assets/img/{{ link.name | lower }}.svg" width="24" height="24" alt="{{ link.name }} logo"
+                         loading="lazy">
                     <a href="{{ link.url }}"
                        class="footer-navigation__link animated-link" {% if link.rel %} rel="{{ link.rel }}" {% endif %}>{{ link.name }}</a>
                 </li>
@@ -80,11 +83,11 @@
 
 {% block script %}
     {%- if js -%}
-    {%- if site.environment == "production" -%}
-        <script type="module">{{ js | jsmin | safe }}</script>
-    {%- elseif site.environment == "development" -%}
-        <script type="module">{{ js | safe }}</script>
-    {%- endif -%}
+        {%- if site.environment == "production" -%}
+            <script type="module">{{ js | jsmin | safe }}</script>
+            {%- elseif site.environment == "development" -%}
+            <script type="module">{{ js | safe }}</script>
+        {%- endif -%}
     {%- endif -%}
 {% endblock %}
 </body>

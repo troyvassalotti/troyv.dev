@@ -1,17 +1,59 @@
 ---js
 {
-    pageName: "post",
-    dateString: function(date) {
-        let d = date.toUTCString();
-        let gmt = /\s00:00:00\sGMT/g;
-        return d.replace(gmt, "");
-    }
+pageName: "post",
+dateString: function(date) {
+let d = date.toUTCString();
+let gmt = /\s00:00:00\sGMT/g;
+return d.replace(gmt, "");
+}
 }
 ---
 {% extends 'layouts/base.njk' %}
 
+{% block content %}
+    <div class="with-sidebar">
+        <main class="post-container">
+            <header class="post-header">
+                <div class="wrapper">
+                    <div>
+                        <h1 id="post-title">{{ title }}</h1>
+                    </div>
+                    <div>
+                        <p id="post-date">{{ dateString(page.date) }}</p>
+                    </div>
+                    <div>
+                        <p id="post-time-to-read">Reading Time: {{ content | timeToRead }}</p>
+                    </div>
+                </div>
+            </header>
+            <div class="wrapper">
+                <article class="post-body">
+                    {{ content | safe }}
+                </article>
+            </div>
+        </main>
+        {%- set nextPost = collections.post | getNextCollectionItem(page) %}
+        {%- set previousPost = collections.post | getPreviousCollectionItem(page) %}
+        {%- if nextPost or previousPost %}
+            <aside id="post-navigation">
+                <div class="wrapper" data-constrain="more">
+                    <ul class="no-list post-navigation neumorphism">
+                        {%- if nextPost %}
+                            <li><span class="h5">Next Post:</span> <a
+                                    href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a></li>{% endif %}
+                        {%- if previousPost %}
+                            <li><span class="h5">Previous Post:</span> <a
+                                    href="{{ previousPost.url | url }}">{{ previousPost.data.title }}</a>
+                            </li>{% endif %}
+                    </ul>
+                </div>
+            </aside>
+        {%- endif %}
+    </div>
+{% endblock %}
+
 <style>
-{% set css %}
+    {% set css %}
     .post-container {
         width: 70%;
         flex-grow: 1;
@@ -82,52 +124,15 @@
     }
 
     {% if addCSS %}
-        {% include '../css/' + page.fileSlug + '.css' %}
+    {% include '../css/' + page.fileSlug + '.css' %}
     {% endif %}
-{% endset %}
+    {% endset %}
 </style>
 
-{% block content %}
-<div class="with-sidebar">
-    <main class="post-container">
-        <header class="post-header">
-            <div class="wrapper">
-                <div>
-                    <h1 id="post-title">{{ title }}</h1>
-                </div>
-                <div>
-                    <p id="post-date">{{ dateString(page.date) }}</p>
-                </div>
-                <div>
-                    <p id="post-time-to-read">Reading Time: {{ content | timeToRead }}</p>
-                </div>
-            </div>
-        </header>
-        <div class="wrapper">
-            <article class="post-body">
-                {{ content | safe }}
-            </article>
-        </div>
-    </main>
-    {%- set nextPost = collections.post | getNextCollectionItem(page) %}
-    {%- set previousPost = collections.post | getPreviousCollectionItem(page) %}
-    {%- if nextPost or previousPost %}
-        <aside id="post-navigation">
-            <div class="wrapper" data-constrain="more">
-                <ul class="no-list post-navigation neumorphism">
-                    {%- if nextPost %}<li><span class="h5">Next Post:</span> <a href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a></li>{% endif %}
-                    {%- if previousPost %}<li><span class="h5">Previous Post:</span> <a href="{{ previousPost.url | url }}">{{ previousPost.data.title }}</a></li>{% endif %}
-                </ul>
-            </div>
-        </aside>
-    {%- endif %}
-</div>
-{% endblock %}
-
 <script type="module">
-{% if addJS %}
+    {% if addJS %}
     {% set js %}
-        {% include '../js/' + page.fileSlug + '.js' %}
+    {% include '../js/' + page.fileSlug + '.js' %}
     {% endset %}
-{% endif %}
+    {% endif %}
 </script>

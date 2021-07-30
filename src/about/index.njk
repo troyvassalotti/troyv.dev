@@ -5,8 +5,43 @@ pageName: about
 ---
 {% extends 'layouts/page.njk' %}
 
+{% block main %}
+    <div class="wrapper">
+        <section class="main-info">
+            <section class="view-resume">
+                <div class="wrapper">
+                    <div class="content">
+                        <h2>View My Résumé</h2>
+                        <p>It's updated about as often as anyone else's résumé, but it looks nice and prints
+                            well. <a href="resume/">Here it is</a>.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="form">
+                <div class="wrapper">
+                    <div class="content flex-center col">
+                        <header>
+                            <h2>Let's Talk</h2>
+                            <p>If you've liked what you've seen, let's talk about stuff.</p>
+                        </header>
+                        <form class="contact-form" name="contactForm" netlify netlify-honeypot="bot-field"
+                              action="/success">
+                            <label style="display: none;">Don’t fill this out: <input name="bot-field"></label>
+                            <label for="name">Name<input name="name" type="text" id="name" required></label>
+                            <label for="email">Email<input name="email" type="email" id="email" required></label>
+                            <label for="message">Message<textarea name="message" id="message" required
+                                                                  placeholder="Say hi!"></textarea></label>
+                            <input type="submit" value="Submit" class="button" id="submit">
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </div>
+{% endblock %}
+
 <style>
-{% set css %}
+    {% set css %}
     .main-info {
         display: flex;
         justify-content: space-between;
@@ -69,44 +104,12 @@ pageName: about
         margin-left: auto;
         margin-right: auto;
     }
-{% endset %}
+
+    {% endset %}
 </style>
 
-{% block main %}
-<div class="wrapper">
-    <section class="main-info">
-        <section class="view-resume">
-            <div class="wrapper">
-                <div class="content">
-                    <h2>View My Résumé</h2>
-                    <p>It's updated about as often as anyone else's résumé, but it looks nice and prints
-                        well. <a href="resume/">Here it is</a>.</p>
-                </div>
-            </div>
-        </section>
-        <section class="form">
-            <div class="wrapper">
-                <div class="content flex-center col">
-                    <header>
-                        <h2>Let's Talk</h2>
-                        <p>If you've liked what you've seen, let's talk about stuff.</p>
-                    </header>
-                    <form class="contact-form" name="contactForm" netlify netlify-honeypot="bot-field" action="/success">
-                        <label style="display: none;">Don’t fill this out: <input name="bot-field"></label>
-                        <label for="name">Name<input name="name" type="text" id="name" required></label>
-                        <label for="email">Email<input name="email" type="email" id="email" required></label>
-                        <label for="message">Message<textarea name="message" id="message" required placeholder="Say hi!"></textarea></label>
-                        <input type="submit" value="Submit" class="button" id="submit">
-                    </form>
-                </div>
-            </div>
-        </section>
-    </section>
-</div>
-{% endblock %}
-
 <script type="module">
-{% set js %}
+    {% set js %}
     // This is for the handdrawn annotations from Rough Notation
     import {annotate} from 'https://cdn.skypack.dev/rough-notation';
 
@@ -120,5 +123,5 @@ pageName: about
     });
 
     aboutAnnotation.show();
-{% endset %}
+    {% endset %}
 </script>

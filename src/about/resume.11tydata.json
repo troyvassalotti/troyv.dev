@@ -2,7 +2,7 @@
   "meta": {
     "name": "Troy Vassalotti",
     "pronouns": "he/him",
-    "picture": "./src/assets/img/professional.jpg",
+    "picture": "professional.jpg",
     "title": "Web Developer",
     "location": "Maryland, US",
     "contact": {

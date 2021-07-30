@@ -5,8 +5,26 @@ pageName: posts
 ---
 {% extends 'layouts/page.njk' %}
 
+{% block main %}
+    <section class="all-posts full">
+        <div class="wrapper">
+            <div class="grid posts-container">
+                {%- for post in collections.post | reverse -%}
+                    <article class="post-listing">
+                        <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+                        <p>{{ post.data.description }}</p>
+                    </article>
+                {%- endfor -%}
+            </div>
+        </div>
+    </section>
+    <aside>
+        <p class="center">Like RSS? <a href="https://www.troyv.dev/feed.xml">Subscribe to this feed</a>.</p>
+    </aside>
+{% endblock %}
+
 <style>
-{% set css %}
+    {% set css %}
     .posts .post-listing {
         padding-inline-start: 1ex;
         padding-inline-end: 1ex;
@@ -31,29 +49,12 @@ pageName: posts
             color: currentColor;
         }
     }
-{% endset %}
+
+    {% endset %}
 </style>
 
-{% block main %}
-<section class="all-posts full">
-    <div class="wrapper">
-        <div class="grid posts-container">
-            {%- for post in collections.post | reverse -%}
-                <article class="post-listing">
-                    <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
-                    <p>{{ post.data.description }}</p>
-                </article>
-            {%- endfor -%}
-        </div>
-    </div>
-</section>
-<aside>
-    <p class="center">Like RSS? <a href="https://www.troyv.dev/feed.xml">Subscribe to this feed</a>.</p>
-</aside>
-{% endblock %}
-
 <script type="module">
-{% set js %}
+    {% set js %}
     // This is for the handdrawn annotations from Rough Notation
     import {annotate} from 'https://cdn.skypack.dev/rough-notation';
 
@@ -65,5 +66,5 @@ pageName: posts
     });
 
     postsAnnotation.show();
-{% endset %}
+    {% endset %}
 </script>
