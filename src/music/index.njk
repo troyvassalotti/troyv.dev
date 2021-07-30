@@ -5,8 +5,8 @@ pageName: music
 ---
 {% extends 'layouts/page.njk' %}
 
-{% set css %}
 <style>
+{% set css %}
     :is(.music-player header, .bands-container .section-header) p {
         max-width: 60ch;
         margin-inline-start: auto;
@@ -65,8 +65,8 @@ pageName: music
             filter: invert(1);
         }
     }
-</style>
 {% endset %}
+</style>
 
 {% block main %}
 <section class="bands-container">
@@ -131,8 +131,8 @@ pageName: music
 </section>
 {% endblock %}
 
-{% set js %}
 <script type="module">
+{% set js %}
     // This is for the handdrawn annotations from Rough Notation
     import {annotate} from 'https://cdn.skypack.dev/rough-notation';
 
@@ -153,5 +153,5 @@ pageName: music
     });
 
     musicAnnotation.show();
-</script>
 {% endset %}
+</script>

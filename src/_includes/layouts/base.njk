@@ -21,9 +21,9 @@
 
     {% block style %}
         {%- if site.environment == "production" -%}
-            {{ css | cssmin | safe }}
+            <style>{{ css | cssmin | safe }}</style>
         {%- else -%}
-            {{ css | safe }}
+            <style>{{ css | safe }}</style>
         {%- endif -%}
     {% endblock %}
 
@@ -78,9 +78,9 @@
 
 {% block script %}
     {%- if site.environment == "production" -%}
-        {{ js | jsmin | safe }}
+        <script type="module">{{ js | jsmin | safe }}</script>
     {%- else -%}
-        {{ js | safe }}
+        <script type="module">{{ js | safe }}</script>
     {%- endif -%}
 {% endblock %}
 </body>

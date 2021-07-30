@@ -5,8 +5,8 @@ pageName: posts
 ---
 {% extends 'layouts/page.njk' %}
 
-{% set css %}
 <style>
+{% set css %}
     .posts .post-listing {
         padding-inline-start: 1ex;
         padding-inline-end: 1ex;
@@ -31,8 +31,8 @@ pageName: posts
             color: currentColor;
         }
     }
-</style>
 {% endset %}
+</style>
 
 {% block main %}
 <section class="all-posts full">
@@ -52,8 +52,8 @@ pageName: posts
 </aside>
 {% endblock %}
 
-{% set js %}
 <script type="module">
+{% set js %}
     // This is for the handdrawn annotations from Rough Notation
     import {annotate} from 'https://cdn.skypack.dev/rough-notation';
 
@@ -65,5 +65,5 @@ pageName: posts
     });
 
     postsAnnotation.show();
-</script>
 {% endset %}
+</script>

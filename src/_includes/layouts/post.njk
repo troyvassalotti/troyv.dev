@@ -10,8 +10,8 @@
 ---
 {% extends 'layouts/base.njk' %}
 
-{% set css %}
 <style>
+{% set css %}
     .post-container {
         width: 70%;
         flex-grow: 1;
@@ -84,8 +84,8 @@
     {% if addCSS %}
         {% include '../css/' + page.fileSlug + '.css' %}
     {% endif %}
-</style>
 {% endset %}
+</style>
 
 {% block content %}
 <div class="with-sidebar">
@@ -124,10 +124,10 @@
 </div>
 {% endblock %}
 
-{% set js %}
 <script type="module">
+{% set js %}
     {% if addJS %}
         {% include '../js/' + page.fileSlug + '.js' %}
     {% endif %}
-</script>
 {% endset %}
+</script>

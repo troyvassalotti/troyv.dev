@@ -5,8 +5,8 @@ pageName: projects
 ---
 {% extends 'layouts/page.njk' %}
 
-{% set css %}
 <style>
+{% set css %}
     #proj-title {
         display: inline-block;
     }
@@ -77,8 +77,8 @@ pageName: projects
             --min: 30rem;
         }
     }
-</style>
 {% endset %}
+</style>
 
 {% block main %}
 <div class="wrapper">
@@ -126,8 +126,8 @@ pageName: projects
 </section>
 {% endblock %}
 
-{% set js %}
 <script type="module">
+{% set js %}
     // This is for the handdrawn annotations from Rough Notation
     import {annotate} from 'https://cdn.skypack.dev/rough-notation';
 
@@ -140,5 +140,5 @@ pageName: projects
     });
 
     projectsAnnotation.show();
-</script>
 {% endset %}
+</script>

@@ -5,8 +5,8 @@ date: Last Modified
 ---
 {% extends 'layouts/base.njk' %}
 
-{% set css %}
 <style>
+{% set css %}
     .resume {
         --heading-color: hsl(0, 0%, 5%);
         --text-color: hsl(0, 0%, 25%);
@@ -395,8 +395,8 @@ date: Last Modified
             display: none !important;
         }
     }
-</style>
 {% endset %}
+</style>
 
 {% block content %}
 <div id="icon-sprite" hidden aria-hidden="true">
@@ -567,8 +567,8 @@ date: Last Modified
 </main>
 {% endblock %}
 
-{% set js %}
 <script type="module">
+{% set js %}
     document.getElementById("print-this").addEventListener("click", () => window.print());
-</script>
 {% endset %}
+</script>

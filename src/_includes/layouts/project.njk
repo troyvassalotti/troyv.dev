@@ -3,8 +3,8 @@ tags: ['featured project']
 ---
 {% extends 'layouts/base.njk' %}
 
-{% set css %}
 <style>
+{% set css %}
     .project-solo h2 {
         font-size: var(--step-4);
     }
@@ -29,8 +29,8 @@ tags: ['featured project']
             grid-area: details;
         }
     }
-</style>
 {% endset %}
+</style>
 
 {% block content %}
 <main>
@@ -61,8 +61,8 @@ tags: ['featured project']
 </main>
 {% endblock %}
 
-{% set js %}
 <script type="module">
+{% set js %}
     import Zooming from 'https://cdn.skypack.dev/zooming';
     document.addEventListener('DOMContentLoaded', function () {
         const zooming = new Zooming({
@@ -72,5 +72,5 @@ tags: ['featured project']
         })
         zooming.listen('.img-zoomable')
     })
-</script>
 {% endset %}
+</script>

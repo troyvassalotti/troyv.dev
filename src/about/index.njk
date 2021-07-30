@@ -5,8 +5,8 @@ pageName: about
 ---
 {% extends 'layouts/page.njk' %}
 
-{% set css %}
 <style>
+{% set css %}
     .main-info {
         display: flex;
         justify-content: space-between;
@@ -69,8 +69,8 @@ pageName: about
         margin-left: auto;
         margin-right: auto;
     }
-</style>
 {% endset %}
+</style>
 
 {% block main %}
 <div class="wrapper">
@@ -105,8 +105,8 @@ pageName: about
 </div>
 {% endblock %}
 
-{% set js %}
 <script type="module">
+{% set js %}
     // This is for the handdrawn annotations from Rough Notation
     import {annotate} from 'https://cdn.skypack.dev/rough-notation';
 
@@ -120,5 +120,5 @@ pageName: about
     });
 
     aboutAnnotation.show();
-</script>
 {% endset %}
+</script>

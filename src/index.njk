@@ -6,8 +6,8 @@ home: true
 ---
 {% extends 'layouts/base.njk' %}
 
-{% set css %}
 <style>
+{% set css %}
     .hero .wrapper {
         align-items: baseline;
         justify-content: space-between;
@@ -472,8 +472,8 @@ home: true
             filter: none;
         }
     }
-</style>
 {% endset %}
+</style>
 
 {% block content %}
 <main class="layout">
@@ -571,8 +571,8 @@ home: true
 </main>
 {% endblock %}
 
-{% set js %}
 <script type="module">
+{% set js %}
     // This is for the handdrawn annotations from Rough Notation
     import {annotate, annotationGroup} from 'https://cdn.skypack.dev/rough-notation';
 
@@ -646,5 +646,5 @@ home: true
             sundialIcon.classList.add(sun);
         }
     });
-</script>
 {% endset %}
+</script>
