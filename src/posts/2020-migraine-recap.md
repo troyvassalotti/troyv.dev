@@ -4,7 +4,6 @@ description: Another year, another migraine recap.
 layout: post
 date: 2021-02-23
 tags: ['post', 'migraines', 'small project']
-d3: true
 addCSS: true
 addJS: true
 shortname: 2020 Migraine Recap

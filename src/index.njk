@@ -1,13 +1,13 @@
 ---
 title: Welcome
 description: Watch as Troy Vassalotti learns his way around a computer.
-layout: primary
-animation: true
 pageName: home
 home: true
 ---
+{% extends 'layouts/base.njk' %}
+
+{% set css %}
 <style>
-    {% set criticalCSS %}
     .hero .wrapper {
         align-items: baseline;
         justify-content: space-between;
@@ -472,10 +472,10 @@ home: true
             filter: none;
         }
     }
-    {% endset %}
-
-    {{ criticalCSS | cssmin | safe }}
 </style>
+{% endset %}
+
+{% block content %}
 <main class="layout">
     <div class="hero">
         <div class="wrapper flex">
@@ -569,11 +569,12 @@ home: true
         </svg>
     </section>
 </main>
+{% endblock %}
 
+{% set js %}
 <script type="module">
-    {% set js %}
     // This is for the handdrawn annotations from Rough Notation
-    import {annotate, annotationGroup} from 'https://unpkg.com/rough-notation?module';
+    import {annotate, annotationGroup} from 'https://cdn.skypack.dev/rough-notation';
 
     const e1 = document.querySelector('#cool-anim');
     const a1 = annotate(e1, {
@@ -645,11 +646,5 @@ home: true
             sundialIcon.classList.add(sun);
         }
     });
-    {% endset %}
-
-    {%- if site.environment == "production" -%}
-        {{ js | jsmin | safe }}
-    {%- else -%}
-        {{ js | safe }}
-    {%- endif -%}
 </script>
+{% endset %}

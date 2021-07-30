@@ -1,8 +1,38 @@
 ---
-layout: primary
-lightbox: true
 tags: ['featured project']
 ---
+{% extends 'layouts/base.njk' %}
+
+{% set css %}
+<style>
+    .project-solo h2 {
+        font-size: var(--step-4);
+    }
+
+    @media (min-width: 60em) {
+        .project-solo {
+            grid-template-areas:
+            "img summary"
+            "details summary"
+        }
+
+        .project-solo__img {
+            grid-area: img;
+        }
+
+        .project-solo__summary {
+            grid-area: summary;
+            place-self: center;
+        }
+
+        .project-solo__details {
+            grid-area: details;
+        }
+    }
+</style>
+{% endset %}
+
+{% block content %}
 <main>
     <div class="grid wrapper">
         <div class="grid project-solo">
@@ -29,3 +59,18 @@ tags: ['featured project']
         </div>
     </div>
 </main>
+{% endblock %}
+
+{% set js %}
+<script type="module">
+    import Zooming from 'https://cdn.skypack.dev/zooming';
+    document.addEventListener('DOMContentLoaded', function () {
+        const zooming = new Zooming({
+            bgColor: 'rgb(0, 0, 0)',
+            bgOpacity: .5,
+            customSize: '135%'
+        })
+        zooming.listen('.img-zoomable')
+    })
+</script>
+{% endset %}

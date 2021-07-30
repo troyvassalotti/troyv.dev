@@ -1,6 +1,5 @@
 ---js
 {
-    layout: "primary",
     pageName: "post",
     dateString: function(date) {
         let d = date.toUTCString();
@@ -9,6 +8,86 @@
     }
 }
 ---
+{% extends 'layouts/base.njk' %}
+
+{% set css %}
+<style>
+    .post-container {
+        width: 70%;
+        flex-grow: 1;
+    }
+
+    .post-container .wrapper {
+        max-width: 75ch;
+    }
+
+    .post-header {
+        padding-block-start: 2em;
+    }
+
+    .post-header .wrapper {
+        border-bottom: 2px solid var(--goldPrimary);
+    }
+
+    .post-container h1 {
+        font-size: var(--step-4);
+    }
+
+    .post-container h2 {
+        font-size: var(--step-3);
+    }
+
+    .post-container h3 {
+        font-size: var(--step-2);
+    }
+
+    .post-container h4 {
+        font-size: var(--step-1);
+    }
+
+    .post-container :is(h2, h3, h4) {
+        margin-top: revert;
+    }
+
+    #post-navigation {
+        --padding: 2rem;
+        flex-grow: 1;
+        padding: var(--padding);
+    }
+
+    #post-navigation .wrapper {
+        position: sticky;
+        top: 30%;
+    }
+
+    .post-navigation {
+        font-size: var(--step--2);
+        text-align: start;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        gap: 3rem;
+        padding: var(--padding);
+    }
+
+    .post-navigation li {
+        display: inline-flex;
+        flex-direction: column;
+        max-width: 20ch;
+    }
+
+    .with-sidebar {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    {% if addCSS %}
+        {% include '../css/' + page.fileSlug + '.css' %}
+    {% endif %}
+</style>
+{% endset %}
+
+{% block content %}
 <div class="with-sidebar">
     <main class="post-container">
         <header class="post-header">
@@ -43,3 +122,12 @@
         </aside>
     {%- endif %}
 </div>
+{% endblock %}
+
+{% set js %}
+<script type="module">
+    {% if addJS %}
+        {% include '../js/' + page.fileSlug + '.js' %}
+    {% endif %}
+</script>
+{% endset %}

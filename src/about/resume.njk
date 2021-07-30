@@ -1,11 +1,12 @@
 ---
 title: Résumé
 description: An online version of my résumé. Easily printable!.
-layout: primary
 date: Last Modified
 ---
+{% extends 'layouts/base.njk' %}
+
+{% set css %}
 <style>
-    {% set criticalCSS %}
     .resume {
         --heading-color: hsl(0, 0%, 5%);
         --text-color: hsl(0, 0%, 25%);
@@ -394,14 +395,10 @@ date: Last Modified
             display: none !important;
         }
     }
-    {% endset %}
-
-    {%- if site.environment == "production" -%}
-        {{ criticalCSS | cssmin | safe }}
-    {%- else -%}
-        {{ criticalCSS | safe }}
-    {%- endif -%}
 </style>
+{% endset %}
+
+{% block content %}
 <div id="icon-sprite" hidden aria-hidden="true">
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <symbol viewBox="0 0 24 24" id="icon-email" xmlns="http://www.w3.org/2000/svg">
@@ -448,12 +445,12 @@ date: Last Modified
                                 <span class="hideOnPrint">Email Me</span><span class="showOnPrint">{{ meta.contact.email }}</span>
                             </a>
                             {% if meta.contact.phone %}
-                            <a href="tel:{{ meta.contact.phone }}">
-                                <svg title="phone" role="img" aria-hidden="true" width="24" height="24">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-telephone"></use>
-                                </svg>
-                                <span>{{ meta.contact.phone }}</span>
-                            </a>
+                                <a href="tel:{{ meta.contact.phone }}">
+                                    <svg title="phone" role="img" aria-hidden="true" width="24" height="24">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-telephone"></use>
+                                    </svg>
+                                    <span>{{ meta.contact.phone }}</span>
+                                </a>
                             {% endif %}
                             <a href="{{ meta.contact.website }}">
                                 <svg title="laptop" role="img" aria-hidden="true" width="24" height="24">
@@ -464,12 +461,12 @@ date: Last Modified
                         </div>
                         <div class="contact__social {% if meta.socials.hideonprint %} hideOnPrint {% endif %}">
                             {%- for site, url in meta.socials.accounts %}
-                            <a href="{{ url }}">
-                                <svg title="{{ site }}" role="img" aria-hidden="true" width="24" height="24">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-{{ site }}"></use>
-                                </svg>
-                                <span>{{ site | capitalize }}</span>
-                            </a>
+                                <a href="{{ url }}">
+                                    <svg title="{{ site }}" role="img" aria-hidden="true" width="24" height="24">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-{{ site }}"></use>
+                                    </svg>
+                                    <span>{{ site | capitalize }}</span>
+                                </a>
                             {% endfor -%}
                         </div>
                         <div class="print-this hideOnPrint">
@@ -491,22 +488,22 @@ date: Last Modified
                 <h2>Work Experience</h2>
                 <ol class="entrylist" role="list" reversed>
                     {%- for job in experience | reverse %}
-                    <li class="h-event p-experience {% if job.hideonprint %} hideOnPrint {% endif %}">
-                        <article>
-                            <div class="entrylist__header">
-                                <h3 class="p-name">{{ job.job }}</h3>
-                                <p class="dates">
-                                    <time datetime="{{ job.dates.start }}">{{ job.dates.start | mmyyyy }}</time> - {% if job.dates.end %}<time datetime="{{ job.dates.end }}">{{ job.dates.end | mmyyyy }}</time>{% else %}<span>Present</span>{% endif %}
-                                </p>
-                                <p class="organization p-org h-card">
-                                    <a href="{{ job.employer.website }}" class="p-name u-url" rel="noreferrer nofollow">{{ job.employer.name }}</a> <span aria-hidden="true">·</span> <span class="p-location">{{ job.employer.city }}</span>
-                                </p>
-                            </div>
-                            <div class="entry__content p-summary">
-                                <p>{{ job.responsibilities }}</p>
-                            </div>
-                        </article>
-                    </li>
+                        <li class="h-event p-experience {% if job.hideonprint %} hideOnPrint {% endif %}">
+                            <article>
+                                <div class="entrylist__header">
+                                    <h3 class="p-name">{{ job.job }}</h3>
+                                    <p class="dates">
+                                        <time datetime="{{ job.dates.start }}">{{ job.dates.start | mmyyyy }}</time> - {% if job.dates.end %}<time datetime="{{ job.dates.end }}">{{ job.dates.end | mmyyyy }}</time>{% else %}<span>Present</span>{% endif %}
+                                    </p>
+                                    <p class="organization p-org h-card">
+                                        <a href="{{ job.employer.website }}" class="p-name u-url" rel="noreferrer nofollow">{{ job.employer.name }}</a> <span aria-hidden="true">·</span> <span class="p-location">{{ job.employer.city }}</span>
+                                    </p>
+                                </div>
+                                <div class="entry__content p-summary">
+                                    <p>{{ job.responsibilities }}</p>
+                                </div>
+                            </article>
+                        </li>
                     {% endfor -%}
                 </ol>
             </section>
@@ -515,19 +512,19 @@ date: Last Modified
                     <h2>Education</h2>
                     <ol class="entrylist" role="list" reversed>
                         {%- for item in education %}
-                        <li class="h-event p-education">
-                            <article>
-                                <div class="entrylist__header">
-                                    <h3 class="p-name">{{ item.degree }}</h3>
-                                    <p class="dates">
-                                        <time datetime="{{ item.dates.start }}">{{ item.dates.start | mmyyyy }}</time> - {% if item.dates.end %}<time datetime="{{ item.dates.end }}">{{ item.dates.end | mmyyyy }}</time>{% else %}<span>Present</span>{% endif %}
-                                    </p>
-                                    <p class="organization h-card p-org">
-                                        <a href="{{ item.school.website }}" class="p-name u-url" rel="noreferrer nofollow">{{ item.school.name }}</a> <span aria-hidden="true">·</span> <span class="p-location">{{ item.school.city }}</span>
-                                    </p>
-                                </div>
-                            </article>
-                        </li>
+                            <li class="h-event p-education">
+                                <article>
+                                    <div class="entrylist__header">
+                                        <h3 class="p-name">{{ item.degree }}</h3>
+                                        <p class="dates">
+                                            <time datetime="{{ item.dates.start }}">{{ item.dates.start | mmyyyy }}</time> - {% if item.dates.end %}<time datetime="{{ item.dates.end }}">{{ item.dates.end | mmyyyy }}</time>{% else %}<span>Present</span>{% endif %}
+                                        </p>
+                                        <p class="organization h-card p-org">
+                                            <a href="{{ item.school.website }}" class="p-name u-url" rel="noreferrer nofollow">{{ item.school.name }}</a> <span aria-hidden="true">·</span> <span class="p-location">{{ item.school.city }}</span>
+                                        </p>
+                                    </div>
+                                </article>
+                            </li>
                         {% endfor -%}
                     </ol>
                 </section>
@@ -536,7 +533,7 @@ date: Last Modified
                         <h2>Skills</h2>
                         <ul>
                             {% for skill in skills %}
-                            <li class="p-skill">{{ skill }}</li>
+                                <li class="p-skill">{{ skill }}</li>
                             {% endfor %}
                         </ul>
                     </section>
@@ -544,7 +541,7 @@ date: Last Modified
                         <h2>Certifications</h2>
                         <ul>
                             {% for cert in certifications %}
-                            <li class="p-skill"><strong>{{ cert.issuer }}</strong>: {% for type in cert.types %}{{ type }}{% if not loop.last %}, {% endif %}{% endfor %}</li>
+                                <li class="p-skill"><strong>{{ cert.issuer }}</strong>: {% for type in cert.types %}{{ type }}{% if not loop.last %}, {% endif %}{% endfor %}</li>
                             {% endfor %}
                         </ul>
                     </section>
@@ -555,7 +552,7 @@ date: Last Modified
                 <p>{{ interests.blurb }}</p>
                 <ul>
                     {%- for link in interests.links %}
-                    <li><a href="{{ link.url }}" class="bold" rel="noreferrer nofollow">{{ link.name }}</a>: {{ link.desc }}</li>
+                        <li><a href="{{ link.url }}" class="bold" rel="noreferrer nofollow">{{ link.name }}</a>: {{ link.desc }}</li>
                     {% endfor -%}
                 </ul>
             </section>
@@ -568,7 +565,10 @@ date: Last Modified
         </div>
     </footer>
 </main>
+{% endblock %}
 
+{% set js %}
 <script type="module">
     document.getElementById("print-this").addEventListener("click", () => window.print());
 </script>
+{% endset %}
