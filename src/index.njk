@@ -575,45 +575,47 @@ home: true
 
 <script type="module">
     {% set js %}
-    // This is for the handdrawn annotations from Rough Notation
-    import {annotate, annotationGroup} from 'https://cdn.skypack.dev/rough-notation';
-
+    // We use dynamic imports here because Rough Notation is called only when intersecting the viewport
+    // All other pages use RN in the LCP, so they import on load
+    const importRoughNotation = () => import("https://cdn.skypack.dev/rough-notation");
     const e1 = document.querySelector('#cool-anim');
-    const a1 = annotate(e1, {
-        type: 'box',
-        color: 'var(--bluePrimary)',
-    });
-
     const e2 = document.querySelector('#proj-anim');
-    const a2 = annotate(e2, {
-        type: 'underline',
-        color: 'var(--redPrimary)',
-        padding: 10,
-    });
-
-    // create an annotation group
-    const ag = annotationGroup([a1, a2,]);
-
-    // create the intersection observer for the annotations
-    function handleHandrawing(entries) {
-        entries.map((entry) => {
-            if (entry.isIntersecting) {
-                ag.show();
-                handDrawObserver.unobserve(entry.target);
-            }
-        });
-    }
-
     const options = {
         root: null,
         rootMargin: "0px",
         threshold: .5,
     }
 
+    // create the intersection observer for the annotations
+    function handleHandrawing(entries) {
+        entries.map((entry) => {
+            if (entry.isIntersecting) {
+                importRoughNotation().then((module) => {
+                    const a1 = module.annotate(e1, {
+                        type: 'box',
+                        color: 'var(--bluePrimary)',
+                    });
+
+                    const a2 = module.annotate(e2, {
+                        type: 'underline',
+                        color: 'var(--redPrimary)',
+                        padding: 10,
+                    });
+
+                    // create an annotation group
+                    const ag = module.annotationGroup([a1, a2,]);
+                    ag.show();
+                })
+                handDrawObserver.unobserve(entry.target);
+            }
+        });
+    }
+
     const handDrawObserver = new IntersectionObserver(handleHandrawing, options);
     handDrawObserver.observe(e1);
 
-    // deal with the clouds
+    // deal with
+    // the clouds
     const more = document.querySelector("#more");
     const clouds = document.querySelector("#clouds");
     clouds.classList.add("sunset");
