@@ -18,7 +18,8 @@ function konamiCode(e) {
     logger.join("") ===
     "arrowuparrowuparrowdownarrowdownarrowleftarrowrightarrowleftarrowrightbaenter"
   ) {
-      import("https://cdn.skypack.dev/canvas-confetti").then((module) => {
+    import("https://cdn.skypack.dev/canvas-confetti").then((module) => {
+      let confetti = module.default;
       let duration = 15 * 1000;
       let animationEnd = Date.now() + duration;
       const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
@@ -36,13 +37,13 @@ function konamiCode(e) {
 
         var particleCount = 50 * (timeLeft / duration);
         // since particles fall down, start a bit higher than random
-        module.default(
+        confetti(
           Object.assign({}, defaults, {
             particleCount,
             origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
           })
         );
-        module.default(
+        confetti(
           Object.assign({}, defaults, {
             particleCount,
             origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },

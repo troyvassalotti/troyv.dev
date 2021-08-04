@@ -591,19 +591,21 @@ home: true
         entries.map((entry) => {
             if (entry.isIntersecting) {
                 importRoughNotation().then((module) => {
-                    const a1 = module.annotate(e1, {
+                    let annotate = module.annotate;
+                    let annotationGroup = module.annotationGroup;
+                    const a1 = annotate(e1, {
                         type: 'box',
                         color: 'var(--bluePrimary)',
                     });
 
-                    const a2 = module.annotate(e2, {
+                    const a2 = annotate(e2, {
                         type: 'underline',
                         color: 'var(--redPrimary)',
                         padding: 10,
                     });
 
                     // create an annotation group
-                    const ag = module.annotationGroup([a1, a2,]);
+                    const ag = annotationGroup([a1, a2,]);
                     ag.show();
                 })
                 handDrawObserver.unobserve(entry.target);

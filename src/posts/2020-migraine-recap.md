@@ -4,8 +4,6 @@ description: Another year, another migraine recap.
 layout: post
 date: 2021-02-23
 tags: ['post', 'migraines', 'small project']
-addCSS: true
-addJS: true
 shortname: 2020 Migraine Recap
 featuredImage: './src/assets/img/2020-by-triggers.png'
 ---
@@ -17,8 +15,7 @@ The shining light of this year's log is that I now have a working calendar heatm
 
 Here's the resulting calendar to showcase 2019 and 2020.
 
-<div id="calendar-heatmap"></div>
-<script src="/assets/js/d3-modules.js" defer></script>
+{% include 'partials/migraine-calendar-2020.html' %}
 
 D3 is fun and exciting and equally complicated, so my chart only goes so far in displaying the data. I only keep track of the **day** and **start time** so the chart isn't too overwhelming, but it makes it more maintainable for myself as well.
 
