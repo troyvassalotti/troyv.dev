@@ -122,17 +122,5 @@ return d.replace(gmt, "");
         display: flex;
         flex-wrap: wrap;
     }
-
-    {% if addCSS %}
-    {% include '../css/' + page.fileSlug + '.css' %}
-    {% endif %}
     {% endset %}
 </style>
-
-<script type="module">
-    {% if addJS %}
-    {% set js %}
-    {% include '../js/' + page.fileSlug + '.js' %}
-    {% endset %}
-    {% endif %}
-</script>
