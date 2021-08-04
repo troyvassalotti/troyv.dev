@@ -42,14 +42,6 @@ fields:
   - post
   label: Tags
   description: 'Required: post<br>Other: "small project" will also populate the slider.'
-- name: addCSS
-  type: boolean
-  label: Custom CSS
-  description: Does this use custom CSS? You'll have to create this later.
-- name: addJS
-  type: boolean
-  label: Custom JS
-  description: Does this use custom JS? You'll have to add this later.
 - name: shortname
   type: text
   config:
