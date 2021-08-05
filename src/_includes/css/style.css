@@ -1,9 +1,9 @@
 @font-face {
   font-family: "Native";
   src: url("/assets/css/fonts/native/Native-Light.woff2") format("woff2");
-  font-weight: 300;
-  font-style: normal;
   font-display: fallback;
+  font-style: normal;
+  font-weight: 300;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
     U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
     U+FEFF, U+FFFD;
@@ -12,17 +12,14 @@
 @font-face {
   font-family: "Native";
   src: url("/assets/css/fonts/native/Native-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
   font-display: fallback;
+  font-style: normal;
+  font-weight: 400;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
     U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
     U+FEFF, U+FFFD;
 }
 
-/* ======================
-  Variables
-  ======================= */
 :root {
   /* @link https://utopia.fyi/generator-mk-ii?c=320,18,1.2,1140,21,1.25,6,3, */
   --step--3: clamp(0.6513rem, 0.5949rem + 0.2817vw, 0.7956rem);
@@ -35,57 +32,56 @@
   --step-4: clamp(2.3325rem, 2.1301rem + 1.0122vw, 2.8513rem);
   --step-5: clamp(2.7994rem, 2.5567rem + 1.2134vw, 3.4213rem);
   --step-6: clamp(3.3594rem, 3.0682rem + 1.4561vw, 4.1056rem);
+
   /* font styles */
+  --body: "Oli Grotesk", var(--fallback);
+  --code: "Native", Monospace, monospace;
   --fallback: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-  --body: "Oli Grotesk", var(--fallback);
-  --code: "Native", Monospace, monospace;
   --headings: var(--fallback);
+
   /* main palette colors */
   --blackPrimary: hsl(330, 5%, 7%);
-  --grayPrimary: hsl(220, 7.2%, 40%);
-  --whitePrimary: hsl(240, 100%, 98%);
-  --redPrimary: hsl(352, 100%, 44%);
-  --goldPrimary: hsl(39, 100%, 45%);
-  --greenPrimary: hsl(145, 63%, 42%);
   --bluePrimary: hsl(212, 74%, 46%);
-  /* use these colors to determine the nav underlines and roughnotation effects */
-  --homeColor: var(--redPrimary);
+  --goldPrimary: hsl(39, 100%, 45%);
+  --grayPrimary: hsl(220, 7.2%, 40%);
+  --greenPrimary: hsl(145, 63%, 42%);
+  --redPrimary: hsl(352, 100%, 44%);
+  --whitePrimary: hsl(240, 100%, 98%);
+
+  /* use these colors to determine the nav underlines and rough notation effects */
   --aboutColor: var(--bluePrimary);
+  --homeColor: var(--redPrimary);
+  --musicColor: currentColor;
   --postsColor: var(--greenPrimary);
   --projectsColor: var(--goldPrimary);
-  --musicColor: currentColor;
+
   /* other things */
   --gap: 1em;
 }
 
-/* ======================
-  Globals
-  ======================= */
 html {
-  line-height: 1.5;
-  word-wrap: anywhere;
   background: var(--blackPrimary);
   color: var(--whitePrimary);
   font-family: var(--body);
+  line-height: 1.5;
+  word-wrap: anywhere;
 }
 
 body {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  min-height: 100vh;
   font-size: var(--step-0);
+  min-height: 100vh;
+  width: 100%;
 }
 
 img {
   display: block;
-  /* width: 100%; */
-  /* if you remove the above width rule, remember to clean up the full width classes on all your images. you commented it out so that your blog post images would stay their normal size, but also so small images would not be overly large. */
-  max-width: 100%;
-  margin: auto;
   height: auto;
+  margin: auto;
+  max-width: 100%;
 }
 
 img[height] {
@@ -109,9 +105,9 @@ pre {
 }
 
 pre {
-  white-space: pre-wrap;
   font-size: var(--step--2);
   font-weight: 300;
+  white-space: pre-wrap;
 }
 
 blockquote {
@@ -132,9 +128,6 @@ a.animated-link {
   text-decoration: underline;
 }
 
-/* ======================
-  Composition
-  ======================= */
 .flex {
   display: flex;
 }
@@ -145,8 +138,8 @@ a.animated-link {
 
 .wrapper {
   width: 95%;
-  max-width: 100rem;
   margin: auto;
+  max-width: 100rem;
 }
 
 .wrapper[data-constrain="some"] {
@@ -190,8 +183,8 @@ img[data-state="stay"] {
 }
 
 img[data-state="stay"]:hover {
-  transition: none !important;
   transform: none !important;
+  transition: none !important;
 }
 
 picture {
@@ -212,8 +205,8 @@ picture {
 }
 
 .flex-center {
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: center;
 }
 
@@ -227,8 +220,8 @@ picture {
 }
 
 body:not(.home) main.layout {
-  margin-block-start: 1em;
   margin-block-end: 3em;
+  margin-block-start: 1em;
 }
 
 body.home main.layout {
@@ -238,30 +231,30 @@ body.home main.layout {
 .skewed-background {
   --skewUp: skewy(-3deg);
   --skewDown: skewy(3deg);
-  position: relative;
-  padding: var(--skew-padding, 1em 0 2em);
   display: inline-flex;
+  padding: var(--skew-padding, 1em 0 2em);
+  position: relative;
 }
 
 .skewed-background::before {
+  background: var(--skew-color, currentColor);
+  content: "";
+  height: 100%;
   position: absolute;
   top: -10px;
-  content: "";
-  width: 100%;
-  height: 100%;
-  background: var(--skew-color, currentColor);
   transform: var(--skew-direction, var(--skewUp));
+  width: 100%;
 }
 
 .skewed-background .content {
-  position: relative;
-  color: var(--skew-text, currentColor);
   background: var(--skew-color);
+  color: var(--skew-text, currentColor);
+  position: relative;
 }
 
 .caption-overlay {
-  position: relative;
   margin: 0;
+  position: relative;
 }
 
 .caption-link {
@@ -275,14 +268,14 @@ body.home main.layout {
 }
 
 .caption-overlay .caption {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: flex;
   align-items: center;
+  display: flex;
+  height: 100%;
   justify-content: center;
   opacity: 0;
+  position: absolute;
   transition: 0.3s ease;
+  width: 100%;
 }
 
 .caption-overlay:hover > .caption-link .caption-image {
@@ -295,13 +288,10 @@ body.home main.layout {
 
 .caption-overlay .caption figcaption {
   background: var(--whitePrimary);
-  padding: 0 1ch;
   color: var(--blackPrimary);
+  padding: 0 1ch;
 }
 
-/* ======================
-  Content Styles
-  ======================= */
 .center {
   text-align: center;
 }
@@ -316,11 +306,11 @@ body.home main.layout {
 
 .button {
   --buttonColor: currentColor;
-  display: inline-block;
   background-color: transparent;
   border: 1px solid var(--buttonColor);
-  padding: 1ex 2ex;
   color: currentColor;
+  display: inline-block;
+  padding: 1ex 2ex;
   text-decoration: none;
   transition: 0.3s ease-out;
 }
@@ -336,9 +326,6 @@ body.home main.layout {
   padding: 0;
 }
 
-/* ======================
-  Heading Styles
-  ======================= */
 h1,
 h2,
 h3,
@@ -379,28 +366,25 @@ h6,
   font-size: var(--step-0);
 }
 
-/* ======================
-  Navigation Styles
-  ======================= */
 .main-navigation {
-  text-align: center;
   font-size: var(--step--1);
+  text-align: center;
 }
 
 .main-navigation__links {
-  padding: 0;
   list-style: none;
+  padding: 0;
 }
 
 .main-navigation li:first-of-type {
-  margin-block-start: 1ch;
   margin-block-end: 1ch;
+  margin-block-start: 1ch;
 }
 
 .main-navigation__links li:not(:first-of-type) {
   display: inline-flex;
-  margin-inline-start: 1ch;
   margin-inline-end: 1ch;
+  margin-inline-start: 1ch;
 }
 
 .main-navigation__link {
@@ -413,13 +397,13 @@ h6,
 }
 
 .main-navigation__link::before {
-  --linkStateRest: scaleX(0);
   --linkStartRest: right;
+  --linkStateRest: scaleX(0);
 }
 
 .main-navigation__link:hover::before {
-  --linkStateHover: scaleX(1);
   --linkStartHover: left;
+  --linkStateHover: scaleX(1);
 }
 
 #link__home::before {
@@ -442,15 +426,12 @@ h6,
   background-color: var(--aboutColor);
 }
 
-/* ======================
-  Footer Styles
-  ======================= */
 .site-footer {
-  text-align: end;
-  padding-inline-start: 1ch;
-  padding-inline-end: 1ch;
   font-size: var(--step--2);
   margin-block-start: auto;
+  padding-inline-end: 1ch;
+  padding-inline-start: 1ch;
+  text-align: end;
 }
 
 .footer-navigation__links {
@@ -460,10 +441,10 @@ h6,
 
 .footer-navigation__links li {
   display: inline-flex;
-  margin-inline-start: 1ex;
   margin-inline-end: 1ex;
-  padding-block-start: 0.5rem;
+  margin-inline-start: 1ex;
   padding-block-end: 0.5rem;
+  padding-block-start: 0.5rem;
 }
 
 .footer-navigation__links li img {
@@ -480,24 +461,24 @@ h6,
 }
 
 .footer-navigation__link::before {
-  --linkStateRest: scaleX(1);
   --linkStartRest: left;
+  --linkStateRest: scaleX(1);
 }
 
 .footer-navigation__link:hover::before {
-  --linkStateHover: scaleX(0);
   --linkStartHover: right;
+  --linkStateHover: scaleX(0);
 }
 
 hr {
-  max-width: 75ch;
-  height: 2rem;
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKQAAABgCAYAAACTzNnjAAAFCklEQVR42u3d34uVRRjA8YMsEi0iSwhdRBGhSJgZiNRFIkWhQVEXBipKUVBBLCF6k0h4UxFkBLq4QT/Qiyi80EgxCjXMWqOMtqy0bBNja92yXatN3c3pGc9sHU/v+X3emWfe93vx+QN23u+e95x5Z94pmNWFQo5NEytErzgoBsSIOCf+FqbEBTEhzophcVTsFxvFEjE152PZHGMukbcB6BAPij0uqgtl0bXCBvyjeFPcS2wEWc0y0ec++Ywnf7rwbyc8grQ6RY8Y9RhhJT+Jde4TmghzFuR08bo4ryDEpE/N58QUYsx+kFPcD4yzCkMsZz+1uwkyu0HeKYYiCLHcN2I2QWYnSPudbHubfy37NuFu4wQZeZD2k2Uw4hDLHRZdBBnnH3K/5ykcX86IeQQZl6civ0XXYv/RlhJkHLZkOMTypz7dBKnbyzmJsfTZeTdB6vRszmIsjXI5QeryWMa/M9ZinzjdTJA63CLGcxzjpD/ElQQZfq3iKDFe8lSHIAPqI8L/6SHIMB4nvorTQQsI0v+teoz4KjpBkH7tIrqaNhCkH9cnbK5C8q/uywiSHzKabCLIdM3K+QR4o8YysfVWcZDvElnD1hNkOi5XuilLu5MlOyzni3vESnGfWCRuIMjm1zgSWPM7GWvNXdonXkdM8Q0dCwmytu8Iy/vK9B3iRoJMnghnqifc8jb7yXkXQf5nLWGo2WR2HUGuLrxPDKq25D6d9yBPE4I6/e6rVO6CnMpkuFq/eLmFKwtyMRde/dOg2XkKkvlH/X5P9ZNSWZBvcMGjMJza6iJlQe7nYkfjozwE+TkXOiprsx7kES5yVOzLYK/IcpA/cJGj806Wg/yaCxzlzsersxpkPxc4SruzGuQBLm603yU7DPOQUOSJWIK0E6j2lcvPm+JJVp+674oDbiFuv5t/fEXs5cJG65DmIO3KY3vG3yCLbXO1N1xVkB3uWfQQFye3rtUS5DN1bC5C9j0cOki7XOwUFwJOb6gg7TmCW1lMizI7QwQ5nW2qqGCv7yDtwsxfGXhU0OczyKvECIOOKvb5CnKa2+TDoKOat3wFyaIH1ONFH0H2MNCo00NpBzmXR39owIy0gzzOIKNOv6X9LHsZg4wGp3xsM/ZMoUfF3aaZ4++qBDnIIKMNzrsHKb11Lb6oEORtDCRSYB81f+vWxzYUJBv2kTYb5vx6gzzHgMHTjsUXagV5BwMFzz78d5NYQpDbGCAEcOzissaEIL9kcBDIx0lBsrwMIW0uD3KcQUHgqaEFpUGyLQGhnSgNkgGBBg8QJDQ5Phkky82g5bvkNQXDscDQY6MNcpiBgBL9NsjDDAS0LPq1Qb7EQECJicLFSUkGAkpMLgMaYzCgKci3GQxomPqZDPImBgMa9uOULifnDWcI7VRpkIsYEAR2sHwX2GcMCgJak/QKPh4lIsgcpOhM2iv7JIODAPqqvY7vPQYInlf6zKsWpN2iOMBAwZMD9bzSudPwvh+kr3gofJ0vve/ikxIp36pXNHosiD2j5gMGD2ksyG3lJK917qc5A4l2eNW04Wi5OaZ41DADilZu0xtMmw/fXCV+ZnDRoFFTfBdpaudlLxVfsXMRNYy7W3SH8XSAu/01bo8s/kL8xQWAM+JC7DIeDnCvZqZ4RGxxi3/3iUPOJ+5TtRXfG/v6jeadNMVjlqsZquG0uwU164ybg2vFuPuh2ax23tkm3N91VLwmbjVNvPT+H7Ro4730ITNPAAAAAElFTkSuQmCC");
-  margin: 3rem auto;
+  background-position: center;
+  background-size: contain;
   border: none;
   filter: invert(80%);
-  background-size: contain;
-  background-position: center;
+  height: 2rem;
+  margin: 3rem auto;
+  max-width: 75ch;
 }
 
 .neumorphism {
@@ -512,24 +493,7 @@ hr {
   box-shadow: 8px 8px 15px -10px var(--shadow);
 }
 
-div#calendar-heatmap {
-  overflow: auto;
-  background-color: var(--whitePrimary);
-  -webkit-padding-before: 1em;
-  padding-block-start: 1em;
-  -webkit-padding-after: 1em;
-  padding-block-end: 1em;
-}
-
-div#calendar-heatmap svg.calendar {
-  width: max(56.25rem, 100%);
-  color: var(--blackPrimary);
-}
-
 @media (min-width: 45em) {
-  /* ======================
-      Navigation Styles
-      ======================= */
   .main-navigation {
     text-align: start;
   }
@@ -539,8 +503,8 @@ div#calendar-heatmap svg.calendar {
   }
 
   .main-navigation__links li:not(:first-of-type) {
-    margin-inline-start: 0;
     margin-inline-end: 1ch;
+    margin-inline-start: 0;
   }
 }
 
@@ -551,16 +515,16 @@ div#calendar-heatmap svg.calendar {
   }
 
   a.animated-link::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 0.06em;
-    width: 100%;
     background-color: currentColor;
-    transition: transform 400ms ease-out;
+    bottom: 0;
+    content: "";
+    height: 0.06em;
+    left: 0;
+    position: absolute;
     transform: var(--linkStateRest);
     transform-origin: var(--linkStartRest);
+    transition: transform 400ms ease-out;
+    width: 100%;
   }
 
   a.animated-link:hover::before {
@@ -593,8 +557,8 @@ div#calendar-heatmap svg.calendar {
   }
 
   .contact-form {
-    color: var(--whitePrimary);
     background-color: var(--blackPrimary);
+    color: var(--whitePrimary);
   }
 
   .neumorphism {
