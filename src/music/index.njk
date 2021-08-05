@@ -72,23 +72,23 @@ pageName: music
 <style>
     {% set css %}
     :is(.music-player header, .bands-container .section-header) p {
-        max-width: 60ch;
-        margin-inline-start: auto;
         margin-inline-end: auto;
+        margin-inline-start: auto;
+        max-width: 60ch;
     }
 
     .bands {
-        display: flex;
         align-items: flex-end;
+        display: flex;
         flex-wrap: wrap;
     }
 
     .band {
         display: flex;
-        flex-direction: column;
         flex: 1 1 auto;
-        margin-inline-start: 1ex;
+        flex-direction: column;
         margin-inline-end: 1ex;
+        margin-inline-start: 1ex;
     }
 
     .band-logo img {
@@ -96,14 +96,14 @@ pageName: music
     }
 
     .icon-bar {
+        align-items: center;
         background-color: currentColor;
-        padding: 1ex 2ex;
         display: flex;
         justify-content: space-around;
-        width: 100%;
-        max-width: 20.3rem;
         margin: auto;
-        align-items: center;
+        max-width: 20.3rem;
+        padding: 1ex 2ex;
+        width: 100%;
     }
 
     .icon-bar img {
@@ -116,8 +116,8 @@ pageName: music
     }
 
     .music-player {
-        margin-block-start: 2em;
         margin-block-end: 2em;
+        margin-block-start: 2em;
     }
 
     @media (prefers-color-scheme: light) {
