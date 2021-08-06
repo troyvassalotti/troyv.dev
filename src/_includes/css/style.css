@@ -42,13 +42,13 @@ html {
   --headings: var(--fallback);
 
   /* main palette colors */
-  --blackPrimary: hsl(330, 5%, 7%);
+  --blackPrimary: CanvasText;
   --bluePrimary: hsl(212, 74%, 46%);
   --goldPrimary: hsl(39, 100%, 45%);
   --grayPrimary: hsl(220, 7.2%, 40%);
   --greenPrimary: hsl(145, 63%, 42%);
   --redPrimary: hsl(352, 100%, 44%);
-  --whitePrimary: hsl(240, 100%, 98%);
+  --whitePrimary: Canvas;
 
   /* use these colors to determine the nav underlines and rough notation effects */
   --aboutColor: var(--bluePrimary);
@@ -59,19 +59,11 @@ html {
 
   /* other things */
   --gap: 1em;
-  background: var(--blackPrimary);
-  color: var(--whitePrimary);
+  background: var(--whitePrimary);
+  color: var(--blackPrimary);
   font-family: var(--body);
   line-height: 1.5;
   word-wrap: anywhere;
-}
-
-@supports (color-scheme: light dark) {
-  html {
-    color-scheme: dark;
-    --blackPrimary: Canvas;
-    --whitePrimary: CanvasText;
-  }
 }
 
 body {
@@ -95,7 +87,7 @@ img[height] {
 
 a {
   --lightness: 45%;
-  color: hsl(39, 100%, var(--lightness));
+  color: hsl(212, 74%, var(--lightness));
   transition: color 0.3s ease;
 }
 
@@ -116,8 +108,8 @@ pre {
 }
 
 blockquote {
-  border-inline-end: 2px solid var(--goldPrimary);
-  border-inline-start: 2px solid var(--goldPrimary);
+  border-inline-end: 2px solid currentColor;
+  border-inline-start: 2px solid currentColor;
   font-style: italic;
 }
 
@@ -315,15 +307,16 @@ body.home main.layout {
   border: 1px solid var(--buttonColor);
   color: currentColor;
   display: inline-block;
+  font-weight: bold;
   padding: 1ex 2ex;
   text-decoration: none;
   transition: 0.3s ease-out;
 }
 
 .button:hover {
-  --buttonColor: var(--goldPrimary);
+  --buttonColor: var(--bluePrimary);
   background: var(--buttonColor);
-  color: var(--blackPrimary);
+  color: var(--whitePrimary);
 }
 
 .no-list {
@@ -487,15 +480,48 @@ hr {
 }
 
 .neumorphism {
-  --first-color: #080707;
-  --second-color: #1e1b1d;
+  --first-color: #d2d2d9;
+  --second-color: #ffffff;
   box-shadow: inset 5px 5px 10px var(--first-color),
     inset -5px -5px 10px var(--second-color);
 }
 
 .has-box-shadow {
-  --shadow: var(--grayPrimary);
+  --shadow: var(--blackPrimary);
   box-shadow: 8px 8px 15px -10px var(--shadow);
+}
+
+.contact-form {
+  background-color: var(--blackPrimary);
+  color: var(--whitePrimary);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid currentColor;
+  padding: 1ch;
+  max-width: 31.25rem;
+}
+
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5ex 0;
+  font-family: var(--headings);
+  font-weight: 500;
+}
+
+.contact-form :is(#email, #message, #name) {
+  padding: 1ex;
+}
+
+.contact-form #message {
+  height: 10em;
+}
+
+.contact-form #submit {
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (min-width: 45em) {
@@ -538,48 +564,35 @@ hr {
   }
 }
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
   html {
-    background: var(--whitePrimary);
-    color: var(--blackPrimary);
+    background: var(--blackPrimary);
+    color: var(--whitePrimary);
   }
 
   a {
-    color: hsl(212, 74%, var(--lightness));
+    color: hsl(39, 100%, var(--lightness));
   }
 
   blockquote {
-    border-color: currentColor;
+    border-color: var(--goldPrimary);
   }
 
   .button {
-    font-weight: bold;
+    font-weight: normal;
   }
 
   .button:hover {
-    --buttonColor: var(--bluePrimary);
-    color: var(--whitePrimary);
-  }
-
-  .contact-form {
-    background-color: var(--blackPrimary);
-    color: var(--whitePrimary);
+    --buttonColor: var(--goldPrimary);
+    color: var(--blackPrimary);
   }
 
   .neumorphism {
-    --first-color: #d2d2d9;
-    --second-color: #ffffff;
+    --first-color: #080707;
+    --second-color: #1e1b1d;
   }
 
   .has-box-shadow {
-    --shadow: var(--blackPrimary);
-  }
-
-  @supports (color-scheme: light dark) {
-    html {
-      color-scheme: light;
-      --whitePrimary: Canvas;
-      --blackPrimary: CanvasText;
-    }
+    --shadow: var(--grayPrimary);
   }
 }

@@ -91,6 +91,7 @@ pageName: music
     }
 
     .band-logo img {
+        filter: invert(1);
         max-width: 18.75rem;
     }
 
@@ -106,6 +107,7 @@ pageName: music
     }
 
     .icon-bar img {
+        filter: invert(1);
         max-width: 48px;
         transition: opacity .1s ease;
     }
@@ -119,13 +121,13 @@ pageName: music
         margin-block-start: 2em;
     }
 
-    @media (prefers-color-scheme: light) {
+    @media (prefers-color-scheme: dark) {
         .band-logo img {
-            filter: drop-shadow(2px 4px 6px black);
+            filter: none;
         }
 
         .icon-bar img {
-            filter: invert(1);
+            filter: none;
         }
     }
 
@@ -137,16 +139,15 @@ pageName: music
     // This is for the handdrawn annotations from Rough Notation
     import {annotate} from 'https://cdn.skypack.dev/rough-notation';
 
-    let mq = '(prefers-color-scheme: light)';
+    let mq = '(prefers-color-scheme: dark)';
 
     const pageTitle = document.querySelector('#page-title');
 
     const changeTitleColor = () => {
-        console.log(matchMedia(mq));
-        matchMedia(mq).matches ? pageTitle.setAttribute("style", "color: var(--whitePrimary)") : pageTitle.setAttribute("style", "color: var(--blackPrimary)");
+        matchMedia(mq).matches ? pageTitle.setAttribute("style", "color: var(--blackPrimary)") : pageTitle.setAttribute("style", "color: var(--whitePrimary)");
     }
 
-    matchMedia(mq).addEventListener("change", changeTitleColor());
+    window.matchMedia(mq).addEventListener("change", changeTitleColor());
     const musicAnnotation = annotate(pageTitle, {
         type: 'highlight',
         color: 'var(--musicColor)',

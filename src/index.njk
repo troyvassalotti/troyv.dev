@@ -16,7 +16,7 @@ home: true
                         <p class="typewriter typewriter_2">...this is a website.</p>
                     </div>
                     <div class="portrait">
-                        {% image './src/assets/img/me-on-set.jpg', 'A picture of me holding my guitar', [300, 600], ['webp', 'jpg'], '(max-width: 700px) 100vw, 50vw', 'full', 'me', 'eager' %}
+                        {% image './src/assets/img/me-on-set.jpg', 'A picture of me holding my guitar', [300, 600], ['webp', 'jpg'], '(max-width: 700px) 100vw, 50vw', 'full has-box-shadow', 'me', 'eager' %}
                     </div>
                     <div class="content">
                         <p>I'm glad you could make it. Peruse my wares* and <a href="/about/">send me a letter</a> if
@@ -140,7 +140,7 @@ home: true
 
     .post-listing {
         align-items: flex-end;
-        border-inline-end: 2px solid var(--goldPrimary);
+        border-inline-end: 2px solid var(--blackPrimary);
         display: flex;
         flex-direction: column;
         padding-inline-end: 1ch;
@@ -252,7 +252,7 @@ home: true
     }
 
     .supplemental .curve path {
-        fill: var(--grayPrimary);
+        fill: var(--greenPrimary);
     }
 
     .music-section {
@@ -326,10 +326,6 @@ home: true
             border: none;
             cursor: pointer;
             padding: 0;
-        }
-
-        #sundial img {
-            filter: invert(1);
         }
 
         #clouds {
@@ -556,17 +552,17 @@ home: true
         }
     }
 
-    @media (prefers-color-scheme: light) {
+    @media (prefers-color-scheme: dark) {
         .post-listing {
-            border-color: var(--blackPrimary);
+            border-color: var(--goldPrimary);
         }
 
         .supplemental .curve path {
-            fill: var(--greenPrimary);
+            fill: var(--grayPrimary);
         }
 
         #sundial img {
-            filter: none;
+            filter: invert(1);
         }
     }
 
