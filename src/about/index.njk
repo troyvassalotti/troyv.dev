@@ -42,7 +42,7 @@ pageName: about
 
 <style>
     {% set css %}
-    .main-info {
+    .about .main-info {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -89,17 +89,15 @@ pageName: about
         font-weight: 500;
     }
 
-    #email,
-    #message,
-    #name {
+    .contact-form :is(#email, #message, #name) {
         padding: 1ex;
     }
 
-    #message {
+    .contact-form #message {
         height: 10em;
     }
 
-    #submit {
+    .contact-form #submit {
         cursor: pointer;
         margin-left: auto;
         margin-right: auto;

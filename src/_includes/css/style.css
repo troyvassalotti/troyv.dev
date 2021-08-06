@@ -20,7 +20,7 @@
     U+FEFF, U+FFFD;
 }
 
-:root {
+html {
   /* @link https://utopia.fyi/generator-mk-ii?c=320,18,1.2,1140,21,1.25,6,3, */
   --step--3: clamp(0.6513rem, 0.5949rem + 0.2817vw, 0.7956rem);
   --step--2: clamp(0.7813rem, 0.7134rem + 0.339vw, 0.955rem);
@@ -59,14 +59,19 @@
 
   /* other things */
   --gap: 1em;
-}
-
-html {
   background: var(--blackPrimary);
   color: var(--whitePrimary);
   font-family: var(--body);
   line-height: 1.5;
   word-wrap: anywhere;
+}
+
+@supports (color-scheme: light dark) {
+  html {
+    color-scheme: dark;
+    --blackPrimary: Canvas;
+    --whitePrimary: CanvasText;
+  }
 }
 
 body {
@@ -568,5 +573,13 @@ hr {
 
   .has-box-shadow {
     --shadow: var(--blackPrimary);
+  }
+
+  @supports (color-scheme: light dark) {
+    html {
+      color-scheme: light;
+      --whitePrimary: Canvas;
+      --blackPrimary: CanvasText;
+    }
   }
 }
