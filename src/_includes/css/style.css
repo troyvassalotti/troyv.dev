@@ -456,7 +456,6 @@ h6,
 }
 
 .contact-form {
-  color-scheme: light dark;
   display: flex;
   flex-direction: column;
   max-width: 31.25rem;
