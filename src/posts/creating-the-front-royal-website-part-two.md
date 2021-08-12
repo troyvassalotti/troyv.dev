@@ -5,7 +5,7 @@ layout: post
 date: 2020-04-20
 tags: ['post', 'music', 'front royal', 'project']
 ---
-I _really_ dropped the ball on this whole "blogging in real time" thing because the site is basically done.
+I _really_ dropped the ball on this whole "blogging in real time" thing because the site is almost done.
 
 In [the first blog](../creating-the-front-royal-website-part-one), I outlined my goals for the site with a screenshot of a few design ideas, and what stack I'll be using to build it.
 
@@ -15,7 +15,7 @@ Well, over that weekend, boredom got the best of me and [I made the dang thing](
 To recap, I set out to make it a simple, single-page site with little bells and whistles. It was supposed to be:
 * Scrollable;
 * Navigable;
-* And easy to follow.
+* Simple.
 
 And also cover:
 * Ability to stream music;
@@ -24,7 +24,7 @@ And also cover:
 * Reusable components to make updates and new additions easier for me to code.
 
 ## My Stack
-The repository is [fairly bare](https://github.com/troyvassalotti/front-royal); aside from the CSS and image assets, it's just an index page, a Netlify config, and a custom 404 page.
+The repository is [fairly bare](https://github.com/troyvassalotti/front-royal); aside from the CSS and image assets, it's an index page, a Netlify config, and a custom 404 page.
 
 The Lighthouse performance score is nothing to write home about since I'm using three separate third-party widgets (Spotify for album embedding, bandsintown for tour dates, and Mailchimp for our newsletter signup form), but the site works and it only requires a single page to download.
 
@@ -93,6 +93,6 @@ const animateMenu = () => {
 open.addEventListener("click", animateMenu);
 ```
 
-Making easily reusable sections got me thinking about how I could rework this very site you're reading right now. Just this past weekend, I did that too.
+Making easily reusable sections got me thinking about how I could rework this very site you're reading right now. This past weekend, I did that too.
 
 So, check out the Front Royal site, tell me where I could do better, and give us a listen. Maybe tell your friends about us too.

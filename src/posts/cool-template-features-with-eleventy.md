@@ -5,7 +5,7 @@ layout: post
 date: 2021-04-14
 tags: ['post', 'redesign']
 ---
-You know what's great about having a personal website? The fact that I can configure it as simply or as complicated as I please. Sure, it isn't _ideal_ to make things complicated, but would I really consider myself a developer if I wasn't spending hours upon hours trying to automate something that's otherwise just a slight inconvenience?
+You know what's great about having a personal website? The fact that I can configure it to be as simple or complicated as I please. Sure, it isn't _ideal_ to make things complicated, but would I really consider myself a developer if I wasn't spending hours upon hours trying to automate something that's otherwise a slight inconvenience?
 
 **No.**
 
@@ -26,12 +26,12 @@ I made a giant redesign a few months ago - the site you're looking at right now 
 There's a lot to cover here, so I'm going to break out each cool thing into its own section here.
 
 ### Plugins
-I've alluded before to my hesitancy with dependency-hell and wanting to keep my sites in a position that is easy to jump back into without feeling overwhelmed. So, this site previously had very little dependencies being used. I still feel that sentiment, but I am more comfortable in my implementations and decided a few plugins will be greatly beneficial here.
+I've alluded before to my hesitancy with dependency-hell and wanting to keep my sites in a place that I can jump back into without feeling overwhelmed. So, this site previously had very little dependencies being used. I still feel that sentiment, but I am more comfortable in my implementations and decided a few plugins will be greatly beneficial here.
 
 #### npm install @11ty/eleventy-image
 I used to head over to [Squoosh](https://squoosh,app) for manually compressing my images in their various formats; I wanted to stop doing this. It wasn't a time-consuming process necessarily, but I wanted it automated. Luckily, there's an official plugin for this sort of thing. Enter, [`eleventy-image`](https://www.11ty.dev/docs/plugins/image/). This plugin takes a file and produces it back in the desired file formats and sizes that you ask for - all at build time.
 
-For my purposes, I needed two shortcodes created to be able to fully use the plugin. One for synchronous transforms (like iterating over items in a paired shortcode) and one for asynchronous transforms (like just creating images standalone that don't require knowledge of the containing shortcode).
+For my purposes, I needed two shortcodes created to be able to fully use the plugin. One for synchronous transforms (like iterating over items in a paired shortcode) and one for asynchronous transforms (like creating images standalone that don't require knowledge of the containing shortcode).
 
 ```js
 // ImageShortcode.js is asynchronous
@@ -62,7 +62,7 @@ module.exports = async function (src, alt, widthArray, formatArray, sizes, class
 }
 ```
 
-I encountered a few hiccups when figuring out how to tell it where my image was. I changed my project structure so that all the source files live in `src` and all the config files (`package.json`,  `.eleventy.js`, etc. ) live in the root, so that was a tiny wrench in my system; however, I use it like so in my templates:
+I encountered a few hiccups when figuring out how to tell it where my image was. I changed my project structure so that all the source files live in `src` and all the config files (`package.json`,  `.eleventy.js`, etc. ) live in the root, so that was a tiny wrench in my system. This was the solution I came to:
 
 ```twig
 {# index.njk #}
@@ -107,7 +107,7 @@ To do all that though, I needed to alter my Nunjucks template. The below code sn
 Pretty cool, yeah? Well, let's get even cooler.
 
 #### npm install terser
-I wanted to inline and minify my JavaScript the same way I did my CSS. The process is basically the same except that I installed terser to do so. When it all comes together, the Eleventy config file looks something like this:
+I wanted to inline and minify my JavaScript the same way I did my CSS. The process is the same except that I installed terser to do so. When it all comes together, the Eleventy config file looks something like this:
 
 ```js
 // .eleventy.js
@@ -142,7 +142,7 @@ module.exports = function (eleventyConfig) {
 **Neat.**
 
 ### Nunjucks Features
-I've basically covered most of the cool Nunjucks stuff in the previous sections, but there's still more. For example, I'm really taking advantage of the built in `set` and `include` methods, breaking out code into more modular pieces. My primary layout file is a good example:
+I've covered most of the cool Nunjucks stuff in the previous sections, but there's still more. For example, I'm really taking advantage of the built in `set` and `include` methods, breaking out code into more modular pieces. My primary layout file is a good example:
 
 ```twig
 {% raw %}
@@ -175,7 +175,7 @@ I've basically covered most of the cool Nunjucks stuff in the previous sections,
 {% endraw %}
 ```
 
-I actually started doing this because I _needed to_ for the paired shortcodes on my projects page. **Problem**: I wanted to generate individual sections for each project, with their own screenshots and descriptions. I needed to be able to transform the images via a shortcode in this project image component (itself a shortcode since I repeat it). **Solution**: Set each project's description to a variable, storing the HTML in the `_includes` folder. Just look here:
+I actually started doing this because I _needed to_ for the paired shortcodes on my projects page. **Problem**: I wanted to generate individual sections for each project, with their own screenshots and descriptions. I needed to be able to transform the images via a shortcode in this project image component (itself a shortcode since I repeat it). **Solution**: Set each project's description to a variable, storing the HTML in the `_includes` folder.
 
 ```twig
 {% raw %}

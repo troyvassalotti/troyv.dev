@@ -1,6 +1,6 @@
 ---
 title: 'Plvylist: Using Media Element API'
-description: I wanted to learn web audio, specifically the Media Element API. At first it was daunting and made no sense, but I realized it wasn't so bad after all.
+description: I wanted to learn web audio, specifically the Media Element API. At first, it was daunting and made no sense, but I realized it wasn't so bad after all.
 layout: post
 date: 2020-11-20
 tags: ['post', 'project', 'music']
@@ -20,7 +20,7 @@ Overall, Plvylist can be broken down into three pieces:
 - JS
 
 ## HTML
-The HTML is easy. When building the demo, it was mostly HTML with JS sprinkled in, but now all the elements are generated using `plvylist.js` and all you need in your document to latch on to is a simple `<div class="plvylist"></div>`.
+The HTML wasn't too bad. When building the demo, it was mostly HTML with JS sprinkled in, but now all the elements are generated using `plvylist.js` and all you need in your document to latch on to is a simple `<div class="plvylist"></div>`.
 
 Since I wanted to use Plvylist to stream my music on projects, I wanted particular aspects to be visible:
 - Album artwork,
@@ -31,7 +31,7 @@ Since I wanted to use Plvylist to stream my music on projects, I wanted particul
 You know, all basic stuff.
 
 ## CSS/SASS
-SASS is great and I use it a lot, so I decided this would be the route to go with Plvylist. This was confirmed for me when I learned **just how insanely hard** it is to style a `<input type="range">` across browsers. Every valid CodePen example I found used SASS to accomplish this and I was not going to be messing with that.
+SASS is great and I use it a lot, so I decided this would be the route to go with Plvylist. This was confirmed for me when I learned **how insanely hard** it is to style a `<input type="range">` across browsers. Every valid CodePen example I found used SASS to accomplish this and I was not going to be messing with that.
 
 ```css
 @mixin track($fill: 0) {
@@ -99,7 +99,7 @@ But then I evaluated how many personal projects I have, the anxiety I feel to op
 So, I changed the SASS stylesheet to a modern CSS stylesheet and it wasn't that hard because I used the power of SASS to do so!
 
 ### How To Turn SASS Into CSS Easily
-Just compile it.
+Compile it.
 
 Kidding. I use Atom, and I have a package to compile SASS in Atom regardless of project; it only requires a global installation of node-sass. It's convenient, but installing it has caused weird issues at times that I want to avoid forever in the future when I need to update things, so I used the power of SASS to quickly convert my SASS stylesheets into a usable CSS stylesheet without much fuss.
 
@@ -113,7 +113,7 @@ This way, when the SASS gets compiled, instead of being replaced with static val
 
 It was so simple once I sat down and thought about it.
 
-I keep the SASS version up-to-date so anyone else can use it if they want to (thanks!), but we should all probably just use the CSS version.
+I keep the SASS version up-to-date so anyone else can use it if they want to (thanks!), but we should all probably use the CSS version.
 
 ## JS
 This is where all the magic happens. Without this, nothing works. Well, you need to also have some audio files somewhere, but the JavaScript is where you declare those files anyway.

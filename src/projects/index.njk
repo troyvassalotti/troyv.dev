@@ -21,15 +21,6 @@ pageName: projects
             {% endfor %}
         </section>
     </div>
-    <section class="codepen">
-        <div class="wrapper">
-            <h3>View More on CodePen</h3>
-            <p>I've made a lot of things - bigger and smaller - that would be impossible to keep track of on here. From
-                experimenting with JavaScript frameworks, to making things animate for no good reason, to even coding
-                emails (yikes!). You could say I'm winging it <a href="https://codepen.io/troyvassalotti">over there</a>.
-            </p>
-        </div>
-    </section>
     <section class="misc">
         <header>
             <h2>Other Fun Stuff</h2>
@@ -85,15 +76,12 @@ pageName: projects
         transform: scale(1.02);
     }
 
-    .codepen .wrapper {
-        align-items: flex-end;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .codepen .wrapper p {
-        max-width: 45ch;
-        text-align: end;
+    .misc {
+        --padding: 3rem;
+        padding-block-end: var(--padding);
+        padding-block-start: var(--padding);
+        padding-inline-end: var(--padding);
+        padding-inline-start: var(--padding);
     }
 
     .misc h2 {
@@ -113,10 +101,6 @@ pageName: projects
 
     .projects__misc .caption-overlay h3 {
         font-size: var(--step-1);
-    }
-
-    .misc header {
-        padding-inline-start: 1em;
     }
 
     @media (min-width: 1200px) {

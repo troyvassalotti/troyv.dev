@@ -11,7 +11,7 @@ Those recordings - typically a video so I can see myself doing the thing - end u
 
 In case you haven't guessed yet, there are/were problems with that process.
 1. I can't search for any of these videos by name;
-2. They don't get categorized any further than just being labeled a _song idea_.
+2. They don't get categorized any further than being labeled a _song idea_.
 
 My old process was to periodically download them to my laptop and organize them locally in folders named by genres (or percentage complete as a song). Then, when I am in the mood to write for a longer period of time, I create a Guitar Pro 5 session and tab it all out - guitars, drums, bass, you name it.
 
@@ -30,7 +30,7 @@ It turned out to be a test of what little ego I had at the time. I wrote this fa
 I was pretty proud of the little thing and thought for sure I'd nailed it.
 
 My professor reviewed it and sent back his notes, including a re-write of the song to show me what he meant. Among those edits were:
-* Cutting the BPM basically in half;
+* Cutting the BPM in half;
 * Solidifying it into a major key;
 * Changing emphasis of key chords;
 * And some other things that would be too much to list.

@@ -54,6 +54,6 @@ This one is a little less telling since it's a pretty regular distribution, but 
 > It's not like I was staying up late all the time and that's why I got so many after midnight. The reason for that is I have the unfortunate habit of waking up in the middle of the night with a migraine fully in progress.
 
 ## What Now?
-I've stopped doing all the logging by hand because it is cumbersome trying to keep track of every little detail myself. There's this cool app called _Migraine Buddy_ that I'm trying now. So far, it's great because it asks all the same questions I was asking myself _and then some_! I just need to keep track of the dates and times separately for my calendar tracker, but that's a worthwhile trade.
+I've stopped doing all the logging by hand because it is cumbersome trying to keep track of every little detail myself. There's this cool app called _Migraine Buddy_ that I'm trying now. So far, it's great because it asks all the same questions I was asking myself _and then some_! I need to keep track of the dates and times separately for my calendar tracker, but that's a worthwhile trade.
 
 Here's to another year of hopeful progress.

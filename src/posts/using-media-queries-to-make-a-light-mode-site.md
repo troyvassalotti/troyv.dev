@@ -20,9 +20,9 @@ Take a look at my homepage in its default form compared to the dark and light em
 
 {% image './src/assets/img/mobile-all-three.jpg', 'What my site looks like without any sort of color scheme emulation, a dark color scheme, and a light color scheme' %}
 
-As you might expect, using Dark Reader turned my site into a dark-but-not-too-dark wonderland. _But_, changing the settings in the add-on to a "light" scheme causes a handful of problems. Mainly, some of the work I did making sure my colors were properly contrasting was just thrown out the window.
+As you might expect, using Dark Reader turned my site into a dark-but-not-too-dark wonderland. _But_, changing the settings in the add-on to a "light" scheme causes a handful of problems. Mainly, some work I did to make sure my colors were properly contrasting was thrown out the window.
 
-This is clearly an issue. I don't want people emulating a false light mode when using this website because they will face some potentially-major problems.
+This is an issue. I don't want people emulating a false light mode when using this website because they will face some potentially-major problems.
 
 ## Incoming: The Light Mode Experience
 I love making these minor improvements to this site because I know the use cases might be small, but the experience will be appreciated to those who are looking for it. Plus, any project that involves CSS is a project I want in on.
@@ -71,7 +71,7 @@ Boom. Simple. Oh, I also changed the `font-family` in `--headings` because I lik
 
 The `font-weight` for body copy also got one measure smaller - 300 - on default/dark versions for better readability. Weight is set back to normal - 400 - with light mode viewing.
 
-Changing the colors was easy. All I had to do was figure out which elements had colors attached to them and swap them as needed, like so:
+Changing the colors was relatively simple. All I had to do was figure out which elements had colors attached to them and swap them as needed, like so:
 
 ```css
 a {

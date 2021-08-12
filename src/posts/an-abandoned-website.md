@@ -5,13 +5,13 @@ layout: post
 date: 2020-09-12
 tags: ['post', 'project', 'hugo']
 ---
-Websites can be bought and live on forever...or so long as the domain name continues to be renewed. As a result, some sites just become abandoned, living in the aether, but because of backwards compatibility they don't really _look abandoned_.
+Websites can be bought and live on forever...or so long as the domain name continues to be renewed. As a result, some sites become abandoned, living in the aether, but because of backwards compatibility they don't really _look abandoned_.
 
 Well, what if they did? What if the website deteriorated over time, things fell apart, and the darkness came to consume it? That's where my new project, [Abandoned Website](https://abandoned-website.netlify.app/), comes in.
 
-I don't know when, why, or how I came up with the idea to create this project. If I'm remembering correctly, it was way back in my early stages of learning to code - you know, when you're just full of ideas that sound _fun_ and _exciting_ and _definitely not hard to implement_ - and I just jotted it down as a note in my phone.
+I don't know when, why, or how I came up with the idea to create this project. If I'm remembering correctly, it was way back in my early stages of learning to code - you know, when you're full of ideas that sound _fun_ and _exciting_ and _definitely not hard to implement_ - and I jotted it down as a note in my phone.
 
-I clearly didn't have the skills to build it yet.
+I didn't have the skills to build it yet.
 - No design skills.
 - I could barely code an email and that was my full-time job.
 - No clear idea how to even make a website live.
@@ -36,4 +36,4 @@ Honestly, the hardest parts became the following:
 2. Templating the page titles the way I wanted them to be (Learning about the `{% raw %}{{ .Page.Title }}{% endraw %}` variable changed everything for me).
 3. Setting up the 404 page to work within the `baseof.html` template while still having its own special treatment (inline `<style>` blocks and `noindex` directive).
 
-I hope to continue working on it. Side projects are hard to find the time for, but this one is more than just a proof-of-concept. Hell, I bought a domain name for it. I'd like to really take things I learn over time and make this thing better with every iteration.
+I hope to continue working on it. Side projects are hard to find the time for, but this one is more than a proof-of-concept. Hell, I bought a domain name for it. I'd like to really take things I learn over time and make this thing better with every iteration.

@@ -17,4 +17,4 @@ Follow along with the playlist here: [https://open.spotify.com/playlist/5AmcQJOW
 
 <iframe title="My Spotify playlist of my favorite songs of 2020" src="https://open.spotify.com/embed/playlist/5AmcQJOW59IhrSBRAg5mf0" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 
-Disclaimer: I realize songs released later in the year will have better chances of staying _hot_ in my head, but that's just a bug I can't fix right now.
+Disclaimer: I realize songs released later in the year will have better chances of staying _hot_ in my head, but that's a bug I can't fix right now.

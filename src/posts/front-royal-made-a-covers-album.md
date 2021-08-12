@@ -16,7 +16,7 @@ shortname: ''
 featuredImage: ''
 
 ---
-We've been working on some new music this year. I promise we'll have an EP of new originals later this year; however, we thought a collection of covers from last year's pop hits would be a fun way to hold everyone over.
+We've been working on some new music this year. I promise we'll have an EP of new originals later this year, but we thought a collection of covers from last year's pop hits would be a fun way to hold everyone over.
 
 You can find the entire set over [on our Bandcamp](https://frontroyalmd.bandcamp.com/) or streaming [on our website](https://www.frontroyalband.com). The hits include:
 

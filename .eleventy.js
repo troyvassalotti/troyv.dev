@@ -5,6 +5,7 @@ const { minify } = require("terser");
 const sitemap = require("@quasibit/eleventy-plugin-sitemap");
 const timeToRead = require("eleventy-plugin-time-to-read");
 const embedYouTube = require("eleventy-plugin-youtube-embed");
+const inclusiveLangPlugin = require("@11ty/eleventy-plugin-inclusive-language");
 const addWebComponentDefinitions = require("eleventy-plugin-add-web-component-definitions");
 const fs = require("fs");
 const inputDir = "./src";
@@ -17,6 +18,9 @@ const ImageShortcodeSync = require(`${componentsDir}/ImageShortcodeSync`);
 
 // Do all the 11ty stuff
 module.exports = function (eleventyConfig) {
+  // add inclusive language plugin
+  eleventyConfig.addPlugin(inclusiveLangPlugin);
+
   // add RSS feed
   eleventyConfig.addPlugin(pluginRss);
 

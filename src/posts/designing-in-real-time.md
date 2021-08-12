@@ -14,9 +14,9 @@ Going along with that, I also learned the value of maintaining a stable developm
 
 All that said, you can watch me make changes to this site in real time by going on over to ~~nowhere~~.
 
-Sure, you could just keep coming back to my published site and looking around for changes. But I think it's fun to open up the development process.
+Sure, you could keep coming back to my published site and looking around for changes. But I think it's fun to open up the development process.
 
-It's not like it's a secret - you could just look at the ~~open branch on the repository~~.
+It's not like it's a secret - you could look at the ~~open branch on the repository~~.
 
 Maybe you see something I'm working on that you outright **hate**, and if that happens then I hope you @ me about it.
 

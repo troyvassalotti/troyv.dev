@@ -28,7 +28,7 @@ I want to be able to use it to fetch files from a remote location and dynamicall
 
 It would also be cool to be able to use ES modules as an import method for the tracks instead of needing to declare the array of objects in the component script directly; I tried a few things but realized it needs refactoring for that.
 
-Another cool thing simply for the benefit of being more readable as a developer would be to move all the function declarations to their own levels like the `connectedCallback()` function is.
+Another cool thing for the benefit of being more readable as a developer would be to move all the function declarations to their own levels like the `connectedCallback()` function is.
 
 ```js
 class Plvylist extends HTMLElement {
@@ -57,4 +57,4 @@ class Plvylist extends HTMLElement {
 Visually, it'd help to know where things are. I tried doing this as well - and got pretty close with functions like the play and pause methods - but it also required _a lot_ of working with `this` and again, the whole thing would need refactored to make it work.
 
 ## In Conclusion
-Web components are really super cool, and you should try them out. Also, give Plvylist a try and hopefully it solves someone else's problem instead of just mine (after all, _open source_).
+Web components are really super cool, and you should try them out. Also, give Plvylist a try and hopefully it solves someone else's problem instead of only mine (after all, _open source_).

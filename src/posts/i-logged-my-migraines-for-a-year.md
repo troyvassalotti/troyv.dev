@@ -20,12 +20,12 @@ I'm still figuring that out. For years, I've had a pretty basic understanding of
 * Bad sleep, or lack thereof: [healthy sleep and regular routines](https://americanmigrainefoundation.org/resource-library/sleep/), like going to bed and waking up at the same time each day, are positive habits.
 * Over-processed foods: it turns out a full year of soda and frozen, ready-to-eat corndogs in takes a toll on more than your gut.
 
-So while it hasn't been a mystery, a year of spreadsheet-tracking surely helped. Just look at these _graphs!_
+So while it hasn't been a mystery, a year of spreadsheet-tracking surely helped. Look at these _graphs!_
 
 {% image './src/assets/img/migraines-charts.jpg', 'Two charts I created with my migraine data' %}
 
 ## What Was I Looking To Find?
-I have this ~~potentially unhealthy~~ truly great relationship with data and spreadsheets. Any and all data I thought could be useful I tracked; however, I was most excited for these:
+I have this ~~potentially unhealthy~~ truly great relationship with data and spreadsheets. Any and all data I thought could be useful I tracked, but I was most excited for these:
 1. What times of day am I most likely to get a migraine? (_it's a tie of 15 between 4:00 a.m. - 8:00 a.m. & 8:00 a.m. - noon_).
 2. Did one day of the week have a higher migraine occurrence? (_Mondays & Saturdays tied at 12_).
 3. Can I pinpoint a trigger or two and take my preventative care to the next level? (_Spoiler Alert: not quite_).
@@ -48,7 +48,7 @@ _Other than the actual pain?_ Yeah. The most difficult part of this project was 
 
 I realized over the year that it's less "what was the cause?" and more "what _were_ the _causes_?"
 
-Getting poor sleep wasn't always enough to cause a migraine by itself; however, drinking the night before might put me in a bad situation.
+Getting poor sleep wasn't always enough to cause a migraine by itself, but drinking the night before might put me in a bad situation.
 
 And I can't control the weather or tough times at work, so it's up to me to limit my exposure to other triggers as best I can. The more they stack up, the higher my chances are.
 

@@ -1,6 +1,6 @@
 ---
 title: I Took Over the Front Royal Vlog
-description: While Justin is away, Troy decides to just mess everything up. Enjoy.
+description: While Justin is away, Troy decides to mess everything up. Enjoy.
 layout: post
 date: 2017-05-15
 tags: ['post', 'music', 'front royal', 'small project']

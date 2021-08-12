@@ -14,7 +14,7 @@ So instead, I chose to create a mini site about my cats and add on the extra cha
 ## The Setup
 Getting the structure started wasn't too much of a problem. I had a repo to use as a starter from a Node & Express tutorial I've followed. Pug wasn't an issue either since I use it on other 11ty sites and it came hand-in-hand with _other_ Express tutorials.
 
-> Speaking of boilerplates, this project led to me creating a starter repo for cases just like this. Check out my [Node, Express, Pug, Tailwind starter](https://github.com/troyvassalotti/node-express-pug-starter) if you'd like.
+> Speaking of boilerplates, this project led to me creating a starter repo for cases like this. Check out my [Node, Express, Pug, Tailwind starter](https://github.com/troyvassalotti/node-express-pug-starter) if you'd like.
 
 The most difficult hurdle to jump in new projects, for me at least, is how to organize the files. I like having everything in their proper places as early as possible so I don't have to move them around later; this can be seen in both my digital and physical lives alike. Luckily, this is a small project.
 
@@ -23,7 +23,7 @@ The most difficult hurdle to jump in new projects, for me at least, is how to or
 - All the routing goes in `/routes`.
 - All the config files stay in the root.
 
-Just look at this `app.js` - so minimal.
+Look at this `app.js` - so minimal.
 
 ```js
 const express = require('express');
@@ -79,7 +79,7 @@ html.text-gray-900.text-base.leading-tight(lang="en")
         block footer
             footer.text-center.p-8
                 h2 Thanks for having an interest in our cats!
-                p If you want to see more details about this site, just #[a(href="/about", class="underline text-blue-700 hover:text-blue-400") visit the about page].
+                p If you want to see more details about this site, #[a(href="/about", class="underline text-blue-700 hover:text-blue-400") visit the about page].
 ```
 
 Probably my favorite part about the site is figuring out how to pass the cat data to each route that needed it and visualize it on the page. What do I mean by that? I mean I passed the cat object into the homepage to display links to both cats dynamically, but also passed it into the `cat.pug` template to use a single file as both cat pages _while still_ keeping their routes separate.
@@ -126,7 +126,7 @@ module.exports = router;
 
 What's going on here is I have a `cats.js` file that holds the object for cat information. That object is imported to the router as `const cats`, and then it is passed into the response call of a route. In the case of the route `/cats/:page`, I'm manipulating it a bit. **Note**: I am aware this is a very brute force way of dealing with the data, but since I only have two cats it was fine.
 
-I store the cat being requested from the request parameters. You couldn't just request any cat though - I determined the cats being requested by linking to them on the homepage. Then I filter the `cats` array by finding the object that uses the requested cat in a key:value pair. That's not all though since then I need to store the _opposite_ cat, so I create two more variables for each individual cat. All three of these variables are passed to the page to dynamically generate the cat post _as well as_ the link to the other cat.
+I store the cat being requested from the request parameters. You couldn't request any cat though - I determined the cats being requested by linking to them on the homepage. Then I filter the `cats` array by finding the object that uses the requested cat in a key:value pair. That's not all though since then I need to store the _opposite_ cat, so I create two more variables for each individual cat. All three of these variables are passed to the page to dynamically generate the cat post _as well as_ the link to the other cat.
 
 See how I use all this on the cat template:
 
@@ -159,15 +159,15 @@ block content
 If you visit Sophie's page, you'll see a button/link to Remi's page, and vice versa. Aside from all that, the only piece of the puzzle remaining is styling the thing, which leads us to Tailwind.
 
 ## Thoughts on Tailwind
-I should use it more. Not that it was a life-changing tool to use here. In fact, it was a little annoying feeling like I removed control of creating custom CSS and having to rely on a seemingly-endless series of predetermined classes. One downside of this is applying the same classes to adjacent HTML elements since I couldn't just create an all-encompassing rule to target all `h2` elements or something.
+I should use it more. Not that it was a life-changing tool to use here. In fact, it was a little annoying feeling like I removed control of creating custom CSS and having to rely on a seemingly-endless series of predetermined classes. One downside of this is applying the same classes to adjacent HTML elements since I couldn't create an all-encompassing rule to target all `h2` elements or something.
 
 That being said, I only used it this one time in a very surface-level way. People love this thing and I have no doubts I could fall in love with it too if I read more of the docs and tried it out on a larger scale. But without all that prior practice, I definitely could've made this thing quicker if I used my own CSS files.
 
-There are aspects of Tailwind I grew to enjoy. For one, I appreciate the notion that headings should be detached from their initial font sizes because it isn't always the case that the `h1` should be bigger than the `h2`. Years of it being that way by default makes it feel weird for them to not follow that order, but years of seeing people use a heading element just because it has the size or styling they want - as opposed to it being the right element semantically - says that isn't how everyone sees it.
+There are aspects of Tailwind I grew to enjoy. For one, I appreciate the notion that headings should be detached from their initial font sizes because it isn't always the case that the `h1` should be bigger than the `h2`. Years of it being that way by default makes it feel weird for them to not follow that order, but years of seeing people use a heading element because it has the size or styling they want - as opposed to it being the right element semantically - says that isn't how everyone sees it.
 
-But I didn't love having a blank slate either. Since everything is basically reset with no styles, I felt more pressure to make sure all lists, links, headings, body text, etc were accounted for. I didn't design the app ahead of time though, which is why it is very basic looking. I would not let this go as a production-ready application, but it is totally fine as a simple, fun, nonsense thing.
+But I didn't love having a blank slate either. Since everything is reset with no styles, I felt more pressure to make sure all lists, links, headings, body text, etc were accounted for. I didn't design the app ahead of time though, which is why it is very basic looking. I would not let this go as a production-ready application, but it is totally fine as a simple, fun, nonsense thing.
 
 ## Hosting
 You can find the app [at this link](https://express-cats-app.herokuapp.com/). I chose Heroku to host it because I had recently used it for - you guessed it - a tutorial. I had way more of an issue getting the app to work than I should have. For some reason, the first bunch of pushes were giving me good deploy logs with a broken URL. I still don't know how I fixed the issue, but I uninstalled and reinstalled dependencies, and changed some language even if the language _worked locally_, until the app finally deployed correctly. Again, nothing in the logs were telling me something was wrong so...
 
-I have no intentions of editing this thing. It is alive and in the world and I am banished from making any improvements because it simply doesn't matter - it's a joke site. The only thing that might change is where I host it, but Heroku is fine for now.
+I have no intentions of editing this thing. It is alive and in the world, and I am banished from making any improvements because it doesn't matter - it's a joke site. The only thing that might change is where I host it, but Heroku is fine for now.
