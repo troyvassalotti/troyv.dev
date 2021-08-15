@@ -5,7 +5,7 @@ tags:
 - post
 draft: false
 title: Over-Optimizing
-description: There is such thing as putting too effort into making something the best
+description: There is such thing as putting too much effort into making something the best
   it can be.
 shortname: ''
 featuredImage: ''
@@ -36,4 +36,4 @@ I've recently started archiving GitHub repositories as a way of showing myself t
 
 What's the moral of the story? Maybe it's that CSS and JavaScript don't have to be perfectly minified or fine-tuned to the narrowest of details. Or maybe it's that the web is an evolving platform built on the legs of backward compatibility and any site that can stand now will continue to stand without constant care. Both of those are great points.
 
-More important than those though is that the reward received from spending countless hours relentlessly trying to make something perfect is never as good as you expect. In the end, you should've just picked up that book or recorded that song.
+More important than those though is that the reward received from spending countless hours relentlessly trying to make something perfect is never as good as you expect. In the end, you should've picked up that book or recorded that song.
