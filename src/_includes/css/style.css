@@ -61,8 +61,6 @@ html {
   --gap: 1em;
 
   /* actual styles */
-  background: var(--whitePrimary);
-  color: var(--blackPrimary);
   font-family: var(--body);
   line-height: 1.5;
   word-wrap: anywhere;
