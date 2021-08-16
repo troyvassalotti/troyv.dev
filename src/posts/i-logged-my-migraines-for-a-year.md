@@ -5,7 +5,7 @@ layout: post
 date: 2020-03-12
 tags: ['post', 'migraines', 'small project']
 featuredImage: './src/assets/img/migraines-2019.jpg'
-shortname: 2019 Migraine Recap
+shortname: 2019 Migraines
 ---
 I've been having migraines for as long as I can remember, so it's not surprising to get a few here and there. But 2019 was not an average year; it was more like 3x my average.
 

@@ -4,7 +4,7 @@ description: Another year, another migraine recap.
 layout: post
 date: 2021-02-23
 tags: ['post', 'migraines', 'small project']
-shortname: 2020 Migraine Recap
+shortname: 2020 Migraines
 featuredImage: './src/assets/img/2020-by-triggers.png'
 ---
 We learned last year that my migraine situation was a problem. Well, more of a problem than usual. You can read more about [how I did in 2019](../i-logged-my-migraines-for-a-year), but it wasn't great. I continued to log each migraine I had throughout 2020 because I'm a nerd.
