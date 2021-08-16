@@ -19,12 +19,12 @@ sections:
   templates:
   - blog-post
 - type: directory
-  path: src/projects
-  label: Projects
+  path: src/work
+  label: Work
   create: all
   match: "**/*"
   templates:
-  - projects
+  - work
 - type: directory
   path: src/pages
   label: Misc. Pages
@@ -35,6 +35,9 @@ sections:
 - type: document
   path: src/about/resume.11tydata.json
   label: Resume
+- type: document
+  path: src/music/index.11tydata.json
+  label: Band Links
 upload_dir: src/assets/img
 public_path: "/assets/img"
 front_matter_path: "./src/assets/img"

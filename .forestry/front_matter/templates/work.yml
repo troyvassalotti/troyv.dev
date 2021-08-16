@@ -1,5 +1,5 @@
 ---
-label: Projects
+label: Work
 hide_body: false
 fields:
 - name: layout
@@ -8,7 +8,7 @@ fields:
     required: true
   label: Layout
   hidden: true
-  default: project
+  default: work
 - name: title
   type: text
   config:
@@ -27,20 +27,20 @@ fields:
 - name: repo
   type: text
   config:
-    required: true
+    required: false
   label: Repo
   description: Where can the repository be found?
   default: https://github.com/troyvassalotti/
 - name: framework
   type: text
   config:
-    required: true
+    required: false
   label: Framework
   description: What did you use to make it?
 - name: website
   type: text
   config:
-    required: true
+    required: false
   label: Website
   description: Where is it hosted?
   default: https://github.com/troyvassalotti/

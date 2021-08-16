@@ -24,5 +24,10 @@
     "href": "https://justtroy.bandcamp.com/",
     "img": "bandcamp-button-bc-circle-black-64.png",
     "alt": "Bandcamp"
-  }]
+  },
+    {
+      "href": "https://validcharacters.netlify.app",
+      "img": "link.svg",
+      "alt": "Link out to the band's personal website."
+    }]
 }
