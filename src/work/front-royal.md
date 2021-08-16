@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: work
 title: 'Front Royal'
 description: 'The band, not the town.'
 featuredImage: './src/assets/img/screenshot-front-royal.jpg'

@@ -1,24 +1,26 @@
 ---
-tags: ['featured project']
+tags: ['work']
 ---
 {% extends 'layouts/base.njk' %}
 
 {% block content %}
     <main>
         <div class="grid wrapper">
-            <div class="grid project-solo">
-                <section class="project-solo__img">
+            <div class="grid work-solo">
+                <section class="work-solo__img">
                     <h1>{{ title }}</h1>
                     <p class="rm-m-bs">{{ description }}</p>
                     {% image featuredImage, title, [600, 1200, 1800], ['webp', 'jpg'], '(max-width: 1500px) 100vw, 60vw', 'img-zoomable has-box-shadow' %}
                 </section>
-                <section class="project-solo__summary">
+                <section class="work-solo__summary">
                     {{ content | safe }}
                 </section>
-                <section class="project-solo__details">
+                <section class="work-solo__details">
                     <h2>Details</h2>
                     <ul class="no-list rm-m-bs" role="list">
-                        <li><span class="bold">Built With:</span> {{ framework }}</li>
+                        {% if framework %}
+                            <li><span class="bold">Built With:</span> {{ framework }}</li>
+                        {% endif %}
                         {% if website %}
                             <li><span class="bold">Visit Live Website:</span> <a href="{{ website }}">{{ website }}</a>
                             </li>
@@ -35,27 +37,27 @@ tags: ['featured project']
 
 <style>
     {% set css %}
-    .project-solo h2 {
+    .work-solo h2 {
         font-size: var(--step-4);
     }
 
     @media (min-width: 60em) {
-        .project-solo {
+        .work-solo {
             grid-template-areas:
             "img summary"
             "details summary"
         }
 
-        .project-solo__img {
+        .work-solo__img {
             grid-area: img;
         }
 
-        .project-solo__summary {
+        .work-solo__summary {
             grid-area: summary;
             place-self: center;
         }
 
-        .project-solo__details {
+        .work-solo__details {
             grid-area: details;
         }
     }

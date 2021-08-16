@@ -1,21 +1,21 @@
 ---
-title: Projects
-description: These are a few of the projects I've made, but there are many more.
-pageName: projects
+title: Work
+description: "See what I'm currently working on, professionally and personally."
+pageName: work
 ---
 {% extends 'layouts/page.njk' %}
 
 {% block main %}
     <div class="wrapper">
-        <section class="projects__focus">
-            {% for project in collections['featured project'] | reverse %}
+        <section class="work__focus">
+            {% for work in collections['work'] | reverse %}
                 <div class="container neumorphism">
                     <div class="content">
-                        <h2>{{ project.data.title }}</h2>
-                        <p>{{ project.data.description }}</p>
+                        <h2>{{ work.data.title }}</h2>
+                        <p>{{ work.data.description }}</p>
                     </div>
-                    <a href="{{ project.url }}">
-                        {% image project.data.featuredImage, project.data.title, [600, 900, 1200], ['webp', 'jpg'], '(max-width: 700px) 100vw, 1200px', 'has-box-shadow' %}
+                    <a href="{{ work.url }}">
+                        {% image work.data.featuredImage, work.data.title, [600, 900, 1200], ['webp', 'jpg'], '(max-width: 700px) 100vw, 1200px', 'has-box-shadow' %}
                     </a>
                 </div>
             {% endfor %}
@@ -23,11 +23,11 @@ pageName: projects
     </div>
     <section class="misc">
         <header>
-            <h2>Other Fun Stuff</h2>
+            <h2>Other Projects</h2>
         </header>
         {# This partial doesn't use the CaptionOverlay component because caching remote images in the Image plugin requires asynchronous functionality, but the paired shortcode requires synchronous functions #}
         <div class="projects__misc">
-            {%- for project in collections['small project'] | reverse -%}
+            {%- for project in collections['project'] | reverse -%}
                 <figure class="caption-overlay">
                     <a class="caption-link" href="{{ project.url }}">
                         {%- image project.data.featuredImage, project.data.title, [300, 600], ['webp', 'jpg'], '33vw', 'caption-image has-box-shadow' -%}
@@ -45,33 +45,29 @@ pageName: projects
 
 <style>
     {% set css %}
-    #proj-title {
-        display: inline-block;
-    }
-
-    .projects__focus {
+    .work__focus {
         --min: 20rem;
         display: grid;
         gap: 2rem;
         grid-template-columns: repeat(auto-fill, minmax(var(--min), 1fr));
     }
 
-    .projects__focus h2 {
+    .work__focus h2 {
         font-size: var(--step-2);
     }
 
-    .projects__focus .container {
+    .work__focus .container {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         padding: 1rem;
     }
 
-    .projects__focus img {
+    .work__focus img {
         transition: 0.3s ease;
     }
 
-    .projects__focus img:hover {
+    .work__focus img:hover {
         filter: brightness(0.5);
         transform: scale(1.02);
     }
@@ -80,12 +76,13 @@ pageName: projects
         --padding: 3rem;
         padding-block-end: var(--padding);
         padding-block-start: var(--padding);
-        padding-inline-end: var(--padding);
-        padding-inline-start: var(--padding);
     }
 
     .misc h2 {
+        --padding: 1rem;
         margin-block-end: 2rem;
+        padding-inline-end: var(--padding);
+        padding-inline-start: var(--padding);
     }
 
     .projects__misc {
@@ -104,7 +101,7 @@ pageName: projects
     }
 
     @media (min-width: 1200px) {
-        .projects__focus {
+        .work__focus {
             --min: 30rem;
         }
     }

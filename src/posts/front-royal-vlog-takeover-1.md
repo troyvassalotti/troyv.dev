@@ -3,9 +3,9 @@ title: I Took Over the Front Royal Vlog
 description: While Justin is away, Troy decides to mess everything up. Enjoy.
 layout: post
 date: 2017-05-15
-tags: ['post', 'music', 'front royal', 'small project']
+tags: ['post', 'front royal', 'project']
 featuredImage: "https://img.youtube.com/vi/DN29m0xBCDg/hqdefault.jpg"
-shortname: 'Front Royal Vlog Edit #1'
+shortname: 'Front Royal Vlog #1'
 ---
 > This is a post dated long ago - before I even started web development. It isn't necessarily a post in its own right, but it serves a purpose for my site's templating.
 

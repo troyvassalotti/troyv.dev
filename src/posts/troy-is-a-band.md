@@ -3,7 +3,9 @@ title: 'troy. is a band'
 description: I decided to give troy. - a band I have - a website.
 layout: post
 date: 2020-11-28
-tags: ['post', 'project', 'music']
+tags: ['post', 'project']
+featuredImage: './src/assets/img/screenshot-troy-is-a-band.jpg'
+shortname: 'troy. = band'
 ---
 If you've looked around here, you would've noticed I write music under the name [_troy._](https://justtroy.bandcamp.com), which I call a band, but it's only me. I used to be called Action Hamilton until I decided that was too weird and people around me convinced me to change it.
 
