@@ -46,17 +46,16 @@ home: true
                 <h2><span id="cool-anim">Cool</span> <span id="proj-anim">Projects</span></h2>
                 <div class="showcase-container">
                     <div class="showcase">
-                        {% for project in collections['featured project'].slice(collections['featured project'].length - 3, collections['featured project'].length) | reverse %}
-                            {% captionOverlay project.url, project.data.title %}
-                            {% imageSync project.data.featuredImage, project.data.title + " Screenshot", [300, 800, 1400], ['webp', 'jpg'], '(max-width: 700px) 100vw, 1200px', 'caption-image full has-box-shadow' %}
+                        {% for work in collections['work'].slice(collections['work'].length - 3, collections['work'].length) | reverse %}
+                            {% captionOverlay work.url, work.data.title %}
+                            {% imageSync work.data.featuredImage, work.data.title + " Screenshot", [300, 800, 1400], ['webp', 'jpg'], '(max-width: 700px) 100vw, 1200px', 'caption-image full has-box-shadow' %}
                             {% endcaptionOverlay %}
                         {% endfor %}
                     </div>
                     <section class="flex-center col center content">
                         <div class="skewed-background">
                             <div class="content">
-                                <p>These are only some of my projects, but I have more. Want to see them?</p>
-                                <a class="button" href="/projects/">More Projects</a>
+                                <p>This only some of what I've been up to, and you can see (almost) <a href="/work/">everything else I do</a> too.</p>
                             </div>
                         </div>
                     </section>
@@ -92,7 +91,7 @@ home: true
                     </div>
                     <div class="about-section" id="about">
                         <h2>Looking For More?</h2>
-                        <p>You can find more on my <a href="/about/">about</a> page.</p>
+                        <p>You can probably find it on my <a href="/about/">about</a> page.</p>
                     </div>
                 </div>
             </div>
