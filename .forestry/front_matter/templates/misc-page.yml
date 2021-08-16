@@ -7,7 +7,7 @@ fields:
   config:
     required: true
   label: Layout
-  default: responsecode
+  default: status-codes
 - name: title
   type: text
   config:
