@@ -55,7 +55,7 @@ html {
   --homeColor: var(--redPrimary);
   --musicColor: currentColor;
   --postsColor: var(--greenPrimary);
-  --projectsColor: var(--goldPrimary);
+  --workColor: var(--goldPrimary);
 
   /* other things */
   --gap: 1em;
@@ -390,8 +390,8 @@ h6,
   background-color: var(--musicColor);
 }
 
-#link__projects::before {
-  background-color: var(--projectsColor);
+#link__work::before {
+  background-color: var(--workColor);
 }
 
 #link__about::before {
