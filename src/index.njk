@@ -43,10 +43,10 @@ home: true
         </div>
         <section class="projects-section" id="projects">
             <div class="wrapper">
-                <h2><span id="cool-anim">Cool</span> <span id="proj-anim">Projects</span></h2>
+                <h2><span id="cool-anim">Latest</span> <span id="proj-anim">Projects</span></h2>
                 <div class="showcase-container">
                     <div class="showcase">
-                        {% for work in collections['work'].slice(collections['work'].length - 3, collections['work'].length) | reverse %}
+                        {% for work in collections['work'] | reverse %}
                             {% captionOverlay work.url, work.data.title %}
                             {% imageSync work.data.featuredImage, work.data.title + " Screenshot", [300, 800, 1400], ['webp', 'jpg'], '(max-width: 700px) 100vw, 1200px', 'caption-image full has-box-shadow' %}
                             {% endcaptionOverlay %}
