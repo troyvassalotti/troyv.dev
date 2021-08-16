@@ -41,19 +41,19 @@ fields:
   default:
   - post
   label: Tags
-  description: 'Required: post<br>Other: "small project" will also populate the slider.'
+  description: 'Required: post<br>Other: "project" will also populate the slider.'
 - name: shortname
   type: text
   config:
     required: false
   label: Shortname
-  description: This is used for posts tagged "small project" as the overlay caption.
+  description: This is used for posts tagged "project" as the overlay caption.
 - name: featuredImage
   type: file
   config:
     maxSize: 64
   label: Featured Image
-  description: If this is tagged "small project" then please provide a featured image.
+  description: If this is tagged "project" then please provide a featured image.
 pages:
 - src/posts/front-royal-made-a-covers-album.md
 - src/posts/i-m-using-forestry-now.md
