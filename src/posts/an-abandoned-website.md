@@ -3,7 +3,9 @@ title: 'An Abandoned Website'
 description: We've all come across an abandoned website that was left to wither away and never be thought about again. Well, what if it actually looked that way too?
 layout: post
 date: 2020-09-12
-tags: ['post', 'project', 'hugo']
+tags: ['post', 'project']
+featuredImage: './src/assets/img/screenshot-abandoned.jpg'
+shortname: Abandoned Website
 ---
 Websites can be bought and live on forever...or so long as the domain name continues to be renewed. As a result, some sites become abandoned, living in the aether, but because of backwards compatibility they don't really _look abandoned_.
 
@@ -22,7 +24,7 @@ As with every project, the final product never quite lives up to the vision in y
 
 Anyway, with everything that was 2020, it came time to pick this project up! I created this site with the intention of - as I mentioned - making a website look abandoned, but it turned out to also be a journey into the world of building a website [using Hugo](https://gohugo.io/).
 
-Hugo's great. I was really worried for a while that I chose the wrong static site generator when I actually read the docs (should've learned my [lesson from fake social media app](../not-social-media)), but I accepted the challenge and made it anyway.
+Hugo's great. I was really worried that I chose the wrong static site generator when I actually read the docs (should've learned my [lesson from fake social media app](../not-social-media)), but I accepted the challenge and made it anyway.
 
 It wasn't a complete mistake! Now, Hugo might not be the best suited option here:
 - This site isn't really a blog.

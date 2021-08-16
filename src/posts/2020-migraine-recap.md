@@ -3,7 +3,7 @@ title: I Logged My Migraines For Another Year
 description: Another year, another migraine recap.
 layout: post
 date: 2021-02-23
-tags: ['post', 'migraines', 'small project']
+tags: ['post', 'migraines', 'project']
 shortname: 2020 Migraines
 featuredImage: './src/assets/img/2020-by-triggers.png'
 ---

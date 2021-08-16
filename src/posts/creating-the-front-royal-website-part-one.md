@@ -3,7 +3,7 @@ title: Creating The Front Royal Website, Part 1
 description: We want a website so we have a presence that isn't exclusively on social media. So, I'm whipping up a site and blogging about it in real time.
 layout: post
 date: 2020-03-16
-tags: ['post', 'music', 'front royal', 'music', 'project']
+tags: ['post', 'front royal']
 ---
 There was a point in time bands either had a myspace, PureVolume, or both. Nowadays, it's not so simple.
 

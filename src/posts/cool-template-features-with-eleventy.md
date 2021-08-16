@@ -3,7 +3,7 @@ title: Cool Template Features With Eleventy
 description: I gave this site a full-blown refresh for 2021, so I'm going to talk about how cool it is.
 layout: post
 date: 2021-04-14
-tags: ['post', 'redesign']
+tags: ['post']
 ---
 You know what's great about having a personal website? The fact that I can configure it to be as simple or complicated as I please. Sure, it isn't _ideal_ to make things complicated, but would I really consider myself a developer if I wasn't spending hours upon hours trying to automate something that's otherwise a slight inconvenience?
 
