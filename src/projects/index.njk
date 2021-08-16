@@ -8,14 +8,14 @@ pageName: projects
 {% block main %}
     <div class="wrapper">
         <section class="projects__focus">
-            {% for project in collections['featured project'] | reverse %}
+            {% for work in collections['work'] | reverse %}
                 <div class="container neumorphism">
                     <div class="content">
-                        <h2>{{ project.data.title }}</h2>
-                        <p>{{ project.data.description }}</p>
+                        <h2>{{ work.data.title }}</h2>
+                        <p>{{ work.data.description }}</p>
                     </div>
-                    <a href="{{ project.url }}">
-                        {% image project.data.featuredImage, project.data.title, [600, 900, 1200], ['webp', 'jpg'], '(max-width: 700px) 100vw, 1200px', 'has-box-shadow' %}
+                    <a href="{{ work.url }}">
+                        {% image work.data.featuredImage, work.data.title, [600, 900, 1200], ['webp', 'jpg'], '(max-width: 700px) 100vw, 1200px', 'has-box-shadow' %}
                     </a>
                 </div>
             {% endfor %}
@@ -27,7 +27,7 @@ pageName: projects
         </header>
         {# This partial doesn't use the CaptionOverlay component because caching remote images in the Image plugin requires asynchronous functionality, but the paired shortcode requires synchronous functions #}
         <div class="projects__misc">
-            {%- for project in collections['small project'] | reverse -%}
+            {%- for project in collections['project'] | reverse -%}
                 <figure class="caption-overlay">
                     <a class="caption-link" href="{{ project.url }}">
                         {%- image project.data.featuredImage, project.data.title, [300, 600], ['webp', 'jpg'], '33vw', 'caption-image has-box-shadow' -%}
