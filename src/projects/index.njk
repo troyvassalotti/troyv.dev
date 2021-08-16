@@ -1,13 +1,13 @@
 ---
-title: Projects
-description: These are a few of the projects I've made, but there are many more.
-pageName: projects
+title: Work
+description: "See what I'm currently working on, professionally and personally."
+pageName: work
 ---
 {% extends 'layouts/page.njk' %}
 
 {% block main %}
     <div class="wrapper">
-        <section class="projects__focus">
+        <section class="work__focus">
             {% for work in collections['work'] | reverse %}
                 <div class="container neumorphism">
                     <div class="content">
@@ -23,7 +23,7 @@ pageName: projects
     </div>
     <section class="misc">
         <header>
-            <h2>Other Fun Stuff</h2>
+            <h2>Other Projects</h2>
         </header>
         {# This partial doesn't use the CaptionOverlay component because caching remote images in the Image plugin requires asynchronous functionality, but the paired shortcode requires synchronous functions #}
         <div class="projects__misc">
@@ -45,29 +45,29 @@ pageName: projects
 
 <style>
     {% set css %}
-    .projects__focus {
+    .work__focus {
         --min: 20rem;
         display: grid;
         gap: 2rem;
         grid-template-columns: repeat(auto-fill, minmax(var(--min), 1fr));
     }
 
-    .projects__focus h2 {
+    .work__focus h2 {
         font-size: var(--step-2);
     }
 
-    .projects__focus .container {
+    .work__focus .container {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         padding: 1rem;
     }
 
-    .projects__focus img {
+    .work__focus img {
         transition: 0.3s ease;
     }
 
-    .projects__focus img:hover {
+    .work__focus img:hover {
         filter: brightness(0.5);
         transform: scale(1.02);
     }
@@ -100,7 +100,7 @@ pageName: projects
     }
 
     @media (min-width: 1200px) {
-        .projects__focus {
+        .work__focus {
             --min: 30rem;
         }
     }
