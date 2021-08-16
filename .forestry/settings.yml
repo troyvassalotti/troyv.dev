@@ -36,6 +36,9 @@ sections:
   path: src/about/resume.11tydata.json
   label: Resume
 - type: document
+  path: src/about/index.md
+  label: About/Now
+- type: document
   path: src/music/index.11tydata.json
   label: Band Links
 upload_dir: src/assets/img

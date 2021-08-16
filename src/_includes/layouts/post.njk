@@ -55,8 +55,10 @@ return d.replace(gmt, "");
 <style>
     {% set css %}
     .post-container {
-        width: 70%;
         flex-grow: 1;
+        padding-inline-end: 1ch;
+        padding-inline-start: 1ch;
+        width: 70%;
     }
 
     .post-container .wrapper {
@@ -103,13 +105,13 @@ return d.replace(gmt, "");
     }
 
     .post-navigation {
-        font-size: var(--step--2);
-        text-align: start;
         display: flex;
-        justify-content: space-evenly;
         flex-direction: column;
+        font-size: var(--step--2);
         gap: 3rem;
+        justify-content: space-evenly;
         padding: var(--padding);
+        text-align: start;
     }
 
     .post-navigation li {
