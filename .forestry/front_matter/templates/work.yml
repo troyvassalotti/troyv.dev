@@ -43,4 +43,4 @@ fields:
     required: false
   label: Website
   description: Where is it hosted?
-  default: https://github.com/troyvassalotti/
+  default: ''
