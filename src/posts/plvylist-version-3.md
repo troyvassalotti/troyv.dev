@@ -11,7 +11,7 @@ shortname: ''
 featuredImage: ''
 
 ---
-The last [update on Plvylist](../posts/plvylist-web-component/) was when I turned it into a web component. That's great and all, but something wasn't sitting right with me. It felt like it involved _too much code_ to do what it's doing. A lot of CSS was integrated in the component and the initialization was a hassle. Version 2 expected the user to jump through too many hoops and that's not how it's supposed to be. For example, why would I require the user to declare their tracks in the component itself??
+The last [update on Plvylist](../plvylist-web-component/) was when I turned it into a web component. That's great and all, but something wasn't sitting right with me. It felt like it involved _too much code_ to do what it's doing. A lot of CSS was integrated in the component and the initialization was a hassle. Version 2 expected the user to jump through too many hoops and that's not how it's supposed to be. For example, why would I require the user to declare their tracks in the component itself??
 
 ## How to use Plvylist Version 3
 
