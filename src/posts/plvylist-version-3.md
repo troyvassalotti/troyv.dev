@@ -23,7 +23,7 @@ If you've got a JSON file with the following fields, then you can use Plvylist!
 4. album: the name of the album,
 5. artwork: a relative or absolute path to an image of the track's artwork.
 
-When adding `<plvylist-player>`to your site, give it an attribute of `tracks="path/to/tracks.json"` and it'll be fetched in the loading process. For best results, you'd also give it a placeholder image with the attribute `placeholder="path/to/placeholder.jpg"` but I'll look into providing a better default in case this isn't declared. The same options for setting a starting volume and time are in place.
+When adding `<plvylist-player>` to your site, give it an attribute of `tracks="path/to/tracks.json"` and it'll be fetched in the loading process. For best results, you'd also give it a placeholder image with the attribute `placeholder="path/to/placeholder.jpg"` but I'll look into providing a better default in case this isn't declared. The same options for setting a starting volume and time are in place.
 
 The CSS has been trimmed significantly to remove most of the opinionated styles. It's hard to style a simple slider across browsers, but I decided it wasn't needed anymore. The recent update adding support for `accent-color` in CSS is the reason I revisited this component in the first place.
 
