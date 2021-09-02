@@ -30,7 +30,7 @@ pageName: work
             {%- for project in collections['project'] | reverse -%}
                 <figure class="caption-overlay">
                     <a class="caption-link" href="{{ project.url }}">
-                        {%- image project.data.featuredImage, project.data.title, [300, 600], ['webp', 'jpg'], '33vw', 'caption-image has-box-shadow' -%}
+                        {%- image project.data.featuredImage, project.data.title, [300, 600], ['webp', 'jpg'], '33vw', 'caption-image' -%}
                         <div class="caption">
                             <figcaption>
                                 <h3>{{ project.data.shortname }}</h3>

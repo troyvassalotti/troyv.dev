@@ -410,8 +410,6 @@ h6,
 }
 
 .contact-form {
-  display: flex;
-  flex-direction: column;
   max-width: 31.25rem;
   padding: 1ch;
   width: 100%;
@@ -421,22 +419,15 @@ h6,
   display: flex;
   flex-direction: column;
   font-family: var(--headings);
-  font-weight: 500;
   margin: 0.5ex 0;
 }
 
-.contact-form :is(#email, #message, #name) {
+.contact-form input {
   padding: 0.5ex;
-}
-
-.contact-form #message {
-  height: 10rem;
 }
 
 .contact-form #submit {
   cursor: pointer;
-  margin-inline-end: auto;
-  margin-inline-start: auto;
 }
 
 @media (min-width: 45em) {
