@@ -54,6 +54,13 @@ fields:
     maxSize: 64
   label: Featured Image
   description: If this is tagged "project" then please provide a featured image.
+- name: website
+  type: text
+  config:
+    required: false
+  label: Website
+  description: Where is it hosted? If this is tagged "project" and you want to use the screenshot service, use this instead of the featured image.
+  default: ''
 pages:
 - src/posts/front-royal-made-a-covers-album.md
 - src/posts/i-m-using-forestry-now.md

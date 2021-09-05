@@ -15,7 +15,7 @@ pageName: work
                         <p>{{ work.data.description }}</p>
                     </div>
                     <a href="{{ work.url }}">
-                        {% image work.data.featuredImage, work.data.title, [600, 900, 1200], ['webp', 'jpg'], '(max-width: 700px) 100vw, 1200px', 'has-box-shadow' %}
+                        {% image "https://screenshot.troyv.dev/" + work.data.website | urlencode + "/opengraph", work.data.title, [600, 900, 1200], ['webp', 'jpg'], '(max-width: 700px) 100vw, 1200px', 'has-box-shadow' %}
                     </a>
                 </div>
             {% endfor %}
@@ -25,12 +25,19 @@ pageName: work
         <header>
             <h2>Other Projects</h2>
         </header>
-        {# This partial doesn't use the CaptionOverlay component because caching remote images in the Image plugin requires asynchronous functionality, but the paired shortcode requires synchronous functions #}
         <div class="projects__misc">
+            {%- set imgWidths = [300, 600] -%}
+            {%- set imgFormats = ['webp', 'png'] -%}
+            {%- set imgSizes = '33vw' -%}
+            {%- set imgClasses = 'caption-image' -%}
             {%- for project in collections['project'] | reverse -%}
                 <figure class="caption-overlay">
                     <a class="caption-link" href="{{ project.url }}">
-                        {%- image project.data.featuredImage, project.data.title, [300, 600], ['webp', 'jpg'], '33vw', 'caption-image' -%}
+                        {% if project.data.featuredImage %}
+                            {%- image project.data.featuredImage, project.data.title, imgWidths, imgFormats, imgSizes, imgClasses -%}
+                        {% else %}
+                            {%- image "https://screenshot.troyv.dev/" + project.data.website | urlencode, project.data.title, imgWidths, imgFormats, imgSizes, imgClasses -%}
+                        {% endif %}
                         <div class="caption">
                             <figcaption>
                                 <h3>{{ project.data.shortname }}</h3>
@@ -92,8 +99,6 @@ pageName: work
 
     .projects__misc .caption-overlay {
         flex: 0 0 clamp(12.5rem, 20vw, 30rem);
-        margin-inline-end: 1em;
-        margin-inline-start: 1em;
     }
 
     .projects__misc .caption-overlay h3 {

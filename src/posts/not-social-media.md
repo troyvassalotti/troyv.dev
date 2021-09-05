@@ -4,8 +4,9 @@ description: Social media is overwhelming, which is why I quit using a lot of it
 layout: post
 date: 2020-08-27
 tags: ['post', 'project']
-featuredImage: './src/assets/img/screenshot-notsocial.jpg'
+featuredImage: ''
 shortname: NotSocial
+website: 'https://pang.netlify.app'
 ---
 We can all agree that social media is a lot to handle sometimes. I know I have a habit of scrolling on Reddit for far too long before I realize how long it's been, and it isn't isolated to Reddit. Twitter, Instagram, and the like are all in this bucket.
 

@@ -2,7 +2,6 @@
 layout: work
 title: 'This is a Band'
 description: 'A blog about bands with a cool domain name.'
-featuredImage: './src/assets/img/screenshot-thisisaband.jpg'
 framework: 'Nuxt'
 repo: 'https://github.com/troyvassalotti/thisisaband-site'
 website: 'https://www.thisisa.band'

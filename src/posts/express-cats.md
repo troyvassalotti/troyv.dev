@@ -5,7 +5,8 @@ layout: post
 date: 2021-04-25
 tags: ['post', 'project']
 shortname: Express With Cats
-featuredImage: './src/assets/img/express-cats.png'
+featuredImage: ''
+website: 'https://express-cats-app.herokuapp.com'
 ---
 I recently got antsy to make an Express app. The original idea was to try and recreate _this very website_ using Express and Pug templates instead of Nunjucks. It started off fine, but then I realized it'd be a little more of a waste of time to base it on my website since 1) the site is already made with Node, and 2) it won't necessarily teach me something that new.
 

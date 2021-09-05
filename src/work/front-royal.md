@@ -2,7 +2,6 @@
 layout: work
 title: Front Royal
 description: The band, not the town.
-featuredImage: "./src/assets/img/screenshot-front-royal.jpg"
 framework: ''
 repo: https://github.com/troyvassalotti/front-royal
 website: https://www.frontroyalband.com

@@ -12,7 +12,6 @@ const inputDir = "./src";
 const env = require(`${inputDir}/_data/site`);
 
 const componentsDir = `${inputDir}/_includes/components`;
-const CaptionOverlay = require(`${componentsDir}/CaptionOverlay`);
 const ImageShortcode = require(`${componentsDir}/ImageShortcode`);
 const ImageShortcodeSync = require(`${componentsDir}/ImageShortcodeSync`);
 
@@ -81,7 +80,6 @@ module.exports = function (eleventyConfig) {
   // A reusable block, so it helps to have it maintainable in one place
   eleventyConfig.addNunjucksAsyncShortcode("image", ImageShortcode);
   eleventyConfig.addNunjucksShortcode("imageSync", ImageShortcodeSync);
-  eleventyConfig.addPairedShortcode("captionOverlay", CaptionOverlay);
 
   eleventyConfig.addCollection("posts", (collection) => {
     if (process.env.ELEVENTY_ENV !== "production")

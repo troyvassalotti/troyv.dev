@@ -4,8 +4,9 @@ description: We've all come across an abandoned website that was left to wither 
 layout: post
 date: 2020-09-12
 tags: ['post', 'project']
-featuredImage: './src/assets/img/screenshot-abandoned.jpg'
+featuredImage: ''
 shortname: Abandoned Website
+website: 'https://abandoned-website.netlify.app'
 ---
 Websites can be bought and live on forever...or so long as the domain name continues to be renewed. As a result, some sites become abandoned, living in the aether, but because of backwards compatibility they don't really _look abandoned_.
 
