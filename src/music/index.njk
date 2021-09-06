@@ -15,9 +15,9 @@ pageName: music
                             managed
                             elsewhere than my personal website, so you're better off visiting those places.</p>
                     </section>
-                    {%- set logoWidths = [300, 600] -%}
-                    {%- set logoFormats = ['webp', 'png'] -%}
-                    {%- set logoSizes = '(max-width: 700px) 96vw, 300px' -%}
+                    {% set logoWidths = [300, 600] %}
+                    {% set logoFormats = ['webp', 'png'] %}
+                    {% set logoSizes = '(max-width: 700px) 96vw, 300px' %}
                     <section class="bands">
                         <div class="band">
                             <div class="band-logo">
@@ -26,11 +26,11 @@ pageName: music
                                 </a>
                             </div>
                             <div class="icon-bar">
-                                {%- for social in frontRoyalSocial -%}
+                                {% for social in frontRoyalSocial %}
                                     <a class="icon-link" href="{{ social.href }}"><img
                                                 src="/assets/img/{{ social.img }}" alt="{{ social.alt }}" loading="lazy"
                                                 width="48" height="48"></a>
-                                {%- endfor -%}
+                                {% endfor %}
                             </div>
                         </div>
                         <div class="band">
@@ -40,11 +40,11 @@ pageName: music
                                 </a>
                             </div>
                             <div class="icon-bar">
-                                {%- for social in troySocial -%}
+                                {% for social in troySocial %}
                                     <a class="icon-link" href="{{ social.href }}"><img
                                                 src="/assets/img/{{ social.img }}" alt="{{ social.alt }}" loading="lazy"
                                                 width="48" height="48"></a>
-                                {%- endfor -%}
+                                {% endfor %}
                             </div>
                         </div>
                     </section>

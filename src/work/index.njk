@@ -26,17 +26,17 @@ pageName: work
             <h2>Other Projects</h2>
         </header>
         <div class="projects__misc">
-            {%- set imgWidths = [300, 600] -%}
-            {%- set imgFormats = ['webp', 'png'] -%}
-            {%- set imgSizes = '33vw' -%}
-            {%- set imgClasses = 'caption-image' -%}
-            {%- for project in collections['project'] | reverse -%}
+            {% set imgWidths = [300, 600] %}
+            {% set imgFormats = ['webp', 'png'] %}
+            {% set imgSizes = '33vw' %}
+            {% set imgClasses = 'caption-image' %}
+            {% for project in collections['project'] | reverse %}
                 <figure class="caption-overlay">
                     <a class="caption-link" href="{{ project.url }}">
                         {% if project.data.featuredImage %}
-                            {%- image project.data.featuredImage, project.data.title, imgWidths, imgFormats, imgSizes, imgClasses -%}
+                            {% image project.data.featuredImage, project.data.title, imgWidths, imgFormats, imgSizes, imgClasses %}
                         {% else %}
-                            {%- image "https://screenshot.troyv.dev/" + project.data.website | urlencode, project.data.title, imgWidths, imgFormats, imgSizes, imgClasses -%}
+                            {% image "https://screenshot.troyv.dev/" + project.data.website | urlencode, project.data.title, imgWidths, imgFormats, imgSizes, imgClasses %}
                         {% endif %}
                         <div class="caption">
                             <figcaption>
@@ -45,7 +45,7 @@ pageName: work
                         </div>
                     </a>
                 </figure>
-            {%- endfor -%}
+            {% endfor %}
         </div>
     </section>
 {% endblock %}
@@ -94,11 +94,14 @@ pageName: work
 
     .projects__misc {
         display: flex;
+        gap: 5%;
         overflow-x: auto;
+        padding-inline-end: 1rem;
+        padding-inline-start: 1rem;
     }
 
     .projects__misc .caption-overlay {
-        flex: 0 0 clamp(12.5rem, 20vw, 30rem);
+        flex-shrink: 0;
     }
 
     .projects__misc .caption-overlay h3 {

@@ -22,13 +22,13 @@
     </noscript>
 
     {% block style %}
-        {%- if css -%}
-            {%- if site.environment == "production" -%}
+        {% if css %}
+            {% if site.environment == "production" %}
                 <style>{{ css | cssmin | safe }}</style>
-            {%- elseif site.environment == "development" -%}
+            {% elseif site.environment == "development" %}
                 <style>{{ css | safe }}</style>
-            {%- endif -%}
-        {%- endif -%}
+            {% endif %}
+        {% endif %}
     {% endblock %}
 
     <title>{{ title }} | Troy Vassalotti</title>
@@ -54,10 +54,10 @@
 <header class="site-header hideOnPrint">
     <nav class="main-navigation" id="main-navigation" aria-label="main navigation">
         <ul class="main-navigation__links" role="list">
-            {%- for link in nav.header %}
+            {% for link in nav.header %}
                 <li><a href="{{ link.url }}" class="main-navigation__link animated-link"
                        id="link__{{ link.name }}">{{ link.name }}</a></li>
-            {% endfor -%}
+            {% endfor %}
         </ul>
     </nav>
 </header>
@@ -67,13 +67,13 @@
 <script type="module" src="/assets/js/script.js"></script>
 
 {% block script %}
-    {%- if js -%}
-        {%- if site.environment == "production" -%}
+    {% if js %}
+        {% if site.environment == "production" %}
             <script type="module">{{ js | jsmin | safe }}</script>
-            {%- elseif site.environment == "development" -%}
+            {% elseif site.environment == "development" %}
             <script type="module">{{ js | safe }}</script>
-        {%- endif -%}
-    {%- endif -%}
+        {% endif %}
+    {% endif %}
 {% endblock %}
 </body>
 </html>

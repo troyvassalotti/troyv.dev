@@ -1,4 +1,4 @@
-// this isn't working but hopefully I can figure it out some day'
+// this isn't working but hopefully I can figure it out some day
 
 class MigraineCalendar extends HTMLElement {
   constructor() {
