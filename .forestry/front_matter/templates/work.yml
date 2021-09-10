@@ -19,11 +19,10 @@ fields:
   config:
     required: true
   label: Description
-- name: featuredImage
-  type: file
-  config:
-    maxSize: 64
-  label: Featured Image
+- name: use_screenshot_service
+  type: boolean
+  label: Use Screenshot Service
+  default: true
 - name: repo
   type: text
   config:
@@ -44,3 +43,13 @@ fields:
   label: Website
   description: Where is it hosted?
   default: ''
+  showOnly:
+    field: use_screenshot_service
+    value: true
+- name: featuredImage
+  type: file
+  config:
+    maxSize: 64
+  label: Featured Image
+  showOnly:
+    field: use_screenshot_service
