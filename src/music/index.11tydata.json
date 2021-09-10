@@ -18,6 +18,11 @@
       "href": "https://www.facebook.com/FrontRoyalMD",
       "img": "facebook-black.svg",
       "alt": "Facebook"
+    },
+    {
+      "href": "https://www.frontroyalband.com",
+      "img": "link.svg",
+      "alt": "Link out to the band's website."
     }
   ],
   "troySocial": [{

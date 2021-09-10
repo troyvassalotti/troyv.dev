@@ -10,7 +10,7 @@ website: 'https://abandoned-website.netlify.app'
 ---
 Websites can be bought and live on forever...or so long as the domain name continues to be renewed. As a result, some sites become abandoned, living in the aether, but because of backwards compatibility they don't really _look abandoned_.
 
-Well, what if they did? What if the website deteriorated over time, things fell apart, and the darkness came to consume it? That's where my new project, [Abandoned Website](https://abandoned-website.netlify.app/), comes in.
+Well, what if they did? What if the website deteriorated over time, things fell apart, and the darkness came to consume it? That's where my new project, [Abandoned Website]({{ website }}), comes in.
 
 I don't know when, why, or how I came up with the idea to create this project. If I'm remembering correctly, it was way back in my early stages of learning to code - you know, when you're full of ideas that sound _fun_ and _exciting_ and _definitely not hard to implement_ - and I jotted it down as a note in my phone.
 

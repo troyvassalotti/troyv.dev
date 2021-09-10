@@ -18,7 +18,7 @@ As a web component, I get all the functionality I was looking for with the added
 - It's a single `<plvylist-player></plvylist-player>` on your HTML with some values passed in as attributes, so the component knows where to look for audio files, images, and artist or album names.
     - For example, `<plvylist-player audio-location="path/to/tracks/">` tells Plvylist that your songs are located in `path/to/tracks/` and will use said path when populating the audio source.
 
-> You can view the [new and improved demo](https://troyvassalotti.github.io/plvylist/) if you want.
+> You can view the [new and improved demo]({{ website }}) if you want.
 
 While it's in a much better position than before, there is still room to grow. There are a handful of assumptions required to make this work:
 - You are hosting the files locally in the project _or_ you are able to manually input the **names** of the tracks and their files.

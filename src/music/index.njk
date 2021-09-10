@@ -111,14 +111,20 @@ pageName: music
         background-color: currentColor;
         display: flex;
         inline-size: 100%;
+        gap: 1.5rem;
         justify-content: space-around;
         margin: auto;
-        max-inline-size: 20.3rem;
+        max-inline-size: max-content;
         padding: 1ex 2ex;
+    }
+
+    .icon-link {
+        flex: 1;
     }
 
     .icon-bar img {
         filter: invert(1);
+        inline-size: 100%;
         max-inline-size: 48px;
         transition: opacity .1s ease;
     }

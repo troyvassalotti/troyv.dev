@@ -10,7 +10,7 @@ website: 'https://pang.netlify.app'
 ---
 We can all agree that social media is a lot to handle sometimes. I know I have a habit of scrolling on Reddit for far too long before I realize how long it's been, and it isn't isolated to Reddit. Twitter, Instagram, and the like are all in this bucket.
 
-Since deleting myself from Facebook, I've realized a few things about myself and others, but that's not what this post is about. This post is about [NotSocial](https://pang.netlify.app/).
+Since deleting myself from Facebook, I've realized a few things about myself and others, but that's not what this post is about. This post is about [NotSocial]({{ website }}).
 
 NotSocial is my new passion; it's more than an app - it's an ideology. You may be thinking that this is exactly the problem that other social media platforms have: they become more than an app and grow into a cultural phenomenon, and I'm not here to tell you whether you're right or wrong.
 
@@ -27,7 +27,7 @@ NotSocial started out as a simple idea on [CodePen](https://codepen.io) practici
 
 > You can even [view the original NotSocial there](https://codepen.io/troyvassalotti/full/RwWLyBV) still. Be warned though, it's a little rough around the edges in terms of how Vue works and overall design.
 
-I thought I was done after publishing that, but I knew it could be better. Not only could it be better looking and more thought out, but I could broaden my skills and [make it with Nuxt](https://nuxtjs.org/), a static site generator for Vue. I knew it wouldn't be a walk in the park but I didn't expect it to be as challenging as it was either.
+I thought I was done after publishing that, but I knew it could be better. Not only could it be better looking and more thought out, but I could broaden my skills and [make it with Nuxt](https://nuxtjs.org/), a static site generator for Vue. I knew it wouldn't be a walk in the park, but I didn't expect it to be as challenging as it was either.
 
 You can take a look at [my commit history](https://github.com/troyvassalotti/pang/commits/master) if you want to; It's a little embarrassing, but funny. You can see the thought process going on as I struggled to make the site: "Wow, you gotta wrap everything in a div or whatever to make it work."
 
