@@ -38,7 +38,8 @@ fields:
   default: now
 - name: tags
   type: tag_list
-  default: []
+  default:
+  - post
   label: Tags
   description: Add any additional tags. If this is a project, add the tag "project".
 - name: project
