@@ -1,7 +1,6 @@
 ---
 title: Posts
 description: I occasionally write about things.
-pageName: posts
 ---
 {% extends 'layouts/page.njk' %}
 
@@ -25,7 +24,7 @@ pageName: posts
 
 <style>
     {% set css %}
-    .posts .post-listing {
+    .post-listing {
         align-items: flex-start;
         border: none;
         display: flex;
@@ -34,11 +33,11 @@ pageName: posts
         padding-inline-start: 1ex;
     }
 
-    .posts .all-posts h2 {
+    .all-posts h2 {
         font-size: var(--step-2);
     }
 
-    .posts .posts-container {
+    .posts-container {
         grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
     }
 

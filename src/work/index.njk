@@ -1,7 +1,6 @@
 ---
 title: Work
 description: "See what I'm currently working on, professionally and personally."
-pageName: work
 ---
 {% extends 'layouts/page.njk' %}
 
@@ -53,7 +52,7 @@ pageName: work
 <style>
     {% set css %}
     .work__focus {
-        --min: 20rem;
+        --min: clamp(20rem, 100%, 30rem);
         display: grid;
         gap: 2rem;
         grid-template-columns: repeat(auto-fill, minmax(var(--min), 1fr));
@@ -106,12 +105,6 @@ pageName: work
 
     .projects__misc .caption-overlay h3 {
         font-size: var(--step-1);
-    }
-
-    @media (min-width: 1200px) {
-        .work__focus {
-            --min: 30rem;
-        }
     }
 
     {% endset %}

@@ -32,7 +32,7 @@ date: Last Modified
             </symbol>
         </svg>
     </div>
-    <main class="h-resume resume" role="document">
+    <main class="h-resume resume-container" role="document">
         <header class="header">
             <div class="container">
                 <div class="meta h-card">
@@ -196,7 +196,7 @@ date: Last Modified
 
 <style>
     {% set css %}
-    .resume {
+    .resume-container {
         --heading-color: hsl(0, 0%, 5%);
         --text-color: hsl(0, 0%, 25%);
         --subtext-color: hsl(0, 0%, 35%);
@@ -213,35 +213,35 @@ date: Last Modified
         font-size: initial;
     }
 
-    .resume p {
+    .resume-container p {
         margin: 0;
     }
 
-    .resume img {
+    .resume-container img {
         margin: initial;
     }
 
-    .resume :is(h1, h2, h3, h4) {
+    .resume-container :is(h1, h2, h3, h4) {
         font-family: var(--serif);
         color: var(--heading-color);
         font-weight: 500;
     }
 
-    .resume h1 {
+    .resume-container h1 {
         font-size: 3rem;
         line-height: 1.25;
     }
 
-    .resume h2 {
+    .resume-container h2 {
         font-size: 2.25rem;
         border-block-end: 1px solid black;
     }
 
-    .resume h3 {
+    .resume-container h3 {
         font-size: 1.25rem;
     }
 
-    .resume :is(a, .print-this button) {
+    .resume-container :is(a, .print-this button) {
         --lightness: 40%;
         --link-color: hsl(222, 100%, var(--lightness));
         --transition: 0.2s ease;
@@ -250,22 +250,22 @@ date: Last Modified
         text-decoration: underline;
     }
 
-    .resume :is(a:hover, .print-this button:hover) {
+    .resume-container :is(a:hover, .print-this button:hover) {
         --lightness: 70%;
     }
 
     @media print {
-        .resume :is(a, .print-this button) {
+        .resume-container :is(a, .print-this button) {
             text-decoration: none;
         }
     }
 
-    .resume :is(a svg, .print-this button svg) {
+    .resume-container :is(a svg, .print-this button svg) {
         fill: var(--link-color);
         transition: fill var(--transition);
     }
 
-    .resume :is(.contact__links, .contact__info, .contact__social) {
+    .resume-container :is(.contact__links, .contact__info, .contact__social) {
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
@@ -273,17 +273,17 @@ date: Last Modified
         gap: 1ch;
     }
 
-    .resume :is(.contact__links, .contact__info, .contact__social) :is(a, .print-this button) {
+    .resume-container :is(.contact__links, .contact__info, .contact__social) :is(a, .print-this button) {
         display: flex;
         align-items: center;
         inline-size: max-content;
     }
 
-    .resume :is(.contact__links, .contact__info, .contact__social) :is(a svg, .print-this button svg) {
+    .resume-container :is(.contact__links, .contact__info, .contact__social) :is(a svg, .print-this button svg) {
         margin-inline-end: 0.5ch;
     }
 
-    .resume .print-this button {
+    .resume-container .print-this button {
         cursor: pointer;
         border: 0;
         padding: 0;
@@ -292,38 +292,38 @@ date: Last Modified
     }
 
     @media (min-width: 668px) {
-        .resume :is(.contact__info, .contact__social) {
+        .resume-container :is(.contact__info, .contact__social) {
             flex-direction: row;
         }
     }
 
-    .resume .contact__links {
+    .resume-container .contact__links {
         margin-block-start: 1rem;
         margin-block-end: 1rem;
     }
 
-    .resume .meta {
+    .resume-container .meta {
         display: flex;
         flex-wrap: wrap;
         gap: 1.5rem;
     }
 
-    .resume .header {
+    .resume-container .header {
         padding-block-start: 2rem;
         padding-block-end: 2rem;
     }
 
-    .resume .name {
+    .resume-container .name {
         display: flex;
         flex-wrap: wrap;
         align-items: baseline;
     }
 
-    .resume .name h1 {
+    .resume-container .name h1 {
         margin-inline-end: 0.5ex;
     }
 
-    .resume .photo {
+    .resume-container .photo {
         border-radius: 50%;
         border: 3px solid white;
         box-shadow: 8px 8px 40px -10px rgba(0, 0, 0, 0.3);
@@ -331,34 +331,34 @@ date: Last Modified
         max-block-size: 11rem;
     }
 
-    .resume .pronouns {
+    .resume-container .pronouns {
         font-family: var(--serif);
         font-style: italic;
         color: var(--subtext-color);
     }
 
-    .resume .my-title {
+    .resume-container .my-title {
         font-size: 1.25rem;
         margin-block-start: 1ex;
         margin-block-end: 0;
         font-weight: 300;
     }
 
-    .resume .container {
+    .resume-container .container {
         padding-inline-start: 5%;
         padding-inline-end: 5%;
     }
 
-    .resume .entrylist {
+    .resume-container .entrylist {
         position: relative;
         padding-inline-start: 1rem;
     }
 
-    .resume .entrylist > * + * {
+    .resume-container .entrylist > * + * {
         margin-block-start: 2rem;
     }
 
-    .resume .entrylist::before {
+    .resume-container .entrylist::before {
         content: "";
         display: block;
         inline-size: 1px;
@@ -370,12 +370,12 @@ date: Last Modified
         bottom: 0;
     }
 
-    .resume .entrylist li {
+    .resume-container .entrylist li {
         position: relative;
         padding-inline-start: 1rem;
     }
 
-    .resume .entrylist li::before {
+    .resume-container .entrylist li::before {
         content: "";
         display: block;
         inline-size: 0.625rem;
@@ -388,35 +388,35 @@ date: Last Modified
         transform: translate(-50%, 0);
     }
 
-    .resume .entrylist li .entrylist__header {
+    .resume-container .entrylist li .entrylist__header {
         display: flex;
         flex-direction: column;
     }
 
-    .resume .entrylist li .entry__content {
+    .resume-container .entrylist li .entry__content {
         max-inline-size: 70ch;
     }
 
-    .resume .dates {
+    .resume-container .dates {
         order: -1;
         color: var(--subtext-color);
         font-family: var(--monospace);
     }
 
-    .resume .organization {
+    .resume-container .organization {
         font-style: italic;
         font-weight: 300;
     }
 
-    .resume ul:not([class]) li::marker {
+    .resume-container ul:not([class]) li::marker {
         color: var(--primary-color);
     }
 
-    .resume .bold {
+    .resume-container .bold {
         font-weight: bold;
     }
 
-    .resume .footer {
+    .resume-container .footer {
         background-color: ButtonFace;
         font-size: 0.9rem;
         text-align: center;
@@ -429,7 +429,7 @@ date: Last Modified
     }
 
     @media (min-width: 668px) {
-        .resume .footer .container {
+        .resume-container .footer .container {
             display: flex;
             justify-content: space-between;
             max-inline-size: 75ch;
@@ -438,42 +438,42 @@ date: Last Modified
     }
 
     @media print, (min-width: 668px) {
-        .resume .skills-certs {
+        .resume-container .skills-certs {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
         }
     }
 
-    .resume .skills-certs .certifications li {
+    .resume-container .skills-certs .certifications li {
         max-inline-size: 60ch;
     }
 
     @media (min-width: 950px) {
-        .resume {
+        .resume-container {
             position: relative;
             display: grid;
             grid-template-areas: "sidebar main" "sidebar footer";
             grid-template-columns: 30% 70%;
         }
 
-        .resume .footer {
+        .resume-container .footer {
             grid-area: footer;
         }
 
-        .resume .main {
+        .resume-container .main {
             grid-area: main;
             padding-block-start: 2rem;
             padding-block-end: 2rem;
         }
 
-        .resume .header {
+        .resume-container .header {
             grid-area: sidebar;
             block-size: 100%;
             background-color: rgba(148, 209, 255, 0.2);
         }
 
-        .resume .header .container {
+        .resume-container .header .container {
             position: sticky;
             top: 2rem;
             padding-inline-end: 2%;
@@ -485,89 +485,89 @@ date: Last Modified
             size: letter;
         }
 
-        .resume {
+        .resume-container {
             font-size: 10pt;
         }
 
-        .resume .header {
+        .resume-container .header {
             padding-block-start: 0;
             padding-block-end: 1rem;
         }
 
-        .resume h1 {
+        .resume-container h1 {
             font-size: 20pt;
         }
 
-        .resume h2 {
+        .resume-container h2 {
             font-size: 14pt;
         }
 
-        .resume h3 {
+        .resume-container h3 {
             font-size: 12pt;
         }
 
-        .resume .meta {
+        .resume-container .meta {
             justify-content: center;
         }
 
-        .resume .my-title {
+        .resume-container .my-title {
             font-size: 12pt;
         }
 
-        .resume .contact__links {
+        .resume-container .contact__links {
             margin-block-end: 0;
             margin-block-start: 0.5rem;
         }
 
-        .resume :is(.contact__info, .contact__social) {
+        .resume-container :is(.contact__info, .contact__social) {
             font-size: 9pt;
             flex-direction: row;
         }
 
-        .resume .entrylist {
+        .resume-container .entrylist {
             padding-inline-start: 0.5rem;
         }
 
-        .resume .entrylist > * + * {
+        .resume-container .entrylist > * + * {
             margin-block-start: 1rem;
         }
 
-        .resume .entrylist li .entry__content {
+        .resume-container .entrylist li .entry__content {
             max-inline-size: 100%;
         }
 
-        .resume .additional-info {
+        .resume-container .additional-info {
             display: flex;
             gap: 1.5rem;
         }
 
-        .resume .education ol {
+        .resume-container .education ol {
             padding: 0;
         }
 
-        .resume .additional-info h3 {
+        .resume-container .additional-info h3 {
             font-size: 10pt;
         }
 
-        .resume .additional-info .dates {
+        .resume-container .additional-info .dates {
             inline-size: max-content;
         }
 
-        .resume .skills-certs {
+        .resume-container .skills-certs {
             gap: 1.5rem;
             grid-template-columns: 1fr 2fr;
         }
 
-        .resume .skills-certs li {
+        .resume-container .skills-certs li {
             font-size: 9pt;
         }
 
-        .resume .photo {
+        .resume-container .photo {
             max-inline-size: 6rem;
             max-block-size: 6rem;
         }
 
-        .resume .interests ul {
+        .resume-container .interests ul {
             margin-block-end: 0;
         }
 
