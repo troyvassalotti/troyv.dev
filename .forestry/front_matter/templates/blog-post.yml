@@ -38,29 +38,49 @@ fields:
   default: now
 - name: tags
   type: tag_list
-  default:
-  - post
+  default: []
   label: Tags
-  description: 'Required: post<br>Other: "project" will also populate the slider.'
+  description: Add any additional tags. If this is a project, add the tag "project".
+- name: project
+  type: boolean
+  label: Project
+  description: If this post contains a project and should populate in the projects
+    slider, toggle this on.
 - name: shortname
   type: text
   config:
     required: false
   label: Shortname
   description: This is used for posts tagged "project" as the overlay caption.
+  showOnly:
+    field: project
+    value: true
+- name: use_screenshot_service
+  type: boolean
+  label: Use Screenshot Service
+  showOnly:
+    field: project
+    value: true
 - name: featuredImage
   type: file
   config:
     maxSize: 64
   label: Featured Image
   description: If this is tagged "project" then please provide a featured image.
+  showOnly:
+    field: use_screenshot_service
+    value: false
 - name: website
   type: text
   config:
     required: false
   label: Website
-  description: Where is it hosted? If this is tagged "project" and you want to use the screenshot service, use this instead of the featured image.
+  description: Where is it hosted? If this is tagged "project" and you want to use
+    the screenshot service, use this instead of the featured image.
   default: ''
+  showOnly:
+    field: use_screenshot_service
+    value: true
 pages:
 - src/posts/front-royal-made-a-covers-album.md
 - src/posts/i-m-using-forestry-now.md
