@@ -4,7 +4,7 @@ date: 2021-09-12
 tags:
 - post
 - project
-draft: true
+draft: false
 title: I Don't Have A Podcast
 description: It may seem like all your friends are starting podcasts - and you hate
   FOMO - but humor me for a minute.
