@@ -17,7 +17,7 @@ website: https://www.idonthaveapodcast.com
 ---
 > Are all your friends starting podcasts? Does that make you never want to start your own? Proclaim your dedication to never start your own podcast.
 
-That's the first line of text you'll find on [I Don't Have A Podcast]({{ website }}). I started said website after a night of talking podcasts and overwhelming the podcast landscape is.
+That's the first line of text you'll find on [I Don't Have A Podcast]({{ website }}). I started said website after a night of talking podcasts and how overwhelming the podcast landscape is.
 
 You can find a podcast for _literally everything_ you could ever want. Maybe it feels like you should start your own podcast. But here's the thing: you can be a podcast lover and not host your own podcast.
 
