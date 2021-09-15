@@ -25,4 +25,4 @@ Show your determination to never start your own podcast to the public. Pick the 
 
 ***
 
-_Disclaimer_: I love podcasts and am not advocating for people to stop doing what they love. I simply happen to think it is funny to sign a petition announcing that you'll never start your own podcast out of spite.
+_Disclaimer_: I love podcasts and am not advocating for people to stop doing what they love, but I also happen to think it is funny to sign a petition announcing that you'll never start your own podcast out of spite.

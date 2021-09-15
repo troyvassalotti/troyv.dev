@@ -205,7 +205,6 @@ picture {
 .layout {
   display: grid;
   gap: 2em;
-  margin-block-start: 3em;
 }
 
 .skewed-background {
