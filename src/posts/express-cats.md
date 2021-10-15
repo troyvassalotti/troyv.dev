@@ -3,10 +3,15 @@ title: I Made an Express App About my Cats
 description: What better way to practice Express, Pug, and Tailwind than a cat app?
 layout: post
 date: 2021-04-25
-tags: ['post', 'project']
+tags:
+- post
+- project
 shortname: Express With Cats
-featuredImage: ''
-website: 'https://express-cats-app.herokuapp.com'
+featuredImage: "./src/assets/img/express-cats.jpg"
+website: https://express-cats-app.herokuapp.com
+project: true
+use_screenshot_service: false
+
 ---
 I recently got antsy to make an Express app. The original idea was to try and recreate _this very website_ using Express and Pug templates instead of Nunjucks. It started off fine, but then I realized it'd be a little more of a waste of time to base it on my website since 1) the site is already made with Node, and 2) it won't necessarily teach me something that new.
 
