@@ -26,4 +26,4 @@ I won't recap my entire talk from front to back, but here's the rundown:
 2. I got tired of being distracted in my code editor when trying to make a blog post - or even forgetting what front matter fields are necessary for said post - so I needed a way to streamline the process.
 3. Forestry was brought to my attention and I found it to be a nice companion to the way my site is structured.
 
-I discussed a few of the Nunjucks features used in my templates, as well as how to use front matter to its fullest. The abbreviated talk can be [found on Speaker Deck](). I'm looking forward to giving more talks in the future, and I encourage anyone else who's thinking the same thing to push through the imposter syndrome and give it a shot.
+I discussed a few of the Nunjucks features used in my templates, as well as how to use front matter to its fullest. The abbreviated talk can be [found on Speaker Deck](https://speakerdeck.com/troyvassalotti/using-data-to-create-a-cms-with-forestry-and-eleventy). I'm looking forward to giving more talks in the future, and I encourage anyone else who's thinking the same thing to push through the imposter syndrome and give it a shot.
