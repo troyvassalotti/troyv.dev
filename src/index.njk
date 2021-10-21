@@ -84,7 +84,7 @@ description: Watch as Troy Vassalotti learns his way around a computer.
             <div class="wrapper">
                 <div class="sundial">
                     <button title="Turn the clouds animation on or off." id="sundial" type="button" name="sundial">
-                        <img class="sun" src="/assets/img/sun.svg" alt="">
+                        <img class="sun" src="/assets/img/sun.svg" alt="" loading="lazy">
                     </button>
                 </div>
                 <div class="content">
@@ -582,7 +582,7 @@ description: Watch as Troy Vassalotti learns his way around a computer.
     {% set js %}
     // We use dynamic imports here because Rough Notation is called only when intersecting the viewport
     // All other pages use RN in the LCP, so they import on load
-    const importRoughNotation = () => import("https://cdn.skypack.dev/rough-notation");
+    const importRoughNotation = () => import("https://cdn.skypack.dev/-/rough-notation@v0.5.1-HQ2YBPWAB6JbobRY8XXz/dist=es2020,mode=imports/optimized/rough-notation.js");
     const e1 = document.querySelector('#cool-anim');
     const e2 = document.querySelector('#proj-anim');
     const options = {

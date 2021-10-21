@@ -1,5 +1,4 @@
 ---
-title: Work
 description: "See what I'm currently working on, professionally and personally."
 ---
 {% extends 'layouts/page.njk' %}
@@ -113,7 +112,7 @@ description: "See what I'm currently working on, professionally and personally."
 <script type="module">
     {% set js %}
     // This is for the handdrawn annotations from Rough Notation
-    import {annotate} from 'https://cdn.skypack.dev/rough-notation';
+    import {annotate} from 'https://cdn.skypack.dev/-/rough-notation@v0.5.1-HQ2YBPWAB6JbobRY8XXz/dist=es2020,mode=imports/optimized/rough-notation.js';
 
     const pageTitle = document.querySelector('#page-title');
     pageTitle.setAttribute("style", "color: var(--blackPrimary)");

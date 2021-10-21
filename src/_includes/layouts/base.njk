@@ -4,22 +4,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#2380e7">
-    <meta name="generator" content="Eleventy">
-    <link rel="author" href="/humans.txt">
-    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="RSS Feed">
 
-    <link rel="preconnect" href="https://d33wubrfki0l68.cloudfront.net">
+    {% set theTitle %}{% if title %}{{ title }}{% else %}{{ page.fileSlug | capitalize }}{% endif %}{% endset %}
+    <title>{{ theTitle }} | Troy Vassalotti</title>
+
+    <link rel="preconnect" href="https://d33wubrfki0l68.cloudfront.net" crossorigin>
+    <link rel="preconnect" href="https://fonts.typotheque.com/" crossorigin>
+    <link rel="preconnect" href="https://screenshot.troyv.dev/" crossorigin>
+    <link rel="preconnect" href="https://s3.amazonaws.com/" crossorigin>
     <link rel="dns-prefetch" href="https://d33wubrfki0l68.cloudfront.net">
-    <link rel="preconnect" href="https://s3.amazonaws.com/">
-    <link rel="dns-prefetch" href="https://s3.amazonaws.com/">
+    <link rel="dns-prefetch" href="https://fonts.typotheque.com/">
+    <link rel="dns-prefetch" href="https://screenshot.troyv.dev/">
+    <link rel="dns-prefetch" href="https://cdn.skypack.dev/">
 
-    <link rel="preload" href="https://fonts.typotheque.com/WF-036345-011398.css" as="style">
     <link rel="stylesheet" href="https://fonts.typotheque.com/WF-036345-011398.css" media="not all"
           onload="this.media='all'">
     <link rel="stylesheet" href="/assets/css/style.css">
-    <noscript>
-        <link rel="stylesheet" href="https://fonts.typotheque.com/WF-036345-011398.css">
-    </noscript>
 
     {% block style %}
         {% if css %}
@@ -31,7 +31,7 @@
         {% endif %}
     {% endblock %}
 
-    <title>{{ title }} | Troy Vassalotti</title>
+    <!-- SEO Tags -->
     <meta name="description" content="{{ description }}">
     <meta name="og:locale" content="en_US">
     <meta name="og:type" content="article">
@@ -44,6 +44,12 @@
     <meta name="twitter:creator" content="@validcharacters">
     <link rel="canonical" href="https://www.troyv.dev{{ page.url }}">
 
+    <!-- Other Head Stuff -->
+    <meta name="generator" content="Eleventy">
+    <link rel="author" href="/humans.txt">
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="RSS Feed">
+
+    <!-- Icons and PWA stuff -->
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
@@ -64,8 +70,6 @@
 
 {% block content %}{% endblock %}
 
-<script type="module" src="/assets/js/script.js"></script>
-
 {% block script %}
     {% if js %}
         {% if site.environment == "production" %}
@@ -75,5 +79,7 @@
         {% endif %}
     {% endif %}
 {% endblock %}
+
+<script type="module" src="/assets/js/script.js"></script>
 </body>
 </html>
