@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#2380e7">
+    {%- set sitename = "www.troyv.dev" -%}
 
     {% set theTitle %}{% if title %}{{ title }}{% else %}{{ page.fileSlug | capitalize }}{% endif %}{% endset %}
     <title>{{ theTitle }} | Troy Vassalotti</title>
@@ -21,28 +22,29 @@
           onload="this.media='all'">
     <link rel="stylesheet" href="/assets/css/style.css">
 
-    {% block style %}
-        {% if css %}
-            {% if site.environment == "production" %}
+    {%- block style %}
+        {%- if css %}
+            {%- if site.environment == "production" %}
                 <style>{{ css | cssmin | safe }}</style>
             {% elseif site.environment == "development" %}
                 <style>{{ css | safe }}</style>
-            {% endif %}
-        {% endif %}
-    {% endblock %}
+            {% endif -%}
+        {% endif -%}
+    {% endblock -%}
 
     <!-- SEO Tags -->
-    <meta name="description" content="{{ description }}">
+    {%- set theDescription %}{% if description %}{{ description }}{% else %}{{ page.fileSlug | capitalize }} - a page on {{ sitemame }}{% endif %}{% endset %}
+    <meta name="description" content="{{ theDescription }}">
     <meta name="og:locale" content="en_US">
     <meta name="og:type" content="article">
-    <meta name="og:title" content="{{ title }}">
-    <meta name="og:description" content="{{ description }}">
-    <meta name="og:site_name" content="troyv.dev">
+    <meta name="og:title" content="{{ theTitle }}">
+    <meta name="og:description" content="{{ theDescription }}">
+    <meta name="og:site_name" content="{{ sitemame }}">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="{{ title }}">
-    <meta name="twitter:description" content="{{ description }}">
+    <meta name="twitter:title" content="{{ theTitle }}">
+    <meta name="twitter:description" content="{{ theDescription }}">
     <meta name="twitter:creator" content="@validcharacters">
-    <link rel="canonical" href="https://www.troyv.dev{{ page.url }}">
+    <link rel="canonical" href="https://{{ sitemame }}{{ page.url }}">
 
     <!-- Other Head Stuff -->
     <meta name="generator" content="Eleventy">
@@ -68,17 +70,17 @@
     </nav>
 </header>
 
-{% block content %}{% endblock %}
+{%- block content %}{% endblock -%}
 
-{% block script %}
-    {% if js %}
-        {% if site.environment == "production" %}
+{%- block script %}
+    {%- if js %}
+        {%- if site.environment == "production" %}
             <script type="module">{{ js | jsmin | safe }}</script>
-            {% elseif site.environment == "development" %}
+            {%- elseif site.environment == "development" %}
             <script type="module">{{ js | safe }}</script>
-        {% endif %}
-    {% endif %}
-{% endblock %}
+        {% endif -%}
+    {% endif -%}
+{% endblock -%}
 
 <script type="module" src="/assets/js/script.js"></script>
 </body>
