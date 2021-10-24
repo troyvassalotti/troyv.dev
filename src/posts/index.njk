@@ -43,18 +43,18 @@ description: I occasionally write about things.
     {% endset %}
 </style>
 
-<script type="module">
-    {% set js %}
-    // This is for the handdrawn annotations from Rough Notation
-    import {annotate} from 'https://cdn.skypack.dev/-/rough-notation@v0.5.1-HQ2YBPWAB6JbobRY8XXz/dist=es2020,mode=imports/optimized/rough-notation.js';
+{#<script type="module">#}
+{#    {% set js %}#}
+{#    // This is for the handdrawn annotations from Rough Notation#}
+{#    import {annotate} from 'https://cdn.skypack.dev/-/rough-notation@v0.5.1-HQ2YBPWAB6JbobRY8XXz/dist=es2020,mode=imports/optimized/rough-notation.js';#}
 
-    const pageTitle = document.querySelector('#page-title');
-    const postsAnnotation = annotate(pageTitle, {
-        type: 'circle',
-        color: 'var(--postsColor)',
-        padding: 15,
-    });
+{#    const pageTitle = document.querySelector('#page-title');#}
+{#    const postsAnnotation = annotate(pageTitle, {#}
+{#        type: 'circle',#}
+{#        color: 'var(--postsColor)',#}
+{#        padding: 15,#}
+{#    });#}
 
-    postsAnnotation.show();
-    {% endset %}
-</script>
+{#    postsAnnotation.show();#}
+{#    {% endset %}#}
+{#</script>#}

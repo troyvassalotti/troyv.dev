@@ -17,18 +17,26 @@ tags: ['work']
                 </section>
                 <section class="work-solo__details">
                     <h2>Details</h2>
-                    <ul class="no-list rm-m-bs" role="list">
+                    <dl class="no-list rm-m-bs" role="list">
                         {% if framework %}
-                            <li><span class="bold">Built With:</span> {{ framework }}</li>
+                            <div class="flex">
+                                <dt class="bold">Built With</dt>
+                                <dd>{{ framework }}</dd>
+                            </div>
                         {% endif %}
                         {% if website %}
-                            <li><span class="bold">Visit Live Website:</span> <a href="{{ website }}">{{ website }}</a>
-                            </li>
+                            <div class="flex">
+                                <dt class="bold">Visit Live Website</dt>
+                                <dd><a href="{{ website }}">{{ website }}</a></dd>
+                            </div>
                         {% endif %}
                         {% if repo %}
-                            <li><span class="bold">Repository:</span> <a href="{{ repo }}">{{ repo }}</a></li>
+                            <div class="flex">
+                                <dt class="bold">Repository</dt>
+                                <dd><a href="{{ repo }}">{{ repo }}</a></dd>
+                            </div>
                         {% endif %}
-                    </ul>
+                    </dl>
                 </section>
             </div>
         </div>
@@ -67,7 +75,7 @@ tags: ['work']
 
 <script type="module">
     {% set js %}
-    import Zooming from 'https://cdn.skypack.dev/zooming';
+    import Zooming from 'https://cdn.skypack.dev/-/zooming@v2.1.1-iNyCUNwyb2dr3AokLALM/dist=es2020,mode=imports/optimized/zooming.js';
 
     document.addEventListener('DOMContentLoaded', function () {
         const zooming = new Zooming({

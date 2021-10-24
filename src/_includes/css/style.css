@@ -125,6 +125,10 @@ a.animated-link {
   text-decoration: underline;
 }
 
+dt::after {
+    content: ":\00a0";
+}
+
 .flex {
   display: flex;
 }
@@ -182,6 +186,9 @@ picture {
 .grid {
   display: grid;
   gap: var(--gap);
+}
+.gap {
+    gap: var(--gap);
 }
 
 .two-col {
