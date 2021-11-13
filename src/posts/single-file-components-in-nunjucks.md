@@ -15,7 +15,7 @@ website: ''
 ---
 If you've worked with Vue, chances are you're familiar with its [Single File Components](https://v3.vuejs.org/guide/single-file-component.html#introduction) (SFC for short). If you haven't worked with Vue, the idea of a SFC can be boiled down to encapsulation of the template, logic, **and** styling of a component to a single file.
 
-The site you're looking at right now is an [Eleventy](https://www.11ty.dev/) site using [Nunjucks](https://mozilla.github.io/nunjucks/) templates. I love the way Eleventy handles static site generation, and I think Nunjucks is an incredible templating language for my use cases. I've been working on my website for a couple years now and experimented with a variety of tooling methods for things like SASS compilation, asset minification, critical inlining, etc.; however, the one thing I was missing was a way to create single file components like I've been able to do in Vue.
+The site you're looking at right now is an [Eleventy](https://www.11ty.dev/) site using [Nunjucks](https://mozilla.github.io/nunjucks/) templates. I love the way Eleventy handles static site generation, and I think Nunjucks is an incredible templating language for my use cases. I've been working on my website for a couple years now and experimented with a variety of tooling methods for things like SASS compilation, asset minification, critical inlining, etc. The one thing I was missing was a way to create single file components like I've been able to do in Vue.
 
 ## Moving Towards Native Nunjucks
 
@@ -23,19 +23,22 @@ I didn't branch out of the basic uses of Nunjucks with Eleventy until the last f
 
 Template inheritance with `extends` meant I could define custom blocks aside from the `{{ content }}` (which is used to house any content in a template with the `layout` front matter) in my Nunjucks layouts and templates that can pass into each other. I learned that I couldn't use front matter for template inheritance if I also wanted to define custom blocks.
 
-    ---
-    layout: base.njk
-    ---
-    
-    {% block content %}
-    <!-- HTML and Nunjucks in here -->
-    {% endblock %}
-    
-    {% block styles %}
-    <style>
-    // CSS rules in here, except this wouldn't pass into base.njk even if it had a defined {% block styles %} present
-    </style>
-    {% endblock %}
+```twig
+{% raw %}
+---
+layout: base.njk
+---
+{% block content %}
+<!-- HTML and Nunjucks in here -->
+{% endblock %}
+
+{% block styles %}
+<style>
+// CSS rules in here, except this wouldn't pass into base.njk even if it had a defined {% block styles %} present
+</style>
+{% endblock %}
+{% endraw %}
+```
 
 The above example is showing that even if my file defines code in a `styles` block, and if `base.njk` has a `styles` block defined to house it, nothing would actually be passed in. To pass content into predefined blocks, you have to use `extends`.
 
@@ -53,31 +56,36 @@ When you create a Nunjucks template, you can use `extends` at the top of the fil
 
 In my `base.njk` layout - the primary layout all pages file into - I defined three blocks: content, style, and script.
 
-    <!-- snip -->
+```twig
+{% raw %}
+{# base.njk #}
+<!-- snip -->
     
-    {%- block style %}
-        {%- if css %}
-            {%- if site.environment == "production" %}
-                <style>{{ css | cssmin | safe }}</style>
-            {% elseif site.environment == "development" %}
-                <style>{{ css | safe }}</style>
-            {% endif -%}
+{%- block style %}
+    {%- if css %}
+        {%- if site.environment == "production" %}
+            <style>{{ css | cssmin | safe }}</style>
+        {% elseif site.environment == "development" %}
+            <style>{{ css | safe }}</style>
         {% endif -%}
-    {% endblock -%}
-    
-    <!-- snip -->
-    
-    {% block content %}{% endblock %}
-    
-    {%- block script %}
-        {%- if js %}
-            {%- if site.environment == "production" %}
-                <script type="module">{{ js | jsmin | safe }}</script>
-                {%- elseif site.environment == "development" %}
-                <script type="module">{{ js | safe }}</script>
-            {% endif -%}
+    {% endif -%}
+{% endblock -%}
+
+<!-- snip -->
+
+{% block content %}{% endblock %}
+
+{%- block script %}
+    {%- if js %}
+        {%- if site.environment == "production" %}
+            <script type="module">{{ js | jsmin | safe }}</script>
+            {%- elseif site.environment == "development" %}
+            <script type="module">{{ js | safe }}</script>
         {% endif -%}
-    {% endblock -%}
+    {% endif -%}
+{% endblock -%}
+{% endraw %}
+```
 
 The way those blocks work is as follows:
 
@@ -87,31 +95,35 @@ The way those blocks work is as follows:
 
 Now take a look at an example from my homepage where I define those blocks and variables for use in the layout:
 
-    ---
-    title: Welcome
-    description: Watch as Troy Vassalotti learns his way around a computer.
-    ---
-    {% extends 'layouts/base.njk' %}
-    
-    {% block content %}
-    <main class="layout">
-    	<!-- snip -->
-    </main>
-    {% endblock %}
-    
-    <style>
-    	{% set css %}
-        main.layout { margin-block-start: 3em; }
-        // snip
-        {% endset %}
-    </style>
-    
-    <script type="module">
-    	{% set js %}
-        const sundial = document.querySelector("#sundial");
-        // snip
-        {% endset %}
-    </script>
+```twig
+{% raw %}
+---
+title: Welcome
+description: Watch as Troy Vassalotti learns his way around a computer.
+---
+{% extends 'layouts/base.njk' %}
+
+{% block content %}
+<main class="layout">
+    <!-- snip -->
+</main>
+{% endblock %}
+
+<style>
+    {% set css %}
+    main.layout { margin-block-start: 3em; }
+    // snip
+    {% endset %}
+</style>
+
+<script type="module">
+    {% set js %}
+    const sundial = document.querySelector("#sundial");
+    // snip
+    {% endset %}
+</script>
+{% endraw %}
+```
 
 What's happening in that file now is as follows:
 
