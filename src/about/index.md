@@ -10,11 +10,11 @@ well.
 
 - Writing new music for [Front Royal](https://www.frontroyalband.com).
 - Recording [troy.'s](https://justtroy.bandcamp.com) second album.
-- Writing for [This is a Band](https://www.thisisa.band), a blog about bands for people who want to share them.
-- Creating the Digital Humanities Lab website for [Goucher College](https://www.goucher.edu/).
-- Reading _[The Creative Curve](https://www.thecreativecurve.com/)_ by Allen Gannett.
-- Binging all seasons of _Whose Line Is It Anyway?_
-- Listening to a lot of podcasts on [Linux](https://linuxunplugged.com/) and [Self Hosting](https://selfhosted.show/).
+- Writing for [This is a Band](https://www.thisisa.band), a blog about bands.
+- Creating the Digital Humanities Lab for [Goucher College](https://www.goucher.edu/).
+- Reading _White Noise_ by Don DeLillo.
+- Binging all seasons of _Whose Line Is It Anyway?_ and _Lucifer_.
+- Listening to a lot of podcasts on [code](hhttps://shoptalkshow.com/) and [Self Hosting](https://selfhosted.show/).
 
 ## Find Me Elsewhere
 

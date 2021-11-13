@@ -126,7 +126,7 @@ a.animated-link {
 }
 
 dt::after {
-    content: ":\00a0";
+  content: ":\00a0";
 }
 
 .flex {
@@ -176,7 +176,7 @@ dt::after {
 }
 
 *[data-state="reversed"] {
-  flex-direction: column-reverse !important;
+  flex-direction: column-reverse;
 }
 
 picture {
@@ -187,8 +187,9 @@ picture {
   display: grid;
   gap: var(--gap);
 }
+
 .gap {
-    gap: var(--gap);
+  gap: var(--gap);
 }
 
 .two-col {
@@ -215,8 +216,8 @@ picture {
 }
 
 .skewed-background {
-  --skewUp: skewy(-3deg);
   --skewDown: skewy(3deg);
+  --skewUp: skewy(-3deg);
   display: inline-flex;
   padding: var(--skew-padding, 1em 0 2em);
   position: relative;
@@ -292,9 +293,10 @@ picture {
 
 .button {
   --buttonColor: currentColor;
+  --color: currentColor;
   background-color: transparent;
   border: 1px solid var(--buttonColor);
-  color: currentColor;
+  color: var(--color);
   display: inline-block;
   font-weight: bold;
   padding: 1ex 2ex;
@@ -304,8 +306,8 @@ picture {
 
 .button:hover {
   --buttonColor: var(--bluePrimary);
+  --color: var(--whitePrimary);
   background: var(--buttonColor);
-  color: var(--whitePrimary);
 }
 
 .no-list {
@@ -353,8 +355,8 @@ h6,
 }
 
 .main-navigation__links {
-    padding: 0;
-    padding-inline-start: 1ch;
+  padding: 0;
+  padding-inline-start: 1ch;
 }
 
 .main-navigation__links li:first-of-type {
@@ -451,7 +453,7 @@ h6,
 
   .button:hover {
     --buttonColor: var(--goldPrimary);
-    color: var(--blackPrimary);
+    --color: var(--blackPrimary);
   }
 
   .neumorphism {

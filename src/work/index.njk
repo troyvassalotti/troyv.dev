@@ -13,7 +13,7 @@ description: "See what I'm currently working on, professionally and personally."
                         <p>{{ work.data.description }}</p>
                     </div>
                     <a href="{{ work.url }}">
-                        {% image "https://screenshot.troyv.dev/" + work.data.website | urlencode + "/opengraph", work.data.title, [600, 900, 1200], ['webp', 'jpg'], '(max-width: 700px) 100vw, 1200px', 'has-box-shadow' %}
+                        {% image "https://screenshot.troyv.dev/" + work.data.website | urlencode + "/opengraph", work.data.title, [600, 900, 1200], ['webp', 'jpg'], '(max-width: 700px) 100vw, 1200px' %}
                     </a>
                 </div>
             {% endfor %}

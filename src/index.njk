@@ -47,7 +47,7 @@ description: Watch as Troy Vassalotti learns his way around a computer.
                         {% for work in collections['work'] | reverse %}
                             <figure class="caption-overlay">
                                 <a class="caption-link" href="{{ work.url }}">
-                                     {% image "https://screenshot.troyv.dev/" + work.data.website | urlencode + "/opengraph", work.data.title + " Screenshot", [300, 800, 1200], ['webp', 'jpg'], '(max-width: 700px) 100vw, 1200px', 'caption-image full has-box-shadow' %}
+                                     {% image "https://screenshot.troyv.dev/" + work.data.website | urlencode + "/opengraph", work.data.title + " Screenshot", [300, 800, 1200], ['webp', 'jpg'], '(max-width: 700px) 100vw, 1200px', 'caption-image full' %}
                                     <div class="caption">
                                         <figcaption>
                                             <h3>{{ work.data.title }}</h3>
