@@ -17,21 +17,21 @@ tags: ['work']
                 </section>
                 <section class="work-solo__details">
                     <h2>Details</h2>
-                    <dl class="no-list rm-m-bs" role="list">
+                    <dl>
                         {% if framework %}
-                            <div class="flex">
+                            <div>
                                 <dt class="bold">Built With</dt>
                                 <dd>{{ framework }}</dd>
                             </div>
                         {% endif %}
                         {% if website %}
-                            <div class="flex">
+                            <div>
                                 <dt class="bold">Visit Live Website</dt>
                                 <dd><a href="{{ website }}">{{ website }}</a></dd>
                             </div>
                         {% endif %}
                         {% if repo %}
-                            <div class="flex">
+                            <div>
                                 <dt class="bold">Repository</dt>
                                 <dd><a href="{{ repo }}">{{ repo }}</a></dd>
                             </div>

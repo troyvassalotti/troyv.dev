@@ -24,7 +24,7 @@ I didn't branch out of the basic uses of Nunjucks with Eleventy until the last f
 Template inheritance with `extends` meant I could define custom blocks aside from the `{{ content }}` (which is used to house any content in a template with the `layout` front matter) in my Nunjucks layouts and templates that can pass into each other. I learned that I couldn't use front matter for template inheritance if I also wanted to define custom blocks.
 
 ```twig
-{% raw %}
+{%- raw -%}
 ---
 layout: base.njk
 ---
@@ -57,7 +57,7 @@ When you create a Nunjucks template, you can use `extends` at the top of the fil
 In my `base.njk` layout - the primary layout all pages file into - I defined three blocks: content, style, and script.
 
 ```twig
-{% raw %}
+{%- raw -%}
 {# base.njk #}
 <!-- snip -->
     
@@ -96,7 +96,7 @@ The way those blocks work is as follows:
 Now take a look at an example from my homepage where I define those blocks and variables for use in the layout:
 
 ```twig
-{% raw %}
+{%- raw -%}
 ---
 title: Welcome
 description: Watch as Troy Vassalotti learns his way around a computer.
