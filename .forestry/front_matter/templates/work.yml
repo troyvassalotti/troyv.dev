@@ -53,3 +53,5 @@ fields:
   label: Featured Image
   showOnly:
     field: use_screenshot_service
+pages:
+- src/work/hello-worldvue.md
