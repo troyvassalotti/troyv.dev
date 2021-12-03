@@ -109,19 +109,19 @@ description: "See what I'm currently working on, professionally and personally."
     {% endset %}
 </style>
 
-{#<script type="module">#}
-{#    {% set js %}#}
-{#    // This is for the handdrawn annotations from Rough Notation#}
-{#    import {annotate} from 'https://cdn.skypack.dev/-/rough-notation@v0.5.1-HQ2YBPWAB6JbobRY8XXz/dist=es2020,mode=imports/optimized/rough-notation.js';#}
+<script type="module">
+    {% set js %}
+    // This is for the handdrawn annotations from Rough Notation
+    import {annotate} from 'https://cdn.skypack.dev/-/rough-notation@v0.5.1-HQ2YBPWAB6JbobRY8XXz/dist=es2020,mode=imports/optimized/rough-notation.js';
 
-{#    const pageTitle = document.querySelector('#page-title');#}
-{#    pageTitle.setAttribute("style", "color: var(--blackPrimary)");#}
-{#    const projectsAnnotation = annotate(pageTitle, {#}
-{#        type: 'highlight',#}
-{#        color: 'var(--workColor)',#}
-{#        padding: 15,#}
-{#    });#}
+    const pageTitle = document.querySelector('#page-title');
+    pageTitle.setAttribute("style", "color: var(--blackPrimary)");
+    const projectsAnnotation = annotate(pageTitle, {
+        type: 'highlight',
+        color: 'var(--workColor)',
+        padding: 15,
+    });
 
-{#    projectsAnnotation.show();#}
-{#    {% endset %}#}
-{#</script>#}
+    projectsAnnotation.show();
+    {% endset %}
+</script>

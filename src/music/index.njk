@@ -140,26 +140,26 @@ description: Music is one of my passions. Check out all my musical projects here
     {% endset %}
 </style>
 
-{#<script type="module">#}
-{#    {% set js %}#}
-{#    // This is for the handdrawn annotations from Rough Notation#}
-{#    import {annotate} from 'https://cdn.skypack.dev/-/rough-notation@v0.5.1-HQ2YBPWAB6JbobRY8XXz/dist=es2020,mode=imports/optimized/rough-notation.js';#}
+<script type="module">
+    {% set js %}
+    // This is for the handdrawn annotations from Rough Notation
+    import {annotate} from 'https://cdn.skypack.dev/-/rough-notation@v0.5.1-HQ2YBPWAB6JbobRY8XXz/dist=es2020,mode=imports/optimized/rough-notation.js';
 
-{#    let mq = '(prefers-color-scheme: dark)';#}
+    let mq = '(prefers-color-scheme: dark)';
 
-{#    const pageTitle = document.querySelector('#page-title');#}
+    const pageTitle = document.querySelector('#page-title');
 
-{#    const changeTitleColor = () => {#}
-{#        matchMedia(mq).matches ? pageTitle.setAttribute("style", "color: var(--blackPrimary)") : pageTitle.setAttribute("style", "color: var(--whitePrimary)");#}
-{#    }#}
+    const changeTitleColor = () => {
+        matchMedia(mq).matches ? pageTitle.setAttribute("style", "color: var(--blackPrimary)") : pageTitle.setAttribute("style", "color: var(--whitePrimary)");
+    }
 
-{#    window.matchMedia(mq).addEventListener("change", changeTitleColor());#}
-{#    const musicAnnotation = annotate(pageTitle, {#}
-{#        type: 'highlight',#}
-{#        color: 'var(--musicColor)',#}
-{#        padding: 15,#}
-{#    });#}
+    window.matchMedia(mq).addEventListener("change", changeTitleColor());
+    const musicAnnotation = annotate(pageTitle, {
+        type: 'highlight',
+        color: 'var(--musicColor)',
+        padding: 15,
+    });
 
-{#    musicAnnotation.show();#}
-{#    {% endset %}#}
-{#</script>#}
+    musicAnnotation.show();
+    {% endset %}
+</script>
