@@ -33,18 +33,18 @@
     {% endblock -%}
 
     <!-- SEO Tags -->
-    {%- set theDescription %}{% if description %}{{ description }}{% else %}{{ page.fileSlug | capitalize }} - a page on {{ sitemame }}{% endif %}{% endset %}
+    {%- set theDescription %}{% if description %}{{ description }}{% else %}{{ page.fileSlug | capitalize }} - a page on {{ sitename }}{% endif %}{% endset %}
     <meta name="description" content="{{ theDescription }}">
     <meta name="og:locale" content="en_US">
     <meta name="og:type" content="article">
     <meta name="og:title" content="{{ theTitle }}">
     <meta name="og:description" content="{{ theDescription }}">
-    <meta name="og:site_name" content="{{ sitemame }}">
+    <meta name="og:site_name" content="{{ sitename }}">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="{{ theTitle }}">
     <meta name="twitter:description" content="{{ theDescription }}">
     <meta name="twitter:creator" content="@validcharacters">
-    <link rel="canonical" href="https://{{ sitemame }}{{ page.url }}">
+    <link rel="canonical" href="https://{{ sitename }}{{ page.url }}">
 
     <!-- Other Head Stuff -->
     <meta name="generator" content="Eleventy">
