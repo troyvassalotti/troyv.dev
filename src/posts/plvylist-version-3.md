@@ -1,8 +1,6 @@
 ---
 layout: post
 date: 2021-08-21
-tags:
-- post
 draft: false
 title: Plvylist Version 3
 description: I recently updated Plvylist (again). It's less opinionated and handles

@@ -3,7 +3,7 @@ title: 'troy. is a band'
 description: I decided to give troy. - a band I have - a website.
 layout: post
 date: 2020-11-28
-tags: ['post', 'project']
+tags: ['project']
 featuredImage: ''
 shortname: 'troy. = band'
 website: 'https://validcharacters.netlify.app'

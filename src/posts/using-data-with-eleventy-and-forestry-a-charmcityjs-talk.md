@@ -2,7 +2,6 @@
 layout: post
 date: 2021-10-15
 tags:
-- post
 - talk
 draft: false
 title: Using Data with Eleventy and Forestry (a charmCityJs Talk)

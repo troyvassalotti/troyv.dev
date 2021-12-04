@@ -2,7 +2,6 @@
 layout: post
 date: 2021-07-17
 tags:
-- post
 - front royal
 - music
 draft: false

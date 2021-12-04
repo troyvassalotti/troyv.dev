@@ -3,7 +3,7 @@ title: I'm Predicting My Favorite Songs of 2020
 description: Sometimes, I hear a new song that is such a jam that I can't imagine life without it. We'll see if they hold up at the end of the year.
 layout: post
 date: 2020-04-02
-tags: ['post', 'music']
+tags: ['music']
 ---
 You know that feeling when a song comes out and you can't believe it took this long in the history of music for a jam that good to be written?
 

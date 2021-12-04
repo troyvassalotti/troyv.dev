@@ -3,7 +3,7 @@ title: I Logged My Migraines For A Year
 description: I kept a log of every migraine I had in 2019 in an effort to better understand my triggers and reduce their frequency.
 layout: post
 date: 2020-03-12
-tags: ['post', 'migraines', 'project']
+tags: ['migraines', 'project']
 featuredImage: ''
 shortname: 2019 Migraines
 website: 'https://migraines.troyv.dev'

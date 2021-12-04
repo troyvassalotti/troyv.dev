@@ -10,6 +10,11 @@ module.exports = {
     let d = new Date(date);
     return `${d.getMonth() + 1}/${d.getUTCFullYear()}`;
   },
+  dateString: function (date) {
+    let d = date.toUTCString();
+    let gmt = /\s00:00:00\sGMT/g;
+    return d.replace(gmt, "");
+  },
   readableDate: function (dateObj, format = "dd LLL yyyy") {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(format);
   },

@@ -1,8 +1,6 @@
 ---
 layout: post
 date: 2021-08-15
-tags:
-- post
 draft: false
 title: Over-Optimizing
 description: There is such thing as putting too much effort into making something the best

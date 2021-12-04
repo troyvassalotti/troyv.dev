@@ -3,7 +3,6 @@ title: 'Screen Names'
 description: I think far too much about the use of screen names and usernames.
 layout: post
 date: 2021-05-23
-tags: ['post']
 ---
 
 My first introduction to the internet was being given access to AOL's kid-friendly version, KOL, and it was then that I had to decide on my first screen name. I admit to not having the best recollection of how things went from there, but I feel like it was perfectly fine to have many screen names across platforms instead of being locked to _one_. When I created my first _real_ email address, I followed suit with almost everyone else and chose a name closely resembling my own. That makes sense, and it felt like the right thing to do, but it was from that point forward that my use of custom screen names diminished. I had a screen name for video games and Twitter I guess, but for ease and simplicity I resorted to the _adult_ choice of my personal name for any accounts asking.

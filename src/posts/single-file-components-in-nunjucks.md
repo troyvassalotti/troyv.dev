@@ -1,8 +1,6 @@
 ---
 layout: post
 date: 2021-11-13
-tags:
-- post
 draft: false
 title: Single File Components in Nunjucks
 description: I loved Vue's SFCs so much that I replicated it in Nunjucks.

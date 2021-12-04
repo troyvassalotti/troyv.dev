@@ -2,7 +2,6 @@
 layout: post
 date: 2021-09-12
 tags:
-- post
 - project
 draft: false
 title: I Don't Have A Podcast

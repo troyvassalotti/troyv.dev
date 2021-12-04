@@ -1,11 +1,5 @@
----js
-{
-dateString: function(date) {
-let d = date.toUTCString();
-let gmt = /\s00:00:00\sGMT/g;
-return d.replace(gmt, "");
-}
-}
+---
+tags: ['post']
 ---
 {% extends 'layouts/base.njk' %}
 
@@ -15,8 +9,8 @@ return d.replace(gmt, "");
             <article class="h-entry">
                 <header class="post-header">
                     <div class="wrapper">
-                        <h1 id="post-title">{{ title }}</h1>
-                        <p id="post-date">{{ dateString(page.date) }}</p>
+                        <h1 id="post-title p-name">{{ title }}</h1>
+                        <p id="post-date dt-published">{{ page.date | dateString }}</p>
                         <p id="post-time-to-read">Reading Time: {{ content | timeToRead }}</p>
                     </div>
                 </header>
