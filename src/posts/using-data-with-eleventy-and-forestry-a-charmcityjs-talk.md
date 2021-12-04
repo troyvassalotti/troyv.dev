@@ -1,5 +1,4 @@
 ---
-layout: post
 date: 2021-10-15
 tags:
 - talk

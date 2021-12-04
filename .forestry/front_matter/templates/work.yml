@@ -2,13 +2,6 @@
 label: Work
 hide_body: false
 fields:
-- name: layout
-  type: text
-  config:
-    required: true
-  label: Layout
-  hidden: true
-  default: work
 - name: title
   type: text
   config:

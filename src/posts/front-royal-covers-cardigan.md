@@ -1,7 +1,6 @@
 ---
 title: Front Royal Covers cardigan by Taylor Swift
 description: Front Royal embarked on a five song cover album leading up to the release of new original music. Song number one? Taylor Swift's "cardigan."
-layout: post
 date: 2021-05-21
 tags: ['front royal', 'music']
 ---

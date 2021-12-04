@@ -1,7 +1,6 @@
 ---
 title: Using Media Queries to Make a Light Mode Website
 description: My site is designed with dark mode in mind, but after reading about the latest in media query news, I was antsy to give light mode users a unique experience.
-layout: post
 date: 2020-04-27
 ---
 I was having a normal Saturday morning of exploring the latest features in [Firefox Preview Nightly](https://play.google.com/store/apps/details?id=org.mozilla.fenix.nightly) and installed the Dark Reader add-on to see what it does to my site.

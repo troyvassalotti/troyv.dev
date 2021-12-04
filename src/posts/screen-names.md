@@ -1,7 +1,6 @@
 ---
 title: 'Screen Names'
 description: I think far too much about the use of screen names and usernames.
-layout: post
 date: 2021-05-23
 ---
 

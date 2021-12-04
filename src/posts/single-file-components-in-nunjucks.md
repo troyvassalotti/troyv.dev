@@ -1,5 +1,4 @@
 ---
-layout: post
 date: 2021-11-13
 draft: false
 title: Single File Components in Nunjucks
@@ -11,6 +10,7 @@ featuredImage: ''
 website: ''
 
 ---
+
 If you've worked with Vue, chances are you're familiar with its [Single File Components](https://v3.vuejs.org/guide/single-file-component.html#introduction) (SFC for short). If you haven't worked with Vue, the idea of a SFC can be boiled down to encapsulation of the template, logic, **and** styling of a component to a single file.
 
 The site you're looking at right now is an [Eleventy](https://www.11ty.dev/) site using [Nunjucks](https://mozilla.github.io/nunjucks/) templates. I love the way Eleventy handles static site generation, and I think Nunjucks is an incredible templating language for my use cases. I've been working on my website for a couple years now and experimented with a variety of tooling methods for things like SASS compilation, asset minification, critical inlining, etc. The one thing I was missing was a way to create single file components like I've been able to do in Vue.

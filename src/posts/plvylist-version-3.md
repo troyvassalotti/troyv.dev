@@ -1,5 +1,4 @@
 ---
-layout: post
 date: 2021-08-21
 draft: false
 title: Plvylist Version 3

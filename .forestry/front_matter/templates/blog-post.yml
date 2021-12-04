@@ -7,13 +7,6 @@ fields:
   type: boolean
   label: Draft
   default: false
-- name: layout
-  type: text
-  config:
-    required: true
-  label: Layout
-  default: post
-  hidden: true
 - name: title
   type: text
   config:

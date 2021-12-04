@@ -1,12 +1,13 @@
-{%- set absoluteUrl -%}{{ page.url | url | absoluteUrl(metadata.url) }}{%- endset -%}
-{%- set mentions = webmentions.children | webmentionsForUrl(absoluteUrl) -%}
+{%- set webmentionUrl = page.url | url | absoluteUrl(metadata.url) -%}
+{%- set mentions = webmentions.children | webmentionsForUrl(webmentionUrl) -%}
 <section class="webmentions" id="webmentions">
     <h2>Webmentions</h2>
+    <p class="italic">🚧 This section is a work in progress 🚧</p>
 
-    {% if mentions | length %}
+    {% if mentions.length %}
         <div class="webmentions__facepile">
-            {% for webmention in mentions | reverse | head(5) %}
-                <img src="{% if webmention.author.photo %}{{ webmention.author.photo }}{% else %}{{ '/img/webmention-avatar-default.svg' | url }}{% endif %}"
+            {% for webmention in mentions | reverse %}
+                <img src="{% if webmention.author.photo %}{{ webmention.author.photo }}{% else %}{{ '/assets/img/user.svg' }}{% endif %}"
                      title="{{ webmention.author.name }}" alt="" class="webmentions__face"/>
             {% endfor %}
             {% if mentions.length > 5 %}

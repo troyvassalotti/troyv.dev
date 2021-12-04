@@ -1,7 +1,6 @@
 ---
 title: Finding New In The Old
 description: In 2013, I took a beginner's music theory course in college. Seven years later, I dug up the song in its digital form and gave it new life.
-layout: post
 date: 2020-06-25
 tags: ['music']
 ---

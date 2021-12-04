@@ -1,7 +1,6 @@
 ---
 title: Watch Me Design My Site In Real Time
 description: Netlify opened the door to branch deploys and that's changed my development process for the better. Watch me make this site better in real time!
-layout: post
 date: 2020-07-01
 ---
 ## Update September 2020

@@ -1,7 +1,6 @@
 ---
 title: Thanks, Spotify...
 description: I greatly appreciate you lifting your 10,000 song library limit, but couldn't you have told us this was happening sooner?
-layout: post
 date: 2020-06-08
 ---
 I've been a Spotify user for years--ever since I didn't have a use for iTunes, iPods, or Apple in general really. But the problem with music streaming services became clear after years of reckless song-liking and album-saving.

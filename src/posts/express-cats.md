@@ -1,7 +1,6 @@
 ---
 title: I Made an Express App About my Cats
 description: What better way to practice Express, Pug, and Tailwind than a cat app?
-layout: post
 date: 2021-04-25
 tags:
 - project

@@ -6,8 +6,8 @@
   "scripts": {
     "build": "ELEVENTY_ENV=production eleventy",
     "watch": "eleventy --watch",
-    "serve": "ELEVENTY_ENV=development eleventy --serve",
-    "dev": "npm run serve --quiet",
+    "serve": "ELEVENTY_ENV=production eleventy --serve",
+    "dev": "ELEVENTY_ENV=development eleventy --serve --quiet",
     "debug": "DEBUG=* eleventy",
     "forestry:preview": "eleventy --serve"
   },

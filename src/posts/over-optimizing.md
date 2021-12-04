@@ -1,5 +1,4 @@
 ---
-layout: post
 date: 2021-08-15
 draft: false
 title: Over-Optimizing

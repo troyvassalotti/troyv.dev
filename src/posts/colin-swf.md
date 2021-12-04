@@ -1,7 +1,6 @@
 ---
 title: 'Colin.swf'
 description: "There's no real point to this post."
-layout: post
 date: 2021-05-26
 ---
 

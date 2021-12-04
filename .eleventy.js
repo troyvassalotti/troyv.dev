@@ -62,6 +62,13 @@ module.exports = function (eleventyConfig) {
       );
   });
 
+  // Add excerpt support
+  eleventyConfig.setFrontMatterParsingOptions({
+    excerpt: true,
+    excerpt_separator: "<!-- excerpt -->",
+    excerpt_alias: "excerpt",
+  });
+
   return {
     markdownTemplateEngine: "njk",
     dir: {
