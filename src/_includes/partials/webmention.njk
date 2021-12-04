@@ -24,7 +24,9 @@
                   datetime="{{ webmention.published }}">{{ webmention.published | dateFromTimestamp | readableDate("dd LLL yyyy - HH:mm") }}</time>
         {% endif %}
     </div>
-    <div class="webmention__content p-content">
-        {{ webmention.content.value | safe }}
-    </div>
+    {% if webmention.content %}
+        <div class="webmention__content p-content">
+            {{ webmention.content.value | sanitize }}
+        </div>
+    {% endif %}
 </article>
