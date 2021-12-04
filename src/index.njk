@@ -47,7 +47,7 @@ description: Watch as Troy Vassalotti learns his way around a computer.
                         {% for work in collections['work'] | reverse %}
                             <figure class="caption-overlay">
                                 <a class="caption-link" href="{{ work.url }}">
-                                     {% image "https://screenshot.troyv.dev/" + work.data.website | urlencode + "/opengraph", work.data.title + " Screenshot", [300, 800, 1200], ['webp', 'jpg'], '(max-width: 700px) 100vw, 1200px', 'caption-image full' %}
+                                    {% image "https://screenshot.troyv.dev/" + work.data.website | urlencode + "/opengraph", work.data.title + " Screenshot", [300, 800, 1200], ['webp', 'jpg'], '(max-width: 700px) 100vw, 1200px', 'caption-image full' %}
                                     <div class="caption">
                                         <figcaption>
                                             <h3>{{ work.data.title }}</h3>
@@ -96,7 +96,12 @@ description: Watch as Troy Vassalotti learns his way around a computer.
                     </div>
                     <div class="about-section" id="about">
                         <h2>Looking For More?</h2>
-                        <p>You can probably find it on my <a href="/about/">about</a> page.</p>
+                        <p>You can probably find it on my <a href="/about/">about</a> page or one of my socials:</p>
+                        <ul class="socials rm-m-bs" role="list">
+                            {% for social in nav.socials %}
+                            <li><a href="{{ social.url }}" rel="me">{{ social.name }}</a></li>
+                            {% endfor %}
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -275,6 +280,13 @@ description: Watch as Troy Vassalotti learns his way around a computer.
         display: flex;
         flex-direction: column;
         text-align: end;
+    }
+
+    .socials {
+        display: flex;
+        font-size: var(--step--2);
+        gap: 1em;
+        padding: 0;
     }
 
     .sundial {

@@ -18,6 +18,8 @@ Here's the resulting calendar to showcase 2019 and 2020.
 
 {% include 'partials/migraine-calendar-2020.html' %}
 
+> For more, see my running [migraine calendar site](https://migraines.troyv.dev).
+
 D3 is fun and exciting and equally complicated, so my chart only goes so far in displaying the data. I only keep track of the **day** and **start time** so the chart isn't too overwhelming, but it makes it more maintainable for myself as well.
 
 ## What Were The Causes?

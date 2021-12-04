@@ -12,7 +12,6 @@ well.
 - Recording [troy.'s](https://justtroy.bandcamp.com) second album.
 - Writing for [This is a Band](https://www.thisisa.band), a blog about bands.
 - Creating the Digital Humanities Lab for [Goucher College](https://www.goucher.edu/).
-- Reading _White Noise_ by Don DeLillo.
 - Binging all seasons of _Whose Line Is It Anyway?_ and _Lucifer_.
 - Listening to a lot of podcasts on [code](hhttps://shoptalkshow.com/) and [Self Hosting](https://selfhosted.show/).
 
@@ -27,4 +26,4 @@ I'm also on the following sites with varying levels of activity:
 
 ___
 
-View this site's [Speedlify](https://speedlify.troyv.dev) scores or my [migraine calendar](https://migraines.troyv.dev).
+View this site's [Speedlify](https://speedlify.troyv.dev) scores.
