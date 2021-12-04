@@ -374,36 +374,6 @@ h6,
   text-decoration: none;
 }
 
-.main-navigation__link::before {
-  --linkStartRest: right;
-  --linkStateRest: scaleX(0);
-}
-
-.main-navigation__link:hover::before {
-  --linkStartHover: left;
-  --linkStateHover: scaleX(1);
-}
-
-#link__home::before {
-  background-color: var(--homeColor);
-}
-
-#link__posts::before {
-  background-color: var(--postsColor);
-}
-
-#link__music::before {
-  background-color: var(--musicColor);
-}
-
-#link__work::before {
-  background-color: var(--workColor);
-}
-
-#link__about::before {
-  background-color: var(--aboutColor);
-}
-
 .neumorphism {
   --first-color: #d2d2d9;
   --second-color: #ffffff;
@@ -417,6 +387,16 @@ h6,
 }
 
 @media (prefers-reduced-motion: no-preference) {
+  .main-navigation__link::before {
+    --linkStartRest: right;
+    --linkStateRest: scaleX(0);
+  }
+
+  .main-navigation__link:hover::before {
+    --linkStartHover: left;
+    --linkStateHover: scaleX(1);
+  }
+
   a.animated-link {
     position: relative;
     text-decoration: none;
@@ -438,6 +418,36 @@ h6,
   a.animated-link:hover::before {
     transform: var(--linkStateHover);
     transform-origin: var(--linkStartHover);
+  }
+
+  #link__home::before {
+    background-color: var(--homeColor);
+  }
+
+  #link__posts::before {
+    background-color: var(--postsColor);
+  }
+
+  #link__music::before {
+    background-color: var(--musicColor);
+  }
+
+  #link__work::before {
+    background-color: var(--workColor);
+  }
+
+  #link__about::before {
+    background-color: var(--aboutColor);
+  }
+
+  .active-page::before {
+    --linkStartRest: left;
+    --linkStateRest: scaleX(1);
+  }
+
+  .active-page:hover::before {
+    --linkStartHover: right;
+    --linkStateHover: scaleX(0);
   }
 }
 

@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#2380e7">
-    {%- set sitename = "www.troyv.dev" -%}
 
     {% set theTitle %}{% if title %}{{ title }}{% else %}{{ page.fileSlug | capitalize }}{% endif %}{% endset %}
     <title>{{ theTitle }} | Troy Vassalotti</title>
@@ -12,39 +11,37 @@
     <link rel="preconnect" href="https://d33wubrfki0l68.cloudfront.net" crossorigin>
     <link rel="preconnect" href="https://fonts.typotheque.com/" crossorigin>
     <link rel="preconnect" href="https://screenshot.troyv.dev/" crossorigin>
-    <link rel="preconnect" href="https://s3.amazonaws.com/" crossorigin>
     <link rel="dns-prefetch" href="https://d33wubrfki0l68.cloudfront.net">
     <link rel="dns-prefetch" href="https://fonts.typotheque.com/">
     <link rel="dns-prefetch" href="https://screenshot.troyv.dev/">
     <link rel="dns-prefetch" href="https://cdn.skypack.dev/">
 
-    <link rel="stylesheet" href="https://fonts.typotheque.com/WF-036345-011398.css" media="not all"
-          onload="this.media='all'">
+    <link rel="stylesheet" href="https://fonts.typotheque.com/WF-036345-011398.css">
     <link rel="stylesheet" href="/assets/css/style.css">
 
     {%- block style %}
         {%- if css %}
-            {%- if site.environment == "production" %}
+            {%- if site.environment === "production" %}
                 <style>{{ css | cssmin | safe }}</style>
-            {% elseif site.environment == "development" %}
+            {% elseif site.environment === "development" %}
                 <style>{{ css | safe }}</style>
             {% endif -%}
         {% endif -%}
     {% endblock -%}
 
     <!-- SEO Tags -->
-    {%- set theDescription %}{% if description %}{{ description }}{% else %}{{ page.fileSlug | capitalize }} - a page on {{ sitename }}{% endif %}{% endset %}
+    {%- set theDescription %}{% if description %}{{ description }}{% else %}{{ page.fileSlug | capitalize }} - a page on {{ metadata.domain }}{% endif %}{% endset %}
     <meta name="description" content="{{ theDescription }}">
     <meta name="og:locale" content="en_US">
     <meta name="og:type" content="article">
     <meta name="og:title" content="{{ theTitle }}">
     <meta name="og:description" content="{{ theDescription }}">
-    <meta name="og:site_name" content="{{ sitename }}">
+    <meta name="og:site_name" content="{{ metadata.domain }}">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="{{ theTitle }}">
     <meta name="twitter:description" content="{{ theDescription }}">
     <meta name="twitter:creator" content="@validcharacters">
-    <link rel="canonical" href="https://{{ sitename }}{{ page.url }}">
+    <link rel="canonical" href="https://{{ metadata.domain }}{{ page.url }}">
 
     <!-- Other Head Stuff -->
     <meta name="generator" content="Eleventy">
@@ -52,8 +49,8 @@
     <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="RSS Feed">
 
     <!-- Webmentions -->
-    <link rel="webmention" href="https://webmention.io/www.troyv.dev/webmention" />
-    <link rel="pingback" href="https://webmention.io/www.troyv.dev/xmlrpc" />
+    <link rel="webmention" href="https://webmention.io/www.troyv.dev/webmention"/>
+    <link rel="pingback" href="https://webmention.io/www.troyv.dev/xmlrpc"/>
 
     <!-- Icons and PWA stuff -->
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
@@ -61,26 +58,26 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
     <link rel="manifest" href="/manifest.webmanifest">
 </head>
-<body class="{{ page.fileSlug }}">
+{% set bodyClass %}{% if page.fileSlug == '' %}home{% else %}{{ page.fileSlug }}{% endif %}{% endset %}
+<body class="{{ bodyClass }}">
 
-<header class="site-header hideOnPrint">
-    <nav class="main-navigation" id="main-navigation" aria-label="main navigation">
-        <ul class="main-navigation__links" role="list">
-            {% for link in nav.header %}
-                <li><a href="{{ link.url }}" class="main-navigation__link animated-link"
-                       id="link__{{ link.name }}">{{ link.name }}</a></li>
-            {% endfor %}
-        </ul>
-    </nav>
-</header>
+<nav class="main-navigation hideOnPrint" id="main-navigation" aria-label="main navigation">
+    <ul class="main-navigation__links" role="list">
+        {% for link in nav.header %}
+            <li><a href="{{ link.url }}"
+                   class="main-navigation__link animated-link {% if bodyClass === link.name %}active-page{% endif %}"
+                   id="link__{{ link.name }}">{{ link.name }}</a></li>
+        {% endfor %}
+    </ul>
+</nav>
 
 {%- block content %}{% endblock -%}
 
 {%- block script %}
     {%- if js %}
-        {%- if site.environment == "production" %}
+        {%- if site.environment === "production" %}
             <script type="module">{{ js | jsmin | safe }}</script>
-            {%- elseif site.environment == "development" %}
+            {%- elseif site.environment === "development" %}
             <script type="module">{{ js | safe }}</script>
         {% endif -%}
     {% endif -%}
