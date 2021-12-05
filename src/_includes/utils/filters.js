@@ -36,11 +36,22 @@ module.exports = {
 
     return content ? sanitizeHTML(content, allowedHTML) : "";
   },
-  webmentionsForUrl: function (webmentions, url) {
+  webmentionsForUrl: function (webmentions, url, allowedTypes) {
     // define which types of webmentions should be included per URL.
     // possible values listed here:
     // https://github.com/aaronpk/webmention.io#find-links-of-a-specific-type-to-a-specific-page
-    const allowedTypes = ["mention-of", "in-reply-to", "like-of"];
+    if (!allowedTypes) {
+      // all types
+      allowedTypes = [
+        "mention-of",
+        "in-reply-to",
+        "like-of",
+        "repost-of",
+        "bookmark-of",
+      ];
+    } else if (typeof allowedTypes === "string") {
+      allowedTypes = [allowedTypes];
+    }
 
     // sort webmentions by published timestamp chronologically.
     // swap a.published and b.published to reverse order.
@@ -57,6 +68,6 @@ module.exports = {
       .filter((entry) => entry["wm-target"] === url)
       .filter((entry) => allowedTypes.includes(entry["wm-property"]))
       .filter(checkRequiredFields)
-      .sort(orderByDate)
+      .sort(orderByDate);
   },
 };

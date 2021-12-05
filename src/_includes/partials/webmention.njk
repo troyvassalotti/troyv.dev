@@ -5,16 +5,16 @@
                rel="noopener noreferrer">
                 {% if webmention.author.photo %}
                     <img class="webmention__author__photo u-photo" src="{{ webmention.author.photo }}"
-                         alt="{{ webmention.author.name }}">
+                         alt="{{ webmention.author.name }}" loading="lazy">
                 {% else %}
-                    <img class="webmention__author__photo" src="{{ '/img/webmention-avatar-default.svg' | url }}"
-                         alt="">
+                    <img class="webmention__author__photo" src="{{ defaultImg }}"
+                         alt="" loading="lazy">
                 {% endif %}
                 <strong class="p-name">{{ webmention.author.name }}</strong>
             </a>
         {% else %}
             <span class="webmention__author">
-        <img class="webmention__author__photo" src="{{ '/img/webmention-avatar-default.svg' | url }}" alt="">
+        <img class="webmention__author__photo" src="{{ defaultImg }}" alt="" loading="lazy">
         <strong>Anonymous</strong>
       </span>
         {% endif %}
@@ -26,7 +26,7 @@
     </div>
     {% if webmention.content %}
         <div class="webmention__content p-content">
-            {{ webmention.content.value | sanitize }}
+            {{ webmention.content.value | sanitize | safe }}
         </div>
     {% endif %}
 </article>

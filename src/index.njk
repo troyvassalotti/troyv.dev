@@ -99,7 +99,7 @@ description: Watch as Troy Vassalotti learns his way around a computer.
                         <p>You can probably find it on my <a href="/about/">about</a> page or one of my socials:</p>
                         <ul class="socials rm-m-bs" role="list">
                             {% for social in nav.socials %}
-                            <li><a href="{{ social.url }}" rel="me">{{ social.name }}</a></li>
+                                <li><a href="{{ social.url }}" rel="me">{{ social.name }}</a></li>
                             {% endfor %}
                         </ul>
                     </div>
@@ -347,12 +347,9 @@ description: Watch as Troy Vassalotti learns his way around a computer.
         #clouds {
             animation: fadeIn 3s ease-out;
             block-size: clamp(30%, 15vw, 60%);
-            bottom: 0;
-            left: 0;
+            inset: 0;
             overflow: hidden;
             position: absolute;
-            right: 0;
-            top: 0;
             user-select: none;
             z-index: -1;
         }
@@ -579,6 +576,10 @@ description: Watch as Troy Vassalotti learns his way around a computer.
 
         #sundial img {
             filter: invert(1);
+        }
+
+        .cloud {
+            filter: none;
         }
     }
 
