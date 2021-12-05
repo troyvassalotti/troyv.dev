@@ -53,6 +53,7 @@ fields:
   showOnly:
     field: project
     value: true
+  default: true
 - name: featuredImage
   type: file
   config:
