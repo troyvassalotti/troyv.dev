@@ -5,7 +5,8 @@ layout: about
 
 ## What I'm Up To Now
 
-Inspired by the [/now page movement](https://nownownow.com/about). If you'd like to know about my professional history, you can [view my résumé](resume/). It's updated about as often as anyone else's résumé, but it looks nice and prints
+Inspired by the [/now page movement](https://nownownow.com/about). If you'd like to know about my professional history,
+you can [view my résumé](resume/). It's updated about as often as anyone else's résumé, but it looks nice and prints
 well.
 
 - Writing new music for [Front Royal](https://www.frontroyalband.com).
@@ -19,10 +20,11 @@ well.
 
 I'm also on the following sites with varying levels of activity:
 
-- [GitHub](https://github.com/troyvassalotti)
-- [CodePen](https://codepen.io/troyvassalotti)
-- [Twitter](https://twitter.com/validcharacters)
-- [Mastodon](https://fosstodon.org/@rest)
+<ul>
+{% for social in nav.socials %}
+<li><a href="{{ social.url }}" rel="me">{{ social.name }}</a></li>
+{% endfor %}
+</ul>
 
 ___
 

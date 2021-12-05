@@ -53,7 +53,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy(`${inputDir}/favicon.ico`);
   eleventyConfig.addPassthroughCopy(`${inputDir}/manifest.webmanifest`);
 
-  eleventyConfig.addCollection("posts", (collection) => {
+  eleventyConfig.addCollection("post", (collection) => {
     if (process.env.ELEVENTY_ENV !== "production")
       return [...collection.getFilteredByGlob("./src/posts/*.md")];
     else
