@@ -20,7 +20,7 @@ description: Watch as Troy Vassalotti learns his way around a computer.
                         <p>I'm glad you could make it. Peruse my wares* and <a href="/about/">send me a letter</a> if
                             you're
                             so inclined.</p>
-                        <p class="disclaimer">I only accept bottlecaps as currency, sorry... (I'm kidding)</p>
+                        <p class="txt-smallest">I only accept bottlecaps as currency, sorry... (I'm kidding)</p>
                     </div>
                 </section>
                 <section class="feed" id="posts">
@@ -50,7 +50,7 @@ description: Watch as Troy Vassalotti learns his way around a computer.
                                     {% image "https://screenshot.troyv.dev/" + work.data.website | urlencode + "/opengraph", work.data.title + " Screenshot", [300, 800, 1200], ['webp', 'jpg'], '(max-width: 700px) 100vw, 1200px', 'caption-image full' %}
                                     <div class="caption">
                                         <figcaption>
-                                            <h3>{{ work.data.title }}</h3>
+                                            <h3 class="h4">{{ work.data.title }}</h3>
                                         </figcaption>
                                     </div>
                                 </a>
@@ -97,7 +97,7 @@ description: Watch as Troy Vassalotti learns his way around a computer.
                     <div class="about-section" id="about">
                         <h2>Looking For More?</h2>
                         <p>You can probably find it on my <a href="/about/">about</a> page or one of my socials:</p>
-                        <ul class="socials rm-m-bs" role="list">
+                        <ul class="socials rm-m-bs txt-smaller" role="list">
                             {% for social in nav.socials %}
                                 <li><a href="{{ social.url }}" rel="me">{{ social.name }}</a></li>
                             {% endfor %}
@@ -135,10 +135,6 @@ description: Watch as Troy Vassalotti learns his way around a computer.
     .welcome-screen .content {
         max-inline-size: 35ch;
         text-align: center;
-    }
-
-    .welcome-screen .content .disclaimer {
-        font-size: var(--step--3);
     }
 
     .feed {
@@ -220,10 +216,6 @@ description: Watch as Troy Vassalotti learns his way around a computer.
         flex: 1 1 18.75rem;
     }
 
-    .showcase .caption-overlay h3 {
-        font-size: var(--step-2);
-    }
-
     .showcase .caption-overlay:last-of-type {
         flex: initial;
         margin-block-end: 3em;
@@ -284,7 +276,6 @@ description: Watch as Troy Vassalotti learns his way around a computer.
 
     .socials {
         display: flex;
-        font-size: var(--step--2);
         gap: 1em;
         padding: 0;
     }

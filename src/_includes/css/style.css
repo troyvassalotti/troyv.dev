@@ -350,6 +350,18 @@ h6,
   font-size: var(--step-0);
 }
 
+.txt-small {
+    font-size: var(--step--1);
+}
+
+.txt-smaller {
+    font-size: var(--step--2);
+}
+
+.txt-smallest {
+    font-size: var(--step--3);
+}
+
 .main-navigation {
   font-size: var(--step--1);
 }

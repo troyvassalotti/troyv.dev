@@ -7,9 +7,8 @@
                 <header class="post-header">
                     <div class="wrapper">
                         <h1 id="post-title" class="p-name">{{ title }}</h1>
-                        <p id="post-summary" class="p-summary">{{ description }}</p>
-                        <p id="post-date" class="dt-published">{{ page.date | dateString }}</p>
-                        <p id="post-time-to-read">Reading Time: {{ content | timeToRead }}</p>
+                        <p id="post-summary" class="p-summary italic txt-smaller">{{ description }}</p>
+                        <p class="txt-small"><span id="post-date" class="dt-published">{{ page.date | dateString }}</span> | <span id="post-time-to-read">Reading Time: {{ content | timeToRead }}</span></p>
                     </div>
                 </header>
                 <div class="wrapper">
@@ -67,11 +66,6 @@
         margin-block-start: revert;
     }
 
-    #post-summary {
-        font-size: var(--step--2);
-        font-style: italic;
-    }
-
     #post-navigation {
         --padding: 2rem;
         flex-grow: 1;
@@ -107,12 +101,18 @@
 
     .webmentions {
         border-block-start: 1px solid currentColor;
+        padding-block: 1.5rem;
     }
 
     .webmentions h2 {
         font-size: var(--step-1);
         font-variant: small-caps;
         font-weight: normal;
+        margin: 0;
+    }
+
+    .webmentions h3 {
+        margin-block-end: .5ch;
     }
 
     .webmentions__facepile {

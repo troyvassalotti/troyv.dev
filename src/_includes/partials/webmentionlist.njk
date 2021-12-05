@@ -1,5 +1,6 @@
 {%- set webmentionUrl = page.url | url | absoluteUrl(metadata.url) -%}
 {%- set allMentions = webmentions.children -%}
+{%- set mentionsHere = allMentions | webmentionsForUrl(webmentionUrl) -%}
 {%- set reposts = allMentions | webmentionsForUrl(webmentionUrl, "repost-of") -%}
 {%- set likes = allMentions | webmentionsForUrl(webmentionUrl, "like-of") -%}
 {%- set bookmarks = allMentions | webmentionsForUrl(webmentionUrl, "bookmark-of") -%}
@@ -11,14 +12,14 @@
     <h2>Webmentions</h2>
     <p class="italic">🚧 This section is a work in progress 🚧</p>
 
-    {% if allMentions | length %}
+    {% if mentionsHere | length %}
         {% if reposts | length %}
             <div class="webmentions__repost">
                 <h3>Reposts: {{ reposts | length }}</h3>
                 <div class="webmentions__facepile">
                     {% for webmention in reposts | reverse %}
                         <a class="h-card u-url link-u-exempt" href="{{ webmention.url }}"
-                           id="webmention-{{ webmention['wm-id'] }}" rel="noopener noreferrer">
+                           id="webmention-{{ webmention['wm-id'] }}" target="_blank" rel="noopener noreferrer">
                             <img src="{% if webmention.author.photo %}{{ webmention.author.photo }}{% else %}{{ defaultImg }}{% endif %}"
                                  alt="{{ webmention.author.name }}" class="webmentions__face" loading="lazy"/>
                         </a>
@@ -33,7 +34,7 @@
                 <div class="webmentions__facepile">
                     {% for webmention in likes | reverse %}
                         <a class="h-card u-url link-u-exempt" href="{{ webmention.url }}"
-                           id="webmention-{{ webmention['wm-id'] }}" rel="noopener noreferrer">
+                           id="webmention-{{ webmention['wm-id'] }}" target="_blank" rel="noopener noreferrer">
                             <img src="{% if webmention.author.photo %}{{ webmention.author.photo }}{% else %}{{ defaultImg }}{% endif %}"
                                  alt="{{ webmention.author.name }}" class="webmentions__face" loading="lazy"/>
                         </a>

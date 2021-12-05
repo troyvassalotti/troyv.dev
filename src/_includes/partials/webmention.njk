@@ -14,9 +14,9 @@
             </a>
         {% else %}
             <span class="webmention__author">
-        <img class="webmention__author__photo" src="{{ defaultImg }}" alt="" loading="lazy">
-        <strong>Anonymous</strong>
-      </span>
+                <img class="webmention__author__photo" src="{{ defaultImg }}" alt="" loading="lazy">
+                <strong>Anonymous</strong>
+            </span>
         {% endif %}
 
         {% if webmention.published %}
@@ -24,9 +24,10 @@
                   datetime="{{ webmention.published }}">{{ webmention.published | dateFromTimestamp | readableDate("dd LLL yyyy - HH:mm") }}</time>
         {% endif %}
     </div>
+
     {% if webmention.content %}
         <div class="webmention__content p-content">
-            {{ webmention.content.value | sanitize | safe }}
+            {{ webmention | sanitizeWebmention | safe }}
         </div>
     {% endif %}
 </article>
