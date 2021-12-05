@@ -1,6 +1,6 @@
 ---
 layout: about
-
+description: Normal person stuck in a computer. Do things like view my resume and contact me here.
 ---
 
 ## What I'm Up To Now
@@ -15,16 +15,6 @@ well.
 - Creating the Digital Humanities Lab for [Goucher College](https://www.goucher.edu/).
 - Binging all seasons of _Whose Line Is It Anyway?_ and _Lucifer_.
 - Listening to a lot of podcasts on [code](hhttps://shoptalkshow.com/) and [Self Hosting](https://selfhosted.show/).
-
-## Find Me Elsewhere
-
-I'm also on the following sites with varying levels of activity:
-
-<ul>
-{% for social in nav.socials %}
-<li><a href="{{ social.url }}" rel="me">{{ social.name }}</a></li>
-{% endfor %}
-</ul>
 
 ___
 

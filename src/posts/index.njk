@@ -5,6 +5,22 @@ override:tags: []
 ---
 {% extends 'layouts/page.njk' %}
 
+<script type="module">
+    {% set js %}
+    // This is for the handdrawn annotations from Rough Notation
+    import {annotate} from 'https://cdn.skypack.dev/rough-notation';
+
+    const pageTitle = document.querySelector('#page-title');
+    const postsAnnotation = annotate(pageTitle, {
+        type: 'circle',
+        color: 'var(--postsColor)',
+        padding: 15,
+    });
+
+    postsAnnotation.show();
+    {% endset %}
+</script>
+
 {% block main %}
     <section class="all-posts full">
         <div class="wrapper">
@@ -44,19 +60,3 @@ override:tags: []
 
     {% endset %}
 </style>
-
-<script type="module">
-    {% set js %}
-    // This is for the handdrawn annotations from Rough Notation
-    import {annotate} from 'https://cdn.skypack.dev/-/rough-notation@v0.5.1-HQ2YBPWAB6JbobRY8XXz/dist=es2020,mode=imports/optimized/rough-notation.js';
-
-    const pageTitle = document.querySelector('#page-title');
-    const postsAnnotation = annotate(pageTitle, {
-        type: 'circle',
-        color: 'var(--postsColor)',
-        padding: 15,
-    });
-
-    postsAnnotation.show();
-    {% endset %}
-</script>

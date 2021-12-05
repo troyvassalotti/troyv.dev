@@ -15,7 +15,7 @@ function konamiCode(e) {
     logger.join("") ===
     "arrowuparrowuparrowdownarrowdownarrowleftarrowrightarrowleftarrowrightbaenter"
   ) {
-    import("https://cdn.skypack.dev/-/canvas-confetti@v1.4.0-POmgSMO0U5q84otJfYlN/dist=es2020,mode=imports/optimized/canvas-confetti.js").then((module) => {
+    import("https://cdn.skypack.dev/canvas-confetti").then((module) => {
       let confetti = module.default;
       let duration = 15 * 1000;
       let animationEnd = Date.now() + duration;

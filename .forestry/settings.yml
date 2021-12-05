@@ -29,10 +29,10 @@ sections:
   path: src/about/index.md
   label: About/Now
 - type: document
-  path: src/about/resume.11tydata.json
+  path: src/about/resume.json
   label: Resume
 - type: document
-  path: src/music/index.11tydata.json
+  path: src/music/index.json
   label: Band Links
 - type: directory
   path: src/pages
