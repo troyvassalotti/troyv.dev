@@ -81,5 +81,6 @@ pages:
 - src/posts/over-optimizing.md
 - src/posts/plvylist-is-on-npm.md
 - src/posts/plvylist-version-3.md
+- src/posts/pre-order-long-story-short.md
 - src/posts/single-file-components-in-nunjucks.md
 - src/posts/using-data-with-eleventy-and-forestry-a-charmcityjs-talk.md
