@@ -55,9 +55,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addNunjucksShortcode("imageSync", shortcodes.ImageSync);
 
   // Passthroughs
-  eleventyConfig.addPassthroughCopy(`${inputDir}/assets/css`);
-  eleventyConfig.addPassthroughCopy(`${inputDir}/assets/img`);
-  eleventyConfig.addPassthroughCopy(`${inputDir}/assets/js`);
+  eleventyConfig.addPassthroughCopy(`${inputDir}/assets`);
   eleventyConfig.addPassthroughCopy(`${inputDir}/robots.txt`);
   eleventyConfig.addPassthroughCopy(`${inputDir}/humans.txt`);
   eleventyConfig.addPassthroughCopy(`${inputDir}/favicon.ico`);

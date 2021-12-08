@@ -1,11 +1,7 @@
-const CleanCSS = require("clean-css");
 const { DateTime } = require("luxon");
 const sanitizeHTML = require("sanitize-html");
 
 module.exports = {
-  cssmin: function (code) {
-    return new CleanCSS({ level: 2 }).minify(code).styles;
-  },
   mmyyyy: function (date) {
     let d = new Date(date);
     return `${d.getMonth() + 1}/${d.getUTCFullYear()}`;

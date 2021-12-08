@@ -17,12 +17,16 @@
     <link rel="dns-prefetch" href="https://cdn.skypack.dev/">
 
     <link rel="stylesheet" href="https://fonts.typotheque.com/WF-036345-011398.css">
-    <link rel="stylesheet" href="/assets/css/style.css">
 
     {% block style %}
-        {%- if css %}
-            <style>{{ css | safe }}</style>
-        {% endif %}
+        <style>
+            {% include 'css/modern-reset.css' %}
+            {% include 'css/style.css' %}
+            {% include 'css/prism.css' %}
+            {% if css %}
+            {{ css | safe }}
+            {% endif %}
+        </style>
     {% endblock %}
 
     <!-- SEO Tags -->
@@ -67,16 +71,15 @@
     </ul>
 </nav>
 
-{%- block content %}{% endblock -%}
+{% block content %}{% endblock %}
 
-{%- block script %}
-    {%- if js %}
-        <script type="module">{{ js | safe }}</script>
-    {% endif -%}
-{% endblock -%}
-
-<script type="module">
-    {% include 'js/script.js' %}
-</script>
+{% block script %}
+    <script type="module">
+        {% include 'js/script.js' %}
+        {% if js %}
+        {{ js | safe }}
+        {% endif %}
+    </script>
+{% endblock %}
 </body>
 </html>
