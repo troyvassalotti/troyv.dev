@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#2380e7">
 
-    {%- set theTitle %}{% if title %}{{ title | safe }}{% else %}{{ page.fileSlug | capitalize }}{% endif %}{% endset -%}
+    {% set theTitle %}{% if title %}{{ title | safe }}{% else %}{{ page.fileSlug | capitalize }}{% endif %}{% endset %}
     <title>{{ theTitle }} | Troy Vassalotti</title>
 
     <link rel="preconnect" href="https://d33wubrfki0l68.cloudfront.net" crossorigin>
@@ -19,18 +19,14 @@
     <link rel="stylesheet" href="https://fonts.typotheque.com/WF-036345-011398.css">
     <link rel="stylesheet" href="/assets/css/style.css">
 
-    {%- block style %}
+    {% block style %}
         {%- if css %}
-            {%- if site.environment === "production" %}
-                <style>{{ css | cssmin | safe }}</style>
-            {% elseif site.environment === "development" %}
-                <style>{{ css | safe }}</style>
-            {% endif -%}
-        {% endif -%}
-    {% endblock -%}
+            <style>{{ css | safe }}</style>
+        {% endif %}
+    {% endblock %}
 
     <!-- SEO Tags -->
-    {%- set theDescription %}{% if description %}{{ description | safe }}{% elseif excerpt %}{{ excerpt | safe }}{% else %}{{ theTitle }} - a page on {{ metadata.domain }}{% endif %}{% endset -%}
+    {% set theDescription %}{% if description %}{{ description | safe }}{% elseif excerpt %}{{ excerpt | safe }}{% else %}{{ theTitle }} - a page on {{ metadata.domain }}{% endif %}{% endset %}
     <meta name="description" content="{{ theDescription }}">
     <meta name="og:locale" content="en_US">
     <meta name="og:type" content="article">
@@ -75,14 +71,12 @@
 
 {%- block script %}
     {%- if js %}
-        {%- if site.environment === "production" %}
-            <script type="module">{{ js | jsmin | safe }}</script>
-            {%- elseif site.environment === "development" %}
-            <script type="module">{{ js | safe }}</script>
-        {% endif -%}
+        <script type="module">{{ js | safe }}</script>
     {% endif -%}
 {% endblock -%}
 
-<script type="module" src="/assets/js/script.js"></script>
+<script type="module">
+    {% include 'js/script.js' %}
+</script>
 </body>
 </html>

@@ -5,15 +5,12 @@ const timeToRead = require("eleventy-plugin-time-to-read");
 const embedYouTube = require("eleventy-plugin-youtube-embed");
 const inclusiveLangPlugin = require("@11ty/eleventy-plugin-inclusive-language");
 const addWebComponentDefinitions = require("eleventy-plugin-add-web-component-definitions");
+const htmlmin = require("html-minifier-terser");
 
 const inputDir = "./src";
-const includesDir = `${inputDir}/_includes`;
-const componentsDir = `${includesDir}/components`;
-const utilsDir = `${includesDir}/utils`;
-
+const utilsDir = `./utils`;
 const filters = require(`${utilsDir}/filters`);
-const asyncFilters = require(`${utilsDir}/asyncfilters`);
-const shortcodes = require(`${componentsDir}/shortcodes`);
+const shortcodes = require(`${utilsDir}/shortcodes`);
 
 module.exports = function (eleventyConfig) {
   // Plugins
@@ -36,9 +33,22 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addFilter(filterName, filters[filterName]);
   });
 
-  Object.keys(asyncFilters).forEach((filterName) => {
-    eleventyConfig.addNunjucksAsyncFilter(filterName, asyncFilters[filterName]);
-  });
+  // Transforms
+  if (process.env.ELEVENTY_ENV === "production") {
+    eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
+      if (this.outputPath && this.outputPath.endsWith(".html")) {
+        let minified = htmlmin.minify(content, {
+          useShortDoctype: true,
+          removeComments: true,
+          collapseWhitespace: true,
+          minifyCSS: true,
+          minifyJS: true,
+        });
+        return minified;
+      }
+      return content;
+    });
+  }
 
   // Shortcodes
   eleventyConfig.addNunjucksAsyncShortcode("image", shortcodes.Image);

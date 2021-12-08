@@ -1,8 +1,0 @@
----
-permalink: /assets/js/script.js
-eleventyExcludeFromCollections: true
----
-{%- set js -%}
-    {%- include 'js/script.js' -%}
-{%- endset -%}
-{{ js | jsmin | safe }}
