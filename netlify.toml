@@ -12,3 +12,6 @@
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "SAMEORIGIN"
     X-XSS-Protection = "1"
+
+[[plugins]]
+    package = "./plugins/webmention-cache"
