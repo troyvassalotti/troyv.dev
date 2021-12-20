@@ -4,7 +4,7 @@ description: In 2013, I took a beginner's music theory course in college. Seven 
 date: 2020-06-25
 tags: ['music']
 ---
-I don't write as much music as I used to. There's a combination of reasons for why that is or may be, but their irrelvant to this post. Though I may not sit down and produce a song in its entirety that often, it's a given that I'll end up recording a snippet of a future song during my practice sessions.
+I don't write as much music as I used to. There's a combination of reasons for why that is or may be, but their irrelevant to this post. Though I may not sit down and produce a song in its entirety that often, it's a given that I'll end up recording a snippet of a future song during my practice sessions.
 
 Those recordings - typically a video so I can see myself doing the thing - end up in my Google photos library where they get thrown into a folder aptly named "Song Ideas."
 
@@ -14,7 +14,7 @@ In case you haven't guessed yet, there are/were problems with that process.
 
 My old process was to periodically download them to my laptop and organize them locally in folders named by genres (or percentage complete as a song). Then, when I am in the mood to write for a longer period of time, I create a Guitar Pro 5 session and tab it all out - guitars, drums, bass, you name it.
 
-This Rube Goldberg machine of song writing got the best of me, so I finally made a better system through the use of a Sync.com account, automatic uploads to the cloud for each video/photo, and subsequent categorization with those aptly named folders that now live in the data atmosphere.
+This Rube Goldberg machine of songwriting got the best of me, so I finally made a better system through the use of a Sync.com account, automatic uploads to the cloud for each video/photo, and subsequent categorization with those aptly named folders that now live in the data atmosphere.
 
 Things get lost though; with hundreds of ideas living in video form, I don't have the time or desire to make a full-blown song out of all of them. Hell, some are real blasts from the past to a time when I was about 30lbs heavier and didn't know a soul patch looked terrible on a high schooler.
 
