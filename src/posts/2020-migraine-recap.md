@@ -2,10 +2,13 @@
 title: I Logged My Migraines For Another Year
 description: Another year, another migraine recap.
 date: 2021-02-23
-tags: ['migraines', 'project']
+tags:
+- migraines
+- project
 shortname: 2020 Migraines
 featuredImage: ''
-website: 'https://migraines.troyv.dev'
+website: https://migraines.troyv.dev
+
 ---
 We learned last year that my migraine situation was a problem. Well, more of a problem than usual. You can read more about [how I did in 2019](../i-logged-my-migraines-for-a-year), but it wasn't great. I continued to log each migraine I had throughout 2020 because I'm a nerd.
 
@@ -17,11 +20,10 @@ Here's the resulting calendar to showcase 2019 and 2020.
 
 {% include 'partials/migraine-calendar-2020.html' %}
 
-> For more, see my running [migraine calendar site](https://migraines.troyv.dev).
-
 D3 is fun and exciting and equally complicated, so my chart only goes so far in displaying the data. I only keep track of the **day** and **start time** so the chart isn't too overwhelming, but it makes it more maintainable for myself as well.
 
 ## What Were The Causes?
+
 Look at this graph:
 
 {% image './src/assets/img/2020-by-triggers.png', 'A graph showing the associated trigger for each of the 45 migraines I had. Among those triggers are stress, alcohol, poor sleep, anxiety, rebounds, natural causes, and weather.' %}
@@ -29,6 +31,7 @@ Look at this graph:
 It's _very hard_ to associate what causes a migraine. For one, it isn't always due to a single trigger alone but rather a multitude or building up of triggers over time. Also, it feels too reductive at times - especially when I have no idea what happened and I can only point to _natural causes_.
 
 It shouldn't be surprising then that the order is as follows:
+
 1. Stress or Natural Causes
 2. Weather
 3. Poor Sleep
@@ -36,16 +39,17 @@ It shouldn't be surprising then that the order is as follows:
 5. Alcohol (thanks New Year's Eve)
 
 ## When Did They Most Happen?
+
 I mentioned earlier that I saw improvements in the later part of the year. October was the only month I went without a single attack (woohoo), but from that point on they've been sparse. This is a result of finding the right routine and medications, but it feels great to not live in a constant state of tension-headache-fear.
 
 Look at this graph now:
 
 {% image './src/assets/img/2020-by-quarter.png', 'A graph showing the number of migraines I had per quarter of the year.' %}
 
-- **January - March**: Not great. 10 migraines.
-- **April - June**: Even worse at 16.
-- **July - September**: Barely better with 15.
-- **October - December**: A pleasant total of 4.
+* **January - March**: Not great. 10 migraines.
+* **April - June**: Even worse at 16.
+* **July - September**: Barely better with 15.
+* **October - December**: A pleasant total of 4.
 
 Since I keep track of the time of day they happen, I also know what _times of day_ they most occurred. If that sounds interesting to you, then you'll love this graph:
 
@@ -56,6 +60,7 @@ This one is a little less telling since it's a pretty regular distribution, but 
 > It's not like I was staying up late all the time and that's why I got so many after midnight. The reason for that is I have the unfortunate habit of waking up in the middle of the night with a migraine fully in progress.
 
 ## What Now?
+
 I've stopped doing all the logging by hand because it is cumbersome trying to keep track of every little detail myself. There's this cool app called _Migraine Buddy_ that I'm trying now. So far, it's great because it asks all the same questions I was asking myself _and then some_! I need to keep track of the dates and times separately for my calendar tracker, but that's a worthwhile trade.
 
 Here's to another year of hopeful progress.
