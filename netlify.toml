@@ -1,3 +1,16 @@
+[build]
+    command = "npm run build"
+    publish = "_site"
+
+[build.processing]
+    skip_processing = false
+
+[build.processing.html]
+    pretty_urls = true
+
+[build.environment]
+    NODE_VERSION = "14"
+
 # Redirect from the default Netlify site to my custom domain
 [[redirects]]
   from = "https://troyvassalotti.netlify.com/*"
