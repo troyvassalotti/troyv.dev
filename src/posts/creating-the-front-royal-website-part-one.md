@@ -39,7 +39,7 @@ I decided the these were the most important features to cover:
 ## The Design
 After an afternoon of fiddling around in Figma, I created these four visuals that show some promise for covering [all that](https://en.wikipedia.org/wiki/All_That):
 
-{% image './src/assets/img/froro-des-phase1.jpg', 'The first four visuals of the Front Royal website' %}
+{% image './public/assets/img/froro-des-phase1.jpg', 'The first four visuals of the Front Royal website' %}
 
 I realized by Version 4 that I forgot to add our newsletter signup, so that's why it's missing from the other three...
 

@@ -2,10 +2,10 @@
 title: I Logged My Migraines For A Year
 description: I kept a log of every migraine I had in 2019 in an effort to better understand my triggers and reduce their frequency.
 date: 2020-03-12
-tags: ['migraines', 'project']
+tags: ['migraines']
 featuredImage: ''
 shortname: 2019 Migraines
-website: 'https://migraines.troyv.dev'
+website: ''
 ---
 I've been having migraines for as long as I can remember, so it's not surprising to get a few here and there. But 2019 was not an average year; it was more like 3x my average.
 
@@ -22,7 +22,7 @@ I'm still figuring that out. For years, I've had a pretty basic understanding of
 
 So while it hasn't been a mystery, a year of spreadsheet-tracking surely helped. Look at these _graphs!_
 
-{% image './src/assets/img/migraines-charts.jpg', 'Two charts I created with my migraine data' %}
+{% image './public/assets/img/migraines-charts.jpg', 'Two charts I created with my migraine data' %}
 
 ## What Was I Looking To Find?
 I have this ~~potentially unhealthy~~ truly great relationship with data and spreadsheets. Any and all data I thought could be useful I tracked, but I was most excited for these:
@@ -35,7 +35,7 @@ I thought I'd have more graphs than I do, but I didn't want this project to cons
 ## What Did I Find?
 My main goal was to create calendar heat map detailing each migraine day, color coded by the main trigger, and I'd say I succeeded.
 
-{% image './src/assets/img/migraines-2019.jpg', 'My migraine calendar heat map' %}
+{% image './public/assets/img/migraines-2019.jpg', 'My migraine calendar heat map' %}
 
 I created the calendar with the following underlying data:
 * Date

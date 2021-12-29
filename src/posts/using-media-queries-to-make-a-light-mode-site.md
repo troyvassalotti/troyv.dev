@@ -16,7 +16,7 @@ I don't know how to get the lot of you back to the original color scheme I inten
 ## Dark Reader vs. troyv.dev
 Take a look at my homepage in its default form compared to the dark and light emulation from Dark Reader:
 
-{% image './src/assets/img/mobile-all-three.jpg', 'What my site looks like without any sort of color scheme emulation, a dark color scheme, and a light color scheme' %}
+{% image './public/assets/img/mobile-all-three.jpg', 'What my site looks like without any sort of color scheme emulation, a dark color scheme, and a light color scheme' %}
 
 As you might expect, using Dark Reader turned my site into a dark-but-not-too-dark wonderland. _But_, changing the settings in the add-on to a "light" scheme causes a handful of problems. Mainly, some work I did to make sure my colors were properly contrasting was thrown out the window.
 
@@ -28,7 +28,7 @@ I love making these minor improvements to this site because I know the use cases
 ### Step 1: Color Palette
 I jumped into my favorite [color palette generator, coolors.co](https://coolors.co/), and spun the wheel a few times until I found a basic scheme I liked, locking in colors as I found fit and generating more until I came out with this beautiful palette.
 
-{% image './src/assets/img/light-palette.jpg', 'My light mode color palette' %}
+{% image './public/assets/img/light-palette.jpg', 'My light mode color palette' %}
 
 These would be my guiding light (pun intended) in giving light mode users a de-_light_-ful experience.
 
@@ -107,7 +107,7 @@ Chrome allows you to emulate a color scheme within their Dev Tools settings if y
 
 Turning it on reveals a lovely new version of the site that looks like this:
 
-{% image './src/assets/img/light-mode.jpg', 'My light mode website' %}
+{% image './public/assets/img/light-mode.jpg', 'My light mode website' %}
 
 ### One More Media Query
 I almost forgot to mention that I am catering to our `prefers-reduced-motion` folks with a separate rule turning off the animated header.

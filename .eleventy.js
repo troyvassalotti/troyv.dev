@@ -6,8 +6,6 @@ const embedYouTube = require("eleventy-plugin-youtube-embed");
 const inclusiveLangPlugin = require("@11ty/eleventy-plugin-inclusive-language");
 const addWebComponentDefinitions = require("eleventy-plugin-add-web-component-definitions");
 const htmlmin = require("html-minifier-terser");
-
-const inputDir = "./src";
 const utilsDir = `./utils`;
 const filters = require(`${utilsDir}/filters`);
 const shortcodes = require(`${utilsDir}/shortcodes`);
@@ -20,7 +18,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(timeToRead);
   eleventyConfig.addPlugin(embedYouTube);
   eleventyConfig.addPlugin(addWebComponentDefinitions, {
-    path: (tag) => `/assets/js/components/${tag}.js`,
+    path: (tag) => `/assets/js/${tag}.js`,
   });
   eleventyConfig.addPlugin(sitemap, {
     sitemap: {
@@ -55,11 +53,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addNunjucksShortcode("imageSync", shortcodes.ImageSync);
 
   // Passthroughs
-  eleventyConfig.addPassthroughCopy(`${inputDir}/assets`);
-  eleventyConfig.addPassthroughCopy(`${inputDir}/robots.txt`);
-  eleventyConfig.addPassthroughCopy(`${inputDir}/humans.txt`);
-  eleventyConfig.addPassthroughCopy(`${inputDir}/favicon.ico`);
-  eleventyConfig.addPassthroughCopy(`${inputDir}/manifest.webmanifest`);
+  eleventyConfig.addPassthroughCopy({"./public": "/"});
 
   eleventyConfig.addCollection("post", (collection) => {
     if (process.env.ELEVENTY_ENV !== "production")

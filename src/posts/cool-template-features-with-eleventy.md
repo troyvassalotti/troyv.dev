@@ -65,7 +65,7 @@ I encountered a few hiccups when figuring out how to tell it where my image was.
 ```twig
 {# index.njk #}
 {% raw %}
-{% image './src/assets/img/me-on-set.jpg', 'This is me. I look like this.', [300, 600], ['webp', 'avif', 'jpg'], '(max-width: 700px) 100vw, 50vw', 'full', 'me' %}
+{% image './public/assets/img/me-on-set.jpg', 'This is me. I look like this.', [300, 600], ['webp', 'avif', 'jpg'], '(max-width: 700px) 100vw, 50vw', 'full', 'me' %}
 {% endraw %}
 ```
 
@@ -186,10 +186,10 @@ I actually started doing this because I _needed to_ for the paired shortcodes on
 {%- endset -%}
 
 {%- projectFeature 'Front Royal (The Band, Not The Town)', frontroyal, 'https://www.frontroyalband.com', 'fr' -%}
-      {%- imageSync './src/assets/img/front-royal1920x1080.jpeg', 'Screenshot of the Front Royal website', projWidths, imgFormats, projSizes, 'full' -%}
+      {%- imageSync './public/assets/img/front-royal1920x1080.jpeg', 'Screenshot of the Front Royal website', projWidths, imgFormats, projSizes, 'full' -%}
     {%- endprojectFeature -%}
     {%- projectFeature 'NotSocial: A New Type of Social Media', notsocial, 'https://notsocial.app/', 'ns' -%}
-      {%- imageSync './src/assets/img/notsocial1920x1080.jpeg', 'Screenshot of the NotSocial website', projWidths, imgFormats, projSizes, 'full' -%}
+      {%- imageSync './public/assets/img/notsocial1920x1080.jpeg', 'Screenshot of the NotSocial website', projWidths, imgFormats, projSizes, 'full' -%}
 {%- endprojectFeature -%}
 {% endraw %}
 ```
