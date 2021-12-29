@@ -59,7 +59,7 @@
         "start": "2017-05-30",
         "end": "2017-09-01"
       },
-      "responsibilities": "I was responsible for cataloging our inventory of content and creative works to help the team quickly find assets. Additionally, I researched relevant topics for writing and publishing blogs.",
+      "responsibilities": "I was responsible for cataloging our inventory of content and creative works to help the team quickly find assets.",
       "hideonprint": true
     },
     {
@@ -73,22 +73,22 @@
         "start": "2017-09-02",
         "end": "2019-08-28"
       },
-      "responsibilities": "I managed the email channel to drive conversions and engagement. I designed and built mobile-responsive promotional and transactional templates, implemented automated workflows, list management, and improved our HubSpot deliverability score from a 1 to a 67 (avg. score = 50), greatly improving effectiveness of the channel. I also headed SEO, which included maintaining our keyword database and Moz Pro reporting, identifying opportunities for optimized landing pages that greatly increased organic performance."
+      "responsibilities": "I managed the email channel, driving conversions and engagement. I designed and built mobile-responsive email templates, automated workflows, managed lists, and improved our HubSpot deliverability score from a 1 to a 67 (avg. score = 50), greatly improving channel effectiveness. I headed SEO, including maintaining our keyword database and Moz Pro reporting."
     },
     {
-      "job": "Technical and Compliance Lead",
+      "job": "Senior Technical and Compliance Specialist",
       "employer": {
-        "name": "NewMarket Health",
+        "name": "NewMarket Group",
         "city": "Baltimore, MD",
         "website": "https://www.newmarkethealth.com/"
       },
       "dates": {
         "start": "2019-10-14"
       },
-      "responsibilities": "I conduct end-to-end testing for web-based products and promotions, while also ensuring best practices in performance and accessibility. I monitor the health of our domains, taking note of blacklisting reports. My work extends to the affiliate marketing team where I oversee compliance of our advertisers in accordance to guidelines. I stay up to date on the latest developments in the industry to help my teams be prepared for potential changes or optimization opportunities."
+      "responsibilities": "I conduct technical reviews for web-based products and promotions, ensuring best practices in performance and accessibility. I monitor the health of our domains, acting on any blacklisting reports and working with the marketing team to address compliance issues on the part of our affiliates. I stay up to date on the latest developments in the industry, helping my teams stay informed on upcoming changes or optimization opportunities."
     },
     {
-      "job": "Web Developer & Designer",
+      "job": "Web Developer/Designer",
       "employer": {
         "name": "Goucher College",
         "city": "Baltimore, MD",
@@ -97,7 +97,7 @@
       "dates": {
         "start": "2021-06-07"
       },
-      "responsibilities": "I design and develop websites in a WordPress multisite network for the college's arts department. I am the main maintainer of the network and have created custom child-themes and PHP templates to meet the requirements of each site. The site will be used by students and faculty alike, so I keep structured documentation in order for others who aren't myself to be able to complete their work as needed."
+      "responsibilities": "I manage a WordPress multisite network for the arts department, designing and developing sites, PHP templates, and child themes to meet the needs of the department. Students and staff contribute to the site, so I keep structured documentation in order for everyone to be able to complete their work as needed."
     }
   ],
   "education": [
@@ -116,12 +116,11 @@
   ],
   "skills": [
     "HTML, CSS, JavaScript",
-    "Data Visualization",
-    "Git",
-    "SEO",
     "Vue",
     "React",
-    "WordPress/PHP",
+    "Data Visualization",
+    "Git",
+    "WordPress",
     "End-to-End Testing"
   ],
   "certifications": [
@@ -161,12 +160,12 @@
       {
         "name": "Front Royal",
         "url": "https://www.frontroyalband.com/",
-        "desc": "A mostly-punk band with a splash of indie."
+        "desc": "A punk band with a splash of indie."
       },
       {
         "name": "troy",
         "url": "https://justtroy.bandcamp.com/",
-        "desc": "My solo music project where I do whatever I want."
+        "desc": "My solo project where I do whatever I want."
       }
     ],
     "items": [

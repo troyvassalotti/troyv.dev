@@ -31,7 +31,7 @@
         <header class="header">
             <div class="container">
                 <div class="meta h-card">
-                    {% image './src/assets/img/' + meta.picture, 'Troy standing in front of a brick wall, posing for a professional photo.', [300, 600], ['webp', 'jpg'], '(max-width: 400px) 100vw, 50vw', 'photo u-photo', '', 'eager' %}
+{#                    {% image './src/assets/img/' + meta.picture, 'Troy standing in front of a brick wall, posing for a professional photo.', [300, 600], ['webp', 'jpg'], '(max-width: 400px) 100vw, 50vw', 'photo u-photo', '', 'eager' %}#}
                     <div>
                         <div class="name">
                             <h1 class="p-name">{{ meta.name }}</h1>
@@ -180,12 +180,6 @@
                 </section>
             </div>
         </main>
-        <footer class="footer hideOnPrint">
-            <div class="container">
-                <p>&copy; {{ meta.name }}</p>
-                <p>Last Updated: {{ page.date.toUTCString() }}</p>
-            </div>
-        </footer>
     </main>
 {% endblock %}
 
@@ -411,25 +405,8 @@
         font-weight: bold;
     }
 
-    .resume-container .footer {
-        background-color: ButtonFace;
-        font-size: 0.9rem;
-        text-align: center;
-        padding-block-start: 2rem;
-        padding-block-end: 2rem;
-    }
-
     .showOnPrint {
         display: none;
-    }
-
-    @media (min-width: 668px) {
-        .resume-container .footer .container {
-            display: flex;
-            justify-content: space-between;
-            max-inline-size: 75ch;
-            margin: auto;
-        }
     }
 
     @media print, (min-width: 668px) {
@@ -448,12 +425,8 @@
         .resume-container {
             position: relative;
             display: grid;
-            grid-template-areas: "sidebar main" "sidebar footer";
+            grid-template-areas: "sidebar main";
             grid-template-columns: 30% 70%;
-        }
-
-        .resume-container .footer {
-            grid-area: footer;
         }
 
         .resume-container .main {
@@ -490,15 +463,15 @@
         }
 
         .resume-container h1 {
-            font-size: 20pt;
+            font-size: 15pt;
         }
 
         .resume-container h2 {
-            font-size: 14pt;
+            font-size: 12pt;
         }
 
         .resume-container h3 {
-            font-size: 12pt;
+            font-size: 11pt;
         }
 
         .resume-container .meta {
@@ -506,7 +479,7 @@
         }
 
         .resume-container .my-title {
-            font-size: 12pt;
+            font-size: 10pt;
         }
 
         .resume-container .contact__links {
@@ -515,8 +488,12 @@
         }
 
         .resume-container :is(.contact__info, .contact__social) {
-            font-size: 9pt;
+            font-size: 7pt;
             flex-direction: row;
+        }
+
+        .resume-container :is(.contact__info, .contact__social) svg {
+            max-inline-size: 16px;
         }
 
         .resume-container .entrylist {
@@ -541,7 +518,7 @@
         }
 
         .resume-container .additional-info h3 {
-            font-size: 10pt;
+            font-size: 9pt;
         }
 
         .resume-container .additional-info .dates {
@@ -554,7 +531,7 @@
         }
 
         .resume-container .skills-certs li {
-            font-size: 9pt;
+            font-size: 8pt;
         }
 
         .resume-container .photo {

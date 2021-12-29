@@ -5,7 +5,7 @@ date: 2021-04-25
 tags:
 - project
 shortname: Express With Cats
-featuredImage: "./src/assets/img/express-cats.jpg"
+featuredImage: "./src/assets/img/cats.jpg"
 website: https://express-cats-app.herokuapp.com
 project: true
 use_screenshot_service: false
