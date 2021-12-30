@@ -80,7 +80,7 @@
                     </p>
                 </header>
                 <plvylist-player
-                        tracks="/assets/js/alone-in-a-crowded-room.json">
+                        tracks="/assets/js/alone-in-a-crowded-room.json" starting-volume="0.75">
                 </plvylist-player>
             </div>
         </section>
@@ -101,8 +101,7 @@
     }
 
     :is(.music-player header, .bands-container .section-header) p {
-        margin-inline-end: auto;
-        margin-inline-start: auto;
+        margin-inline: auto;
         max-inline-size: 60ch;
     }
 
@@ -110,31 +109,27 @@
         align-items: flex-end;
         display: flex;
         flex-wrap: wrap;
+        row-gap: 2rem;
     }
 
     .band {
         display: flex;
         flex: 1 1 auto;
         flex-direction: column;
-        margin-inline-end: 1ex;
-        margin-inline-start: 1ex;
     }
 
     .band-logo img {
         filter: invert(1);
-        max-inline-size: 18.75rem;
+        max-inline-size: 15rem;
+        transition: opacity .1s ease;
     }
 
     .icon-bar {
         align-items: center;
-        background-color: currentColor;
         display: flex;
-        inline-size: 100%;
         gap: 1.5rem;
-        justify-content: space-around;
         margin: auto;
         max-inline-size: max-content;
-        padding: 1ex 2ex;
     }
 
     .icon-link {
@@ -142,19 +137,21 @@
     }
 
     .icon-bar img {
-        filter: invert(1);
-        inline-size: 100%;
         max-inline-size: 48px;
         transition: opacity .1s ease;
     }
 
-    .icon-bar img:hover {
+    :is(.icon-bar, .band-logo) img:hover {
         opacity: .5;
     }
 
     @media (prefers-color-scheme: dark) {
-        :is(.band-logo, .icon-bar) img {
+        .band-logo img {
             filter: none;
+        }
+
+        .icon-bar img {
+            filter: invert(1);
         }
     }
 

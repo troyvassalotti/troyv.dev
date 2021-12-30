@@ -1,6 +1,7 @@
 {
   "description": "Music is one of my passions. Check out all my musical projects here.",
-  "frontRoyalSocial": [{
+  "frontRoyalSocial": [
+    {
       "href": "https://frontroyalmd.bandcamp.com/",
       "img": "bandcamp-button-bc-circle-black-64.png",
       "alt": "Bandcamp"
@@ -26,14 +27,16 @@
       "alt": "Link out to the band's website."
     }
   ],
-  "troySocial": [{
-    "href": "https://justtroy.bandcamp.com/",
-    "img": "bandcamp-button-bc-circle-black-64.png",
-    "alt": "Bandcamp"
-  },
+  "troySocial": [
     {
-      "href": "https://validcharacters.netlify.app",
+      "href": "https://justtroy.bandcamp.com/",
+      "img": "bandcamp-button-bc-circle-black-64.png",
+      "alt": "Bandcamp"
+    },
+    {
+      "href": "https://music.troyvassalotti.xyz",
       "img": "link.svg",
       "alt": "Link out to the band's personal website."
-    }]
+    }
+  ]
 }
