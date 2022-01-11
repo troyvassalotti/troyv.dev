@@ -6,7 +6,7 @@ tags:
 - project
 shortname: Express With Cats
 featuredImage: "./public/assets/img/cats.jpg"
-website: https://express-cats-app.herokuapp.com
+website: https://cats.onrender.com/
 project: true
 use_screenshot_service: false
 
@@ -175,3 +175,5 @@ But I didn't love having a blank slate either. Since everything is reset with no
 You can find the app [at this link]({{ website }}). I chose Heroku to host it because I had recently used it for - you guessed it - a tutorial. I had way more of an issue getting the app to work than I should have. For some reason, the first bunch of pushes were giving me good deploy logs with a broken URL. I still don't know how I fixed the issue, but I uninstalled and reinstalled dependencies, and changed some language even if the language _worked locally_, until the app finally deployed correctly. Again, nothing in the logs were telling me something was wrong so...
 
 I have no intentions of editing this thing. It is alive and in the world, and I am banished from making any improvements because it doesn't matter - it's a joke site. The only thing that might change is where I host it, but Heroku is fine for now.
+
+> Now hosted on Render!
