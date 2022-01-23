@@ -2,13 +2,15 @@
 title: Finding New In The Old
 description: In 2013, I took a beginner's music theory course in college. Seven years later, I dug up the song in its digital form and gave it new life.
 date: 2020-06-25
-tags: ['music']
+tags: ["music"]
 ---
+
 I don't write as much music as I used to. There's a combination of reasons for why that is or may be, but their irrelevant to this post. Though I may not sit down and produce a song in its entirety that often, it's a given that I'll end up recording a snippet of a future song during my practice sessions.
 
 Those recordings - typically a video so I can see myself doing the thing - end up in my Google photos library where they get thrown into a folder aptly named "Song Ideas."
 
 In case you haven't guessed yet, there are/were problems with that process.
+
 1. I can't search for any of these videos by name;
 2. They don't get categorized any further than being labeled a _song idea_.
 
@@ -29,10 +31,11 @@ It turned out to be a test of what little ego I had at the time. I wrote this fa
 I was pretty proud of the little thing and thought for sure I'd nailed it.
 
 My professor reviewed it and sent back his notes, including a re-write of the song to show me what he meant. Among those edits were:
-* Cutting the BPM in half;
-* Solidifying it into a major key;
-* Changing emphasis of key chords;
-* And some other things that would be too much to list.
+
+-   Cutting the BPM in half;
+-   Solidifying it into a major key;
+-   Changing emphasis of key chords;
+-   And some other things that would be too much to list.
 
 I was a bit unsettled hearing the changes, but it was nothing meant to offend me. He was incredibly nice and helpful about the project. Looking back, I greatly appreciate it even if it changed the theme of the song so much.
 

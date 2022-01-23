@@ -3,18 +3,18 @@
 <script type="module">
     {% set js %}
     // This is for the handdrawn annotations from Rough Notation
-    import {annotate} from 'https://cdn.skypack.dev/rough-notation';
+    import { annotate } from "https://cdn.skypack.dev/rough-notation"
 
-    const pageTitle = document.querySelector('#page-title');
+    const pageTitle = document.querySelector("#page-title")
     const aboutAnnotation = annotate(pageTitle, {
-        type: 'bracket',
-        color: 'var(--aboutColor)',
+        type: "bracket",
+        color: "var(--aboutColor)",
         brackets: [
-            'left', 'right',
-        ],
-    });
+            "left", "right"
+        ]
+    })
 
-    aboutAnnotation.show();
+    aboutAnnotation.show()
     {% endset %}
 </script>
 

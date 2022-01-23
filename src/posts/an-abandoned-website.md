@@ -1,12 +1,13 @@
 ---
-title: 'An Abandoned Website'
+title: "An Abandoned Website"
 description: We've all come across an abandoned website that was left to wither away and never be thought about again. Well, what if it actually looked that way too?
 date: 2020-09-12
-tags: ['project']
-featuredImage: ''
+tags: ["project"]
+featuredImage: ""
 shortname: Abandoned Website
-website: 'https://abandoned-website.netlify.app'
+website: "https://abandoned-website.netlify.app"
 ---
+
 Websites can be bought and live on forever...or so long as the domain name continues to be renewed. As a result, some sites become abandoned, living in the aether, but because of backwards compatibility they don't really _look abandoned_.
 
 Well, what if they did? What if the website deteriorated over time, things fell apart, and the darkness came to consume it? That's where my new project, [Abandoned Website]({{ website }}), comes in.
@@ -14,9 +15,10 @@ Well, what if they did? What if the website deteriorated over time, things fell 
 I don't know when, why, or how I came up with the idea to create this project. If I'm remembering correctly, it was way back in my early stages of learning to code - you know, when you're full of ideas that sound _fun_ and _exciting_ and _definitely not hard to implement_ - and I jotted it down as a note in my phone.
 
 I didn't have the skills to build it yet.
-- No design skills.
-- I could barely code an email and that was my full-time job.
-- No clear idea how to even make a website live.
+
+-   No design skills.
+-   I could barely code an email and that was my full-time job.
+-   No clear idea how to even make a website live.
 
 But I knew one day I'd get there, and here we are.
 
@@ -27,13 +29,15 @@ Anyway, with everything that was 2020, it came time to pick this project up! I c
 Hugo's great. I was really worried that I chose the wrong static site generator when I actually read the docs (should've learned my [lesson from fake social media app](../not-social-media)), but I accepted the challenge and made it anyway.
 
 It wasn't a complete mistake! Now, Hugo might not be the best suited option here:
-- This site isn't really a blog.
-- It's only a few pages.
-- Not a lot gets reused.
+
+-   This site isn't really a blog.
+-   It's only a few pages.
+-   Not a lot gets reused.
 
 Only later in the build process did I realize those were shortcomings, but once I understood the way the directory structure works in Hugo it all made sense, and I was able to make it work for me.
 
 Honestly, the hardest parts became the following:
+
 1. Getting the favicon to appear when in the root directory (I gave up and put it in the `/img/` directory instead).
 2. Templating the page titles the way I wanted them to be (Learning about the `{% raw %}{{ .Page.Title }}{% endraw %}` variable changed everything for me).
 3. Setting up the 404 page to work within the `baseof.html` template while still having its own special treatment (inline `<style>` blocks and `noindex` directive).

@@ -4,13 +4,13 @@
     {% set js %}
     // We use dynamic imports here because Rough Notation is called only when intersecting the viewport
     // All other pages use RN in the LCP, so they import on load
-    const importRoughNotation = () => import("https://cdn.skypack.dev/rough-notation");
-    const e1 = document.querySelector('#cool-anim');
-    const e2 = document.querySelector('#proj-anim');
+    const importRoughNotation = () => import("https://cdn.skypack.dev/rough-notation")
+    const e1 = document.querySelector("#cool-anim")
+    const e2 = document.querySelector("#proj-anim")
     const options = {
         root: null,
         rootMargin: "0px",
-        threshold: .5,
+        threshold: .5
     }
 
     // create the intersection observer for the annotations
@@ -18,67 +18,67 @@
         entries.map((entry) => {
             if (entry.isIntersecting) {
                 importRoughNotation().then((module) => {
-                    let annotate = module.annotate;
-                    let annotationGroup = module.annotationGroup;
+                    let annotate = module.annotate
+                    let annotationGroup = module.annotationGroup
                     const a1 = annotate(e1, {
-                        type: 'box',
-                        color: 'var(--bluePrimary)',
-                    });
+                        type: "box",
+                        color: "var(--bluePrimary)"
+                    })
 
                     const a2 = annotate(e2, {
-                        type: 'underline',
-                        color: 'var(--redPrimary)',
-                        padding: 10,
-                    });
+                        type: "underline",
+                        color: "var(--redPrimary)",
+                        padding: 10
+                    })
 
                     // create an annotation group
-                    const ag = annotationGroup([a1, a2,]);
-                    ag.show();
+                    const ag = annotationGroup([a1, a2])
+                    ag.show()
                 })
-                handDrawObserver.unobserve(entry.target);
+                handDrawObserver.unobserve(entry.target)
             }
-        });
+        })
     }
 
-    const handDrawObserver = new IntersectionObserver(handleHandrawing, options);
-    handDrawObserver.observe(e1);
+    const handDrawObserver = new IntersectionObserver(handleHandrawing, options)
+    handDrawObserver.observe(e1)
 
     // deal with
     // the clouds
-    const more = document.querySelector("#more");
-    const clouds = document.querySelector("#clouds");
-    clouds.classList.add("sunset");
+    const more = document.querySelector("#more")
+    const clouds = document.querySelector("#clouds")
+    clouds.classList.add("sunset")
 
     function handleClouds(entries) {
         entries.map((entry) => {
             if (entry.isIntersecting) {
-                clouds.classList.remove("sunset");
-                cloudsObserver.unobserve(entry.target);
+                clouds.classList.remove("sunset")
+                cloudsObserver.unobserve(entry.target)
             }
-        });
+        })
     }
 
-    const cloudsObserver = new IntersectionObserver(handleClouds);
-    cloudsObserver.observe(more);
+    const cloudsObserver = new IntersectionObserver(handleClouds)
+    cloudsObserver.observe(more)
 
-    const sundial = document.querySelector("#sundial");
-    const sundialIcon = sundial.querySelector("img");
+    const sundial = document.querySelector("#sundial")
+    const sundialIcon = sundial.querySelector("img")
     const sun = "sun"
-    const moon = "moon";
+    const moon = "moon"
 
     sundial.addEventListener("click", () => {
         if (sundialIcon.classList.contains(sun)) {
-            clouds.classList.add("sunset");
-            sundialIcon.setAttribute('src', `/assets/img/${moon}.svg`);
-            sundialIcon.classList.remove(sun);
-            sundialIcon.classList.add(moon);
+            clouds.classList.add("sunset")
+            sundialIcon.setAttribute("src", `/img/${moon}.svg`)
+            sundialIcon.classList.remove(sun)
+            sundialIcon.classList.add(moon)
         } else if (sundialIcon.classList.contains(moon)) {
-            clouds.classList.remove("sunset");
-            sundialIcon.setAttribute('src', `/assets/img/${sun}.svg`);
-            sundialIcon.classList.remove(moon);
-            sundialIcon.classList.add(sun);
+            clouds.classList.remove("sunset")
+            sundialIcon.setAttribute("src", `/img/${sun}.svg`)
+            sundialIcon.classList.remove(moon)
+            sundialIcon.classList.add(sun)
         }
-    });
+    })
     {% endset %}
 </script>
 
@@ -92,7 +92,7 @@
                         <p class="typewriter typewriter_2">...this is a website.</p>
                     </div>
                     <div class="portrait">
-                        {% image './public/assets/img/me-on-set.jpg', 'A picture of me holding my guitar', [300, 600], ['webp', 'jpg'], '(max-width: 700px) 100vw, 50vw', 'full', 'me', 'eager' %}
+                        {% image './public/img/me-on-set.jpg', 'A picture of me holding my guitar', [300, 600], ['webp', 'jpg'], '(max-width: 700px) 100vw, 50vw', 'full', 'me', 'eager' %}
                     </div>
                     <div class="content">
                         <p>I'm glad you could make it. Peruse my wares* and <a href="/about/">send me a letter</a> if
@@ -162,7 +162,7 @@
             <div class="wrapper">
                 <div class="sundial">
                     <button title="Turn the clouds animation on or off." id="sundial" type="button" name="sundial">
-                        <img class="sun" src="/assets/img/sun.svg" alt="" loading="lazy">
+                        <img class="sun" src="/img/sun.svg" alt="" loading="lazy">
                     </button>
                 </div>
                 <div class="content">
@@ -179,7 +179,7 @@
                 </div>
             </div>
             <svg class="curve" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 720 80">
-                <path d="M0,80V47.6C0,47.6,333,0,503,0c166,0,217,24.3,217,24.3V80H0z"/>
+                <path d="M0,80V47.6C0,47.6,333,0,503,0c166,0,217,24.3,217,24.3V80H0z" />
             </svg>
         </section>
     </main>

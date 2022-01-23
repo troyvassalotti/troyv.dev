@@ -1,15 +1,18 @@
-const fs = require('fs')
-const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args))
-const unionBy = require('lodash/unionBy')
-const domain = require('./metadata.json').domain
-require('dotenv').config()
-const CACHE_DIR = '.cache'
-const API = 'https://webmention.io/api'
+/**
+ * @file Fetches Webmentions from the webmention.io api
+ */
+const fs = require("fs")
+const fetch = (...args) => import("node-fetch").then(({ default: fetch }) => fetch(...args))
+const unionBy = require("lodash/unionBy")
+const domain = require("./metadata.json").domain
+require("dotenv").config()
+const CACHE_DIR = ".cache"
+const API = "https://webmention.io/api"
 const TOKEN = process.env.WEBMENTION_IO_TOKEN
 
 async function fetchWebmentions(since, perPage = 10000) {
     if (!domain) {
-        console.warn('>>> unable to fetch webmentions: no domain name specified.')
+        console.warn(">>> unable to fetch webmentions: no domain name specified.")
         return false
     }
 
@@ -31,12 +34,20 @@ async function fetchWebmentions(since, perPage = 10000) {
     return null
 }
 
-// Merge fresh webmentions with cached entried, unique per id
+/**
+ * Merge fresh webmentions with cached entried, unique per id
+ * @param a
+ * @param b
+ * @returns {*}
+ */
 function mergeWebmentions(a, b) {
-    return unionBy(a.children, b.children, 'wm-id')
+    return unionBy(a.children, b.children, "wm-id")
 }
 
-// Save combined webmentions in cache file
+/**
+ * Save combined webmentions in cache file
+ * @param data
+ */
 function writeToCache(data) {
     const filePath = `${CACHE_DIR}/webmentions.json`
     const fileContent = JSON.stringify(data, null, 2)
@@ -51,7 +62,10 @@ function writeToCache(data) {
     })
 }
 
-// Get cache contents from json file
+/**
+ * Get cache contents from json file
+ * @returns {{children: *[], lastFetched: null}|any}
+ */
 function readFromCache() {
     const filePath = `${CACHE_DIR}/webmentions.json`
 
@@ -63,11 +77,11 @@ function readFromCache() {
     // no cache found
     return {
         lastFetched: null,
-        children: []
+        children: [],
     }
 }
 
-module.exports = async function() {
+module.exports = async function () {
     const cache = readFromCache()
 
     if (cache.children.length) {
@@ -75,12 +89,12 @@ module.exports = async function() {
     }
 
     // Only fetch new webmentions in production
-    if (process.env.ELEVENTY_ENV === 'production') {
+    if (process.env.ELEVENTY_ENV === "production") {
         const feed = await fetchWebmentions(cache.lastFetched)
         if (feed) {
             const webmentions = {
                 lastFetched: new Date().toISOString(),
-                children: mergeWebmentions(cache, feed)
+                children: mergeWebmentions(cache, feed),
             }
 
             writeToCache(webmentions)

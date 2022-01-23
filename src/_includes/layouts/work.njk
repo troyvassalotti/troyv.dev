@@ -72,14 +72,15 @@
 
 <script type="module">
     {% set js %}
-    import Zooming from 'https://cdn.skypack.dev/-/zooming@v2.1.1-iNyCUNwyb2dr3AokLALM/dist=es2020,mode=imports/optimized/zooming.js'
+    import Zooming
+        from "https://cdn.skypack.dev/-/zooming@v2.1.1-iNyCUNwyb2dr3AokLALM/dist=es2020,mode=imports/optimized/zooming.js"
 
     const zooming = new Zooming({
-        bgColor: 'rgb(0, 0, 0)',
+        bgColor: "rgb(0, 0, 0)",
         bgOpacity: .5,
-        customSize: '135%'
+        customSize: "135%"
     })
 
-    zooming.listen('.img-zoomable')
+    zooming.listen(".img-zoomable")
     {% endset %}
 </script>

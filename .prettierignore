@@ -1,0 +1,7 @@
+.cache
+.forestry
+_site
+node_modules
+*.md
+*.json
+src/admin

@@ -38,9 +38,9 @@ sections:
   match: "**/*"
   templates:
   - misc-page
-upload_dir: src/assets/img
-public_path: "/assets/img"
-front_matter_path: "./public/assets/img"
+upload_dir: public/img
+public_path: "/img"
+front_matter_path: "./public/img"
 use_front_matter_path: true
 file_template: ":filename:"
 build:

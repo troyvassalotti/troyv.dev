@@ -3,17 +3,17 @@
 <script type="module">
     {% set js %}
     // This is for the handdrawn annotations from Rough Notation
-    import {annotate} from 'https://cdn.skypack.dev/rough-notation';
+    import { annotate } from "https://cdn.skypack.dev/rough-notation"
 
-    const pageTitle = document.querySelector('#page-title');
-    pageTitle.setAttribute("style", "color: var(--blackPrimary)");
+    const pageTitle = document.querySelector("#page-title")
+    pageTitle.setAttribute("style", "color: var(--blackPrimary)")
     const projectsAnnotation = annotate(pageTitle, {
-        type: 'highlight',
-        color: 'var(--workColor)',
-        padding: 15,
-    });
+        type: "highlight",
+        color: "var(--workColor)",
+        padding: 15
+    })
 
-    projectsAnnotation.show();
+    projectsAnnotation.show()
     {% endset %}
 </script>
 

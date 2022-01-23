@@ -12,9 +12,8 @@ well.
 - Getting married in March 2022 (!!)
 - Writing new music for [Front Royal](https://www.frontroyalband.com).
 - Recording [troy.'s](https://justtroy.bandcamp.com) second album.
-- Blogging on [This is a Band](https://www.thisisa.band).
 - Creating the Digital Humanities Lab for [Goucher College](https://www.goucher.edu/).
-- Listening to a lot of podcasts on [code](hhttps://shoptalkshow.com/) and [self hosting](https://selfhosted.show/).
+- Reading [The Familiar, Volume 1](https://www.penguinrandomhouse.com/books/213605/the-familiar-volume-1-by-mark-z-danielewski/) by Mark Z. Danielewski.
 
 ## Socials Exist
 
@@ -24,6 +23,6 @@ well.
 {% endfor %}
 </ul>
 
-___
+---
 
 View this site's [Speedlify](https://speedlify.troyv.dev) scores.

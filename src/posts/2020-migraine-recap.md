@@ -3,12 +3,12 @@ title: I Logged My Migraines For Another Year
 description: Another year, another migraine recap.
 date: 2021-02-23
 tags:
-- migraines
+    - migraines
 shortname: 2020 Migraines
-featuredImage: ''
-website: ''
-
+featuredImage: ""
+website: ""
 ---
+
 We learned last year that my migraine situation was a problem. Well, more of a problem than usual. You can read more about [how I did in 2019](../i-logged-my-migraines-for-a-year), but it wasn't great. I continued to log each migraine I had throughout 2020 because I'm a nerd.
 
 I made improvements, but they came in the second half of the year since it takes that long for trial and error to work. That said, I ended the year at **45 migraines** (a drop from **67** in 2019). It's still not ideal, but plenty of people have it worse than I do, so I'm lucky in that sense.
@@ -25,7 +25,7 @@ D3 is fun and exciting and equally complicated, so my chart only goes so far in 
 
 Look at this graph:
 
-{% image './public/assets/img/2020-by-triggers.png', 'A graph showing the associated trigger for each of the 45 migraines I had. Among those triggers are stress, alcohol, poor sleep, anxiety, rebounds, natural causes, and weather.' %}
+{% image './public/img/2020-by-triggers.png', 'A graph showing the associated trigger for each of the 45 migraines I had. Among those triggers are stress, alcohol, poor sleep, anxiety, rebounds, natural causes, and weather.' %}
 
 It's _very hard_ to associate what causes a migraine. For one, it isn't always due to a single trigger alone but rather a multitude or building up of triggers over time. Also, it feels too reductive at times - especially when I have no idea what happened and I can only point to _natural causes_.
 
@@ -43,16 +43,16 @@ I mentioned earlier that I saw improvements in the later part of the year. Octob
 
 Look at this graph now:
 
-{% image './public/assets/img/2020-by-quarter.png', 'A graph showing the number of migraines I had per quarter of the year.' %}
+{% image './public/img/2020-by-quarter.png', 'A graph showing the number of migraines I had per quarter of the year.' %}
 
-* **January - March**: Not great. 10 migraines.
-* **April - June**: Even worse at 16.
-* **July - September**: Barely better with 15.
-* **October - December**: A pleasant total of 4.
+-   **January - March**: Not great. 10 migraines.
+-   **April - June**: Even worse at 16.
+-   **July - September**: Barely better with 15.
+-   **October - December**: A pleasant total of 4.
 
 Since I keep track of the time of day they happen, I also know what _times of day_ they most occurred. If that sounds interesting to you, then you'll love this graph:
 
-{% image './public/assets/img/2020-by-time.png', 'A histogram showing the number of migraines I had broken out by the time of day in buckets of 4 hours.' %}
+{% image './public/img/2020-by-time.png', 'A histogram showing the number of migraines I had broken out by the time of day in buckets of 4 hours.' %}
 
 This one is a little less telling since it's a pretty regular distribution, but I had the most migraines between the hours of noon - 4:00 p.m. The second place slot was tied with midnight - 4:00 a.m. and 8:00 a.m. - noon.
 

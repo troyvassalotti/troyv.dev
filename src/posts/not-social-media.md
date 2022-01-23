@@ -1,12 +1,13 @@
 ---
-title: 'NotSocial: A Social Media Revolution'
+title: "NotSocial: A Social Media Revolution"
 description: Social media is overwhelming, which is why I quit using a lot of it, but that didn't stop me from creating my own app where I can enjoy it all alone.
 date: 2020-08-27
-tags: ['project']
-featuredImage: ''
+tags: ["project"]
+featuredImage: ""
 shortname: NotSocial
-website: 'https://pang.netlify.app'
+website: "https://pang.netlify.app"
 ---
+
 We can all agree that social media is a lot to handle sometimes. I know I have a habit of scrolling on Reddit for far too long before I realize how long it's been, and it isn't isolated to Reddit. Twitter, Instagram, and the like are all in this bucket.
 
 Since deleting myself from Facebook, I've realized a few things about myself and others, but that's not what this post is about. This post is about [NotSocial]({{ website }}).
@@ -15,13 +16,14 @@ NotSocial is my new passion; it's more than an app - it's an ideology. You may b
 
 But I am here to tell you how NotSocial is a new kind of social media platform where it is only you that exists in its world. It's a section of the internet for you - and only you - to be social with yourself while feeling connected with the rest of the world.
 
-- Enjoy the thrill of Twitter while also being able to **wipe it off the face of your device screen.**
-- Comment, like, and even dislike posts from your favorite news outlets, celebrities, and crazy relatives (bonus points if you reach the high score).
-- See your direct messages, potentially play games (no promises), and look at dog pictures.
+-   Enjoy the thrill of Twitter while also being able to **wipe it off the face of your device screen.**
+-   Comment, like, and even dislike posts from your favorite news outlets, celebrities, and crazy relatives (bonus points if you reach the high score).
+-   See your direct messages, potentially play games (no promises), and look at dog pictures.
 
 When you're all done, close your account without hassle, free of charge. I make it super simple to rid yourself of NotSocial because it should never be an inconvenience to delete yourself from an internet service.
 
 ## Give Me The Technical Details
+
 NotSocial started out as a simple idea on [CodePen](https://codepen.io) practicing Vue. It was originally called _Pang_ because Merriam-Webster defines _pang_ as "a sharp attack of mental anguish," which is all social media is anyway.
 
 > You can even [view the original NotSocial there](https://codepen.io/troyvassalotti/full/RwWLyBV) still. Be warned though, it's a little rough around the edges in terms of how Vue works and overall design.
@@ -37,6 +39,7 @@ I learned a lot using Nuxt and Vue to make this faux-app. Both tools are incredi
 After all this time though, it is still a fun side project. If I were to open up that folder in Atom right now, I would probably be overtaken with dread by the thought of having to update npm or something [a popular topic right now](https://css-tricks.com/npm-ruin-dev/). So, don't ask me to make any updates please.
 
 ## Lessons Learned
-- Always read the documentation.
-- Patience is a virtue.
-- Maybe don't rely on npm for everything if you want to work on a thing long term.
+
+-   Always read the documentation.
+-   Patience is a virtue.
+-   Maybe don't rely on npm for everything if you want to work on a thing long term.

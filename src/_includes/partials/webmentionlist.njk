@@ -6,7 +6,7 @@
 {%- set bookmarks = allMentions | webmentionsForUrl(webmentionUrl, "bookmark-of") -%}
 {%- set replies = allMentions | webmentionsForUrl(webmentionUrl, "in-reply-to") -%}
 {%- set mentions = allMentions | webmentionsForUrl(webmentionUrl, "mention-of") -%}
-{%- set defaultImg = '/assets/img/user.svg' -%}
+{%- set defaultImg = '/img/user.svg' -%}
 
 <section class="webmentions" id="webmentions">
     <h2>Webmentions</h2>
@@ -21,7 +21,7 @@
                         <a class="h-card u-url link-u-exempt" href="{{ webmention.url }}"
                            id="webmention-{{ webmention['wm-id'] }}" target="_blank" rel="noopener noreferrer">
                             <img src="{% if webmention.author.photo %}{{ webmention.author.photo }}{% else %}{{ defaultImg }}{% endif %}"
-                                 alt="{{ webmention.author.name }}" class="webmentions__face" loading="lazy"/>
+                                 alt="{{ webmention.author.name }}" class="webmentions__face" loading="lazy" />
                         </a>
                     {% endfor %}
                 </div>
@@ -36,7 +36,7 @@
                         <a class="h-card u-url link-u-exempt" href="{{ webmention.url }}"
                            id="webmention-{{ webmention['wm-id'] }}" target="_blank" rel="noopener noreferrer">
                             <img src="{% if webmention.author.photo %}{{ webmention.author.photo }}{% else %}{{ defaultImg }}{% endif %}"
-                                 alt="{{ webmention.author.name }}" class="webmentions__face" loading="lazy"/>
+                                 alt="{{ webmention.author.name }}" class="webmentions__face" loading="lazy" />
                         </a>
                     {% endfor %}
                 </div>

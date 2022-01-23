@@ -2,25 +2,27 @@
 
 <script type="module">
     {% set js %}
+    import plvylist from 'https://cdn.skypack.dev/plvylist';
+
     // This is for the handdrawn annotations from Rough Notation
-    import {annotate} from 'https://cdn.skypack.dev/rough-notation';
+    import { annotate } from "https://cdn.skypack.dev/rough-notation"
 
-    let mq = '(prefers-color-scheme: dark)';
+    let mq = "(prefers-color-scheme: dark)"
 
-    const pageTitle = document.querySelector('#page-title');
+    const pageTitle = document.querySelector("#page-title")
 
     const changeTitleColor = () => {
-        matchMedia(mq).matches ? pageTitle.setAttribute("style", "color: var(--blackPrimary)") : pageTitle.setAttribute("style", "color: var(--whitePrimary)");
+        matchMedia(mq).matches ? pageTitle.setAttribute("style", "color: var(--blackPrimary)") : pageTitle.setAttribute("style", "color: var(--whitePrimary)")
     }
 
-    window.matchMedia(mq).addEventListener("change", changeTitleColor());
+    window.matchMedia(mq).addEventListener("change", changeTitleColor())
     const musicAnnotation = annotate(pageTitle, {
-        type: 'highlight',
-        color: 'var(--musicColor)',
-        padding: 15,
-    });
+        type: "highlight",
+        color: "var(--musicColor)",
+        padding: 15
+    })
 
-    musicAnnotation.show();
+    musicAnnotation.show()
     {% endset %}
 </script>
 
@@ -41,13 +43,13 @@
                         <div class="band">
                             <div class="band-logo">
                                 <a href="https://frontroyalmd.bandcamp.com/">
-                                    {% image './public/assets/img/front-royal-logo-white_400x240.png', 'the logo for my band, Front Royal', logoWidths, logoFormats, logoSizes, 'full' %}
+                                    {% image './public/img/front-royal-logo-white_400x240.png', 'the logo for my band, Front Royal', logoWidths, logoFormats, logoSizes, 'full' %}
                                 </a>
                             </div>
                             <div class="icon-bar">
                                 {% for social in frontRoyalSocial %}
                                     <a class="icon-link" href="{{ social.href }}"><img
-                                                src="/assets/img/{{ social.img }}" alt="{{ social.alt }}" loading="lazy"
+                                                src="/img/{{ social.img }}" alt="{{ social.alt }}" loading="lazy"
                                                 width="48" height="48"></a>
                                 {% endfor %}
                             </div>
@@ -55,13 +57,13 @@
                         <div class="band">
                             <div class="band-logo">
                                 <a href="https://justtroy.bandcamp.com/">
-                                    {% image './public/assets/img/troy-full.png', 'the logo for my band, troy', logoWidths, logoFormats, logoSizes, 'full' %}
+                                    {% image './public/img/troy-full.png', 'the logo for my band, troy', logoWidths, logoFormats, logoSizes, 'full' %}
                                 </a>
                             </div>
                             <div class="icon-bar">
                                 {% for social in troySocial %}
                                     <a class="icon-link" href="{{ social.href }}"><img
-                                                src="/assets/img/{{ social.img }}" alt="{{ social.alt }}" loading="lazy"
+                                                src="/img/{{ social.img }}" alt="{{ social.alt }}" loading="lazy"
                                                 width="48" height="48"></a>
                                 {% endfor %}
                             </div>
@@ -80,7 +82,7 @@
                     </p>
                 </header>
                 <plvylist-player
-                        tracks="/assets/js/alone-in-a-crowded-room.json" starting-volume="0.75">
+                        tracks="/alone-in-a-crowded-room.json" starting-volume="0.75">
                 </plvylist-player>
             </div>
         </section>

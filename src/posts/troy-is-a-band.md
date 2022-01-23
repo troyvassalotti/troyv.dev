@@ -1,12 +1,13 @@
 ---
-title: 'troy. is a band'
+title: "troy. is a band"
 description: I decided to give troy. - a band I have - a website.
 date: 2020-11-28
-tags: ['project']
-featuredImage: ''
-shortname: 'troy. = band'
-website: 'https://music.troyvassalotti.xyz'
+tags: ["project"]
+featuredImage: ""
+shortname: "troy. = band"
+website: "https://music.troyvassalotti.xyz"
 ---
+
 If you've looked around here, you would've noticed I write music under the name [_troy._](https://justtroy.bandcamp.com), which I call a band, but it's only me. I used to be called Action Hamilton until I decided that was too weird and people around me convinced me to change it.
 
 I don't do anything serious with troy..
@@ -20,34 +21,35 @@ Recently, I was bored, created [Plvylist](../plvylist), and wanted to _create a 
 It's a [very simple website]({{ website }}) I made. Built with Eleventy, simple colors, not a lot of assets or pages. But as with most new sites I make, it has to incorporate a new technique I learned about (aside from Plvylist in this case).
 
 ## All The New Things
+
 For one, the navigation is accessible and responsive in a way I haven't used before. Also, my links have this cool underline animation on hover that I saw on CodePen and decided to implement. That part was tricky because the CodePen was using a class and I wanted _all my links that weren't buttons_ to behave that way, so I had to tinker with it.
 
 ```css
 a:not([data-btn]) {
- color: var(--blue);
- position: relative;
- text-decoration: none;
+    color: var(--blue);
+    position: relative;
+    text-decoration: none;
 }
 
 a:not([data-btn])::before {
- content: "";
- position: absolute;
- bottom: 0;
- left: 0;
- height: 0.06em;
- width: 100%;
- background-color: currentColor;
- transition: transform 400ms ease-out;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 0.06em;
+    width: 100%;
+    background-color: currentColor;
+    transition: transform 400ms ease-out;
 }
 
 a:not([data-btn]):hover::before {
- transform: scaleX(0);
- transform-origin: right;
+    transform: scaleX(0);
+    transform-origin: right;
 }
 
 a:not([data-btn])::before {
- transform: scaleX(1);
- transform-origin: left;
+    transform: scaleX(1);
+    transform-origin: left;
 }
 ```
 

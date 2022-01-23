@@ -3,11 +3,11 @@ date: 2021-08-15
 draft: false
 title: Over-Optimizing
 description: There is such thing as putting too much effort into making something the best
-  it can be.
-shortname: ''
-featuredImage: ''
-
+    it can be.
+shortname: ""
+featuredImage: ""
 ---
+
 I find myself thinking too much about my projects; I want anything I make to be the best it can be. The sentiment is nice, but takes a lot of time in practice. Time, patience, mental energy, etc. - you name it. To be on a journey of perfection means to never end that journey.
 
 Everything I make and put on the internet is a representation of me in one form or another, so the goal is that everything's always amazing. That said, there comes a time when I have to convince myself _enough is enough_ and walk away.
@@ -22,10 +22,10 @@ That time spent trimming down almost every site I make is time I could've spent 
 
 I have a handful of websites I've reserved for dedicating my time to:
 
-* This one,
-* [Front Royal's](https://www.frontroyalband.com),
-* [This is a Band](https://www.thisisa.band),
-* and my solo project - [troy](https://validcharacters.netlify.app).
+-   This one,
+-   [Front Royal's](https://www.frontroyalband.com),
+-   [This is a Band](https://www.thisisa.band),
+-   and my solo project - [troy](https://validcharacters.netlify.app).
 
 A couple other sites use Python programs or shell scripts that populate content into a given template, so tinkering with those is often near-impossible. Anything else - specifically anything I've coded and have access to the source of - is _supposed to be_ off limits.
 
