@@ -7,7 +7,7 @@
                 <section class="work-solo__img">
                     <h1>{{ title }}</h1>
                     <p class="rm-m-bs">{{ description }}</p>
-                    {% image "https://screenshot.troyv.dev/" + website | urlencode + "/opengraph", title, [600, 1200, 1800], ['webp', 'jpg'], '(max-width: 1500px) 100vw, 60vw', 'img-zoomable has-box-shadow' %}
+                    <img src="{{ 'https://screenshot.troyv.dev/' + website | urlencode + '/opengraph'}}" alt="{{ title }}" class="img-zoomable has-box-shadow" width="1200" height="630" decoding="async">
                 </section>
                 <section class="work-solo__summary">
                     {{ content | safe }}

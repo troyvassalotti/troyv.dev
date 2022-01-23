@@ -122,10 +122,10 @@
                 <h2><span id="cool-anim">Latest</span> <span id="proj-anim">Projects</span></h2>
                 <div class="showcase-container">
                     <div class="showcase">
-                        {% for work in collections['work'] | reverse %}
+                        {% for work in collections['work'].slice(collections['work'].length - 3, collection['work'].length) | reverse %}
                             <figure class="caption-overlay">
                                 <a class="caption-link" href="{{ work.url }}">
-                                    {% image "https://screenshot.troyv.dev/" + work.data.website | urlencode + "/opengraph", work.data.title + " Screenshot", [300, 800, 1200], ['webp', 'jpg'], '(max-width: 700px) 100vw, 1200px', 'caption-image full' %}
+                                    <img src="{{ 'https://screenshot.troyv.dev/' + work.data.website | urlencode + '/opengraph' }}" alt="{{ work.data.title + ' screenshot' }}" class="caption-image full" width="600" height="315" decoding="async">
                                     <div class="caption">
                                         <figcaption>
                                             <h3 class="h4">{{ work.data.title }}</h3>
@@ -289,8 +289,9 @@
     }
 
     .showcase .caption-overlay {
-        margin: 1em;
+        aspect-ratio: 40 / 21;
         flex: 1 1 18.75rem;
+        margin: 1em;
     }
 
     .showcase .caption-overlay:last-of-type {
