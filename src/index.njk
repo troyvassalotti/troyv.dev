@@ -98,7 +98,7 @@
                         <p>I'm glad you could make it. Peruse my wares* and <a href="/about/">send me a letter</a> if
                             you're
                             so inclined.</p>
-                        <p class="txt-smallest">I only accept bottlecaps as currency, sorry... (I'm kidding)</p>
+                        <p class="txt-smallest">I only accept bottle caps as currency, sorry... (I'm kidding)</p>
                     </div>
                 </section>
                 <section class="feed" id="posts">
@@ -125,7 +125,7 @@
                         {% for work in collections['work'].slice(collections['work'].length - 3, collection['work'].length) | reverse %}
                             <figure class="caption-overlay">
                                 <a class="caption-link" href="{{ work.url }}">
-                                    <img src="{{ 'https://screenshot.troyv.dev/' + work.data.website | urlencode + '/opengraph' }}" alt="{{ work.data.title + ' screenshot' }}" class="caption-image full" width="600" height="315" decoding="async">
+                                    <img src="{{ 'https://screenshot.troyv.dev/' + work.data.website | urlencode + '/opengraph' }}" alt="{{ work.data.title + ' screenshot' }}" class="caption-image full" width="600" height="315" decoding="async" loading="lazy">
                                     <div class="caption">
                                         <figcaption>
                                             <h3 class="h4">{{ work.data.title }}</h3>
