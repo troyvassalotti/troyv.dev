@@ -76,6 +76,7 @@ fields:
     value: true
 pages:
 - src/posts/front-royal-made-a-covers-album.md
+- src/posts/i-built-a-sudoku-webapp-with-vue.md
 - src/posts/i-don-t-have-a-podcast.md
 - src/posts/over-optimizing.md
 - src/posts/plvylist-is-on-npm.md
