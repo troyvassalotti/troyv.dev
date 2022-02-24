@@ -477,12 +477,12 @@ h6,
         background-color: var(--aboutColor);
     }
 
-    .active-page::before {
+    [aria-current="page"]::before {
         --linkStartRest: left;
         --linkStateRest: scaleX(1);
     }
 
-    .active-page:hover::before {
+    [aria-current="page"]:hover::before {
         --linkStartHover: right;
         --linkStateHover: scaleX(0);
     }
