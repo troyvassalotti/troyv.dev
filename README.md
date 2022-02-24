@@ -8,11 +8,11 @@ It might be helpful for me to outline how this site is created as a resource to 
 
 ### Creating Pages
 
-Top-level pages - `dir/index.njk` pages - take Front Matter to declare the title, description, and `<body>` class. All pages serve as their own components through the use of Nunjucks extends and variables.
+Top-level pages - `dir/index.html` pages - take Front Matter to declare the title, description, and `<body>` class. All pages serve as their own components through the use of Nunjucks extends and variables.
 
-Pick a layout to extend by placing `{% extends 'layouts/your-layout.njk' %}` right under the front matter.
+Pick a layout to extend by placing `{% extends 'layouts/your-layout.html' %}` right under the front matter.
 
-To set the HTML content of the page, place the structure inside a `{% block %}`. If the layout being extended is `base.njk` then it's `{% block content %}{% endblock %}`. If it's `page.njk` then use `{% block main %}{% endblock %}`.
+To set the HTML content of the page, place the structure inside a `{% block %}`. If the layout being extended is `base.html` then it's `{% block content %}{% endblock %}`. If it's `page.html` then use `{% block main %}{% endblock %}`.
 
 Pages get their own critical CSS by setting a variable in the file. This is done as follows:
 

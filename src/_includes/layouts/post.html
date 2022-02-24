@@ -1,4 +1,4 @@
-{% extends 'layouts/base.njk' %}
+{% extends 'layouts/base.html' %}
 
 {% block content %}
     <div class="with-sidebar">
@@ -20,10 +20,10 @@
                 </div>
             </article>
             <div class="wrapper">
-                {% include "partials/webmentionlist.njk" %}
+                {% include "partials/webmentionlist.html" %}
             </div>
         </main>
-        {% include 'partials/postnavigation.njk' %}
+        {% include 'partials/postnavigation.html' %}
     </div>
 {% endblock %}
 

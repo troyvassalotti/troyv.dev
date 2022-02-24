@@ -49,7 +49,7 @@
                 <ol class="webmentions__list" role="list">
                     {% for webmention in replies | reverse %}
                         <li class="webmentions__item">
-                            {% include 'partials/webmention.njk' %}
+                            {% include 'partials/webmention.html' %}
                         </li>
                     {% endfor %}
                 </ol>
@@ -62,7 +62,7 @@
                 <ol class="webmentions__list" role="list">
                     {% for webmention in mentions | reverse %}
                         <li class="webmentions__item">
-                            {% include 'partials/webmention.njk' %}
+                            {% include 'partials/webmention.html' %}
                         </li>
                     {% endfor %}
                 </ol>
@@ -75,7 +75,7 @@
                 <ol class="webmentions__list" role="list">
                     {% for webmention in bookmarks | reverse %}
                         <li class="webmentions__item">
-                            {% include 'partials/webmention.njk' %}
+                            {% include 'partials/webmention.html' %}
                         </li>
                     {% endfor %}
                 </ol>

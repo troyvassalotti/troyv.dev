@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en-US" dir="ltr">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -72,7 +72,8 @@
     <ul class="main-navigation__links" role="list">
         {% for link in nav.header %}
             <li><a href="{{ link.url }}"
-                   class="main-navigation__link animated-link {% if bodyClass === link.name %}active-page{% endif %}"
+                   class="main-navigation__link animated-link"
+                   {% if bodyClass === link.name %}aria-current="page"{% endif %}
                    id="link__{{ link.name }}">{{ link.name }}</a></li>
         {% endfor %}
     </ul>
