@@ -3,7 +3,7 @@ date: 2022-02-17
 use_screenshot_service: true
 draft: true
 title: Making a Sudoku App with Vue
-description: What started as a Valentine's Day gift turned into a full-blown webapp.
+description: What started as a Valentine's Day gift turned into a full-blown app.
 tags: []
 project: false
 shortname: ''
@@ -222,7 +222,7 @@ function handleChange(e) {
 
 You may have noticed our `handleChange()` function and `onChange` prop. These two pieces are what pass state back to our app. `onChange` is a function prop from `App.vue` and `handleChange()` passes our `onChange` function data for the field you're currently working with. What's getting passed? Well, we need to tell the app 1) which field out of all the fields is being changed (`props.field`), and 2) what value that cell now is.
 
-Our `onChange` function takes that checks your guesses against the stored solution to determine if your game is completed or still in progress.
+Our `onChange` function takes that and checks your guesses against the stored solution to determine if your game is completed or still in progress.
 
 ```js
 // src/App.vue
@@ -256,4 +256,185 @@ const store = {
   /*
    * snip
    */
+```
+
+Now it's time to actually create fields for our entire Sudoku board, and that's where Vue's `v-for` directives come in. We have access to our Sudoku's rows, which gives us access to its columns and values. If we iterate over the rows, then iterate over each row's columns, we can insert fields for each value in our puzzle.
+
+```js
+// src/components/SudokuBoard.vue
+<script setup>
+import SudokuField from './SudokuField.vue'
+
+const props = defineProps({
+  sudoku: Object,
+  onChange: Function,
+})
+</script>
+
+<template>
+  <main class="main">
+    <div class="wrapper">
+      <div class="board" :class="{solved: props.sudoku.solvedTime}">
+        <div class="row" v-for="row in props.sudoku.rows" :key="row.index">
+          <SudokuField v-for="field in row.cols" :key="field.col" :field="field" :onChange="props.onChange"/>
+        </div>
+      </div>
+    </div>
+  </main>
+</template>
+```
+
+## Timer and Result Components
+
+Let's get these two pieces out of the way while we're building our board. `Timer.vue` is a basic counter that doesn't depend on or interact with any other components.
+
+```js
+// src/components/Timer.vue
+<script setup>
+import {onBeforeUnmount, onMounted, reactive} from "vue"
+
+const props = defineProps({
+  start: Date
+})
+
+const state = reactive({
+  elapsed: 0,
+  interval: setInterval(getTime, 1000)
+})
+
+function getTime() {
+  state.elapsed = Math.floor((new Date().getTime() - props.start.getTime()) / 1000)
+}
+
+onMounted(() => {
+  state.interval
+})
+
+onBeforeUnmount(() => {
+  clearInterval(state.interval)
+  delete state.interval
+})
+</script>
+
+<template>
+  <h2>Time: {{ state.elapsed }}</h2>
+</template>
+```
+
+`Result.vue` is slightly more complicated but mainly because it controls the end-game share functionality. Winning the game calls for a celebration, so confetti cannons are in order when this component is mounted to the DOM. We also want to show different content depending on if you cheated with the shortcut button or if you completed it on your own. Cheating sets a value in our `sudoku` object, so that's easy enough to trigger dynamic content with. We punish cheaters by calling them out on it and subjecting them to a YouTube video.
+
+Sharing the game will either open up your device's native share sheet or copy your game URL to the clipboard.
+
+```js
+// src/components/Result.vue
+<script setup>
+import {onMounted, reactive} from 'vue'
+import confetti from 'canvas-confetti'
+
+const props = defineProps({
+  sudoku: Object
+})
+
+const state = reactive({
+  elapsed: 0,
+  opponent: 0
+})
+
+/**
+ * Share your Sudoku link either as a URL or with the Share API
+ * @param e - Event
+ */
+function shareLink(e) {
+  let link = props.sudoku.shareUrl
+  if (navigator.share) {
+    navigator.share({
+      title: 'Sudoku',
+      url: link
+    })
+  } else {
+    navigator.clipboard.writeText(link)
+    let el = e.target
+    let initialText = el.innerText
+    el.innerText = "👍 Link Copied 👍"
+    setTimeout(() => {
+      el.innerText = initialText
+    }, 3000)
+  }
+}
+
+onMounted(() => {
+  // Confetti Cannons
+  state.elapsed = Math.floor((props.sudoku.solvedTime.getTime() - props.sudoku.startTime.getTime()) / 1000)
+  state.opponent = props.sudoku.challengerSolvedTime ? Math.floor((props.sudoku.challengerSolvedTime.getTime() - props.sudoku.challengerStartTime.getTime()) / 1000) : null
+
+  let duration = 15 * 1000;
+  const animationEnd = Date.now() + duration;
+  const defaults = { startVelocity: 15, spread: 360, ticks: 60, zIndex: 0 };
+
+  function randomInRange(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+
+  const interval = setInterval(function() {
+    const timeLeft = animationEnd - Date.now();
+
+    if (timeLeft <= 0) {
+      return clearInterval(interval);
+    }
+
+    let particleCount = 50 * (timeLeft / duration);
+    // since particles fall down, start a bit higher than random
+    confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
+    confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
+  }, 250);
+})
+</script>
+
+<template>
+  <div class="container">
+    <h2 v-if="!props.sudoku.cheated">You solved it in {{ state.elapsed }} seconds</h2>
+    <h2 v-else>You cheated, but it took you {{ state.elapsed }} seconds to do so.</h2>
+    <p v-if="state.opponent">Your opponent solved it in {{ state.opponent }} seconds.</p>
+    <div class="rickroll" v-if="props.sudoku.cheated">
+      <p>⬇️ This is your punishment for cheating. ⬇️</p>
+      <iframe src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?controls=0&autoplay=1"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+    </div>
+    <p>Challenge a friend:
+      <button id="share" @click="shareLink">Share Puzzle Link</button>
+    </p>
+  </div>
+</template>
+```
+
+Both of these components live in `SudokuBoard.vue`.
+
+```js
+// src/components/SudokuBoard.vue
+<script setup>
+import SudokuField from './SudokuField.vue'
+import Timer from './Timer.vue'
+import Result from './Result.vue'
+
+const props = defineProps({
+  sudoku: Object,
+  onChange: Function,
+})
+</script>
+
+<template>
+  <main class="main">
+  	<Timer v-if="!props.sudoku.solvedTime" :start="props.sudoku.startTime"/>
+    <Result v-if="props.sudoku.solvedTime" :sudoku="props.sudoku"/>
+    <div class="wrapper">
+      <div class="board" :class="{solved: props.sudoku.solvedTime}">
+        <div class="row" v-for="row in props.sudoku.rows" :key="row.index">
+          <SudokuField v-for="field in row.cols" :key="field.col" :field="field" :onChange="props.onChange"/>
+        </div>
+      </div>
+    </div>
+  </main>
+</template>
 ```
