@@ -39,6 +39,8 @@ Knowing what the outcome is supposed to be, we can now start building it.
 
 ## Generating Data
 
+In order to create a board, we need a Sudoku generator, so let's install `sudoku` from `npm`.
+
 ## Components
 
 It's a small app which means there are but a handful of pieces to this puzzle (ha ha, get it?).
