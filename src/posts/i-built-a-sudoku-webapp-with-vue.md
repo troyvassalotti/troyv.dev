@@ -440,3 +440,71 @@ const props = defineProps({
 ```
 
 Let's recap where we are right now. We have a board filled with input fields, a timer keeping track of our play time, and a result view to display when the game is won. How do we know when the game is won though? Well, let's revisit those previous snippets `App.vue`.
+
+## Checking Solutions
+
+Back in `lib/sudoku.js` we need to define the `checkSolution` function and export it. This function will accept a Sudoku object - the same being played in your current game - and compare it to said Sudoku's solution. We already have the solution on-hand because it gets stored when the Sudoku is initially generated, but we need to re-flatten our playable Sudoku to properly compare it back to the flat solution array.
+
+```js
+/**
+ * Evaluate the current solution against the solution
+ * @param sudoku
+ * @returns {boolean}
+ */
+export function checkSolution(sudoku) {
+    const candidate = sudoku.rows.map((row) => row.cols.map((col) => col.value)).flat()
+
+    for (let i = 0; i < candidate.length; i++) {
+        if (candidate[i] === null || candidate[i] !== sudoku.solution[i]) {
+            return false
+        }
+    }
+
+    return true
+}
+```
+
+We use a similar method to _generate_ the solution with `solveSudoku` when you cheat in the game.
+
+```js
+// src/App.vue
+<script setup>
+import {reactive} from 'vue'
+import {generateSudoku, checkSolution} from './lib/sudoku'
+import SudokuBoard from './components/SudokuBoard.vue'
+
+const store = {
+  state: reactive({
+    sudoku: generateSudoku(),
+    showProgress: false,
+    previousSudoku: null,
+  }),
+
+  /* snip */
+
+  /**
+   * Instantly solve the sudoku
+   * @function
+   */
+  solveSudoku() {
+    store.state.sudoku.rows.forEach(row => {
+      row.cols.forEach(col => {
+        col.value = store.state.sudoku.solution[col.row * 9 + col.col]
+      })
+    })
+    store.state.sudoku.solvedTime = new Date()
+    store.state.sudoku.shareUrl = shareUrl(store.state.sudoku)
+    store.state.sudoku.cheated = true // This is what shows different content in the Result component
+  },
+</script>
+```
+
+At this point, we have a playable game of Sudoku that checks for a solution with every input change event. When that solution is found, our `Result` component is displayed and all is good!
+
+But let's make it better.
+
+1. Show hints
+   1. inline style v-if
+2. Share the game
+3. Reset the game
+4. Restore lost game
