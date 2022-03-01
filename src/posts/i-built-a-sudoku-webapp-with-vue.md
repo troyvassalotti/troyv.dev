@@ -438,3 +438,5 @@ const props = defineProps({
   </main>
 </template>
 ```
+
+Let's recap where we are right now. We have a board filled with input fields, a timer keeping track of our play time, and a result view to display when the game is won. How do we know when the game is won though? Well, let's revisit those previous snippets `App.vue`.
