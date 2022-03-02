@@ -243,7 +243,6 @@ const store = {
    */
   handleChange(e) {
     store.state.sudoku.rows[e.row].cols[e.col].value = e.value
-    highlightCell(e, store.state.sudoku)
     if (!store.state.sudoku.solvedTime) {
       const solved = checkSolution(store.state.sudoku)
       if (solved) {
@@ -446,6 +445,7 @@ Let's recap where we are right now. We have a board filled with input fields, a 
 Back in `lib/sudoku.js` we need to define the `checkSolution` function and export it. This function will accept a Sudoku object - the same being played in your current game - and compare it to said Sudoku's solution. We already have the solution on-hand because it gets stored when the Sudoku is initially generated, but we need to re-flatten our playable Sudoku to properly compare it back to the flat solution array.
 
 ```js
+// lib/sudoku.js
 /**
  * Evaluate the current solution against the solution
  * @param sudoku
@@ -499,12 +499,171 @@ const store = {
 </script>
 ```
 
-At this point, we have a playable game of Sudoku that checks for a solution with every input change event. When that solution is found, our `Result` component is displayed and all is good!
+At this point, we _should_ have a playable game of Sudoku that checks for a solution with every input change event. When that solution is found, our `Result` component is displayed and all is good!
 
 But let's make it better.
 
-1. Show hints
-   1. inline style v-if
-2. Share the game
-3. Reset the game
-4. Restore lost game
+## Game Too Hard? Add Hints!
+
+We're already checking your game against the solution with every input, so we should be able to manipulate those cells on-the-fly. After being told by one player (my mom) that they filled up the board in what looks like a winning game but weren't being told as such, I added hint system. It's off by default, but turning it on will highlight cells red or green to denote wrong or right.
+
+We can add a `highlightCell` function in our lib file.
+
+```js
+// lib/sudoku.js
+/**
+ * Take the last edited field and add the proper class to it
+ * @param field
+ * @param sudoku
+ */
+export function highlightCell(field, sudoku) {
+    const value = field.value
+    const solvedValue = sudoku.solution[field.row * 9 + field.col]
+    if (value === solvedValue) {
+        field.el.classList.contains("wrong") ? field.el.classList.remove("wrong") : false
+        field.el.classList.add("correct")
+    } else {
+        field.el.classList.contains("correct") ? field.el.classList.remove("correct") : false
+        field.el.classList.add("wrong")
+    }
+}
+```
+
+It takes the field you changed and the overall Sudoku. It will check your field against the overall solution and either add a class of "wrong" or "correct" to the cell. We first check if one of those classes exist and remove it before adding it - this is to account for a wrong cell later on becoming a correct cell so we don't end up with double classes.
+
+These are the same parameters we're using to check for a solved game, so we can add this highlight step to the same function.
+
+```js
+// src/App.vue
+<script setup>
+import {reactive} from 'vue'
+import {generateSudoku, checkSolution, highlightCell} from './lib/sudoku'
+import SudokuBoard from './components/SudokuBoard.vue'
+
+  /* snip */
+
+  /**
+   * Receives events from the individual fields to either highlight cells or check solutions
+   * @param e - Event
+   */
+  handleChange(e) {
+    store.state.sudoku.rows[e.row].cols[e.col].value = e.value
+    highlightCell(e, store.state.sudoku) // Add the highlight step
+    if (!store.state.sudoku.solvedTime) {
+      const solved = checkSolution(store.state.sudoku)
+      if (solved) {
+        store.state.sudoku.solvedTime = new Date()
+        store.state.sudoku.shareUrl = shareUrl(store.state.sudoku)
+      }
+    }
+  },
+</script>
+```
+
+Now we need to be able to show the highlighting when the player turns on the setting. We will do this by adding a `showProgress` boolean to the app state, and we'll alter that via checkbox in the board. We already defined `showProgress` earlier in this article, so let's add the checkbox.
+
+In our board component, we'll add a `fieldset` to house our game option. When checked, we'll call `handleToggle`, which will call either the `enable` or `disable` function from the `progressOpts` prop.
+
+```js
+// src/components/SudokuBoard.vue
+<script setup>
+import SudokuField from './SudokuField.vue'
+import Timer from './Timer.vue'
+import Result from './Result.vue'
+import {reactive} from "vue"
+
+const props = defineProps({
+  sudoku: Object,
+  onChange: Function,
+  solver: Function,
+  reset: Function,
+  progress: Boolean,
+  progressOpts: Object,
+  restore: Function,
+  previous: Object,
+})
+
+const toggle = reactive({checked: false})
+
+function handleToggle(e) {
+  console.log(e.target.value)
+  if (toggle.checked) {
+    props.progressOpts.enable()
+  } else {
+    props.progressOpts.disable()
+  }
+}
+</script>
+
+<template>
+  <main class="main">
+    <Timer v-if="!props.sudoku.solvedTime" :start="props.sudoku.startTime"/>
+    <Result v-if="props.sudoku.solvedTime" :sudoku="props.sudoku"/>
+    <div class="wrapper">
+      <div class="board" :class="{solved: props.sudoku.solvedTime}">
+        <div class="row" v-for="row in props.sudoku.rows" :key="row.index">
+          <SudokuField v-for="field in row.cols" :key="field.col" :field="field" :onChange="props.onChange"/>
+        </div>
+      </div>
+      <div class="actions">
+        <fieldset class="options">
+          <legend>Game Options</legend>
+          <label class="switch" for="progress-toggle">
+            <span class="switch__label">Color Clues 🔍</span>
+            <input type="checkbox" name="Toggle Cell Highlighting" id="progress-toggle" v-model="toggle.checked"
+                   @change="handleToggle">
+            <span class="slider"></span>
+          </label>
+        </fieldset>
+      </div>
+    </div>
+  </main>
+</template>
+```
+
+`progressOpts` is a function in our app state that we pass as a prop to the board.
+
+```js
+// src/App.vue
+  /**
+   * Determines whether to show the highlighted cells
+   */
+  progressOptions: {
+    enable: () => {
+      store.state.showProgress = true
+    },
+    disable: () => {
+      store.state.showProgress = false
+    },
+  },
+```
+
+We're not done yet! We need to only apply the highlighting CSS when `showProgress` is true. We do that with `v-if`. In `App.vue`, we add a conditional component at the top of the template to handle this.
+
+```js
+// src/App.vue
+<template>
+  <component :is="'style'" v-if="store.state.showProgress">
+    .field.wrong:not([readonly]) {
+    background-color: rgb(255 0 0 / 0.3);
+    }
+
+    .field.correct:not([readonly]) {
+    background-color: rgba(0 255 0 / 0.3);
+    }
+  </component>
+  <header class="header">
+    <h1>Sudoku</h1>
+  </header>
+  <SudokuBoard :sudoku="store.state.sudoku" :onChange="store.handleChange" :solver="store.solveSudoku"
+               :reset="store.resetSudoku" :progressOpts="store.progressOptions" :progress="store.state.showProgress"
+               :restore="store.restoreSudoku" :previous="store.state.previousSudoku"/>
+  <ReloadPrompt/>
+</template>
+```
+
+There you have it! Hints.
+
+1. Share the game
+2. Reset the game
+3. Restore lost game
