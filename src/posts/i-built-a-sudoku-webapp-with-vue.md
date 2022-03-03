@@ -1,7 +1,7 @@
 ---
 date: 2022-02-17
 use_screenshot_service: true
-draft: true
+draft: false
 title: Making a Sudoku App with Vue
 description: What started as a Valentine's Day gift turned into a full-blown app.
 tags: []
