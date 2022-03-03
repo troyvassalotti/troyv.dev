@@ -23,7 +23,7 @@ It's important to first understand how Sudoku works. I'm not qualified to define
 
 Makes sense, right?
 
-At its core, my app needed the following features:
+At its core, the app needed the following features:
 
 1. A way to generate a playable board and store its solution in the background.
 2. The ability to add guesses to blank spaces _and only_ the blank spaces.
@@ -109,7 +109,7 @@ export function generateSudoku() {
 At this point, we have a file `sudoku.js` in our `lib` directory. To use our data, we need to import `generateSudoku()`to our `App.vue` and store the Sudoku in app state.
 
 ```js
-// src/App.vue
+// App.vue
 <script setup>
 import {reactive} from 'vue'
 import {generateSudoku} from './lib/sudoku'
@@ -130,7 +130,7 @@ const store = {
 Our app now has access to a `store` object, which holds our app's `state` object. The app state is defined as reactive so we can change its value as needed, and our Sudoku is generated on the fly (along with a game options setting and previous Sudoku fields). It's `store.state.sudoku` that gets passed as a prop to our board component.
 
 ```js
-// src/App.vue
+// App.vue
 <script setup>
 import {reactive} from 'vue'
 import {generateSudoku} from './lib/sudoku'
@@ -160,7 +160,7 @@ We have data, but we have no home for that data. Our app needs a `SudokuField` c
 Our field component needs to accept block information (a value and whether it should be read only), and it needs to pass change events back into the app. The entire component is relatively small since it has only a few specific needs.
 
 ```js
-// src/components/SudokuField.vue
+// components/SudokuField.vue
 <script setup>
 const props = defineProps({
   field: Object,
@@ -225,7 +225,7 @@ You may have noticed our `handleChange()` function and `onChange` prop. These tw
 Our `onChange` function takes that and checks your guesses against the stored solution to determine if your game is completed or still in progress.
 
 ```js
-// src/App.vue
+// App.vue
 /*
  * snip
  */
@@ -260,7 +260,7 @@ const store = {
 Now it's time to actually create fields for our entire Sudoku board, and that's where Vue's `v-for` directives come in. We have access to our Sudoku's rows, which gives us access to its columns and values. If we iterate over the rows, then iterate over each row's columns, we can insert fields for each value in our puzzle.
 
 ```js
-// src/components/SudokuBoard.vue
+// components/SudokuBoard.vue
 <script setup>
 import SudokuField from './SudokuField.vue'
 
@@ -288,7 +288,7 @@ const props = defineProps({
 Let's get these two pieces out of the way while we're building our board. `Timer.vue` is a basic counter that doesn't depend on or interact with any other components.
 
 ```js
-// src/components/Timer.vue
+// components/Timer.vue
 <script setup>
 import {onBeforeUnmount, onMounted, reactive} from "vue"
 
@@ -325,7 +325,7 @@ onBeforeUnmount(() => {
 Sharing the game will either open up your device's native share sheet or copy your game URL to the clipboard.
 
 ```js
-// src/components/Result.vue
+// components/Result.vue
 <script setup>
 import {onMounted, reactive} from 'vue'
 import confetti from 'canvas-confetti'
@@ -411,7 +411,7 @@ onMounted(() => {
 Both of these components live in `SudokuBoard.vue`.
 
 ```js
-// src/components/SudokuBoard.vue
+// components/SudokuBoard.vue
 <script setup>
 import SudokuField from './SudokuField.vue'
 import Timer from './Timer.vue'
@@ -467,7 +467,7 @@ export function checkSolution(sudoku) {
 We use a similar method to _generate_ the solution with `solveSudoku` when you cheat in the game.
 
 ```js
-// src/App.vue
+// App.vue
 <script setup>
 import {reactive} from 'vue'
 import {generateSudoku, checkSolution} from './lib/sudoku'
@@ -534,7 +534,7 @@ It takes the field you changed and the overall Sudoku. It will check your field 
 These are the same parameters we're using to check for a solved game, so we can add this highlight step to the same function.
 
 ```js
-// src/App.vue
+// App.vue
 <script setup>
 import {reactive} from 'vue'
 import {generateSudoku, checkSolution, highlightCell} from './lib/sudoku'
@@ -565,7 +565,7 @@ Now we need to be able to show the highlighting when the player turns on the set
 In our board component, we'll add a `fieldset` to house our game option. When checked, we'll call `handleToggle`, which will call either the `enable` or `disable` function from the `progressOpts` prop.
 
 ```js
-// src/components/SudokuBoard.vue
+// components/SudokuBoard.vue
 <script setup>
 import SudokuField from './SudokuField.vue'
 import Timer from './Timer.vue'
@@ -624,7 +624,7 @@ function handleToggle(e) {
 `progressOpts` is a function in our app state that we pass as a prop to the board.
 
 ```js
-// src/App.vue
+// App.vue
   /**
    * Determines whether to show the highlighted cells
    */
@@ -641,7 +641,7 @@ function handleToggle(e) {
 We're not done yet! We need to only apply the highlighting CSS when `showProgress` is true. We do that with `v-if`. In `App.vue`, we add a conditional component at the top of the template to handle this.
 
 ```js
-// src/App.vue
+// App.vue
 <template>
   <component :is="'style'" v-if="store.state.showProgress">
     .field.wrong:not([readonly]) {
@@ -664,6 +664,148 @@ We're not done yet! We need to only apply the highlighting CSS when `showProgres
 
 There you have it! Hints.
 
-1. Share the game
-2. Reset the game
-3. Restore lost game
+## Challenge Your Friends
+
+This game feature came from Matt's video and I'll be honest that I don't _fully_ understand the APIs being used. That said, let's add it in.
+
+We start with two new functions in our lib:
+
+```js
+// lib/sudoku.js
+/**
+ * Create a URL for your sudoku to share with someone else
+ * @param sudoku
+ * @returns {string}
+ */
+export function shareUrl(sudoku) {
+    const data = {
+        raw: sudoku.raw,
+        startTime: sudoku.startTime,
+        solvedTime: sudoku.solvedTime
+    }
+
+    const query = btoa(JSON.stringify(data))
+
+    return document.location.href.replace(/\?.+$/, "") + `?sudoku=${query}`
+}
+
+function extractUrlData() {
+    const match = document.location.search.match(/\?sudoku=([^&]+)/)
+
+    if (match) {
+        return JSON.parse(atob(match[1]))
+    }
+
+    return null
+}
+```
+
+It uses the Web APIs [`btoa`](https://developer.mozilla.org/en-US/docs/Web/API/btoa) and [`atob`](https://developer.mozilla.org/en-US/docs/Web/API/atob). The former creates a Base64-encoded ASCII string from a binary string while the latter decodes it. We first create an object called `data` out of our Sudoku, then use `JSON.stringify` on that data, which becomes the binary string we encode with `btoa`. If we revisit our generator function, you can see `extractUrlData` in use as a way to generate your game if it was shared with you.
+
+```js
+// lib/sudoku.js
+export function generateSudoku() {
+    const fromUrl = extractUrlData()
+
+    const raw = fromUrl ? fromUrl.raw : makepuzzle()
+```
+
+If `extractUrlData` returns anything, it is stored as `raw`; otherwise, make a fresh puzzle.
+
+## You're Stuck and Want a New Game
+
+I can't control how difficult the Sudoku actually is - and I've been told the game is **hard** - but I _can_ add an option to make a new puzzle if you want. We can keep this function in the app state with the rest of our core functions.
+
+```js
+// App.vue
+  /**
+   * Start over with a fresh board
+   */
+  resetSudoku() {
+    if (!store.state.sudoku.solvedTime) {
+      store.state.previousSudoku = store.state.sudoku
+    }
+    const allCorrectFields = document.querySelectorAll('.field.correct')
+    allCorrectFields.forEach(field => {
+      if (!store.state.sudoku.solvedTime) field.classList.add("previousCorrect")
+      field.classList.remove("correct")
+    })
+    const allWrongFields = document.querySelectorAll('.field.wrong')
+    allWrongFields.forEach(field => {
+      if (!store.state.sudoku.solvedTime) field.classList.add("previousWrong")
+      field.classList.remove("wrong")
+    })
+    store.state.sudoku = generateSudoku()
+  },
+```
+
+I'll run through this step by step because it's a lot.
+
+1. Check to see if there's a solved time - meaning your game is completed. If your game in incomplete, we store your entire Sudoku in state as `previousSudoku`. We'll use this in the next section.
+2. Traverse the DOM looking for any input fields with the class "correct" and swap classes from "correct" to "previousCorrect." Do the same thing for fields with the class "wrong." Again, we'll use this later.
+3. Replace the current Sudoku in state with a new one by calling `generateSudoku`. This has the side effects of also resetting your game clock, so we're all set to go!
+
+We'll pass this function as a prop to our board and add a button to activate it.
+
+```js
+// components/SudokuBoard.vue
+<template>
+  <main class="main">
+    <!-- snip -->
+        <div class="buttons">
+          <button class="solve" @click="props.solver">Solve it Magically!</button>
+          <button class="reset" @click="props.reset">New Puzzle</button>
+          <button class="restore" @click="props.restore" v-if="props.previous">Restore Your Last Board</button>
+        </div>
+      </div>
+    </div>
+  </main>
+</template>
+```
+
+## Oops, you Accidentally Reset Your Game
+
+You're out of luck then, that's your fault.
+
+I'll help you out though. Remember how we stored your Sudoku as `previousSudoku` and swapped the field class names with "previousCorrect" and "previousWrong?" Let's use those in a new function called `restoreSudoku`.
+
+```js
+// App.vue
+  /**
+   * Restore your last board if you created a new one by mistake
+   */
+  restoreSudoku() {
+    store.state.sudoku = store.state.previousSudoku
+    store.state.previousSudoku = null
+    const allCorrectFields = document.querySelectorAll('.field.correct')
+    allCorrectFields.forEach(field => {
+      field.classList.remove("correct")
+    })
+    const allWrongFields = document.querySelectorAll('.field.wrong')
+    allWrongFields.forEach(field => {
+      field.classList.remove("wrong")
+    })
+    const previousCorrectFields = document.querySelectorAll('.previousCorrect')
+    previousCorrectFields.forEach(field => {
+      field.classList.add("correct")
+      field.classList.remove("previousCorrect")
+    })
+    const previousWrongFields = document.querySelectorAll('.previousWrong')
+    previousWrongFields.forEach(field => {
+      field.classList.add("wrong")
+      field.classList.remove("previousWrong")
+    })
+  }
+```
+
+The steps are as follows:
+
+1. Take your previous Sudoku and put it back in as your current Sudoku, then `null` your `previousSudoku`.
+2. Look for all fields with classes of "correct" and "wrong" and remove them.
+3. Find all your "previousCorrect" and "previousWrong" fields and replace them with "correct" and "wrong."
+
+You now have your game restored! This button can live beside your reset button as I showed in a previous snippet.
+
+## A Complete Sudoku Game
+
+If you followed along, you should have a game nearly identical to the game I made, aside from any styling you want applied. Use `npm run dev` to spin up your dev server and see it in all its glory. You can [check the repo](https://github.com/troyvassalotti/sudoku) if you want to see all the code as well. I hope this helps someone else out there looking to make a Sudoku app in Vue.
