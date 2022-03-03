@@ -9,7 +9,7 @@
     pretty_urls = true
 
 [build.environment]
-    NODE_VERSION = "14"
+    NODE_VERSION = "16"
 
 # Redirect from the default Netlify site to my custom domain
 [[redirects]]

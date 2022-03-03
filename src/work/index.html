@@ -50,11 +50,9 @@
                         {% else %}
                             <img src="{{ 'https://screenshot.troyv.dev/' + project.data.website | urlencode }}" alt="{{ project.data.title }}" class="caption-image" loading="lazy" width="300" height="300" decoding="async">
                         {% endif %}
-                        <div class="caption">
-                            <figcaption>
-                                <h3>{{ project.data.shortname }}</h3>
-                            </figcaption>
-                        </div>
+                        <figcaption class="caption">
+                            <h3>{{ project.data.shortname }}</h3>
+                        </figcaption>
                     </a>
                 </figure>
             {% endfor %}

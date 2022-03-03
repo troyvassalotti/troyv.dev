@@ -13,7 +13,10 @@
         threshold: .5
     }
 
-    // create the intersection observer for the annotations
+    /**
+     * Create the intersection observer for the annotations
+     * @param entries
+     */
     function handleHandrawing(entries) {
         entries.map((entry) => {
             if (entry.isIntersecting) {
@@ -62,21 +65,16 @@
     cloudsObserver.observe(more)
 
     const sundial = document.querySelector("#sundial")
-    const sundialIcon = sundial.querySelector("img")
-    const sun = "sun"
-    const moon = "moon"
 
     sundial.addEventListener("click", () => {
-        if (sundialIcon.classList.contains(sun)) {
+        if (sundial.classList.contains("sun")) {
             clouds.classList.add("sunset")
-            sundialIcon.setAttribute("src", `/img/${moon}.svg`)
-            sundialIcon.classList.remove(sun)
-            sundialIcon.classList.add(moon)
-        } else if (sundialIcon.classList.contains(moon)) {
+            sundial.classList.remove("sun")
+            sundial.classList.add("moon")
+        } else if (sundial.classList.contains("moon")) {
             clouds.classList.remove("sunset")
-            sundialIcon.setAttribute("src", `/img/${sun}.svg`)
-            sundialIcon.classList.remove(moon)
-            sundialIcon.classList.add(sun)
+            sundial.classList.remove("moon")
+            sundial.classList.add("sun")
         }
     })
     {% endset %}
@@ -126,11 +124,9 @@
                             <figure class="caption-overlay">
                                 <a class="caption-link" href="{{ work.url }}">
                                     <img src="{{ 'https://screenshot.troyv.dev/' + work.data.website | urlencode + '/opengraph' }}" alt="{{ work.data.title + ' screenshot' }}" class="caption-image full" width="600" height="315" decoding="async" loading="lazy">
-                                    <div class="caption">
-                                        <figcaption>
-                                            <h3 class="h4">{{ work.data.title }}</h3>
-                                        </figcaption>
-                                    </div>
+                                    <figcaption class="caption">
+                                        <h3 class="h4">{{ work.data.title }}</h3>
+                                    </figcaption>
                                 </a>
                             </figure>
                         {% endfor %}
@@ -160,11 +156,10 @@
                 <div class="cloud background"></div>
             </div>
             <div class="wrapper">
-                <div class="sundial">
-                    <button title="Turn the clouds animation on or off." id="sundial" type="button" name="sundial">
-                        <img class="sun" src="/img/sun.svg" alt="" loading="lazy">
-                    </button>
-                </div>
+                <button title="Turn the clouds animation on or off." id="sundial" type="button" name="sundial" class="sundial sun">
+                    {% include "partials/sun.svg" %}
+                    {% include "partials/moon.svg" %}
+                </button>
                 <div class="content">
                     <div class="music-section" id="music">
                         <h2>I Also Have <a href="/music/">Music</a></h2>
@@ -394,17 +389,18 @@
         }
 
         .sundial {
+            background: transparent;
+            border: none;
+            cursor: pointer;
             display: block;
+            padding: 0;
             position: absolute;
             right: 0;
             top: 0;
         }
 
-        #sundial {
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            padding: 0;
+        .sun > .feather-moon, .moon > .feather-sun {
+            display: none;
         }
 
         #clouds {
@@ -637,7 +633,7 @@
             fill: var(--grayPrimary);
         }
 
-        #sundial img {
+        #sundial svg {
             filter: invert(1);
         }
 

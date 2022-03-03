@@ -1,5 +1,5 @@
 ---
-date: 2022-02-17
+date: 2022-03-04
 use_screenshot_service: true
 draft: false
 title: Making a Sudoku App with Vue
@@ -320,7 +320,7 @@ onBeforeUnmount(() => {
 </template>
 ```
 
-`Result.vue` is slightly more complicated but mainly because it controls the end-game share functionality. Winning the game calls for a celebration, so confetti cannons are in order when this component is mounted to the DOM. We also want to show different content depending on if you cheated with the shortcut button or if you completed it on your own. Cheating sets a value in our `sudoku` object, so that's easy enough to trigger dynamic content with. We punish cheaters by calling them out on it and subjecting them to a YouTube video.
+`Result.vue` is slightly more complicated but mainly because it controls the end-game share functionality. Winning the game calls for a celebration, so confetti cannons are in order when this component is mounted to the DOM. We also want to show different content depending on if you cheated with the shortcut button or if you completed it on your own. Cheating sets a value in our `sudoku` object, so that's fine enough to trigger dynamic content with. We punish cheaters by calling them out on it and subjecting them to a YouTube video.
 
 Sharing the game will either open up your device's native share sheet or copy your game URL to the clipboard.
 

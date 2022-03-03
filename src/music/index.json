@@ -3,40 +3,30 @@
     "frontRoyalSocial": [
         {
             "href": "https://frontroyalmd.bandcamp.com/",
-            "img": "bandcamp-button-bc-circle-black-64.png",
+            "img": "bandcamp.svg",
             "alt": "Bandcamp"
         },
         {
             "href": "https://www.instagram.com/frontroyal_official/",
-            "img": "instagram-black.svg",
+            "img": "instagram.svg",
             "alt": "Instagram"
         },
         {
             "href": "https://www.youtube.com/channel/UCm-KryhT3o9NZSbpG-M1qCQ/feed",
-            "img": "youtube-black.svg",
+            "img": "youtube.svg",
             "alt": "YouTube"
         },
         {
             "href": "https://www.facebook.com/FrontRoyalMD",
-            "img": "facebook-black.svg",
+            "img": "facebook.svg",
             "alt": "Facebook"
-        },
-        {
-            "href": "https://www.frontroyalband.com",
-            "img": "link.svg",
-            "alt": "Link out to the band's website."
         }
     ],
     "troySocial": [
         {
             "href": "https://justtroy.bandcamp.com/",
-            "img": "bandcamp-button-bc-circle-black-64.png",
+            "img": "bandcamp.svg",
             "alt": "Bandcamp"
-        },
-        {
-            "href": "https://music.troyvassalotti.xyz",
-            "img": "link.svg",
-            "alt": "Link out to the band's personal website."
         }
     ]
 }
