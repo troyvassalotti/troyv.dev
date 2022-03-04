@@ -5,7 +5,7 @@ date: 2021-04-25
 tags:
 - project
 shortname: Express With Cats
-featuredImage: https://res.cloudinary.com/dpmchqezv/image/upload/v1646349103/blog/cats_stm8wv.jpg
+featuredImage: "/v1646349103/blog/cats_stm8wv.jpg"
 website: https://cats.onrender.com/
 project: true
 use_screenshot_service: false
