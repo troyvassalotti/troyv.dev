@@ -1,5 +1,5 @@
 ---
-date: 2022-03-04
+date: 2022-03-03
 use_screenshot_service: true
 draft: false
 title: Making a Sudoku App with Vue
