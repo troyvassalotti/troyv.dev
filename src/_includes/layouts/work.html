@@ -1,86 +1,86 @@
 {% extends 'layouts/base.html' %} {% block content %}
 <main class="layout">
-    <div class="wrapper">
-        <div class="grid work-solo">
-            <section class="work-solo__img">
-                <h1>{{ title }}</h1>
-                <p class="rm-m-bs">{{ description }}</p>
-                <img
-                    src="{{ 'https://screenshot.troyv.dev/' + website | urlencode + '/opengraph'}}"
-                    alt="{{ title }}"
-                    class="img-zoomable has-box-shadow"
-                    width="1200"
-                    height="630"
-                    decoding="async" />
-            </section>
-            <section class="work-solo__summary">{{ content | safe }}</section>
-            <section class="work-solo__details">
-                <h2>Details</h2>
-                <dl>
-                    {% if framework %}
-                    <div>
-                        <dt class="bold">Built With</dt>
-                        <dd>{{ framework }}</dd>
-                    </div>
-                    {% endif %} {% if website %}
-                    <div>
-                        <dt class="bold">Visit Live Website</dt>
-                        <dd><a href="{{ website }}">{{ website }}</a></dd>
-                    </div>
-                    {% endif %} {% if repo %}
-                    <div>
-                        <dt class="bold">Repository</dt>
-                        <dd><a href="{{ repo }}">{{ repo }}</a></dd>
-                    </div>
-                    {% endif %}
-                </dl>
-            </section>
-        </div>
+  <div class="wrapper">
+    <div class="grid work-solo">
+      <section class="work-solo__img">
+        <h1>{{ title }}</h1>
+        <p class="rm-m-bs">{{ description }}</p>
+        <img
+          src="{{ 'https://screenshot.troyv.dev/' + website | urlencode + '/opengraph'}}"
+          alt="{{ title }}"
+          class="img-zoomable has-box-shadow"
+          width="1200"
+          height="630"
+          decoding="async" />
+      </section>
+      <section class="work-solo__summary">{{ content | safe }}</section>
+      <section class="work-solo__details">
+        <h2>Details</h2>
+        <dl>
+          {% if framework %}
+          <div>
+            <dt class="bold">Built With</dt>
+            <dd>{{ framework }}</dd>
+          </div>
+          {% endif %} {% if website %}
+          <div>
+            <dt class="bold">Visit Live Website</dt>
+            <dd><a href="{{ website }}">{{ website }}</a></dd>
+          </div>
+          {% endif %} {% if repo %}
+          <div>
+            <dt class="bold">Repository</dt>
+            <dd><a href="{{ repo }}">{{ repo }}</a></dd>
+          </div>
+          {% endif %}
+        </dl>
+      </section>
     </div>
+  </div>
 </main>
 {% endblock %}
 
 <style>
-    {% set css %}
-    .work-solo h2 {
-        font-size: var(--step-4);
-    }
+  {% set css %}
+  .work-solo h2 {
+      font-size: var(--step-4);
+  }
 
-    @media (min-width: 60em) {
-        .work-solo {
-            grid-template-areas:
-            "img summary"
-            "details summary"
-        }
+  @media (min-width: 60em) {
+      .work-solo {
+          grid-template-areas:
+          "img summary"
+          "details summary"
+      }
 
-        .work-solo__img {
-            grid-area: img;
-        }
+      .work-solo__img {
+          grid-area: img;
+      }
 
-        .work-solo__summary {
-            grid-area: summary;
-            place-self: center;
-        }
+      .work-solo__summary {
+          grid-area: summary;
+          place-self: center;
+      }
 
-        .work-solo__details {
-            grid-area: details;
-        }
-    }
+      .work-solo__details {
+          grid-area: details;
+      }
+  }
 
-    {% endset %}
+  {% endset %}
 </style>
 
 <script type="module">
-    {% set js %}
-    import Zooming
-        from "https://cdn.skypack.dev/-/zooming@v2.1.1-iNyCUNwyb2dr3AokLALM/dist=es2020,mode=imports/optimized/zooming.js"
+  {% set js %}
+  import Zooming
+      from "https://cdn.skypack.dev/-/zooming@v2.1.1-iNyCUNwyb2dr3AokLALM/dist=es2020,mode=imports/optimized/zooming.js"
 
-    const zooming = new Zooming({
-        bgColor: "rgb(0, 0, 0)",
-        bgOpacity: .5,
-        customSize: "135%"
-    })
+  const zooming = new Zooming({
+      bgColor: "rgb(0, 0, 0)",
+      bgOpacity: .5,
+      customSize: "135%"
+  })
 
-    zooming.listen(".img-zoomable")
-    {% endset %}
+  zooming.listen(".img-zoomable")
+  {% endset %}
 </script>

@@ -11,72 +11,72 @@ const filters = require(`${utilsDir}/filters`)
 const shortcodes = require(`${utilsDir}/shortcodes`)
 
 module.exports = function (eleventyConfig) {
-    // Plugins
-    eleventyConfig.addPlugin(inclusiveLangPlugin)
-    eleventyConfig.addPlugin(pluginRss)
-    eleventyConfig.addPlugin(syntaxHighlight)
-    eleventyConfig.addPlugin(timeToRead)
-    eleventyConfig.addPlugin(embedYouTube)
-    eleventyConfig.addPlugin(sitemap, {
-        sitemap: {
-            hostname: "https://www.troyv.dev",
-        },
-    })
-    eleventyConfig.addPlugin(pluginWebmentions, {
-        domain: "https://www.troyv.dev",
-    })
+  // Plugins
+  eleventyConfig.addPlugin(inclusiveLangPlugin)
+  eleventyConfig.addPlugin(pluginRss)
+  eleventyConfig.addPlugin(syntaxHighlight)
+  eleventyConfig.addPlugin(timeToRead)
+  eleventyConfig.addPlugin(embedYouTube)
+  eleventyConfig.addPlugin(sitemap, {
+    sitemap: {
+      hostname: "https://www.troyv.dev",
+    },
+  })
+  eleventyConfig.addPlugin(pluginWebmentions, {
+    domain: "https://www.troyv.dev",
+  })
 
-    // Filters
-    Object.keys(filters).forEach((filterName) => {
-        eleventyConfig.addFilter(filterName, filters[filterName])
-    })
+  // Filters
+  Object.keys(filters).forEach((filterName) => {
+    eleventyConfig.addFilter(filterName, filters[filterName])
+  })
 
-    // Transforms
-    if (process.env.ELEVENTY_ENV === "production") {
-        eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
-            if (this.outputPath && this.outputPath.endsWith(".html")) {
-                let minified = htmlmin.minify(content, {
-                    useShortDoctype: true,
-                    removeComments: true,
-                    collapseWhitespace: true,
-                    minifyCSS: true,
-                    minifyJS: true,
-                })
-                return minified
-            }
-            return content
+  // Transforms
+  if (process.env.ELEVENTY_ENV === "production") {
+    eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
+      if (this.outputPath && this.outputPath.endsWith(".html")) {
+        let minified = htmlmin.minify(content, {
+          useShortDoctype: true,
+          removeComments: true,
+          collapseWhitespace: true,
+          minifyCSS: true,
+          minifyJS: true,
         })
-    }
-
-    // Shortcodes
-    eleventyConfig.addNunjucksAsyncShortcode("image", shortcodes.Image)
-    eleventyConfig.addNunjucksShortcode("imageSync", shortcodes.ImageSync)
-
-    // Passthroughs
-    eleventyConfig.addPassthroughCopy({ "./public": "/" })
-
-    eleventyConfig.addCollection("post", (collection) => {
-        if (process.env.ELEVENTY_ENV !== "production")
-            return [...collection.getFilteredByGlob("./src/posts/*.md")]
-        else
-            return [...collection.getFilteredByGlob("./src/posts/*.md")].filter(
-                (post) => !post.data.draft
-            )
+        return minified
+      }
+      return content
     })
+  }
 
-    // Add excerpt support
-    eleventyConfig.setFrontMatterParsingOptions({
-        excerpt: true,
-        excerpt_separator: "<!-- excerpt -->",
-        excerpt_alias: "excerpt",
-    })
+  // Shortcodes
+  eleventyConfig.addNunjucksAsyncShortcode("image", shortcodes.Image)
+  eleventyConfig.addNunjucksShortcode("imageSync", shortcodes.ImageSync)
 
-    return {
-        htmlTemplateEngine: "njk",
-        markdownTemplateEngine: "njk",
-        dir: {
-            input: "src",
-            layouts: "_includes/layouts",
-        },
-    }
+  // Passthroughs
+  eleventyConfig.addPassthroughCopy({ "./public": "/" })
+
+  eleventyConfig.addCollection("post", (collection) => {
+    if (process.env.ELEVENTY_ENV !== "production")
+      return [...collection.getFilteredByGlob("./src/posts/*.md")]
+    else
+      return [...collection.getFilteredByGlob("./src/posts/*.md")].filter(
+        (post) => !post.data.draft
+      )
+  })
+
+  // Add excerpt support
+  eleventyConfig.setFrontMatterParsingOptions({
+    excerpt: true,
+    excerpt_separator: "<!-- excerpt -->",
+    excerpt_alias: "excerpt",
+  })
+
+  return {
+    htmlTemplateEngine: "njk",
+    markdownTemplateEngine: "njk",
+    dir: {
+      input: "src",
+      layouts: "_includes/layouts",
+    },
+  }
 }

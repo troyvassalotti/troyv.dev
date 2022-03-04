@@ -1,46 +1,47 @@
 {
-    "name": "troyv.dev",
-    "version": "2.5.0",
-    "description": "This is my portfolio, but it can really be whatever I want it to be.",
-    "main": "_site/index.html",
-    "scripts": {
-        "build": "ELEVENTY_ENV=production eleventy",
-        "watch": "eleventy --watch",
-        "serve": "ELEVENTY_ENV=production eleventy --serve",
-        "dev": "ELEVENTY_ENV=development eleventy --serve --quiet",
-        "debug": "DEBUG=* eleventy",
-        "pretty": "prettier --write .",
-        "forestry:preview": "eleventy --serve"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/troyvassalotti/personal-site.git"
-    },
-    "author": {
-        "name": "Troy Vassalotti",
-        "url": "https://www.troyv.dev"
-    },
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/troyvassalotti/personal-site/issues"
-    },
-    "homepage": "https://github.com/troyvassalotti/personal-site#readme",
-    "devDependencies": {
-        "@11ty/eleventy": "^1.0.0-beta.8",
-        "@11ty/eleventy-plugin-inclusive-language": "^1.0.2",
-        "@11ty/eleventy-plugin-rss": "^1.1.1",
-        "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.0",
-        "@chrisburnell/eleventy-cache-webmentions": "^0.1.11",
-        "eleventy-plugin-add-web-component-definitions": "^2.0.3",
-        "prettier": "^2.5.1"
-    },
-    "dependencies": {
-        "@11ty/eleventy-cache-assets": "^2.2.1",
-        "@11ty/eleventy-img": "^0.9.0",
-        "@quasibit/eleventy-plugin-sitemap": "^2.1.4",
-        "dotenv": "^10.0.0",
-        "eleventy-plugin-time-to-read": "^1.1.0",
-        "eleventy-plugin-youtube-embed": "^1.6.3",
-        "html-minifier-terser": "^7.0.0-alpha.0"
-    }
+  "name": "troyv.dev",
+  "version": "2.5.0",
+  "description": "This is my portfolio, but it can really be whatever I want it to be.",
+  "main": "_site/index.html",
+  "scripts": {
+    "build": "ELEVENTY_ENV=production eleventy",
+    "watch": "eleventy --watch",
+    "serve": "ELEVENTY_ENV=production eleventy --serve",
+    "dev": "ELEVENTY_ENV=development eleventy --serve --quiet",
+    "debug": "DEBUG=* eleventy",
+    "pretty": "prettier --write .",
+    "forestry:preview": "eleventy --serve",
+    "deploy": "npm run pretty && netlify build && netlify deploy --prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/troyvassalotti/personal-site.git"
+  },
+  "author": {
+    "name": "Troy Vassalotti",
+    "url": "https://www.troyv.dev"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/troyvassalotti/personal-site/issues"
+  },
+  "homepage": "https://github.com/troyvassalotti/personal-site#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.0-beta.8",
+    "@11ty/eleventy-plugin-inclusive-language": "^1.0.2",
+    "@11ty/eleventy-plugin-rss": "^1.1.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.0",
+    "@chrisburnell/eleventy-cache-webmentions": "^0.1.11",
+    "eleventy-plugin-add-web-component-definitions": "^2.0.3",
+    "prettier": "^2.5.1"
+  },
+  "dependencies": {
+    "@11ty/eleventy-cache-assets": "^2.2.1",
+    "@11ty/eleventy-img": "^0.9.0",
+    "@quasibit/eleventy-plugin-sitemap": "^2.1.4",
+    "dotenv": "^10.0.0",
+    "eleventy-plugin-time-to-read": "^1.1.0",
+    "eleventy-plugin-youtube-embed": "^1.6.3",
+    "html-minifier-terser": "^7.0.0-alpha.0"
+  }
 }

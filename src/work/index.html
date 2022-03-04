@@ -1,126 +1,126 @@
 {% extends 'layouts/page.html' %}
 
 <script type="module">
-    {% set js %}
-    // This is for the handdrawn annotations from Rough Notation
-    import { annotate } from "https://cdn.skypack.dev/rough-notation"
+  {% set js %}
+  // This is for the handdrawn annotations from Rough Notation
+  import { annotate } from "https://cdn.skypack.dev/rough-notation"
 
-    const pageTitle = document.querySelector("#page-title")
-    pageTitle.setAttribute("style", "color: var(--blackPrimary)")
-    const projectsAnnotation = annotate(pageTitle, {
-        type: "highlight",
-        color: "var(--workColor)",
-        padding: 15
-    })
+  const pageTitle = document.querySelector("#page-title")
+  pageTitle.setAttribute("style", "color: var(--blackPrimary)")
+  const projectsAnnotation = annotate(pageTitle, {
+      type: "highlight",
+      color: "var(--workColor)",
+      padding: 15
+  })
 
-    projectsAnnotation.show()
-    {% endset %}
+  projectsAnnotation.show()
+  {% endset %}
 </script>
 
 {% block main %}
 <div class="wrapper">
-    <section class="work__focus">
-        {% for work in collections['work'] | reverse %}
-        <div class="container neumorphism">
-            <div class="content">
-                <h2>{{ work.data.title }}</h2>
-                <p>{{ work.data.description }}</p>
-            </div>
-            <a href="{{ work.url }}">
-                <img
-                    src="{{ 'https://screenshot.troyv.dev/' + work.data.website | urlencode + '/opengraph' }}"
-                    alt="{{ work.data.title }}"
-                    width="1200"
-                    height="630"
-                    decoding="async" />
-            </a>
-        </div>
-        {% endfor %}
-    </section>
+  <section class="work__focus">
+    {% for work in collections['work'] | reverse %}
+    <div class="container neumorphism">
+      <div class="content">
+        <h2>{{ work.data.title }}</h2>
+        <p>{{ work.data.description }}</p>
+      </div>
+      <a href="{{ work.url }}">
+        <img
+          src="{{ 'https://screenshot.troyv.dev/' + work.data.website | urlencode + '/opengraph' }}"
+          alt="{{ work.data.title }}"
+          width="1200"
+          height="630"
+          decoding="async" />
+      </a>
+    </div>
+    {% endfor %}
+  </section>
 </div>
 <section class="misc">
-    <header>
-        <h2>Other Projects</h2>
-    </header>
-    <div class="projects__misc">
-        {% for project in collections['project'] | reverse %}
-        <a class="caption-overlay" href="{{ project.url }}">
-            <figure class="caption-figure">
-                <img
-                    src="{{ metadata.cloudinary + project.data.featuredImage if project.data.featuredImage else 'https://screenshot.troyv.dev/' + project.data.website | urlencode }}"
-                    alt="{{ project.data.title }}"
-                    class="caption-image"
-                    loading="lazy"
-                    decoding="async"
-                    width="300"
-                    height="300" />
-                <figcaption class="caption">
-                    <h3>{{ project.data.shortname }}</h3>
-                </figcaption>
-            </figure>
-        </a>
-        {% endfor %}
-    </div>
+  <header>
+    <h2>Other Projects</h2>
+  </header>
+  <div class="projects__misc">
+    {% for project in collections['project'] | reverse %}
+    <a class="caption-overlay" href="{{ project.url }}">
+      <figure class="caption-figure">
+        <img
+          src="{{ metadata.cloudinary + project.data.featuredImage if project.data.featuredImage else 'https://screenshot.troyv.dev/' + project.data.website | urlencode }}"
+          alt="{{ project.data.title }}"
+          class="caption-image"
+          loading="lazy"
+          decoding="async"
+          width="300"
+          height="300" />
+        <figcaption class="caption">
+          <h3>{{ project.data.shortname }}</h3>
+        </figcaption>
+      </figure>
+    </a>
+    {% endfor %}
+  </div>
 </section>
 {% endblock %}
 
 <style>
-    {% set css %}
-    .work__focus {
-        --min: clamp(20rem, 100%, 30rem);
-        display: grid;
-        gap: 2rem;
-        grid-template-columns: repeat(auto-fill, minmax(var(--min), 1fr));
-    }
+  {% set css %}
+  .work__focus {
+      --min: clamp(20rem, 100%, 30rem);
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fill, minmax(var(--min), 1fr));
+  }
 
-    .work__focus h2 {
-        font-size: var(--step-2);
-    }
+  .work__focus h2 {
+      font-size: var(--step-2);
+  }
 
-    .work__focus .container {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 1rem;
-    }
+  .work__focus .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1rem;
+  }
 
-    .work__focus img {
-        transition: 0.3s ease;
-    }
+  .work__focus img {
+      transition: 0.3s ease;
+  }
 
-    .work__focus img:hover {
-        filter: brightness(0.5);
-        transform: scale(1.02);
-    }
+  .work__focus img:hover {
+      filter: brightness(0.5);
+      transform: scale(1.02);
+  }
 
-    .misc {
-        --padding: 3rem;
-        padding-block-end: var(--padding);
-        padding-block-start: var(--padding);
-    }
+  .misc {
+      --padding: 3rem;
+      padding-block-end: var(--padding);
+      padding-block-start: var(--padding);
+  }
 
-    .misc h2 {
-        --padding: 1rem;
-        margin-block-end: 2rem;
-        padding-inline-end: var(--padding);
-        padding-inline-start: var(--padding);
-    }
+  .misc h2 {
+      --padding: 1rem;
+      margin-block-end: 2rem;
+      padding-inline-end: var(--padding);
+      padding-inline-start: var(--padding);
+  }
 
-    .projects__misc {
-        display: flex;
-        gap: 5%;
-        overflow-x: auto;
-        padding-inline-end: 1rem;
-        padding-inline-start: 1rem;
-    }
+  .projects__misc {
+      display: flex;
+      gap: 5%;
+      overflow-x: auto;
+      padding-inline-end: 1rem;
+      padding-inline-start: 1rem;
+  }
 
-    .projects__misc .caption-overlay {
-        flex-shrink: 0;
-    }
+  .projects__misc .caption-overlay {
+      flex-shrink: 0;
+  }
 
-    .projects__misc .caption-overlay h3 {
-        font-size: var(--step-1);
-    }
+  .projects__misc .caption-overlay h3 {
+      font-size: var(--step-1);
+  }
 
-    {% endset %}
+  {% endset %}
 </style>

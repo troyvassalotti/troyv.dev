@@ -1,20 +1,20 @@
 {% set nextPost = collections.post | getNextCollectionItem(page) %} {% set previousPost =
 collections.post | getPreviousCollectionItem(page) %} {% if nextPost or previousPost %}
 <aside id="post-navigation">
-    <div class="wrapper" data-constrain="more">
-        <ul class="no-list post-navigation neumorphism">
-            {% if nextPost %}
-            <li>
-                <span class="h5">Next Post:</span>
-                <a href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a>
-            </li>
-            {% endif %} {% if previousPost %}
-            <li>
-                <span class="h5">Previous Post:</span>
-                <a href="{{ previousPost.url | url }}">{{ previousPost.data.title }}</a>
-            </li>
-            {% endif %}
-        </ul>
-    </div>
+  <div class="wrapper" data-constrain="more">
+    <ul class="no-list post-navigation neumorphism">
+      {% if nextPost %}
+      <li>
+        <span class="h5">Next Post:</span>
+        <a href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a>
+      </li>
+      {% endif %} {% if previousPost %}
+      <li>
+        <span class="h5">Previous Post:</span>
+        <a href="{{ previousPost.url | url }}">{{ previousPost.data.title }}</a>
+      </li>
+      {% endif %}
+    </ul>
+  </div>
 </aside>
 {% endif %}

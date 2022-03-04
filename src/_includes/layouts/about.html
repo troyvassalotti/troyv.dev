@@ -1,119 +1,113 @@
 {% extends 'layouts/page.html' %}
 
 <script type="module">
-    {% set js %}
-    // This is for the handdrawn annotations from Rough Notation
-    import { annotate } from "https://cdn.skypack.dev/rough-notation"
+  {% set js %}
+  // This is for the handdrawn annotations from Rough Notation
+  import { annotate } from "https://cdn.skypack.dev/rough-notation"
 
-    const pageTitle = document.querySelector("#page-title")
-    const aboutAnnotation = annotate(pageTitle, {
-        type: "bracket",
-        color: "var(--aboutColor)",
-        brackets: [
-            "left", "right"
-        ]
-    })
+  const pageTitle = document.querySelector("#page-title")
+  const aboutAnnotation = annotate(pageTitle, {
+      type: "bracket",
+      color: "var(--aboutColor)",
+      brackets: [
+          "left", "right"
+      ]
+  })
 
-    aboutAnnotation.show()
-    {% endset %}
+  aboutAnnotation.show()
+  {% endset %}
 </script>
 
 {% block main %}
 <div class="wrapper">
-    <section class="main-info">
-        <section class="view-resume">
-            <div class="wrapper">
-                <div class="content">{{ content | safe }}</div>
-            </div>
-        </section>
-        <section class="form">
-            <div class="wrapper">
-                <div class="content flex-center col">
-                    <header>
-                        <h2>Let's Talk</h2>
-                        <p>If you've liked what you've seen, let's talk about stuff.</p>
-                    </header>
-                    <form
-                        class="contact-form"
-                        name="contactForm"
-                        netlify
-                        netlify-honeypot="bot-field"
-                        action="/success">
-                        <label style="display: none"
-                            >Don’t fill this out: <input name="bot-field"
-                        /></label>
-                        <label for="name"
-                            >Name<input name="name" type="text" id="name" required
-                        /></label>
-                        <label for="email"
-                            >Email<input name="email" type="email" id="email" required
-                        /></label>
-                        <label for="message"
-                            >Message<textarea
-                                name="message"
-                                id="message"
-                                required
-                                placeholder="Say hi!"
-                                rows="5"></textarea>
-                        </label>
-                        <input type="submit" value="Submit" id="submit" />
-                    </form>
-                </div>
-            </div>
-        </section>
+  <section class="main-info">
+    <section class="view-resume">
+      <div class="wrapper">
+        <div class="content">{{ content | safe }}</div>
+      </div>
     </section>
+    <section class="form">
+      <div class="wrapper">
+        <div class="content flex-center col">
+          <header>
+            <h2>Let's Talk</h2>
+            <p>If you've liked what you've seen, let's talk about stuff.</p>
+          </header>
+          <form
+            class="contact-form"
+            name="contactForm"
+            netlify
+            netlify-honeypot="bot-field"
+            action="/success">
+            <label style="display: none">Don’t fill this out: <input name="bot-field" /></label>
+            <label for="name">Name<input name="name" type="text" id="name" required /></label>
+            <label for="email">Email<input name="email" type="email" id="email" required /></label>
+            <label for="message"
+              >Message<textarea
+                name="message"
+                id="message"
+                required
+                placeholder="Say hi!"
+                rows="5"></textarea>
+            </label>
+            <input type="submit" value="Submit" id="submit" />
+          </form>
+        </div>
+      </div>
+    </section>
+  </section>
 </div>
 {% endblock %}
 
 <style>
-    {% set css %}
-    .main-info {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
+  {% set css %}
+  .main-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+  }
 
-    .view-resume {
-        flex: 1 0 40%;
-    }
+  .view-resume {
+      flex: 1 0 40%;
+  }
 
-    .view-resume p {
-        max-inline-size: 45ch;
-    }
+  .view-resume p {
+      max-inline-size: 45ch;
+  }
 
-    .form .wrapper {
-        display: flex;
-        justify-content: flex-end;
-    }
+  .form .wrapper {
+      display: flex;
+      justify-content: flex-end;
+  }
 
-    .form {
-        flex: 1 0 50%;
-    }
+  .form {
+      flex: 1 0 50%;
+  }
 
-    .form .content header {
-        text-align: end;
-    }
+  .form .content header {
+      text-align: end;
+  }
 
-    .contact-form {
-        inline-size: 100%;
-        max-inline-size: 31.25rem;
-        padding: 1ch;
-    }
+  .contact-form {
+      inline-size: 100%;
+      max-inline-size: 31.25rem;
+      padding: 1ch;
+  }
 
-    .contact-form label {
-        display: flex;
-        flex-direction: column;
-        font-family: var(--headings);
-        margin: 0.5ex 0;
-    }
+  .contact-form label {
+      display: flex;
+      flex-direction: column;
+      font-family: var(--headings);
+      margin: 0.5ex 0;
+  }
 
-    .contact-form input {
-        padding: 0.5ex;
-    }
+  .contact-form input {
+      padding: 0.5ex;
+  }
 
-    .contact-form #submit {
-        cursor: pointer;
-    }
+  .contact-form #submit {
+      cursor: pointer;
+  }
 
-    {% endset %}
+  {% endset %}
 </style>
