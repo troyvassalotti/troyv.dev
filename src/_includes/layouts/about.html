@@ -19,36 +19,50 @@
 </script>
 
 {% block main %}
-    <div class="wrapper">
-        <section class="main-info">
-            <section class="view-resume">
-                <div class="wrapper">
-                    <div class="content">
-                        {{ content | safe }}
-                    </div>
-                </div>
-            </section>
-            <section class="form">
-                <div class="wrapper">
-                    <div class="content flex-center col">
-                        <header>
-                            <h2>Let's Talk</h2>
-                            <p>If you've liked what you've seen, let's talk about stuff.</p>
-                        </header>
-                        <form class="contact-form" name="contactForm" netlify netlify-honeypot="bot-field"
-                              action="/success">
-                            <label style="display: none;">Don’t fill this out: <input name="bot-field"></label>
-                            <label for="name">Name<input name="name" type="text" id="name" required></label>
-                            <label for="email">Email<input name="email" type="email" id="email" required></label>
-                            <label for="message">Message<textarea name="message" id="message" required
-                                                                  placeholder="Say hi!" rows="5"></textarea></label>
-                            <input type="submit" value="Submit" id="submit">
-                        </form>
-                    </div>
-                </div>
-            </section>
+<div class="wrapper">
+    <section class="main-info">
+        <section class="view-resume">
+            <div class="wrapper">
+                <div class="content">{{ content | safe }}</div>
+            </div>
         </section>
-    </div>
+        <section class="form">
+            <div class="wrapper">
+                <div class="content flex-center col">
+                    <header>
+                        <h2>Let's Talk</h2>
+                        <p>If you've liked what you've seen, let's talk about stuff.</p>
+                    </header>
+                    <form
+                        class="contact-form"
+                        name="contactForm"
+                        netlify
+                        netlify-honeypot="bot-field"
+                        action="/success">
+                        <label style="display: none"
+                            >Don’t fill this out: <input name="bot-field"
+                        /></label>
+                        <label for="name"
+                            >Name<input name="name" type="text" id="name" required
+                        /></label>
+                        <label for="email"
+                            >Email<input name="email" type="email" id="email" required
+                        /></label>
+                        <label for="message"
+                            >Message<textarea
+                                name="message"
+                                id="message"
+                                required
+                                placeholder="Say hi!"
+                                rows="5"></textarea>
+                        </label>
+                        <input type="submit" value="Submit" id="submit" />
+                    </form>
+                </div>
+            </div>
+        </section>
+    </section>
+</div>
 {% endblock %}
 
 <style>

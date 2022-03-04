@@ -18,46 +18,50 @@
 </script>
 
 {% block main %}
-    <div class="wrapper">
-        <section class="work__focus">
-            {% for work in collections['work'] | reverse %}
-                <div class="container neumorphism">
-                    <div class="content">
-                        <h2>{{ work.data.title }}</h2>
-                        <p>{{ work.data.description }}</p>
-                    </div>
-                    <a href="{{ work.url }}">
-                        <img src="{{ 'https://screenshot.troyv.dev/' + work.data.website | urlencode + '/opengraph' }}" alt="{{ work.data.title }}" width="1200" height="630" decoding="async">
-                    </a>
-                </div>
-            {% endfor %}
-        </section>
-    </div>
-    <section class="misc">
-        <header>
-            <h2>Other Projects</h2>
-        </header>
-        <div class="projects__misc">
-            {% set imgWidths = [300] %}
-            {% set imgFormats = ['webp', 'png'] %}
-            {% set imgSizes = '33vw' %}
-            {% set imgClasses = 'caption-image' %}
-            {% for project in collections['project'] | reverse %}
-                <a class="caption-overlay" href="{{ project.url }}">
-                    <figure class="caption-figure">
-                        {% if project.data.featuredImage %}
-                            {% image project.data.featuredImage, project.data.title, imgWidths, imgFormats, imgSizes, imgClasses %}
-                        {% else %}
-                            <img src="{{ 'https://screenshot.troyv.dev/' + project.data.website | urlencode }}" alt="{{ project.data.title }}" class="caption-image" loading="lazy" width="300" height="300" decoding="async">
-                        {% endif %}
-                        <figcaption class="caption">
-                            <h3>{{ project.data.shortname }}</h3>
-                        </figcaption>
-                    </figure>
-                </a>
-            {% endfor %}
+<div class="wrapper">
+    <section class="work__focus">
+        {% for work in collections['work'] | reverse %}
+        <div class="container neumorphism">
+            <div class="content">
+                <h2>{{ work.data.title }}</h2>
+                <p>{{ work.data.description }}</p>
+            </div>
+            <a href="{{ work.url }}">
+                <img
+                    src="{{ 'https://screenshot.troyv.dev/' + work.data.website | urlencode + '/opengraph' }}"
+                    alt="{{ work.data.title }}"
+                    width="1200"
+                    height="630"
+                    decoding="async" />
+            </a>
         </div>
+        {% endfor %}
     </section>
+</div>
+<section class="misc">
+    <header>
+        <h2>Other Projects</h2>
+    </header>
+    <div class="projects__misc">
+        {% for project in collections['project'] | reverse %}
+        <a class="caption-overlay" href="{{ project.url }}">
+            <figure class="caption-figure">
+                <img
+                    src="{{ metadata.cloudinary + project.data.featuredImage if project.data.featuredImage else 'https://screenshot.troyv.dev/' + project.data.website | urlencode }}"
+                    alt="{{ project.data.title }}"
+                    class="caption-image"
+                    loading="lazy"
+                    decoding="async"
+                    width="300"
+                    height="300" />
+                <figcaption class="caption">
+                    <h3>{{ project.data.shortname }}</h3>
+                </figcaption>
+            </figure>
+        </a>
+        {% endfor %}
+    </div>
+</section>
 {% endblock %}
 
 <style>

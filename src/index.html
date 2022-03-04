@@ -81,103 +81,132 @@
 </script>
 
 {% block content %}
-    <main class="layout">
-        <div class="hero">
-            <div class="wrapper flex">
-                <section class="welcome-screen" id="welcome">
-                    <div class="typewriter-container">
-                        <h1 class="typewriter typewriter_1">Hey, I'm Troy...</h1>
-                        <p class="typewriter typewriter_2">...this is a website.</p>
+<main class="layout">
+    <div class="hero">
+        <div class="wrapper flex">
+            <section class="welcome-screen" id="welcome">
+                <div class="typewriter-container">
+                    <h1 class="typewriter typewriter_1">Hey, I'm Troy...</h1>
+                    <p class="typewriter typewriter_2">...this is a website.</p>
+                </div>
+                <div class="portrait">
+                    <img
+                        src="{{ metadata.cloudinary }}/c_scale,f_auto,q_auto:eco,w_600/v1646349104/blog/me-on-set_gkrhf7.webp"
+                        alt="Me holding my guitar on set of a music video"
+                        loading="eager"
+                        decoding="async"
+                        width="300"
+                        height="300"
+                        class="full"
+                        id="me" />
+                </div>
+                <div class="content">
+                    <p>
+                        I'm glad you could make it. Peruse my wares* and
+                        <a href="/about/">send me a letter</a> if you're so inclined.
+                    </p>
+                    <p class="txt-smallest">
+                        I only accept bottle caps as currency, sorry... (I'm kidding)
+                    </p>
+                </div>
+            </section>
+            <section class="feed" id="posts">
+                <h2>Recent Posts</h2>
+                <div class="posts-section">
+                    <div class="grid full">
+                        {% for post in collections.post.slice(collections.post.length - 5,
+                        collections.post.length) | reverse %}
+                        <article class="post-listing">
+                            <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+                            <p>{{ post.data.description }}</p>
+                        </article>
+                        {% endfor %}
                     </div>
-                    <div class="portrait">
-                        <img src="{{ metadata.cloudinary }}c_scale,f_auto,q_auto:eco,w_600/v1646349104/blog/me-on-set_gkrhf7.webp" alt="Me holding my guitar on set of a music video" loading="eager" decoding="async" width="300" height="300" class="full" id="me">
-                    </div>
-                    <div class="content">
-                        <p>I'm glad you could make it. Peruse my wares* and <a href="/about/">send me a letter</a> if
-                            you're
-                            so inclined.</p>
-                        <p class="txt-smallest">I only accept bottle caps as currency, sorry... (I'm kidding)</p>
-                    </div>
-                </section>
-                <section class="feed" id="posts">
-                    <h2>Recent Posts</h2>
-                    <div class="posts-section">
-                        <div class="grid full">
-                            {% for post in collections.post.slice(collections.post.length - 5, collections.post.length) | reverse %}
-                                <article class="post-listing">
-                                    <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
-                                    <p>{{ post.data.description }}</p>
-                                </article>
-                            {% endfor %}
+                </div>
+                <p><a href="/posts/">View All Posts</a></p>
+            </section>
+        </div>
+    </div>
+    <section class="projects-section" id="projects">
+        <div class="wrapper">
+            <h2><span id="cool-anim">Latest</span> <span id="proj-anim">Projects</span></h2>
+            <div class="showcase-container">
+                <div class="showcase">
+                    {% for work in collections['work'].slice(collections['work'].length - 3,
+                    collection['work'].length) | reverse %}
+                    <a class="caption-overlay" href="{{ work.url }}">
+                        <figure class="caption-figure">
+                            <img
+                                src="{{ 'https://screenshot.troyv.dev/' + work.data.website | urlencode + '/opengraph' }}"
+                                alt="{{ work.data.title + ' screenshot' }}"
+                                class="caption-image full"
+                                width="600"
+                                height="315"
+                                decoding="async"
+                                loading="lazy" />
+                            <figcaption class="caption">
+                                <h3 class="h4">{{ work.data.title }}</h3>
+                            </figcaption>
+                        </figure>
+                    </a>
+                    {% endfor %}
+                </div>
+                <section class="flex-center col center content">
+                    <div class="skewed-background">
+                        <div class="content">
+                            <p>
+                                This only some of what I've been up to, but you can see
+                                <a href="/work/">everything else I've been doing</a> too.
+                            </p>
                         </div>
                     </div>
-                    <p><a href="/posts/">View All Posts</a></p>
                 </section>
             </div>
         </div>
-        <section class="projects-section" id="projects">
-            <div class="wrapper">
-                <h2><span id="cool-anim">Latest</span> <span id="proj-anim">Projects</span></h2>
-                <div class="showcase-container">
-                    <div class="showcase">
-                        {% for work in collections['work'].slice(collections['work'].length - 3, collection['work'].length) | reverse %}
-                            <a class="caption-overlay" href="{{ work.url }}">
-                                <figure class="caption-figure">
-                                    <img src="{{ 'https://screenshot.troyv.dev/' + work.data.website | urlencode + '/opengraph' }}" alt="{{ work.data.title + ' screenshot' }}" class="caption-image full" width="600" height="315" decoding="async" loading="lazy">
-                                    <figcaption class="caption">
-                                        <h3 class="h4">{{ work.data.title }}</h3>
-                                    </figcaption>
-                                </figure>
-                            </a>
-                        {% endfor %}
-                    </div>
-                    <section class="flex-center col center content">
-                        <div class="skewed-background">
-                            <div class="content">
-                                <p>This only some of what I've been up to, but you can see <a href="/work/">everything
-                                        else I've been doing</a> too.</p>
-                            </div>
-                        </div>
-                    </section>
+    </section>
+    <section class="supplemental" id="more">
+        <div id="clouds">
+            <div class="cloud foreground"></div>
+            <div class="cloud background"></div>
+            <div class="cloud foreground"></div>
+            <div class="cloud background"></div>
+            <div class="cloud foreground"></div>
+            <div class="cloud background"></div>
+            <div class="cloud background"></div>
+            <div class="cloud foreground"></div>
+            <div class="cloud background"></div>
+            <div class="cloud background"></div>
+        </div>
+        <div class="wrapper">
+            <button
+                title="Turn the clouds animation on or off."
+                id="sundial"
+                type="button"
+                name="sundial"
+                class="sundial sun">
+                {% include "partials/sun.svg" %} {% include "partials/moon.svg" %}
+            </button>
+            <div class="content">
+                <div class="music-section" id="music">
+                    <h2>I Also Have <a href="/music/">Music</a></h2>
+                    <p>
+                        When I’m not coding, maybe I'm writing songs. My friends and I started
+                        <span class="bold">Front Royal</span> with the desire to make a name for
+                        ourselves, and I started <span class="bold">troy.</span> to explore a new
+                        outlet.
+                    </p>
+                </div>
+                <div class="about-section" id="about">
+                    <h2>Looking For More?</h2>
+                    <p>You can probably find it on my <a href="/about/">about</a> page.</p>
                 </div>
             </div>
-        </section>
-        <section class="supplemental" id="more">
-            <div id="clouds">
-                <div class="cloud foreground"></div>
-                <div class="cloud background"></div>
-                <div class="cloud foreground"></div>
-                <div class="cloud background"></div>
-                <div class="cloud foreground"></div>
-                <div class="cloud background"></div>
-                <div class="cloud background"></div>
-                <div class="cloud foreground"></div>
-                <div class="cloud background"></div>
-                <div class="cloud background"></div>
-            </div>
-            <div class="wrapper">
-                <button title="Turn the clouds animation on or off." id="sundial" type="button" name="sundial" class="sundial sun">
-                    {% include "partials/sun.svg" %}
-                    {% include "partials/moon.svg" %}
-                </button>
-                <div class="content">
-                    <div class="music-section" id="music">
-                        <h2>I Also Have <a href="/music/">Music</a></h2>
-                        <p>When I’m not coding, maybe I'm writing songs. My friends and I started <span
-                                    class="bold">Front Royal</span> with the desire to make a name for ourselves, and I
-                            started <span class="bold">troy.</span> to explore a new outlet.</p>
-                    </div>
-                    <div class="about-section" id="about">
-                        <h2>Looking For More?</h2>
-                        <p>You can probably find it on my <a href="/about/">about</a> page.</p>
-                    </div>
-                </div>
-            </div>
-            <svg class="curve" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 720 80">
-                <path d="M0,80V47.6C0,47.6,333,0,503,0c166,0,217,24.3,217,24.3V80H0z" />
-            </svg>
-        </section>
-    </main>
+        </div>
+        <svg class="curve" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 720 80">
+            <path d="M0,80V47.6C0,47.6,333,0,503,0c166,0,217,24.3,217,24.3V80H0z" />
+        </svg>
+    </section>
+</main>
 {% endblock %}
 
 <style>

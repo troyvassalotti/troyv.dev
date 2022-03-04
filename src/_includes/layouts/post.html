@@ -1,30 +1,28 @@
-{% extends 'layouts/base.html' %}
-
-{% block content %}
-    <div class="with-sidebar">
-        <main class="post-container">
-            <article class="h-entry">
-                <header class="post-header">
-                    <div class="wrapper">
-                        <h1 id="post-title" class="p-name">{{ title }}</h1>
-                        <p id="post-summary" class="p-summary italic txt-smaller">{{ description }}</p>
-                        <p class="txt-small"><span id="post-date"
-                                                   class="dt-published">{{ page.date | dateString }}</span> | <span
-                                    id="post-time-to-read">Reading Time: {{ content | timeToRead }}</span></p>
-                    </div>
-                </header>
+{% extends 'layouts/base.html' %} {% block content %}
+<div class="with-sidebar">
+    <main class="post-container">
+        <article class="h-entry">
+            <header class="post-header">
                 <div class="wrapper">
-                    <div class="post-body e-content">
-                        {{ content | safe }}
-                    </div>
+                    <h1 id="post-title" class="p-name">{{ title }}</h1>
+                    <p id="post-summary" class="p-summary italic txt-smaller">{{ description }}</p>
+                    <p class="txt-small">
+                        <span id="post-date" class="dt-published"
+                            >{{ page.date | dateString }}</span
+                        >
+                        |
+                        <span id="post-time-to-read">Reading Time: {{ content | timeToRead }}</span>
+                    </p>
                 </div>
-            </article>
+            </header>
             <div class="wrapper">
-                {% include "partials/webmentionlist.html" %}
+                <div class="post-body e-content">{{ content | safe }}</div>
             </div>
-        </main>
-        {% include 'partials/postnavigation.html' %}
-    </div>
+        </article>
+        <div class="wrapper">{% include "partials/webmentionlist.html" %}</div>
+    </main>
+    {% include 'partials/postnavigation.html' %}
+</div>
 {% endblock %}
 
 <style>

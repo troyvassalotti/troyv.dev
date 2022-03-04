@@ -1,43 +1,43 @@
-{% extends 'layouts/base.html' %}
-
-{% block content %}
-    <main class="layout">
-        <div class="wrapper">
-            <div class="grid work-solo">
-                <section class="work-solo__img">
-                    <h1>{{ title }}</h1>
-                    <p class="rm-m-bs">{{ description }}</p>
-                    <img src="{{ 'https://screenshot.troyv.dev/' + website | urlencode + '/opengraph'}}" alt="{{ title }}" class="img-zoomable has-box-shadow" width="1200" height="630" decoding="async">
-                </section>
-                <section class="work-solo__summary">
-                    {{ content | safe }}
-                </section>
-                <section class="work-solo__details">
-                    <h2>Details</h2>
-                    <dl>
-                        {% if framework %}
-                            <div>
-                                <dt class="bold">Built With</dt>
-                                <dd>{{ framework }}</dd>
-                            </div>
-                        {% endif %}
-                        {% if website %}
-                            <div>
-                                <dt class="bold">Visit Live Website</dt>
-                                <dd><a href="{{ website }}">{{ website }}</a></dd>
-                            </div>
-                        {% endif %}
-                        {% if repo %}
-                            <div>
-                                <dt class="bold">Repository</dt>
-                                <dd><a href="{{ repo }}">{{ repo }}</a></dd>
-                            </div>
-                        {% endif %}
-                    </dl>
-                </section>
-            </div>
+{% extends 'layouts/base.html' %} {% block content %}
+<main class="layout">
+    <div class="wrapper">
+        <div class="grid work-solo">
+            <section class="work-solo__img">
+                <h1>{{ title }}</h1>
+                <p class="rm-m-bs">{{ description }}</p>
+                <img
+                    src="{{ 'https://screenshot.troyv.dev/' + website | urlencode + '/opengraph'}}"
+                    alt="{{ title }}"
+                    class="img-zoomable has-box-shadow"
+                    width="1200"
+                    height="630"
+                    decoding="async" />
+            </section>
+            <section class="work-solo__summary">{{ content | safe }}</section>
+            <section class="work-solo__details">
+                <h2>Details</h2>
+                <dl>
+                    {% if framework %}
+                    <div>
+                        <dt class="bold">Built With</dt>
+                        <dd>{{ framework }}</dd>
+                    </div>
+                    {% endif %} {% if website %}
+                    <div>
+                        <dt class="bold">Visit Live Website</dt>
+                        <dd><a href="{{ website }}">{{ website }}</a></dd>
+                    </div>
+                    {% endif %} {% if repo %}
+                    <div>
+                        <dt class="bold">Repository</dt>
+                        <dd><a href="{{ repo }}">{{ repo }}</a></dd>
+                    </div>
+                    {% endif %}
+                </dl>
+            </section>
         </div>
-    </main>
+    </div>
+</main>
 {% endblock %}
 
 <style>
