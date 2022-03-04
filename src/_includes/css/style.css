@@ -267,13 +267,13 @@ picture {
     position: relative;
 }
 
-.caption-link {
+.caption-figure {
     block-size: 100%;
     display: grid;
     place-content: center;
 }
 
-.caption-overlay .caption-link .caption-image {
+.caption-overlay .caption-figure .caption-image {
     transition: 0.3s ease;
 }
 
@@ -288,11 +288,11 @@ picture {
     transition: 0.3s ease;
 }
 
-.caption-overlay:hover > .caption-link .caption-image {
+.caption-overlay:hover > .caption-figure .caption-image {
     filter: brightness(0.5);
 }
 
-.caption-overlay:hover > .caption-link .caption {
+.caption-overlay:hover > .caption-figure .caption {
     opacity: 1;
 }
 

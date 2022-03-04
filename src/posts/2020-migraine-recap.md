@@ -25,7 +25,7 @@ D3 is fun and exciting and equally complicated, so my chart only goes so far in 
 
 Look at this graph:
 
-{% image './public/img/2020-by-triggers.png', 'A graph showing the associated trigger for each of the 45 migraines I had. Among those triggers are stress, alcohol, poor sleep, anxiety, rebounds, natural causes, and weather.' %}
+![A graph showing the associated trigger for each of the 45 migraines I had. Among those triggers are stress, alcohol, poor sleep, anxiety, rebounds, natural causes, and weather.]({{ metadata.cloudinary }}c_scale,f_auto,q_auto:eco/v1646349103/blog/2020-by-triggers_prdhi6.webp)
 
 It's _very hard_ to associate what causes a migraine. For one, it isn't always due to a single trigger alone but rather a multitude or building up of triggers over time. Also, it feels too reductive at times - especially when I have no idea what happened and I can only point to _natural causes_.
 
@@ -43,7 +43,7 @@ I mentioned earlier that I saw improvements in the later part of the year. Octob
 
 Look at this graph now:
 
-{% image './public/img/2020-by-quarter.png', 'A graph showing the number of migraines I had per quarter of the year.' %}
+![A graph showing the number of migraines I had per quarter of the year.]({{ metadata.cloudinary }}c_scale,f_auto,q_auto:eco/v1646349103/blog/2020-by-quarter_iqkdev.webp)
 
 -   **January - March**: Not great. 10 migraines.
 -   **April - June**: Even worse at 16.
@@ -52,7 +52,7 @@ Look at this graph now:
 
 Since I keep track of the time of day they happen, I also know what _times of day_ they most occurred. If that sounds interesting to you, then you'll love this graph:
 
-{% image './public/img/2020-by-time.png', 'A histogram showing the number of migraines I had broken out by the time of day in buckets of 4 hours.' %}
+![A histogram showing the number of migraines I had broken out by the time of day in buckets of 4 hours.]({{ metadata.cloudinary }}c_scale,f_auto,q_auto:eco/v1646349103/blog/2020-by-time_o98q5l.webp)
 
 This one is a little less telling since it's a pretty regular distribution, but I had the most migraines between the hours of noon - 4:00 p.m. The second place slot was tied with midnight - 4:00 a.m. and 8:00 a.m. - noon.
 

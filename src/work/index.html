@@ -43,8 +43,8 @@
             {% set imgSizes = '33vw' %}
             {% set imgClasses = 'caption-image' %}
             {% for project in collections['project'] | reverse %}
-                <figure class="caption-overlay">
-                    <a class="caption-link" href="{{ project.url }}">
+                <a class="caption-overlay" href="{{ project.url }}">
+                    <figure class="caption-figure">
                         {% if project.data.featuredImage %}
                             {% image project.data.featuredImage, project.data.title, imgWidths, imgFormats, imgSizes, imgClasses %}
                         {% else %}
@@ -53,8 +53,8 @@
                         <figcaption class="caption">
                             <h3>{{ project.data.shortname }}</h3>
                         </figcaption>
-                    </a>
-                </figure>
+                    </figure>
+                </a>
             {% endfor %}
         </div>
     </section>

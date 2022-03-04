@@ -90,7 +90,7 @@
                         <p class="typewriter typewriter_2">...this is a website.</p>
                     </div>
                     <div class="portrait">
-                        {% image './public/img/me-on-set.jpg', 'A picture of me holding my guitar', [300, 600], ['webp', 'jpg'], '(max-width: 700px) 100vw, 50vw', 'full', 'me', 'eager' %}
+                        <img src="{{ metadata.cloudinary }}c_scale,f_auto,q_auto:eco,w_600/v1646349104/blog/me-on-set_gkrhf7.webp" alt="Me holding my guitar on set of a music video" loading="eager" decoding="async" width="300" height="300" class="full" id="me">
                     </div>
                     <div class="content">
                         <p>I'm glad you could make it. Peruse my wares* and <a href="/about/">send me a letter</a> if
@@ -121,14 +121,14 @@
                 <div class="showcase-container">
                     <div class="showcase">
                         {% for work in collections['work'].slice(collections['work'].length - 3, collection['work'].length) | reverse %}
-                            <figure class="caption-overlay">
-                                <a class="caption-link" href="{{ work.url }}">
+                            <a class="caption-overlay" href="{{ work.url }}">
+                                <figure class="caption-figure">
                                     <img src="{{ 'https://screenshot.troyv.dev/' + work.data.website | urlencode + '/opengraph' }}" alt="{{ work.data.title + ' screenshot' }}" class="caption-image full" width="600" height="315" decoding="async" loading="lazy">
                                     <figcaption class="caption">
                                         <h3 class="h4">{{ work.data.title }}</h3>
                                     </figcaption>
-                                </a>
-                            </figure>
+                                </figure>
+                            </a>
                         {% endfor %}
                     </div>
                     <section class="flex-center col center content">
@@ -280,13 +280,13 @@
     .showcase {
         display: flex;
         flex-wrap: wrap;
+        gap: 1em;
         margin-block-start: 2em;
     }
 
     .showcase .caption-overlay {
         aspect-ratio: 40 / 21;
         flex: 1 1 18.75rem;
-        margin: 1em;
     }
 
     .showcase .caption-overlay:last-of-type {
