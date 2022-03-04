@@ -40,7 +40,7 @@ sections:
   - misc-page
 upload_dir: blog
 public_path: https://res.cloudinary.com/dpmchqezv/image/upload/c_scale,f_auto,q_auto:eco
-front_matter_path: https://res.cloudinary.com/dpmchqezv/image/upload
+front_matter_path: ''
 use_front_matter_path: true
 file_template: ":filename:"
 build:
