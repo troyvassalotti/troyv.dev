@@ -30,6 +30,7 @@
         "@11ty/eleventy-plugin-inclusive-language": "^1.0.2",
         "@11ty/eleventy-plugin-rss": "^1.1.1",
         "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.0",
+        "@chrisburnell/eleventy-cache-webmentions": "^0.1.11",
         "eleventy-plugin-add-web-component-definitions": "^2.0.3",
         "prettier": "^2.5.1"
     },
@@ -40,10 +41,6 @@
         "dotenv": "^10.0.0",
         "eleventy-plugin-time-to-read": "^1.1.0",
         "eleventy-plugin-youtube-embed": "^1.6.3",
-        "html-minifier-terser": "^7.0.0-alpha.0",
-        "lodash": "^4.17.21",
-        "luxon": "^2.1.1",
-        "node-fetch": "^3.1.1",
-        "sanitize-html": "^2.6.0"
+        "html-minifier-terser": "^7.0.0-alpha.0"
     }
 }

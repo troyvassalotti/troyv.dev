@@ -1,3 +1,8 @@
+/**
+ * @file Persists the .cache folder on subsequent builds
+ * @link https://mxb.dev/blog/persistent-build-folders-netlify/
+ */
+
 module.exports = {
     // Before the build runs,
     // restore a directory we cached in a previous build.

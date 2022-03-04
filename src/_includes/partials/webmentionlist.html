@@ -1,16 +1,12 @@
-{%- set webmentionUrl = page.url | url | absoluteUrl(metadata.url) -%} {%- set allMentions =
-webmentions.children -%} {%- set mentionsHere = allMentions | webmentionsForUrl(webmentionUrl) -%}
-{%- set reposts = allMentions | webmentionsForUrl(webmentionUrl, "repost-of") -%} {%- set likes =
-allMentions | webmentionsForUrl(webmentionUrl, "like-of") -%} {%- set bookmarks = allMentions |
-webmentionsForUrl(webmentionUrl, "bookmark-of") -%} {%- set replies = allMentions |
-webmentionsForUrl(webmentionUrl, "in-reply-to") -%} {%- set mentions = allMentions |
-webmentionsForUrl(webmentionUrl, "mention-of") -%} {%- set defaultImg = '/img/user.svg' -%}
+{% set responses = page.url | getWebmentions %} {% set reposts = page.url |
+getWebmentions(['repost-of']) %} {% set likes = page.url | getWebmentions(['like-of']) %} {% set
+bookmarks = page.url | getWebmentions(['bookmark-of']) %} {% set replies = page.url |
+getWebmentions(['in-reply-to']) %} {% set mentions = page.url | getWebmentions(['mention-of']) %}
 
 <section class="webmentions" id="webmentions">
     <h2>Webmentions</h2>
-    <p class="italic">🚧 This section is a work in progress 🚧</p>
 
-    {% if mentionsHere | length %} {% if reposts | length %}
+    {% if responses | length %} {% if reposts | length %}
     <div class="webmentions__repost">
         <h3>Reposts: {{ reposts | length }}</h3>
         <div class="webmentions__facepile">
@@ -25,7 +21,8 @@ webmentionsForUrl(webmentionUrl, "mention-of") -%} {%- set defaultImg = '/img/us
                     src="{% if webmention.author.photo %}{{ webmention.author.photo }}{% else %}{{ defaultImg }}{% endif %}"
                     alt="{{ webmention.author.name }}"
                     class="webmentions__face"
-                    loading="lazy" />
+                    loading="lazy"
+                    decoding="async" />
             </a>
             {% endfor %}
         </div>
@@ -59,6 +56,7 @@ webmentionsForUrl(webmentionUrl, "mention-of") -%} {%- set defaultImg = '/img/us
             {% endfor %}
         </ol>
     </div>
+
     {% endif %} {% if mentions | length %}
     <div class="webmentions__mention">
         <h3>Mentions: {{ mentions | length }}</h3>
@@ -68,6 +66,7 @@ webmentionsForUrl(webmentionUrl, "mention-of") -%} {%- set defaultImg = '/img/us
             {% endfor %}
         </ol>
     </div>
+
     {% endif %} {% if bookmarks | length %}
     <div class="webmentions__bookmark">
         <h3>Bookmarks: {{ bookmarks | length }}</h3>

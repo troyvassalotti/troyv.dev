@@ -26,5 +26,8 @@
     X-Frame-Options = "SAMEORIGIN"
     X-XSS-Protection = "1"
 
-# [[plugins]]
-    # package = "./plugins/webmention-cache"
+ [[plugins]]
+     package = "./plugins/webmention-cache"
+
+[[plugins]]
+    package = "netlify-plugin-webmentions"

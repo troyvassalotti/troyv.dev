@@ -71,7 +71,7 @@
 <nav class="main-navigation hideOnPrint" id="main-navigation" aria-label="main navigation">
     <ul class="main-navigation__links" role="list">
         {% for link in nav.header %}
-            <li><a href="{{ link.url }}" class="main-navigation__link animated-link" {% if bodyClass === link.name %}aria-current="page"{% endif %} id="link__{{ link.name }}">{{ link.name }}</a></li>
+            <li><a href="{{ link.url }}" class="main-navigation__link animated-link" {{ 'aria-current="page"' if bodyClass === link.name }} id="link__{{ link.name }}">{{ link.name }}</a></li>
         {% endfor %}
     </ul>
 </nav>

@@ -4,6 +4,7 @@ const sitemap = require("@quasibit/eleventy-plugin-sitemap")
 const timeToRead = require("eleventy-plugin-time-to-read")
 const embedYouTube = require("eleventy-plugin-youtube-embed")
 const inclusiveLangPlugin = require("@11ty/eleventy-plugin-inclusive-language")
+const pluginWebmentions = require("@chrisburnell/eleventy-cache-webmentions")
 const htmlmin = require("html-minifier-terser")
 const utilsDir = `./utils`
 const filters = require(`${utilsDir}/filters`)
@@ -20,6 +21,9 @@ module.exports = function (eleventyConfig) {
         sitemap: {
             hostname: "https://www.troyv.dev",
         },
+    })
+    eleventyConfig.addPlugin(pluginWebmentions, {
+        domain: "https://www.troyv.dev",
     })
 
     // Filters
