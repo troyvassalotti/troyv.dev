@@ -8,13 +8,18 @@
     {% set theTitle %}{% if title %}{{ title | safe }}{% else %}{{ page.fileSlug | capitalize }}{% endif %}{% endset %}
     <title>{{ theTitle }} | Troy Vassalotti</title>
 
+    {# These two request CORS resources (fonts) #}
     <link rel="preconnect" href="https://d33wubrfki0l68.cloudfront.net" crossorigin>
     <link rel="preconnect" href="https://fonts.typotheque.com/" crossorigin>
-    <link rel="preconnect" href="https://screenshot.troyv.dev/" crossorigin>
+
+    <link rel="preconnect" href="https://screenshot.troyv.dev/">
+    <link rel="preconnect" href="https://res.cloudinary.com/">
+
     <link rel="dns-prefetch" href="https://d33wubrfki0l68.cloudfront.net">
     <link rel="dns-prefetch" href="https://fonts.typotheque.com/">
     <link rel="dns-prefetch" href="https://screenshot.troyv.dev/">
     <link rel="dns-prefetch" href="https://cdn.skypack.dev/">
+    <link rel="dns-prefetch" href="https://res.cloudinary.com/">
 
     <link rel="stylesheet" href="https://fonts.typotheque.com/WF-036345-011398.css">
 

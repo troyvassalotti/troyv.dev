@@ -81,7 +81,7 @@
 </script>
 
 {% block content %}
-<main class="layout">
+<main class="layout" id="main">
   <div class="hero">
     <div class="wrapper flex">
       <section class="welcome-screen" id="welcome">
@@ -91,12 +91,11 @@
         </div>
         <div class="portrait">
           <img
-            src="{{ metadata.cloudinary }}/c_scale,f_auto,q_auto:eco,w_600/v1646349104/blog/me-on-set_gkrhf7.webp"
+            src="{{ metadata.cloudinary }}/c_scale,f_auto,q_auto:eco,w_600/v1646349104/blog/me-on-stage-waverly_hoxgvf.webp"
             alt="Me holding my guitar on set of a music video"
-            loading="eager"
             decoding="async"
-            width="300"
-            height="300"
+            width="600"
+            height="600"
             class="full"
             id="me" />
         </div>
@@ -219,11 +218,8 @@
   }
 
   .welcome-screen {
-      align-items: center;
-      display: flex;
-      flex: 1 1 20rem;
-      flex-direction: column;
       margin-block-end: 3ch;
+      margin-inline: auto;
   }
 
   .welcome-screen .content {
@@ -251,13 +247,15 @@
       max-inline-size: 45ch;
   }
 
-  .portrait {
-      aspect-ratio: 1 / 1;
-  }
-
   .portrait img {
+      aspect-ratio: 1 / 1;
       border-radius: 50%;
       max-inline-size: 25rem;
+  }
+
+  .typewriter-container {
+      display: grid;
+      justify-content: center;
   }
 
   .typewriter {
