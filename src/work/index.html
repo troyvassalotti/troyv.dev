@@ -85,6 +85,7 @@
   }
 
   .work__focus img {
+      box-shadow: 2px 4px 6px var(--blackPrimary);
       transition: 0.3s ease;
   }
 
@@ -110,16 +111,25 @@
       display: flex;
       gap: 5%;
       overflow-x: auto;
-      padding-inline-end: 1rem;
-      padding-inline-start: 1rem;
+      padding: 1rem;
   }
 
   .projects__misc .caption-overlay {
       flex-shrink: 0;
   }
 
+  .projects__misc .caption-overlay img {
+      inline-size: 20rem;
+  }
+
   .projects__misc .caption-overlay h3 {
       font-size: var(--step-1);
+  }
+
+  @media (prefers-color-scheme: dark) {
+      .work__focus img {
+          box-shadow: none;
+      }
   }
 
   {% endset %}

@@ -9,11 +9,10 @@ Inspired by the [/now page movement](https://nownownow.com/about). If you'd like
 you can [view my résumé](https://resume.troyv.dev/). It's updated about as often as anyone else's résumé, but it looks nice and prints
 well.
 
-- Getting married in March 2022 (!!)
 - Writing new music for [Front Royal](https://www.frontroyalband.com).
 - Recording [troy.'s](https://justtroy.bandcamp.com) second album.
 - Creating the Digital Humanities Lab for [Goucher College](https://www.goucher.edu/).
-- Reading [The Familiar, Volume 1](https://www.penguinrandomhouse.com/books/213605/the-familiar-volume-1-by-mark-z-danielewski/) by Mark Z. Danielewski.
+- Reading [The Creative Curve](https://www.thecreativecurve.com/) by Allen Gannett.
 
 ## Socials Exist
 

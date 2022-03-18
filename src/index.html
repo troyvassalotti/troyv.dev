@@ -92,7 +92,7 @@
         <div class="portrait">
           <img
             src="{{ metadata.cloudinary }}/c_scale,f_auto,q_auto:eco,w_600/v1646349104/blog/me-on-stage-waverly_hoxgvf.webp"
-            alt="Me holding my guitar on set of a music video"
+            alt="Me holding my guitar on stage"
             decoding="async"
             width="600"
             height="600"
@@ -104,7 +104,7 @@
             I'm glad you could make it. Peruse my wares* and
             <a href="/about/">send me a letter</a> if you're so inclined.
           </p>
-          <p class="txt-smallest">I only accept bottle caps as currency, sorry... (I'm kidding)</p>
+          <p class="txt-smallest">*I only accept bottle caps as currency, sorry... (I'm kidding)</p>
         </div>
       </section>
       <section class="feed" id="posts">
@@ -136,7 +136,7 @@
               <img
                 src="{{ 'https://screenshot.troyv.dev/' + work.data.website | urlencode + '/opengraph' }}"
                 alt="{{ work.data.title + ' screenshot' }}"
-                class="caption-image full"
+                class="caption-image"
                 width="600"
                 height="315"
                 decoding="async"
@@ -302,20 +302,9 @@
   }
 
   .showcase {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
       gap: 1em;
-      margin-block-start: 2em;
-  }
-
-  .showcase .caption-overlay {
-      aspect-ratio: 40 / 21;
-      flex: 1 1 18.75rem;
-  }
-
-  .showcase .caption-overlay:last-of-type {
-      flex: initial;
-      margin-block-end: 3em;
+      margin-block: 3em;
   }
 
   .showcase-container {
@@ -373,6 +362,16 @@
 
   .sundial {
       display: none;
+  }
+
+  @media (min-width: 40em) {
+      .showcase {
+          grid-template-columns: 1fr 1fr;
+      }
+
+      .showcase .caption-overlay:last-of-type {
+          grid-column: 1 / 3;
+      }
   }
 
   @media (min-width: 68.75em) {
@@ -651,6 +650,10 @@
   @media (prefers-color-scheme: dark) {
       .post-listing {
           border-color: var(--goldPrimary);
+      }
+
+      .showcase .caption-overlay {
+          filter: none;
       }
 
       .supplemental .curve path {
