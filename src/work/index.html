@@ -44,21 +44,17 @@
   </header>
   <div class="projects__misc">
     {% for project in collections['project'] | reverse %}
-    <a class="caption-overlay" href="{{ project.url }}">
-      <figure class="caption-figure">
-        <img
-          src="{{ metadata.cloudinary + project.data.featuredImage if project.data.featuredImage else 'https://screenshot.troyv.dev/' + project.data.website | urlencode }}"
-          alt="{{ project.data.title }}"
-          class="caption-image"
-          loading="lazy"
-          decoding="async"
-          width="300"
-          height="300" />
-        <figcaption class="caption">
-          <h3>{{ project.data.shortname }}</h3>
-        </figcaption>
-      </figure>
-    </a>
+        <overlay-caption data-href="{{ project.url }}">
+            <img
+                    slot="image"
+                    src="{{ metadata.cloudinary + project.data.featuredImage if project.data.featuredImage else 'https://screenshot.troyv.dev/' + project.data.website | urlencode }}"
+                    alt="{{ project.data.title }}"
+                    width="300"
+                    height="300"
+                    decoding="async"
+                    loading="lazy" />
+            <h3 slot="caption">{{ project.data.shortname }}</h3>
+        </overlay-caption>
     {% endfor %}
   </div>
 </section>
@@ -114,16 +110,10 @@
       padding: 1rem;
   }
 
-  .projects__misc .caption-overlay {
+  .projects__misc overlay-caption {
       flex-shrink: 0;
-  }
-
-  .projects__misc .caption-overlay img {
-      inline-size: 20rem;
-  }
-
-  .projects__misc .caption-overlay h3 {
       font-size: var(--step-1);
+      max-inline-size: 20rem;
   }
 
   @media (prefers-color-scheme: dark) {

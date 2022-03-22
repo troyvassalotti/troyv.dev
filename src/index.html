@@ -130,21 +130,17 @@
         <div class="showcase">
           {% for work in collections['work'].slice(collections['work'].length - 3,
           collection['work'].length) | reverse %}
-          <a class="caption-overlay" href="{{ work.url }}">
-            <figure class="caption-figure">
-              <img
-                src="{{ 'https://screenshot.troyv.dev/' + work.data.website | urlencode + '/opengraph' }}"
-                alt="{{ work.data.title + ' screenshot' }}"
-                class="caption-image"
-                width="600"
-                height="315"
-                decoding="async"
-                loading="lazy" />
-              <figcaption class="caption">
-                <h3 class="h4">{{ work.data.title }}</h3>
-              </figcaption>
-            </figure>
-          </a>
+              <overlay-caption data-href="{{ work.url }}">
+                  <img
+                          slot="image"
+                          src="{{ 'https://screenshot.troyv.dev/' + work.data.website | urlencode + '/opengraph' }}"
+                          alt="{{ work.data.title + ' screenshot' }}"
+                          width="600"
+                          height="315"
+                          decoding="async"
+                          loading="lazy" />
+                  <h3 slot="caption">{{ work.data.title }}</h3>
+              </overlay-caption>
           {% endfor %}
         </div>
         <section class="flex-center col center content">
@@ -368,7 +364,7 @@
           grid-template-columns: 1fr 1fr;
       }
 
-      .showcase .caption-overlay:last-of-type {
+      .showcase :last-of-type {
           grid-column: 1 / 3;
       }
   }
@@ -649,10 +645,6 @@
   @media (prefers-color-scheme: dark) {
       .post-listing {
           border-color: var(--goldPrimary);
-      }
-
-      .showcase .caption-overlay {
-          filter: none;
       }
 
       .supplemental .curve path {

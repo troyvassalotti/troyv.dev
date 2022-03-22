@@ -1,4 +1,6 @@
-{% extends 'layouts/base.html' %} {% block content %}
+{% extends 'layouts/base.html' %}
+
+{% block content %}
 <main class="layout" id="main">
   <div class="wrapper">
     <div class="grid work-solo">
@@ -6,9 +8,10 @@
         <h1>{{ title }}</h1>
         <p class="rm-m-bs">{{ description }}</p>
         <img
+                is="light-box"
           src="{{ 'https://screenshot.troyv.dev/' + website | urlencode + '/opengraph'}}"
           alt="{{ title }}"
-          class="img-zoomable has-box-shadow"
+          class="has-box-shadow"
           width="1200"
           height="630"
           decoding="async" />
@@ -38,6 +41,7 @@
     </div>
   </div>
 </main>
+<script src="/js/components/light-box.js" async></script>
 {% endblock %}
 
 <style>
@@ -72,15 +76,6 @@
 
 <script type="module">
   {% set js %}
-  import Zooming
-      from "https://cdn.skypack.dev/-/zooming@v2.1.1-iNyCUNwyb2dr3AokLALM/dist=es2020,mode=imports/optimized/zooming.js"
-
-  const zooming = new Zooming({
-      bgColor: "rgb(0, 0, 0)",
-      bgOpacity: .5,
-      customSize: "135%"
-  })
-
-  zooming.listen(".img-zoomable")
+  console.log("new lightbox??");
   {% endset %}
 </script>

@@ -263,43 +263,6 @@ picture {
   position: relative;
 }
 
-.caption-overlay {
-  filter: drop-shadow(2px 4px 6px var(--blackPrimary));
-  margin: 0;
-}
-
-.caption-figure {
-  position: relative;
-}
-
-.caption-overlay .caption-figure .caption-image {
-  transition: 0.3s ease;
-}
-
-.caption-overlay .caption {
-  align-items: center;
-  display: flex;
-  inset: 0;
-  justify-content: center;
-  opacity: 0;
-  position: absolute;
-  transition: 0.3s ease;
-}
-
-.caption-overlay:hover > .caption-figure .caption-image {
-  filter: brightness(0.5);
-}
-
-.caption-overlay:hover > .caption-figure .caption {
-  opacity: 1;
-}
-
-.caption-overlay .caption :first-child {
-  background: var(--whitePrimary);
-  color: var(--blackPrimary);
-  padding: 0 1ch;
-}
-
 .center {
   text-align: center;
 }
@@ -514,4 +477,8 @@ h6,
   pre {
     font-weight: 300;
   }
+
+    ::part(co-figure) {
+        filter: none;
+    }
 }
