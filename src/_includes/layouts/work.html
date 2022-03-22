@@ -1,6 +1,4 @@
-{% extends 'layouts/base.html' %}
-
-{% block content %}
+{% extends 'layouts/base.html' %} {% block content %}
 <main class="layout" id="main">
   <div class="wrapper">
     <div class="grid work-solo">
@@ -8,7 +6,7 @@
         <h1>{{ title }}</h1>
         <p class="rm-m-bs">{{ description }}</p>
         <img
-                is="light-box"
+          is="light-box"
           src="{{ 'https://screenshot.troyv.dev/' + website | urlencode + '/opengraph'}}"
           alt="{{ title }}"
           class="has-box-shadow"
@@ -73,9 +71,3 @@
 
   {% endset %}
 </style>
-
-<script type="module">
-  {% set js %}
-  console.log("new lightbox??");
-  {% endset %}
-</script>

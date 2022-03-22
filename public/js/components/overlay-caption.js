@@ -2,12 +2,12 @@
  * @file Creates a web component for images with captions that appear on hover as an overlay
  */
 
-class OverlayCaption extends HTMLDivElement {
+class OverlayCaption extends HTMLElement {
   constructor() {
-    super();
+    super()
 
     /** Set a default for the caption's URL */
-    const url = this.dataset.href || "#";
+    const url = this.dataset.href || "#"
 
     const template = `
     <style>
@@ -79,19 +79,17 @@ class OverlayCaption extends HTMLDivElement {
           </figcaption>
         </figure>
       </a>
-      `;
+      `
 
-    const shadowRoot = this.attachShadow({ mode: "open" });
-    shadowRoot.innerHTML = template;
+    const shadowRoot = this.attachShadow({ mode: "open" })
+    shadowRoot.innerHTML = template
   }
 
   connectedCallback() {
-    const heyAddAltText = this.querySelector("img:not([alt])");
+    const heyAddAltText = this.querySelector("img:not([alt])")
 
-    heyAddAltText
-      ? ((heyAddAltText.alt = ""), console.error("Add alt text to your images"))
-      : false;
+    heyAddAltText ? ((heyAddAltText.alt = ""), console.error("Add alt text to your images")) : false
   }
 }
 
-customElements.define("overlay-caption", OverlayCaption, { extends: "div" });
+customElements.define("overlay-caption", OverlayCaption)

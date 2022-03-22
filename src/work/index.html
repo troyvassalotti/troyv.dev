@@ -44,17 +44,17 @@
   </header>
   <div class="projects__misc">
     {% for project in collections['project'] | reverse %}
-        <overlay-caption data-href="{{ project.url }}">
-            <img
-                    slot="image"
-                    src="{{ metadata.cloudinary + project.data.featuredImage if project.data.featuredImage else 'https://screenshot.troyv.dev/' + project.data.website | urlencode }}"
-                    alt="{{ project.data.title }}"
-                    width="300"
-                    height="300"
-                    decoding="async"
-                    loading="lazy" />
-            <h3 slot="caption">{{ project.data.shortname }}</h3>
-        </overlay-caption>
+    <overlay-caption data-href="{{ project.url }}">
+      <img
+        slot="image"
+        src="{{ metadata.cloudinary + project.data.featuredImage if project.data.featuredImage else 'https://screenshot.troyv.dev/' + project.data.website | urlencode }}"
+        alt="{{ project.data.title }}"
+        width="300"
+        height="300"
+        decoding="async"
+        loading="lazy" />
+      <h3 slot="caption">{{ project.data.shortname }}</h3>
+    </overlay-caption>
     {% endfor %}
   </div>
 </section>

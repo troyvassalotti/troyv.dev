@@ -5,7 +5,7 @@ const timeToRead = require("eleventy-plugin-time-to-read")
 const embedYouTube = require("eleventy-plugin-youtube-embed")
 const inclusiveLangPlugin = require("@11ty/eleventy-plugin-inclusive-language")
 const pluginWebmentions = require("@chrisburnell/eleventy-cache-webmentions")
-const addWebComponentDefinitions = require('eleventy-plugin-add-web-component-definitions')
+const addWebComponentDefinitions = require("eleventy-plugin-add-web-component-definitions")
 const htmlmin = require("html-minifier-terser")
 const utilsDir = `./utils`
 const filters = require(`${utilsDir}/filters`)
@@ -19,7 +19,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(timeToRead)
   eleventyConfig.addPlugin(embedYouTube)
   eleventyConfig.addPlugin(addWebComponentDefinitions, {
-    path: tag => `/js/components/${tag}.js`
+    path: (tag) => `/js/components/${tag}.js`,
   })
   eleventyConfig.addPlugin(sitemap, {
     sitemap: {

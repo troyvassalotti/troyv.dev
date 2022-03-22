@@ -130,17 +130,17 @@
         <div class="showcase">
           {% for work in collections['work'].slice(collections['work'].length - 3,
           collection['work'].length) | reverse %}
-              <overlay-caption data-href="{{ work.url }}">
-                  <img
-                          slot="image"
-                          src="{{ 'https://screenshot.troyv.dev/' + work.data.website | urlencode + '/opengraph' }}"
-                          alt="{{ work.data.title + ' screenshot' }}"
-                          width="600"
-                          height="315"
-                          decoding="async"
-                          loading="lazy" />
-                  <h3 slot="caption">{{ work.data.title }}</h3>
-              </overlay-caption>
+          <overlay-caption data-href="{{ work.url }}">
+            <img
+              slot="image"
+              src="{{ 'https://screenshot.troyv.dev/' + work.data.website | urlencode + '/opengraph' }}"
+              alt="{{ work.data.title + ' screenshot' }}"
+              width="600"
+              height="315"
+              decoding="async"
+              loading="lazy" />
+            <h3 slot="caption">{{ work.data.title }}</h3>
+          </overlay-caption>
           {% endfor %}
         </div>
         <section class="flex-center col center content">
