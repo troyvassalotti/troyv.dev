@@ -7,3 +7,4 @@ node_modules
 src/admin
 src/_includes/layouts/base.html
 .netlify
+public/js/components/*.js
