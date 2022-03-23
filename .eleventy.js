@@ -58,6 +58,9 @@ module.exports = function (eleventyConfig) {
 
   // Passthroughs
   eleventyConfig.addPassthroughCopy({ "./public": "/" })
+  eleventyConfig.addPassthroughCopy({
+    "./node_modules/plvylist/plvylist-component.min.js": "/js/components/plvylist-player.js",
+  })
 
   eleventyConfig.addCollection("post", (collection) => {
     if (process.env.ELEVENTY_ENV !== "production")

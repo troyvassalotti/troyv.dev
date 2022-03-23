@@ -71,7 +71,9 @@ class OverlayCaption extends HTMLElement {
       
       <a part="co-container" class="caption-container" href=${url}>
         <figure part="co-figure" class="caption-figure">
-          <slot name="image"><img src="https://assets.codepen.io/1804713/default.png" width="500" height="500" alt="" class="caption-image" decoding="async" loading="lazy" /></slot>
+          <slot name="image">
+            <img src="https://assets.codepen.io/1804713/default.png" width="500" height="500" alt="" class="caption-image" decoding="async" loading="lazy" />
+          </slot>
           <figcaption part="co-caption" class="caption">
             <slot name="caption">
               <p>this is the title</p>
