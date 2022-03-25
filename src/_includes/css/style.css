@@ -89,8 +89,6 @@ html {
 }
 
 body {
-  display: flex;
-  flex-direction: column;
   font-family: var(--body);
   font-size: var(--step-0);
   inline-size: 100%;
@@ -162,21 +160,20 @@ dt::after {
 }
 
 .wrapper {
-  inline-size: 95%;
-  margin: auto;
-  max-inline-size: 100rem;
+  inline-size: min(100% - var(--padding, 2rem), var(--max-inline, 100rem));
+  margin-inline: auto;
 }
 
 .wrapper[data-constrain="some"] {
-  max-inline-size: 81.25rem;
+  --max-inline: 81.25rem;
 }
 
 .wrapper[data-constrain="more"] {
-  max-inline-size: 68.75rem;
+  --max-inline: 68.75rem;
 }
 
 .wrapper[data-constrain="most"] {
-  max-inline-size: 37.5rem;
+  --max-inline: 37.5rem;
 }
 
 .full {
@@ -240,7 +237,7 @@ picture {
 }
 
 main.layout {
-    margin-block-start: 3em;
+  margin-block-start: 3em;
 }
 
 .skewed-background {
@@ -352,16 +349,16 @@ h6,
 
 .main-navigation {
   font-size: var(--step--1);
+  padding: 1ch;
 }
 
 .main-navigation__links {
+  margin: 0;
   padding: 0;
-  padding-inline-start: 1ch;
 }
 
 .main-navigation__links li:first-of-type {
   margin-block-end: 1ch;
-  margin-block-start: 1ch;
 }
 
 .main-navigation__links li:not(:first-of-type) {
