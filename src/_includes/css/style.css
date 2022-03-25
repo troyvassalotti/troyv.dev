@@ -239,6 +239,10 @@ picture {
   gap: 2em;
 }
 
+main.layout {
+    margin-block-start: 3em;
+}
+
 .skewed-background {
   --skewDown: skewy(3deg);
   --skewUp: skewy(-3deg);

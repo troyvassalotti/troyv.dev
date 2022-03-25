@@ -1,7 +1,7 @@
 ---
 description: Thanks for reaching out! I'll be in touch soon.
-permalink: "/success.html"
-layout: status-codes
+permalink: "/success/"
+layout: simple
 new_location: true
 ---
 
