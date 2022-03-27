@@ -7,7 +7,8 @@ const inclusiveLangPlugin = require("@11ty/eleventy-plugin-inclusive-language")
 const pluginWebmentions = require("@chrisburnell/eleventy-cache-webmentions")
 const addWebComponentDefinitions = require("eleventy-plugin-add-web-component-definitions")
 const htmlmin = require("html-minifier-terser")
-const utilsDir = `./utils`
+const utilsDir = "./utils"
+const jsDir = "/assets/js"
 const filters = require(`${utilsDir}/filters`)
 const shortcodes = require(`${utilsDir}/shortcodes`)
 
@@ -19,7 +20,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(timeToRead)
   eleventyConfig.addPlugin(embedYouTube)
   eleventyConfig.addPlugin(addWebComponentDefinitions, {
-    path: (tag) => `/js/components/${tag}.js`,
+    path: (tag) => `${jsDir}/components/${tag}.js`,
   })
   eleventyConfig.addPlugin(sitemap, {
     sitemap: {
@@ -59,7 +60,10 @@ module.exports = function (eleventyConfig) {
   // Passthroughs
   eleventyConfig.addPassthroughCopy({ "./public": "/" })
   eleventyConfig.addPassthroughCopy({
-    "./node_modules/plvylist/plvylist-component.min.js": "/js/components/plvylist-player.js",
+    "./node_modules/plvylist/plvylist-component.min.js": `${jsDir}/components/plvylist-player.js`,
+  })
+  eleventyConfig.addPassthroughCopy({
+    "./node_modules/@troyv/web-components/dist/**/*.js": `${jsDir}/components/`,
   })
 
   eleventyConfig.addCollection("post", (collection) => {
