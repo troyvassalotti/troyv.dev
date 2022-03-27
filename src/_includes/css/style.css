@@ -86,6 +86,8 @@ html {
 
   /* other things */
   --gap: 1em;
+
+  scrollbar-color: var(--bluePrimary) var(--whitePrimary);
 }
 
 body {
@@ -455,6 +457,7 @@ h6,
   html {
     background: var(--blackPrimary);
     color: var(--whitePrimary);
+    scrollbar-color: var(--goldPrimary) var(--blackPrimary);
   }
 
   a {
