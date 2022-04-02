@@ -60,7 +60,7 @@ module.exports = function (eleventyConfig) {
   // Passthroughs
   eleventyConfig.addPassthroughCopy({ "./public": "/" })
   eleventyConfig.addPassthroughCopy({
-    "./node_modules/plvylist/plvylist-component.min.js": `${jsDir}/components/plvylist-player.js`,
+    "./node_modules/plvylist/plvylist-player.min.js": `${jsDir}/components/plvylist-player.js`,
   })
   eleventyConfig.addPassthroughCopy({
     "./node_modules/@troyv/web-components/dist/**/*.js": `${jsDir}/components/`,
