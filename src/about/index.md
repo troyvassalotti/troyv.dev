@@ -14,7 +14,3 @@ If you want to know what I'm up to right now, then check my [now page](/now).
 <li><a href="{{ social.url }}">{{ social.name }}</a></li>
 {% endfor %}
 </ul>
-
----
-
-View this site's [Speedlify](https://speedlify.troyv.dev) scores.
