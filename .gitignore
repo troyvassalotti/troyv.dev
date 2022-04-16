@@ -1,6 +1,15 @@
-node_modules/
-_site/
+# Node/npm
+node_modules
+
+# Output Directories
+_site
+dist
+
+# Cache Locations
 .cache
+
+# Environment Variables
 .env
-# Local Netlify folder
+
+# CMS/Hosting
 .netlify

@@ -1,9 +1,21 @@
+# Cache Locations
 .cache
+
+# CMS and Hosting
 .forestry
+src/admin
+.netlify
+
+# Output Directories
 _site
+dist
+
+# Node/npm
 node_modules
+
+# File Types
 *.md
 *.json
-src/admin
+
+# General Files
 src/_includes/layouts/base.html
-.netlify

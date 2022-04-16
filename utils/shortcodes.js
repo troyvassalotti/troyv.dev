@@ -2,7 +2,7 @@
  * @file Single location of available shortcodes on the site
  */
 
-const Image = require("@11ty/eleventy-img")
+const Image = require("@11ty/eleventy-img");
 
 module.exports = {
   /**
@@ -33,7 +33,7 @@ module.exports = {
       formats: formatArray,
       urlPath: "/img/",
       outputDir: "./_site/img/",
-    })
+    });
 
     let imageAttributes = {
       id,
@@ -42,11 +42,11 @@ module.exports = {
       sizes,
       loading,
       decoding: "async",
-    }
+    };
 
     return Image.generateHTML(metadata, imageAttributes, {
       whitespaceMode: "inline",
-    })
+    });
   },
   /**
    * Synchronous eleventy-image handling
@@ -66,9 +66,9 @@ module.exports = {
       formats: formatArray,
       urlPath: "/img/",
       outputDir: "./_site/img/",
-    }
+    };
     // generate images, while this is async we don’t wait
-    Image(src, options)
+    Image(src, options);
 
     let imageAttributes = {
       id,
@@ -78,11 +78,11 @@ module.exports = {
       loading: "lazy",
       decoding: "async",
       whitespaceMode: "inline",
-    }
+    };
 
     // get metadata even the images are not fully generated
-    let metadata = Image.statsSync(src, options)
-    return Image.generateHTML(metadata, imageAttributes)
+    let metadata = Image.statsSync(src, options);
+    return Image.generateHTML(metadata, imageAttributes);
   },
   /**
    * Add images from Cloudinary via shortcode
@@ -93,6 +93,6 @@ module.exports = {
    * @returns {`<img src="https://res.cloudinary.com/${*}/${string}/${string}" alt="${string}" loading="lazy" decoding="async">`}
    */
   cloudinaryImage: function (path, transforms, alt) {
-    return `<img src="https://res.cloudinary.com/dpmchqezv/image/upload/${transforms}/${path}" alt="${alt}" loading="lazy" decoding="async">`
+    return `<img src="https://res.cloudinary.com/dpmchqezv/image/upload/${transforms}/${path}" alt="${alt}" loading="lazy" decoding="async">`;
   },
-}
+};

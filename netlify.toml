@@ -1,33 +1,33 @@
 [build]
-    command = "npm run build"
-    publish = "_site"
+command = "npm run build"
+publish = "_site"
 
 [build.processing]
-    skip_processing = false
+skip_processing = false
 
 [build.processing.html]
-    pretty_urls = true
+pretty_urls = true
 
 [build.environment]
-    NODE_VERSION = "16"
+NODE_VERSION = "16"
 
 # Redirect from the default Netlify site to my custom domain
 [[redirects]]
-  from = "https://troyvassalotti.netlify.com/*"
-  to = "https://www.troyv.dev/:splat"
-  status = 301
-  force = true
+from = "https://troyvassalotti.netlify.com/*"
+to = "https://www.troyv.dev/:splat"
+status = 301
+force = true
 
 # Custom headers
 [[headers]]
-  for = "/*"
-  [headers.values]
-    X-Content-Type-Options = "nosniff"
-    X-Frame-Options = "SAMEORIGIN"
-    X-XSS-Protection = "1"
-
- [[plugins]]
-     package = "./plugins/webmention-cache"
+for = "/*"
+[headers.values]
+X-Content-Type-Options = "nosniff"
+X-Frame-Options = "SAMEORIGIN"
+X-XSS-Protection = "1"
 
 [[plugins]]
-    package = "netlify-plugin-webmentions"
+package = "./plugins/webmention-cache"
+
+[[plugins]]
+package = "netlify-plugin-webmentions"

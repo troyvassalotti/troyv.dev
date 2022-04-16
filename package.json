@@ -5,17 +5,15 @@
   "main": "_site/index.html",
   "scripts": {
     "build": "ELEVENTY_ENV=production eleventy",
-    "watch": "eleventy --watch",
     "serve": "ELEVENTY_ENV=production eleventy --serve",
-    "dev": "ELEVENTY_ENV=development eleventy --serve --quiet",
+    "dev": "ELEVENTY_ENV=development eleventy --serve",
     "debug": "DEBUG=* eleventy",
-    "pretty": "prettier --write .",
-    "forestry:preview": "eleventy --serve",
-    "deploy": "npm run pretty && netlify deploy --build --context production --prod"
+    "prettier::format": "prettier --write .",
+    "netlify::deploy": "npm run prettier::format && netlify deploy --build --context production --prod"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/troyvassalotti/personal-site.git"
+    "url": "git+https://github.com/troyvassalotti/troyv.dev.git"
   },
   "author": {
     "name": "Troy Vassalotti",
@@ -23,9 +21,9 @@
   },
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/troyvassalotti/personal-site/issues"
+    "url": "https://github.com/troyvassalotti/troyv.dev/issues"
   },
-  "homepage": "https://github.com/troyvassalotti/personal-site#readme",
+  "homepage": "https://github.com/troyvassalotti/troyv.dev#readme",
   "devDependencies": {
     "@11ty/eleventy": "^1.0.0",
     "@11ty/eleventy-img": "^2.0.0",
@@ -34,13 +32,13 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
     "@chrisburnell/eleventy-cache-webmentions": "^0.1.11",
     "@quasibit/eleventy-plugin-sitemap": "^2.1.5",
-    "@troyv/web-components": "^1.0.1",
+    "@troyv/web-components": "^1.2.1",
     "dotenv": "^16.0.0",
     "eleventy-plugin-add-web-component-definitions": "^2.1.1",
     "eleventy-plugin-time-to-read": "^1.2.0",
     "eleventy-plugin-youtube-embed": "^1.7.0",
     "html-minifier-terser": "^7.0.0-alpha.2",
-    "plvylist": "^2.0.0",
+    "plvylist": "^2.1.0",
     "prettier": "^2.6.0"
   }
 }
