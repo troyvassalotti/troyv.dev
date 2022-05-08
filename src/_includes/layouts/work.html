@@ -5,14 +5,13 @@
       <section class="work-solo__img">
         <h1>{{ title }}</h1>
         <p class="rm-m-bs">{{ description }}</p>
-        <img
-          is="light-box"
-          src="{{ 'https://screenshot.troyv.dev/' + website | urlencode + '/opengraph'}}"
+        <light-box
+          src="{{ 'https://screenshot.troyv.dev/' + website | urlencode + '/opengraph' }}"
           alt="{{ title }}"
           class="has-box-shadow"
           width="1200"
           height="630"
-          decoding="async" />
+          decoding="async"></light-box>
       </section>
       <section class="work-solo__summary">{{ content | safe }}</section>
       <section class="work-solo__details">
@@ -39,7 +38,6 @@
     </div>
   </div>
 </main>
-<script src="/assets/js/components/light-box.js" type="module"></script>
 {% endblock %}
 
 <style>
@@ -51,8 +49,8 @@
   @media (min-width: 60em) {
       .work-solo {
           grid-template-areas:
-          "img summary"
-          "details summary"
+        "img summary"
+        "details summary"
       }
 
       .work-solo__img {
