@@ -44,7 +44,7 @@
   </header>
   <div class="projects__misc">
     {% for project in collections['project'] | reverse %}
-    <overlay-caption data-href="{{ project.url }}">
+    <overlay-caption url="{{ project.url }}">
       <img
         slot="image"
         src="{{ metadata.cloudinary + project.data.featuredImage if project.data.featuredImage else 'https://screenshot.troyv.dev/' + project.data.website | urlencode }}"
