@@ -98,7 +98,7 @@
         <div class="showcase">
           {% for work in collections['work'].slice(collections['work'].length - 3,
           collection['work'].length) | reverse %}
-          <overlay-caption data-href="{{ work.url }}">
+          <overlay-caption url="{{ work.url }}">
             <img
               slot="image"
               src="{{ 'https://screenshot.troyv.dev/' + work.data.website | urlencode + '/opengraph' }}"
