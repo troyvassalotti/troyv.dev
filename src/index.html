@@ -4,7 +4,7 @@
   {% set js %}
   // We use dynamic imports here because Rough Notation is called only when intersecting the viewport
   // All other pages use RN in the LCP, so they import on load
-  const importRoughNotation = () => import("https://cdn.skypack.dev/rough-notation")
+  const importRoughNotation = () => importShim("rough-notation")
   const e1 = document.querySelector("#cool-anim")
   const e2 = document.querySelector("#proj-anim")
   const options = {
@@ -21,8 +21,7 @@
     entries.map((entry) => {
       if (entry.isIntersecting) {
         importRoughNotation().then((module) => {
-          let annotate = module.annotate
-          let annotationGroup = module.annotationGroup
+          const { annotate, annotationGroup } = module;
           const a1 = annotate(e1, {
             type: "box",
             color: "var(--bluePrimary)"
@@ -54,8 +53,14 @@
     <div class="wrapper flex">
       <section class="welcome-screen" id="welcome">
         <div class="typewriter-container">
-          <h1 class="typewriter typewriter_1">Hey, I'm Troy...</h1>
-          <p class="typewriter typewriter_2">...this is a website.</p>
+          <!--          <h1 class="typewriter typewriter_1">Hey, I'm Troy...</h1>-->
+          <!--          <p class="typewriter typewriter_2">...this is a website.</p>-->
+          <kb-typewriter>
+            <h1 class="typewriter_1">Hey, I'm Troy...</h1>
+          </kb-typewriter>
+          <kb-typewriter>
+            <p class="typewriter_2">...this is a website.</p>
+          </kb-typewriter>
         </div>
         <div class="portrait">
           <img
@@ -194,18 +199,19 @@
       justify-content: center;
   }
 
-  .typewriter {
-      border-right: 2px solid transparent;
-      max-inline-size: max-content;
-      overflow: hidden;
-      white-space: nowrap;
+  kb-typewriter {
+      color: transparent;
   }
 
   .typewriter_1 {
+      --kb-count-cursor: 6;
       font-size: var(--step-4);
   }
 
   .typewriter_2 {
+      --kb-delay-typing: 3.5s;
+      --kb-delay-cursor: 3s;
+      --kb-steps-typing: 35;
       font-family: var(--headings);
       font-size: var(--step-2);
       font-weight: bold;
@@ -311,19 +317,6 @@
 
       .showcase-container .content {
           flex: 0 1 clamp(25rem, 35vw, 37.5rem);
-      }
-  }
-
-  @media (prefers-reduced-motion: no-preference) {
-      .typewriter_1 {
-          /* name, duration, number of steps, delay, repetitions */
-          animation: typing 1.5s steps(25) 1s 1 normal both,
-          cursor 500ms steps(25) 6 normal;
-      }
-
-      .typewriter_2 {
-          animation: typing 1.5s steps(35) 3.5s 1 normal both,
-          cursor 500ms steps(25) 3s 10 normal;
       }
   }
 
