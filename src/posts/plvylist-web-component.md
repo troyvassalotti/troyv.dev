@@ -5,7 +5,7 @@ date: 2021-04-13
 tags: ["project", "web components"]
 featuredImage: ""
 shortname: Plvylist
-website: "https://troyvassalotti.github.io/plvylist"
+website: "https://codepen.io/troyvassalotti/full/ExyOgGV"
 ---
 
 It was only a few months ago that I [created Plvylist](../plvylist) as a plugin-of-sorts. The functionality was all there, but it required too many pieces for such a simple idea: singular script that loads an audio player wherever you wish to put it. The bloat of this came from needing to manage a CSS file (or SASS if you're compiling it) _and_ a JavaScript file _and_ make sure you have an empty `div` with the right class on your page.
