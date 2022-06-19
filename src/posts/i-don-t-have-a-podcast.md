@@ -10,7 +10,7 @@ project: true
 shortname: I Don't Have A Podcast
 use_screenshot_service: true
 featuredImage: ""
-website: https://www.idonthaveapodcast.com
+website: https://idonthaveapodcast.netlify.app
 ---
 
 > Are all your friends starting podcasts? Does that make you never want to start your own? Proclaim your dedication to never start your own podcast.
