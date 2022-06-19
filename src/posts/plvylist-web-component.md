@@ -2,7 +2,7 @@
 title: Plvylist is Now a Web Component
 description: Web components are cool, Plvylist is cool, and they're the perfect match.
 date: 2021-04-13
-tags: ["project", "web components"]
+tags: ["web components"]
 featuredImage: ""
 shortname: Plvylist
 website: "https://codepen.io/troyvassalotti/full/ExyOgGV"
