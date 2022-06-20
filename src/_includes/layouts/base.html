@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#2380e7">
 
-    {% set theTitle %}
-      {% if title %}
+    {# Keep the whitepsace removal to make it minify correctly #}
+    {%- set theTitle -%}
+      {%- if title -%}
         {{ title | safe }}
-      {% else %}
+      {%- else -%}
         {{ page.fileSlug | capitalize }}
-      {% endif %}
-    {% endset %}
+      {%- endif -%}
+    {%- endset -%}
     <title>{{ theTitle }} | Troy Vassalotti</title>
 
     {# These two request CORS resources (fonts) #}
@@ -50,15 +51,16 @@
     {% endblock %}
 
     <!-- SEO Tags -->
-    {% set theDescription %}
-      {% if description %}
+    {# Keep the whitepsace removal to make it minify correctly #}
+    {%- set theDescription -%}
+      {%- if description -%}
         {{ description | safe }}
-      {% elseif excerpt %}
+      {%- elseif excerpt -%}
         {{ excerpt | safe }}
-      {% else %}
+      {%- else -%}
         {{ theTitle }} - a page on {{ metadata.domain }}
-      {% endif %}
-    {% endset %}
+      {%- endif -%}
+    {%- endset -%}
     <meta name="description" content="{{ theDescription }}">
     <meta name="og:locale" content="en_US">
     <meta name="og:type" content="article">
@@ -72,7 +74,7 @@
     <link rel="canonical" href="https://{{ metadata.domain }}{{ page.url }}">
 
     <!-- Other Head Stuff -->
-    <meta name="generator" content="Eleventy">
+    <meta name="generator" content="{{ eleventy.generator }}">
     <link rel="author" href="/humans.txt">
     <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="RSS Feed">
 

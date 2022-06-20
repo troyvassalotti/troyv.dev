@@ -1,5 +1,5 @@
 /**
- * @file Single location of available shortcodes on the site
+ * @file Site shortcodes
  */
 
 const Image = require("@11ty/eleventy-img");

@@ -1,0 +1,12 @@
+{
+  "pagination": {
+    "data": "collections",
+    "size": 1,
+    "alias": "tag",
+    "filter": ["all", "post", "allTagsList"]
+  },
+  "eleventyComputed": {
+    "title": "Tagged {{ tag }}",
+    "permalink": "/tags/{{ tag | slugify }}/"
+  }
+}

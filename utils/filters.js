@@ -1,5 +1,5 @@
 /**
- * @file Single location of template filters available
+ * @file Custom template filters
  */
 
 module.exports = {
@@ -12,7 +12,7 @@ module.exports = {
     return date.toUTCString().replace(/\s00:00:00\sGMT/g, "");
   },
   /**
-   * Date string to output dates as directories
+   * Slash-separated dates
    * @param date
    * @returns {`${number}/${number}/${number}`}
    */
@@ -29,6 +29,6 @@ module.exports = {
     if (parseInt(day) < 10) {
       day = "0" + day;
     }
-    return `${year}/${month}/${day}`
-  }
+    return `${year}/${month}/${day}`;
+  },
 };

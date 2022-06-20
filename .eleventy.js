@@ -1,61 +1,17 @@
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const pluginRss = require("@11ty/eleventy-plugin-rss");
-const sitemap = require("@quasibit/eleventy-plugin-sitemap");
-const timeToRead = require("eleventy-plugin-time-to-read");
-const embedYouTube = require("eleventy-plugin-youtube-embed");
-const inclusiveLangPlugin = require("@11ty/eleventy-plugin-inclusive-language");
-const pluginWebmentions = require("@chrisburnell/eleventy-cache-webmentions");
-const addWebComponentDefinitions = require("eleventy-plugin-add-web-component-definitions");
-const htmlmin = require("html-minifier-terser");
+/**
+ * @file Site configuration
+ * Most site features are configured in /utils/
+ */
 const utilsDir = "./utils";
 const jsDir = "/assets/js";
+
 const filters = require(`${utilsDir}/filters`);
+const collections = require(`${utilsDir}/collections`);
+const transforms = require(`${utilsDir}/transforms`);
 const shortcodes = require(`${utilsDir}/shortcodes`);
+const plugins = require(`${utilsDir}/plugins`);
 
 module.exports = function(eleventyConfig) {
-  // Plugins
-  eleventyConfig.addPlugin(inclusiveLangPlugin);
-  eleventyConfig.addPlugin(pluginRss);
-  eleventyConfig.addPlugin(syntaxHighlight);
-  eleventyConfig.addPlugin(timeToRead);
-  eleventyConfig.addPlugin(embedYouTube);
-  eleventyConfig.addPlugin(addWebComponentDefinitions, {
-    path: (tag) => `${jsDir}/components/${tag}.js`,
-  });
-  eleventyConfig.addPlugin(sitemap, {
-    sitemap: {
-      hostname: "https://www.troyv.dev",
-    },
-  });
-  eleventyConfig.addPlugin(pluginWebmentions, {
-    domain: "https://www.troyv.dev",
-  });
-
-  // Filters
-  Object.keys(filters).forEach((filterName) => {
-    eleventyConfig.addFilter(filterName, filters[filterName]);
-  });
-
-  // Transforms
-  if (process.env.ELEVENTY_ENV === "production") {
-    eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
-      if (this.outputPath && this.outputPath.endsWith(".html")) {
-        return htmlmin.minify(content, {
-          useShortDoctype: true,
-          removeComments: true,
-          collapseWhitespace: true,
-          minifyCSS: true,
-          minifyJS: true,
-        });
-      }
-      return content;
-    });
-  }
-
-  // Shortcodes
-  eleventyConfig.addNunjucksAsyncShortcode("image", shortcodes.Image);
-  eleventyConfig.addNunjucksShortcode("imageSync", shortcodes.ImageSync);
-
   // Passthroughs
   eleventyConfig.addPassthroughCopy({ "./public": "/" });
   eleventyConfig.addPassthroughCopy({
@@ -65,15 +21,29 @@ module.exports = function(eleventyConfig) {
     "./node_modules/@troyv/web-components/dist/**/*.js": `${jsDir}/components/`,
   });
 
-  eleventyConfig.addCollection("post", (collection) => {
-    if (process.env.ELEVENTY_ENV !== "production") {
-      return [...collection.getFilteredByGlob("./src/posts/*.md")];
-    } else {
-      return [...collection.getFilteredByGlob("./src/posts/*.md")].filter(
-        (post) => !post.data.draft,
-      );
-    }
+  // Plugins
+  Object.keys(plugins).forEach((plugin) => {
+    eleventyConfig.addPlugin(plugins[plugin].name, plugins[plugin]?.options);
   });
+
+  // Filters
+  Object.keys(filters).forEach((filterName) => {
+    eleventyConfig.addFilter(filterName, filters[filterName]);
+  });
+
+  // Collections
+  Object.keys(collections).forEach((collectionName) => {
+    eleventyConfig.addCollection(collectionName, collections[collectionName]);
+  });
+
+  // Transforms
+  Object.keys(transforms).forEach((transformName) => {
+    eleventyConfig.addTransform(transformName, transforms[transformName]);
+  });
+
+  // Shortcodes
+  eleventyConfig.addNunjucksAsyncShortcode("image", shortcodes.Image);
+  eleventyConfig.addNunjucksShortcode("imageSync", shortcodes.ImageSync);
 
   // Add excerpt support
   eleventyConfig.setFrontMatterParsingOptions({
