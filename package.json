@@ -8,7 +8,8 @@
     "serve": "ELEVENTY_ENV=production eleventy --serve",
     "dev": "ELEVENTY_ENV=development eleventy --serve",
     "debug": "DEBUG=* eleventy",
-    "prettier::format": "prettier --write .",
+    "lint": "dprint check",
+    "lint::fix": "dprint fmt",
     "netlify::deploy": "npm run prettier::format && netlify deploy --build --context production --prod"
   },
   "repository": {

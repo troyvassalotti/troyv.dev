@@ -38,39 +38,41 @@ For my purposes, I needed two shortcodes created to be able to fully use the plu
 
 ```js
 // ImageShortcode.js is asynchronous
-const Image = require("@11ty/eleventy-img")
+const Image = require("@11ty/eleventy-img");
 
-module.exports = async function (
-    src,
-    alt,
-    widthArray,
-    formatArray,
-    sizes,
-    className = "",
-    id = ""
+module.exports = async function(
+  src,
+  alt,
+  widthArray,
+  formatArray,
+  sizes,
+  className = "",
+  id = "",
 ) {
-    let metadata = await Image(src, {
-        widths: widthArray,
-        formats: formatArray,
-        urlPath: "/img/",
-        outputDir: "./_site/img/",
-    })
+  let metadata = await Image(src, {
+    widths: widthArray,
+    formats: formatArray,
+    urlPath: "/img/",
+    outputDir: "./_site/img/",
+  });
 
-    let imageAttributes
+  let imageAttributes;
 
-    if (id === "" && className === "") {
-        imageAttributes = {
-            alt,
-            sizes,
-            loading: "lazy",
-            decoding: "async",
-        }
-    } else if (otherlogic) {
-        /* a load of omitted code */
-    }
+  if (id === "" && className === "") {
+    imageAttributes = {
+      alt,
+      sizes,
+      loading: "lazy",
+      decoding: "async",
+    };
+  } else if (otherlogic) {
+    /* a load of omitted code */
+  }
 
-    return Image.generateHTML(metadata, imageAttributes, { whitespaceMode: "inline" })
-}
+  return Image.generateHTML(metadata, imageAttributes, {
+    whitespaceMode: "inline",
+  });
+};
 ```
 
 I encountered a few hiccups when figuring out how to tell it where my image was. I changed my project structure so that all the source files live in `src` and all the config files (`package.json`, `.eleventy.js`, etc. ) live in the root, so that was a tiny wrench in my system. This was the solution I came to:
@@ -126,31 +128,34 @@ I wanted to inline and minify my JavaScript the same way I did my CSS. The proce
 ```js
 // .eleventy.js
 
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
-const CleanCSS = require("clean-css")
-const { minify } = require("terser")
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const CleanCSS = require("clean-css");
+const { minify } = require("terser");
 
-module.exports = function (eleventyConfig) {
-    // add the syntax highlighting plugin from earlier
-    eleventyConfig.addPlugin(syntaxHighlight)
+module.exports = function(eleventyConfig) {
+  // add the syntax highlighting plugin from earlier
+  eleventyConfig.addPlugin(syntaxHighlight);
 
-    // add a css minifier filter from clean-css
-    eleventyConfig.addFilter("cssmin", function (code) {
-        return new CleanCSS({}).minify(code).styles
-    })
+  // add a css minifier filter from clean-css
+  eleventyConfig.addFilter("cssmin", function(code) {
+    return new CleanCSS({}).minify(code).styles;
+  });
 
-    // add javascript minifier
-    eleventyConfig.addNunjucksAsyncFilter("jsmin", async function (code, callback) {
-        try {
-            const minified = await minify(code)
-            callback(null, minified.code)
-        } catch (err) {
-            console.error("Terser error: ", err)
-            // Fail gracefully.
-            callback(null, code)
-        }
-    })
-}
+  // add javascript minifier
+  eleventyConfig.addNunjucksAsyncFilter(
+    "jsmin",
+    async function(code, callback) {
+      try {
+        const minified = await minify(code);
+        callback(null, minified.code);
+      } catch (err) {
+        console.error("Terser error: ", err);
+        // Fail gracefully.
+        callback(null, code);
+      }
+    },
+  );
+};
 ```
 
 **Neat.**
@@ -215,10 +220,10 @@ That `projectFeature` shortcode works like this:
 
 ```js
 // _includes/components/ProjectFeature.js
-const { html } = require("common-tags")
+const { html } = require("common-tags");
 
-module.exports = function (content, title, description, href, id) {
-    return html` <article class="project" id="project_${id}">
+module.exports = function(content, title, description, href, id) {
+  return html` <article class="project" id="project_${id}">
         <h2>${title}</h2>
         <div class="skewed-background col full">
             <div class="wrapper" data-constrain="some">
@@ -230,8 +235,8 @@ module.exports = function (content, title, description, href, id) {
                 </div>
             </div>
         </div>
-    </article>`
-}
+    </article>`;
+};
 ```
 
 **Sweet.**

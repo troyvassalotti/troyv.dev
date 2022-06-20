@@ -1,4 +1,6 @@
-{% extends 'layouts/base.html' %} {% block content %}
+{% extends 'layouts/base.html' %}
+
+{% block content %}
 <main class="layout" id="main">
   <div class="wrapper">
     <div class="grid work-solo">
@@ -40,32 +42,32 @@
 </main>
 {% endblock %}
 
+{% block style %}
+{{ super() }}
 <style>
-  {% set css %}
-  .work-solo h2 {
-      font-size: var(--step-4);
-  }
+    .work-solo h2 {
+        font-size: var(--step-4);
+    }
 
-  @media (min-width: 60em) {
-      .work-solo {
-          grid-template-areas:
+    @media (min-width: 60em) {
+        .work-solo {
+            grid-template-areas:
         "img summary"
-        "details summary"
-      }
+        "details summary";
+        }
 
-      .work-solo__img {
-          grid-area: img;
-      }
+        .work-solo__img {
+            grid-area: img;
+        }
 
-      .work-solo__summary {
-          grid-area: summary;
-          place-self: center;
-      }
+        .work-solo__summary {
+            grid-area: summary;
+            place-self: center;
+        }
 
-      .work-solo__details {
-          grid-area: details;
-      }
-  }
-
-  {% endset %}
+        .work-solo__details {
+            grid-area: details;
+        }
+    }
 </style>
+{% endblock %}

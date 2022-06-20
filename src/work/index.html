@@ -1,21 +1,22 @@
 {% extends 'layouts/page.html' %}
 
+{% block script %}
+{{ super() }}
 <script type="module">
-  {% set js %}
   // This is for the handdrawn annotations from Rough Notation
   import { annotate } from "rough-notation"
 
   const pageTitle = document.querySelector("#page-title")
   pageTitle.setAttribute("style", "color: var(--blackPrimary)")
   const projectsAnnotation = annotate(pageTitle, {
-      type: "highlight",
-      color: "var(--workColor)",
-      padding: 15
+    type: "highlight",
+    color: "var(--workColor)",
+    padding: 15
   })
 
   projectsAnnotation.show()
-  {% endset %}
 </script>
+{% endblock %}
 
 {% block main %}
 <div class="wrapper">
@@ -60,67 +61,67 @@
 </section>
 {% endblock %}
 
+{% block style %}
+{{ super() }}
 <style>
-  {% set css %}
   .work__focus {
-      --min: clamp(20rem, 100%, 30rem);
-      display: grid;
-      gap: 2rem;
-      grid-template-columns: repeat(auto-fill, minmax(var(--min), 1fr));
+    --min: clamp(20rem, 100%, 30rem);
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(var(--min), 1fr));
   }
 
   .work__focus h2 {
-      font-size: var(--step-2);
+    font-size: var(--step-2);
   }
 
   .work__focus .container {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
   }
 
   .work__focus img {
-      box-shadow: 2px 4px 6px var(--blackPrimary);
-      transition: 0.3s ease;
+    box-shadow: 2px 4px 6px var(--blackPrimary);
+    transition: 0.3s ease;
   }
 
   .work__focus img:hover {
-      filter: brightness(0.5);
-      transform: scale(1.02);
+    filter: brightness(0.5);
+    transform: scale(1.02);
   }
 
   .misc {
-      --padding: 3rem;
-      padding-block-end: var(--padding);
-      padding-block-start: var(--padding);
+    --padding: 3rem;
+    padding-block-end: var(--padding);
+    padding-block-start: var(--padding);
   }
 
   .misc h2 {
-      --padding: 1rem;
-      margin-block-end: 2rem;
-      padding-inline-end: var(--padding);
-      padding-inline-start: var(--padding);
+    --padding: 1rem;
+    margin-block-end: 2rem;
+    padding-inline-end: var(--padding);
+    padding-inline-start: var(--padding);
   }
 
   .projects__misc {
-      display: flex;
-      gap: 5%;
-      overflow-x: auto;
-      padding: 1rem;
+    display: flex;
+    gap: 5%;
+    overflow-x: auto;
+    padding: 1rem;
   }
 
   .projects__misc overlay-caption {
-      flex-shrink: 0;
-      font-size: var(--step-1);
-      max-inline-size: 20rem;
+    flex-shrink: 0;
+    font-size: var(--step-1);
+    max-inline-size: 20rem;
   }
 
   @media (prefers-color-scheme: dark) {
-      .work__focus img {
-          box-shadow: none;
-      }
+    .work__focus img {
+      box-shadow: none;
+    }
   }
-
-  {% endset %}
 </style>
+{% endblock %}

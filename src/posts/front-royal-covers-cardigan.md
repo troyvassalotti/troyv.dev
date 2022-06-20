@@ -11,9 +11,9 @@ It's safe to say I'm the biggest swiftie in Front Royal, so when we decided to w
 
 Check out Front Royal at all these locations:
 
--   [Bandcamp](https://frontroyalmd.bandcamp.com/)
--   [Facebook](https://facebook.com/frontroyalmd)
--   [Spotify](https://open.spotify.com/artist/1NfwIBuuWEk4d8c6LZftnD?si=7CjcwpNZTjipSVaXrLypLg)
--   [Instagram](https://instagram.com/frontroyal_official)
--   [Twitter](https://twitter.com/frontroyalband)
--   [YouTube](https://www.youtube.com/channel/UCm-KryhT3o9NZSbpG-M1qCQ/feed)
+- [Bandcamp](https://frontroyalmd.bandcamp.com/)
+- [Facebook](https://facebook.com/frontroyalmd)
+- [Spotify](https://open.spotify.com/artist/1NfwIBuuWEk4d8c6LZftnD?si=7CjcwpNZTjipSVaXrLypLg)
+- [Instagram](https://instagram.com/frontroyal_official)
+- [Twitter](https://twitter.com/frontroyalband)
+- [YouTube](https://www.youtube.com/channel/UCm-KryhT3o9NZSbpG-M1qCQ/feed)

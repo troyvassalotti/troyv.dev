@@ -7,13 +7,14 @@
   },
   "toml": {
   },
-  "includes": ["**/*.{ts,js,json,md,toml,html,css}"],
+  "includes": ["**/*.{ts,js,json,md,toml,css}"],
   "excludes": [
     "**/node_modules",
     "**/*-lock.json",
     "_site",
     ".cache",
-    ".netlify"
+    ".netlify",
+    "src/_includes/layouts/base.html"
   ],
   "plugins": [
     "https://plugins.dprint.dev/typescript-0.69.2.wasm",

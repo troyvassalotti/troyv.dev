@@ -1,4 +1,6 @@
-{% extends 'layouts/base.html' %} {% block content %}
+{% extends 'layouts/base.html' %}
+
+{% block content %}
 <div class="with-sidebar">
   <main class="post-container" id="main">
     <article class="h-entry">
@@ -23,146 +25,146 @@
 </div>
 {% endblock %}
 
+{% block style %}
+{{ super() }}
 <style>
-  {% set css %}
-  .post-container {
-      flex-grow: 1;
-      padding-inline-end: 1ch;
-      padding-inline-start: 1ch;
-      inline-size: 70%;
-  }
+    .post-container {
+        flex-grow: 1;
+        padding-inline-end: 1ch;
+        padding-inline-start: 1ch;
+        inline-size: 70%;
+    }
 
-  .post-container .wrapper {
-      max-inline-size: 75ch;
-  }
+    .post-container .wrapper {
+        max-inline-size: 75ch;
+    }
 
-  .post-header {
-      padding-block-start: 2em;
-  }
+    .post-header {
+        padding-block-start: 2em;
+    }
 
-  .post-header .wrapper {
-      border-bottom: 2px solid var(--goldPrimary);
-  }
+    .post-header .wrapper {
+        border-bottom: 2px solid var(--goldPrimary);
+    }
 
-  .post-container h1 {
-      font-size: var(--step-4);
-  }
+    .post-container h1 {
+        font-size: var(--step-4);
+    }
 
-  .post-container h2 {
-      font-size: var(--step-3);
-  }
+    .post-container h2 {
+        font-size: var(--step-3);
+    }
 
-  .post-container h3 {
-      font-size: var(--step-2);
-  }
+    .post-container h3 {
+        font-size: var(--step-2);
+    }
 
-  .post-container h4 {
-      font-size: var(--step-1);
-  }
+    .post-container h4 {
+        font-size: var(--step-1);
+    }
 
-  .post-container :is(h2, h3, h4) {
-      margin-block-start: revert;
-  }
+    .post-container :is(h2, h3, h4) {
+        margin-block-start: revert;
+    }
 
-  #post-navigation {
-      --padding: 2rem;
-      flex-grow: 1;
-      padding: var(--padding);
-  }
+    #post-navigation {
+        --padding: 2rem;
+        flex-grow: 1;
+        padding: var(--padding);
+    }
 
-  #post-navigation .wrapper {
-      position: sticky;
-      top: 30%;
-  }
+    #post-navigation .wrapper {
+        position: sticky;
+        top: 30%;
+    }
 
-  .post-navigation {
-      display: flex;
-      flex-direction: column;
-      font-size: var(--step--2);
-      gap: 3rem;
-      justify-content: space-evenly;
-      padding: var(--padding);
-  }
+    .post-navigation {
+        display: flex;
+        flex-direction: column;
+        font-size: var(--step--2);
+        gap: 3rem;
+        justify-content: space-evenly;
+        padding: var(--padding);
+    }
 
-  .post-navigation li {
-      display: inline-flex;
-      flex-direction: column;
-      max-inline-size: 20ch;
-  }
+    .post-navigation li {
+        display: inline-flex;
+        flex-direction: column;
+        max-inline-size: 20ch;
+    }
 
-  .with-sidebar {
-      display: flex;
-      flex-wrap: wrap;
-  }
+    .with-sidebar {
+        display: flex;
+        flex-wrap: wrap;
+    }
 
-  /* Webmention Section */
+    /* Webmention Section */
 
-  .webmentions {
-      padding: 1.5rem;
-  }
+    .webmentions {
+        padding: 1.5rem;
+    }
 
-  .webmentions h2 {
-      font-size: var(--step-1);
-      font-variant: small-caps;
-      font-weight: normal;
-      margin: 0;
-  }
+    .webmentions h2 {
+        font-size: var(--step-1);
+        font-variant: small-caps;
+        font-weight: normal;
+        margin: 0;
+    }
 
-  .webmentions h3 {
-      margin-block-end: .5ch;
-  }
+    .webmentions h3 {
+        margin-block-end: 0.5ch;
+    }
 
-  .webmentions__facepile {
-      align-items: center;
-      display: flex;
-      flex-wrap: wrap;
-  }
+    .webmentions__facepile {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+    }
 
-  .webmentions__face {
-      block-size: 2rem;
-      border-radius: 50%;
-      flex: none;
-      inline-size: 2rem;
-      margin: revert;
-      object-fit: cover;
-  }
+    .webmentions__face {
+        block-size: 2rem;
+        border-radius: 50%;
+        flex: none;
+        inline-size: 2rem;
+        margin: revert;
+        object-fit: cover;
+    }
 
-  .webmentions__list {
-      padding: 0;
-  }
+    .webmentions__list {
+        padding: 0;
+    }
 
-  .webmentions__item {
-      margin-block-end: 2rem;
-  }
+    .webmentions__item {
+        margin-block-end: 2rem;
+    }
 
-  /* Single Webmention */
+    /* Single Webmention */
 
-  .webmention__meta,
-  .webmention__author {
-      align-items: center;
-      display: flex;
-      flex-wrap: wrap;
-  }
+    .webmention__meta,
+    .webmention__author {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+    }
 
-  .webmention__meta {
-      margin-block-end: .5rem;
-  }
+    .webmention__meta {
+        margin-block-end: 0.5rem;
+    }
 
-  .webmention__author {
-      margin-inline-end: .25rem;
-  }
+    .webmention__author {
+        margin-inline-end: 0.25rem;
+    }
 
-  .webmention__author__photo {
-      block-size: 3rem;
-      border-radius: 50%;
-      inline-size: 3rem;
-      margin-inline-end: .5rem;
-      object-fit: cover;
-  }
+    .webmention__author__photo {
+        block-size: 3rem;
+        border-radius: 50%;
+        inline-size: 3rem;
+        margin-inline-end: 0.5rem;
+        object-fit: cover;
+    }
 
-  .webmention__pubdate {
-      font-style: italic;
-  }
-
-  {% endset %}
+    .webmention__pubdate {
+        font-style: italic;
+    }
 </style>
+{% endblock %}

@@ -5,14 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#2380e7">
 
-    {% set theTitle %}{% if title %}{{ title | safe }}{% else %}{{ page.fileSlug | capitalize }}{% endif %}{% endset %}
+    {% set theTitle %}
+      {% if title %}
+        {{ title | safe }}
+      {% else %}
+        {{ page.fileSlug | capitalize }}
+      {% endif %}
+    {% endset %}
     <title>{{ theTitle }} | Troy Vassalotti</title>
 
     {# These two request CORS resources (fonts) #}
     <link rel="preconnect" href="https://d33wubrfki0l68.cloudfront.net" crossorigin>
     <link rel="preconnect" href="https://fonts.typotheque.com/" crossorigin>
-
-    <link rel="preconnect" href="https://screenshot.troyv.dev/">
+    <link rel="preconnect" href="https://screenshot.troyv.dev/" crossorigin>
     <link rel="preconnect" href="https://res.cloudinary.com/">
 
     <link rel="dns-prefetch" href="https://d33wubrfki0l68.cloudfront.net">
@@ -41,14 +46,19 @@
             {% include 'css/modern-reset.css' %}
             {% include 'css/style.css' %}
             {% include 'css/prism.css' %}
-            {% if css %}
-            {{ css | safe }}
-            {% endif %}
         </style>
     {% endblock %}
 
     <!-- SEO Tags -->
-    {% set theDescription %}{% if description %}{{ description | safe }}{% elseif excerpt %}{{ excerpt | safe }}{% else %}{{ theTitle }} - a page on {{ metadata.domain }}{% endif %}{% endset %}
+    {% set theDescription %}
+      {% if description %}
+        {{ description | safe }}
+      {% elseif excerpt %}
+        {{ excerpt | safe }}
+      {% else %}
+        {{ theTitle }} - a page on {{ metadata.domain }}
+      {% endif %}
+    {% endset %}
     <meta name="description" content="{{ theDescription }}">
     <meta name="og:locale" content="en_US">
     <meta name="og:type" content="article">
@@ -83,7 +93,9 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
     <link rel="manifest" href="/manifest.webmanifest">
 </head>
-{%- set bodyClass %}{% if page.fileSlug == '' %}home{% else %}{{ page.fileSlug }}{% endif %}{% endset -%}
+{% set bodyClass %}
+  {% if page.fileSlug == '' %}home{% else %}{{ page.fileSlug }}{% endif %}
+{% endset %}
 <body class="{{ bodyClass }}">
 
 <nav class="main-navigation hideOnPrint" id="main-navigation" aria-label="main navigation">
@@ -105,9 +117,6 @@
 {% block script %}
     <script type="module">
         {% include 'js/script.js' %}
-        {% if js %}
-        {{ js | safe }}
-        {% endif %}
     </script>
 {% endblock %}
 </body>

@@ -86,9 +86,9 @@ In my `base.njk` layout - the primary layout all pages file into - I defined thr
 
 The way those blocks work is as follows:
 
--   The `style` block is looking for a variable named `css`. If that variable is defined on the template, then it runs the content of that variable through as-is (development) or minified (production), passing the result into a `<style>` tag.
--   The `content` block will contain any HTML contained in the template's `content` block.
--   The `script` block is doing the same thing as the `style` block, except the variable it looks for is named `js`.
+- The `style` block is looking for a variable named `css`. If that variable is defined on the template, then it runs the content of that variable through as-is (development) or minified (production), passing the result into a `<style>` tag.
+- The `content` block will contain any HTML contained in the template's `content` block.
+- The `script` block is doing the same thing as the `style` block, except the variable it looks for is named `js`.
 
 Now take a look at an example from my homepage where I define those blocks and variables for use in the layout:
 
@@ -124,10 +124,10 @@ description: Watch as Troy Vassalotti learns his way around a computer.
 
 What's happening in that file now is as follows:
 
--   I tell the template to extend my base layout file.
--   I define the `content` block with all my HTML and Nunjucks logic.
--   I set the `css` variable and include any critical CSS within it. The `<style>` tags wrapping the variable are strictly for syntax highlighting in the editor and _do not_ get passed along themselves.
--   I finally set the `js` variable with the same logic as the `css` variable.
+- I tell the template to extend my base layout file.
+- I define the `content` block with all my HTML and Nunjucks logic.
+- I set the `css` variable and include any critical CSS within it. The `<style>` tags wrapping the variable are strictly for syntax highlighting in the editor and _do not_ get passed along themselves.
+- I finally set the `js` variable with the same logic as the `css` variable.
 
 The end result is a single template file with its templating HTML and critical CSS and JS contained in a single file that pass into the final layout to be processed and placed where they need to be.
 

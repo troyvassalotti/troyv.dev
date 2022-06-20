@@ -16,9 +16,9 @@ I don't know when, why, or how I came up with the idea to create this project. I
 
 I didn't have the skills to build it yet.
 
--   No design skills.
--   I could barely code an email and that was my full-time job.
--   No clear idea how to even make a website live.
+- No design skills.
+- I could barely code an email and that was my full-time job.
+- No clear idea how to even make a website live.
 
 But I knew one day I'd get there, and here we are.
 
@@ -30,9 +30,9 @@ Hugo's great. I was really worried that I chose the wrong static site generator 
 
 It wasn't a complete mistake! Now, Hugo might not be the best suited option here:
 
--   This site isn't really a blog.
--   It's only a few pages.
--   Not a lot gets reused.
+- This site isn't really a blog.
+- It's only a few pages.
+- Not a lot gets reused.
 
 Only later in the build process did I realize those were shortcomings, but once I understood the way the directory structure works in Hugo it all made sense, and I was able to make it work for me.
 

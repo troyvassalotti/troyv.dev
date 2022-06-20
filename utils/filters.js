@@ -8,7 +8,7 @@ module.exports = {
    * @param date
    * @returns {string}
    */
-  dateString: function (date) {
+  dateString: function(date) {
     let d = date.toUTCString();
     let gmt = /\s00:00:00\sGMT/g;
     return d.replace(gmt, "");

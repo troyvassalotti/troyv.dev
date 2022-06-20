@@ -1,7 +1,8 @@
 {% extends 'layouts/base.html' %}
 
+{% block script %}
+{{ super() }}
 <script type="module">
-  {% set js %}
   // We use dynamic imports here because Rough Notation is called only when intersecting the viewport
   // All other pages use RN in the LCP, so they import on load
   const importRoughNotation = () => importShim("rough-notation")
@@ -10,7 +11,7 @@
   const options = {
     root: null,
     rootMargin: "0px",
-    threshold: .5
+    threshold: 0.5
   }
 
   /**
@@ -21,7 +22,7 @@
     entries.map((entry) => {
       if (entry.isIntersecting) {
         importRoughNotation().then((module) => {
-          const { annotate, annotationGroup } = module;
+          const { annotate, annotationGroup } = module
           const a1 = annotate(e1, {
             type: "box",
             color: "var(--bluePrimary)"
@@ -44,10 +45,8 @@
 
   const handDrawObserver = new IntersectionObserver(handleHandrawing, options)
   handDrawObserver.observe(e1)
-  {% endset %}
 </script>
-
-{% block content %}
+{% endblock %} {% block content %}
 <main class="layout" id="main">
   <div class="hero">
     <div class="wrapper flex">
@@ -69,14 +68,17 @@
             decoding="async"
             width="600"
             height="600"
-            id="me" />
+            id="me"
+          />
         </div>
         <div class="content">
           <p>
             I'm glad you could make it. Peruse my wares* and
             <a href="/about/">send me a letter</a> if you're so inclined.
           </p>
-          <p class="txt-smallest">*I only accept bottle caps as currency, sorry... (I'm kidding)</p>
+          <p class="txt-smallest">
+            *I only accept bottle caps as currency, sorry... (I'm kidding)
+          </p>
         </div>
       </section>
       <section class="feed" id="posts">
@@ -98,11 +100,13 @@
   </div>
   <section class="projects-section" id="projects">
     <div class="wrapper">
-      <h2><span id="cool-anim">Latest</span> <span id="proj-anim">Projects</span></h2>
+      <h2>
+        <span id="cool-anim">Latest</span> <span id="proj-anim">Projects</span>
+      </h2>
       <div class="showcase-container">
         <div class="showcase">
-          {% for work in collections['work'].slice(collections['work'].length - 3,
-          collection['work'].length) | reverse %}
+          {% for work in collections['work'].slice(collections['work'].length -
+          3, collection['work'].length) | reverse %}
           <overlay-caption url="{{ work.url }}">
             <img
               slot="image"
@@ -111,7 +115,8 @@
               width="600"
               height="315"
               decoding="async"
-              loading="lazy" />
+              loading="lazy"
+            />
             <h3 slot="caption">{{ work.data.title }}</h3>
           </overlay-caption>
           {% endfor %}
@@ -135,14 +140,18 @@
         <div class="music-section" id="music">
           <h2>I Also Have <a href="/music/">Music</a></h2>
           <p>
-            When I’m not coding, maybe I'm writing songs. My friends and I started
-            <span class="bold">Front Royal</span> with the desire to make a name for ourselves, and
-            I started <span class="bold">troy.</span> to explore a new outlet.
+            When I’m not coding, maybe I'm writing songs. My friends and I
+            started
+            <span class="bold">Front Royal</span> with the desire to make a name
+            for ourselves, and I started <span class="bold">troy.</span> to
+            explore a new outlet.
           </p>
         </div>
         <div class="about-section" id="about">
           <h2>Looking For More?</h2>
-          <p>You can probably find it on my <a href="/about/">about</a> page.</p>
+          <p>
+            You can probably find it on my <a href="/about/">about</a> page.
+          </p>
         </div>
       </div>
     </cloudy-sky>
@@ -150,181 +159,181 @@
 </main>
 {% endblock %}
 
+{% block style %}
+{{ super() }}
 <style>
-  {% set css %}
   .hero .wrapper {
-      align-items: baseline;
-      flex-wrap: wrap;
-      justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 
   .welcome-screen {
-      margin-block-end: 3ch;
-      margin-inline: auto;
+    margin-block-end: 3ch;
+    margin-inline: auto;
   }
 
   .welcome-screen .content {
-      max-inline-size: 35ch;
-      text-align: center;
+    max-inline-size: 35ch;
+    text-align: center;
   }
 
   .feed {
-      flex: 1 1 37.5rem;
-      max-inline-size: 75ch;
-      text-align: end;
+    flex: 1 1 37.5rem;
+    max-inline-size: 75ch;
+    text-align: end;
   }
 
   .post-listing {
-      align-items: flex-end;
-      border-inline-end: 2px solid var(--blackPrimary);
-      display: flex;
-      flex-direction: column;
-      padding-inline-end: 1ch;
+    align-items: flex-end;
+    border-inline-end: 2px solid var(--blackPrimary);
+    display: flex;
+    flex-direction: column;
+    padding-inline-end: 1ch;
   }
 
   .post-listing p {
-      margin-block-end: 0;
-      margin-block-start: 1ch;
-      max-inline-size: 45ch;
+    margin-block-end: 0;
+    margin-block-start: 1ch;
+    max-inline-size: 45ch;
   }
 
   .portrait img {
-      aspect-ratio: 1 / 1;
-      border-radius: 50%;
-      inline-size: 25rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    inline-size: 25rem;
   }
 
   .typewriter-container {
-      display: grid;
-      justify-content: center;
+    display: grid;
+    justify-content: center;
   }
 
   kb-typewriter {
-      color: transparent;
+    color: transparent;
   }
 
   .typewriter_1 {
-      --kb-count-cursor: 6;
-      font-size: var(--step-4);
+    --kb-count-cursor: 6;
+    font-size: var(--step-4);
   }
 
   .typewriter_2 {
-      --kb-delay-typing: 3.5s;
-      --kb-delay-cursor: 3s;
-      --kb-steps-typing: 35;
-      font-family: var(--headings);
-      font-size: var(--step-2);
-      font-weight: bold;
-      margin-block-start: 0.5ex;
+    --kb-delay-typing: 3.5s;
+    --kb-delay-cursor: 3s;
+    --kb-steps-typing: 35;
+    font-family: var(--headings);
+    font-size: var(--step-2);
+    font-weight: bold;
+    margin-block-start: 0.5ex;
   }
 
   @keyframes typing {
-      0% {
-          inline-size: 0;
-      }
+    0% {
+      inline-size: 0;
+    }
 
-      100% {
-          inline-size: 100%;
-      }
+    100% {
+      inline-size: 100%;
+    }
   }
 
   @keyframes cursor {
-      0% {
-          border-right-color: currentColor;
-      }
+    0% {
+      border-right-color: currentColor;
+    }
 
-      100% {
-          border-right-color: transparent;
-      }
+    100% {
+      border-right-color: transparent;
+    }
   }
 
   #cool-anim,
   #proj-anim {
-      display: inline-block;
+    display: inline-block;
   }
 
   .showcase {
-      display: grid;
-      gap: 1em;
-      margin-block: 3em;
+    display: grid;
+    gap: 1em;
+    margin-block: 3em;
   }
 
   .showcase-container {
-      --skew-padding: 1em 0 2em;
-      --skew-color: transparent;
-      --skew-direction: var(--skewDown);
+    --skew-padding: 1em 0 2em;
+    --skew-color: transparent;
+    --skew-direction: var(--skewDown);
   }
 
   .showcase-container .content {
-      padding: 0 1ch;
+    padding: 0 1ch;
   }
 
   .showcase-container .skewed-background::before {
-      border: 2px solid currentColor;
+    border: 2px solid currentColor;
   }
 
   .supplemental h2 {
-      font-size: var(--step-2);
+    font-size: var(--step-2);
   }
 
   .supplemental .content {
-      display: grid;
-      gap: 2em;
+    display: grid;
+    gap: 2em;
   }
 
   .music-section {
-      align-items: flex-start;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
+    align-items: flex-start;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
   }
 
   .music-section p {
-      max-inline-size: 45ch;
+    max-inline-size: 45ch;
   }
 
   .about-section {
-      align-items: flex-end;
-      display: flex;
-      flex-direction: column;
-      text-align: end;
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    text-align: end;
   }
 
   @media (min-width: 40em) {
-      .showcase {
-          grid-template-columns: 1fr 1fr;
-      }
+    .showcase {
+      grid-template-columns: 1fr 1fr;
+    }
 
-      .showcase :last-of-type {
-          grid-column: 1 / 3;
-      }
+    .showcase :last-of-type {
+      grid-column: 1 / 3;
+    }
   }
 
   @media (min-width: 68.75em) {
-      .welcome-screen {
-          flex: 0 1 27.5rem;
-      }
+    .welcome-screen {
+      flex: 0 1 27.5rem;
+    }
   }
 
   @media (min-width: 71.75em) {
-      .showcase-container {
-          display: flex;
-      }
+    .showcase-container {
+      display: flex;
+    }
 
-      .showcase {
-          flex: 1 1;
-      }
+    .showcase {
+      flex: 1 1;
+    }
 
-      .showcase-container .content {
-          flex: 0 1 clamp(25rem, 35vw, 37.5rem);
-      }
+    .showcase-container .content {
+      flex: 0 1 clamp(25rem, 35vw, 37.5rem);
+    }
   }
 
   @media (prefers-color-scheme: dark) {
-      .post-listing {
-          border-color: var(--goldPrimary);
-      }
+    .post-listing {
+      border-color: var(--goldPrimary);
+    }
   }
-
-  {% endset %}
 </style>
+{% endblock %}

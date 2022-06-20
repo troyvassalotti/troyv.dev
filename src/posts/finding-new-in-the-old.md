@@ -32,10 +32,10 @@ I was pretty proud of the little thing and thought for sure I'd nailed it.
 
 My professor reviewed it and sent back his notes, including a re-write of the song to show me what he meant. Among those edits were:
 
--   Cutting the BPM in half;
--   Solidifying it into a major key;
--   Changing emphasis of key chords;
--   And some other things that would be too much to list.
+- Cutting the BPM in half;
+- Solidifying it into a major key;
+- Changing emphasis of key chords;
+- And some other things that would be too much to list.
 
 I was a bit unsettled hearing the changes, but it was nothing meant to offend me. He was incredibly nice and helpful about the project. Looking back, I greatly appreciate it even if it changed the theme of the song so much.
 

@@ -16,9 +16,9 @@ NotSocial is my new passion; it's more than an app - it's an ideology. You may b
 
 But I am here to tell you how NotSocial is a new kind of social media platform where it is only you that exists in its world. It's a section of the internet for you - and only you - to be social with yourself while feeling connected with the rest of the world.
 
--   Enjoy the thrill of Twitter while also being able to **wipe it off the face of your device screen.**
--   Comment, like, and even dislike posts from your favorite news outlets, celebrities, and crazy relatives (bonus points if you reach the high score).
--   See your direct messages, potentially play games (no promises), and look at dog pictures.
+- Enjoy the thrill of Twitter while also being able to **wipe it off the face of your device screen.**
+- Comment, like, and even dislike posts from your favorite news outlets, celebrities, and crazy relatives (bonus points if you reach the high score).
+- See your direct messages, potentially play games (no promises), and look at dog pictures.
 
 When you're all done, close your account without hassle, free of charge. I make it super simple to rid yourself of NotSocial because it should never be an inconvenience to delete yourself from an internet service.
 
@@ -40,6 +40,6 @@ After all this time though, it is still a fun side project. If I were to open up
 
 ## Lessons Learned
 
--   Always read the documentation.
--   Patience is a virtue.
--   Maybe don't rely on npm for everything if you want to work on a thing long term.
+- Always read the documentation.
+- Patience is a virtue.
+- Maybe don't rely on npm for everything if you want to work on a thing long term.

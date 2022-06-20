@@ -11,6 +11,7 @@ project: true
 use_screenshot_service: false
 
 ---
+
 I recently got antsy to make an Express app. The original idea was to try and recreate _this very website_ using Express and Pug templates instead of Nunjucks. It started off fine, but then I realized it'd be a little more of a waste of time to base it on my website since 1) the site is already made with Node, and 2) it won't necessarily teach me something that new.
 
 So instead, I chose to create a mini site about my cats and add on the extra challenge of using Tailwind CSS for the first time. You can find the [code for this app](https://github.com/troyvassalotti/express-cats) on my GitHub.
@@ -23,33 +24,33 @@ Getting the structure started wasn't too much of a problem. I had a repo to use 
 
 The most difficult hurdle to jump in new projects, for me at least, is how to organize the files. I like having everything in their proper places as early as possible so I don't have to move them around later; this can be seen in both my digital and physical lives alike. Luckily, this is a small project.
 
--   Pug templates go in `/views` with partials and layouts broken out in their respective directories.
--   Tailwind CSS goes in `/public`.
--   All the routing goes in `/routes`.
--   All the config files stay in the root.
+- Pug templates go in `/views` with partials and layouts broken out in their respective directories.
+- Tailwind CSS goes in `/public`.
+- All the routing goes in `/routes`.
+- All the config files stay in the root.
 
 Look at this `app.js` - so minimal.
 
 ```js
-const express = require("express")
-const app = express()
-const routes = require("./routes/site")
-const compression = require("compression")
+const express = require("express");
+const app = express();
+const routes = require("./routes/site");
+const compression = require("compression");
 
 // set pug engine
-app.set("view engine", "pug")
+app.set("view engine", "pug");
 
 // set compression
-app.use(compression())
+app.use(compression());
 
 // set static assets
-app.use(express.static("./public"))
+app.use(express.static("./public"));
 
-app.use("/", routes)
+app.use("/", routes);
 
 app.listen(process.env.PORT || 3000, () => {
-    console.log("Listening on port " + process.env.PORT)
-})
+  console.log("Listening on port " + process.env.PORT);
+});
 ```
 
 I've made attempts at cleaning out my project roots and keeping only config files there (not the default for 11ty sites) because it was making me feel unkempt having HTML or otherwise next to my `package.json`.

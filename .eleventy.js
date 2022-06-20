@@ -12,7 +12,7 @@ const jsDir = "/assets/js";
 const filters = require(`${utilsDir}/filters`);
 const shortcodes = require(`${utilsDir}/shortcodes`);
 
-module.exports = function (eleventyConfig) {
+module.exports = function(eleventyConfig) {
   // Plugins
   eleventyConfig.addPlugin(inclusiveLangPlugin);
   eleventyConfig.addPlugin(pluginRss);
@@ -38,7 +38,7 @@ module.exports = function (eleventyConfig) {
 
   // Transforms
   if (process.env.ELEVENTY_ENV === "production") {
-    eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
+    eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
       if (this.outputPath && this.outputPath.endsWith(".html")) {
         return htmlmin.minify(content, {
           useShortDoctype: true,
@@ -66,12 +66,13 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addCollection("post", (collection) => {
-    if (process.env.ELEVENTY_ENV !== "production")
+    if (process.env.ELEVENTY_ENV !== "production") {
       return [...collection.getFilteredByGlob("./src/posts/*.md")];
-    else
+    } else {
       return [...collection.getFilteredByGlob("./src/posts/*.md")].filter(
-        (post) => !post.data.draft
+        (post) => !post.data.draft,
       );
+    }
   });
 
   // Add excerpt support

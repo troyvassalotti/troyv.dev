@@ -1,20 +1,21 @@
 {% extends 'layouts/page.html' %}
 
+{% block script %}
+{{ super() }}
 <script type="module">
-  {% set js %}
   // This is for the handdrawn annotations from Rough Notation
   import { annotate } from "rough-notation"
 
   const pageTitle = document.querySelector("#page-title")
   const postsAnnotation = annotate(pageTitle, {
-      type: "circle",
-      color: "var(--postsColor)",
-      padding: 15
+    type: "circle",
+    color: "var(--postsColor)",
+    padding: 15
   })
 
   postsAnnotation.show()
-  {% endset %}
 </script>
+{% endblock %}
 
 {% block main %}
 <section class="all-posts full">
@@ -36,24 +37,24 @@
 </aside>
 {% endblock %}
 
+{% block style %}
+{{ super() }}
 <style>
-  {% set css %}
   .post-listing {
-      align-items: flex-start;
-      border: none;
-      display: flex;
-      flex-direction: column;
-      padding-inline-end: 1ex;
-      padding-inline-start: 1ex;
+    align-items: flex-start;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    padding-inline-end: 1ex;
+    padding-inline-start: 1ex;
   }
 
   .all-posts h2 {
-      font-size: var(--step-2);
+    font-size: var(--step-2);
   }
 
   .posts-container {
-      grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   }
-
-  {% endset %}
 </style>
+{% endblock %}

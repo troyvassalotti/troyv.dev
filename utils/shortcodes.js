@@ -18,7 +18,7 @@ module.exports = {
    * @returns {Promise<string>}
    * @constructor
    */
-  Image: async function (
+  Image: async function(
     src,
     alt,
     widthArray = [400, 600, 800, 1200],
@@ -26,7 +26,7 @@ module.exports = {
     sizes = "(max-width: 700px) 100vw, 1200px",
     className = "",
     id = "",
-    loading = "lazy"
+    loading = "lazy",
   ) {
     let metadata = await Image(src, {
       widths: widthArray,
@@ -60,7 +60,7 @@ module.exports = {
    * @returns {string}
    * @constructor
    */
-  ImageSync: function (src, alt, widthArray, formatArray, sizes, className = "", id = "") {
+  ImageSync: function(src, alt, widthArray, formatArray, sizes, className = "", id = "") {
     let options = {
       widths: widthArray,
       formats: formatArray,
@@ -92,7 +92,7 @@ module.exports = {
    * @param alt
    * @returns {`<img src="https://res.cloudinary.com/${*}/${string}/${string}" alt="${string}" loading="lazy" decoding="async">`}
    */
-  cloudinaryImage: function (path, transforms, alt) {
+  cloudinaryImage: function(path, transforms, alt) {
     return `<img src="https://res.cloudinary.com/dpmchqezv/image/upload/${transforms}/${path}" alt="${alt}" loading="lazy" decoding="async">`;
   },
 };

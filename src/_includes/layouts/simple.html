@@ -1,8 +1,6 @@
----
-eleventyExcludeFromCollections: true
----
+{% extends 'layouts/base.html' %}
 
-{% extends 'layouts/base.html' %} {% block content %}
+{% block content %}
 <main class="layout" id="main">
   <div class="wrapper" data-constrain="more">{{ content | safe }}</div>
 </main>

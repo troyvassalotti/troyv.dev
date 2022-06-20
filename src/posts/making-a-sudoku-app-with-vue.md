@@ -11,6 +11,7 @@ featuredImage: ''
 website: ''
 
 ---
+
 I was surprised by how difficult it was to find a full-blown tutorial for making a Sudoku app with Vue. On the contrary, the internet is overflowing with React versions of Sudoku, so I decided to follow one of those and _port_ it into Vue.
 
 Matt Biilmann of Netlify fame [made a Sudoku React app](https://www.youtube.com/watch?v=GytUZLK4kwA) that can be found over on the freeCodeCamp YouTube channel, and it's this video that was the entry point to my app, [Vuedoku](https://github.com/troyvassalotti/sudoku). I got it started with Vite because I've been using that a lot lately and think it's rad.
@@ -61,48 +62,48 @@ The best way of keeping all these pieces of information together is by creating 
 
 ```js
 // lib/sudoku.js
-import {makepuzzle, solvepuzzle} from 'sudoku'
+import { makepuzzle, solvepuzzle } from "sudoku";
 
 /*
   Generates a sudoku with the structure
   {rows: [{index: 0, cols: [{row: 0, col: 0, value: 1, readonly: true}, ...]}, ...]}
 */
 export function generateSudoku() {
-    const fromUrl = extractUrlData() // Used if you share the game with a friend
+  const fromUrl = extractUrlData(); // Used if you share the game with a friend
 
-    const raw = fromUrl ? fromUrl.raw : makepuzzle()
-    const rawSolution = solvepuzzle(raw)
+  const raw = fromUrl ? fromUrl.raw : makepuzzle();
+  const rawSolution = solvepuzzle(raw);
 
-    const formatted = raw.map(e => (e === null ? null : e + 1)) // Adjust the values slightly since we're working with a 0 indexed situation
-    const formattedSolution = rawSolution.map(e => e + 1) // Same thing goes for the solution
+  const formatted = raw.map(e => (e === null ? null : e + 1)); // Adjust the values slightly since we're working with a 0 indexed situation
+  const formattedSolution = rawSolution.map(e => e + 1); // Same thing goes for the solution
 
-    const result = {
-        raw,
-        rows: [],
-        solution: formattedSolution,
-        startTime: new Date(),
-        solvedTime: null,
-        challengerStartTime: fromUrl && new Date(fromUrl.startTime),
-        challengerSolvedTime: fromUrl && new Date(fromUrl.solvedTime)
+  const result = {
+    raw,
+    rows: [],
+    solution: formattedSolution,
+    startTime: new Date(),
+    solvedTime: null,
+    challengerStartTime: fromUrl && new Date(fromUrl.startTime),
+    challengerSolvedTime: fromUrl && new Date(fromUrl.solvedTime),
+  };
+
+  // Loop over the formatted data to generate row and column data
+  for (let i = 0; i < 9; i++) {
+    const row = { cols: [], index: i };
+    for (let j = 0; j < 9; j++) {
+      const value = formatted[i * 9 + j];
+      const col = {
+        row: i,
+        col: j,
+        value: value,
+        readonly: value !== null,
+      };
+      row.cols.push(col);
     }
+    result.rows.push(row);
+  }
 
-	// Loop over the formatted data to generate row and column data
-    for (let i = 0; i < 9; i++) {
-        const row = {cols: [], index: i}
-        for (let j = 0; j < 9; j++) {
-            const value = formatted[i * 9 + j]
-            const col = {
-                row: i,
-                col: j,
-                value: value,
-                readonly: value !== null
-            }
-            row.cols.push(col)
-        }
-        result.rows.push(row)
-    }
-
-    return result
+  return result;
 }
 ```
 
@@ -452,15 +453,16 @@ Back in `lib/sudoku.js` we need to define the `checkSolution` function and expor
  * @returns {boolean}
  */
 export function checkSolution(sudoku) {
-    const candidate = sudoku.rows.map((row) => row.cols.map((col) => col.value)).flat()
+  const candidate = sudoku.rows.map((row) => row.cols.map((col) => col.value))
+    .flat();
 
-    for (let i = 0; i < candidate.length; i++) {
-        if (candidate[i] === null || candidate[i] !== sudoku.solution[i]) {
-            return false
-        }
+  for (let i = 0; i < candidate.length; i++) {
+    if (candidate[i] === null || candidate[i] !== sudoku.solution[i]) {
+      return false;
     }
+  }
 
-    return true
+  return true;
 }
 ```
 
@@ -517,15 +519,19 @@ We can add a `highlightCell` function in our lib file.
  * @param sudoku
  */
 export function highlightCell(field, sudoku) {
-    const value = field.value
-    const solvedValue = sudoku.solution[field.row * 9 + field.col]
-    if (value === solvedValue) {
-        field.el.classList.contains("wrong") ? field.el.classList.remove("wrong") : false
-        field.el.classList.add("correct")
-    } else {
-        field.el.classList.contains("correct") ? field.el.classList.remove("correct") : false
-        field.el.classList.add("wrong")
-    }
+  const value = field.value;
+  const solvedValue = sudoku.solution[field.row * 9 + field.col];
+  if (value === solvedValue) {
+    field.el.classList.contains("wrong")
+      ? field.el.classList.remove("wrong")
+      : false;
+    field.el.classList.add("correct");
+  } else {
+    field.el.classList.contains("correct")
+      ? field.el.classList.remove("correct")
+      : false;
+    field.el.classList.add("wrong");
+  }
 }
 ```
 
@@ -678,25 +684,25 @@ We start with two new functions in our lib:
  * @returns {string}
  */
 export function shareUrl(sudoku) {
-    const data = {
-        raw: sudoku.raw,
-        startTime: sudoku.startTime,
-        solvedTime: sudoku.solvedTime
-    }
+  const data = {
+    raw: sudoku.raw,
+    startTime: sudoku.startTime,
+    solvedTime: sudoku.solvedTime,
+  };
 
-    const query = btoa(JSON.stringify(data))
+  const query = btoa(JSON.stringify(data));
 
-    return document.location.href.replace(/\?.+$/, "") + `?sudoku=${query}`
+  return document.location.href.replace(/\?.+$/, "") + `?sudoku=${query}`;
 }
 
 function extractUrlData() {
-    const match = document.location.search.match(/\?sudoku=([^&]+)/)
+  const match = document.location.search.match(/\?sudoku=([^&]+)/);
 
-    if (match) {
-        return JSON.parse(atob(match[1]))
-    }
+  if (match) {
+    return JSON.parse(atob(match[1]));
+  }
 
-    return null
+  return null;
 }
 ```
 

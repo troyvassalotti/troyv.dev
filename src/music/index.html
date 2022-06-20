@@ -1,28 +1,31 @@
 {% extends 'layouts/page.html' %}
 
+{% block script %}
+{{ super() }}
 <script type="module">
-  {% set js %}
   // This is for the handdrawn annotations from Rough Notation
-  import {annotate} from "rough-notation"
+  import { annotate } from "rough-notation"
 
   const mq = "(prefers-color-scheme: dark)"
 
   const pageTitle = document.querySelector("#page-title")
 
   const changeTitleColor = () => {
-      matchMedia(mq).matches ? pageTitle.setAttribute("style", "color: var(--blackPrimary)") : pageTitle.setAttribute("style", "color: var(--whitePrimary)")
+    matchMedia(mq).matches
+      ? pageTitle.setAttribute("style", "color: var(--blackPrimary)")
+      : pageTitle.setAttribute("style", "color: var(--whitePrimary)")
   }
 
   window.matchMedia(mq).addEventListener("change", changeTitleColor())
   const musicAnnotation = annotate(pageTitle, {
-      type: "highlight",
-      color: "var(--musicColor)",
-      padding: 15
+    type: "highlight",
+    color: "var(--musicColor)",
+    padding: 15
   })
 
   musicAnnotation.show()
-  {% endset %}
 </script>
+{% endblock %}
 
 {% block main %}
 <div class="page-layout">
@@ -97,74 +100,74 @@
 </div>
 {% endblock %}
 
+{% block style %}
+{{ super() }}
 <style>
-  {% set css %}
   .page-layout {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 3rem;
-      justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center;
   }
 
   .page-layout > * {
-      flex: 1 1 max-content;
+    flex: 1 1 max-content;
   }
 
   :is(.music-player header, .bands-container .section-header) p {
-      margin-inline: auto;
-      max-inline-size: 60ch;
+    margin-inline: auto;
+    max-inline-size: 60ch;
   }
 
   .bands {
-      align-items: flex-end;
-      display: flex;
-      flex-wrap: wrap;
-      row-gap: 2rem;
+    align-items: flex-end;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 2rem;
   }
 
   .band {
-      align-items: center;
-      display: flex;
-      flex: 1 1 auto;
-      flex-direction: column;
+    align-items: center;
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
   }
 
   .band-logo img {
-      filter: invert(1);
-      inline-size: 15rem;
-      transition: opacity .1s ease;
+    filter: invert(1);
+    inline-size: 15rem;
+    transition: opacity 0.1s ease;
   }
 
   .icon-bar {
-      align-items: center;
-      display: flex;
-      gap: 1.5rem;
-      max-inline-size: max-content;
+    align-items: center;
+    display: flex;
+    gap: 1.5rem;
+    max-inline-size: max-content;
   }
 
   .icon-link {
-      flex: 1;
+    flex: 1;
   }
 
   .icon-bar svg {
-      inline-size: 100%;
-      max-inline-size: 48px;
-      transition: opacity .1s ease;
+    inline-size: 100%;
+    max-inline-size: 48px;
+    transition: opacity 0.1s ease;
   }
 
   :is(.icon-bar, .band-logo) :is(img, svg):hover {
-      opacity: .5;
+    opacity: 0.5;
   }
 
   @media (prefers-color-scheme: dark) {
-      .band-logo img {
-          filter: none;
-      }
+    .band-logo img {
+      filter: none;
+    }
 
-      .icon-bar svg {
-          filter: invert(1);
-      }
+    .icon-bar svg {
+      filter: invert(1);
+    }
   }
-
-  {% endset %}
 </style>
+{% endblock %}

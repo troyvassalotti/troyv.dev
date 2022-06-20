@@ -11,9 +11,9 @@ When we (Front Royal) decided to take the plunge and have a website of our own, 
 
 Check out Front Royal at all these locations:
 
--   [Bandcamp](https://frontroyalmd.bandcamp.com/)
--   [Facebook](https://facebook.com/frontroyalmd)
--   [Spotify](https://open.spotify.com/artist/1NfwIBuuWEk4d8c6LZftnD?si=7CjcwpNZTjipSVaXrLypLg)
--   [Instagram](https://instagram.com/frontroyal_official)
--   [Twitter](https://twitter.com/frontroyalband)
--   [YouTube](https://www.youtube.com/channel/UCm-KryhT3o9NZSbpG-M1qCQ/feed)
+- [Bandcamp](https://frontroyalmd.bandcamp.com/)
+- [Facebook](https://facebook.com/frontroyalmd)
+- [Spotify](https://open.spotify.com/artist/1NfwIBuuWEk4d8c6LZftnD?si=7CjcwpNZTjipSVaXrLypLg)
+- [Instagram](https://instagram.com/frontroyal_official)
+- [Twitter](https://twitter.com/frontroyalband)
+- [YouTube](https://www.youtube.com/channel/UCm-KryhT3o9NZSbpG-M1qCQ/feed)
