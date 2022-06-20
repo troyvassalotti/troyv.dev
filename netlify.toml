@@ -8,6 +8,7 @@ skip_processing = false
 [build.processing.html]
 pretty_urls = true
 
+# Needed because Netlify defaults this site to Node 10
 [build.environment]
 NODE_VERSION = "16"
 
@@ -18,7 +19,6 @@ to = "https://www.troyv.dev/:splat"
 status = 301
 force = true
 
-# Custom headers
 [[headers]]
 for = "/*"
 [headers.values]
@@ -26,6 +26,7 @@ X-Content-Type-Options = "nosniff"
 X-Frame-Options = "SAMEORIGIN"
 X-XSS-Protection = "1"
 
+# Plugins need to be denoted separately
 [[plugins]]
 package = "./plugins/webmention-cache"
 
