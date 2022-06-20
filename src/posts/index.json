@@ -1,5 +1,6 @@
 {
   "description": "I occasionally write about things.",
   "override:layout": null,
-  "override:tags": []
+  "override:tags": [],
+  "override:permalink": "{{ page.fileSlug }}/"
 }

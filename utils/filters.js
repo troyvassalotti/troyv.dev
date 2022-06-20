@@ -9,8 +9,26 @@ module.exports = {
    * @returns {string}
    */
   dateString: function(date) {
-    let d = date.toUTCString();
-    let gmt = /\s00:00:00\sGMT/g;
-    return d.replace(gmt, "");
+    return date.toUTCString().replace(/\s00:00:00\sGMT/g, "");
   },
+  /**
+   * Date string to output dates as directories
+   * @param date
+   * @returns {`${number}/${number}/${number}`}
+   */
+  yyyymmdd: function(date) {
+    const d = new Date(date);
+    let year = d.getUTCFullYear();
+    let month = d.getUTCMonth() + 1;
+    let day = d.getUTCDate();
+
+    if (parseInt(month) < 10) {
+      month = "0" + month;
+    }
+
+    if (parseInt(day) < 10) {
+      day = "0" + day;
+    }
+    return `${year}/${month}/${day}`
+  }
 };
