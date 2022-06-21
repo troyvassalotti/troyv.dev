@@ -5,6 +5,6 @@
 
 {% for tag in collections.allTagsList %}
 {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
-<a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>
+<a href="{{ tagUrl }}">{{ tag }}</a>
 {% endfor %}
 {% endblock %}

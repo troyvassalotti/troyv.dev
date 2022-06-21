@@ -1,8 +1,8 @@
 ---
-title: "Plvylist: Using Media Element API"
+title: Plvylist\: Using Media Element API
 description: I wanted to learn web audio, specifically the Media Element API. At first, it was daunting and made no sense, but I realized it wasn't so bad after all.
 date: 2020-11-20
-tags: ["web components"]
+tags: ["web audio", "projects"]
 ---
 
 At work, I'm surrounded by different web audio components. They're integral to the business, but they're also integral to so many businesses, and I barely understood how they get made.

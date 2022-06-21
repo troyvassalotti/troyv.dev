@@ -2,7 +2,7 @@
 title: Finding New In The Old
 description: In 2013, I took a beginner's music theory course in college. Seven years later, I dug up the song in its digital form and gave it new life.
 date: 2020-06-25
-tags: ["music"]
+tags: ["music", "life"]
 ---
 
 I don't write as much music as I used to. There's a combination of reasons for why that is or may be, but their irrelevant to this post. Though I may not sit down and produce a song in its entirety that often, it's a given that I'll end up recording a snippet of a future song during my practice sessions.

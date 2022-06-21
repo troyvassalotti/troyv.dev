@@ -1,13 +1,9 @@
 ---
-date: 2021-11-13
-draft: false
 title: Single File Components in Nunjucks
 description: I loved Vue's SFCs so much that I replicated it in Nunjucks.
-project: false
-shortname: ""
-use_screenshot_service: false
-featuredImage: ""
-website: ""
+date: 2021-11-13
+updated: 2022-06-20
+tags: ["nunjucks", "eleventy"]
 ---
 
 If you've worked with Vue, chances are you're familiar with its [Single File Components](https://v3.vuejs.org/guide/single-file-component.html#introduction) (SFC for short). If you haven't worked with Vue, the idea of a SFC can be boiled down to encapsulation of the template, logic, **and** styling of a component to a single file.
@@ -136,3 +132,7 @@ The end result is a single template file with its templating HTML and critical C
 I realize this system may not work for everyone, but I'm extremely proud of how it turned out and believe my development workflow has only benefited from such abstractions. I'm able to deliver a performant page with inlined critical assets while encapsulating all the dependencies of a page to a single file.
 
 No wonder Vue leans so heavily into the SFC system of page building.
+
+## Update 6/20/2022
+
+Yes, I know now that I could've been using Nunjucks' built-in templating features with `block`s and inheritance to do this in a better way.

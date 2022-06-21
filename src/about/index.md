@@ -10,7 +10,7 @@ If you want to know what I'm up to right now, then check my [now page](/now).
 ## Social Media
 
 <ul>
-{% for social in nav.socials %}
+{% for social in metadata.socials %}
 <li><a href="{{ social.url }}">{{ social.name }}</a></li>
 {% endfor %}
 </ul>

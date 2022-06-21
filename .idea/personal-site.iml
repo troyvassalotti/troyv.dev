@@ -9,5 +9,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="WF-036345-011398" level="application" />
+    <orderEntry type="module" module-name="blankslate" />
   </component>
 </module>

@@ -1,15 +1,9 @@
 ---
-date: 2022-03-03
-use_screenshot_service: true
-draft: false
 title: Making a Sudoku App with Vue
 description: What started as a Valentine's Day gift turned into a full-blown app.
-tags: []
-project: false
-shortname: ''
-featuredImage: ''
-website: ''
-
+date: 2022-03-03
+tags: ["projects", "vue"]
+website: https://vuedoku.netlify.app
 ---
 
 I was surprised by how difficult it was to find a full-blown tutorial for making a Sudoku app with Vue. On the contrary, the internet is overflowing with React versions of Sudoku, so I decided to follow one of those and _port_ it into Vue.

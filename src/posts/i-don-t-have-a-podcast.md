@@ -1,15 +1,8 @@
 ---
-date: 2021-09-12
-tags:
-    - project
-draft: false
 title: I Don't Have A Podcast
-description: It may seem like all your friends are starting podcasts - and you hate
-    FOMO - but humor me for a minute.
-project: true
-shortname: I Don't Have A Podcast
-use_screenshot_service: true
-featuredImage: ""
+description: It may seem like all your friends are starting podcasts - and you hate FOMO - but humor me for a minute.
+date: 2021-09-12
+tags: ["projects"]
 website: https://idonthaveapodcast.netlify.app
 ---
 

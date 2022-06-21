@@ -1,12 +1,8 @@
 ---
-title: I Logged My Migraines For Another Year
+title: I Logged My Migraines For Another Year (2020)
 description: Another year, another migraine recap.
 date: 2021-02-23
-tags:
-    - migraines
-shortname: 2020 Migraines
-featuredImage: ""
-website: ""
+tags: ["migraines"]
 ---
 
 We learned last year that my migraine situation was a problem. Well, more of a problem than usual. You can read more about [how I did in 2019](../i-logged-my-migraines-for-a-year), but it wasn't great. I continued to log each migraine I had throughout 2020 because I'm a nerd.

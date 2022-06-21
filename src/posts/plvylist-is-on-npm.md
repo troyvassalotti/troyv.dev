@@ -1,15 +1,8 @@
 ---
-date: 2021-12-05
-use_screenshot_service: true
-draft: false
 title: Plvylist is on npm
 description: I finally got around to publishing Plvylist on npm. Isn't that great?
-tags:
-    - web components
-project: false
-shortname: ""
-featuredImage: ""
-website: ""
+date: 2021-12-05
+tags: ["web components", "projects"]
 ---
 
 `npm i plvylist`

@@ -5,7 +5,7 @@ Twitter: @validcharacters
 Location: Maryland, US
 
 /* THANKS */
-Shaw for the clouds animation: https://codepen.io/shshaw/pen/DxJka.
+Shaw for the clouds animation <https://codepen.io/shshaw/pen/DxJka> that inspired the <cloudy-sky> web component.
 Mozilla for Nunjucks.
 Zach Leatherman for Eleventy.
 Max Böck and Zach Leatherman for guides and tips on adding Webmentions to the site.
