@@ -1,0 +1,40 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+<main id="main">
+
+  <h1>{{ page.fileSlug | capitalize }}</h1>
+
+  <p>If you'd like to know about my professional history, you can <a href="https://resume.troyv.dev/">view my
+    résumé</a>. It's updated about as often as anyone else's résumé, but it looks nice and prints well.</p>
+  <p>If you want to know what I'm up to right now, then check my <a href="/now">now page</a>.</p>
+  <h2>Social Media</h2>
+  <ul>
+    {% for social in metadata.socials %}
+    <li><a href="{{ social.url }}">{{ social.name }}</a></li>
+    {% endfor %}
+  </ul>
+
+  <p>If you've liked what you've seen, let's talk about stuff.</p>
+
+  <form
+    class="contact-form"
+    name="contactForm"
+    netlify
+    netlify-honeypot="bot-field"
+    action="/success">
+    <label style="display: none">Don’t fill this out: <input name="bot-field" /></label>
+    <label for="name">Name<input name="name" type="text" id="name" required /></label>
+    <label for="email">Email<input name="email" type="email" id="email" required /></label>
+    <label for="message"
+    >Message<textarea
+      name="message"
+      id="message"
+      required
+      placeholder="Say hi!"
+      rows="5"></textarea>
+    </label>
+    <input type="submit" value="Submit" id="submit" />
+  </form>
+</main>
+{% endblock %}

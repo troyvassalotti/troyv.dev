@@ -1,7 +1,7 @@
 ---
 description: Thanks for reaching out! I'll be in touch soon.
-permalink: "/success/"
-layout: simple
+permalink: /success/
+layout: base
 eleventyExcludeFromCollections: true
 ---
 

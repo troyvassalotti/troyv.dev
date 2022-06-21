@@ -45,6 +45,7 @@
     {% block style %}
         <style>
             {% include 'css/reset.css' %}
+            {% include 'css/style.css' %}
             {% include 'css/prism.css' %}
         </style>
     {% endblock %}
@@ -94,24 +95,9 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
     <link rel="manifest" href="/manifest.webmanifest">
 </head>
-{% set bodyClass %}
-  {% if page.fileSlug == '' %}home{% else %}{{ page.fileSlug }}{% endif %}
-{% endset %}
-<body class="{{ bodyClass }}">
+<body>
 
-<nav class="main-navigation hideOnPrint" id="main-navigation" aria-label="main navigation">
-    <ul class="main-navigation__links" role="list">
-        {% for link in nav.header %}
-            <li>
-                <a href="{{ link.url }}"
-                   class="main-navigation__link animated-link" {% if bodyClass === link.name %} aria-current="page" {% endif %}
-                   id="link__{{ link.name }}">
-                    {{ link.name }}
-                </a>
-            </li>
-        {% endfor %}
-    </ul>
-</nav>
+{% include 'partials/main-navigation.html' %}
 
 {% block content %}{% endblock %}
 

@@ -1,112 +1,63 @@
 {% extends 'layouts/base.html' %}
 
 {% block content %}
-<main class="layout" id="main">
-  <div class="hero">
-    <div class="wrapper flex">
-      <section class="welcome-screen" id="welcome">
-        <div class="typewriter-container">
-          <kb-typewriter>
-            <h1 class="typewriter_1">Hey, I'm Troy...</h1>
-          </kb-typewriter>
-          <kb-typewriter>
-            <p class="typewriter_2">...this is a website.</p>
-          </kb-typewriter>
-        </div>
-        <div class="portrait">
-          <img
-            src="{{ metadata.cloudinary }}/c_scale,f_auto,q_auto:eco,w_600/v1646349104/blog/me-on-stage-waverly_hoxgvf.webp"
-            alt="Me holding my guitar on stage"
-            decoding="async"
-            width="600"
-            height="600"
-            id="me"
-          />
-        </div>
-        <div class="content">
-          <p>
-            I'm glad you could make it. Peruse my wares* and
-            <a href="/about/">send me a letter</a> if you're so inclined.
-          </p>
-          <p class="txt-smallest">
-            *I only accept bottle caps as currency, sorry... (I'm kidding)
-          </p>
-        </div>
-      </section>
-      <section class="feed" id="posts">
-        <h2>Recent Posts</h2>
-        <div class="posts-section">
-          <div class="grid full">
-            {% for post in collections.post.slice(collections.post.length - 5,
-            collections.post.length) | reverse %}
-            <article class="post-listing">
-              <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
-              <p>{{ post.data.description }}</p>
-            </article>
-            {% endfor %}
-          </div>
-        </div>
-        <p><a href="/posts/">View All Posts</a></p>
-      </section>
-    </div>
+<main id="main">
+  <kb-typewriter>
+    <h1>Hey, I'm Troy...</h1>
+  </kb-typewriter>
+  <kb-typewriter>
+    <p>...this is a website.</p>
+  </kb-typewriter>
+
+  <img
+    src="{{ metadata.cloudinary }}/c_scale,f_auto,q_auto:eco,w_600/v1646349104/blog/me-on-stage-waverly_hoxgvf.webp"
+    alt="Me holding my guitar on stage"
+    decoding="async"
+    width="600"
+    height="600"
+    id="me"
+  />
+
+  <p>
+    I'm glad you could make it. Peruse my wares* and <a href="/about/">send me a letter</a> if you're so inclined.
+  </p>
+  <p>
+    *I only accept bottle caps as currency, sorry... (I'm kidding)
+  </p>
+
+  <h2>Recent Posts</h2>
+
+  <div>
+    {% for post in collections.post.slice(collections.post.length - 5,
+    collections.post.length) | reverse %}
+    <article class="post-listing">
+      <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+      <p>{{ post.data.description }}</p>
+    </article>
+    {% endfor %}
   </div>
-  <section class="projects-section" id="projects">
+
+  <p>
+    <a href="/posts/">View All Posts</a>
+  </p>
+
+  <cloudy-sky hillside>
     <div class="wrapper">
-      <h2>
-        <span id="cool-anim">Latest</span> <span id="proj-anim">Projects</span>
-      </h2>
-      <div class="showcase-container">
-        <div class="showcase">
-          {% for work in collections['work'].slice(collections['work'].length -
-          3, collection['work'].length) | reverse %}
-          <overlay-caption url="{{ work.url }}">
-            <img
-              slot="image"
-              src="{{ 'https://screenshot.troyv.dev/' + work.data.website | urlencode + '/opengraph' }}"
-              alt="{{ work.data.title + ' screenshot' }}"
-              width="600"
-              height="315"
-              decoding="async"
-              loading="lazy"
-            />
-            <h3 slot="caption">{{ work.data.title }}</h3>
-          </overlay-caption>
-          {% endfor %}
-        </div>
-        <section class="flex-center col center content">
-          <div class="skewed-background">
-            <div class="content">
-              <p>
-                This is only some of what I've been up to, but you can see
-                <a href="/work/">everything else I've been doing</a> too.
-              </p>
-            </div>
-          </div>
-        </section>
+      <div id="music">
+        <h2>I Also Have <a href="/music/">Music</a></h2>
+        <p>
+          When I’m not coding, maybe I'm writing songs. My friends and I
+          started Front Royal with the desire to make a name
+          for ourselves, and I started troy. to explore a new outlet.
+        </p>
+      </div>
+      <div id="about">
+        <h2>Looking For More?</h2>
+        <p>
+          You can probably find it on my <a href="/about/">about</a> page.
+        </p>
       </div>
     </div>
-  </section>
-  <section class="supplemental" id="more">
-    <cloudy-sky hillside>
-      <div class="content wrapper">
-        <div class="music-section" id="music">
-          <h2>I Also Have <a href="/music/">Music</a></h2>
-          <p>
-            When I’m not coding, maybe I'm writing songs. My friends and I
-            started
-            <span class="bold">Front Royal</span> with the desire to make a name
-            for ourselves, and I started <span class="bold">troy.</span> to
-            explore a new outlet.
-          </p>
-        </div>
-        <div class="about-section" id="about">
-          <h2>Looking For More?</h2>
-          <p>
-            You can probably find it on my <a href="/about/">about</a> page.
-          </p>
-        </div>
-      </div>
-    </cloudy-sky>
-  </section>
+  </cloudy-sky>
 </main>
 {% endblock %}

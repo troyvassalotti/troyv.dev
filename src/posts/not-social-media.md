@@ -1,5 +1,5 @@
 ---
-title: NotSocial\: A Social Media Revolution
+title: "NotSocial: A Social Media Revolution"
 description: Social media is overwhelming, which is why I quit using a lot of it, but that didn't stop me from creating my own app where I can enjoy it all alone.
 date: 2020-08-27
 tags: ["projects", "vue"]

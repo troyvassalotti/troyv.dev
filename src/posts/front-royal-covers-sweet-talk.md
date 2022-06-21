@@ -1,5 +1,5 @@
 ---
-title: \"Sweet Talk\" by Dear and the Headlights Cover
+title: '"Sweet Talk" by Dear and the Headlights Cover'
 description: We in Front Royal covered one of our favorite songs in a very 2020 way - individually tracking our parts in the comfort of our own homes.
 date: 2021-01-14
 tags: ["front royal", "music"]

@@ -1,6 +1,5 @@
 ---
-description: Thanks for reaching out! I'll be in touch soon.
-layout: simple
+description: What I'm up to right now.
 date: 2022-03-24
 ---
 
