@@ -1,35 +1,37 @@
 <style>
-  .main-navigation {
+  .c-mainNavigation {
     font-size: var(--step--1);
     padding: 1ch;
   }
 
-  .main-navigation__links {
+  .c-mainNavigation ul {
     margin: 0;
-    padding: 0;
   }
 
-  .main-navigation__links li:first-of-type {
+  .c-mainNavigation li:first-of-type {
     margin-block-end: 1ch;
   }
 
-  .main-navigation__links li:not(:first-of-type) {
+  .c-mainNavigation li:not(:first-of-type) {
     display: inline-flex;
+  }
+
+  .c-mainNavigation li:not(:last-of-type) {
     margin-inline-end: 1ch;
   }
 
-  .main-navigation__link {
+  .c-mainNavigation a {
     color: currentColor;
     text-decoration: none;
   }
 
   @media (prefers-reduced-motion: no-preference) {
-    .main-navigation__link::before {
+    .c-mainNavigation a::before {
       --linkStartRest: right;
       --linkStateRest: scaleX(0);
     }
 
-    .main-navigation__link:hover::before {
+    .c-mainNavigation a:hover::before {
       --linkStartHover: left;
       --linkStateHover: scaleX(1);
     }
@@ -54,28 +56,28 @@
       background-color: var(--aboutColor);
     }
 
-    [aria-current="page"]::before {
+    a[aria-current="page"]::before {
       --linkStartRest: left;
       --linkStateRest: scaleX(1);
     }
 
-    [aria-current="page"]:hover::before {
+    a[aria-current="page"]:hover::before {
       --linkStartHover: right;
       --linkStateHover: scaleX(0);
     }
   }
 </style>
 
-<nav class="main-navigation" id="main-navigation" aria-label="main">
-  <ul class="main-navigation__links" role="list">
+<nav class="c-mainNavigation" id="mainNavigation" aria-label="main">
+  <ul role="list">
     {% for link in nav.header %}
-    <li>
-      <a href="{{ link.url }}"
-         class="main-navigation__link animated-link" {% if link.url == page.url %} aria-current="page" {% endif %}
-         id="link__{{ link.name }}">
-        {{ link.name }}
-      </a>
-    </li>
+      <li>
+        <a href="{{ link.url }}"
+           class="c-animatedLink" {% if link.url == page.url %} aria-current="page" {% endif %}
+           id="link__{{ link.name }}">
+          {{ link.name }}
+        </a>
+      </li>
     {% endfor %}
   </ul>
 </nav>

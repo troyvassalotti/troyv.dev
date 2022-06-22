@@ -1,0 +1,21 @@
+{% set nextPost = collections.post | getNextCollectionItem(page) %}
+{% set previousPost = collections.post | getPreviousCollectionItem(page) %}
+
+<style>
+  /* Scoped Styles Here */
+</style>
+
+{% if nextPost or previousPost %}
+  <aside>
+    <dl>
+      {% if nextPost %}
+        <dt>Next Post:</dt>
+        <dd><a href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a></dd>
+      {% endif %}
+      {% if previousPost %}
+        <dt>Previous Post:</dt>
+        <dd><a href="{{ previousPost.url | url }}">{{ previousPost.data.title }}</a></dd>
+      {% endif %}
+    </dl>
+  </aside>
+{% endif %}

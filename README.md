@@ -14,7 +14,7 @@ Front matter can be in a separate `json` file of the same name, or at the top of
 
 Pick a layout to extend by placing `{% extends 'layouts/your-layout.html' %}` right under the front matter.
 
-To set the HTML content of the page, place the structure inside a `{% block %}`. If the layout being extended is `base.html` then it's `{% block content %}{% endblock %}`. If it's `page.html` then use `{% block main %}{% endblock %}`.
+To set the HTML content of the page, place the structure inside a `{% block %}`. If the layout being extended is `base.njk` then it's `{% block content %}{% endblock %}`. If it's `page.html` then use `{% block main %}{% endblock %}`.
 
 ### Using Partials In Posts
 

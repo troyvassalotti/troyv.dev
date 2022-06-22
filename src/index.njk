@@ -1,0 +1,123 @@
+{% extends 'layouts/base.njk' %}
+
+{% block content %}
+  <main id="main">
+    <cloudy-sky hillside>
+      <div class="wrapper">
+        <div class="o-hero">
+          <section class="o-hero__left">
+            <div class="c-keyboard">
+              <kb-typewriter>
+                <h1 class="leadingType">Hey, I'm Troy...</h1>
+              </kb-typewriter>
+              <kb-typewriter>
+                <p class="followingType">...and this is a website.</p>
+              </kb-typewriter>
+            </div>
+            <figure class="c-portrait">
+              <img
+                src="{{ metadata.cloudinary }}/c_scale,f_auto,q_auto:eco,w_600/v1646349104/blog/me-on-stage-waverly_hoxgvf.webp"
+                alt="Me holding my guitar on stage"
+                decoding="async"
+                width="600"
+                height="600"
+                id="me"
+              />
+              <!-- other things I am: hopeless romantic -->
+              <figcaption class="u-text--smaller">Musician, engineer, and <span class="js-slogan">insert your favorite descriptors here</span>.</figcaption>
+            </figure>
+
+            <div class="o-hero__left__note">
+              <p>I'm glad you could make it. Peruse my wares* and <a href="/about/">send me a letter</a> if you're so inclined.</p>
+              <p class="u-text--smallest">*I only accept bottle caps as currency, sorry... (I'm kidding)</p>
+            </div>
+          </section>
+          <section class="o-hero__right">
+            <h2 id="recent-posts">Recent Posts</h2>
+            <ul role="list">
+              {% for post in collections.post.slice(collections.post.length - 5,
+                collections.post.length) | reverse %}
+                <li>
+                  <article>
+                    <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+                    <p>{{ post.data.description }}</p>
+                  </article>
+                </li>
+              {% endfor %}
+            </ul>
+            <p><a href="/posts/">View All Posts</a></p>
+          </section>
+        </div>
+      </div>
+    </cloudy-sky>
+  </main>
+{% endblock %}
+
+{% block style %}
+  {{ super() }}
+  <style>
+    kb-typewriter:not(:defined) {
+      visibility: hidden;
+    }
+
+    .leadingType {
+      --kb-count-cursor: 6;
+      font-size: var(--step-5);
+    }
+
+    .followingType {
+      --kb-delay-typing: 3.5s;
+      --kb-delay-cursor: 3s;
+      --kb-steps-typing: 35;
+      font-family: var(--headings);
+      font-size: var(--step-3);
+      font-weight: bold;
+      margin-block-start: 0.5ex;
+    }
+
+    .o-hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .o-hero__left {
+      text-align: center;
+    }
+
+    .o-hero__left__note {
+      margin-block-start: 2rem;
+    }
+
+    .o-hero__left__note p {
+      margin-inline: auto;
+      max-inline-size: 35ch;
+    }
+
+    .o-hero__left__note > * + * {
+      margin-block-start: 1em;
+    }
+
+    .c-keyboard {
+      display: grid;
+      justify-content: center;
+    }
+
+    .c-portrait figcaption::after,
+    .c-portrait figcaption::before {
+      content: " ↑ ";
+      font-size: 1.25em;
+    }
+
+    .c-portrait img {
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      inline-size: 30rem;
+      margin-block: 1.5rem;
+      margin-inline: auto;
+    }
+
+    .o-hero__right {
+      text-align: end;
+    }
+  </style>
+{% endblock %}

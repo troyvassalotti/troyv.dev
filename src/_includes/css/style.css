@@ -85,7 +85,7 @@ html {
   --workColor: var(--goldPrimary);
 
   /* other things */
-  --gap: 1em;
+  --reading-length: 60ch;
 
   scrollbar-color: var(--bluePrimary) var(--whitePrimary);
 }
@@ -157,7 +157,7 @@ h6,
   font-size: var(--step-0);
 }
 
-a.animated-link {
+.c-animatedLink {
   --linkStateRest: scaleX(1);
   --linkStartRest: left;
   --linkStateHover: scaleX(0);
@@ -166,12 +166,12 @@ a.animated-link {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  a.animated-link {
+  .c-animatedLink {
     position: relative;
     text-decoration: none;
   }
 
-  a.animated-link::before {
+  .c-animatedLink::before {
     background-color: currentColor;
     block-size: 0.06em;
     bottom: 0;
@@ -184,10 +184,18 @@ a.animated-link {
     transition: transform 400ms ease-out;
   }
 
-  a.animated-link:hover::before {
+  .c-animatedLink:hover::before {
     transform: var(--linkStateHover);
     transform-origin: var(--linkStartHover);
   }
+}
+
+.u-text--smaller {
+    font-size: var(--step--2);
+}
+
+.u-text--smallest {
+    font-size: var(--step--3);
 }
 
 @media (prefers-color-scheme: dark) {

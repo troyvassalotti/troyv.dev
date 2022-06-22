@@ -1,0 +1,19 @@
+{% extends 'layouts/base.njk' %}
+
+{% block content %}
+  <main id="main">
+    <article class="h-entry">
+      <header>
+        <h1 class="p-name">{{ title }}</h1>
+        <p class="p-summary">{{ description }}</p>
+        <p>
+          <span class="dt-published">{{ page.date | dateString }}</span> |
+          <span>Reading Time: {{ content | timeToRead }}</span>
+        </p>
+      </header>
+      <div class="e-content">{{ content | safe }}</div>
+    </article>
+    {% include "partials/webmention-list.njk" %}
+  </main>
+  {% include 'partials/post-navigation.njk' %}
+{% endblock %}

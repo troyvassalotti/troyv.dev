@@ -14,7 +14,7 @@
     "_site",
     ".cache",
     ".netlify",
-    "src/_includes/layouts/base.html"
+    "src/_includes/layouts/base.njk"
   ],
   "plugins": [
     "https://plugins.dprint.dev/typescript-0.69.2.wasm",

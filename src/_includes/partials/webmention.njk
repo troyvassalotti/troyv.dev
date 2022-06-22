@@ -1,0 +1,64 @@
+<style>
+  /* Single Webmention */
+  .webmention__meta,
+  .webmention__author {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .webmention__meta {
+    margin-block-end: 0.5rem;
+  }
+
+  .webmention__author {
+    margin-inline-end: 0.25rem;
+  }
+
+  .webmention__author__photo {
+    block-size: 3rem;
+    border-radius: 50%;
+    inline-size: 3rem;
+    margin-inline-end: 0.5rem;
+    object-fit: cover;
+  }
+
+  .webmention__pubdate {
+    font-style: italic;
+  }
+</style>
+
+<article class="webmention h-cite" id="webmention-{{ webmention['wm-id'] }}">
+  <div class="webmention__meta">
+    {% if webmention.author %}
+      <a
+        class="webmention__author p-author h-card u-url"
+        href="{{ webmention.url }}"
+        target="_blank"
+        rel="noopener noreferrer">
+        {% if webmention.author.photo %}
+          <img
+            class="webmention__author__photo u-photo"
+            src="{{ webmention.author.photo }}"
+            alt="{{ webmention.author.name }}"
+            loading="lazy" />
+        {% else %}
+          <img class="webmention__author__photo" src="{{ defaultImg }}" alt="" loading="lazy" />
+        {% endif %}
+        <strong class="p-name">{{ webmention.author.name }}</strong>
+      </a>
+    {% else %}
+      <span class="webmention__author">
+      <img class="webmention__author__photo" src="{{ defaultImg }}" alt="" loading="lazy" />
+      <strong>Anonymous</strong>
+    </span>
+    {% endif %} {% if webmention.published %}
+      <time class="webmention__pubdate dt-published" datetime="{{ webmention.published }}">
+        {{ webmention.published | dateFromTimestamp | readableDate("dd LLL yyyy - HH:mm") }}
+      </time>
+    {% endif %}
+  </div>
+  {% if webmention.content %}
+    <div class="webmention__content p-content">{{ webmention | sanitizeWebmention | safe }}</div>
+  {% endif %}
+</article>

@@ -4,6 +4,9 @@
   "url": "https://www.troyv.dev",
   "repo": "https://github.com/troyvassalotti/troyv.dev",
   "cloudinary": "https://res.cloudinary.com/dpmchqezv/image/upload",
+  "handles": {
+    "twitter": "@validcharacters"
+  },
   "socials": [
     {
       "name": "GitHub",

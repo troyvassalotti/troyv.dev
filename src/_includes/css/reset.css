@@ -30,6 +30,7 @@ picture,
 video,
 canvas,
 svg {
+    block-size: auto;
   display: block;
   max-inline-size: 100%;
 }
@@ -85,8 +86,4 @@ ol[role="list"] {
 /* Create equal spacing between elements in a flow context without setting display */
 .flow > * + * {
   margin-block-start: var(--some-sizing-preferably-using-clamp);
-}
-
-*:not(:defined) {
-  visibility: hidden;
 }
