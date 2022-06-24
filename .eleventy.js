@@ -20,6 +20,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     "./node_modules/@troyv/web-components/dist/**/*.js": `${jsDir}/components/`,
   });
+  eleventyConfig.addPassthroughCopy({
+    "./node_modules/es-module-shims/dist/es-module-shims.js": `${jsDir}/es-module-shims.js`
+  });
 
   // Plugins
   Object.keys(plugins).forEach((plugin) => {

@@ -82,8 +82,3 @@ ol[role="list"] {
     scroll-behavior: auto !important;
   }
 }
-
-/* Create equal spacing between elements in a flow context without setting display */
-.flow > * + * {
-  margin-block-start: var(--some-sizing-preferably-using-clamp);
-}

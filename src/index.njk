@@ -5,7 +5,7 @@
     <cloudy-sky hillside>
       <div class="wrapper">
         <div class="o-hero">
-          <section class="o-hero__left">
+          <section class="o-hero__left flow">
             <div class="c-keyboard">
               <kb-typewriter>
                 <h1 class="leadingType">Hey, I'm Troy...</h1>
@@ -24,28 +24,29 @@
                 id="me"
               />
               <!-- other things I am: hopeless romantic -->
-              <figcaption class="u-text--smaller">Musician, engineer, and <span class="js-slogan">insert your favorite descriptors here</span>.</figcaption>
+              <figcaption class="u-text--smaller">Musician, engineer, and <span
+                  class="js-slogan">insert your favorite descriptors here</span>.
+              </figcaption>
             </figure>
-
             <div class="o-hero__left__note">
               <p>I'm glad you could make it. Peruse my wares* and <a href="/about/">send me a letter</a> if you're so inclined.</p>
               <p class="u-text--smallest">*I only accept bottle caps as currency, sorry... (I'm kidding)</p>
             </div>
           </section>
           <section class="o-hero__right">
-            <h2 id="recent-posts">Recent Posts</h2>
-            <ul role="list">
-              {% for post in collections.post.slice(collections.post.length - 5,
-                collections.post.length) | reverse %}
+            <h2 id="recent-posts" class="sectionTitle">Recent Posts</h2>
+            <ul role="list" class="c-postList flow">
+              {% for post in collections.post.slice(collections.post.length - 5, collections.post.length) | reverse %}
                 <li>
-                  <article>
-                    <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
-                    <p>{{ post.data.description }}</p>
+                  <article class="c-postList__item">
+                    <p class="c-postList__date">Posted: {{ post.date | yyyymmdd }}</p>
+                    <h3 class="c-postList__title"><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+                    <p class="c-postList__excerpt">{{ post.data.description }}</p>
                   </article>
                 </li>
               {% endfor %}
             </ul>
-            <p><a href="/posts/">View All Posts</a></p>
+            <p class="c-postList__more"><a class="c-animatedLink" href="/posts/">View All Posts</a></p>
           </section>
         </div>
       </div>
@@ -75,26 +76,55 @@
       margin-block-start: 0.5ex;
     }
 
+    ::part(hillside) {
+      fill: green;
+    }
+
     .o-hero {
+      column-gap: var(--space-m-l);
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      row-gap: var(--space-xl-2xl);
+    }
+
+    @media (min-width: 70.25rem) {
+      .o-hero {
+        grid-template-columns: .75fr 1fr;
+      }
     }
 
     .o-hero__left {
+      --flow-space: var(--space-s);
       text-align: center;
-    }
-
-    .o-hero__left__note {
-      margin-block-start: 2rem;
     }
 
     .o-hero__left__note p {
       margin-inline: auto;
-      max-inline-size: 35ch;
+      max-inline-size: 35rem;
     }
 
-    .o-hero__left__note > * + * {
-      margin-block-start: 1em;
+    .o-hero__left__note p:not(:first-of-type) {
+      margin-block-start: var(--space-2xs);
+    }
+
+    @media (min-width: 52.5rem) and (max-width: 70.25rem) {
+      .o-hero__left {
+        column-gap: var(--space-xs);
+        display: grid;
+        grid-template-areas: "keyboard image" "note image";
+      }
+
+      .c-keyboard {
+        align-self: end;
+        grid-area: keyboard;
+      }
+
+      .c-portrait {
+        grid-area: image;
+      }
+
+      .o-hero__left__note {
+        grid-area: note;
+      }
     }
 
     .c-keyboard {
@@ -114,10 +144,42 @@
       inline-size: 30rem;
       margin-block: 1.5rem;
       margin-inline: auto;
+      transition: filter .3s ease;
+    }
+
+    .c-portrait img:hover {
+      filter: hue-rotate(120deg);
     }
 
     .o-hero__right {
       text-align: end;
+    }
+
+    .o-hero__right .sectionTitle {
+      margin-block-end: var(--space-s);
+    }
+
+    .c-postList {
+      --flow-space: var(--space-xs-s);
+    }
+
+    .c-postList__item {
+      border-inline-end: 2px dashed var(--accent);
+      padding-inline-end: 1ch;
+    }
+
+    .c-postList__title {
+      margin-block-end: var(--space-2xs);
+    }
+
+    .c-postList__date {
+      font-size: var(--step--1);
+      font-style: italic;
+      margin-block-end: var(--space-3xs);
+    }
+
+    .c-postList__more {
+      margin-block: var(--space-s-m);
     }
   </style>
 {% endblock %}
