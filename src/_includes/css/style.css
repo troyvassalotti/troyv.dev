@@ -89,36 +89,28 @@ html {
     "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   --headings: "Oli Grotesk", var(--fallback);
 
-  /* other things */
-  --reading-length: 60ch;
-
     /* Color palette */
-    --rich-black-fogra-29: hsla(210, 100%, 7%, 1);
-    --prussian-blue: hsla(210, 65%, 20%, 1);
-    --sapphire: hsla(214, 100%, 40%, 1);
-    --yellow-orange-color-wheel: hsla(35, 100%, 52%, 1);
-    --baby-blue-eyes: hsla(210, 68%, 80%, 1);
-    --antique-white: hsla(30, 100%, 93%, 1);
 
-  scrollbar-color: var(--foreground) var(--background);
+  /*scrollbar-color: var(--foreground) var(--background);*/
+    color-scheme: light dark;
 }
 
 @media (prefers-color-scheme: light) {
-    html {
-        --accent: var(--baby-blue-eyes);
-        --background: var(--antique-white);
-        --foreground: var(--rich-black-fogra-29);
-        --links: var(--sapphire);
-    }
+    /*html {*/
+    /*    --accent: var(--baby-blue-eyes);*/
+    /*    --background: var(--antique-white);*/
+    /*    --foreground: var(--rich-black-fogra-29);*/
+    /*    --links: var(--sapphire);*/
+    /*}*/
 }
 
 @media (prefers-color-scheme: dark) {
-    html {
-        --accent: var(--yellow-orange-color-wheel);
-        --background: var(--rich-black-fogra-29);
-        --foreground: var(--antique-white);
-        --links: var(--baby-blue-eyes);
-    }
+    /*html {*/
+    /*    --accent: var(--yellow-orange-color-wheel);*/
+    /*    --background: var(--rich-black-fogra-29);*/
+    /*    --foreground: var(--antique-white);*/
+    /*    --links: var(--baby-blue-eyes);*/
+    /*}*/
 
     pre {
         font-weight: 300;
@@ -126,8 +118,8 @@ html {
 }
 
 body {
-    background-color: var(--background);
-    color: var(--foreground);
+    /*background-color: var(--background);*/
+    /*color: var(--foreground);*/
   font-family: var(--body);
   font-size: var(--step-0);
 }
@@ -194,18 +186,18 @@ h6,
   font-size: var(--step-0);
 }
 
-a {
-    color: var(--links);
-}
+/*a {*/
+/*    color: var(--links);*/
+/*}*/
 
-a:hover, a:focus {
-    filter: brightness(.7);
-}
+/*a:hover, a:focus {*/
+/*    filter: brightness(.7);*/
+/*}*/
 
-a:focus-visible {
-    outline: 2px dashed var(--links);
-    outline-offset: 2px;
-}
+/*a:focus-visible {*/
+/*    outline: 2px dashed var(--links);*/
+/*    outline-offset: 2px;*/
+/*}*/
 
 .c-animatedLink {
   --linkStateRest: scaleX(1);

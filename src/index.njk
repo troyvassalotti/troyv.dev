@@ -76,10 +76,6 @@
       margin-block-start: 0.5ex;
     }
 
-    ::part(hillside) {
-      fill: green;
-    }
-
     .o-hero {
       column-gap: var(--space-m-l);
       display: grid;
@@ -141,14 +137,10 @@
     .c-portrait img {
       aspect-ratio: 1 / 1;
       border-radius: 50%;
-      inline-size: 30rem;
+      inline-size: calc(7 * var(--step-5));
       margin-block: 1.5rem;
       margin-inline: auto;
       transition: filter .3s ease;
-    }
-
-    .c-portrait img:hover {
-      filter: hue-rotate(120deg);
     }
 
     .o-hero__right {
@@ -164,7 +156,7 @@
     }
 
     .c-postList__item {
-      border-inline-end: 2px dashed var(--accent);
+      border-inline-end: 2px dashed var(--accent, currentColor);
       padding-inline-end: 1ch;
     }
 
