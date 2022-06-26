@@ -5,8 +5,8 @@
       "url": "/"
     },
     {
-      "name": "posts",
-      "url": "/posts/"
+      "name": "archive",
+      "url": "/archive/"
     },
     {
       "name": "music",

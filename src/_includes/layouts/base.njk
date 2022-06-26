@@ -13,7 +13,7 @@
       {{ page.fileSlug | capitalize }}
     {%- endif -%}
   {%- endset -%}
-  <title>{{ theTitle }} | Troy Vassalotti</title>
+  <title>{{ theTitle }} :: Troy Vassalotti</title>
 
   <link rel="preconnect" href="https://d33wubrfki0l68.cloudfront.net" crossorigin>
   <link rel="preconnect" href="https://fonts.typotheque.com/" crossorigin>
@@ -56,7 +56,7 @@
     {%- elseif excerpt -%}
       {{ excerpt | safe }}
     {%- else -%}
-      {{ theTitle }} - a page on {{ metadata.domain }}
+      {{ theTitle }} :: a page on {{ metadata.domain }}
     {%- endif -%}
   {%- endset -%}
   <meta name="description" content="{{ theDescription }}">

@@ -1,0 +1,70 @@
+{% extends 'layouts/base.njk' %}
+
+{% block content %}
+  <main id="main">
+    <div class="wrapper constrain--more">
+      <div class="flow">
+        <header>
+          <div class="u-text--center">
+            <h1>Archive</h1>
+            <p>Subscribe to the <a href="/feed.xml">RSS feed</a>.</p>
+          </div>
+        </header>
+        <nav aria-label="tags" class="flow">
+          <h2 class="h5">Tags ({{ collections.allTagsList.length }}):</h2>
+          <ul role="list" class="c-tagCloud">
+            {% for tag in collections.allTagsList | sort %}
+              {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+              <li>
+                <a href="{{ tagUrl }}" class="c-tag">{{ tag }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
+      </div>
+      <section class="posts">
+        <ul role="list" class="c-postList flow">
+          {% for post in collections.post | reverse %}
+            <li>
+              <post-item date="{{ post.date | dateString }}"
+                         url="{{ post.url }}"
+                         heading="{{ post.data.title }}"></post-item>
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
+    </div>
+  </main>
+{% endblock %}
+
+{% block style %}
+  {{ super() }}
+  <style>
+    .c-tag {
+      background-color: white; /* TODO */
+      border-radius: 4px;
+      color: black; /* TODO */
+      display: inline-block;
+      font-size: var(--step--1);
+      padding-inline: 8px;
+    }
+
+    .c-tag::before {
+      content: "#";
+    }
+
+    .c-tagCloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2xs-xs);
+    }
+
+    .posts {
+      margin-block: var(--space-m-l);
+    }
+
+    .c-postList {
+      --flow-space: var(--space-s);
+    }
+  </style>
+{% endblock %}

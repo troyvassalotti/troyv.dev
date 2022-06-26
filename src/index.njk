@@ -1,5 +1,13 @@
 {% extends 'layouts/base.njk' %}
 
+{% block script %}
+  {{ super() }}
+  <script>
+    // TODO
+    const sloganLocation = document.querySelector(".js-slogan");
+  </script>
+{% endblock %}
+
 {% block content %}
   <main id="main">
     <cloudy-sky hillside>
@@ -24,12 +32,12 @@
                 id="me"
               />
               <!-- other things I am: hopeless romantic -->
-              <figcaption class="u-text--smaller">Musician, engineer, and <span
+              <figcaption class="u-text--smaller"><a href="/music/">Musician</a>, developer, and <span
                   class="js-slogan">insert your favorite descriptors here</span>.
               </figcaption>
             </figure>
             <div class="o-hero__left__note">
-              <p>I'm glad you could make it. Peruse my wares* and <a href="/about/">send me a letter</a> if you're so inclined.</p>
+              <p>I'm glad you could make it. Peruse my wares* and read <a href="/about/">more about me</a> if you're so inclined.</p>
               <p class="u-text--smallest">*I only accept bottle caps as currency, sorry... (I'm kidding)</p>
             </div>
           </section>
@@ -38,15 +46,17 @@
             <ul role="list" class="c-postList flow">
               {% for post in collections.post.slice(collections.post.length - 5, collections.post.length) | reverse %}
                 <li>
-                  <article class="c-postList__item">
-                    <p class="c-postList__date">Posted: {{ post.date | yyyymmdd }}</p>
-                    <h3 class="c-postList__title"><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
-                    <p class="c-postList__excerpt">{{ post.data.description }}</p>
-                  </article>
+                  <post-item date="{{ post.date | dateString }}"
+                             url="{{ post.url }}"
+                             excerpt="{{ post.data.excerpt or post.data.description }}"
+                             level="3"
+                             heading="{{ post.data.title }}"></post-item>
                 </li>
               {% endfor %}
             </ul>
-            <p class="c-postList__more"><a class="c-animatedLink" href="/posts/">View All Posts</a></p>
+            <p class="c-postList__more">
+              <a class="c-animatedLink" href="{{ nav.header[1].url }}">View All Posts</a>
+            </p>
           </section>
         </div>
       </div>
@@ -57,7 +67,7 @@
 {% block style %}
   {{ super() }}
   <style>
-    *:not(:defined) {
+    cloudy-sky:not(:defined) {
       visibility: hidden;
     }
 
@@ -85,6 +95,22 @@
     @media (min-width: 70.25rem) {
       .o-hero {
         grid-template-columns: .75fr 1fr;
+      }
+
+      .o-hero__right {
+        text-align: end;
+      }
+
+      ::part(p-item) {
+        align-items: end;
+        border-inline-end: 2px dashed var(--accent, currentColor);
+        display: flex;
+        flex-direction: column;
+        padding-inline-end: 1ch;
+      }
+
+      ::part(p-excerpt) {
+        max-inline-size: 60ch;
       }
     }
 
@@ -143,31 +169,12 @@
       transition: filter .3s ease;
     }
 
-    .o-hero__right {
-      text-align: end;
-    }
-
     .o-hero__right .sectionTitle {
       margin-block-end: var(--space-s);
     }
 
     .c-postList {
       --flow-space: var(--space-s-l);
-    }
-
-    .c-postList__item {
-      border-inline-end: 2px dashed var(--accent, currentColor);
-      padding-inline-end: 1ch;
-    }
-
-    .c-postList__title {
-      margin-block-end: var(--space-2xs);
-    }
-
-    .c-postList__date {
-      font-size: var(--step--1);
-      font-style: italic;
-      margin-block-end: var(--space-3xs);
     }
 
     .c-postList__more {

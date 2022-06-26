@@ -31,4 +31,13 @@ module.exports = {
     }
     return `${year}/${month}/${day}`;
   },
+  /**
+   * Removes specific tags from a post's post.data.tags list
+   * Shares functionality from the custom collection for tag pages
+   * @param tags
+   * @returns {*[]}
+   */
+  postTagRemoval: function(tags) {
+    return (tags || []).filter(tag => ["all", "post", "posts"].indexOf(tag) === -1);
+  }
 };

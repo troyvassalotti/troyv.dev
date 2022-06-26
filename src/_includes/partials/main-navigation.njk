@@ -25,6 +25,18 @@
     text-decoration: none;
   }
 
+  .skipLink {
+    inset-inline-start: 50%;
+    padding: 4px;
+    position: absolute;
+    transform: translateY(-200%);
+    transition: transform 0.3s;
+  }
+
+  .skipLink:focus-visible {
+    transform: translateY(0%);
+  }
+
   @media (prefers-reduced-motion: no-preference) {
     .c-mainNavigation a::before {
       --linkStartRest: right;
@@ -69,13 +81,14 @@
 </style>
 
 <nav class="c-mainNavigation" id="mainNavigation" aria-label="main">
+  <a class="skipLink" href="#main">Skip to main content</a>
   <ul role="list">
     {% for link in nav.header %}
       <li>
         <a href="{{ link.url }}"
            class="c-animatedLink" {% if link.url == page.url %} aria-current="page" {% endif %}
            id="link__{{ link.name }}">
-          {{ link.name }}
+          {% if loop.first %}~/{% else %}:: {% endif %}{{ link.name }}
         </a>
       </li>
     {% endfor %}

@@ -2,18 +2,62 @@
 
 {% block content %}
   <main id="main">
-    <article class="h-entry">
-      <header>
-        <h1 class="p-name">{{ title }}</h1>
-        <p class="p-summary">{{ description }}</p>
-        <p>
-          <span class="dt-published">{{ page.date | dateString }}</span> |
-          <span>Reading Time: {{ content | timeToRead }}</span>
-        </p>
-      </header>
-      <div class="e-content">{{ content | safe }}</div>
-    </article>
-    {% include "partials/webmention-list.njk" %}
+    <div class="wrapper constrain--some">
+      <article class="h-entry flow">
+        <header class="flow postHeader">
+          <h1 class="postTitle p-name">{{ title }}</h1>
+          <p class="postSummary p-summary u-text--smaller">{{ description }}</p>
+          <p class="postMeta u-text--smaller">
+            <span class="dt-published">{{ page.date | dateString }}</span> |
+            <span>Reading Time: {{ content | timeToRead }}</span>
+          </p>
+        </header>
+        <div class="post flow e-content">{{ content | safe }}</div>
+      </article>
+      <hr class="u-rule">
+      {% include "partials/webmention-list.njk" %}
+    </div>
   </main>
   {% include 'partials/post-navigation.njk' %}
+{% endblock %}
+
+{% block style %}
+  {{ super() }}
+  <style>
+    .post :is(p, ul, ol) {
+      max-inline-size: 60ch;
+    }
+
+    .post pre[class*="language-"] {
+      inline-size: fit-content;
+      margin-block: var(--space-s-m);
+      max-inline-size: 50rem;
+    }
+
+    .post :is(h2, h3, h4, h5, h6) {
+      margin-block-start: var(--space-xl-2xl);
+    }
+
+    .postSummary {
+      font-style: italic;
+    }
+
+    .postHeader {
+      border-block-end: 2px solid var(--accent, currentColor);
+      max-inline-size: 70ch;
+      padding-block: var(--space-m);
+    }
+
+    :is(h1, h2, h3, h4, h5, h6) > a:hover::after {
+      content: "🔗";
+      margin-inline-start: .5ch;
+      position: absolute;
+    }
+
+    /* Yeah you do */
+    .u-rule {
+      margin-block-start: var(--space-l-xl);
+      max-inline-size: 40ch;
+    }
+  </style>
 {% endblock %}

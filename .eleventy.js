@@ -2,6 +2,9 @@
  * @file Site configuration
  * Most site features are configured in /utils/
  */
+const markdownIt = require("markdown-it");
+const markdownItAnchor = require("markdown-it-anchor");
+
 const utilsDir = "./utils";
 const jsDir = "/assets/js";
 
@@ -23,9 +26,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     "./node_modules/es-module-shims/dist/es-module-shims.js": `${jsDir}/es-module-shims.js`
   });
-  eleventyConfig.addPassthroughCopy({
-    "./node_modules/lit/index.js": `${jsDir}/lit.js`
-  })
 
   // Plugins
   Object.keys(plugins).forEach((plugin) => {
@@ -57,6 +57,14 @@ module.exports = function(eleventyConfig) {
     excerpt_separator: "<!-- excerpt -->",
     excerpt_alias: "excerpt",
   });
+
+  // Markdown
+  eleventyConfig.setLibrary(
+    'md',
+    markdownIt().use(markdownItAnchor, {
+      permalink: markdownItAnchor.permalink.headerLink()
+    })
+  )
 
   return {
     htmlTemplateEngine: "njk",

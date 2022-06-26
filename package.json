@@ -41,6 +41,7 @@
     "eleventy-plugin-youtube-embed": "^1.7.0",
     "es-module-shims": "^1.5.8",
     "html-minifier-terser": "^7.0.0-beta.0",
+    "markdown-it-anchor": "^8.6.4",
     "plvylist": "^2.1.0"
   }
 }

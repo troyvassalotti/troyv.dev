@@ -90,12 +90,13 @@ html {
   --headings: "Oli Grotesk", var(--fallback);
 
     /* Color palette */
+  /*  TODO*/
 
   /*scrollbar-color: var(--foreground) var(--background);*/
-    color-scheme: light dark;
 }
 
 @media (prefers-color-scheme: light) {
+    /*TODO*/
     /*html {*/
     /*    --accent: var(--baby-blue-eyes);*/
     /*    --background: var(--antique-white);*/
@@ -105,6 +106,7 @@ html {
 }
 
 @media (prefers-color-scheme: dark) {
+    /*TODO*/
     /*html {*/
     /*    --accent: var(--yellow-orange-color-wheel);*/
     /*    --background: var(--rich-black-fogra-29);*/
@@ -118,6 +120,7 @@ html {
 }
 
 body {
+    /*TODO*/
     /*background-color: var(--background);*/
     /*color: var(--foreground);*/
   font-family: var(--body);
@@ -186,6 +189,19 @@ h6,
   font-size: var(--step-0);
 }
 
+blockquote {
+    border: .5rem double var(--accent, currentColor);
+    font-style: italic;
+    inline-size: fit-content;
+    margin-block: var(--space-s-m);
+}
+
+blockquote p {
+    padding-block: var(--space-s);
+    padding-inline: var(--space-xs-s);
+}
+
+/*TODO*/
 /*a {*/
 /*    color: var(--links);*/
 /*}*/
@@ -243,4 +259,8 @@ h6,
 
 .u-text--smallest {
     font-size: var(--step--2);
+}
+
+.u-text--center {
+    text-align: center;
 }
