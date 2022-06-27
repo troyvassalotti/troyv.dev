@@ -12,9 +12,9 @@ The site you're looking at right now is an [Eleventy](https://www.11ty.dev/) sit
 
 ## Moving Towards Native Nunjucks
 
-I didn't branch out of the basic uses of Nunjucks with Eleventy until the last few months. I relied heavily on layout files defined in the front matter for template inheritance until I hit an issue where I realized Nunjuck's `extends` feature was the solution. This change involved a level of abstraction away from Eleventy's logic and into what comes bundled with Nunjucks.
+I didn't branch out of the basic uses of Nunjucks with Eleventy until the last few months. I relied heavily on layout files defined in the front matter for template inheritance until I hit an issue where I realized Nunjucks' `extends` feature was the solution. This change involved a level of abstraction away from Eleventy's logic and into what comes bundled with Nunjucks.
 
-Template inheritance with `extends` meant I could define custom blocks aside from the `{{ content }}` (which is used to house any content in a template with the `layout` front matter) in my Nunjucks layouts and templates that can pass into each other. I learned that I couldn't use front matter for template inheritance if I also wanted to define custom blocks.
+Template inheritance with `extends` meant I could define custom blocks aside from the `{%- raw -%}{{ content }}{% endraw %}` (which is used to house any content in a template with the `layout` front matter) in my Nunjucks layouts and templates that can pass into each other. I learned that I couldn't use front matter for template inheritance if I also wanted to define custom blocks.
 
 ```twig
 {%- raw -%}

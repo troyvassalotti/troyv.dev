@@ -40,8 +40,15 @@
   .webmentions__item {
     margin-block-end: 2rem;
   }
+
+  /* Yeah you do */
+  .u-rule {
+    margin-block-start: var(--space-l-xl);
+    max-inline-size: 40ch;
+  }
 </style>
 
+<hr class="u-rule">
 <section class="webmentions" id="webmentions">
   <h2>Webmentions</h2>
   {% if responses | length %}
@@ -122,3 +129,4 @@
     <p>No mentions yet ¯\_(ツ)_/¯</p>
   {% endif %}
 </section>
+<hr class="u-rule">

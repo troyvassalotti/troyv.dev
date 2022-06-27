@@ -2,24 +2,41 @@
 {% set previousPost = collections.post | getPreviousCollectionItem(page) %}
 
 <style>
-  /* Scoped Styles Here */
+  .c-postNavigation {
+    margin-block: var(--space-l-xl);
+  }
+
+  .c-postNavigation dl {
+    align-items: start;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-m-l);
+    justify-content: space-between;
+  }
+
+  .c-postNavigation dt {
+    font-family: var(--headings);
+    font-weight: bold;
+  }
 </style>
 
 {% if nextPost or previousPost %}
-  <aside>
-    <dl>
-      {% if nextPost %}
-        <div>
-          <dt>Next Post:</dt>
-          <dd><a href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a></dd>
-        </div>
-      {% endif %}
-      {% if previousPost %}
-        <div>
-          <dt>Previous Post:</dt>
-          <dd><a href="{{ previousPost.url | url }}">{{ previousPost.data.title }}</a></dd>
-        </div>
-      {% endif %}
-    </dl>
-  </aside>
+  <div class="wrapper constrain--some">
+    <nav aria-label="pagination" class="c-postNavigation">
+      <dl>
+        {% if nextPost %}
+          <div>
+            <dt class="h5">Next Post:</dt>
+            <dd><a href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a></dd>
+          </div>
+        {% endif %}
+        {% if previousPost %}
+          <div>
+            <dt class="h5">Previous Post:</dt>
+            <dd><a href="{{ previousPost.url | url }}">{{ previousPost.data.title }}</a></dd>
+          </div>
+        {% endif %}
+      </dl>
+    </nav>
+  </div>
 {% endif %}

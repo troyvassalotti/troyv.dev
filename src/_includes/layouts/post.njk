@@ -14,7 +14,6 @@
         </header>
         <div class="post flow e-content">{{ content | safe }}</div>
       </article>
-      <hr class="u-rule">
       {% include "partials/webmention-list.njk" %}
     </div>
   </main>
@@ -29,7 +28,6 @@
     }
 
     .post pre[class*="language-"] {
-      inline-size: fit-content;
       margin-block: var(--space-s-m);
       max-inline-size: 50rem;
     }
@@ -52,12 +50,6 @@
       content: "🔗";
       margin-inline-start: .5ch;
       position: absolute;
-    }
-
-    /* Yeah you do */
-    .u-rule {
-      margin-block-start: var(--space-l-xl);
-      max-inline-size: 40ch;
     }
   </style>
 {% endblock %}
