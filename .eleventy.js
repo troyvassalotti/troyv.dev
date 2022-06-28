@@ -5,7 +5,7 @@
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 
-const utilsDir = "./utils";
+const utilsDir = `${process.cwd()}/utils`;
 const jsDir = "/assets/js";
 
 const filters = require(`${utilsDir}/filters`);

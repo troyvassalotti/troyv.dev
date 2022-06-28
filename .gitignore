@@ -13,3 +13,5 @@ dist
 
 # CMS/Hosting
 .netlify
+netlify/functions/brew/**
+!netlify/functions/brew/index.js
