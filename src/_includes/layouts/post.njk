@@ -1,8 +1,8 @@
 {% extends 'layouts/base.njk' %}
 
 {% block content %}
-  <main id="main">
-    <div class="wrapper constrain--some">
+  <div class="wrapper constrain--some">
+    <main id="main">
       <article class="h-entry flow">
         <header class="flow postHeader">
           <h1 class="postTitle p-name">{{ title }}</h1>
@@ -15,9 +15,19 @@
         <div class="post flow e-content">{{ content | safe }}</div>
       </article>
       {% include "partials/webmention-list.njk" %}
-    </div>
-  </main>
+    </main>
+  </div>
   {% include 'partials/post-navigation.njk' %}
+{% endblock %}
+
+{% block script %}
+  {{ super() }}
+  <script type="module">
+    /** Fixes a11y issue with non-focusable scrolling content in code blocks. */
+    for (const block of document.querySelectorAll("pre[class*='language-']")) {
+      block.tabIndex = 0;
+    }
+  </script>
 {% endblock %}
 
 {% block style %}

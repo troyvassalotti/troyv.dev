@@ -1,14 +1,12 @@
 {% extends 'layouts/base.njk' %}
 
 {% block content %}
-  <main id="main">
-    <div class="wrapper constrain--more">
+  <div class="wrapper constrain--more">
+    <main id="main">
       <div class="flow">
-        <header>
-          <div class="u-text--center">
-            <h1>Archive</h1>
-            <p>Subscribe to the <a href="/feed.xml">RSS feed</a>.</p>
-          </div>
+        <header class="u-text--center">
+          <h1>{{ title }}</h1>
+          <p>Subscribe to the <a href="/feed.xml">RSS feed</a>.</p>
         </header>
         <nav aria-label="tags" class="flow">
           <h2 class="h5">Tags ({{ collections.allTagsList.length }}):</h2>
@@ -16,7 +14,7 @@
             {% for tag in collections.allTagsList | sort %}
               {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
               <li>
-                <a href="{{ tagUrl }}" class="c-tag">{{ tag }}</a>
+                <a href="{{ tagUrl }}" class="c-tag"><span class="visually-hidden">Posts tagged </span>{{ tag }}</a>
               </li>
             {% endfor %}
           </ul>
@@ -33,8 +31,8 @@
           {% endfor %}
         </ul>
       </section>
-    </div>
-  </main>
+    </main>
+  </div>
 {% endblock %}
 
 {% block style %}

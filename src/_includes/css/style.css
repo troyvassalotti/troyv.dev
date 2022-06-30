@@ -152,7 +152,7 @@ pre {
 }
 
 .wrapper.constrain--most {
-    --wrapper-size: 37.5rem;
+    --wrapper-size: 41.50rem;
 }
 
 :is(h1, h2, h3, h4, h5, h6) {
@@ -246,6 +246,16 @@ blockquote p {
     transform: var(--linkStateHover);
     transform-origin: var(--linkStartHover);
   }
+}
+
+.visually-hidden:not(:focus):not(:active) {
+    block-size: 1px;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    inline-size: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
 }
 
 /* Create equal spacing between elements in a flow context without setting display */

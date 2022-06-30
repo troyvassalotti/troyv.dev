@@ -67,7 +67,7 @@
 {% block style %}
   {{ super() }}
   <style>
-    cloudy-sky:not(:defined) {
+    :is(cloudy-sky, kb-typewriter):not(:defined) {
       visibility: hidden;
     }
 

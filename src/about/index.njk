@@ -1,0 +1,105 @@
+{% extends 'layouts/base.njk' %}
+
+{% block content %}
+  <div class="wrapper constrain--more">
+    <main id="main" class="flow">
+      <header>
+        <h1 class="u-text--center">{{ title }}</h1>
+        <section class="quickLinks">
+          <div class="wrapper constrain--most">
+            <ol>
+              <li>If you'd like my professional history, <a href="https://resume.troyv.dev/">view my
+                  résumé</a>. It's updated about as often as anyone else's <abbr title="Your Mileage May Vary">(YMMV)</abbr>, but it looks
+                nice and prints well.
+              </li>
+              <li>If you want to know what I'm up to right now, I have a <a href="/now">now page</a>.</li>
+            </ol>
+          </div>
+        </section>
+      </header>
+      <section class="aboutMe flow">
+        <img
+          src="{{ metadata.cloudinary }}/c_scale,f_auto,q_auto:eco,w_1000/v1646349104/blog/Photo_Sep_12_1_06_27_PM_ugqx0w.webp"
+          alt="Me smiling in a park"
+          decoding="async"
+          width="1000"
+          height="667"
+          id="me"
+        />
+        <p>Hey! I'm Troy, a web developer and musician based in Baltimore. I like long walks on the beach (but <strong>hate</strong> getting
+          sand <em>everywhere</em>). I'm interested in internet privacy, open source software, and making the web a more accessible place.
+          I'm also not good at writing about myself.</p>
+        <h2>Social Media</h2>
+        <p>My social media presence is sparse, but you can find me or my work at the following locations:</p>
+        <ul>
+          {% for social in metadata.socials %}
+            <li><a href="{{ social.url }}">{{ social.name }}</a></li>
+          {% endfor %}
+        </ul>
+        <h2>Miscellaneous</h2>
+        <p>I used to be an amateur graphic designer, as evidenced by the following picture of me and my family of Mark Zuckerbergs.</p>
+        <figure class="wrapper constrain--most">
+          <img
+            src="{{ metadata.cloudinary }}/c_scale,f_auto,q_auto:eco,w_800/v1646349104/blog/The_Whole_Gang_i16cp7.webp"
+            alt="A photshopped image of me and my family in Alaska, but with Mark Zuckerberg's face on everyone except for me."
+            decoding="async"
+            width="800"
+            height="531"
+            id="me"
+          />
+          <figcaption>This picture got me over a thousand likes on a <a href="https://clickhole.com/">ClickHole</a> Facebook post, so I'd say it's one of my greatest
+            achievements right behind that time I won a guitar by placing first in a Guitar Hero content.
+          </figcaption>
+        </figure>
+        <p>If you've read all that and still want to talk to me, you use this form.</p>
+        <form
+          class="c-contactForm"
+          name="contactForm"
+          netlify
+          netlify-honeypot="bot-field"
+          action="/success">
+          <label style="display: none">Don’t fill this out: <input name="bot-field" /></label>
+          <div class="c-contactForm__set">
+            <label for="name">Name</label>
+            <input name="name" type="text" id="name" required />
+          </div>
+          <div class="c-contactForm__set">
+            <label for="email">Email</label>
+            <input name="email" type="email" id="email" required />
+          </div>
+          <div class="c-contactForm__set">
+            <label for="message">Message</label>
+            <textarea
+              name="message"
+              id="message"
+              required
+              placeholder="Say hi!"
+              rows="5"></textarea>
+          </div>
+          <input type="submit" value="Submit" id="submit" />
+        </form>
+      </section>
+    </main>
+  </div>
+{% endblock %}
+
+{% block style %}
+  {{ super() }}
+  <style>
+    img {
+      margin-inline: auto;
+    }
+
+    figcaption {
+      font-size: var(--step--1);
+    }
+
+    .quickLinks {
+      font-size: var(--step--1);
+    }
+
+    .quickLinks ol {
+      padding: 0;
+    }
+  </style>
+{% endblock %}
