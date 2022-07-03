@@ -96,7 +96,13 @@
 <body>
 {% include 'partials/main-navigation.njk' %}
 
-{% block content %}{% endblock %}
+{% block content %}
+  <div class="wrapper constrain--more">
+    <main id="main" class="flow">
+      {{ content | safe }}
+    </main>
+  </div>
+{% endblock %}
 
 {% block script %}
   <script type="module">

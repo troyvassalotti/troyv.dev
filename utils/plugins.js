@@ -10,7 +10,7 @@ const embedYouTube = require("eleventy-plugin-youtube-embed");
 const inclusiveLangPlugin = require("@11ty/eleventy-plugin-inclusive-language");
 const pluginWebmentions = require("@chrisburnell/eleventy-cache-webmentions");
 const addWebComponentDefinitions = require("eleventy-plugin-add-web-component-definitions");
-const { EleventyServerlessBundlerPlugin } = require("@11ty/eleventy");
+const { EleventyServerlessBundlerPlugin, EleventyRenderPlugin } = require("@11ty/eleventy");
 
 module.exports = {
   highlighting: {
@@ -54,5 +54,8 @@ module.exports = {
       name: "brew",
       functionsDir: "./netlify/functions/"
     }
-  }
+  },
+  render: {
+    name: EleventyRenderPlugin,
+  },
 };

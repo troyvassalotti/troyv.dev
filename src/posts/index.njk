@@ -6,7 +6,10 @@
       <div class="flow">
         <header class="u-text--center">
           <h1>{{ title }}</h1>
-          <p>Subscribe to the <a href="/feed.xml">RSS feed</a>.</p>
+          <div class="rss">
+            <span>{% include 'partials/rss.svg' %}</span>
+            <span>Subscribe to the <a href="/feed.xml">RSS feed</a>.</span>
+          </div>
         </header>
         <nav aria-label="tags" class="flow">
           <h2 class="h5">Tags ({{ collections.allTagsList.length }}):</h2>
@@ -63,6 +66,17 @@
 
     .c-postList {
       --flow-space: var(--space-s);
+    }
+
+    .rss {
+      align-items: center;
+      display: flex;
+      gap: 1ch;
+      justify-content: center;
+    }
+
+    .rss svg {
+      max-inline-size: 1em;
     }
   </style>
 {% endblock %}

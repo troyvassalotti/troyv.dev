@@ -15,6 +15,12 @@ const shortcodes = require(`${utilsDir}/shortcodes`);
 const plugins = require(`${utilsDir}/plugins`);
 
 module.exports = function(eleventyConfig) {
+  /**
+   * Default is "passthrough"
+   * @link https://www.11ty.dev/docs/copy/#passthrough-during-serve
+   */
+  // eleventyConfig.setServerPassthroughCopyBehavior("copy");
+
   // Passthroughs
   eleventyConfig.addPassthroughCopy({ "./public": "/" });
   eleventyConfig.addPassthroughCopy({
@@ -59,9 +65,21 @@ module.exports = function(eleventyConfig) {
   });
 
   // Markdown
+  /**
+   * New in 2.0.0
+   * @link https://www.11ty.dev/docs/languages/markdown/#optional-amend-the-library-instance
+   */
+  // eleventyConfig.amendLibrary('md', mdLib => mdLib.use(markdownItAnchor, {
+  //     permalink: markdownItAnchor.permalink.headerLink()
+  //   })
+  // )
   eleventyConfig.setLibrary(
     'md',
-    markdownIt().use(markdownItAnchor, {
+    markdownIt({
+      html: true,
+      breaks: true,
+      linkify: true
+    }).use(markdownItAnchor, {
       permalink: markdownItAnchor.permalink.headerLink()
     })
   )

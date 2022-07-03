@@ -12,7 +12,7 @@
             <span>Reading Time: {{ content | timeToRead }}</span>
           </p>
         </header>
-        <div class="post flow e-content">{{ content | safe }}</div>
+        <div class="post flow u-truncate e-content">{{ content | safe }}</div>
       </article>
       {% include "partials/webmention-list.njk" %}
     </main>
@@ -33,10 +33,6 @@
 {% block style %}
   {{ super() }}
   <style>
-    .post :is(p, ul, ol) {
-      max-inline-size: 60ch;
-    }
-
     .post pre[class*="language-"] {
       margin-block: var(--space-s-m);
       max-inline-size: 50rem;
