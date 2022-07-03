@@ -1,0 +1,158 @@
+{% extends 'layouts/base.njk' %}
+
+{% block script %}
+  {{ super() }}
+  <script type="module">
+    import { createApp } from "petiteVue"
+    import * as Tone from "https://cdn.skypack.dev/tone@14.7.77"
+
+    const synth = new Tone.Synth().toDestination()
+    createApp({
+      // exposed to all expressions
+      currentTuning: "standard",
+      tunings: {
+        standard: [
+          {
+            note: "E",
+            range: "2"
+          },
+          {
+            note: "A",
+            range: "2"
+          },
+          {
+            note: "D",
+            range: "3"
+          },
+          {
+            note: "G",
+            range: "3"
+          },
+          {
+            note: "B",
+            range: "3"
+          },
+          {
+            note: "E",
+            range: "4"
+          }
+        ],
+        halfStep: [
+          {
+            note: "Eb",
+            range: "2"
+          },
+          {
+            note: "Ab",
+            range: "2"
+          },
+          {
+            note: "Db",
+            range: "3"
+          },
+          {
+            note: "Gb",
+            range: "3"
+          },
+          {
+            note: "Bb",
+            range: "3"
+          },
+          {
+            note: "Eb",
+            range: "4"
+          }
+        ],
+        dropD: [
+          {
+            note: "D",
+            range: "2"
+          },
+          {
+            note: "A",
+            range: "2"
+          },
+          {
+            note: "D",
+            range: "3"
+          },
+          {
+            note: "G",
+            range: "3"
+          },
+          {
+            note: "B",
+            range: "3"
+          },
+          {
+            note: "E",
+            range: "4"
+          }
+        ]
+      },
+      // methods
+      playNote(e) {
+        synth.triggerAttackRelease(`${e.value}${e.dataset.range}`, "2n")
+      },
+      capitalizeWord(word) {
+        return word[0].toUpperCase() + word.substr(1)
+      }
+    }).mount()
+  </script>
+{% endblock %}
+
+{% block content %}
+  <main id="main">
+    <div id="app">
+      <div class="wrapper">
+        <h1 class="u-text--center">{{ title }}</h1>
+        <select name="tunings" id="tunings" v-model="currentTuning">
+          <option
+            v-for="(tuning, name) in tunings"
+            :value="name"
+            class="tuning"
+            :key="name">{% raw %}{{ capitalizeWord(name) }}{% endraw %}</option>
+        </select>
+        <div class="buttons">
+          <input
+            v-for="tuning in tunings[currentTuning]"
+            type="button"
+            :value="tuning.note"
+            :data-range="tuning.range"
+            @click="playNote($event.target)" />
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}
+
+{% block style %}
+  {{ super() }}
+  <style>
+    select {
+      display: block;
+      margin-block: 1em;
+      margin-inline: auto;
+      padding: 1ch;
+    }
+
+    .buttons {
+      --input-gap: 1em;
+      --input-size: 4em;
+      align-items: center;
+      block-size: calc(calc(var(--input-size) * 3) + calc(var(--input-gap) * 3));
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      gap: var(--input-gap);
+      inline-size: calc(calc(var(--input-size) * 2) + calc(var(--input-gap) * 2));
+      justify-content: center;
+      margin-inline: auto;
+    }
+
+    input[type="button"] {
+      block-size: var(--input-size);
+      inline-size: var(--input-size);
+    }
+  </style>
+{% endblock %}

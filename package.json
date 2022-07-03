@@ -6,7 +6,7 @@
   "scripts": {
     "build": "ELEVENTY_ENV=production eleventy",
     "serve": "ELEVENTY_ENV=production eleventy --serve",
-    "dev": "ELEVENTY_ENV=development eleventy --serve",
+    "dev": "ELEVENTY_ENV=development eleventy --serve --incremental",
     "debug": "DEBUG=* eleventy",
     "lint": "dprint check",
     "lint::fix": "dprint fmt",

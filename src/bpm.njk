@@ -1,0 +1,78 @@
+{% extends 'layouts/base.njk' %}
+
+{% block script %}
+  {{ super() }}
+  <script type="module">
+    import { createApp } from "petiteVue"
+
+    createApp({
+      // exposed to all expressions
+      count: 0,
+      msFirst: 0,
+      msPrevious: 0,
+      bpmAvg: 0,
+      // getters
+      get bpm() {
+        return Math.round(this.bpmAvg)
+      },
+      get avg() {
+        return Math.round(this.bpmAvg * 100) / 100
+      },
+      // methods
+      handleClick() {
+        let ms = new Date().getTime()
+        if (ms - this.msPrevious > 2000) this.count = 0
+        if (this.count === 0) {
+          this.msFirst = ms
+          this.count++
+        } else {
+          this.bpmAvg = (60000 * this.count) / (ms - this.msFirst)
+          this.count++
+        }
+        this.msPrevious = ms
+      }
+    }).mount()
+  </script>
+{% endblock %}
+
+{% block content %}
+  <main id="main">
+    <div id="app">
+      <div class="wrapper">
+        <h1>{{ title }}</h1>
+        <dl class="results">
+          <div>
+            <dt>Average</dt>
+            <dd>{% raw %}{{ avg }}{% endraw %}</dd>
+          </div>
+          <div>
+            <dt>BPM</dt>
+            <dd>{% raw %}{{ bpm }}{% endraw %}</dd>
+          </div>
+          <div>
+            <dt>Taps</dt>
+            <dd>{% raw %}{{ count }}{% endraw %}</dd>
+          </div>
+        </dl>
+        <button @click="handleClick" autofocus>Press</button>
+      </div>
+    </div>
+  </main>
+{% endblock %}
+
+{% block style %}
+  {{ super() }}
+  <style>
+    dt::after {
+      content: ": ";
+    }
+
+    dt, dd {
+      display: inline-block;
+    }
+
+    dd {
+      margin: 0;
+    }
+  </style>
+{% endblock %}

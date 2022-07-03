@@ -17,6 +17,7 @@ const plugins = require(`${utilsDir}/plugins`);
 module.exports = function(eleventyConfig) {
   /**
    * Default is "passthrough"
+   * @version 2.0.0
    * @link https://www.11ty.dev/docs/copy/#passthrough-during-serve
    */
   // eleventyConfig.setServerPassthroughCopyBehavior("copy");
@@ -66,7 +67,7 @@ module.exports = function(eleventyConfig) {
 
   // Markdown
   /**
-   * New in 2.0.0
+   * @version 2.0.0
    * @link https://www.11ty.dev/docs/languages/markdown/#optional-amend-the-library-instance
    */
   // eleventyConfig.amendLibrary('md', mdLib => mdLib.use(markdownItAnchor, {

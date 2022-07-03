@@ -2,7 +2,7 @@ Hey! I'm Troy, a web developer and musician based in Baltimore, currently an eng
 
 In 2021, I became a community organizer for [charmCityJS](https://charmcityjs.org/), a Baltimore-based [JavaScript meetup](https://www.meetup.com/charmcityjs/). We meet on the first Wednesday of the month for a night of talks from the community, discussions on all things JS, and all around camaraderie with fellow devs.
 
-If you'd like my professional history in detail, [view my résumé](https://resume.troyv.dev/). It's updated about as often as anyone else's (YMMV), but it looks nice and prints well. If you want to know what I'm up to _right now_, I have a [now page](/now).
+If you'd like my professional history in detail, [view my résumé](https://resume.troyv.dev/). It's updated about as often as anyone else's (YMMV), but it looks nice and prints well.
 
 The posts on my blog are usually focused on active projects - or the trials and tribulations of a new framework - because I believe it's important to learn in public. Not only is that a benefit for me, but if someone else is able to find use in a post of mine then I'd consider it all worth it.
 
