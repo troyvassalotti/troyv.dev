@@ -32,7 +32,7 @@ async function handler(event) {
     }
 
     return {
-      statusCode: error.httpStatusCode || 500,
+      statusCode: error.httpStatusCode || 503,
       body: JSON.stringify(
         {
           error: error.message,

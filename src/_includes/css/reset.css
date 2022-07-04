@@ -30,7 +30,7 @@ picture,
 video,
 canvas,
 svg {
-    block-size: auto;
+  block-size: auto;
   display: block;
   max-inline-size: 100%;
 }

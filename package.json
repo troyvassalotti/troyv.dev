@@ -41,6 +41,15 @@
     "es-module-shims": "^1.5.8",
     "html-minifier-terser": "^7.0.0-beta.0",
     "markdown-it-anchor": "^8.6.4",
+    "netlify-plugin-cache": "^1.0.3",
     "plvylist": "^2.1.0"
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": false,
+    "printWidth": 100,
+    "quoteProps": "consistent",
+    "bracketSameLine": true,
+    "tabWidth": 2
   }
 }

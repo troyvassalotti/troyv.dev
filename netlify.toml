@@ -19,13 +19,6 @@ force = true
 _generated_by_eleventy_serverless = "brew"
 
 [[redirects]]
-from = "/some-path/"
-to = "/.netlify/functions/serverless"
-status = 200
-force = true
-_generated_by_eleventy_serverless = "serverless"
-
-[[redirects]]
 from = "https://troyvassalotti.netlify.com/*"
 to = "https://www.troyv.dev/:splat"
 status = 301
@@ -40,7 +33,7 @@ for = "/*"
   X-XSS-Protection = "1"
 
 [[plugins]]
-package = "./netlify/plugins/webmention-cache"
+package = "netlify-plugin-webmentions"
 
 [[plugins]]
-package = "netlify-plugin-webmentions"
+package = "netlify-plugin-cache"

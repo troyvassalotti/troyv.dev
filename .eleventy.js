@@ -6,6 +6,7 @@ const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 
 const utilsDir = `${process.cwd()}/utils`;
+const srcDir = `./src`;
 const jsDir = "/assets/js";
 
 const filters = require(`${utilsDir}/filters`);
@@ -14,7 +15,7 @@ const transforms = require(`${utilsDir}/transforms`);
 const shortcodes = require(`${utilsDir}/shortcodes`);
 const plugins = require(`${utilsDir}/plugins`);
 
-module.exports = function(eleventyConfig) {
+module.exports = function (eleventyConfig) {
   /**
    * Default is "passthrough"
    * @version 2.0.0
@@ -23,16 +24,22 @@ module.exports = function(eleventyConfig) {
   // eleventyConfig.setServerPassthroughCopyBehavior("copy");
 
   // Passthroughs
-  eleventyConfig.addPassthroughCopy({ "./public": "/" });
-  eleventyConfig.addPassthroughCopy({
-    "./node_modules/plvylist/dist/plvylist.es.js": `${jsDir}/components/plvylist-player.js`,
-  });
-  eleventyConfig.addPassthroughCopy({
-    "./node_modules/@troyv/web-components/dist/**/*.js": `${jsDir}/components/`,
-  });
-  eleventyConfig.addPassthroughCopy({
-    "./node_modules/es-module-shims/dist/es-module-shims.js": `${jsDir}/es-module-shims.js`
-  });
+  eleventyConfig
+    .addPassthroughCopy(`${srcDir}/favicon.ico`)
+    .addPassthroughCopy(`${srcDir}/humans.txt`)
+    .addPassthroughCopy(`${srcDir}/manifest.webmanifest`)
+    .addPassthroughCopy(`${srcDir}/robots.txt`)
+    .addPassthroughCopy(`${srcDir}/assets`)
+    .addPassthroughCopy(`${srcDir}/favicons`)
+    .addPassthroughCopy({
+      "./node_modules/plvylist/dist/plvylist.es.js": `${jsDir}/components/plvylist-player.js`,
+    })
+    .addPassthroughCopy({
+      "./node_modules/@troyv/web-components/dist/**/*.js": `${jsDir}/components/`,
+    })
+    .addPassthroughCopy({
+      "./node_modules/es-module-shims/dist/es-module-shims.js": `${jsDir}/es-module-shims.js`,
+    });
 
   // Plugins
   Object.keys(plugins).forEach((plugin) => {
@@ -75,15 +82,15 @@ module.exports = function(eleventyConfig) {
   //   })
   // )
   eleventyConfig.setLibrary(
-    'md',
+    "md",
     markdownIt({
       html: true,
       breaks: true,
-      linkify: true
+      linkify: true,
     }).use(markdownItAnchor, {
-      permalink: markdownItAnchor.permalink.headerLink()
+      permalink: markdownItAnchor.permalink.headerLink(),
     })
-  )
+  );
 
   return {
     htmlTemplateEngine: "njk",

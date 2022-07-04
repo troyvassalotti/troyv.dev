@@ -49,38 +49,39 @@
 }
 
 html {
-    /* @link https://utopia.fyi/type/calculator?c=320,21,1.2,1600,24,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
-    --step--2: clamp(0.78rem, calc(0.77rem + 0.07vw), 0.84rem);
-    --step--1: clamp(0.94rem, calc(0.91rem + 0.14vw), 1.05rem);
-    --step-0: clamp(1.13rem, calc(1.08rem + 0.23vw), 1.31rem);
-    --step-1: clamp(1.35rem, calc(1.28rem + 0.36vw), 1.64rem);
-    --step-2: clamp(1.62rem, calc(1.51rem + 0.54vw), 2.05rem);
-    --step-3: clamp(1.94rem, calc(1.79rem + 0.78vw), 2.56rem);
-    --step-4: clamp(2.33rem, calc(2.11rem + 1.09vw), 3.20rem);
-    --step-5: clamp(2.80rem, calc(2.50rem + 1.51vw), 4.01rem);
+  /* @link https://utopia.fyi/type/calculator?c=320,21,1.2,1600,24,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+  --step--2: clamp(0.78rem, calc(0.77rem + 0.07vw), 0.84rem);
+  --step--1: clamp(0.94rem, calc(0.91rem + 0.14vw), 1.05rem);
+  --step-0: clamp(1.13rem, calc(1.08rem + 0.23vw), 1.31rem);
+  --step-1: clamp(1.35rem, calc(1.28rem + 0.36vw), 1.64rem);
+  --step-2: clamp(1.62rem, calc(1.51rem + 0.54vw), 2.05rem);
+  --step-3: clamp(1.94rem, calc(1.79rem + 0.78vw), 2.56rem);
+  --step-4: clamp(2.33rem, calc(2.11rem + 1.09vw), 3.2rem);
+  --step-5: clamp(2.8rem, calc(2.5rem + 1.51vw), 4.01rem);
 
-    /* @link https://utopia.fyi/space/calculator?c=320,18,1.2,1600,21,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */    --space-3xs: clamp(0.31rem, calc(0.31rem + 0.00vw), 0.31rem);
-    --space-2xs: clamp(0.56rem, calc(0.53rem + 0.16vw), 0.69rem);
-    --space-xs: clamp(0.88rem, calc(0.84rem + 0.16vw), 1.00rem);
-    --space-s: clamp(1.13rem, calc(1.08rem + 0.23vw), 1.31rem);
-    --space-m: clamp(1.69rem, calc(1.61rem + 0.39vw), 2.00rem);
-    --space-l: clamp(2.25rem, calc(2.16rem + 0.47vw), 2.63rem);
-    --space-xl: clamp(3.38rem, calc(3.23rem + 0.70vw), 3.94rem);
-    --space-2xl: clamp(4.50rem, calc(4.31rem + 0.94vw), 5.25rem);
-    --space-3xl: clamp(6.75rem, calc(6.47rem + 1.41vw), 7.88rem);
+  /* @link https://utopia.fyi/space/calculator?c=320,18,1.2,1600,21,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+  --space-3xs: clamp(0.31rem, calc(0.31rem + 0vw), 0.31rem);
+  --space-2xs: clamp(0.56rem, calc(0.53rem + 0.16vw), 0.69rem);
+  --space-xs: clamp(0.88rem, calc(0.84rem + 0.16vw), 1rem);
+  --space-s: clamp(1.13rem, calc(1.08rem + 0.23vw), 1.31rem);
+  --space-m: clamp(1.69rem, calc(1.61rem + 0.39vw), 2rem);
+  --space-l: clamp(2.25rem, calc(2.16rem + 0.47vw), 2.63rem);
+  --space-xl: clamp(3.38rem, calc(3.23rem + 0.7vw), 3.94rem);
+  --space-2xl: clamp(4.5rem, calc(4.31rem + 0.94vw), 5.25rem);
+  --space-3xl: clamp(6.75rem, calc(6.47rem + 1.41vw), 7.88rem);
 
-    /* One-up pairs */
-    --space-3xs-2xs: clamp(0.31rem, calc(0.22rem + 0.47vw), 0.69rem);
-    --space-2xs-xs: clamp(0.56rem, calc(0.45rem + 0.55vw), 1.00rem);
-    --space-xs-s: clamp(0.88rem, calc(0.77rem + 0.55vw), 1.31rem);
-    --space-s-m: clamp(1.13rem, calc(0.91rem + 1.09vw), 2.00rem);
-    --space-m-l: clamp(1.69rem, calc(1.45rem + 1.17vw), 2.63rem);
-    --space-l-xl: clamp(2.25rem, calc(1.83rem + 2.11vw), 3.94rem);
-    --space-xl-2xl: clamp(3.38rem, calc(2.91rem + 2.34vw), 5.25rem);
-    --space-2xl-3xl: clamp(4.50rem, calc(3.66rem + 4.22vw), 7.88rem);
+  /* One-up pairs */
+  --space-3xs-2xs: clamp(0.31rem, calc(0.22rem + 0.47vw), 0.69rem);
+  --space-2xs-xs: clamp(0.56rem, calc(0.45rem + 0.55vw), 1rem);
+  --space-xs-s: clamp(0.88rem, calc(0.77rem + 0.55vw), 1.31rem);
+  --space-s-m: clamp(1.13rem, calc(0.91rem + 1.09vw), 2rem);
+  --space-m-l: clamp(1.69rem, calc(1.45rem + 1.17vw), 2.63rem);
+  --space-l-xl: clamp(2.25rem, calc(1.83rem + 2.11vw), 3.94rem);
+  --space-xl-2xl: clamp(3.38rem, calc(2.91rem + 2.34vw), 5.25rem);
+  --space-2xl-3xl: clamp(4.5rem, calc(3.66rem + 4.22vw), 7.88rem);
 
-    /* Custom pairs */
-    --space-s-l: clamp(1.13rem, calc(0.75rem + 1.88vw), 2.63rem);
+  /* Custom pairs */
+  --space-s-l: clamp(1.13rem, calc(0.75rem + 1.88vw), 2.63rem);
 
   /* font styles */
   --body: "Locale", var(--fallback);
@@ -89,40 +90,39 @@ html {
     "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   --headings: "Oli Grotesk", var(--fallback);
 
-    /* Color palette */
+  /* Color palette */
   /*  TODO*/
 
   /*scrollbar-color: var(--foreground) var(--background);*/
 }
 
 @media (prefers-color-scheme: light) {
-    /*TODO*/
-    /*html {*/
-    /*    --accent: var(--baby-blue-eyes);*/
-    /*    --background: var(--antique-white);*/
-    /*    --foreground: var(--rich-black-fogra-29);*/
-    /*    --links: var(--sapphire);*/
-    /*}*/
+  /*TODO*/
+  /*html {*/
+  /*    --accent: var(--baby-blue-eyes);*/
+  /*    --background: var(--antique-white);*/
+  /*    --foreground: var(--rich-black-fogra-29);*/
+  /*    --links: var(--sapphire);*/
+  /*}*/
 }
 
 @media (prefers-color-scheme: dark) {
-    /*TODO*/
-    /*html {*/
-    /*    --accent: var(--yellow-orange-color-wheel);*/
-    /*    --background: var(--rich-black-fogra-29);*/
-    /*    --foreground: var(--antique-white);*/
-    /*    --links: var(--baby-blue-eyes);*/
-    /*}*/
-
-    pre {
-        font-weight: 300;
-    }
+  /*TODO*/
+  /*html {*/
+  /*    --accent: var(--yellow-orange-color-wheel);*/
+  /*    --background: var(--rich-black-fogra-29);*/
+  /*    --foreground: var(--antique-white);*/
+  /*    --links: var(--baby-blue-eyes);*/
+  /*}*/
+  pre {
+    font-weight: 300;
+  }
 }
 
 body {
-    /*TODO*/
-    /*background-color: var(--background);*/
-    /*color: var(--foreground);*/
+  /*TODO*/
+  /*background-color: var(--background);*/
+  /*color: var(--foreground);*/
   font-family: var(--body);
   font-size: var(--step-0);
 }
@@ -144,15 +144,15 @@ pre {
 }
 
 .wrapper.constrain--some {
-    --wrapper-size: 81.25rem;
+  --wrapper-size: 81.25rem;
 }
 
 .wrapper.constrain--more {
-    --wrapper-size: 68.75rem;
+  --wrapper-size: 68.75rem;
 }
 
 .wrapper.constrain--most {
-    --wrapper-size: 41.50rem;
+  --wrapper-size: 41.5rem;
 }
 
 :is(h1, h2, h3, h4, h5, h6) {
@@ -190,19 +190,23 @@ h6,
 }
 
 blockquote {
-    border: .5rem double var(--accent, currentColor);
-    font-style: italic;
-    inline-size: fit-content;
-    margin-block: var(--space-s-m);
+  border: 0.5rem double var(--accent, currentColor);
+  font-style: italic;
+  inline-size: fit-content;
+  margin-block: var(--space-s-m);
 }
 
 blockquote p {
-    padding-block: var(--space-s);
-    padding-inline: var(--space-xs-s);
+  padding-block: var(--space-s);
+  padding-inline: var(--space-xs-s);
 }
 
 figcaption {
-    font-size: var(--step--1);
+  font-size: var(--step--1);
+}
+
+sup {
+  vertical-align: top;
 }
 
 /*TODO*/
@@ -238,7 +242,7 @@ figcaption {
     block-size: 0.06em;
     content: "";
     inline-size: 100%;
-      inset-block-end: 0;
+    inset-block-end: 0;
     inset-inline-start: 0;
     position: absolute;
     transform: var(--linkStateRest);
@@ -253,32 +257,32 @@ figcaption {
 }
 
 .visually-hidden:not(:focus):not(:active) {
-    block-size: 1px;
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    inline-size: 1px;
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
+  block-size: 1px;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  inline-size: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
 }
 
 /* Create equal spacing between elements in a flow context without setting display */
 .flow > * + * {
-    margin-block-start: var(--flow-space, var(--space-s));
+  margin-block-start: var(--flow-space, var(--space-s));
 }
 
 .u-text--smaller {
-    font-size: var(--step--1);
+  font-size: var(--step--1);
 }
 
 .u-text--smallest {
-    font-size: var(--step--2);
+  font-size: var(--step--2);
 }
 
 .u-text--center {
-    text-align: center;
+  text-align: center;
 }
 
 .u-truncate :is(p, ul, ol) {
-    max-inline-size: var(--readable-length, 60ch);
+  max-inline-size: var(--readable-length, 60ch);
 }
