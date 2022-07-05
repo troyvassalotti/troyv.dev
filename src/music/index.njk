@@ -3,7 +3,7 @@
 {% block content %}
   <main id="main">
     <div class="wrapper constrain--less">
-      <header class="o-section--angled wrapper constrain--base">
+      <header class="o-section--angled wrapper constrain--base header">
         <div class="container u-text--center u-truncate flow">
           <h1>{{ title }}</h1>
           <p>I write for a few projects, so here they are with all the important links. Music is best managed elsewhere than my personal
@@ -52,6 +52,11 @@
               {% endfor %}
             </div>
           </article>
+          <article>
+            {#TODO#}
+            {#Talk about Listenbrainz and display that API data#}
+            {#Use 11ty fetch to cache results#}
+          </article>
         </section>
         <section class="plvylist">
           <h2>You Can Stream Here</h2>
@@ -69,7 +74,7 @@
 {% block style %}
   {{ super() }}
   <style>
-    header {
+    .header {
       --wrapper-padding: 1rem;
     }
 
