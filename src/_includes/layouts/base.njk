@@ -6,13 +6,7 @@
   <meta name="theme-color" content="#2380e7">
 
   {# Keep the whitepsace removal to make it minify correctly #}
-  {%- set theTitle -%}
-    {%- if title -%}
-      {{ title | safe }}
-    {%- else -%}
-      {{ page.fileSlug | capitalize }}
-    {%- endif -%}
-  {%- endset -%}
+  {%- set theTitle -%}{{ title | safe or page.fileSlug | capitalize }}{%- endset -%}
   <title>{{ theTitle }} :: troyv.dev</title>
 
   <link rel="preconnect" href="https://d33wubrfki0l68.cloudfront.net" crossorigin>
@@ -38,6 +32,7 @@
           "tone": "https://cdn.skypack.dev/tone@14.7.77"
         }
       }
+
   </script>
 
   <link rel="stylesheet" href="https://fonts.typotheque.com/WF-036345-011398.css">

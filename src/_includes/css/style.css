@@ -155,6 +155,14 @@ pre {
   --wrapper-size: 41.5rem;
 }
 
+.wrapper.constrain--less {
+  --wrapper-size: 115rem;
+}
+
+.wrapper.constrain--base {
+  --wrapper-size: 100rem;
+}
+
 :is(h1, h2, h3, h4, h5, h6) {
   font-family: var(--headings);
 }
@@ -285,4 +293,23 @@ sup {
 
 .u-truncate :is(p, ul, ol) {
   max-inline-size: var(--readable-length, 60ch);
+}
+
+.u-truncate--center > * {
+  margin-inline: auto;
+}
+
+.o-section--angled {
+  --background: lightskyblue;
+  --clip-point: calc(var(--section-padding) / 2);
+  --section-padding: 10vh;
+  background: var(--background);
+  clip-path: polygon(
+    0 var(--clip-point),
+    /* top left */ 100% 0%,
+    /* top right */ 100% calc(100% - var(--clip-point)),
+    /* bottom right */ 0% 100% /* bottom left */
+  );
+  padding-block: var(--section-padding);
+  padding-inline: var(--space-s-m);
 }
