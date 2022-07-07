@@ -2,49 +2,50 @@
 
 {% block content %}
   <main id="main">
-    <div class="wrapper constrain--less">
-      <header class="o-section--angled wrapper constrain--base header">
-        <div class="container u-text--center u-truncate flow">
-          <h1>{{ title }}</h1>
-          <p>I write for a few projects, so here they are with all the important links. Music is best managed elsewhere than my personal
-            website, so you're better off visiting those places.</p>
-        </div>
-      </header>
-      <div class="l-page">
-        <section class="content">
-          <article class="band">
-            <div class="logo">
-              <a href="https://www.frontroyalband.com/">
-                <img
-                  src="{{ metadata.cloudinary }}/c_scale,f_auto,q_auto:eco,w_400/v1646349103/blog/front-royal-logo-white_400x240_fharjl.webp"
-                  alt="Front Royal"
-                  width="400"
-                  height="240"
-                  loading="lazy"
-                  decoding="async" />
+    <div class="wrapper constrain--less central">
+      <div class="o-left flow u-truncate">
+        <header class="flow header">
+          <h1 class="title u-text--caps u-text--base">{{ title }}</h1>
+          <h2 class="callout u-line-height--less">Guitarist, drummer, singer-songwriter.</h2>
+          <p>Check out my musical projects - <em>Front Royal</em> and <em>troy.</em> - below.</p>
+        </header>
+        <section class="o-bands">
+          <article class="c-band c-band--frontRoyal">
+            <div class="c-band__logo">
+              <a class="u-linked-image" href="https://www.frontroyalband.com/">
+                <picture>
+                  <source srcset="{{ metadata.cloudinary }}/c_scale,f_auto,q_auto:eco,w_400/v1646349103/blog/front-royal-logo-white_400x240_fharjl.webp" media="(prefers-color-scheme: light)">
+                  <img
+                    src="{{ metadata.cloudinary }}/c_scale,f_auto,q_auto:eco,w_400/v1646349103/blog/FR_full_res_drh6ez.webp"
+                    alt="Front Royal"
+                    width="400"
+                    height="240"
+                    loading="lazy"
+                    decoding="async" />
+                </picture>
               </a>
             </div>
-            <div class="links">
+            <div class="c-band__links">
               {% for social in frontRoyalSocial %}
-                <a href="{{ social.href }}">
+                <a class="u-linked-image" href="{{ social.href }}">
                   {% include "partials/" + social.img %}
                 </a>
               {% endfor %}
             </div>
           </article>
-          <article class="band">
-            <div class="logo">
-              <a href="https://hyperfollow.com/troyalllowercase">
+          <article class="c-band c-band--troy">
+            <div class="c-band__logo">
+              <a class="u-linked-image" href="https://hyperfollow.com/troyalllowercase">
                 <img
-                  src="{{ metadata.cloudinary }}/c_scale,f_auto,q_auto:eco,w_300/v1646349104/blog/troy-full_jx1oq4.webp"
+                  src="{{ metadata.cloudinary }}/c_scale,f_auto,q_auto:eco,w_300/v1646349104/blog/me-on-set_gkrhf7.webp"
                   alt="troy"
                   width="300"
-                  height="150"
+                  height="293"
                   loading="lazy"
                   decoding="async" />
               </a>
             </div>
-            <div class="links">
+            <div class="c-band__links">
               {% for social in troySocial %}
                 <a href="{{ social.href }}">
                   {% include "partials/" + social.img %}
@@ -52,16 +53,14 @@
               {% endfor %}
             </div>
           </article>
-          <article>
-            {#TODO#}
-            {#Talk about Listenbrainz and display that API data#}
-            {#Use 11ty fetch to cache results#}
-          </article>
         </section>
+      </div>
+      <div class="o-right">
         <section class="plvylist">
-          <h2>You Can Stream Here</h2>
-          <p>I <a href="https://www.npmjs.com/package/plvylist">created my own</a> embedded streaming player, called Plvylist.
-            Check it out!</p>
+          <header>
+            <h2 class="u-text--base u-text--caps title">You can stream here</h2>
+            <p class="u-text--smaller u-text--italic">Psst... <a href="https://www.npmjs.com/package/plvylist">I made this player</a>.</p>
+          </header>
           <plvylist-player tracks="/assets/js/alone-in-a-crowded-room.json" starting-volume="0.75">
           </plvylist-player>
         </section>
@@ -70,40 +69,75 @@
   </main>
 {% endblock %}
 
+{#TODO#}
+{#Talk about Listenbrainz and display that API data#}
+{#Use 11ty fetch to cache results#}
+
 {% block style %}
   {{ super() }}
   <style>
-    .header {
-      --wrapper-padding: 1rem;
-    }
-
-    .l-page {
-      align-items: baseline;
+    .central {
       display: grid;
+      gap: var(--space-l-xl);
+      margin-block-start: var(--space-2xl);
+    }
+
+    @media (min-width: 70.25rem) {
+      .central {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .o-left {
+      --flow-space: var(--space-l-xl);
+    }
+
+    .o-left .header {
+      --flow-space: var(--space-s);
+    }
+
+    .callout {
+      font-size: var(--step-6);
+    }
+
+    .o-bands {
+      align-items: start;
+      display: flex;
+      flex-wrap: wrap;
       gap: var(--space-l);
-      grid-template-columns: 1fr 1fr;
+      justify-content: space-evenly;
     }
 
-    .container p {
-      margin-inline: auto;
+    .c-band {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
     }
 
-    img, svg {
-      display: inline-block;
-    }
-
-    .links {
+    .c-band__links {
       display: flex;
       gap: var(--space-2xs);
     }
 
-    .links svg {
+    .c-band--troy .c-band__logo img {
+      border-radius: 50%;
+      object-fit: cover;
+      inline-size: auto;
+      max-block-size: 200px;
+    }
+
+    .c-band__links svg {
       max-inline-size: 48px;
     }
 
     .plvylist {
       inset-block-start: 0;
       position: sticky;
+    }
+
+    plvylist-player {
+      display: block;
+      margin-block: var(--space-s-m);
     }
   </style>
 {% endblock %}

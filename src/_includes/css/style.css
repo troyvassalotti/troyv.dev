@@ -58,6 +58,11 @@ html {
   --step-3: clamp(1.94rem, calc(1.79rem + 0.78vw), 2.56rem);
   --step-4: clamp(2.33rem, calc(2.11rem + 1.09vw), 3.2rem);
   --step-5: clamp(2.8rem, calc(2.5rem + 1.51vw), 4.01rem);
+  --step-6: clamp(3.92rem, calc(3.47rem + 2.25vw), 5.72rem);
+  --step-7: clamp(4.7rem, calc(4.09rem + 3.06vw), 7.15rem);
+  --step-8: clamp(5.64rem, calc(4.82rem + 4.12vw), 8.94rem);
+  --step-9: clamp(6.77rem, calc(5.67rem + 5.5vw), 11.18rem);
+  --step-10: clamp(8.13rem, calc(6.67rem + 7.3vw), 13.97rem);
 
   /* @link https://utopia.fyi/space/calculator?c=320,18,1.2,1600,21,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
   --space-3xs: clamp(0.31rem, calc(0.31rem + 0vw), 0.31rem);
@@ -193,7 +198,8 @@ h5,
 }
 
 h6,
-.h6 {
+.h6,
+.u-text--base {
   font-size: var(--step-0);
 }
 
@@ -297,6 +303,30 @@ sup {
 
 .u-truncate--center > * {
   margin-inline: auto;
+}
+
+.u-line-height--less {
+  line-height: 1.25;
+}
+
+.u-text--caps {
+  text-transform: uppercase;
+}
+
+.u-font--headings {
+  font-family: var(--headings);
+}
+
+.u-font--base {
+  font-family: var(--body);
+}
+
+.u-text--italic {
+  font-style: italic;
+}
+
+.u-linked-image {
+  display: inline-block;
 }
 
 .o-section--angled {

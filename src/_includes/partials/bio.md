@@ -1,4 +1,4 @@
-Hey! I'm Troy, a web developer and musician based in Baltimore, currently an engineer at T. Rowe Price and part-time developer at Goucher College. My interests include internet privacy, open source software, and making the web a more accessible place. I also like long walks on the beach (but **hate** getting sand _everywhere_). Any and all opinions are my own. (I think I'm legally required to say that?)
+Hey! I'm Troy, a web developer and musician based in Baltimore, currently an engineer at T. Rowe Price and part-time developer at Goucher College. My interests include internet privacy, open source software, and making the web a more accessible place. I also like long walks on the beach, but can't stand getting sand _everywhere_. Any and all opinions are my own. (I think I'm legally required to say that?)
 
 In 2021, I became a community organizer for [charmCityJS](https://charmcityjs.org/), a Baltimore-based [JavaScript meetup](https://www.meetup.com/charmcityjs/). We meet on the first Wednesday of the month for a night of talks from the community, discussions on all things JS, and all around camaraderie with fellow devs.
 
