@@ -6,49 +6,20 @@ description: Normal person stuck in a computer.
 {% extends 'layouts/base.njk' %}
 
 {% block content %}
-  <div class="wrapper">
+  <div class="wrapper constrain--more">
     <main id="main" class="flow">
       <header>
-        <div class="container u-text--center">
           <h1>{{ title }}</h1>
-        </div>
       </header>
-      <section class="aboutMe flow u-truncate u-truncate--center">
+      <section class="aboutMe flow u-truncate">
         {% renderFile './src/_includes/partials/bio.md' %}
-        <p>My social media presence is sparse, but you can find me at the following locations:</p>
-        <ul>
+        <h2>Where to Find Me</h2>
+        <p>My social media presence is sparse, but I am found in a few spots:</p>
+        <ul class="c-socialMedia" role="list">
           {% for social in metadata.socials %}
-            <li><a href="{{ social.url }}">{{ social.name }}</a></li>
+            <li><a href="{{ social.url }}">{% include 'partials/' + social.name | lower + '.svg' %}{{ social.name }}</a></li>
           {% endfor %}
         </ul>
-        <p>Did I mention I'm something of an amateur graphic designer? Evidenced by the following picture of me and my family of Mark
-          Zuckerbergs...</p>
-        <figure class="zuckerbergs">
-          <img
-            src="{{ metadata.cloudinary }}/c_scale,f_auto,q_auto:eco,w_800/v1646349104/blog/The_Whole_Gang_i16cp7.webp"
-            alt="A photoshopped image of me and my family in Alaska, but with Mark Zuckerberg's face on everyone except for me."
-            decoding="async"
-            width="800"
-            height="531"
-            id="me"
-          />
-          <figcaption>This picture got me over a thousand likes on a <a href="https://clickhole.com/">ClickHole</a> Facebook post, so I'd
-            say it's one of my greatest
-            achievements right behind that time I won a guitar by placing first in a Guitar Hero contest.
-          </figcaption>
-        </figure>
-        <p>...or by the cover of my unreleased album <em>French Presseth the Smackethdown</em>.</p>
-        <figure class="frenchPresseth">
-          <img
-            src="{{ metadata.cloudinary }}/c_scale,f_auto,q_auto:eco,w_800/v1646349104/blog/French_Presseth_the_Smacketh_Down_k3l8qa.webp"
-            alt="A photoshopped image of me and my family in Alaska, but with Mark Zuckerberg's face on everyone except for me."
-            decoding="async"
-            width="800"
-            height="531"
-            id="me"
-          />
-          <figcaption>The music industry wasn't ready for it.</figcaption>
-        </figure>
       </section>
     </main>
   </div>
@@ -61,20 +32,19 @@ description: Normal person stuck in a computer.
       padding: 0;
     }
 
-    figure {
-      margin-block: 3rem;
+    .c-socialMedia a {
+      align-items: center;
+      display: inline-flex;
+      gap: .5em;
     }
 
-    .zuckerbergs {
-      max-inline-size: 45rem;
+    .c-socialMedia a:not(:first-of-type) {
+      margin-block-start: 1ch;
     }
 
-    .frenchPresseth {
-      max-inline-size: 35rem;
-    }
-
-    figcaption {
-      margin-block-start: .5rem;
+    .c-socialMedia svg {
+      display: inline-block;
+      max-inline-size: 28px;
     }
   </style>
 {% endblock %}
