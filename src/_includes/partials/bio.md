@@ -1,11 +1,13 @@
-Hey! I'm Troy, a web developer and musician based in Baltimore, currently an engineer at T. Rowe Price and part-time developer at Goucher College. My interests include internet privacy, open source software, and making the web a more accessible place. I also like long walks on the beach, but can't stand getting sand _everywhere_. Any and all opinions are my own. (I think I'm legally required to say that?)
+I'm a **developer** and **musician** based in Baltimore, currently an engineer at T. Rowe Price and part-time developer at Goucher College. Any and all opinions are my own. (I think I'm legally required to say that?)
 
-In 2021, I became a community organizer for [charmCityJS](https://charmcityjs.org/), a Baltimore-based [JavaScript meetup](https://www.meetup.com/charmcityjs/). We meet on the first Wednesday of the month for a night of talks from the community, discussions on all things JS, and all around camaraderie with fellow devs.
+I'm interested in privacy, open source software, and making the web a more accessible place. I also like long walks on the beach, but can't stand getting sand _everywhere_.
 
-If you'd like my professional history in detail, [view my résumé](https://resume.troyv.dev/). It's updated about as often as anyone else's <abbr title="Your mileage may vary">(YMMV)</abbr>, but it looks nice and prints well. You can also [contact me](/contact/) if you wish.
+In 2021, I became a community organizer for [**charmCityJS**](https://charmcityjs.org/), a Baltimore-based [JavaScript meetup](https://www.meetup.com/charmcityjs/) that meets on the first Wednesday of every month for a night of talks, discussions, and camaraderie.
 
-The posts on my blog are usually focused on active projects - or the trials and tribulations of a new framework - because I believe it's important to learn in public. Not only is that a benefit for me, but if someone else is able to find use in a post of mine then I'd consider it all worth it.
+If you'd like my professional history in detail, [view my résumé](https://resume.troyv.dev/). It's updated about as often as anyone else's <abbr title="Your mileage may vary">(YMMV)</abbr>, but it looks nice and prints well. You can also [contact me](/contact/).
 
-This website is made with [Eleventy](https://www.11ty.dev/) and I reserve the right to change how it looks or what it's built on [whenever][1] I want; however, it's been on 11ty nearly since the beginning, and I love it so much that I don't see myself changing _that_ aspect any time soon.
+Posts in the blog are focused on my projects and the trials and tribulations of engineering because I believe it's important to **learn in public**. If someone else is able to find use in a post of mine, then that's an added bonus.
+
+This website is made with [Eleventy](https://www.11ty.dev/) and I [change it often][1].
 
 [1]: https://ethanmarcotte.com/wrote/let-a-website-be-a-worry-stone/ "See: this blog by Ethan Marcotte"

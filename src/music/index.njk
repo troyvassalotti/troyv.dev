@@ -2,89 +2,122 @@
 
 {% block content %}
   <main id="main">
-    <div class="wrapper constrain--less central">
-      <div class="o-left flow u-truncate">
-        <header class="flow header">
-          <h1 class="title u-text--caps u-text--base">{{ title }}</h1>
-          <h2 class="callout u-line-height--less">Guitarist, drummer, singer-songwriter.</h2>
-          <p>Check out my musical projects - <em>Front Royal</em> and <em>troy.</em> - below.</p>
-        </header>
-        <section class="o-bands">
-          <article class="c-band c-band--frontRoyal">
-            <div class="c-band__logo">
-              <a class="u-linked-image" href="https://www.frontroyalband.com/">
-                <picture>
-                  <source srcset="{{ metadata.cloudinary }}/c_scale,f_auto,q_auto:eco,w_400/v1646349103/blog/front-royal-logo-white_400x240_fharjl.webp" media="(prefers-color-scheme: light)">
+    <div class="wrapper constrain--less">
+      <div class="central">
+        <div class="o-left flow u-truncate">
+          <header class="flow header">
+            <h1 class="title u-text--caps u-text--base">{{ title }}</h1>
+            <h2 class="callout u-line-height--less">Guitarist, drummer, singer-songwriter.</h2>
+            <p>Check out my musical projects - <em>Front Royal</em> and <em>troy.</em> - below.</p>
+          </header>
+          <section class="o-bands">
+            <div class="c-band c-band--frontRoyal">
+              <div class="c-band__logo">
+                <a class="u-linked-image" href="https://www.frontroyalband.com/">
+                  <picture>
+                    <source srcset="{{ metadata.cloudinary }}/c_scale,f_auto,q_auto:eco,w_400/v1646349103/blog/front-royal-logo-white_400x240_fharjl.webp" media="(prefers-color-scheme: light)">
+                    <img
+                      src="{{ metadata.cloudinary }}/c_scale,f_auto,q_auto:eco,w_400/v1646349103/blog/FR_full_res_drh6ez.webp"
+                      alt="Front Royal"
+                      width="400"
+                      height="240"
+                      loading="lazy"
+                      decoding="async" />
+                  </picture>
+                </a>
+              </div>
+            </div>
+            <div class="c-band c-band--troy">
+              <div class="c-band__logo">
+                <a class="u-linked-image" href="https://hyperfollow.com/troyalllowercase">
                   <img
-                    src="{{ metadata.cloudinary }}/c_scale,f_auto,q_auto:eco,w_400/v1646349103/blog/FR_full_res_drh6ez.webp"
-                    alt="Front Royal"
-                    width="400"
-                    height="240"
+                    src="{{ metadata.cloudinary }}/c_scale,f_auto,q_auto:eco,w_300/v1646349104/blog/me-on-set_gkrhf7.webp"
+                    alt="troy"
+                    width="300"
+                    height="293"
                     loading="lazy"
                     decoding="async" />
-                </picture>
-              </a>
-            </div>
-            <div class="c-band__links">
-              {% for social in frontRoyalSocial %}
-                <a class="u-linked-image" href="{{ social.href }}">
-                  {% include "partials/" + social.img %}
                 </a>
-              {% endfor %}
+              </div>
             </div>
-          </article>
-          <article class="c-band c-band--troy">
-            <div class="c-band__logo">
-              <a class="u-linked-image" href="https://hyperfollow.com/troyalllowercase">
-                <img
-                  src="{{ metadata.cloudinary }}/c_scale,f_auto,q_auto:eco,w_300/v1646349104/blog/me-on-set_gkrhf7.webp"
-                  alt="troy"
-                  width="300"
-                  height="293"
-                  loading="lazy"
-                  decoding="async" />
-              </a>
-            </div>
-            <div class="c-band__links">
-              {% for social in troySocial %}
-                <a href="{{ social.href }}">
-                  {% include "partials/" + social.img %}
-                </a>
-              {% endfor %}
-            </div>
-          </article>
-        </section>
+          </section>
+        </div>
+        <div class="o-right">
+          <section class="plvylist">
+            <header>
+              <h2 class="u-text--base u-text--caps title">You can stream here</h2>
+              <p class="u-text--smaller u-text--italic">Psst... <a href="https://www.npmjs.com/package/plvylist">I made this player</a>.</p>
+            </header>
+            <plvylist-player tracks="/assets/js/alone-in-a-crowded-room.json" starting-volume="0.75">
+            </plvylist-player>
+          </section>
+        </div>
       </div>
-      <div class="o-right">
-        <section class="plvylist">
-          <header>
-            <h2 class="u-text--base u-text--caps title">You can stream here</h2>
-            <p class="u-text--smaller u-text--italic">Psst... <a href="https://www.npmjs.com/package/plvylist">I made this player</a>.</p>
-          </header>
-          <plvylist-player tracks="/assets/js/alone-in-a-crowded-room.json" starting-volume="0.75">
-          </plvylist-player>
-        </section>
-      </div>
+      <section class="listenBrainz">
+        <header>
+          <h2>Listening Habits</h2>
+          <p>I log as much of my listening habits as I can to <a href="https://listenbrainz.org/user/actionhamilton/">ListenBrainz</a> because I'm a <strong>nerd</strong>.</p>
+        </header>
+        <div>
+          <h3>Playing Now</h3>
+          <dl class="c-nowPlayingList">
+            <div class="c-nowPlayingList__item">
+              <dt>Artist</dt>
+              <dd>{{ nowPlaying.artist }}</dd>
+            </div>
+            <div class="c-nowPlayingList__item">
+              <dt>Track</dt>
+              <dd>{{ nowPlaying.song }}</dd>
+            </div>
+            <div class="c-nowPlayingList__item">
+              <dt>Release</dt>
+              <dd>{{ nowPlaying.release }}</dd>
+            </div>
+          </dl>
+        </div>
+        <div>
+          <h3>Listening History</h3>
+          <table>
+            <caption>Last 30 Plays</caption>
+            <thead>
+              <tr>
+                <th scope="col">Number</th>
+                <th scope="col">Artist</th>
+                <th scope="col">Track</th>
+                <th scope="col">Release</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for item in recentListens %}
+              <tr>
+                <th scope="row">{{ loop.index }}</th>
+                <td>{{ item.artist }}</td>
+                <td>{{ item.song }}</td>
+                <td>{{ item.release }}</td>
+              </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </section>
     </div>
   </main>
 {% endblock %}
-
-{#TODO#}
-{#Talk about Listenbrainz and display that API data#}
-{#Use 11ty fetch to cache results#}
 
 {% block style %}
   {{ super() }}
   <style>
     .central {
-      display: grid;
-      gap: var(--space-l-xl);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2xl-3xl);
       margin-block-start: var(--space-2xl);
     }
 
     @media (min-width: 70.25rem) {
       .central {
-        grid-template-columns: 1fr 1fr;
+        display: grid;
+        grid-template-columns: 1fr .75fr;
       }
     }
 
@@ -105,18 +138,13 @@
       display: flex;
       flex-wrap: wrap;
       gap: var(--space-l);
-      justify-content: space-evenly;
+      justify-content: space-around;
     }
 
     .c-band {
       align-items: center;
       display: flex;
       flex-direction: column;
-    }
-
-    .c-band__links {
-      display: flex;
-      gap: var(--space-2xs);
     }
 
     .c-band--troy .c-band__logo img {
@@ -137,7 +165,25 @@
 
     plvylist-player {
       display: block;
+      font-size: var(--step--1);
       margin-block: var(--space-s-m);
+    }
+
+    .c-nowPlayingList {
+      font-family: var(--code);
+    }
+
+    .c-nowPlayingList__item {
+      display: flex;
+      gap: 1ch;
+    }
+
+    .c-nowPlayingList__item dt {
+      font-weight: bold;
+    }
+
+    .c-nowPlayingList__item dt::after {
+      content: ":"
     }
   </style>
 {% endblock %}
