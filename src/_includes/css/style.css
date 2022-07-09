@@ -414,12 +414,28 @@ sup {
   font-family: var(--body);
 }
 
+.u-font--code {
+  font-family: var(--code);
+}
+
 .u-text--italic {
   font-style: italic;
 }
 
+.u-text--bold {
+  font-weight: bold;
+}
+
 .u-linked-image {
   display: inline-block;
+}
+
+.u-revertMargin--start {
+  margin-block-start: revert;
+}
+
+.u-revertMargin--end {
+  margin-block-end: revert;
 }
 
 .o-section--angled {

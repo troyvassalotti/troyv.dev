@@ -11,15 +11,15 @@ description: I occasionally write about things.
 {% block content %}
   <div class="wrapper constrain--more">
     <main id="main">
-      <div class="flow">
+      <section>
         <header class="u-text--center">
-          <h1>{{ title }}</h1>
+          <h1 class="u-revertMargin--start">{{ title }}</h1>
           <div class="rss">
             <span>{% include 'partials/rss.svg' %}</span>
             <span>Subscribe to the <a href="/feed.xml">RSS feed</a>.</span>
           </div>
         </header>
-        <nav aria-label="tags" class="flow">
+        <nav aria-label="tags" class="flow tags">
           <h2 class="h5">Tags ({{ collections.allTagsList.length }}):</h2>
           <ul role="list" class="c-tagCloud">
             {% for tag in collections.allTagsList | sort %}
@@ -30,7 +30,7 @@ description: I occasionally write about things.
             {% endfor %}
           </ul>
         </nav>
-      </div>
+      </section>
       <section class="posts">
         <ul role="list" class="c-postList flow">
           {% for post in collections.post | reverse %}
@@ -49,6 +49,10 @@ description: I occasionally write about things.
 {% block style %}
   {{ super() }}
   <style>
+    .tags {
+      margin-block: var(--space-l-xl);
+    }
+
     .c-tag {
       background-color: white; /* TODO */
       border-radius: 4px;
@@ -73,7 +77,7 @@ description: I occasionally write about things.
     }
 
     .c-postList {
-      --flow-space: var(--space-s);
+      --flow-space: var(--space-s-m);
     }
 
     .rss {

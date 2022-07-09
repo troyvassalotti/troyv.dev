@@ -53,51 +53,89 @@
           </section>
         </div>
       </div>
-      <section class="listenBrainz">
-        <header>
+      <section class="listenBrainz flow">
+        <header class="flow u-truncate">
           <h2>Listening Habits</h2>
-          <p>I log as much of my listening habits as I can to <a href="https://listenbrainz.org/user/actionhamilton/">ListenBrainz</a> because I'm a <strong>nerd</strong>.</p>
+          <p>I log as much of my listening habits as I can - including podcasts & music I'm playing or hearing - to <a href="https://listenbrainz.org/user/actionhamilton/">ListenBrainz</a> because I'm a <strong>nerd</strong>.</p>
         </header>
-        <div>
+        <div class="flow">
           <h3>Playing Now</h3>
-          <dl class="c-nowPlayingList">
-            <div class="c-nowPlayingList__item">
-              <dt>Artist</dt>
-              <dd>{{ nowPlaying.artist }}</dd>
-            </div>
-            <div class="c-nowPlayingList__item">
-              <dt>Track</dt>
-              <dd>{{ nowPlaying.song }}</dd>
-            </div>
-            <div class="c-nowPlayingList__item">
-              <dt>Release</dt>
-              <dd>{{ nowPlaying.release }}</dd>
-            </div>
-          </dl>
+          {% if nowPlaying %}
+            <dl class="c-nowPlayingList u-font--code">
+              <div class="c-nowPlayingList__item">
+                <dt>Artist</dt>
+                <dd>{{ nowPlaying.artist }}</dd>
+              </div>
+              <div class="c-nowPlayingList__item">
+                <dt>Track</dt>
+                <dd>{{ nowPlaying.song }}</dd>
+              </div>
+              <div class="c-nowPlayingList__item">
+                <dt>Release</dt>
+                <dd>{{ nowPlaying.release }}</dd>
+              </div>
+            </dl>
+          {% else %}
+            <p class="u-font--code">Silence (nothing)</p>
+          {% endif %}
         </div>
-        <div>
+        <div class="flow">
           <h3>Listening History</h3>
-          <table>
-            <caption>Last 30 Plays</caption>
-            <thead>
+          <div class="recentPlays o-tableWrapper">
+            <table class="u-font--code c-dataTable">
+              <caption class="u-text--caps u-text--bold">Last 30 Plays</caption>
+              <colgroup>
+                <col class="c-dataTable__col--number">
+                <col class="c-dataTable__col--artist">
+                <col class="c-dataTable__col--track">
+                <col class="c-dataTable__col--release">
+              </colgroup>
+              <thead class="c-dataTable__head">
               <tr>
-                <th scope="col">Number</th>
-                <th scope="col">Artist</th>
-                <th scope="col">Track</th>
-                <th scope="col">Release</th>
+                <th id="recent-number" scope="col">Number</th>
+                <th id="recent-artist" scope="col">Artist</th>
+                <th id="recent-track" scope="col">Track</th>
+                <th id="recent-release" scope="col">Release</th>
               </tr>
-            </thead>
-            <tbody>
-            {% for item in recentListens %}
+              </thead>
+              <tbody class="c-dataTable__body">
+              {% for item in recentListens %}
+                <tr>
+                  <th id="recent-order-{{ loop.index }}" headers="recent-number" scope="row">{{ loop.index }}</th>
+                  <td headers="recent-artist recent-order-{{ loop.index }}">{{ item.artist }}</td>
+                  <td headers="recent-track recent-order">{{ item.song }}</td>
+                  <td headers="recent-release recent-order">{{ item.release }}</td>
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+          </div>
+          <div class="topThisMonth o-tableWrapper">
+            <table class="u-font--code c-dataTable">
+              <caption class="u-text--caps u-text--bold">Top Artists This Month</caption>
+              <colgroup>
+                <col class="c-dataTable__col--number">
+                <col class="c-dataTable__col--artist">
+                <col class="c-dataTable__col--listens">
+              </colgroup>
+              <thead class="c-dataTable__head">
               <tr>
-                <th scope="row">{{ loop.index }}</th>
-                <td>{{ item.artist }}</td>
-                <td>{{ item.song }}</td>
-                <td>{{ item.release }}</td>
+                <th id="thisMonth-number" scope="col">Number</th>
+                <th id="thisMonth-artist" scope="col">Artist</th>
+                <th id="thisMonth-listens" scope="col">Listens</th>
               </tr>
-            {% endfor %}
-            </tbody>
-          </table>
+              </thead>
+              <tbody class="c-dataTable__body">
+              {% for item in topArtistsThisMonth %}
+                <tr>
+                  <th id="thisMonth-order-{{ loop.index }}" headers="thisMonth-number" scope="row">{{ loop.index }}</th>
+                  <td headers="thisMonth-artist thisMonth-order-{{ loop.index }}">{{ item.artist }}</td>
+                  <td headers="thisMonth-track thisMonth-order">{{ item.listens }}</td>
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
     </div>
@@ -169,8 +207,12 @@
       margin-block: var(--space-s-m);
     }
 
-    .c-nowPlayingList {
-      font-family: var(--code);
+    .listenBrainz {
+      margin-block-start: var(--space-xl-2xl);
+    }
+
+    .listenBrainz :is(h2, h3, h4) {
+      margin-block-start: revert;
     }
 
     .c-nowPlayingList__item {
@@ -184,6 +226,65 @@
 
     .c-nowPlayingList__item dt::after {
       content: ":"
+    }
+
+    .o-tableWrapper {
+      overflow: auto;
+    }
+
+    .c-dataTable {
+      border: 1px solid currentColor;
+      border-collapse: collapse;
+      inline-size: max-content;
+      table-layout: fixed;
+    }
+
+    .c-dataTable :is(caption, th) {
+      text-align: start;
+    }
+
+    .c-dataTable caption {
+      inline-size: fit-content;
+      position: sticky;
+      inset-inline-start: 0;
+      margin-block-end: var(--space-3xs);
+    }
+
+    .c-dataTable :is(th, td) {
+      max-inline-size: var(--colWidth, auto);
+      padding-block: var(--space-3xs);
+      padding-inline: var(--space-xs);
+    }
+
+    /*TODO*/
+    /* Use the colgroups to decide these widths instead */
+
+    .c-dataTable__head th:nth-of-type(1),
+    .c-dataTable__body tr th {
+      --colWidth: 10ch;
+    }
+
+    .c-dataTable__head th:nth-of-type(2),
+    .c-dataTable__body tr td:nth-of-type(1) {
+      --colWidth: 30ch;
+    }
+
+    .c-dataTable__head th:nth-of-type(3),
+    .c-dataTable__body tr td:nth-of-type(2) {
+      --colWidth: 45ch;
+    }
+
+    .c-dataTable__head th:nth-of-type(4),
+    .c-dataTable__body tr td:nth-of-type(3) {
+      --colWidth: 40ch;
+    }
+
+    .c-dataTable tr:nth-of-type(odd) {
+      background-color: #aaaaaa;
+    }
+
+    .c-dataTable tr:nth-of-type(even) {
+      background-color: #f1f1f1;
     }
   </style>
 {% endblock %}
