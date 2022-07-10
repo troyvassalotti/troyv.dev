@@ -15,3 +15,5 @@ dist
 .netlify
 netlify/functions/brew/**
 !netlify/functions/brew/index.js
+netlify/functions/music/**
+!netlify/functions/music/index.js

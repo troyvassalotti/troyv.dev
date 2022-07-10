@@ -12,6 +12,13 @@ publish = "_site"
   NODE_VERSION = "16"
 
 [[redirects]]
+from = "/music/"
+to = "/.netlify/functions/music"
+status = 200
+force = true
+_generated_by_eleventy_serverless = "music"
+
+[[redirects]]
 from = "/brew/"
 to = "/.netlify/functions/brew"
 status = 200

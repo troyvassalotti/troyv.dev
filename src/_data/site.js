@@ -5,4 +5,5 @@
  */
 module.exports = {
   environment: process.env.ELEVENTY_ENV,
+  serverless: process.env.ELEVENTY_SERVERLESS,
 };

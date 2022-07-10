@@ -1,25 +1,10 @@
----json
-{
-  "pagination": {
-    "data": "collections",
-    "size": 1,
-    "alias": "tag",
-    "filter": ["all", "post", "allTagsList"]
-  },
-  "eleventyComputed": {
-    "title": "Tagged {{ tag }}",
-    "permalink": "/tags/{{ tag | slugify }}/"
-  }
-}
----
-
 {% extends 'layouts/base.njk' %}
 
 {% block content %}
   <main id="main">
     <div class="wrapper constrain--more flow">
       <header class="u-text--center">
-        <h1>Posts about “{{ tag }}”</h1>
+        <h1 class="u-revertMargin--start">Posts about “{{ tag | capitalize }}”</h1>
       </header>
       <section class="posts">
         <ol role="list" class="c-postList flow">

@@ -1,5 +1,13 @@
 {% extends 'layouts/base.njk' %}
 
+{% if site.serverless == "true" %}
+  {% block script %}
+    {{ super() }}
+    <script type="module" src="/assets/js/components/data-table.js"></script>
+    <script type="module" src="/assets/js/components/plvylist-player.js"></script>
+  {% endblock %}
+{% endif %}
+
 {% block content %}
   <main id="main">
     <div class="wrapper constrain--less">
@@ -8,37 +16,37 @@
           <header class="flow header">
             <h1 class="title u-text--caps u-text--base">{{ title }}</h1>
             <h2 class="callout u-line-height--less">Guitarist, drummer, singer-songwriter.</h2>
-            <p>Check out my musical projects - <em>Front Royal</em> and <em>troy.</em> - below.</p>
+            <p>When I'm not coding, I'm probably writing, playing, or recording music. I've been performing in bands since high school, and
+              you can check out my current projects below.</p>
           </header>
-          <section class="o-bands">
-            <div class="c-band c-band--frontRoyal">
-              <div class="c-band__logo">
-                <a class="u-linked-image" href="https://www.frontroyalband.com/">
-                  <picture>
-                    <source srcset="{{ metadata.cloudinary }}/c_scale,f_auto,q_auto:eco,w_400/v1646349103/blog/front-royal-logo-white_400x240_fharjl.webp" media="(prefers-color-scheme: light)">
-                    <img
-                      src="{{ metadata.cloudinary }}/c_scale,f_auto,q_auto:eco,w_400/v1646349103/blog/FR_full_res_drh6ez.webp"
-                      alt="Front Royal"
-                      width="400"
-                      height="240"
-                      loading="lazy"
-                      decoding="async" />
-                  </picture>
-                </a>
-              </div>
+          <section class="o-bands flow">
+            <div class="c-band c-band--frontRoyal flow">
+              <h3>Front Royal</h3>
+              <dl class="c-dataList">
+                {% for key, value in frontRoyal.meta %}
+                  <div class="c-dataList__item">
+                    <dt>{{ key }}</dt>
+                    <dd>{{ value }}</dd>
+                  </div>
+                {% endfor %}
+              </dl>
+              {% for link in frontRoyal.social %}
+                <a href="{{ link.href }}">{% include 'partials/' + link.img %}</a>
+              {% endfor %}
             </div>
-            <div class="c-band c-band--troy">
-              <div class="c-band__logo">
-                <a class="u-linked-image" href="https://hyperfollow.com/troyalllowercase">
-                  <img
-                    src="{{ metadata.cloudinary }}/c_scale,f_auto,q_auto:eco,w_300/v1646349104/blog/me-on-set_gkrhf7.webp"
-                    alt="troy"
-                    width="300"
-                    height="293"
-                    loading="lazy"
-                    decoding="async" />
-                </a>
-              </div>
+            <div class="c-band c-band--troy flow">
+              <h3>troy.</h3>
+              <dl class="c-dataList">
+                {% for key, value in troyalllowercase.meta %}
+                  <div class="c-dataList__item">
+                    <dt>{{ key }}</dt>
+                    <dd>{{ value }}</dd>
+                  </div>
+                {% endfor %}
+              </dl>
+              {% for link in troyalllowercase.social %}
+                <a href="{{ link.href }}">{% include 'partials/' + link.img %}</a>
+              {% endfor %}
             </div>
           </section>
         </div>
@@ -48,7 +56,7 @@
               <h2 class="u-text--base u-text--caps title">You can stream here</h2>
               <p class="u-text--smaller u-text--italic">Psst... <a href="https://www.npmjs.com/package/plvylist">I made this player</a>.</p>
             </header>
-            <plvylist-player tracks="/assets/js/alone-in-a-crowded-room.json" starting-volume="0.75">
+            <plvylist-player tracks="/assets/js/alone-in-a-crowded-room.json">
             </plvylist-player>
           </section>
         </div>
@@ -56,21 +64,23 @@
       <section class="listenBrainz flow">
         <header class="flow u-truncate">
           <h2>Listening Habits</h2>
-          <p>I log as much of my listening habits as I can - including podcasts & music I'm playing or hearing - to <a href="https://listenbrainz.org/user/actionhamilton/">ListenBrainz</a> because I'm a <strong>nerd</strong>.</p>
+          <p>I keep track of my listening habits in ListenBrainz because I'm a <strong>nerd</strong>. All that data is public on <a
+              href="https://listenbrainz.org/user/actionhamilton/">my ListenBrainz profile</a>, but I've chosen to display a few specific
+            metrics here. Cool, right?</p>
         </header>
         <div class="flow">
           <h3>Playing Now</h3>
           {% if nowPlaying %}
-            <dl class="c-nowPlayingList u-font--code">
-              <div class="c-nowPlayingList__item">
+            <dl class="c-dataList u-font--code">
+              <div class="c-dataList__item">
                 <dt>Artist</dt>
                 <dd>{{ nowPlaying.artist }}</dd>
               </div>
-              <div class="c-nowPlayingList__item">
+              <div class="c-dataList__item">
                 <dt>Track</dt>
                 <dd>{{ nowPlaying.song }}</dd>
               </div>
-              <div class="c-nowPlayingList__item">
+              <div class="c-dataList__item">
                 <dt>Release</dt>
                 <dd>{{ nowPlaying.release }}</dd>
               </div>
@@ -79,63 +89,16 @@
             <p class="u-font--code">Silence (nothing)</p>
           {% endif %}
         </div>
-        <div class="flow">
+        <div class="flow listeningHistory">
           <h3>Listening History</h3>
-          <div class="recentPlays o-tableWrapper">
-            <table class="u-font--code c-dataTable">
-              <caption class="u-text--caps u-text--bold">Last 30 Plays</caption>
-              <colgroup>
-                <col class="c-dataTable__col--number">
-                <col class="c-dataTable__col--artist">
-                <col class="c-dataTable__col--track">
-                <col class="c-dataTable__col--release">
-              </colgroup>
-              <thead class="c-dataTable__head">
-              <tr>
-                <th id="recent-number" scope="col">Number</th>
-                <th id="recent-artist" scope="col">Artist</th>
-                <th id="recent-track" scope="col">Track</th>
-                <th id="recent-release" scope="col">Release</th>
-              </tr>
-              </thead>
-              <tbody class="c-dataTable__body">
-              {% for item in recentListens %}
-                <tr>
-                  <th id="recent-order-{{ loop.index }}" headers="recent-number" scope="row">{{ loop.index }}</th>
-                  <td headers="recent-artist recent-order-{{ loop.index }}">{{ item.artist }}</td>
-                  <td headers="recent-track recent-order">{{ item.song }}</td>
-                  <td headers="recent-release recent-order">{{ item.release }}</td>
-                </tr>
-              {% endfor %}
-              </tbody>
-            </table>
-          </div>
-          <div class="topThisMonth o-tableWrapper">
-            <table class="u-font--code c-dataTable">
-              <caption class="u-text--caps u-text--bold">Top Artists This Month</caption>
-              <colgroup>
-                <col class="c-dataTable__col--number">
-                <col class="c-dataTable__col--artist">
-                <col class="c-dataTable__col--listens">
-              </colgroup>
-              <thead class="c-dataTable__head">
-              <tr>
-                <th id="thisMonth-number" scope="col">Number</th>
-                <th id="thisMonth-artist" scope="col">Artist</th>
-                <th id="thisMonth-listens" scope="col">Listens</th>
-              </tr>
-              </thead>
-              <tbody class="c-dataTable__body">
-              {% for item in topArtistsThisMonth %}
-                <tr>
-                  <th id="thisMonth-order-{{ loop.index }}" headers="thisMonth-number" scope="row">{{ loop.index }}</th>
-                  <td headers="thisMonth-artist thisMonth-order-{{ loop.index }}">{{ item.artist }}</td>
-                  <td headers="thisMonth-track thisMonth-order">{{ item.listens }}</td>
-                </tr>
-              {% endfor %}
-              </tbody>
-            </table>
-          </div>
+          <data-table
+            caption="Last 30 Plays"
+            headers="Number Artist Track Release"
+            data='{{ recentListens | dump }}'></data-table>
+          <data-table
+            caption="Top Artists This Month"
+            headers="Number Artist Listens"
+            data='{{ topArtistsThisMonth | dump }}'></data-table>
         </div>
       </section>
     </div>
@@ -159,10 +122,6 @@
       }
     }
 
-    .o-left {
-      --flow-space: var(--space-l-xl);
-    }
-
     .o-left .header {
       --flow-space: var(--space-s);
     }
@@ -172,33 +131,16 @@
     }
 
     .o-bands {
-      align-items: start;
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-l);
-      justify-content: space-around;
+      --flow-space: var(--space-s);
     }
 
-    .c-band {
-      align-items: center;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .c-band--troy .c-band__logo img {
-      border-radius: 50%;
-      object-fit: cover;
-      inline-size: auto;
-      max-block-size: 200px;
-    }
-
-    .c-band__links svg {
+    .c-band svg {
       max-inline-size: 48px;
     }
 
-    .plvylist {
-      inset-block-start: 0;
-      position: sticky;
+    .c-band a {
+      display: block;
+      inline-size: fit-content;
     }
 
     plvylist-player {
@@ -208,83 +150,28 @@
     }
 
     .listenBrainz {
-      margin-block-start: var(--space-xl-2xl);
+      margin-block-start: var(--space-2xl-3xl);
     }
 
     .listenBrainz :is(h2, h3, h4) {
       margin-block-start: revert;
     }
 
-    .c-nowPlayingList__item {
+    .listeningHistory {
+      --flow-space: var(--space-m-l);
+    }
+
+    .c-dataList__item {
       display: flex;
       gap: 1ch;
     }
 
-    .c-nowPlayingList__item dt {
+    .c-dataList__item dt {
       font-weight: bold;
     }
 
-    .c-nowPlayingList__item dt::after {
+    .c-dataList__item dt::after {
       content: ":"
-    }
-
-    .o-tableWrapper {
-      overflow: auto;
-    }
-
-    .c-dataTable {
-      border: 1px solid currentColor;
-      border-collapse: collapse;
-      inline-size: max-content;
-      table-layout: fixed;
-    }
-
-    .c-dataTable :is(caption, th) {
-      text-align: start;
-    }
-
-    .c-dataTable caption {
-      inline-size: fit-content;
-      position: sticky;
-      inset-inline-start: 0;
-      margin-block-end: var(--space-3xs);
-    }
-
-    .c-dataTable :is(th, td) {
-      max-inline-size: var(--colWidth, auto);
-      padding-block: var(--space-3xs);
-      padding-inline: var(--space-xs);
-    }
-
-    /*TODO*/
-    /* Use the colgroups to decide these widths instead */
-
-    .c-dataTable__head th:nth-of-type(1),
-    .c-dataTable__body tr th {
-      --colWidth: 10ch;
-    }
-
-    .c-dataTable__head th:nth-of-type(2),
-    .c-dataTable__body tr td:nth-of-type(1) {
-      --colWidth: 30ch;
-    }
-
-    .c-dataTable__head th:nth-of-type(3),
-    .c-dataTable__body tr td:nth-of-type(2) {
-      --colWidth: 45ch;
-    }
-
-    .c-dataTable__head th:nth-of-type(4),
-    .c-dataTable__body tr td:nth-of-type(3) {
-      --colWidth: 40ch;
-    }
-
-    .c-dataTable tr:nth-of-type(odd) {
-      background-color: #aaaaaa;
-    }
-
-    .c-dataTable tr:nth-of-type(even) {
-      background-color: #f1f1f1;
     }
   </style>
 {% endblock %}

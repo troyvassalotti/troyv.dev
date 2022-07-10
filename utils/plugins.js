@@ -48,12 +48,20 @@ module.exports = {
       domain: "https://www.troyv.dev",
     },
   },
-  serverless: {
+  serverlessBrew: {
     name: EleventyServerlessBundlerPlugin,
     options: {
       name: "brew",
-      functionsDir: "./netlify/functions/"
-    }
+      functionsDir: "./netlify/functions/",
+    },
+  },
+  serverlessMusic: {
+    name: EleventyServerlessBundlerPlugin,
+    options: {
+      name: "music",
+      functionsDir: "./netlify/functions/",
+      copy: [{ from: ".cache", to: "_cache" }],
+    },
   },
   render: {
     name: EleventyRenderPlugin,

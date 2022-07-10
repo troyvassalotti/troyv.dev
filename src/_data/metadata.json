@@ -24,5 +24,15 @@
       "name": "CodePen",
       "url": "https://codepen.io/troyvassalotti"
     }
-  ]
+  ],
+  "rss": {
+    "title": "Troy Vassalotti | troyv.dev",
+    "subtitle": "Troy writes about web development and being a person.",
+    "url": "https://www.troyv.dev/",
+    "feedUrl": "https://www.troyv.dev/feed.xml",
+    "author": {
+      "name": "Troy Vassalotti",
+      "email": "fqa560de@anonaddy.me"
+    }
+  }
 }
