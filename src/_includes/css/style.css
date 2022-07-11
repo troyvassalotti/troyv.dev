@@ -378,6 +378,17 @@ sup {
   margin-block-start: var(--flow-space, var(--space-s));
 }
 
+.c-link--icon {
+  align-items: center;
+  display: inline-flex;
+  gap: 0.5em;
+}
+
+.c-link--icon svg {
+  display: inline-block;
+  max-inline-size: 28px;
+}
+
 .u-text--smaller {
   font-size: var(--step--1);
 }

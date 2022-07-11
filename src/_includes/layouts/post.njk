@@ -8,8 +8,7 @@
           <h1 class="postTitle p-name">{{ title }}</h1>
           <p class="postSummary p-summary u-text--smaller">{{ description }}</p>
           <p class="postMeta u-text--smaller">
-            <span class="dt-published">{{ page.date | dateString }}</span> |
-            <span>Reading Time: {{ content | timeToRead }}</span>
+            <span class="dt-published">{{ page.date | dateString }}</span>
           </p>
         </header>
         <div class="post flow u-truncate e-content">{{ content | safe }}</div>

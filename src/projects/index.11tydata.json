@@ -1,0 +1,57 @@
+{
+  "projects": [
+    {
+      "name": "Abandoned Website",
+      "url": "https://abandoned-website.netlify.app/",
+      "repository": "https://github.com/troyvassalotti/abandoned-website"
+    },
+    {
+      "name": "NotSocial",
+      "url": "https://pang.netlify.app/",
+      "repository": "https://github.com/troyvassalotti/pang"
+    },
+    {
+      "name": "Express Cats",
+      "url": "https://cats.onrender.com/",
+      "repository": "https://github.com/troyvassalotti/express-cats"
+    },
+    {
+      "name": "I Don't Have A Podcast",
+      "url": "https://idonthaveapodcast.netlify.app/",
+      "repository": "https://github.com/troyvassalotti/idonthaveapodcast"
+    },
+    {
+      "name": "This is a Band",
+      "url": "https://thisisa.band/",
+      "repository": "https://github.com/troyvassalotti/thisisaband-site"
+    },
+    {
+      "name": "Hello Worldvue",
+      "url": "https://helloworldvue.netlify.app/",
+      "repository": "https://github.com/troyvassalotti/hello-worldvue/"
+    },
+    {
+      "name": ".docx to .html",
+      "url": "https://docx-to-html.netlify.app/",
+      "repository": "https://github.com/troyvassalotti/docx-to-html"
+    },
+    {
+      "name": "Vuedoku",
+      "url": "https://vuedoku.netlify.app/",
+      "repository": "https://github.com/troyvassalotti/sudoku"
+    },
+    {
+      "name": "BPM Finder",
+      "url": "/bpm/"
+    },
+    {
+      "name": "Guitar Tuner",
+      "url": "/tuner/"
+    },
+    {
+      "name": "Gonk",
+      "url": "https://www.gonk.app/",
+      "repository": "https://github.com/troyvassalotti/gonk"
+    }
+  ]
+}

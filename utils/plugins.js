@@ -4,13 +4,15 @@
 
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
-const sitemap = require("@quasibit/eleventy-plugin-sitemap");
-const timeToRead = require("eleventy-plugin-time-to-read");
 const embedYouTube = require("eleventy-plugin-youtube-embed");
 const inclusiveLangPlugin = require("@11ty/eleventy-plugin-inclusive-language");
 const pluginWebmentions = require("@chrisburnell/eleventy-cache-webmentions");
 const addWebComponentDefinitions = require("eleventy-plugin-add-web-component-definitions");
-const { EleventyServerlessBundlerPlugin, EleventyRenderPlugin } = require("@11ty/eleventy");
+const {
+  EleventyServerlessBundlerPlugin,
+  EleventyRenderPlugin,
+  EleventyEdgePlugin,
+} = require("@11ty/eleventy");
 
 module.exports = {
   highlighting: {
@@ -22,9 +24,6 @@ module.exports = {
   inclusiveLanguage: {
     name: inclusiveLangPlugin,
   },
-  readingTime: {
-    name: timeToRead,
-  },
   youTubeEmbeds: {
     name: embedYouTube,
   },
@@ -32,14 +31,6 @@ module.exports = {
     name: addWebComponentDefinitions,
     options: {
       path: (tag) => `/assets/js/components/${tag}.js`,
-    },
-  },
-  siteMap: {
-    name: sitemap,
-    options: {
-      sitemap: {
-        hostname: "https://www.troyv.dev",
-      },
     },
   },
   webmentions: {
@@ -55,15 +46,18 @@ module.exports = {
       functionsDir: "./netlify/functions/",
     },
   },
-  serverlessMusic: {
-    name: EleventyServerlessBundlerPlugin,
-    options: {
-      name: "music",
-      functionsDir: "./netlify/functions/",
-      copy: [{ from: ".cache", to: "_cache" }],
-    },
-  },
+  // serverlessMusic: {
+  //   name: EleventyServerlessBundlerPlugin,
+  //   options: {
+  //     name: "music",
+  //     functionsDir: "./netlify/functions/",
+  //     copy: [{ from: ".cache", to: "_cache" }],
+  //   },
+  // },
   render: {
     name: EleventyRenderPlugin,
+  },
+  edge: {
+    name: EleventyEdgePlugin,
   },
 };

@@ -2,7 +2,6 @@
  * @file Site configuration
  * Most site features are configured in /utils/
  */
-const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 
 const utilsDir = `${process.cwd()}/utils`;
@@ -21,7 +20,7 @@ module.exports = function (eleventyConfig) {
    * @version 2.0.0
    * @link https://www.11ty.dev/docs/copy/#passthrough-during-serve
    */
-  // eleventyConfig.setServerPassthroughCopyBehavior("copy");
+  eleventyConfig.setServerPassthroughCopyBehavior("copy");
 
   // Passthroughs
   eleventyConfig
@@ -77,20 +76,13 @@ module.exports = function (eleventyConfig) {
    * @version 2.0.0
    * @link https://www.11ty.dev/docs/languages/markdown/#optional-amend-the-library-instance
    */
-  // eleventyConfig.amendLibrary('md', mdLib => mdLib.use(markdownItAnchor, {
-  //     permalink: markdownItAnchor.permalink.headerLink()
-  //   })
-  // )
-  eleventyConfig.setLibrary(
-    "md",
-    markdownIt({
-      html: true,
-      breaks: true,
-      linkify: true,
-    }).use(markdownItAnchor, {
+  eleventyConfig.amendLibrary("md", (mdLib) =>
+    mdLib.use(markdownItAnchor, {
       permalink: markdownItAnchor.permalink.headerLink(),
     })
   );
+
+  eleventyConfig.dataFilterSelectors.add("page");
 
   return {
     htmlTemplateEngine: "njk",

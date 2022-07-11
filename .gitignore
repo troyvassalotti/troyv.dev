@@ -18,3 +18,6 @@ netlify/functions/brew/**
 !netlify/functions/brew/index.js
 netlify/functions/music/**
 !netlify/functions/music/index.js
+
+# Eleventy Edge Build Data files
+netlify/edge-functions/_generated

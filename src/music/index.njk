@@ -1,14 +1,11 @@
 {% extends 'layouts/base.njk' %}
 
-{% if site.serverless == "true" %}
-  {% block script %}
-    {{ super() }}
-    <script type="module" src="/assets/js/components/data-table.js"></script>
-    <script type="module" src="/assets/js/components/plvylist-player.js"></script>
-  {% endblock %}
-{% endif %}
-
 {% block content %}
+  {% edge %}
+    <pre>
+      {{ eleventy | dump(2) }}
+      </pre>
+  {% endedge %}
   <main id="main">
     <div class="wrapper constrain--less">
       <div class="central">

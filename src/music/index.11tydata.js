@@ -104,9 +104,9 @@ module.exports = async function () {
   return {
     title: "Music",
     description: "Music is one of my passions. Check out all my musical projects here.",
-    permalink: {
-      music: "/music/",
-    },
+    // permalink: {
+    //   music: "/music/",
+    // },
     frontRoyal: {
       meta: {
         "Instruments": "Guitar, backing vocals",
