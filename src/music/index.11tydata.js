@@ -133,8 +133,8 @@ module.exports = async function () {
         },
       ],
     },
-    nowPlaying: await getNowPlaying(),
-    recentListens: await getMostRecentListens(),
-    topArtistsThisMonth: await getTopArtists(),
+    // nowPlaying: await getNowPlaying(),
+    // recentListens: await getMostRecentListens(),
+    // topArtistsThisMonth: await getTopArtists(),
   };
 };

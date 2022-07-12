@@ -1,11 +1,6 @@
 {% extends 'layouts/base.njk' %}
 
 {% block content %}
-  {% edge %}
-    <pre>
-      {{ eleventy | dump(2) }}
-      </pre>
-  {% endedge %}
   <main id="main">
     <div class="wrapper constrain--less">
       <div class="central">
@@ -88,14 +83,14 @@
         </div>
         <div class="flow listeningHistory">
           <h3>Listening History</h3>
-          <data-table
+          {#<data-table
             caption="Last 30 Plays"
             headers="Number Artist Track Release"
             data='{{ recentListens | dump }}'></data-table>
           <data-table
             caption="Top Artists This Month"
             headers="Number Artist Listens"
-            data='{{ topArtistsThisMonth | dump }}'></data-table>
+            data='{{ topArtistsThisMonth | dump }}'></data-table>#}
         </div>
       </section>
     </div>
