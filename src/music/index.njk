@@ -58,17 +58,17 @@
           </section>
         </div>
       </div>
-        <section class="listenBrainz flow">
-          <header class="flow u-truncate">
-            <h2>Listening Habits</h2>
-            <p>I keep track of my listening habits in ListenBrainz because I'm a <strong>nerd</strong>. All that data is public on <a
-                href="https://listenbrainz.org/user/actionhamilton/">my ListenBrainz profile</a>, but I've chosen to display a few specific
-              metrics here. Cool, right?</p>
-          </header>
+      <section class="listenBrainz flow">
+        <header class="flow u-truncate">
+          <h2>Listening Habits</h2>
+          <p>I keep track of my listening habits in ListenBrainz because I'm a <strong>nerd</strong>. All that data is public on <a
+              href="https://listenbrainz.org/user/actionhamilton/">my ListenBrainz profile</a>, but I've chosen to display a few specific
+            metrics here. Cool, right?</p>
+        </header>
+        {% edge %}
           <div class="flow">
             <h3>Playing Now</h3>
-            {% edge %}
-              {% if nowPlaying %}
+            {% if nowPlaying %}
               <dl class="c-dataList u-font--code">
                 <div class="c-dataList__item">
                   <dt>Artist</dt>
@@ -86,11 +86,9 @@
             {% else %}
               <p class="u-font--code">Silence (nothing)</p>
             {% endif %}
-            {% endedge %}
           </div>
           <div class="flow listeningHistory">
             <h3>Listening History</h3>
-            {% edge %}
             <data-table
               caption="Last 30 Plays"
               headers="Number Artist Track Release"
@@ -99,9 +97,9 @@
               caption="Top Artists This Month"
               headers="Number Artist Listens"
               data='{{ topArtistsThisMonth | dump }}'></data-table>
-            {% endedge %}
           </div>
-        </section>
+        {% endedge %}
+      </section>
     </div>
   </main>
 {% endblock %}
