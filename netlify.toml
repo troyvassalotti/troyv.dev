@@ -26,7 +26,15 @@ status = 301
 force = true
 
 [[edge_functions]]
-function = "eleventy-edge"
+function = "now-playing"
+path = "/music/"
+
+[[edge_functions]]
+function = "recent-listens"
+path = "/music/"
+
+[[edge_functions]]
+function = "top-artists"
 path = "/music/"
 
 [[headers]]
