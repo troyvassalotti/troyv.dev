@@ -7,7 +7,11 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 const embedYouTube = require("eleventy-plugin-youtube-embed");
 const inclusiveLangPlugin = require("@11ty/eleventy-plugin-inclusive-language");
 const pluginWebmentions = require("@chrisburnell/eleventy-cache-webmentions");
-const { EleventyServerlessBundlerPlugin, EleventyRenderPlugin } = require("@11ty/eleventy");
+const {
+  EleventyServerlessBundlerPlugin,
+  EleventyRenderPlugin,
+  EleventyEdgePlugin,
+} = require("@11ty/eleventy");
 
 module.exports = {
   highlighting: {
@@ -28,27 +32,33 @@ module.exports = {
       domain: "https://www.troyv.dev",
     },
   },
-  serverlessBrew: {
+  teapot: {
     name: EleventyServerlessBundlerPlugin,
     options: {
-      name: "brew",
+      name: "teapot",
       functionsDir: "./netlify/functions/",
-      // redirects: "netlify-toml-builders",
     },
   },
-  serverlessMusic: {
+  dynamic: {
     name: EleventyServerlessBundlerPlugin,
     options: {
-      name: "music",
+      name: "dynamic",
       functionsDir: "./netlify/functions/",
+    },
+  },
+  onDemandBuilders: {
+    name: EleventyServerlessBundlerPlugin,
+    options: {
+      name: "ondemand",
+      functionsDir: "./netlify/functions/",
+      redirects: "netlify-toml-builders",
       copy: [{ from: ".cache", to: "_cache" }],
-      // redirects: "netlify-toml-builders",
     },
   },
   render: {
     name: EleventyRenderPlugin,
   },
-  /*edge: {
+  edge: {
     name: EleventyEdgePlugin,
-  },*/
+  },
 };

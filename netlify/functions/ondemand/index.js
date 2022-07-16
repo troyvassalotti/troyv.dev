@@ -5,7 +5,7 @@ const { EleventyServerless } = require("@11ty/eleventy");
 require("./eleventy-bundler-modules.js");
 
 async function handler(event) {
-  let elev = new EleventyServerless("music", {
+  let elev = new EleventyServerless("ondemand", {
     path: new URL(event.rawUrl).pathname,
     query: event.queryStringParameters,
     functionsDir: "./netlify/functions/",
@@ -20,6 +20,7 @@ async function handler(event) {
         "Content-Type": "text/html; charset=UTF-8",
       },
       body: page.content,
+      ttl: 1800,
     };
   } catch (error) {
     // Only console log for matching serverless paths
@@ -41,6 +42,5 @@ async function handler(event) {
   }
 }
 
-exports.handler = handler;
-// const { builder } = require("@netlify/functions");
-// exports.handler = builder(handler);
+const { builder } = require("@netlify/functions");
+exports.handler = builder(handler);

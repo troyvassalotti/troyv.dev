@@ -1,16 +1,10 @@
 import { EleventyEdge } from "eleventy:edge";
 import precompiledAppData from "./_generated/eleventy-edge-app-data.js";
 
-const token = Deno.env.get("LISTENBRAINZ_TOKEN");
-
-const listenBrainzEndpoint = "https://api.listenbrainz.org/1";
-const headers = new Headers();
-headers.append("Authorization", "Token " + token);
-
-async function getNowPlaying() {
+async function getNowPlaying(api, auth) {
   try {
-    const response = await fetch(`${listenBrainzEndpoint}/user/actionhamilton/playing-now`, {
-      headers,
+    const response = await fetch(`${api}/user/actionhamilton/playing-now`, {
+      headers: auth,
     });
 
     const data = await response.json();
@@ -27,6 +21,10 @@ async function getNowPlaying() {
 
 export default async (request, context) => {
   try {
+    const listenBrainzEndpoint = "https://api.listenbrainz.org/1";
+    const headers = new Headers();
+    headers.append("Authorization", "Token " + Deno.env.get("LISTENBRAINZ_TOKEN"));
+
     let edge = new EleventyEdge("edge", {
       request,
       context,
@@ -36,7 +34,7 @@ export default async (request, context) => {
       cookies: [],
     });
 
-    const nowPlaying = await getNowPlaying();
+    const nowPlaying = await getNowPlaying(listenBrainzEndpoint, headers);
 
     edge.config((eleventyConfig) => {
       eleventyConfig.addGlobalData("nowPlaying", nowPlaying);

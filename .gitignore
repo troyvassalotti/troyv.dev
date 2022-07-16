@@ -14,10 +14,12 @@ _cache
 
 # CMS/Hosting
 .netlify
-netlify/functions/brew/**
-!netlify/functions/brew/index.js
-netlify/functions/music/**
-!netlify/functions/music/index.js
+netlify/functions/teapot/**
+!netlify/functions/teapot/index.js
+netlify/functions/dynamic/**
+!netlify/functions/dynamic/index.js
+netlify/functions/ondemand/**
+!netlify/functions/ondemand/index.js
 
 # Eleventy Edge Build Data files
 netlify/edge-functions/_generated

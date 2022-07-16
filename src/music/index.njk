@@ -3,7 +3,6 @@
 {% block script %}
   {{ super() }}
   <script type="module">
-    import "/assets/js/data-table.js"
     import "/assets/js/plvylist-player.js"
   </script>
 {% endblock %}
@@ -15,13 +14,36 @@
         <div class="o-left flow u-truncate">
           <header class="flow header">
             <h1 class="title u-text--caps u-text--base">{{ title }}</h1>
+            <div class="nowPlaying flow u-text--smallest">
+              <p class="u-font--headings u-text--bold">{% include 'partials/music.svg' %}Now Playing</p>
+              {% edge %}
+                {% if nowPlaying %}
+                  <dl class="c-dataList u-font--code">
+                    <div class="c-dataList__item">
+                      <dt>Artist</dt>
+                      <dd>{{ nowPlaying.artist }}</dd>
+                    </div>
+                    <div class="c-dataList__item">
+                      <dt>Track</dt>
+                      <dd>{{ nowPlaying.song }}</dd>
+                    </div>
+                    <div class="c-dataList__item">
+                      <dt>Release</dt>
+                      <dd>{{ nowPlaying.release }}</dd>
+                    </div>
+                  </dl>
+                {% else %}
+                  <p class="u-font--code">Silence (nothing)</p>
+                {% endif %}
+              {% endedge %}
+            </div>
             <h2 class="callout u-line-height--less">Guitarist, drummer, singer-songwriter.</h2>
-            <p>When I'm not coding, I'm probably writing, playing, or recording music. I've been performing in bands since high school, and
-              you can check out my current projects below.</p>
+            <p>When I'm not coding, I'm probably writing, playing, recording, or listening to music. Check out my projects below, or take a deep dive into my
+              <a href="/music/stats/">listening habits</a>.</p>
           </header>
           <section class="o-bands flow">
             <div class="c-band c-band--frontRoyal flow">
-              <h3>Front Royal</h3>
+              <h3 class="h4">Front Royal</h3>
               <dl class="c-dataList">
                 {% for key, value in frontRoyal.meta %}
                   <div class="c-dataList__item">
@@ -35,7 +57,7 @@
               {% endfor %}
             </div>
             <div class="c-band c-band--troy flow">
-              <h3>troy.</h3>
+              <h3 class="h4">troy.</h3>
               <dl class="c-dataList">
                 {% for key, value in troyalllowercase.meta %}
                   <div class="c-dataList__item">
@@ -61,42 +83,6 @@
           </section>
         </div>
       </div>
-      <section class="listenBrainz flow">
-        <header class="flow u-truncate">
-          <h2>Listening Habits</h2>
-          <p>I keep track of my listening habits in ListenBrainz because I'm a <strong>nerd</strong>. All that data is public on <a
-              href="https://listenbrainz.org/user/actionhamilton/">my ListenBrainz profile</a>, but I've chosen to display a few specific
-            metrics here. Cool, right?</p>
-        </header>
-        <div class="flow">
-          <h3>Playing Now</h3>
-          {% if nowPlaying %}
-            <dl class="c-dataList u-font--code">
-              <div class="c-dataList__item">
-                <dt>Artist</dt>
-                <dd>{{ nowPlaying.artist }}</dd>
-              </div>
-              <div class="c-dataList__item">
-                <dt>Track</dt>
-                <dd>{{ nowPlaying.song }}</dd>
-              </div>
-              <div class="c-dataList__item">
-                <dt>Release</dt>
-                <dd>{{ nowPlaying.release }}</dd>
-              </div>
-            </dl>
-          {% else %}
-            <p class="u-font--code">Silence (nothing)</p>
-          {% endif %}
-        </div>
-        <div class="flow listeningHistory">
-          <h3>Listening History</h3>
-          <data-table
-            caption="Last 30 Plays"
-            headers="Number Artist Track Release"
-            data='{{ mostRecentListens | dump }}'></data-table>
-        </div>
-      </section>
     </div>
   </main>
 {% endblock %}
@@ -104,11 +90,21 @@
 {% block style %}
   {{ super() }}
   <style>
+    .nowPlaying {
+      --flow-space: var(--space-3xs);
+    }
+
+    .nowPlaying svg {
+      display: inline-block;
+      margin-inline-end: .5ch;
+      vertical-align: middle;
+    }
+
     .central {
       display: flex;
       flex-direction: column;
       gap: var(--space-2xl-3xl);
-      margin-block-start: var(--space-2xl);
+      margin-block: var(--space-m-l);
     }
 
     @media (min-width: 70.25rem) {
@@ -145,21 +141,9 @@
       margin-block: var(--space-s-m);
     }
 
-    .listenBrainz {
-      margin-block-start: var(--space-2xl-3xl);
-    }
-
-    .listenBrainz :is(h2, h3, h4) {
-      margin-block-start: revert;
-    }
-
-    .listeningHistory {
-      --flow-space: var(--space-m-l);
-    }
-
     .c-dataList__item {
       display: flex;
-      gap: 1ch;
+      gap: .5ch;
     }
 
     .c-dataList__item dt {

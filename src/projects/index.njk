@@ -1,25 +1,21 @@
 ---
 layout: base
 title: Projects
+description: Stuff I've made.
 ---
 
 <h1 class="u-revertMargin--start">{{ title }}</h1>
-<ul role="list">
+<ul role="list" class="flow">
   {% for project in projects | reverse %}
     <li>
-      <article>
-        <h2>{{ project.name }}</h2>
-        <ul>
-          {% if project.url %}
-            <li>See the live site: <a href="{{ project.url }}">{{ project.url }}</a></li>
-          {% endif %}
-          {% if project.repository %}
-            <li>
-              <a class="c-link--icon" href="{{ project.repository }}">{% include 'partials/github.svg' %}{{ project.repository | replace("https://github.com/", "") }}</a>
-            </li>
-          {% endif %}
-        </ul>
-      </article>
+      <p class="u-font--headings h3 u-text--bold"><a href="{{ project.url }}">{{ project.name }}</a></p>
+      <p>{{ project.description }}</p>
+      {% if project.repository %}
+        <p>
+          <a class="c-link--icon"
+             href="{{ project.repository }}">{% include 'partials/github.svg' %}{{ project.repository | replace("https://github.com/", "") }}</a>
+        </p>
+      {% endif %}
     </li>
   {% endfor %}
 </ul>

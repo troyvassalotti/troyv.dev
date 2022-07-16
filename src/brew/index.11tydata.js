@@ -3,7 +3,7 @@ module.exports = function () {
     title: "Brew",
     layout: "base",
     permalink: {
-      brew: "/brew/",
+      teapot: "/brew/",
     },
   };
 };

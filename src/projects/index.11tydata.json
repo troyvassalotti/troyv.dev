@@ -3,55 +3,66 @@
     {
       "name": "Abandoned Website",
       "url": "https://abandoned-website.netlify.app/",
-      "repository": "https://github.com/troyvassalotti/abandoned-website"
+      "repository": "https://github.com/troyvassalotti/abandoned-website",
+      "description": "A fake company website made as a Hugo learning experience."
     },
     {
       "name": "NotSocial",
       "url": "https://pang.netlify.app/",
-      "repository": "https://github.com/troyvassalotti/pang"
+      "repository": "https://github.com/troyvassalotti/pang",
+      "description": "A not-so-social media website made using Vue for the first time."
     },
     {
       "name": "Express Cats",
       "url": "https://cats.onrender.com/",
-      "repository": "https://github.com/troyvassalotti/express-cats"
+      "repository": "https://github.com/troyvassalotti/express-cats",
+      "description": "My first Express site which showcases my cats."
     },
     {
       "name": "I Don't Have A Podcast",
       "url": "https://idonthaveapodcast.netlify.app/",
-      "repository": "https://github.com/troyvassalotti/idonthaveapodcast"
+      "repository": "https://github.com/troyvassalotti/idonthaveapodcast",
+      "description": "All those without a podcast rejoice and sign your name to the cause."
     },
     {
       "name": "This is a Band",
       "url": "https://thisisa.band/",
-      "repository": "https://github.com/troyvassalotti/thisisaband-site"
+      "repository": "https://github.com/troyvassalotti/thisisaband-site",
+      "description": "My blog about bands I'm currently listening to."
     },
     {
       "name": "Hello Worldvue",
       "url": "https://helloworldvue.netlify.app/",
-      "repository": "https://github.com/troyvassalotti/hello-worldvue/"
+      "repository": "https://github.com/troyvassalotti/hello-worldvue/",
+      "description": "View your GPX, KMZ, or KML files in an interactive map."
     },
     {
       "name": ".docx to .html",
       "url": "https://docx-to-html.netlify.app/",
-      "repository": "https://github.com/troyvassalotti/docx-to-html"
+      "repository": "https://github.com/troyvassalotti/docx-to-html",
+      "description": "Turn a dreaded Word document into pure HTML."
     },
     {
       "name": "Vuedoku",
       "url": "https://vuedoku.netlify.app/",
-      "repository": "https://github.com/troyvassalotti/sudoku"
+      "repository": "https://github.com/troyvassalotti/sudoku",
+      "description": "Play Sudoku and challenge your friends."
     },
     {
       "name": "BPM Finder",
-      "url": "/bpm/"
+      "url": "/bpm/",
+      "description": "A simple beats per minute finder."
     },
     {
       "name": "Guitar Tuner",
-      "url": "/tuner/"
+      "url": "/tuner/",
+      "description": "A simple guitar (or whatever stringed instrument) tuner."
     },
     {
       "name": "Gonk",
       "url": "https://www.gonk.app/",
-      "repository": "https://github.com/troyvassalotti/gonk"
+      "repository": "https://github.com/troyvassalotti/gonk",
+      "description": "Send Honks with Gonk! I won't explain that any further, so check it out for yourself."
     }
   ]
 }

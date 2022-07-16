@@ -188,13 +188,11 @@ html {
   --headings: "Oli Grotesk", var(--fallback);
 
   /* Color palette */
-  /*  TODO*/
 
   /*scrollbar-color: var(--foreground) var(--background);*/
 }
 
 @media (prefers-color-scheme: light) {
-  /*TODO*/
   /*html {*/
   /*    --accent: var(--baby-blue-eyes);*/
   /*    --background: var(--antique-white);*/
@@ -204,7 +202,6 @@ html {
 }
 
 @media (prefers-color-scheme: dark) {
-  /*TODO*/
   /*html {*/
   /*    --accent: var(--yellow-orange-color-wheel);*/
   /*    --background: var(--rich-black-fogra-29);*/
@@ -217,7 +214,6 @@ html {
 }
 
 body {
-  /*TODO*/
   /*background-color: var(--background);*/
   /*color: var(--foreground);*/
   font-family: var(--body);
@@ -316,7 +312,6 @@ sup {
   vertical-align: top;
 }
 
-/*TODO*/
 /*a {*/
 /*    color: var(--links);*/
 /*}*/
@@ -454,12 +449,7 @@ sup {
   --clip-point: calc(var(--section-padding) / 2);
   --section-padding: 10vh;
   background: var(--background);
-  clip-path: polygon(
-    0 var(--clip-point),
-    /* top left */ 100% 0%,
-    /* top right */ 100% calc(100% - var(--clip-point)),
-    /* bottom right */ 0% 100% /* bottom left */
-  );
+  clip-path: polygon(0 var(--clip-point), 100% 0%, 100% calc(100% - var(--clip-point)), 0% 100%);
   padding-block: var(--section-padding);
   padding-inline: var(--space-s-m);
 }

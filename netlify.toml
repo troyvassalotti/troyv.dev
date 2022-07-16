@@ -13,24 +13,28 @@ publish = "_site"
   NODE_VERSION = "16"
 
 [[redirects]]
-from = "/music/"
-to = "/.netlify/functions/music"
+from = "/brew/"
+to = "/.netlify/functions/teapot"
 status = 200
 force = true
-_generated_by_eleventy_serverless = "music"
+_generated_by_eleventy_serverless = "teapot"
 
 [[redirects]]
-from = "/brew/"
-to = "/.netlify/functions/brew"
+from = "/music/stats/"
+to = "/.netlify/builders/ondemand"
 status = 200
 force = true
-_generated_by_eleventy_serverless = "brew"
+_generated_by_eleventy_serverless = "ondemand"
 
 [[redirects]]
 from = "https://troyvassalotti.netlify.com/*"
 to = "https://www.troyv.dev/:splat"
 status = 301
 force = true
+
+[[edge_functions]]
+function = "now-playing"
+path = "/music/"
 
 [[headers]]
 for = "/*"
