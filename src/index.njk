@@ -7,9 +7,13 @@ description: Watch as Troy Vassalotti learns his way around a computer.
 
 {% block script %}
   {{ super() }}
-  <script>
+  <script type="module">
+    import "/assets/js/post-item.js"
+    import "/assets/js/cloudy-sky.js"
+    import "/assets/js/kb-typewriter.js"
+
     // TODO
-    const sloganLocation = document.querySelector(".js-slogan");
+    const sloganLocation = document.querySelector(".js-slogan")
   </script>
 {% endblock %}
 
@@ -42,7 +46,8 @@ description: Watch as Troy Vassalotti learns his way around a computer.
               </figcaption>
             </figure>
             <div class="o-hero__left__note">
-              <p>I'm glad you could make it. Peruse my wares<sup>*</sup> and read <a href="/about/">more about me</a> if you're so inclined. Try <a href="/brew/">brewing</a> me a pot of coffee perhaps?</p>
+              <p>I'm glad you could make it. Peruse my wares<sup>*</sup> and read <a href="/about/">more about me</a> if you're so inclined.
+                Try <a href="/brew/">brewing</a> me a pot of coffee perhaps?</p>
               <p class="u-text--smallest">*I only accept bottle caps as currency, sorry... (I'm kidding)</p>
             </div>
           </section>

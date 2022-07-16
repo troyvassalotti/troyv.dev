@@ -8,6 +8,13 @@ description: I occasionally write about things.
 
 {% extends 'layouts/base.njk' %}
 
+{% block script %}
+  {{ super() }}
+  <script type="module">
+    import "/assets/js/post-item.js"
+  </script>
+{% endblock %}
+
 {% block content %}
   <div class="wrapper constrain--more">
     <main id="main">

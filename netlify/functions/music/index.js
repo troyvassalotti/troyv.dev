@@ -5,7 +5,7 @@ const { EleventyServerless } = require("@11ty/eleventy");
 require("./eleventy-bundler-modules.js");
 
 async function handler(event) {
-  let elev = new EleventyServerless("brew", {
+  let elev = new EleventyServerless("music", {
     path: new URL(event.rawUrl).pathname,
     query: event.queryStringParameters,
     functionsDir: "./netlify/functions/",
@@ -15,7 +15,7 @@ async function handler(event) {
     let [page] = await elev.getOutput();
 
     return {
-      statusCode: 418,
+      statusCode: 200,
       headers: {
         "Content-Type": "text/html; charset=UTF-8",
       },
@@ -29,7 +29,7 @@ async function handler(event) {
     }
 
     return {
-      statusCode: error.httpStatusCode || 503,
+      statusCode: error.httpStatusCode || 500,
       body: JSON.stringify(
         {
           error: error.message,

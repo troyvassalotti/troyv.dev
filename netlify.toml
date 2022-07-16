@@ -13,6 +13,13 @@ publish = "_site"
   NODE_VERSION = "16"
 
 [[redirects]]
+from = "/music/"
+to = "/.netlify/functions/music"
+status = 200
+force = true
+_generated_by_eleventy_serverless = "music"
+
+[[redirects]]
 from = "/brew/"
 to = "/.netlify/functions/brew"
 status = 200
@@ -24,18 +31,6 @@ from = "https://troyvassalotti.netlify.com/*"
 to = "https://www.troyv.dev/:splat"
 status = 301
 force = true
-
-[[edge_functions]]
-function = "now-playing"
-path = "/music/"
-
-[[edge_functions]]
-function = "recent-listens"
-path = "/music/"
-
-[[edge_functions]]
-function = "top-artists"
-path = "/music/"
 
 [[headers]]
 for = "/*"

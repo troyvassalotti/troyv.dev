@@ -1,5 +1,12 @@
 {% extends 'layouts/base.njk' %}
 
+{% block script %}
+  {{ super() }}
+  <script type="module">
+    import "/assets/js/post-item.js"
+  </script>
+{% endblock %}
+
 {% block content %}
   <main id="main">
     <div class="wrapper constrain--more flow">

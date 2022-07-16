@@ -31,10 +31,10 @@ module.exports = function (eleventyConfig) {
     .addPassthroughCopy(`${srcDir}/assets`)
     .addPassthroughCopy(`${srcDir}/favicons`)
     .addPassthroughCopy({
-      "./node_modules/plvylist/dist/plvylist.es.js": `${jsDir}/components/plvylist-player.js`,
+      "./node_modules/plvylist/dist/plvylist.es.js": `${jsDir}/plvylist-player.js`,
     })
     .addPassthroughCopy({
-      "./node_modules/@troyv/web-components/dist/**/*.js": `${jsDir}/components/`,
+      "./node_modules/@troyv/web-components/dist/**/*.js": `${jsDir}/`,
     })
     .addPassthroughCopy({
       "./node_modules/es-module-shims/dist/es-module-shims.js": `${jsDir}/es-module-shims.js`,

@@ -2,7 +2,10 @@
 
 {% block script %}
   {{ super() }}
-  <script type="module" src="/assets/js/components/data-table.js"></script>
+  <script type="module">
+    import "/assets/js/data-table.js"
+    import "/assets/js/plvylist-player.js"
+  </script>
 {% endblock %}
 
 {% block content %}
@@ -65,40 +68,34 @@
               href="https://listenbrainz.org/user/actionhamilton/">my ListenBrainz profile</a>, but I've chosen to display a few specific
             metrics here. Cool, right?</p>
         </header>
-        {% edge %}
-          <div class="flow">
-            <h3>Playing Now</h3>
-            {% if nowPlaying %}
-              <dl class="c-dataList u-font--code">
-                <div class="c-dataList__item">
-                  <dt>Artist</dt>
-                  <dd>{{ nowPlaying.artist }}</dd>
-                </div>
-                <div class="c-dataList__item">
-                  <dt>Track</dt>
-                  <dd>{{ nowPlaying.song }}</dd>
-                </div>
-                <div class="c-dataList__item">
-                  <dt>Release</dt>
-                  <dd>{{ nowPlaying.release }}</dd>
-                </div>
-              </dl>
-            {% else %}
-              <p class="u-font--code">Silence (nothing)</p>
-            {% endif %}
-          </div>
-          <div class="flow listeningHistory">
-            <h3>Listening History</h3>
-            <data-table
-              caption="Last 30 Plays"
-              headers="Number Artist Track Release"
-              data='{{ recentListens | dump }}'></data-table>
-            <data-table
-              caption="Top Artists This Month"
-              headers="Number Artist Listens"
-              data='{{ topArtistsThisMonth | dump }}'></data-table>
-          </div>
-        {% endedge %}
+        <div class="flow">
+          <h3>Playing Now</h3>
+          {% if nowPlaying %}
+            <dl class="c-dataList u-font--code">
+              <div class="c-dataList__item">
+                <dt>Artist</dt>
+                <dd>{{ nowPlaying.artist }}</dd>
+              </div>
+              <div class="c-dataList__item">
+                <dt>Track</dt>
+                <dd>{{ nowPlaying.song }}</dd>
+              </div>
+              <div class="c-dataList__item">
+                <dt>Release</dt>
+                <dd>{{ nowPlaying.release }}</dd>
+              </div>
+            </dl>
+          {% else %}
+            <p class="u-font--code">Silence (nothing)</p>
+          {% endif %}
+        </div>
+        <div class="flow listeningHistory">
+          <h3>Listening History</h3>
+          <data-table
+            caption="Last 30 Plays"
+            headers="Number Artist Track Release"
+            data='{{ mostRecentListens | dump }}'></data-table>
+        </div>
       </section>
     </div>
   </main>

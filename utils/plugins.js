@@ -7,12 +7,7 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 const embedYouTube = require("eleventy-plugin-youtube-embed");
 const inclusiveLangPlugin = require("@11ty/eleventy-plugin-inclusive-language");
 const pluginWebmentions = require("@chrisburnell/eleventy-cache-webmentions");
-const addWebComponentDefinitions = require("eleventy-plugin-add-web-component-definitions");
-const {
-  EleventyServerlessBundlerPlugin,
-  EleventyRenderPlugin,
-  EleventyEdgePlugin,
-} = require("@11ty/eleventy");
+const { EleventyServerlessBundlerPlugin, EleventyRenderPlugin } = require("@11ty/eleventy");
 
 module.exports = {
   highlighting: {
@@ -27,12 +22,6 @@ module.exports = {
   youTubeEmbeds: {
     name: embedYouTube,
   },
-  webComponents: {
-    name: addWebComponentDefinitions,
-    options: {
-      path: (tag) => `/assets/js/components/${tag}.js`,
-    },
-  },
   webmentions: {
     name: pluginWebmentions,
     options: {
@@ -44,20 +33,22 @@ module.exports = {
     options: {
       name: "brew",
       functionsDir: "./netlify/functions/",
+      // redirects: "netlify-toml-builders",
     },
   },
-  // serverlessMusic: {
-  //   name: EleventyServerlessBundlerPlugin,
-  //   options: {
-  //     name: "music",
-  //     functionsDir: "./netlify/functions/",
-  //     copy: [{ from: ".cache", to: "_cache" }],
-  //   },
-  // },
+  serverlessMusic: {
+    name: EleventyServerlessBundlerPlugin,
+    options: {
+      name: "music",
+      functionsDir: "./netlify/functions/",
+      copy: [{ from: ".cache", to: "_cache" }],
+      // redirects: "netlify-toml-builders",
+    },
+  },
   render: {
     name: EleventyRenderPlugin,
   },
-  edge: {
+  /*edge: {
     name: EleventyEdgePlugin,
-  },
+  },*/
 };
