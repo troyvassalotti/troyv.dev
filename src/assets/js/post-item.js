@@ -4,6 +4,10 @@ class PostItem extends LitElement {
   static get styles() {
     return [
       css`
+        :host {
+          display: block;
+        }
+
         * {
           box-sizing: border-box;
           margin: 0;
@@ -12,6 +16,20 @@ class PostItem extends LitElement {
         *::after,
         *::before {
           box-sizing: inherit;
+        }
+
+        a {
+          color: var(--links);
+        }
+
+        a:hover,
+        a:focus {
+          filter: brightness(0.7);
+        }
+
+        a:focus-visible {
+          outline: 2px dashed var(--links);
+          outline-offset: 2px;
         }
 
         .title {

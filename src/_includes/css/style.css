@@ -141,6 +141,7 @@
 }
 
 html {
+  /* FONT SIZING */
   /* @link https://utopia.fyi/type/calculator?c=320,21,1.2,1600,24,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
   --step--2: clamp(0.78rem, calc(0.77rem + 0.07vw), 0.84rem);
   --step--1: clamp(0.94rem, calc(0.91rem + 0.14vw), 1.05rem);
@@ -156,6 +157,7 @@ html {
   --step-9: clamp(6.77rem, calc(5.67rem + 5.5vw), 11.18rem);
   --step-10: clamp(8.13rem, calc(6.67rem + 7.3vw), 13.97rem);
 
+  /* SPACING */
   /* @link https://utopia.fyi/space/calculator?c=320,18,1.2,1600,21,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
   --space-3xs: clamp(0.31rem, calc(0.31rem + 0vw), 0.31rem);
   --space-2xs: clamp(0.56rem, calc(0.53rem + 0.16vw), 0.69rem);
@@ -167,7 +169,7 @@ html {
   --space-2xl: clamp(4.5rem, calc(4.31rem + 0.94vw), 5.25rem);
   --space-3xl: clamp(6.75rem, calc(6.47rem + 1.41vw), 7.88rem);
 
-  /* One-up pairs */
+  /* ONE-UP PAIRS */
   --space-3xs-2xs: clamp(0.31rem, calc(0.22rem + 0.47vw), 0.69rem);
   --space-2xs-xs: clamp(0.56rem, calc(0.45rem + 0.55vw), 1rem);
   --space-xs-s: clamp(0.88rem, calc(0.77rem + 0.55vw), 1.31rem);
@@ -177,45 +179,59 @@ html {
   --space-xl-2xl: clamp(3.38rem, calc(2.91rem + 2.34vw), 5.25rem);
   --space-2xl-3xl: clamp(4.5rem, calc(3.66rem + 4.22vw), 7.88rem);
 
-  /* Custom pairs */
+  /* CUSTOM PAIRS */
   --space-s-l: clamp(1.13rem, calc(0.75rem + 1.88vw), 2.63rem);
 
-  /* font styles */
+  /* FONT FAMILIES */
   --body: "Locale", var(--fallback);
   --code: "Native", monospace;
   --fallback: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
     "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   --headings: "Oli Grotesk", var(--fallback);
 
-  /* Color palette */
+  /* COLOR PALETTE */
+  /* HEX */
+  --snow: #fdf5f9ff;
+  --pale-silver: #cdbfbcff;
+  --davys-grey: #5d5552ff;
+  --pewter-blue: #99b5beff;
+  --blue-yonder: #3f72afff;
+  --eerie-black: #141517ff;
 
-  /*scrollbar-color: var(--foreground) var(--background);*/
+  /* STANDARD RULES */
+  scrollbar-color: var(--foreground) var(--background);
 }
 
+/* COLOR SCHEME CHANGES */
 @media (prefers-color-scheme: light) {
-  /*html {*/
-  /*    --accent: var(--baby-blue-eyes);*/
-  /*    --background: var(--antique-white);*/
-  /*    --foreground: var(--rich-black-fogra-29);*/
-  /*    --links: var(--sapphire);*/
-  /*}*/
+  html {
+    --accent: var(--davys-grey);
+    --background: var(--snow);
+    --foreground: var(--eerie-black);
+    --links: var(--blue-yonder);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
-  /*html {*/
-  /*    --accent: var(--yellow-orange-color-wheel);*/
-  /*    --background: var(--rich-black-fogra-29);*/
-  /*    --foreground: var(--antique-white);*/
-  /*    --links: var(--baby-blue-eyes);*/
-  /*}*/
+  html {
+    --accent: var(--pale-silver);
+    --background: var(--eerie-black);
+    --foreground: var(--snow);
+    --links: var(--pewter-blue);
+  }
+
   pre {
     font-weight: 300;
+  }
+
+  .u-invertSvg--onDark {
+    filter: invert(1);
   }
 }
 
 body {
-  /*background-color: var(--background);*/
-  /*color: var(--foreground);*/
+  background-color: var(--background);
+  color: var(--foreground);
   font-family: var(--body);
   font-size: var(--step-0);
 }
@@ -229,6 +245,71 @@ pre {
 pre {
   font-size: var(--step--2);
   white-space: pre-wrap;
+}
+
+:is(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--headings);
+}
+
+h1 {
+  font-size: var(--step-5);
+}
+
+h2 {
+  font-size: var(--step-4);
+}
+
+h3 {
+  font-size: var(--step-3);
+}
+
+h4 {
+  font-size: var(--step-2);
+}
+
+h5 {
+  font-size: var(--step-1);
+}
+
+h6 {
+  font-size: var(--step-0);
+}
+
+blockquote {
+  border: 1px solid var(--accent);
+  box-shadow: 10px 10px 0 0 var(--accent);
+  font-style: italic;
+  inline-size: fit-content;
+  margin-block: var(--space-s-m);
+  position: relative;
+}
+
+blockquote :is(p, q) {
+  padding-block: var(--space-s);
+  padding-inline: var(--space-xs-s);
+}
+
+figcaption {
+  font-size: var(--step--1);
+  margin-block-start: 0.5rem;
+}
+
+sup {
+  vertical-align: top;
+}
+
+a {
+  color: var(--links);
+}
+
+a:hover,
+a:focus {
+  filter: brightness(0.7);
+}
+
+a:focus-visible {
+  outline: 2px dashed var(--links);
+  outline-offset: 2px;
 }
 
 .wrapper {
@@ -256,75 +337,38 @@ pre {
   --wrapper-size: 100rem;
 }
 
-:is(h1, h2, h3, h4, h5, h6) {
-  font-family: var(--headings);
+.visually-hidden:not(:focus):not(:active) {
+  block-size: 1px;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  inline-size: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
 }
 
-h1,
-.h1 {
-  font-size: var(--step-5);
+/* Create equal spacing between elements in a flow context without setting display */
+.flow > * + * {
+  margin-block-start: var(--flow-space, var(--space-s));
 }
 
-h2,
-.h2 {
-  font-size: var(--step-4);
+/* OBJECTS */
+.o-section--angled {
+  --clip-point: calc(var(--section-padding) / 2);
+  --section-background: var(--accent, #279af1);
+  --section-padding: 10vh;
+  background: var(--section-background);
+  clip-path: polygon(0 var(--clip-point), 100% 0%, 100% calc(100% - var(--clip-point)), 0% 100%);
+  color: var(--background);
+  padding-block: var(--section-padding);
+  padding-inline: var(--space-s-m);
 }
 
-h3,
-.h3 {
-  font-size: var(--step-3);
+.o-section--angled a {
+  color: currentColor;
 }
 
-h4,
-.h4 {
-  font-size: var(--step-2);
-}
-
-h5,
-.h5 {
-  font-size: var(--step-1);
-}
-
-h6,
-.h6,
-.u-text--base {
-  font-size: var(--step-0);
-}
-
-blockquote {
-  border: 0.5rem double var(--accent, currentColor);
-  font-style: italic;
-  inline-size: fit-content;
-  margin-block: var(--space-s-m);
-}
-
-blockquote p {
-  padding-block: var(--space-s);
-  padding-inline: var(--space-xs-s);
-}
-
-figcaption {
-  font-size: var(--step--1);
-  margin-block-start: 0.5rem;
-}
-
-sup {
-  vertical-align: top;
-}
-
-/*a {*/
-/*    color: var(--links);*/
-/*}*/
-
-/*a:hover, a:focus {*/
-/*    filter: brightness(.7);*/
-/*}*/
-
-/*a:focus-visible {*/
-/*    outline: 2px dashed var(--links);*/
-/*    outline-offset: 2px;*/
-/*}*/
-
+/* COMPONENTS */
 .c-animatedLink {
   --linkStateRest: scaleX(1);
   --linkStartRest: left;
@@ -358,21 +402,6 @@ sup {
   }
 }
 
-.visually-hidden:not(:focus):not(:active) {
-  block-size: 1px;
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  inline-size: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-}
-
-/* Create equal spacing between elements in a flow context without setting display */
-.flow > * + * {
-  margin-block-start: var(--flow-space, var(--space-s));
-}
-
 .c-link--icon {
   align-items: center;
   display: inline-flex;
@@ -384,11 +413,69 @@ sup {
   max-inline-size: 28px;
 }
 
-.u-text--smaller {
+.c-dataList__item {
+  display: flex;
+  gap: 0.5ch;
+}
+
+.c-dataList__item dt {
+  font-weight: bold;
+}
+
+.c-dataList__item dt::after {
+  content: ":";
+}
+
+/* UTILITIES */
+.u-step-10 {
+  font-size: var(--step-10);
+}
+
+.u-step-9 {
+  font-size: var(--step-9);
+}
+
+.u-step-8 {
+  font-size: var(--step-8);
+}
+
+.u-step-7 {
+  font-size: var(--step-7);
+}
+
+.u-step-6 {
+  font-size: var(--step-6);
+}
+
+.u-step-5 {
+  font-size: var(--step-5);
+}
+
+.u-step-4 {
+  font-size: var(--step-4);
+}
+
+.u-step-3 {
+  font-size: var(--step-3);
+}
+
+.u-step-2 {
+  font-size: var(--step-2);
+}
+
+.u-step-1 {
+  font-size: var(--step-1);
+}
+
+.u-step-0 {
+  font-size: var(--step-0);
+}
+
+.u-step--1 {
   font-size: var(--step--1);
 }
 
-.u-text--smallest {
+.u-step--2 {
   font-size: var(--step--2);
 }
 
@@ -400,16 +487,20 @@ sup {
   max-inline-size: var(--readable-length, 60ch);
 }
 
-.u-truncate--center > * {
-  margin-inline: auto;
-}
-
 .u-line-height--less {
   line-height: 1.25;
 }
 
 .u-text--caps {
   text-transform: uppercase;
+}
+
+.u-text--italic {
+  font-style: italic;
+}
+
+.u-text--bold {
+  font-weight: bold;
 }
 
 .u-font--headings {
@@ -424,32 +515,10 @@ sup {
   font-family: var(--code);
 }
 
-.u-text--italic {
-  font-style: italic;
-}
-
-.u-text--bold {
-  font-weight: bold;
-}
-
-.u-linked-image {
-  display: inline-block;
-}
-
 .u-revertMargin--start {
   margin-block-start: revert;
 }
 
 .u-revertMargin--end {
   margin-block-end: revert;
-}
-
-.o-section--angled {
-  --background: var(--accent, #279af1);
-  --clip-point: calc(var(--section-padding) / 2);
-  --section-padding: 10vh;
-  background: var(--background);
-  clip-path: polygon(0 var(--clip-point), 100% 0%, 100% calc(100% - var(--clip-point)), 0% 100%);
-  padding-block: var(--section-padding);
-  padding-inline: var(--space-s-m);
 }

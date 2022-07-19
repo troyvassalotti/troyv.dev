@@ -26,13 +26,13 @@
       <dl>
         {% if nextPost %}
           <div>
-            <dt class="h5">Next Post:</dt>
+            <dt class="u-step-1">Next Post:</dt>
             <dd><a href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a></dd>
           </div>
         {% endif %}
         {% if previousPost %}
           <div>
-            <dt class="h5">Previous Post:</dt>
+            <dt class="u-step-1">Previous Post:</dt>
             <dd><a href="{{ previousPost.url | url }}">{{ previousPost.data.title }}</a></dd>
           </div>
         {% endif %}

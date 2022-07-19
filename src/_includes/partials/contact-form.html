@@ -1,5 +1,6 @@
 <style>
   .c-contactForm {
+    color-scheme: light dark;
     margin-block: 2rem;
     max-inline-size: 40rem;
   }
@@ -12,6 +13,11 @@
 
   .requiredField {
     color: red;
+  }
+
+  button[type="submit"] {
+    padding-block: var(--space-2xs);
+    padding-inline: 1ch;
   }
 </style>
 
@@ -34,5 +40,5 @@
     <label for="message">Message<sup aria-hidden="true" class="requiredField">*</sup></label>
     <textarea name="message" id="message" required placeholder="Say hi!" rows="5"></textarea>
   </div>
-  <button>Submit</button>
+  <button type="submit">Submit</button>
 </form>

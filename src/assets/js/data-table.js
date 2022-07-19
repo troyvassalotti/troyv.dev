@@ -20,6 +20,7 @@ class DataTable extends LitElement {
         table {
           border: 1px solid currentColor;
           border-collapse: collapse;
+          color: var(--eerie-black);
           font-family: var(--code);
           inline-size: max-content;
           table-layout: fixed;
@@ -66,11 +67,11 @@ class DataTable extends LitElement {
         }
 
         tr:nth-of-type(odd) {
-          background-color: #aaaaaa;
+          background-color: #a5a6a8;
         }
 
         tr:nth-of-type(even) {
-          background-color: #f1f1f1;
+          background-color: #6f7072;
         }
       `,
     ];
@@ -100,7 +101,7 @@ class DataTable extends LitElement {
     return html`
       <table>
         ${this.caption
-          ? html`<caption>
+          ? html` <caption>
               ${this.caption}
             </caption>`
           : nothing}

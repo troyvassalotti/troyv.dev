@@ -15,7 +15,7 @@ description: Normal person stuck in a computer.
         {% renderFile './src/_includes/partials/bio.md' %}
         <h2 class="u-revertMargin--start">Where to Find Me</h2>
         <p>My social media presence is sparse, but I am found in a few spots:</p>
-        <ul class="c-socialMedia" role="list">
+        <ul class="c-socialMedia u-invertSvg--onDark" role="list">
           {% for social in metadata.socials %}
             <li>
               <a class="c-link--icon" href="{{ social.url }}">{% include 'partials/' + social.name | lower + '.svg' %}{{ social.name }}</a>
@@ -30,12 +30,8 @@ description: Normal person stuck in a computer.
 {% block style %}
   {{ super() }}
   <style>
-    .c-socialMedia {
-      margin-block-end: var(--space-s);
-    }
-
-    .c-socialMedia li:not(:first-of-type) {
-      margin-block-start: 1ch;
+    .c-socialMedia li {
+      margin-block-end: 1ch;
     }
   </style>
 {% endblock %}

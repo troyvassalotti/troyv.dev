@@ -11,6 +11,7 @@ description: Watch as Troy Vassalotti learns his way around a computer.
     import "/assets/js/post-item.js"
     import "/assets/js/cloudy-sky.js"
     import "/assets/js/kb-typewriter.js"
+    import "/assets/js/loading-spinner.js"
 
     // TODO
     const sloganLocation = document.querySelector(".js-slogan")
@@ -48,7 +49,7 @@ description: Watch as Troy Vassalotti learns his way around a computer.
             <div class="o-hero__left__note">
               <p>I'm glad you could make it. Peruse my wares<sup>*</sup> and read <a href="/about/">more about me</a> if you're so inclined.
                 Try <a href="/brew/">brewing</a> me a pot of coffee perhaps?</p>
-              <p class="u-text--smallest">*I only accept bottle caps as currency, sorry... (I'm kidding)</p>
+              <p class="u-step--2">*I only accept bottle caps as currency, sorry... (I'm kidding)</p>
             </div>
           </section>
           <section class="o-hero__right">
@@ -71,7 +72,7 @@ description: Watch as Troy Vassalotti learns his way around a computer.
         </div>
       </div>
     </cloudy-sky>
-    <div class="spinner" aria-hidden="true"></div>
+    <loading-spinner></loading-spinner>
   </main>
 {% endblock %}
 
@@ -192,43 +193,24 @@ description: Watch as Troy Vassalotti learns his way around a computer.
       margin-block: var(--space-s-m);
     }
 
-    /* Loading Spinner */
-    .spinner {
-      animation: spinner 2s infinite linear;
-      aspect-ratio: 1;
-      background-image: conic-gradient(#25b09b 25%, #f03355 0 50%, #514b82 0 75%, #ffa516 0);
-      border-radius: 50%;
-      inline-size: 50px;
-      display: grid;
-      inset-block: 50vh;
-      inset-inline: 0;
-      margin-inline: auto;
-      position: fixed;
+    cloudy-sky:defined + loading-spinner {
+      display: none;
     }
 
-    .spinner::before,
-    .spinner::after {
-      animation: inherit;
-      background: inherit;
-      border-radius: 50%;
-      content: "";
-      grid-area: 1 / 1;
-      margin: 15%;
+    ::part(hillside) {
+      fill: var(--accent);
     }
 
-    .spinner::after {
-      animation-duration: 3s;
-      margin: 25%;
-    }
-
-    @keyframes spinner {
-      100% {
-        transform: rotate(1turn)
+    @media (prefers-color-scheme: light) {
+      cloudy-sky {
+        --cloud-filter: hue-rotate(222deg);
       }
     }
 
-    cloudy-sky:defined + .spinner {
-      display: none;
+    @media (prefers-color-scheme: dark) {
+      cloudy-sky {
+        --cloud-filter: hue-rotate(190deg);
+      }
     }
   </style>
 {% endblock %}

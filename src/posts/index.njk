@@ -21,13 +21,15 @@ description: I occasionally write about things.
       <section>
         <header class="u-text--center">
           <h1 class="u-revertMargin--start">{{ title }}</h1>
-          <div class="rss">
+          <div class="rss u-invertSvg--onDark">
             <span>{% include 'partials/rss.svg' %}</span>
             <span>Subscribe to the <a href="/feed.xml">RSS feed</a>.</span>
           </div>
         </header>
         <nav aria-label="tags" class="flow tags">
-          <h2 class="h5">Tags ({{ collections.allTagsList.length }}):</h2>
+          <h2 class="u-step-1">Tags ({{ collections.allTagsList.length }}):</h2>
+          <!-- TODO -->
+          <!-- Create a WC out of this, use space delimited array as prop -->
           <ul role="list" class="c-tagCloud">
             {% for tag in collections.allTagsList | sort %}
               {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
@@ -61,9 +63,9 @@ description: I occasionally write about things.
     }
 
     .c-tag {
-      background-color: white; /* TODO */
+      background-color: var(--foreground);
       border-radius: 4px;
-      color: black; /* TODO */
+      color: var(--background);
       display: inline-block;
       font-size: var(--step--1);
       padding-inline: 8px;

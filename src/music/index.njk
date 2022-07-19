@@ -11,10 +11,10 @@
   <main id="main">
     <div class="wrapper constrain--less">
       <div class="central">
-        <div class="o-left flow u-truncate">
+        <div class="central__left flow u-truncate">
           <header class="flow header">
-            <h1 class="title u-text--caps u-text--base">{{ title }}</h1>
-            <div class="nowPlaying flow u-text--smallest">
+            <h1 class="title u-text--caps u-step-0">{{ title }}</h1>
+            <div class="nowPlaying flow u-step--2">
               <p class="u-font--headings u-text--bold">{% include 'partials/music.svg' %}Now Playing</p>
               {% edge %}
                 {% if nowPlaying %}
@@ -37,13 +37,14 @@
                 {% endif %}
               {% endedge %}
             </div>
-            <h2 class="callout u-line-height--less">Guitarist, drummer, singer-songwriter.</h2>
-            <p>When I'm not coding, I'm probably writing, playing, recording, or listening to music. Check out my projects below, or take a deep dive into my
+            <h2 class="u-step-6 u-line-height--less">Guitarist, drummer, singer-songwriter.</h2>
+            <p>When I'm not coding, I'm probably writing, playing, recording, or listening to music. Check out my projects below, or take a
+              deep dive into my
               <a href="/music/stats/">listening habits</a>.</p>
           </header>
           <section class="o-bands flow">
-            <div class="c-band c-band--frontRoyal flow">
-              <h3 class="h4">Front Royal</h3>
+            <div class="c-band u-invertSvg--onDark c-band--frontRoyal flow">
+              <h3 class="u-step-2">Front Royal</h3>
               <dl class="c-dataList">
                 {% for key, value in frontRoyal.meta %}
                   <div class="c-dataList__item">
@@ -56,8 +57,8 @@
                 <a href="{{ link.href }}">{% include 'partials/' + link.img %}</a>
               {% endfor %}
             </div>
-            <div class="c-band c-band--troy flow">
-              <h3 class="h4">troy.</h3>
+            <div class="c-band u-invertSvg--onDark c-band--troy flow">
+              <h3 class="u-step-2">troy.</h3>
               <dl class="c-dataList">
                 {% for key, value in troyalllowercase.meta %}
                   <div class="c-dataList__item">
@@ -72,11 +73,11 @@
             </div>
           </section>
         </div>
-        <div class="o-right">
+        <div class="central__right">
           <section class="plvylist">
             <header>
-              <h2 class="u-text--base u-text--caps title">You can stream here</h2>
-              <p class="u-text--smaller u-text--italic">Psst... <a href="https://www.npmjs.com/package/plvylist">I made this player</a>.</p>
+              <h2 class="u-step-0 u-text--caps title">You can stream here</h2>
+              <p class="u-step--1 u-text--italic">Psst... <a href="https://www.npmjs.com/package/plvylist">I made this player</a>.</p>
             </header>
             <plvylist-player tracks="/assets/js/alone-in-a-crowded-room.json">
             </plvylist-player>
@@ -114,12 +115,8 @@
       }
     }
 
-    .o-left .header {
+    .central__left .header {
       --flow-space: var(--space-s);
-    }
-
-    .callout {
-      font-size: var(--step-6);
     }
 
     .o-bands {
@@ -139,19 +136,6 @@
       display: block;
       font-size: var(--step--1);
       margin-block: var(--space-s-m);
-    }
-
-    .c-dataList__item {
-      display: flex;
-      gap: .5ch;
-    }
-
-    .c-dataList__item dt {
-      font-weight: bold;
-    }
-
-    .c-dataList__item dt::after {
-      content: ":"
     }
   </style>
 {% endblock %}
