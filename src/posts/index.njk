@@ -12,6 +12,7 @@ description: I occasionally write about things.
   {{ super() }}
   <script type="module">
     import "/assets/js/post-item.js"
+    import "/assets/js/tag-cloud.js"
   </script>
 {% endblock %}
 
@@ -26,6 +27,7 @@ description: I occasionally write about things.
             <span>Subscribe to the <a href="/feed.xml">RSS feed</a>.</span>
           </div>
         </header>
+        <tag-cloud base="/tags/" tags=""></tag-cloud>
         <nav aria-label="tags" class="flow tags">
           <h2 class="u-step-1">Tags ({{ collections.allTagsList.length }}):</h2>
           <!-- TODO -->
@@ -58,27 +60,8 @@ description: I occasionally write about things.
 {% block style %}
   {{ super() }}
   <style>
-    .tags {
+    tag-cloud {
       margin-block: var(--space-l-xl);
-    }
-
-    .c-tag {
-      background-color: var(--foreground);
-      border-radius: 4px;
-      color: var(--background);
-      display: inline-block;
-      font-size: var(--step--1);
-      padding-inline: 8px;
-    }
-
-    .c-tag::before {
-      content: "#";
-    }
-
-    .c-tagCloud {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-2xs-xs);
     }
 
     .posts {
