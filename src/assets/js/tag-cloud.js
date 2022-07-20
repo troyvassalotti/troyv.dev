@@ -91,9 +91,6 @@ class TagCloud extends LitElement {
   }
 
   render() {
-    console.log(this.tags);
-    console.log(this.tagList);
-    console.log(this.tagObjects);
     return html`
       <nav aria-label="tags" class="tags">
         <p class="title">Tags (${this.tagList.length}):</p>
