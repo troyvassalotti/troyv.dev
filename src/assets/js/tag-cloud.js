@@ -1,4 +1,6 @@
-import { LitElement, css, html, nothing } from "lit";
+import { LitElement, css, html } from "lit";
+import { map } from "lit-map";
+import slugify from "slugify";
 
 class TagCloud extends LitElement {
   static get styles() {
@@ -19,7 +21,25 @@ class TagCloud extends LitElement {
         }
 
         .title {
+          font-family: var(--headings);
           font-size: var(--step-1);
+          font-weight: bold;
+          margin-block-end: revert;
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+        }
+
+        .visually-hidden:not(:focus):not(:active) {
+          block-size: 1px;
+          clip: rect(0 0 0 0);
+          clip-path: inset(50%);
+          inline-size: 1px;
+          overflow: hidden;
+          position: absolute;
+          white-space: nowrap;
         }
 
         .tag {
@@ -58,26 +78,34 @@ class TagCloud extends LitElement {
   }
 
   get tagList() {
-    return this.tags.split(", ");
+    return this.tags.split(",");
   }
 
   get tagObjects() {
-    //  TODO: create array of objects with tag name and tag slug
-    return [{}];
+    return this.tagList.map(function (tag) {
+      return {
+        tag,
+        slug: slugify(tag),
+      };
+    });
   }
 
   render() {
+    console.log(this.tags);
+    console.log(this.tagList);
+    console.log(this.tagObjects);
     return html`
       <nav aria-label="tags" class="tags">
         <p class="title">Tags (${this.tagList.length}):</p>
         <ul role="list" class="cloud">
-          ${this.tagObjects.map((tag) => {
-            return html` <li>
-              <a href="${this.base + tag.slug}"
-                ><span class="visually-hidden">Posts tagged </span></a
+          ${map(
+            this.tagObjects,
+            (tag) => html` <li>
+              <a class="tag" href="${this.base + tag.slug + "/"}"
+                ><span class="visually-hidden">Posts tagged </span>${tag.tag}</a
               >
-            </li>`;
-          })}
+            </li>`
+          )}
         </ul>
       </nav>
     `;

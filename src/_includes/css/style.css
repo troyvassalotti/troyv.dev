@@ -224,7 +224,7 @@ html {
     font-weight: 300;
   }
 
-  .u-invertSvg--onDark {
+  .u-invertSvg--onDark svg {
     filter: invert(1);
   }
 }

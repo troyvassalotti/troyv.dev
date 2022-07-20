@@ -15,7 +15,7 @@ function konamiCode(e) {
     logger.join("") ===
     "arrowuparrowuparrowdownarrowdownarrowleftarrowrightarrowleftarrowrightbaenter"
   ) {
-    importShim("canvas-confetti").then((module) => {
+    importShim("confetti").then((module) => {
       let confetti = module.default;
       let duration = 15 * 1000;
       let animationEnd = Date.now() + duration;

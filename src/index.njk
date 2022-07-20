@@ -5,13 +5,18 @@ description: Watch as Troy Vassalotti learns his way around a computer.
 
 {% extends 'layouts/base.njk' %}
 
+{% block headScript %}
+  <script>
+    {% include 'js/loading-spinner.js' %}
+  </script>
+{% endblock %}
+
 {% block script %}
   {{ super() }}
   <script type="module">
     import "/assets/js/post-item.js"
     import "/assets/js/cloudy-sky.js"
     import "/assets/js/kb-typewriter.js"
-    import "/assets/js/loading-spinner.js"
 
     // TODO
     const sloganLocation = document.querySelector(".js-slogan")

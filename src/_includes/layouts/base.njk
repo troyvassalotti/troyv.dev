@@ -22,19 +22,9 @@
 
   <!-- Import Maps polyfill -->
   <script async src="/assets/js/es-module-shims.js"></script>
-  <script type="importmap">
-      {
-        "imports": {
-          "lit": "https://cdn.skypack.dev/lit@2",
-          "d3": "https://cdn.skypack.dev/d3@7",
-          "canvas-confetti": "https://cdn.skypack.dev/canvas-confetti",
-          "petite-vue": "https://cdn.skypack.dev/petite-vue",
-          "tone": "https://cdn.skypack.dev/tone@14.7.77"
-        }
-      }
+  <script type="importmap">{% include 'partials/importmap.json' %}</script>
 
-
-  </script>
+  {% block headScript %}{% endblock %}
 
   <link rel="stylesheet" href="https://fonts.typotheque.com/WF-036345-011398.css">
   {% block style %}
