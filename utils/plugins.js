@@ -30,6 +30,8 @@ module.exports = {
     name: pluginWebmentions,
     options: {
       domain: "https://www.troyv.dev",
+      feed: `https://webmention.io/api/mentions.jf2?domain=www.troyv.dev&per-page=9001&token=${process.env.WEBMENTION_IO_TOKEN}`,
+      key: "children",
     },
   },
   teapot: {
@@ -37,6 +39,7 @@ module.exports = {
     options: {
       name: "teapot",
       functionsDir: "./netlify/functions/",
+      copy: [{ from: "_cache", to: "_cache" }],
     },
   },
   dynamic: {
@@ -44,6 +47,7 @@ module.exports = {
     options: {
       name: "dynamic",
       functionsDir: "./netlify/functions/",
+      copy: [{ from: "_cache", to: "_cache" }],
     },
   },
   onDemandBuilders: {
@@ -52,7 +56,7 @@ module.exports = {
       name: "ondemand",
       functionsDir: "./netlify/functions/",
       redirects: "netlify-toml-builders",
-      copy: [{ from: ".cache", to: "_cache" }],
+      copy: [{ from: "_cache", to: "_cache" }],
     },
   },
   render: {

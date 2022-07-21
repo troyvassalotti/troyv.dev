@@ -1,0 +1,21 @@
+diff --git a/node_modules/@chrisburnell/eleventy-cache-webmentions/eleventy-cache-webmentions.js b/node_modules/@chrisburnell/eleventy-cache-webmentions/eleventy-cache-webmentions.js
+index 9880480..4c1d2b3 100644
+--- a/node_modules/@chrisburnell/eleventy-cache-webmentions/eleventy-cache-webmentions.js
++++ b/node_modules/@chrisburnell/eleventy-cache-webmentions/eleventy-cache-webmentions.js
+@@ -60,6 +60,7 @@ const getType = (webmention) => {
+ module.exports = (eleventyConfig, options = {}) => {
+ 	options = Object.assign(
+ 		{
++      directory: "_cache",
+ 			uniqueKey: "webmentions",
+ 			allowedHTML: {
+ 				allowedTags: ["b", "i", "em", "strong", "a"],
+@@ -75,7 +76,7 @@ module.exports = (eleventyConfig, options = {}) => {
+ 	)
+ 
+ 	const fetchWebmentions = async () => {
+-		let asset = new AssetCache(options.uniqueKey)
++		let asset = new AssetCache(options.uniqueKey, options.directory)
+ 		asset.ensureDir()
+ 
+ 		let webmentions = []

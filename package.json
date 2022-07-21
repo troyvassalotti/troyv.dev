@@ -32,7 +32,7 @@
     "@11ty/eleventy-plugin-inclusive-language": "^1.0.3",
     "@11ty/eleventy-plugin-rss": "^1.1.2",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
-    "@chrisburnell/eleventy-cache-webmentions": "^0.1.11",
+    "@chrisburnell/eleventy-cache-webmentions": "^0.2.1",
     "@netlify/functions": "^1.0.0",
     "@troyv/web-components": "^3.2.2",
     "dotenv": "^16.0.0",
