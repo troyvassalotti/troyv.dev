@@ -5,12 +5,12 @@
 const htmlmin = require("html-minifier-terser");
 
 module.exports = {
-  htmlmin: function(content, outputPath) {
+  htmlmin: function (content, outputPath) {
     if (process.env.ELEVENTY_ENV === "production") {
       if (this.outputPath && this.outputPath.endsWith(".html")) {
         return htmlmin.minify(content, {
           useShortDoctype: true,
-          removeComments: true,
+          removeComments: false,
           collapseWhitespace: true,
           minifyCSS: true,
           minifyJS: true,
