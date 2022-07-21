@@ -64,5 +64,8 @@ module.exports = {
   },
   edge: {
     name: EleventyEdgePlugin,
+    options: {
+      eleventyEdgeVersion: "2.0.1",
+    },
   },
 };
