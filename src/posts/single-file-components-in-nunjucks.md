@@ -1,13 +1,9 @@
 ---
-date: 2021-11-13
-draft: false
 title: Single File Components in Nunjucks
 description: I loved Vue's SFCs so much that I replicated it in Nunjucks.
-project: false
-shortname: ""
-use_screenshot_service: false
-featuredImage: ""
-website: ""
+date: 2021-11-13
+updated: 2022-06-20
+tags: ["nunjucks", "eleventy"]
 ---
 
 If you've worked with Vue, chances are you're familiar with its [Single File Components](https://v3.vuejs.org/guide/single-file-component.html#introduction) (SFC for short). If you haven't worked with Vue, the idea of a SFC can be boiled down to encapsulation of the template, logic, **and** styling of a component to a single file.
@@ -16,9 +12,9 @@ The site you're looking at right now is an [Eleventy](https://www.11ty.dev/) sit
 
 ## Moving Towards Native Nunjucks
 
-I didn't branch out of the basic uses of Nunjucks with Eleventy until the last few months. I relied heavily on layout files defined in the front matter for template inheritance until I hit an issue where I realized Nunjuck's `extends` feature was the solution. This change involved a level of abstraction away from Eleventy's logic and into what comes bundled with Nunjucks.
+I didn't branch out of the basic uses of Nunjucks with Eleventy until the last few months. I relied heavily on layout files defined in the front matter for template inheritance until I hit an issue where I realized Nunjucks' `extends` feature was the solution. This change involved a level of abstraction away from Eleventy's logic and into what comes bundled with Nunjucks.
 
-Template inheritance with `extends` meant I could define custom blocks aside from the `{{ content }}` (which is used to house any content in a template with the `layout` front matter) in my Nunjucks layouts and templates that can pass into each other. I learned that I couldn't use front matter for template inheritance if I also wanted to define custom blocks.
+Template inheritance with `extends` meant I could define custom blocks aside from the `{%- raw -%}{{ content }}{% endraw %}` (which is used to house any content in a template with the `layout` front matter) in my Nunjucks layouts and templates that can pass into each other. I learned that I couldn't use front matter for template inheritance if I also wanted to define custom blocks.
 
 ```twig
 {%- raw -%}
@@ -86,9 +82,9 @@ In my `base.njk` layout - the primary layout all pages file into - I defined thr
 
 The way those blocks work is as follows:
 
--   The `style` block is looking for a variable named `css`. If that variable is defined on the template, then it runs the content of that variable through as-is (development) or minified (production), passing the result into a `<style>` tag.
--   The `content` block will contain any HTML contained in the template's `content` block.
--   The `script` block is doing the same thing as the `style` block, except the variable it looks for is named `js`.
+- The `style` block is looking for a variable named `css`. If that variable is defined on the template, then it runs the content of that variable through as-is (development) or minified (production), passing the result into a `<style>` tag.
+- The `content` block will contain any HTML contained in the template's `content` block.
+- The `script` block is doing the same thing as the `style` block, except the variable it looks for is named `js`.
 
 Now take a look at an example from my homepage where I define those blocks and variables for use in the layout:
 
@@ -124,10 +120,10 @@ description: Watch as Troy Vassalotti learns his way around a computer.
 
 What's happening in that file now is as follows:
 
--   I tell the template to extend my base layout file.
--   I define the `content` block with all my HTML and Nunjucks logic.
--   I set the `css` variable and include any critical CSS within it. The `<style>` tags wrapping the variable are strictly for syntax highlighting in the editor and _do not_ get passed along themselves.
--   I finally set the `js` variable with the same logic as the `css` variable.
+- I tell the template to extend my base layout file.
+- I define the `content` block with all my HTML and Nunjucks logic.
+- I set the `css` variable and include any critical CSS within it. The `<style>` tags wrapping the variable are strictly for syntax highlighting in the editor and _do not_ get passed along themselves.
+- I finally set the `js` variable with the same logic as the `css` variable.
 
 The end result is a single template file with its templating HTML and critical CSS and JS contained in a single file that pass into the final layout to be processed and placed where they need to be.
 
@@ -136,3 +132,7 @@ The end result is a single template file with its templating HTML and critical C
 I realize this system may not work for everyone, but I'm extremely proud of how it turned out and believe my development workflow has only benefited from such abstractions. I'm able to deliver a performant page with inlined critical assets while encapsulating all the dependencies of a page to a single file.
 
 No wonder Vue leans so heavily into the SFC system of page building.
+
+## Update 6/20/2022
+
+Yes, I know now that I could've been using Nunjucks' built-in templating features with `block`s and inheritance to do this in a better way.

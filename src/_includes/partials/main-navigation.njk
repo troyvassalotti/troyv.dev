@@ -1,0 +1,96 @@
+<style>
+  .c-mainNavigation {
+    font-size: var(--step--1);
+    padding: 1ch;
+  }
+
+  .c-mainNavigation ul {
+    margin: 0;
+  }
+
+  .c-mainNavigation li:first-of-type {
+    margin-block-end: 1ch;
+  }
+
+  .c-mainNavigation li:not(:first-of-type) {
+    display: inline-flex;
+  }
+
+  .c-mainNavigation li:not(:last-of-type) {
+    margin-inline-end: 1ch;
+  }
+
+  .c-mainNavigation a {
+    color: currentColor;
+    text-decoration: none;
+  }
+
+  .skipLink {
+    inset-inline-start: 50%;
+    padding: 4px;
+    position: absolute;
+    transform: translateY(-200%);
+    transition: transform 0.3s;
+  }
+
+  .skipLink:focus-visible {
+    transform: translateY(0%);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .c-mainNavigation a::before {
+      --linkStartRest: right;
+      --linkStateRest: scaleX(0);
+    }
+
+    .c-mainNavigation a:hover::before {
+      --linkStartHover: left;
+      --linkStateHover: scaleX(1);
+    }
+
+    #link__home::before {
+      background-color: currentColor;
+    }
+
+    #link__posts::before {
+      background-color: currentColor;
+    }
+
+    #link__music::before {
+      background-color: currentColor;
+    }
+
+    #link__work::before {
+      background-color: currentColor;
+    }
+
+    #link__about::before {
+      background-color: currentColor;
+    }
+
+    a[aria-current="page"]::before {
+      --linkStartRest: left;
+      --linkStateRest: scaleX(1);
+    }
+
+    a[aria-current="page"]:hover::before {
+      --linkStartHover: right;
+      --linkStateHover: scaleX(0);
+    }
+  }
+</style>
+
+<nav class="c-mainNavigation" id="mainNavigation" aria-label="main">
+  <a class="skipLink" href="#main">Skip to main content</a>
+  <ul role="list">
+    {% for link in nav.header %}
+      <li>
+        <a href="{{ link.url }}"
+           class="c-animatedLink" {% if link.url == page.url %} aria-current="page" {% endif %}
+           id="link__{{ link.name }}">
+          {% if loop.first %}~/{% else %}:: {% endif %}{{ link.name }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

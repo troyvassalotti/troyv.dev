@@ -1,17 +1,8 @@
 ---
-date: 2021-07-17
-tags:
-    - front royal
-    - music
-draft: false
 title: Front Royal Made a Covers Album
-description: We set out to cover a handful of songs from last year and this is what
-    we came up with.
-d3: false
-addCSS: false
-addJS: false
-shortname: ""
-featuredImage: ""
+description: We set out to cover a handful of songs from last year and this is what we came up with.
+date: 2021-07-17
+tags: ["front royal", "music"]
 ---
 
 We've been working on some new music this year. I promise we'll have an EP of new originals later this year, but we thought a collection of covers from last year's pop hits would be a fun way to hold everyone over.

@@ -1,34 +1,48 @@
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const pluginRss = require("@11ty/eleventy-plugin-rss");
-const sitemap = require("@quasibit/eleventy-plugin-sitemap");
-const timeToRead = require("eleventy-plugin-time-to-read");
-const embedYouTube = require("eleventy-plugin-youtube-embed");
-const inclusiveLangPlugin = require("@11ty/eleventy-plugin-inclusive-language");
-const pluginWebmentions = require("@chrisburnell/eleventy-cache-webmentions");
-const addWebComponentDefinitions = require("eleventy-plugin-add-web-component-definitions");
-const htmlmin = require("html-minifier-terser");
-const utilsDir = "./utils";
-const jsDir = "/assets/js";
+/**
+ * @file Site configuration
+ * Most site features are configured in /utils/
+ */
+const markdownItAnchor = require("markdown-it-anchor");
+
+const utilsDir = `${process.cwd()}/utils`;
+const srcDir = `./src`;
+let jsDir = "/assets/js";
+
 const filters = require(`${utilsDir}/filters`);
+const collections = require(`${utilsDir}/collections`);
+const transforms = require(`${utilsDir}/transforms`);
 const shortcodes = require(`${utilsDir}/shortcodes`);
+const plugins = require(`${utilsDir}/plugins`);
 
 module.exports = function (eleventyConfig) {
+  /**
+   * Default is "passthrough"
+   * @version 2.0.0
+   * @link https://www.11ty.dev/docs/copy/#passthrough-during-serve
+   */
+  eleventyConfig.setServerPassthroughCopyBehavior("copy");
+
+  // Passthroughs
+  eleventyConfig
+    .addPassthroughCopy(`${srcDir}/favicon.ico`)
+    .addPassthroughCopy(`${srcDir}/humans.txt`)
+    .addPassthroughCopy(`${srcDir}/manifest.webmanifest`)
+    .addPassthroughCopy(`${srcDir}/robots.txt`)
+    .addPassthroughCopy(`${srcDir}/assets`)
+    .addPassthroughCopy(`${srcDir}/favicons`)
+    .addPassthroughCopy({
+      "./node_modules/plvylist/dist/plvylist.es.js": `${jsDir}/plvylist-player.js`,
+    })
+    .addPassthroughCopy({
+      "./node_modules/@troyv/web-components/dist/**/*.js": `${jsDir}/`,
+    })
+    .addPassthroughCopy({
+      "./node_modules/es-module-shims/dist/es-module-shims.js": `${jsDir}/es-module-shims.js`,
+    });
+
   // Plugins
-  eleventyConfig.addPlugin(inclusiveLangPlugin);
-  eleventyConfig.addPlugin(pluginRss);
-  eleventyConfig.addPlugin(syntaxHighlight);
-  eleventyConfig.addPlugin(timeToRead);
-  eleventyConfig.addPlugin(embedYouTube);
-  eleventyConfig.addPlugin(addWebComponentDefinitions, {
-    path: (tag) => `${jsDir}/components/${tag}.js`,
-  });
-  eleventyConfig.addPlugin(sitemap, {
-    sitemap: {
-      hostname: "https://www.troyv.dev",
-    },
-  });
-  eleventyConfig.addPlugin(pluginWebmentions, {
-    domain: "https://www.troyv.dev",
+  Object.keys(plugins).forEach((plugin) => {
+    eleventyConfig.addPlugin(plugins[plugin].name, plugins[plugin]?.options);
   });
 
   // Filters
@@ -36,43 +50,19 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addFilter(filterName, filters[filterName]);
   });
 
+  // Collections
+  Object.keys(collections).forEach((collectionName) => {
+    eleventyConfig.addCollection(collectionName, collections[collectionName]);
+  });
+
   // Transforms
-  if (process.env.ELEVENTY_ENV === "production") {
-    eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
-      if (this.outputPath && this.outputPath.endsWith(".html")) {
-        return htmlmin.minify(content, {
-          useShortDoctype: true,
-          removeComments: true,
-          collapseWhitespace: true,
-          minifyCSS: true,
-          minifyJS: true,
-        });
-      }
-      return content;
-    });
-  }
+  Object.keys(transforms).forEach((transformName) => {
+    eleventyConfig.addTransform(transformName, transforms[transformName]);
+  });
 
   // Shortcodes
   eleventyConfig.addNunjucksAsyncShortcode("image", shortcodes.Image);
   eleventyConfig.addNunjucksShortcode("imageSync", shortcodes.ImageSync);
-
-  // Passthroughs
-  eleventyConfig.addPassthroughCopy({ "./public": "/" });
-  eleventyConfig.addPassthroughCopy({
-    "./node_modules/plvylist/dist/plvylist.es.js": `${jsDir}/components/plvylist-player.js`,
-  });
-  eleventyConfig.addPassthroughCopy({
-    "./node_modules/@troyv/web-components/dist/**/*.js": `${jsDir}/components/`,
-  });
-
-  eleventyConfig.addCollection("post", (collection) => {
-    if (process.env.ELEVENTY_ENV !== "production")
-      return [...collection.getFilteredByGlob("./src/posts/*.md")];
-    else
-      return [...collection.getFilteredByGlob("./src/posts/*.md")].filter(
-        (post) => !post.data.draft
-      );
-  });
 
   // Add excerpt support
   eleventyConfig.setFrontMatterParsingOptions({
@@ -80,6 +70,19 @@ module.exports = function (eleventyConfig) {
     excerpt_separator: "<!-- excerpt -->",
     excerpt_alias: "excerpt",
   });
+
+  // Markdown
+  /**
+   * @version 2.0.0
+   * @link https://www.11ty.dev/docs/languages/markdown/#optional-amend-the-library-instance
+   */
+  eleventyConfig.amendLibrary("md", (mdLib) =>
+    mdLib.use(markdownItAnchor, {
+      permalink: markdownItAnchor.permalink.headerLink(),
+    })
+  );
+
+  eleventyConfig.dataFilterSelectors.add("page");
 
   return {
     htmlTemplateEngine: "njk",

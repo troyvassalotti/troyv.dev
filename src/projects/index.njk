@@ -1,0 +1,21 @@
+---
+layout: base
+title: Projects
+description: Stuff I've made.
+---
+
+<h1 class="u-revertMargin--start">{{ title }}</h1>
+<ul role="list" class="flow">
+  {% for project in projects | reverse %}
+    <li>
+      <p class="u-font--headings u-step-3 u-text--bold"><a href="{{ project.url }}">{{ project.name }}</a></p>
+      <p>{{ project.description }}</p>
+      {% if project.repository %}
+        <p>
+          <a class="c-link--icon"
+             href="{{ project.repository }}">{% include 'partials/github.svg' %}{{ project.repository | replace("https://github.com/", "") }}</a>
+        </p>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>

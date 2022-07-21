@@ -5,12 +5,12 @@
       "url": "/"
     },
     {
-      "name": "posts",
-      "url": "/posts/"
+      "name": "archive",
+      "url": "/archive/"
     },
     {
-      "name": "work",
-      "url": "/work/"
+      "name": "projects",
+      "url": "/projects/"
     },
     {
       "name": "music",
@@ -19,24 +19,6 @@
     {
       "name": "about",
       "url": "/about/"
-    }
-  ],
-  "socials": [
-    {
-      "name": "GitHub",
-      "url": "https://github.com/troyvassalotti"
-    },
-    {
-      "name": "Twitter",
-      "url": "https://twitter.com/validcharacters"
-    },
-    {
-      "name": "Mastodon",
-      "url": "https://fosstodon.org/@rest"
-    },
-    {
-      "name": "CodePen",
-      "url": "https://codepen.io/troyvassalotti"
     }
   ]
 }

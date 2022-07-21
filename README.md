@@ -10,25 +10,11 @@ It might be helpful for me to outline how this site is created as a resource to 
 
 Top-level pages - `dir/index.html` pages - take Front Matter to declare the title, description, and `<body>` class. All pages serve as their own components through the use of Nunjucks extends and variables.
 
+Front matter can be in a separate `json` file of the same name, or at the top of the page.
+
 Pick a layout to extend by placing `{% extends 'layouts/your-layout.html' %}` right under the front matter.
 
-To set the HTML content of the page, place the structure inside a `{% block %}`. If the layout being extended is `base.html` then it's `{% block content %}{% endblock %}`. If it's `page.html` then use `{% block main %}{% endblock %}`.
-
-Pages get their own critical CSS by setting a variable in the file. This is done as follows:
-
-```nunjucks
-<style>
-    {% set css %}
-    .some-class {styles: go here;}
-    {% endset %}
-</style>
-```
-
-The `<style>` tags will be ignored in the component, and only the content inside the `{% set css %}` will be passed to the layout. The same process is used for inlined JavaScript.
-
-### Optimizing Assets
-
-For files that need concatenation and minification, there's the `_optimize-assets` folder. These get ignored in Eleventy Collections and combine files using `{% include %}` before finally outputting the content through filters.
+To set the HTML content of the page, place the structure inside a `{% block %}`. If the layout being extended is `base.njk` then it's `{% block content %}{% endblock %}`. If it's `page.html` then use `{% block main %}{% endblock %}`.
 
 ### Using Partials In Posts
 

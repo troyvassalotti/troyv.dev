@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2380e7">
+
+  {# Keep the whitepsace removal to make it minify correctly #}
+  {%- set theTitle -%}{{ title | safe or page.fileSlug | capitalize }}{%- endset -%}
+  <title>{{ theTitle }} :: troyv.dev</title>
+
+  <link rel="preconnect" href="https://d33wubrfki0l68.cloudfront.net" crossorigin>
+  <link rel="preconnect" href="https://fonts.typotheque.com/" crossorigin>
+  <link rel="preconnect" href="https://screenshot.troyv.dev/" crossorigin>
+  <link rel="preconnect" href="https://res.cloudinary.com/">
+
+  <link rel="dns-prefetch" href="https://d33wubrfki0l68.cloudfront.net">
+  <link rel="dns-prefetch" href="https://fonts.typotheque.com/">
+  <link rel="dns-prefetch" href="https://screenshot.troyv.dev/">
+  <link rel="dns-prefetch" href="https://cdn.skypack.dev/">
+  <link rel="dns-prefetch" href="https://res.cloudinary.com/">
+
+  <!-- Import Maps polyfill -->
+  <script async src="/assets/js/es-module-shims.js"></script>
+  <script type="importmap">{% include 'partials/importmap.json' %}</script>
+
+  {% block headScript %}{% endblock %}
+
+  <link rel="stylesheet" href="https://fonts.typotheque.com/WF-036345-011398.css">
+  {% block style %}
+    <style>
+      {% include 'css/reset.css' %}
+      {% include 'css/style.css' %}
+      {% include 'css/prism.css' %}
+    </style>
+  {% endblock %}
+
+  <!-- SEO Tags -->
+  {# Keep the whitepsace removal to make it minify correctly #}
+  {%- set theDescription -%}
+    {%- if description -%}
+      {{ description | safe }}
+    {%- elseif excerpt -%}
+      {{ excerpt | safe }}
+    {%- else -%}
+      {{ theTitle }} :: a page on {{ metadata.domain }}
+    {%- endif -%}
+  {%- endset -%}
+  <meta name="description" content="{{ theDescription }}">
+  <meta name="og:locale" content="en_US">
+  <meta name="og:type" content="article">
+  <meta name="og:title" content="{{ theTitle }}">
+  <meta name="og:description" content="{{ theDescription }}">
+  <meta name="og:site_name" content="{{ metadata.domain }}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ theTitle }}">
+  <meta name="twitter:description" content="{{ theDescription }}">
+  <meta name="twitter:creator" content="{{ metadata.handles.twitter }}">
+  <link rel="canonical" href="{{ metadata.url }}{{ page.url }}">
+
+  <!-- Other Head Stuff -->
+  <meta name="generator" content="{{ eleventy.generator }}">
+  <link rel="author" href="/humans.txt">
+  <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="RSS Feed">
+
+  <!-- Webmentions -->
+  <link rel="webmention" href="https://webmention.io/www.troyv.dev/webmention" />
+  <link rel="pingback" href="https://webmention.io/www.troyv.dev/xmlrpc" />
+  {% for social in metadata.socials %}
+    <link rel="me" href="{{ social.url }}">
+  {% endfor %}
+
+  <!-- Web Monetization -->
+  <meta name="monetization" content="$ilp.uphold.com/XqbEkDnhpZ29">
+  <link rel="monetization" href="https://ilp.uphold.com/XqbEkDnhpZ29">
+
+  <!-- Icons and PWA stuff -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+</head>
+<body>
+{% include 'partials/main-navigation.njk' %}
+
+{% block content %}
+  <div class="wrapper constrain--more">
+    <main id="main" class="flow">
+      {{ content | safe }}
+    </main>
+  </div>
+{% endblock %}
+
+{% block script %}
+  <script type="module">
+    {% include 'js/script.js' %}
+  </script>
+{% endblock %}
+</body>
+</html>

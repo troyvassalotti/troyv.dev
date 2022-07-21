@@ -1,8 +1,8 @@
 ---
 description: Thanks for reaching out! I'll be in touch soon.
-permalink: "/success/"
-layout: simple
-new_location: true
+permalink: /success/
+layout: base
+eleventyExcludeFromCollections: true
 ---
 
 # 200 OK

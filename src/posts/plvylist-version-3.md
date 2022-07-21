@@ -1,11 +1,8 @@
 ---
-date: 2021-08-21
-draft: false
 title: Plvylist Version 3
-description: I recently updated Plvylist (again). It's less opinionated and handles
-    your tracks better.
-shortname: ""
-featuredImage: ""
+description: I recently updated Plvylist (again). It's less opinionated and handles your tracks better.
+date: 2021-08-21
+tags: ["web components", "projects"]
 ---
 
 The last [update on Plvylist](../plvylist-web-component/) was when I turned it into a web component. That's great and all, but something wasn't sitting right with me. It felt like it involved _too much code_ to do what it's doing. A lot of CSS was integrated in the component and the initialization was a hassle. Version 2 expected the user to jump through too many hoops and that's not how it's supposed to be. For example, why would I require the user to declare their tracks in the component itself??

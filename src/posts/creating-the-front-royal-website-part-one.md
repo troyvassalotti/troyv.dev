@@ -1,8 +1,8 @@
 ---
 title: Creating The Front Royal Website, Part 1
-description: We want a website so we have a presence that isn't exclusively on social media. So, I'm whipping up a site and blogging about it in real time.
+description: We want a website so that we have a presence that isn't exclusively on social media. So, I'm whipping up a site and blogging about it in real time.
 date: 2020-03-16
-tags: ["front royal"]
+tags: ["front royal", "design"]
 ---
 
 There was a point in time bands either had a myspace, PureVolume, or both. Nowadays, it's not so simple.
@@ -23,9 +23,9 @@ This is the first time I'm designing a website from the ground up _(with the exc
 
 Looking at other approaches to band sites, it's pretty clear a single-page design is the way to go.
 
--   It's scrollable;
--   It's navigable;
--   It does what it needs to do without all the bells and whistles.
+- It's scrollable;
+- It's navigable;
+- It does what it needs to do without all the bells and whistles.
 
 All a band's content lives elsewhere, so you don't need to host it all on your site...unless everything comes crashing down, but we'll all cross that bridge together later.
 
@@ -35,10 +35,10 @@ The latter can be hard to achieve when the page is loaded with widgets (media pl
 
 I decided the these were the most important features to cover:
 
--   Ability to stream music;
--   Real-time tour dates;
--   Links to our social media and newsletter;
--   Reusable components to make updates and new additions easier for me to code.
+- Ability to stream music;
+- Real-time tour dates;
+- Links to our social media and newsletter;
+- Reusable components to make updates and new additions easier for me to code.
 
 ## The Design
 

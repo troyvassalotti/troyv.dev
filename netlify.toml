@@ -1,33 +1,54 @@
+[dev]
+framework = "#static"
+command = "npm run dev"
+
 [build]
 command = "npm run build"
 publish = "_site"
 
-[build.processing]
-skip_processing = false
+  [build.processing]
+  skip_processing = true
 
-[build.processing.html]
-pretty_urls = true
+  [build.environment]
+  NODE_VERSION = "16"
 
-[build.environment]
-NODE_VERSION = "16"
+[[redirects]]
+from = "/brew/"
+to = "/.netlify/functions/teapot"
+status = 200
+force = true
+_generated_by_eleventy_serverless = "teapot"
 
-# Redirect from the default Netlify site to my custom domain
+[[redirects]]
+from = "/music/stats/"
+to = "/.netlify/builders/ondemand"
+status = 200
+force = true
+_generated_by_eleventy_serverless = "ondemand"
+
 [[redirects]]
 from = "https://troyvassalotti.netlify.com/*"
 to = "https://www.troyv.dev/:splat"
 status = 301
 force = true
 
-# Custom headers
+[[edge_functions]]
+function = "now-playing"
+path = "/music/"
+
 [[headers]]
 for = "/*"
-[headers.values]
-X-Content-Type-Options = "nosniff"
-X-Frame-Options = "SAMEORIGIN"
-X-XSS-Protection = "1"
 
-[[plugins]]
-package = "./plugins/webmention-cache"
+  [headers.values]
+  X-Content-Type-Options = "nosniff"
+  X-Frame-Options = "SAMEORIGIN"
+  X-XSS-Protection = "1"
 
 [[plugins]]
 package = "netlify-plugin-webmentions"
+
+[[plugins]]
+package = "netlify-plugin-cache"
+
+  [plugins.inputs]
+  paths = [ "_cache" ]

@@ -2,7 +2,7 @@
 title: Creating The Front Royal Website, Part 2
 description: I created the first draft of the Front Royal band site, but had to make some changes to the original design after realizing my mockups were too small in reality...
 date: 2020-04-20
-tags: ["front royal"]
+tags: ["front royal", "design"]
 ---
 
 I _really_ dropped the ball on this whole "blogging in real time" thing because the site is almost done.
@@ -15,16 +15,16 @@ Well, over that weekend, boredom got the best of me and [I made the dang thing](
 
 To recap, I set out to make it a simple, single-page site with little bells and whistles. It was supposed to be:
 
--   Scrollable;
--   Navigable;
--   Simple.
+- Scrollable;
+- Navigable;
+- Simple.
 
 And also cover:
 
--   Ability to stream music;
--   Real-time tour dates;
--   Links to our social media and newsletter;
--   Reusable components to make updates and new additions easier for me to code.
+- Ability to stream music;
+- Real-time tour dates;
+- Links to our social media and newsletter;
+- Reusable components to make updates and new additions easier for me to code.
 
 ## My Stack
 
@@ -40,12 +40,12 @@ I had to make some adjustments to Spotify's code to get the `<iframe>` to do wha
 
 ```css
 .player {
-    margin: auto;
-    width: 100%;
+  margin: auto;
+  width: 100%;
 }
 
 .player__featured {
-    max-width: 300px;
+  max-width: 300px;
 }
 ```
 
@@ -83,31 +83,31 @@ There's a background image in the design, but the text got hard to read upon exp
 ```js
 /* these functions remove and toggle classes for properly styling the background image */
 const openMenu = () => {
-    container.classList.remove("mobile-hide")
-    nav.classList.remove("menu__closed")
-    nav.classList.toggle("menu__open")
-}
+  container.classList.remove("mobile-hide");
+  nav.classList.remove("menu__closed");
+  nav.classList.toggle("menu__open");
+};
 
 const closeMenu = () => {
-    container.classList.toggle("mobile-hide")
-    nav.classList.remove("menu__open")
-    nav.classList.toggle("menu__closed")
-}
+  container.classList.toggle("mobile-hide");
+  nav.classList.remove("menu__open");
+  nav.classList.toggle("menu__closed");
+};
 
 /* this does the work of opening or closing the menu */
 const animateMenu = () => {
-    if (isEven(clickCount)) {
-        menu.innerHTML = x
-        openMenu()
-    } else if (isOdd(clickCount)) {
-        menu.innerHTML = bars
-        closeMenu()
-    }
-    clickCount++
-}
+  if (isEven(clickCount)) {
+    menu.innerHTML = x;
+    openMenu();
+  } else if (isOdd(clickCount)) {
+    menu.innerHTML = bars;
+    closeMenu();
+  }
+  clickCount++;
+};
 
 /* look for that magic click */
-open.addEventListener("click", animateMenu)
+open.addEventListener("click", animateMenu);
 ```
 
 Making easily reusable sections got me thinking about how I could rework this very site you're reading right now. This past weekend, I did that too.

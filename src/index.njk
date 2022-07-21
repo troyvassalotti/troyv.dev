@@ -1,0 +1,221 @@
+---
+title: Welcome
+description: Watch as Troy Vassalotti learns his way around a computer.
+---
+
+{% extends 'layouts/base.njk' %}
+
+{% block headScript %}
+  <script>
+    {% include 'js/loading-spinner.js' %}
+  </script>
+{% endblock %}
+
+{% block script %}
+  {{ super() }}
+  <script type="module">
+    import "/assets/js/post-item.js"
+    import "/assets/js/cloudy-sky.js"
+    import "/assets/js/kb-typewriter.js"
+
+    // TODO
+    const sloganLocation = document.querySelector(".js-slogan")
+  </script>
+{% endblock %}
+
+{% block content %}
+  <main id="main">
+    <cloudy-sky hillside>
+      <div class="wrapper">
+        <div class="o-hero">
+          <section class="o-hero__left flow">
+            <div class="c-keyboard">
+              <kb-typewriter>
+                <h1 class="leadingType">Hey, I'm Troy...</h1>
+              </kb-typewriter>
+              <kb-typewriter>
+                <p class="followingType">...and this is a website.</p>
+              </kb-typewriter>
+            </div>
+            <figure class="c-portrait">
+              <img
+                src="{{ metadata.cloudinary }}/c_scale,f_auto,q_auto:eco,w_600/v1646349104/blog/me-on-stage-waverly_hoxgvf.webp"
+                alt="Me holding my guitar on stage"
+                decoding="async"
+                width="600"
+                height="600"
+                id="me"
+              />
+              <!-- other things I am: hopeless romantic -->
+              <figcaption><a href="/music/">Musician</a>, developer, and <span
+                  class="js-slogan">insert your favorite descriptors here</span>.
+              </figcaption>
+            </figure>
+            <div class="o-hero__left__note">
+              <p>I'm glad you could make it. Peruse my wares<sup>*</sup> and read <a href="/about/">more about me</a> if you're so inclined.
+                Try <a href="/brew/">brewing</a> me a pot of coffee perhaps?</p>
+              <p class="u-step--2">*I only accept bottle caps as currency, sorry... (I'm kidding)</p>
+            </div>
+          </section>
+          <section class="o-hero__right">
+            <h2 id="recent-posts" class="sectionTitle">Recent Posts</h2>
+            <ul role="list" class="c-postList flow">
+              {% for post in collections.post.slice(collections.post.length - 5, collections.post.length) | reverse %}
+                <li>
+                  <post-item date="{{ post.date | dateString }}"
+                             url="{{ post.url }}"
+                             excerpt="{{ post.data.excerpt or post.data.description }}"
+                             level="3"
+                             heading="{{ post.data.title }}"></post-item>
+                </li>
+              {% endfor %}
+            </ul>
+            <p class="c-postList__more">
+              <a class="c-animatedLink" href="{{ nav.header[1].url }}">View All Posts</a>
+            </p>
+          </section>
+        </div>
+      </div>
+    </cloudy-sky>
+    <loading-spinner></loading-spinner>
+  </main>
+{% endblock %}
+
+{% block style %}
+  {{ super() }}
+  <style>
+    :is(cloudy-sky, kb-typewriter, post-item):not(:defined) {
+      visibility: hidden;
+    }
+
+    .leadingType {
+      --kb-count-cursor: 6;
+      font-size: var(--step-5);
+    }
+
+    .followingType {
+      --kb-delay-typing: 3.5s;
+      --kb-delay-cursor: 3s;
+      --kb-steps-typing: 35;
+      font-family: var(--headings);
+      font-size: var(--step-3);
+      font-weight: bold;
+      margin-block-start: 0.5ex;
+    }
+
+    .o-hero {
+      column-gap: var(--space-m-l);
+      display: grid;
+      row-gap: var(--space-xl-2xl);
+    }
+
+    @media (min-width: 70.25rem) {
+      .o-hero {
+        grid-template-columns: .75fr 1fr;
+      }
+
+      .o-hero__right {
+        text-align: end;
+      }
+
+      ::part(p-item) {
+        align-items: end;
+        border-inline-end: 2px dashed var(--accent, currentColor);
+        display: flex;
+        flex-direction: column;
+        padding-inline-end: 1ch;
+      }
+
+      ::part(p-excerpt) {
+        max-inline-size: 60ch;
+      }
+    }
+
+    .o-hero__left {
+      --flow-space: var(--space-s);
+      text-align: center;
+    }
+
+    .o-hero__left__note p {
+      margin-inline: auto;
+      max-inline-size: 35rem;
+    }
+
+    .o-hero__left__note p:not(:first-of-type) {
+      margin-block-start: var(--space-2xs);
+    }
+
+    @media (min-width: 52.5rem) and (max-width: 70.25rem) {
+      .o-hero__left {
+        column-gap: var(--space-xs);
+        display: grid;
+        grid-template-areas: "keyboard image" "note image";
+      }
+
+      .c-keyboard {
+        align-self: end;
+        grid-area: keyboard;
+      }
+
+      .c-portrait {
+        grid-area: image;
+      }
+
+      .o-hero__left__note {
+        grid-area: note;
+      }
+    }
+
+    .c-keyboard {
+      display: grid;
+      justify-content: center;
+    }
+
+    .c-portrait figcaption::after,
+    .c-portrait figcaption::before {
+      content: " ↑ ";
+      font-size: 1.25em;
+    }
+
+    .c-portrait img {
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      inline-size: calc(7 * var(--step-5));
+      margin-block: 1.5rem;
+      margin-inline: auto;
+      transition: filter .3s ease;
+    }
+
+    .o-hero__right .sectionTitle {
+      margin-block-end: var(--space-s);
+    }
+
+    .c-postList {
+      --flow-space: var(--space-s-l);
+    }
+
+    .c-postList__more {
+      margin-block: var(--space-s-m);
+    }
+
+    cloudy-sky:defined + loading-spinner {
+      display: none;
+    }
+
+    ::part(hillside) {
+      fill: var(--accent);
+    }
+
+    @media (prefers-color-scheme: light) {
+      cloudy-sky {
+        --cloud-filter: hue-rotate(222deg);
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      cloudy-sky {
+        --cloud-filter: hue-rotate(190deg);
+      }
+    }
+  </style>
+{% endblock %}

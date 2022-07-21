@@ -1,11 +1,8 @@
 ---
-title: I Logged My Migraines For A Year
+title: I Logged My Migraines For A Year (2019)
 description: I kept a log of every migraine I had in 2019 in an effort to better understand my triggers and reduce their frequency.
 date: 2020-03-12
 tags: ["migraines"]
-featuredImage: ""
-shortname: 2019 Migraines
-website: ""
 ---
 
 I've been having migraines for as long as I can remember, so it's not surprising to get a few here and there. But 2019 was not an average year; it was more like 3x my average.
@@ -18,10 +15,10 @@ Years of being told by doctors and friends alike to keep a migraine log in an ef
 
 I'm still figuring that out. For years, I've had a pretty basic understanding of what my triggers are:
 
--   Sudden changes in barometric pressure: honestly, I can't fully explain this one, but here's an article that [discusses it in depth](https://blog.themigrainereliefcenter.com/barometric-pressure-and-migraines-what-you-need-to-know).
--   Stress: I think this one is actually self-explanatory.
--   Bad sleep, or lack thereof: [healthy sleep and regular routines](https://americanmigrainefoundation.org/resource-library/sleep/), like going to bed and waking up at the same time each day, are positive habits.
--   Over-processed foods: it turns out a full year of soda and frozen, ready-to-eat corndogs in takes a toll on more than your gut.
+- Sudden changes in barometric pressure: honestly, I can't fully explain this one, but here's an article that [discusses it in depth](https://blog.themigrainereliefcenter.com/barometric-pressure-and-migraines-what-you-need-to-know).
+- Stress: I think this one is actually self-explanatory.
+- Bad sleep, or lack thereof: [healthy sleep and regular routines](https://americanmigrainefoundation.org/resource-library/sleep/), like going to bed and waking up at the same time each day, are positive habits.
+- Over-processed foods: it turns out a full year of soda and frozen, ready-to-eat corndogs in takes a toll on more than your gut.
 
 So while it hasn't been a mystery, a year of spreadsheet-tracking surely helped. Look at these _graphs!_
 
@@ -45,10 +42,10 @@ My main goal was to create calendar heat map detailing each migraine day, color 
 
 I created the calendar with the following underlying data:
 
--   Date
--   Time
--   Main Trigger
--   Secondary Trigger
+- Date
+- Time
+- Main Trigger
+- Secondary Trigger
 
 ## Any Difficulties?
 

@@ -1,12 +1,8 @@
 ---
-title: I Logged My Migraines For Another Year
+title: I Logged My Migraines For Another Year (2020)
 description: Another year, another migraine recap.
 date: 2021-02-23
-tags:
-    - migraines
-shortname: 2020 Migraines
-featuredImage: ""
-website: ""
+tags: ["migraines"]
 ---
 
 We learned last year that my migraine situation was a problem. Well, more of a problem than usual. You can read more about [how I did in 2019](../i-logged-my-migraines-for-a-year), but it wasn't great. I continued to log each migraine I had throughout 2020 because I'm a nerd.
@@ -18,6 +14,7 @@ The shining light of this year's log is that I now have a working calendar heatm
 Here's the resulting calendar to showcase 2019 and 2020.
 
 <style>::part(heatmap) {font-family: var(--code)}</style>
+
 <calendar-heatmap data-src="/assets/js/migraines-2020.json"></calendar-heatmap>
 
 D3 is fun and exciting and equally complicated, so my chart only goes so far in displaying the data. I only keep track of the **day** and **start time** so the chart isn't too overwhelming, but it makes it more maintainable for myself as well.
@@ -46,10 +43,10 @@ Look at this graph now:
 
 ![A graph showing the number of migraines I had per quarter of the year.]({{ metadata.cloudinary }}/c_scale,f_auto,q_auto:eco/v1646349103/blog/2020-by-quarter_iqkdev.webp)
 
--   **January - March**: Not great. 10 migraines.
--   **April - June**: Even worse at 16.
--   **July - September**: Barely better with 15.
--   **October - December**: A pleasant total of 4.
+- **January - March**: Not great. 10 migraines.
+- **April - June**: Even worse at 16.
+- **July - September**: Barely better with 15.
+- **October - December**: A pleasant total of 4.
 
 Since I keep track of the time of day they happen, I also know what _times of day_ they most occurred. If that sounds interesting to you, then you'll love this graph:
 

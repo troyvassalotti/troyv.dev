@@ -6,9 +6,12 @@
   "scripts": {
     "build": "ELEVENTY_ENV=production eleventy",
     "serve": "ELEVENTY_ENV=production eleventy --serve",
-    "dev": "ELEVENTY_ENV=development eleventy --serve",
+    "dev": "ELEVENTY_ENV=development eleventy --serve --incremental",
+    "watch": "ELEVENTY_ENV=development eleventy --quiet --watch",
     "debug": "DEBUG=* eleventy",
-    "prettier::format": "prettier --write .",
+    "lint": "dprint check",
+    "lint::fix": "dprint fmt",
+    "postinstall": "npx patch-package",
     "netlify::deploy": "npm run prettier::format && netlify deploy --build --context production --prod"
   },
   "repository": {
@@ -25,20 +28,29 @@
   },
   "homepage": "https://github.com/troyvassalotti/troyv.dev#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.0",
-    "@11ty/eleventy-img": "^2.0.0",
+    "@11ty/eleventy": "2.0.0-canary.13",
+    "@11ty/eleventy-fetch": "^3.0.0",
     "@11ty/eleventy-plugin-inclusive-language": "^1.0.3",
     "@11ty/eleventy-plugin-rss": "^1.1.2",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
-    "@chrisburnell/eleventy-cache-webmentions": "^0.1.11",
-    "@quasibit/eleventy-plugin-sitemap": "^2.1.5",
-    "@troyv/web-components": "^3.1.2",
+    "@chrisburnell/eleventy-cache-webmentions": "^0.2.1",
+    "@netlify/functions": "^1.0.0",
+    "@troyv/web-components": "^3.2.2",
     "dotenv": "^16.0.0",
-    "eleventy-plugin-add-web-component-definitions": "^2.1.1",
-    "eleventy-plugin-time-to-read": "^1.2.0",
+    "dprint": "^0.29.1",
     "eleventy-plugin-youtube-embed": "^1.7.0",
-    "html-minifier-terser": "^7.0.0-alpha.2",
-    "plvylist": "^2.1.0",
-    "prettier": "^2.6.0"
+    "es-module-shims": "^1.5.8",
+    "html-minifier-terser": "^7.0.0-beta.0",
+    "markdown-it-anchor": "^8.6.4",
+    "netlify-plugin-cache": "^1.0.3",
+    "plvylist": "^2.1.0"
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": false,
+    "printWidth": 100,
+    "quoteProps": "consistent",
+    "bracketSameLine": true,
+    "tabWidth": 2
   }
 }

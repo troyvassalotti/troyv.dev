@@ -1,8 +1,19 @@
+/* MONOSPACE */
 @font-face {
   font-family: "Native";
   src: url("/assets/fonts/native/Native-Light.woff2") format("woff2");
   font-display: fallback;
   font-style: normal;
+  font-weight: 300;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
+    U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Native";
+  src: url("/assets/fonts/native/Native-LightItalic.woff2") format("woff2");
+  font-display: fallback;
+  font-style: italic;
   font-weight: 300;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
     U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
@@ -18,6 +29,37 @@
     U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+@font-face {
+  font-family: "Native";
+  src: url("/assets/fonts/native/Native-Italic.woff2") format("woff2");
+  font-display: fallback;
+  font-style: italic;
+  font-weight: 400;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
+    U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Native";
+  src: url("/assets/fonts/native/Native-Bold.woff2") format("woff2");
+  font-display: fallback;
+  font-style: normal;
+  font-weight: 700;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
+    U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Native";
+  src: url("/assets/fonts/native/Native-BoldItalic.woff2") format("woff2");
+  font-display: fallback;
+  font-style: italic;
+  font-weight: 700;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
+    U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* BODY */
 @font-face {
   font-family: "Locale";
   src: url("/assets/fonts/locale/Locale-Regular.woff2") format("woff2");
@@ -40,6 +82,26 @@
 
 @font-face {
   font-family: "Locale";
+  src: url("/assets/fonts/locale/Locale-Medium.woff2") format("woff2");
+  font-display: fallback;
+  font-style: normal;
+  font-weight: 500;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
+    U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Locale";
+  src: url("/assets/fonts/locale/Locale-MediumItalic.woff2") format("woff2");
+  font-display: fallback;
+  font-style: italic;
+  font-weight: 500;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
+    U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Locale";
   src: url("/assets/fonts/locale/Locale-Bold.woff2") format("woff2");
   font-display: fallback;
   font-style: normal;
@@ -48,76 +110,130 @@
     U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-html {
-  /* @link https://utopia.fyi/generator-mk-ii?c=320,18,1.2,1140,21,1.25,6,3, */
-  --step--3: clamp(0.6513rem, 0.5949rem + 0.2817vw, 0.7956rem);
-  --step--2: clamp(0.7813rem, 0.7134rem + 0.339vw, 0.955rem);
-  --step--1: clamp(0.9375rem, 0.8563rem + 0.4061vw, 1.1456rem);
-  --step-0: clamp(1.125rem, 1.0762rem + 0.2439vw, 1.25rem);
-  --step-1: clamp(1.35rem, 1.2329rem + 0.5854vw, 1.65rem);
-  --step-2: clamp(1.62rem, 1.4795rem + 0.7024vw, 1.98rem);
-  --step-3: clamp(1.9438rem, 1.775rem + 0.8439vw, 2.3763rem);
-  --step-4: clamp(2.3325rem, 2.1301rem + 1.0122vw, 2.8513rem);
-  --step-5: clamp(2.7994rem, 2.5567rem + 1.2134vw, 3.4213rem);
-  --step-6: clamp(3.3594rem, 3.0682rem + 1.4561vw, 4.1056rem);
+@font-face {
+  font-family: "Locale";
+  src: url("/assets/fonts/locale/Locale-BoldItalic.woff2") format("woff2");
+  font-display: fallback;
+  font-style: italic;
+  font-weight: 700;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
+    U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 
-  /* font styles */
+@font-face {
+  font-family: "Locale";
+  src: url("/assets/fonts/locale/Locale-Heavy.woff2") format("woff2");
+  font-display: fallback;
+  font-style: normal;
+  font-weight: 900;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
+    U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Locale";
+  src: url("/assets/fonts/locale/Locale-HeavyItalic.woff2") format("woff2");
+  font-display: fallback;
+  font-style: italic;
+  font-weight: 900;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
+    U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+html {
+  /* FONT SIZING */
+  /* @link https://utopia.fyi/type/calculator?c=320,21,1.2,1600,24,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+  --step--2: clamp(0.78rem, calc(0.77rem + 0.07vw), 0.84rem);
+  --step--1: clamp(0.94rem, calc(0.91rem + 0.14vw), 1.05rem);
+  --step-0: clamp(1.13rem, calc(1.08rem + 0.23vw), 1.31rem);
+  --step-1: clamp(1.35rem, calc(1.28rem + 0.36vw), 1.64rem);
+  --step-2: clamp(1.62rem, calc(1.51rem + 0.54vw), 2.05rem);
+  --step-3: clamp(1.94rem, calc(1.79rem + 0.78vw), 2.56rem);
+  --step-4: clamp(2.33rem, calc(2.11rem + 1.09vw), 3.2rem);
+  --step-5: clamp(2.8rem, calc(2.5rem + 1.51vw), 4.01rem);
+  --step-6: clamp(3rem, calc(3.25rem + 2.25vw), 5.72rem);
+  --step-7: clamp(4.7rem, calc(4.09rem + 3.06vw), 7.15rem);
+  --step-8: clamp(5.64rem, calc(4.82rem + 4.12vw), 8.94rem);
+  --step-9: clamp(6.77rem, calc(5.67rem + 5.5vw), 11.18rem);
+  --step-10: clamp(8.13rem, calc(6.67rem + 7.3vw), 13.97rem);
+
+  /* SPACING */
+  /* @link https://utopia.fyi/space/calculator?c=320,18,1.2,1600,21,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+  --space-3xs: clamp(0.31rem, calc(0.31rem + 0vw), 0.31rem);
+  --space-2xs: clamp(0.56rem, calc(0.53rem + 0.16vw), 0.69rem);
+  --space-xs: clamp(0.88rem, calc(0.84rem + 0.16vw), 1rem);
+  --space-s: clamp(1.13rem, calc(1.08rem + 0.23vw), 1.31rem);
+  --space-m: clamp(1.69rem, calc(1.61rem + 0.39vw), 2rem);
+  --space-l: clamp(2.25rem, calc(2.16rem + 0.47vw), 2.63rem);
+  --space-xl: clamp(3.38rem, calc(3.23rem + 0.7vw), 3.94rem);
+  --space-2xl: clamp(4.5rem, calc(4.31rem + 0.94vw), 5.25rem);
+  --space-3xl: clamp(6.75rem, calc(6.47rem + 1.41vw), 7.88rem);
+
+  /* ONE-UP PAIRS */
+  --space-3xs-2xs: clamp(0.31rem, calc(0.22rem + 0.47vw), 0.69rem);
+  --space-2xs-xs: clamp(0.56rem, calc(0.45rem + 0.55vw), 1rem);
+  --space-xs-s: clamp(0.88rem, calc(0.77rem + 0.55vw), 1.31rem);
+  --space-s-m: clamp(1.13rem, calc(0.91rem + 1.09vw), 2rem);
+  --space-m-l: clamp(1.69rem, calc(1.45rem + 1.17vw), 2.63rem);
+  --space-l-xl: clamp(2.25rem, calc(1.83rem + 2.11vw), 3.94rem);
+  --space-xl-2xl: clamp(3.38rem, calc(2.91rem + 2.34vw), 5.25rem);
+  --space-2xl-3xl: clamp(4.5rem, calc(3.66rem + 4.22vw), 7.88rem);
+
+  /* CUSTOM PAIRS */
+  --space-s-l: clamp(1.13rem, calc(0.75rem + 1.88vw), 2.63rem);
+
+  /* FONT FAMILIES */
   --body: "Locale", var(--fallback);
   --code: "Native", monospace;
   --fallback: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
     "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   --headings: "Oli Grotesk", var(--fallback);
 
-  /* main palette colors */
-  --blackPrimary: CanvasText;
-  --bluePrimary: hsl(212, 74%, 46%);
-  --goldPrimary: hsl(39, 100%, 45%);
-  --grayPrimary: hsl(220, 7.2%, 40%);
-  --greenPrimary: hsl(145, 63%, 42%);
-  --redPrimary: hsl(352, 100%, 44%);
-  --whitePrimary: Canvas;
+  /* COLOR PALETTE */
+  /* HEX */
+  --snow: #fdf5f9ff;
+  --pale-silver: #cdbfbcff;
+  --davys-grey: #5d5552ff;
+  --pewter-blue: #99b5beff;
+  --blue-yonder: #3f72afff;
+  --eerie-black: #141517ff;
 
-  /* use these colors to determine the nav underlines and rough notation effects */
-  --aboutColor: var(--bluePrimary);
-  --homeColor: var(--redPrimary);
-  --musicColor: currentColor;
-  --postsColor: var(--greenPrimary);
-  --workColor: var(--goldPrimary);
+  /* STANDARD RULES */
+  scrollbar-color: var(--foreground) var(--background);
+}
 
-  /* other things */
-  --gap: 1em;
+/* COLOR SCHEME CHANGES */
+@media (prefers-color-scheme: light) {
+  html {
+    --accent: var(--davys-grey);
+    --background: var(--snow);
+    --foreground: var(--eerie-black);
+    --links: var(--blue-yonder);
+  }
+}
 
-  scrollbar-color: var(--bluePrimary) var(--whitePrimary);
+@media (prefers-color-scheme: dark) {
+  html {
+    --accent: var(--pale-silver);
+    --background: var(--eerie-black);
+    --foreground: var(--snow);
+    --links: var(--pewter-blue);
+  }
+
+  pre {
+    font-weight: 300;
+  }
+
+  .u-invertSvg--onDark svg {
+    filter: invert(1);
+  }
 }
 
 body {
+  background-color: var(--background);
+  color: var(--foreground);
   font-family: var(--body);
   font-size: var(--step-0);
-  inline-size: 100%;
-  min-block-size: 100vh;
-  word-wrap: anywhere;
-}
-
-img {
-  block-size: auto;
-  display: block;
-  margin: auto;
-  max-inline-size: 100%;
-}
-
-img[height] {
-  block-size: auto;
-  inline-size: auto;
-}
-
-a {
-  --lightness: 45%;
-  color: hsl(212, 74%, var(--lightness));
-  transition: color 0.3s ease;
-}
-
-a:hover {
-  --lightness: 65%;
 }
 
 .code,
@@ -131,17 +247,129 @@ pre {
   white-space: pre-wrap;
 }
 
+:is(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--headings);
+}
+
+h1 {
+  font-size: var(--step-5);
+}
+
+h2 {
+  font-size: var(--step-4);
+}
+
+h3 {
+  font-size: var(--step-3);
+}
+
+h4 {
+  font-size: var(--step-2);
+}
+
+h5 {
+  font-size: var(--step-1);
+}
+
+h6 {
+  font-size: var(--step-0);
+}
+
 blockquote {
-  border-inline-end: 2px solid currentColor;
-  border-inline-start: 2px solid currentColor;
+  border: 1px solid var(--accent);
+  box-shadow: 10px 10px 0 0 var(--accent);
   font-style: italic;
+  inline-size: fit-content;
+  margin-block: var(--space-s-m);
+  position: relative;
 }
 
-blockquote p {
-  padding: 1ch;
+blockquote :is(p, q) {
+  padding-block: var(--space-s);
+  padding-inline: var(--space-xs-s);
 }
 
-a.animated-link {
+figcaption {
+  font-size: var(--step--1);
+  margin-block-start: 0.5rem;
+}
+
+sup {
+  vertical-align: top;
+}
+
+a {
+  color: var(--links);
+}
+
+a:hover,
+a:focus {
+  filter: brightness(0.7);
+}
+
+a:focus-visible {
+  outline: 2px dashed var(--links);
+  outline-offset: 2px;
+}
+
+.wrapper {
+  inline-size: min(100% - var(--wrapper-padding, 2rem), var(--wrapper-size, 100rem));
+  margin-inline: auto;
+}
+
+.wrapper.constrain--some {
+  --wrapper-size: 81.25rem;
+}
+
+.wrapper.constrain--more {
+  --wrapper-size: 68.75rem;
+}
+
+.wrapper.constrain--most {
+  --wrapper-size: 41.5rem;
+}
+
+.wrapper.constrain--less {
+  --wrapper-size: 115rem;
+}
+
+.wrapper.constrain--base {
+  --wrapper-size: 100rem;
+}
+
+.visually-hidden:not(:focus):not(:active) {
+  block-size: 1px;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  inline-size: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+}
+
+/* Create equal spacing between elements in a flow context without setting display */
+.flow > * + * {
+  margin-block-start: var(--flow-space, var(--space-s));
+}
+
+/* OBJECTS */
+.o-section--angled {
+  --clip-point: calc(var(--section-padding) / 2);
+  --section-background: var(--accent, #279af1);
+  --section-padding: 10vh;
+  background: var(--section-background);
+  clip-path: polygon(0 var(--clip-point), 100% 0%, 100% calc(100% - var(--clip-point)), 0% 100%);
+  color: var(--background);
+  padding-block: var(--section-padding);
+  padding-inline: var(--space-s-m);
+}
+
+.o-section--angled a {
+  color: currentColor;
+}
+
+/* COMPONENTS */
+.c-animatedLink {
   --linkStateRest: scaleX(1);
   --linkStartRest: left;
   --linkStateHover: scaleX(0);
@@ -149,340 +377,148 @@ a.animated-link {
   text-decoration: underline;
 }
 
-dt::after {
-  content: ":\00a0";
-}
-
-.flex {
-  display: flex;
-}
-
-.col {
-  flex-direction: column;
-}
-
-.wrapper {
-  inline-size: min(100% - var(--padding, 2rem), var(--max-inline, 100rem));
-  margin-inline: auto;
-}
-
-.wrapper[data-constrain="some"] {
-  --max-inline: 81.25rem;
-}
-
-.wrapper[data-constrain="more"] {
-  --max-inline: 68.75rem;
-}
-
-.wrapper[data-constrain="most"] {
-  --max-inline: 37.5rem;
-}
-
-.full {
-  inline-size: 100%;
-}
-
-.tall {
-  block-size: 100%;
-}
-
-.marginalize {
-  margin: auto;
-}
-
-.rm-m-bs {
-  margin-block-start: 0;
-}
-
-.rm-m-be {
-  margin-block-end: 0;
-}
-
-*[data-state="reversed"] {
-  flex-direction: column-reverse;
-}
-
-picture {
-  display: inline-block;
-}
-
-.grid {
-  display: grid;
-  gap: var(--gap);
-}
-
-.gap {
-  gap: var(--gap);
-}
-
-.two-col {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.place-center {
-  place-items: center;
-}
-
-.flex-center {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-}
-
-.wrap {
-  flex-wrap: wrap;
-}
-
-.layout {
-  display: grid;
-  gap: 2em;
-}
-
-main.layout {
-  margin-block-start: 3em;
-}
-
-.skewed-background {
-  --skewDown: skewy(3deg);
-  --skewUp: skewy(-3deg);
-  display: inline-flex;
-  padding: var(--skew-padding, 1em 0 2em);
-  position: relative;
-}
-
-.skewed-background::before {
-  background: var(--skew-color, currentColor);
-  block-size: 100%;
-  content: "";
-  inline-size: 100%;
-  position: absolute;
-  top: -10px;
-  transform: var(--skew-direction, var(--skewUp));
-}
-
-.skewed-background .content {
-  background: var(--skew-color);
-  color: var(--skew-text, currentColor);
-  position: relative;
-}
-
-.center {
-  text-align: center;
-}
-
-.italic {
-  font-style: italic;
-}
-
-.bold {
-  font-weight: 700;
-}
-
-.button {
-  --buttonColor: currentColor;
-  --color: currentColor;
-  background-color: transparent;
-  border: 1px solid var(--buttonColor);
-  color: var(--color);
-  display: inline-block;
-  font-weight: bold;
-  padding: 1ex 2ex;
-  text-decoration: none;
-  transition: 0.3s ease-out;
-}
-
-.button:hover {
-  --buttonColor: var(--bluePrimary);
-  --color: var(--whitePrimary);
-  background: var(--buttonColor);
-}
-
-.no-list {
-  list-style: none;
-  padding: 0;
-}
-
-:is(h1, h2, h3, h4, h5, h6) {
-  font-family: var(--headings);
-  margin: 0;
-}
-
-h1,
-.h1 {
-  font-size: var(--step-6);
-}
-
-h2,
-.h2 {
-  font-size: var(--step-5);
-}
-
-h3,
-.h3 {
-  font-size: var(--step-3);
-}
-
-h4,
-.h4 {
-  font-size: var(--step-2);
-}
-
-h5,
-.h5 {
-  font-size: var(--step-1);
-}
-
-h6,
-.h6 {
-  font-size: var(--step-0);
-}
-
-.txt-small {
-  font-size: var(--step--1);
-}
-
-.txt-smaller {
-  font-size: var(--step--2);
-}
-
-.txt-smallest {
-  font-size: var(--step--3);
-}
-
-.main-navigation {
-  font-size: var(--step--1);
-  padding: 1ch;
-}
-
-.main-navigation__links {
-  margin: 0;
-  padding: 0;
-}
-
-.main-navigation__links li:first-of-type {
-  margin-block-end: 1ch;
-}
-
-.main-navigation__links li:not(:first-of-type) {
-  display: inline-flex;
-  margin-inline-end: 1ch;
-}
-
-.main-navigation__link {
-  color: currentColor;
-  text-decoration: none;
-}
-
-.neumorphism {
-  --first-color: #d2d2d9;
-  --second-color: #ffffff;
-  box-shadow: inset 5px 5px 10px var(--first-color), inset -5px -5px 10px var(--second-color);
-}
-
-.has-box-shadow {
-  --shadow: var(--blackPrimary);
-  box-shadow: 2px 6px 10px -10px var(--shadow);
-}
-
-.jsHide {
-  display: none;
-}
-
 @media (prefers-reduced-motion: no-preference) {
-  .main-navigation__link::before {
-    --linkStartRest: right;
-    --linkStateRest: scaleX(0);
-  }
-
-  .main-navigation__link:hover::before {
-    --linkStartHover: left;
-    --linkStateHover: scaleX(1);
-  }
-
-  a.animated-link {
+  .c-animatedLink {
     position: relative;
     text-decoration: none;
   }
 
-  a.animated-link::before {
+  .c-animatedLink::before {
     background-color: currentColor;
     block-size: 0.06em;
-    bottom: 0;
     content: "";
     inline-size: 100%;
-    left: 0;
+    inset-block-end: 0;
+    inset-inline-start: 0;
     position: absolute;
     transform: var(--linkStateRest);
     transform-origin: var(--linkStartRest);
     transition: transform 400ms ease-out;
   }
 
-  a.animated-link:hover::before {
+  .c-animatedLink:hover::before {
     transform: var(--linkStateHover);
     transform-origin: var(--linkStartHover);
   }
-
-  #link__home::before {
-    background-color: var(--homeColor);
-  }
-
-  #link__posts::before {
-    background-color: var(--postsColor);
-  }
-
-  #link__music::before {
-    background-color: var(--musicColor);
-  }
-
-  #link__work::before {
-    background-color: var(--workColor);
-  }
-
-  #link__about::before {
-    background-color: var(--aboutColor);
-  }
-
-  [aria-current="page"]::before {
-    --linkStartRest: left;
-    --linkStateRest: scaleX(1);
-  }
-
-  [aria-current="page"]:hover::before {
-    --linkStartHover: right;
-    --linkStateHover: scaleX(0);
-  }
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    background: var(--blackPrimary);
-    color: var(--whitePrimary);
-    scrollbar-color: var(--goldPrimary) var(--blackPrimary);
-  }
+.c-link--icon {
+  align-items: center;
+  display: inline-flex;
+  gap: 0.5em;
+}
 
-  a {
-    color: hsl(39, 100%, var(--lightness));
-  }
+.c-link--icon svg {
+  display: inline-block;
+  max-inline-size: 28px;
+}
 
-  .button:hover {
-    --buttonColor: var(--goldPrimary);
-    --color: var(--blackPrimary);
-  }
+.c-dataList__item {
+  display: flex;
+  gap: 0.5ch;
+}
 
-  .neumorphism {
-    --first-color: #080707;
-    --second-color: #1e1b1d;
-  }
+.c-dataList__item dt {
+  font-weight: bold;
+}
 
-  .has-box-shadow {
-    --shadow: var(--whitePrimary);
-  }
+.c-dataList__item dt::after {
+  content: ":";
+}
 
-  pre {
-    font-weight: 300;
-  }
+/* UTILITIES */
+.u-step-10 {
+  font-size: var(--step-10);
+}
 
-  ::part(co-figure) {
-    filter: none;
-  }
+.u-step-9 {
+  font-size: var(--step-9);
+}
+
+.u-step-8 {
+  font-size: var(--step-8);
+}
+
+.u-step-7 {
+  font-size: var(--step-7);
+}
+
+.u-step-6 {
+  font-size: var(--step-6);
+}
+
+.u-step-5 {
+  font-size: var(--step-5);
+}
+
+.u-step-4 {
+  font-size: var(--step-4);
+}
+
+.u-step-3 {
+  font-size: var(--step-3);
+}
+
+.u-step-2 {
+  font-size: var(--step-2);
+}
+
+.u-step-1 {
+  font-size: var(--step-1);
+}
+
+.u-step-0 {
+  font-size: var(--step-0);
+}
+
+.u-step--1 {
+  font-size: var(--step--1);
+}
+
+.u-step--2 {
+  font-size: var(--step--2);
+}
+
+.u-text--center {
+  text-align: center;
+}
+
+.u-truncate :is(p, ul, ol) {
+  max-inline-size: var(--readable-length, 60ch);
+}
+
+.u-line-height--less {
+  line-height: 1.25;
+}
+
+.u-text--caps {
+  text-transform: uppercase;
+}
+
+.u-text--italic {
+  font-style: italic;
+}
+
+.u-text--bold {
+  font-weight: bold;
+}
+
+.u-font--headings {
+  font-family: var(--headings);
+}
+
+.u-font--base {
+  font-family: var(--body);
+}
+
+.u-font--code {
+  font-family: var(--code);
+}
+
+.u-revertMargin--start {
+  margin-block-start: revert;
+}
+
+.u-revertMargin--end {
+  margin-block-end: revert;
 }

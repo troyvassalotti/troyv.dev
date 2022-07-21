@@ -1,8 +1,5 @@
 # Git
 .github
 
-# CMS/Hosting
-.netlify
-
 # Plugins/Functions
-plugins
+netlify/plugins

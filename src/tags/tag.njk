@@ -1,0 +1,39 @@
+{% extends 'layouts/base.njk' %}
+
+{% block script %}
+  {{ super() }}
+  <script type="module">
+    import "/assets/js/post-item.js"
+  </script>
+{% endblock %}
+
+{% block content %}
+  <main id="main">
+    <div class="wrapper constrain--more flow">
+      <header class="u-text--center">
+        <h1 class="u-revertMargin--start">Posts about “{{ tag | capitalize }}”</h1>
+      </header>
+      <section class="posts">
+        <ol role="list" class="c-postList flow">
+          {% set taglist = collections[tag] %}
+          {% for post in taglist | reverse %}
+            <li>
+              <post-item date="{{ post.date | dateString }}"
+                         url="{{ post.url }}"
+                         heading="{{ post.data.title }}"></post-item>
+            </li>
+          {% endfor %}
+        </ol>
+      </section>
+    </div>
+  </main>
+{% endblock %}
+
+{% block style %}
+  {{ super() }}
+  <style>
+    .posts {
+      margin-block: var(--space-m-l);
+    }
+  </style>
+{% endblock %}

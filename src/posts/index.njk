@@ -1,0 +1,86 @@
+---
+title: Posts Archive
+description: I occasionally write about things.
+"override:layout": null
+"override:tags": []
+"override:permalink": /archive/
+---
+
+{% extends 'layouts/base.njk' %}
+
+{% block headScript %}
+  <script>
+    {% include 'js/loading-spinner.js' %}
+  </script>
+{% endblock %}
+
+{% block script %}
+  {{ super() }}
+  <script type="module">
+    import "/assets/js/post-item.js"
+    import "/assets/js/tag-cloud.js"
+  </script>
+{% endblock %}
+
+{% block content %}
+  <div class="wrapper constrain--more">
+    <main id="main">
+      <section>
+        <header class="u-text--center">
+          <h1 class="u-revertMargin--start">{{ title }}</h1>
+          <div class="rss u-invertSvg--onDark">
+            <span>{% include 'partials/rss.svg' %}</span>
+            <span>Subscribe to the <a href="/feed.xml">RSS feed</a>.</span>
+          </div>
+        </header>
+        {% set sortedTags = collections.allTagsList | sort %}
+        {% set tags = sortedTags.join(",") %}
+        <tag-cloud base="/tags/" tags="{{ sortedTags }}"></tag-cloud>
+        <loading-spinner></loading-spinner>
+      </section>
+      <section class="posts">
+        <ul role="list" class="c-postList flow">
+          {% for post in collections.post | reverse %}
+            <li>
+              <post-item date="{{ post.date | dateString }}"
+                         url="{{ post.url }}"
+                         heading="{{ post.data.title }}"></post-item>
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
+    </main>
+  </div>
+{% endblock %}
+
+{% block style %}
+  {{ super() }}
+  <style>
+    tag-cloud {
+      margin-block: var(--space-l-xl);
+    }
+
+    tag-cloud:defined + loading-spinner {
+      display: none;
+    }
+
+    .posts {
+      margin-block: var(--space-m-l);
+    }
+
+    .c-postList {
+      --flow-space: var(--space-s-m);
+    }
+
+    .rss {
+      align-items: center;
+      display: flex;
+      gap: 1ch;
+      justify-content: center;
+    }
+
+    .rss svg {
+      max-inline-size: 1em;
+    }
+  </style>
+{% endblock %}
