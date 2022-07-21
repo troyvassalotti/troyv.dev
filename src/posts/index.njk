@@ -8,6 +8,12 @@ description: I occasionally write about things.
 
 {% extends 'layouts/base.njk' %}
 
+{% block headScript %}
+  <script>
+    {% include 'js/loading-spinner.js' %}
+  </script>
+{% endblock %}
+
 {% block script %}
   {{ super() }}
   <script type="module">
@@ -30,6 +36,7 @@ description: I occasionally write about things.
         {% set sortedTags = collections.allTagsList | sort %}
         {% set tags = sortedTags.join(",") %}
         <tag-cloud base="/tags/" tags="{{ sortedTags }}"></tag-cloud>
+        <loading-spinner></loading-spinner>
       </section>
       <section class="posts">
         <ul role="list" class="c-postList flow">
@@ -51,6 +58,10 @@ description: I occasionally write about things.
   <style>
     tag-cloud {
       margin-block: var(--space-l-xl);
+    }
+
+    tag-cloud:defined + loading-spinner {
+      display: none;
     }
 
     .posts {
