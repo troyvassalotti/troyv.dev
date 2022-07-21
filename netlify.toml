@@ -34,7 +34,7 @@ force = true
 
 [[edge_functions]]
 function = "now-playing"
-path = "/music/*"
+path = "/music/"
 
 [[headers]]
 for = "/*"
