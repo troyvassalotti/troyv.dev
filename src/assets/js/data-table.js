@@ -67,11 +67,11 @@ class DataTable extends LitElement {
         }
 
         tr:nth-of-type(odd) {
-          background-color: #a5a6a8;
+          background-color: var(--pale-silver);
         }
 
         tr:nth-of-type(even) {
-          background-color: #6f7072;
+          background-color: var(--snow);
         }
       `,
     ];
