@@ -14,27 +14,27 @@
         <div class="central__left flow u-truncate">
           <header class="flow header">
             <h1 class="title u-text--caps u-step-0">{{ title }}</h1>
+            {% edge %}
             <div class="nowPlaying flow u-step--2">
               <p class="u-font--headings u-text--bold">{% include 'partials/music.svg' %}Now Playing</p>
-              {% edge %}
-                {% if nowPlaying %}
-                  <dl class="c-dataList u-font--code">
-                    <div class="c-dataList__item">
-                      <dt>Artist</dt>
-                      <dd>{{ nowPlaying.artist }}</dd>
-                    </div>
-                    <div class="c-dataList__item">
-                      <dt>Track</dt>
-                      <dd>{{ nowPlaying.song }}</dd>
-                    </div>
-                    <div class="c-dataList__item">
-                      <dt>Release</dt>
-                      <dd>{{ nowPlaying.release }}</dd>
-                    </div>
-                  </dl>
-                {% else %}
-                  <p class="u-font--code">Silence (nothing)</p>
-                {% endif %}
+              {% if nowPlaying %}
+                <dl class="c-dataList u-font--code">
+                  <div class="c-dataList__item">
+                    <dt>Artist</dt>
+                    <dd>{{ nowPlaying.artist }}</dd>
+                  </div>
+                  <div class="c-dataList__item">
+                    <dt>Track</dt>
+                    <dd>{{ nowPlaying.song }}</dd>
+                  </div>
+                  <div class="c-dataList__item">
+                    <dt>Release</dt>
+                    <dd>{{ nowPlaying.release }}</dd>
+                  </div>
+                </dl>
+              {% else %}
+                <p class="u-font--code">Silence (nothing)</p>
+              {% endif %}
               {% endedge %}
             </div>
             <h2 class="u-step-6 u-line-height--less">Guitarist, drummer, singer-songwriter.</h2>
