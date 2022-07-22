@@ -15,6 +15,8 @@ Here's the resulting calendar to showcase 2019 and 2020.
 
 <style>::part(heatmap) {font-family: var(--code)}</style>
 
+<script src="/assets/js/calendar-heatmap.js" type="module"></script>
+
 <calendar-heatmap data-src="/assets/js/migraines-2020.json"></calendar-heatmap>
 
 D3 is fun and exciting and equally complicated, so my chart only goes so far in displaying the data. I only keep track of the **day** and **start time** so the chart isn't too overwhelming, but it makes it more maintainable for myself as well.

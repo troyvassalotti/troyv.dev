@@ -17,6 +17,10 @@
       "url": "/music/"
     },
     {
+      "name": "likes",
+      "url": "https://www.inoreader.com/stream/user/1005377372/tag/Favorites/view/html?t=Troy%27s%20Favorites&l=https%3A%2F%2Fwww.troyv.dev%2Ffavicons%2Fandroid-chrome-512x512.png&cs=m"
+    },
+    {
       "name": "about",
       "url": "/about/"
     }
