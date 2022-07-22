@@ -1,18 +1,17 @@
 {
-  "typescript": {
-  },
-  "json": {
-  },
-  "markdown": {
-  },
-  "toml": {
-  },
+  "typescript": {},
+  "json": {},
+  "markdown": {},
+  "toml": {},
   "includes": ["**/*.{ts,js,json,md,toml,css}"],
   "excludes": [
     "**/node_modules",
     "**/*-lock.json",
     "_site",
     ".cache",
+    "_cache",
+    "netlify",
+    "patches",
     ".netlify",
     "src/_includes/layouts/base.njk"
   ],

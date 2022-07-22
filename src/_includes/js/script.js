@@ -25,14 +25,14 @@ function konamiCode(e) {
         return Math.random() * (max - min) + min;
       }
 
-      var interval = setInterval(function () {
-        var timeLeft = animationEnd - Date.now();
+      const interval = setInterval(function () {
+        const timeLeft = animationEnd - Date.now();
 
         if (timeLeft <= 0) {
           return clearInterval(interval);
         }
 
-        var particleCount = 50 * (timeLeft / duration);
+        const particleCount = 50 * (timeLeft / duration);
         // since particles fall down, start a bit higher than random
         confetti(
           Object.assign({}, defaults, {

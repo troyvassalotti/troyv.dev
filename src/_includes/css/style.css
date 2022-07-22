@@ -355,7 +355,7 @@ a:focus-visible {
 /* OBJECTS */
 .o-section--angled {
   --clip-point: calc(var(--section-padding) / 2);
-  --section-background: var(--accent, #279af1);
+  --section-background: var(--accent, var(--foreground));
   --section-padding: 10vh;
   background: var(--section-background);
   clip-path: polygon(0 var(--clip-point), 100% 0%, 100% calc(100% - var(--clip-point)), 0% 100%);
@@ -521,4 +521,10 @@ a:focus-visible {
 
 .u-revertMargin--end {
   margin-block-end: revert;
+}
+
+/* Yeah you do */
+.u-rule {
+  margin-block-start: var(--space-l-xl);
+  max-inline-size: 40ch;
 }

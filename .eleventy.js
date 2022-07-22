@@ -61,8 +61,7 @@ module.exports = function (eleventyConfig) {
   });
 
   // Shortcodes
-  eleventyConfig.addNunjucksAsyncShortcode("image", shortcodes.Image);
-  eleventyConfig.addNunjucksShortcode("imageSync", shortcodes.ImageSync);
+  eleventyConfig.addShortcode("cloudinaryImage", shortcodes.cloudinaryImage);
 
   // Add excerpt support
   eleventyConfig.setFrontMatterParsingOptions({

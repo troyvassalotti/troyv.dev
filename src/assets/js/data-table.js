@@ -10,11 +10,14 @@ class DataTable extends LitElement {
           overflow: auto;
         }
 
-        *,
+        * {
+          box-sizing: border-box;
+          margin: 0;
+        }
+
         *::after,
         *::before {
           box-sizing: inherit;
-          margin: 0;
         }
 
         table {

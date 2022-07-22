@@ -13,7 +13,7 @@
       <header class="u-text--center">
         <h1 class="u-revertMargin--start">Posts about “{{ tag | capitalize }}”</h1>
       </header>
-      <section class="posts">
+      <section class="posts" style="margin-block: var(--space-m-l);">
         <ol role="list" class="c-postList flow">
           {% set taglist = collections[tag] %}
           {% for post in taglist | reverse %}
@@ -27,13 +27,4 @@
       </section>
     </div>
   </main>
-{% endblock %}
-
-{% block style %}
-  {{ super() }}
-  <style>
-    .posts {
-      margin-block: var(--space-m-l);
-    }
-  </style>
 {% endblock %}
