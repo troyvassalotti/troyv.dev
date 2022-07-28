@@ -3,6 +3,7 @@
  * Most site features are configured in /utils/
  */
 const markdownItAnchor = require("markdown-it-anchor");
+const markdownItFootnote = require("markdown-it-footnote");
 
 const utilsDir = `${process.cwd()}/utils`;
 const srcDir = `./src`;
@@ -76,9 +77,11 @@ module.exports = function (eleventyConfig) {
    * @link https://www.11ty.dev/docs/languages/markdown/#optional-amend-the-library-instance
    */
   eleventyConfig.amendLibrary("md", (mdLib) =>
-    mdLib.use(markdownItAnchor, {
-      permalink: markdownItAnchor.permalink.headerLink(),
-    })
+    mdLib
+      .use(markdownItAnchor, {
+        permalink: markdownItAnchor.permalink.headerLink(),
+      })
+      .use(markdownItFootnote)
   );
 
   eleventyConfig.dataFilterSelectors.add("page");
