@@ -5,7 +5,7 @@ date: 2021-02-23
 tags: ["migraines"]
 ---
 
-We learned last year that my migraine situation was a problem. Well, more of a problem than usual. You can read more about [how I did in 2019](../i-logged-my-migraines-for-a-year), but it wasn't great. I continued to log each migraine I had throughout 2020 because I'm a nerd.
+We learned last year that my migraine situation was a problem. Well, more of a problem than usual. You can read more about [how I did in 2019](/2020/03/12/i-logged-my-migraines-for-a-year-2019/), but it wasn't great. I continued to log each migraine I had throughout 2020 because I'm a nerd.
 
 I made improvements, but they came in the second half of the year since it takes that long for trial and error to work. That said, I ended the year at **45 migraines** (a drop from **67** in 2019). It's still not ideal, but plenty of people have it worse than I do, so I'm lucky in that sense.
 

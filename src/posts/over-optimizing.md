@@ -22,7 +22,7 @@ I have a handful of websites I've reserved for dedicating my time to:
 - This one,
 - [Front Royal's](https://www.frontroyalband.com),
 - [This is a Band](https://www.thisisa.band),
-- and my solo project - [troy](https://validcharacters.netlify.app).
+- and my solo project - troy.
 
 A couple other sites use Python programs or shell scripts that populate content into a given template, so tinkering with those is often near-impossible. Anything else - specifically anything I've coded and have access to the source of - is _supposed to be_ off limits.
 
