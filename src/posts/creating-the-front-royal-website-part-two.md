@@ -7,7 +7,7 @@ tags: ["front royal", "design"]
 
 I _really_ dropped the ball on this whole "blogging in real time" thing because the site is almost done.
 
-In [the first blog](../creating-the-front-royal-website-part-one), I outlined my goals for the site with a screenshot of a few design ideas, and what stack I'll be using to build it.
+In [the first blog](/2020/03/16/creating-the-front-royal-website-part-1/), I outlined my goals for the site with a screenshot of a few design ideas, and what stack I'll be using to build it.
 
 Well, over that weekend, boredom got the best of me and [I made the dang thing](https://frontroyalband.com/). We haven't bought a domain yet, so ignore the randomly-selected words that Netlify provided.
 

@@ -28,7 +28,7 @@ NotSocial started out as a simple idea on [CodePen](https://codepen.io) practici
 
 I thought I was done after publishing that, but I knew it could be better. Not only could it be better looking and more thought out, but I could broaden my skills and [make it with Nuxt](https://nuxtjs.org/), a static site generator for Vue. I knew it wouldn't be a walk in the park, but I didn't expect it to be as challenging as it was either.
 
-You can take a look at [my commit history](https://github.com/troyvassalotti/pang/commits/master) if you want to; It's a little embarrassing, but funny. You can see the thought process going on as I struggled to make the site: "Wow, you gotta wrap everything in a div or whatever to make it work."
+You can take a look at my commit history if you want to; It's a little embarrassing, but funny. You can see the thought process going on as I struggled to make the site: "Wow, you gotta wrap everything in a div or whatever to make it work."
 
 Long story short, it took me a few months to get this thing right. I had to read _a lot_ of Nuxt documentation to really, truly, understand what the heck I was doing, and it was worth it because NotSocial 2.0 is beautiful (to me, at least right now).
 

@@ -13,7 +13,7 @@ The basics made sense. Putting an `<audio>` or `<video>` element on a page with 
 
 It took weeks to figure this stuff out completely. Honestly, I almost gave up some of the functionality for Plvylist because I thought they were lost causes. The documentation was thorough for sure, but it was also fragmented in ways that didn't quite make sense to me. It was as if I had to read docs for unrelated topics to find all the answers I was looking for.
 
-This project went through many iterations as well. What started as a project on Glitch turned into [a CodePen](https://codepen.io/troyvassalotti/full/ExyOgGV) which became a GitHub repo that is now a component I use in production on [two](https://validcharacters.netlify.app/) [different](/music/) projects.
+This project went through many iterations as well. What started as a project on Glitch turned into [a CodePen](https://codepen.io/troyvassalotti/full/ExyOgGV) which became a GitHub repo that is now a component I use in production on [two different](/music/) projects.
 
 Overall, Plvylist can be broken down into three pieces:
 
