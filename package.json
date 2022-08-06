@@ -12,6 +12,7 @@
     "lint": "dprint check",
     "lint::fix": "dprint fmt",
     "postinstall": "npx patch-package",
+    "netlify::dev": "npx netlify dev",
     "netlify::deploy": "npm run prettier::format && netlify deploy --build --context production --prod"
   },
   "repository": {

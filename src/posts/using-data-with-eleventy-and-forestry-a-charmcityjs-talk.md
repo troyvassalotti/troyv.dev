@@ -2,7 +2,7 @@
 title: Using Data with Eleventy and Forestry (a charmCityJs Talk)
 description: I gave a talk during a virtual charmCityJs meetup and it was a good time.
 date: 2021-10-15
-tags: ["speaking", "charmCityJs"]
+tags: ["speaking", "charmcityjs"]
 ---
 
 Earlier this month, I gave a talk at [the charmCityJs meetup](https://www.meetup.com/charmcityjs/) about how I use the powers of Eleventy and Forestry to integrate my development workflow into a CMS. I had never given a talk before, let alone try to explain how my website works to people I barely know. That said, it was a cool 15 minute experience.
