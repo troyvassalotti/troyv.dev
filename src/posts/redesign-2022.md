@@ -75,7 +75,7 @@ I'm aware of the irony in writing an entire section on simplicity while also emb
 
 If you check out my [music pages](/music/), you'll notice a few things:
 
-1. A web component that plays my music (unrelated to serverless of edge, but worth a callout)
+1. A web component that plays my music (unrelated to serverless or edge, but worth a callout)
 2. A block of text above the H1 that tells you what I'm currently listening to, if anything.
 3. A [series of data](/music/stats/) from my [ListenBrainz](https://listenbrainz.org/user/actionhamilton/) account where I scrobble all my listening habits to.
 
