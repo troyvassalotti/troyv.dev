@@ -21,7 +21,7 @@ class DataTable extends LitElement {
         }
 
         table {
-          border: 1px solid currentColor;
+          border: 1px solid var(--foreground);
           border-collapse: collapse;
           color: var(--eerie-black);
           font-family: var(--code);
@@ -30,6 +30,7 @@ class DataTable extends LitElement {
         }
 
         caption {
+          color: var(--foreground);
           font-weight: bold;
           inline-size: fit-content;
           inset-inline-start: 0;
