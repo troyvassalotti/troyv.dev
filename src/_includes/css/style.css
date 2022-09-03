@@ -404,7 +404,7 @@ a:focus-visible {
 
 .c-link--icon {
   align-items: center;
-  display: inline-flex;
+  display: flex;
   gap: 0.5em;
 }
 
