@@ -402,15 +402,11 @@ a:focus-visible {
   }
 }
 
-.c-link--icon {
-  align-items: center;
-  display: flex;
-  gap: 0.5em;
-}
-
 .c-link--icon svg {
   display: inline-block;
+  margin-inline-end: 1ex;
   max-inline-size: 28px;
+  vertical-align: middle;
 }
 
 .c-dataList__item {
