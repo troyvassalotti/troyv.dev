@@ -22,7 +22,7 @@ module.exports = function () {
       },
       social: [
         {
-          href: "https://justtroy.bandcamp.com/",
+          href: "https://troyalllowercase.bandcamp.com/",
           img: "bandcamp.svg",
           alt: "Bandcamp",
         },
