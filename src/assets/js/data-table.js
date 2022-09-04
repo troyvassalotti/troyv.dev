@@ -25,6 +25,7 @@ class DataTable extends LitElement {
           border-collapse: collapse;
           color: var(--eerie-black);
           font-family: var(--code);
+          font-size: var(--step--1);
           inline-size: max-content;
           table-layout: fixed;
         }

@@ -17,14 +17,29 @@
     </header>
     <div class="wrapper constrain--less">
       <div class="listeningHistory">
-        <data-table
-          caption="Last 30 Plays"
-          headers="Number Artist Track Release"
-          data='{{ mostRecentListens | dump }}'></data-table>
-        <data-table
-          caption="Top Artists This Month"
-          headers="Number Artist Listens"
-          data='{{ topArtistsThisMonth | dump }}'></data-table>
+        <div class="wrapper constrain--some">
+          <h2 class="u-revertMargin--end u-step-2">Top Releases Last Month</h2>
+          <div class="releaseGrid">
+            {% for release in lastMonthsTopReleases %}
+              <div class="release">
+                <img class="releaseArt" src="https://coverartarchive.org/release/{{ release.mbid }}/front" alt="">
+                <p class="releaseName">{{ release.release }}</p>
+                <p class="releaseArtist">{{ release.artist }}</p>
+                <p class="releaseListens">{{ release.listens }} Listens</p>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="tables">
+          <data-table
+            caption="Last 30 Plays"
+            headers="Number Artist Track Release"
+            data='{{ mostRecentListens | dump }}'></data-table>
+          <data-table
+            caption="Top Artists This Month"
+            headers="Number Artist Listens"
+            data='{{ topArtistsThisMonth | dump }}'></data-table>
+        </div>
       </div>
     </div>
   </main>
@@ -34,12 +49,56 @@
   {{ super() }}
   <style>
     .listeningHistory {
+      margin-block: var(--space-xl-2xl);
+    }
+
+    .releaseGrid {
+      --column-count: auto-fill;
+      --column-size: 9rem;
+
+      align-items: start;
+      display: grid;
+      font-size: var(--step--1);
+      grid-template-columns: repeat(var(--column-count), minmax(var(--column-size), 1fr));
+      gap: var(--space-s-l);
+      margin-block-end: var(--space-xl-2xl);
+    }
+
+    @media (min-width: 70.25rem) {
+      .releaseGrid {
+        --column-count: 5;
+        --column-size: 12rem;
+      }
+    }
+
+    .releaseName {
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .releaseListens, .releaseArtist {
+      font-size: var(--step--2);
+    }
+
+    .release {
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+    }
+
+    .release img {
+      aspect-ratio: 1 / 1;
+      background: radial-gradient(var(--background), var(--foreground));
+      box-shadow: 0 0 2px 0 var(--foreground);
+      margin-block-end: var(--space-xs);
+    }
+
+    .tables {
       align-items: start;
       display: flex;
       flex-wrap: wrap;
       gap: var(--space-m);
       justify-content: space-between;
-      margin-block: var(--space-xl-2xl);
     }
   </style>
 {% endblock %}

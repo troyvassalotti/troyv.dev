@@ -1,8 +1,6 @@
-I'm a **developer** and **musician** based in Baltimore, currently an engineer at T. Rowe Price and part-time developer at Goucher College. Any and all opinions are my own. (I think I'm legally required to say that?)
+I'm a developer and musician based in Baltimore who is interested in privacy, open source software, and making the web a more accessible place. I also like long walks on the beach, but can't stand getting sand _everywhere_.
 
-I'm interested in privacy, open source software, and making the web a more accessible place. I also like long walks on the beach, but can't stand getting sand _everywhere_.
-
-In 2021, I became a community organizer for [**charmCityJS**](https://charmcityjs.org/), a Baltimore-based [JavaScript meetup](https://www.meetup.com/charmcityjs/) that meets on the first Wednesday of every month for a night of talks, discussions, and camaraderie.
+In 2021, I became a community organizer for [**charmCityJs**](https://charmcityjs.org/), a Baltimore-based [JavaScript meetup](https://www.meetup.com/charmcityjs/) that meets on the first Wednesday of every month for a night of talks, discussions, and camaraderie.
 
 If you'd like my professional history in detail, [view my résumé](https://resume.troyv.dev/). It's updated about as often as anyone else's <abbr title="Your mileage may vary">(YMMV)</abbr>, but it looks nice and prints well. You can also [contact me](/contact/).
 
