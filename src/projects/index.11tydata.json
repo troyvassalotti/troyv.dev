@@ -2,21 +2,20 @@
   "projects": [
     {
       "name": "Abandoned Website",
-      "url": "https://abandoned-website.netlify.app/",
       "repository": "https://github.com/troyvassalotti/abandoned-website",
-      "description": "A fake company website made as a Hugo learning experience."
+      "description": "A fake company website made as a Hugo learning experience. This was my first attempt at making websites for fun that aren't my personal site."
     },
     {
       "name": "NotSocial",
       "url": "https://pang.netlify.app/",
       "repository": "https://github.com/troyvassalotti/pang",
-      "description": "A not-so-social media website made using Vue for the first time."
+      "description": "A not-so-social media website made using Vue (my first Vue project)."
     },
     {
       "name": "Express Cats",
       "url": "https://cats.onrender.com/",
       "repository": "https://github.com/troyvassalotti/express-cats",
-      "description": "My first Express site which showcases my cats."
+      "description": "My first Express site which showcases my cats. Note: it can take up to 30 seconds to spin up if it's been a while since someone viewed it!"
     },
     {
       "name": "I Don't Have A Podcast",
@@ -28,7 +27,7 @@
       "name": "This is a Band",
       "url": "https://thisisa.band/",
       "repository": "https://github.com/troyvassalotti/thisisaband-site",
-      "description": "My blog about bands I'm currently listening to."
+      "description": "A blog about bands I'm currently listening to."
     },
     {
       "name": "Hello Worldvue",
@@ -40,7 +39,7 @@
       "name": ".docx to .html",
       "url": "https://docx-to-html.netlify.app/",
       "repository": "https://github.com/troyvassalotti/docx-to-html",
-      "description": "Turn a dreaded Word document into pure HTML."
+      "description": "Turn a dreaded Word document into pure HTML. Ahh, how nice that feels."
     },
     {
       "name": "Vuedoku",
