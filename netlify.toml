@@ -32,9 +32,9 @@ to = "https://www.troyv.dev/:splat"
 status = 301
 force = true
 
-[[edge_functions]]
-function = "now-playing"
-path = "/music/"
+# [[edge_functions]]
+# function = "now-playing"
+# path = "/music/"
 
 [[headers]]
 for = "/*"
