@@ -42,6 +42,7 @@ module.exports = function (eleventyConfig) {
     });
 
   // Plugins
+  /** @TODO Fix the webmentions plugin when transitioning to 11ty 2.0 Stable */
   Object.keys(plugins).forEach((plugin) => {
     eleventyConfig.addPlugin(plugins[plugin].name, plugins[plugin]?.options);
   });
