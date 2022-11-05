@@ -1,8 +1,6 @@
 /* TEAM */
 Developer: Troy Vassalotti
 GitHub: troyvassalotti
-Twitter: @validcharacters
-Location: Maryland, US
 
 /* THANKS */
 Shaw for the clouds animation <https://codepen.io/shshaw/pen/DxJka> that inspired the <cloudy-sky> web component.
