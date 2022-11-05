@@ -20,6 +20,16 @@ description: Watch as Troy Vassalotti learns his way around a computer.
 
     // TODO
     const sloganLocation = document.querySelector(".js-slogan")
+    const slogans = ["insert your favorite descriptors here", "hopeless romantic", "apple butter cheesecake", "musician, engineer, and musician, engineer, and musician, engineer...", "I don't know anymore"]
+
+    /** Generates a random number inclusive of min, exclusive of max */
+    const randomNumberGenerator = (min, max) => {
+      return Math.floor(Math.random() * (max - min) + min)
+    }
+
+    const randomNumberForSlogan = randomNumberGenerator(0, slogans.length)
+
+    sloganLocation.innerText = slogans[randomNumberForSlogan]
   </script>
 {% endblock %}
 
@@ -46,8 +56,7 @@ description: Watch as Troy Vassalotti learns his way around a computer.
                 height="600"
                 id="me"
               />
-              <!-- other things I am: hopeless romantic, apple butter cheesecake -->
-              <figcaption><a href="/music/">Musician</a>, developer, and <span
+              <figcaption><a href="/music/">Musician</a>, engineer, and <span
                   class="js-slogan">insert your favorite descriptors here</span>.
               </figcaption>
             </figure>
