@@ -12,8 +12,9 @@
           </p>
         </header>
         <div class="post flow u-truncate e-content">{{ content | safe }}</div>
+        {% include 'partials/syndication-links.njk' %}
       </article>
-      {% include "partials/webmention-list.njk" %}
+      {% include 'partials/webmention-list.njk' %}
     </main>
   </div>
   {% include 'partials/post-navigation.njk' %}
