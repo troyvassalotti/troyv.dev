@@ -1,4 +1,4 @@
-import { LitElement, css, html } from "lit";
+import { css, html, LitElement } from "lit";
 import { map } from "lit-map";
 import slugify from "slugify";
 
@@ -82,7 +82,7 @@ class TagCloud extends LitElement {
   }
 
   get tagObjects() {
-    return this.tagList.map(function (tag) {
+    return this.tagList.map(function(tag) {
       return {
         tag,
         slug: slugify(tag),
@@ -95,14 +95,17 @@ class TagCloud extends LitElement {
       <nav aria-label="tags" class="tags">
         <p class="title">Tags (${this.tagList.length}):</p>
         <ul role="list" class="cloud">
-          ${map(
-            this.tagObjects,
-            (tag) => html` <li>
+          ${
+      map(
+        this.tagObjects,
+        (tag) =>
+          html` <li>
               <a class="tag" href="${this.base + tag.slug + "/"}"
                 ><span class="visually-hidden">Posts tagged </span>${tag.tag}</a
               >
-            </li>`
-          )}
+            </li>`,
+      )
+    }
         </ul>
       </nav>
     `;

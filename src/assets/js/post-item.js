@@ -1,4 +1,4 @@
-import { LitElement, css, html, nothing } from "lit";
+import { css, html, LitElement, nothing } from "lit";
 
 class PostItem extends LitElement {
   static get styles() {
@@ -70,9 +70,11 @@ class PostItem extends LitElement {
     return html`
       <article class="item" part="p-item">
         <p class="date" part="p-date">${this.date}</p>
-        ${this.level === 3
-          ? html`<h3 class="title" part="p-heading"><a href="${this.url}">${this.heading}</a></h3>`
-          : html`<h2 class="title" part="p-heading"><a href="${this.url}">${this.heading}</a></h2>`}
+        ${
+      this.level === 3
+        ? html`<h3 class="title" part="p-heading"><a href="${this.url}">${this.heading}</a></h3>`
+        : html`<h2 class="title" part="p-heading"><a href="${this.url}">${this.heading}</a></h2>`
+    }
         ${this.excerpt ? html`<p class="excerpt" part="p-excerpt">${this.excerpt}</p>` : nothing}
       </article>
     `;

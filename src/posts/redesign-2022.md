@@ -97,7 +97,8 @@ async function getNowPlaying(api, auth) {
 
     const { payload } = data;
     const metadata = payload.listens[0].track_metadata;
-    const { artist_name: artist, track_name: song, release_name: release } = metadata;
+    const { artist_name: artist, track_name: song, release_name: release } =
+      metadata;
 
     return { artist, song, release };
   } catch (error) {
@@ -150,7 +151,13 @@ My listening habits are retrieved with a [serverless function](https://www.11ty.
 // stats.11tydata.js
 
 // Example function for getting my top artists for the month
-async function getTopArtists(api, auth, fetchDir, count = 10, range = "this_month") {
+async function getTopArtists(
+  api,
+  auth,
+  fetchDir,
+  count = 10,
+  range = "this_month",
+) {
   try {
     let options = {
       type: "json",
@@ -168,7 +175,7 @@ async function getTopArtists(api, auth, fetchDir, count = 10, range = "this_mont
 
     const data = await EleventyFetch(
       `${api}/stats/user/actionhamilton/artists?count=${count}&range=${range}`,
-      options
+      options,
     );
 
     const { payload } = data;

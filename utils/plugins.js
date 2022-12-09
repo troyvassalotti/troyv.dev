@@ -7,7 +7,7 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 const embedYouTube = require("eleventy-plugin-youtube-embed");
 const inclusiveLangPlugin = require("@11ty/eleventy-plugin-inclusive-language");
 const pluginWebmentions = require("@chrisburnell/eleventy-cache-webmentions");
-const configWebmentions = require("./configWebmentions.js")
+const configWebmentions = require("./configWebmentions.js");
 const {
   EleventyServerlessBundlerPlugin,
   EleventyRenderPlugin,
@@ -15,7 +15,7 @@ const {
 } = require("@11ty/eleventy");
 
 // Load .env variables with dotenv
-require("dotenv").config()
+require("dotenv").config();
 
 module.exports = {
   highlighting: {

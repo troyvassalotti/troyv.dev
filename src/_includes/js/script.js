@@ -12,8 +12,8 @@ function konamiCode(e) {
   lastKeyTime = Date.now();
 
   if (
-    logger.join("") ===
-    "arrowuparrowuparrowdownarrowdownarrowleftarrowrightarrowleftarrowrightbaenter"
+    logger.join("")
+      === "arrowuparrowuparrowdownarrowdownarrowleftarrowrightarrowleftarrowrightbaenter"
   ) {
     importShim("confetti").then((module) => {
       let confetti = module.default;
@@ -25,7 +25,7 @@ function konamiCode(e) {
         return Math.random() * (max - min) + min;
       }
 
-      const interval = setInterval(function () {
+      const interval = setInterval(function() {
         const timeLeft = animationEnd - Date.now();
 
         if (timeLeft <= 0) {
@@ -38,13 +38,13 @@ function konamiCode(e) {
           Object.assign({}, defaults, {
             particleCount,
             origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
-          })
+          }),
         );
         confetti(
           Object.assign({}, defaults, {
             particleCount,
             origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
-          })
+          }),
         );
       }, 250);
     });

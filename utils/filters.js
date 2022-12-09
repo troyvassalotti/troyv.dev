@@ -12,7 +12,7 @@ module.exports = {
     return date.toUTCString().replace(/\s00:00:00\sGMT/g, "");
   },
   filterWebmentions: function(array, type) {
-    return array.filter(item => item["wm-property"] === type)
+    return array.filter(item => item["wm-property"] === type);
   },
   /**
    * Slash-separated dates
@@ -42,5 +42,5 @@ module.exports = {
    */
   postTagRemoval: function(tags) {
     return (tags || []).filter(tag => ["all", "post", "posts"].indexOf(tag) === -1);
-  }
+  },
 };

@@ -1,4 +1,4 @@
-import { LitElement, css, html, nothing } from "lit";
+import { css, html, LitElement, nothing } from "lit";
 
 class DataTable extends LitElement {
   static get styles() {
@@ -105,26 +105,33 @@ class DataTable extends LitElement {
 
     return html`
       <table>
-        ${this.caption
-          ? html` <caption>
+        ${
+      this.caption
+        ? html` <caption>
               ${this.caption}
             </caption>`
-          : nothing}
+        : nothing
+    }
         <colgroup>
-          ${headersList.map((header) => {
-            return html` <col class="col--${header.toLowerCase()}" /> `;
-          })}
+          ${
+      headersList.map((header) => {
+        return html` <col class="col--${header.toLowerCase()}" /> `;
+      })
+    }
         </colgroup>
         <thead>
           <tr>
-            ${headersList.map((header) => {
-              return html` <th id="${header.toLowerCase()}" scope="col">${header}</th> `;
-            })}
+            ${
+      headersList.map((header) => {
+        return html` <th id="${header.toLowerCase()}" scope="col">${header}</th> `;
+      })
+    }
           </tr>
         </thead>
         <tbody>
-          ${parsedData.map((track, index) => {
-            return html`
+          ${
+      parsedData.map((track, index) => {
+        return html`
               <tr>
                 <th
                   id="order-${headersList[0].toLowerCase()}"
@@ -132,19 +139,24 @@ class DataTable extends LitElement {
                   scope="row">
                   ${index + 1}
                 </th>
-                ${Object.keys(track).map((item, index) => {
-                  return html`
+                ${
+          Object.keys(track).map((item, index) => {
+            return html`
                     <td
-                      headers="order-${headersList[0].toLowerCase()} ${headersList[
-                        index
-                      ].toLowerCase()}">
+                      headers="order-${headersList[0].toLowerCase()} ${
+              headersList[
+                index
+              ].toLowerCase()
+            }">
                       ${track[item]}
                     </td>
                   `;
-                })}
+          })
+        }
               </tr>
             `;
-          })}
+      })
+    }
         </tbody>
       </table>
     `;

@@ -26,7 +26,7 @@ async function getTopArtists(api, auth, fetchDir, count = 10, range = "this_mont
 
     const data = await EleventyFetch(
       `${api}/stats/user/actionhamilton/artists?count=${count}&range=${range}`,
-      options
+      options,
     );
 
     const { payload } = data;
@@ -105,7 +105,7 @@ async function getLastMonthsTopReleases(api, auth, fetchDir, count = 10, range =
 
     const data = await EleventyFetch(
       `${api}/stats/user/actionhamilton/releases?count=${count}&range=${range}`,
-      options
+      options,
     );
 
     const { payload } = data;
@@ -126,7 +126,7 @@ async function getLastMonthsTopReleases(api, auth, fetchDir, count = 10, range =
   }
 }
 
-module.exports = async function () {
+module.exports = async function() {
   const listenBrainzEndpoint = "https://api.listenbrainz.org/1";
   const headers = { Authorization: "Token " + process.env.LISTENBRAINZ_TOKEN };
   const directory = "_cache";
@@ -136,7 +136,7 @@ module.exports = async function () {
   const lastMonthsTopReleases = await getLastMonthsTopReleases(
     listenBrainzEndpoint,
     headers,
-    directory
+    directory,
   );
 
   return {

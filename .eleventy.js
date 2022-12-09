@@ -15,7 +15,7 @@ const transforms = require(`${utilsDir}/transforms`);
 const shortcodes = require(`${utilsDir}/shortcodes`);
 const plugins = require(`${utilsDir}/plugins`);
 
-module.exports = function (eleventyConfig) {
+module.exports = function(eleventyConfig) {
   /**
    * Default is "passthrough"
    * @version 2.0.0
@@ -82,8 +82,7 @@ module.exports = function (eleventyConfig) {
       .use(markdownItAnchor, {
         permalink: markdownItAnchor.permalink.headerLink(),
       })
-      .use(markdownItFootnote)
-  );
+      .use(markdownItFootnote));
 
   eleventyConfig.dataFilterSelectors.add("page");
 
