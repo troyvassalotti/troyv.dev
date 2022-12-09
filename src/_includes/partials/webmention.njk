@@ -8,11 +8,11 @@
   }
 
   .webmention__meta {
-    margin-block-end: 0.5rem;
+    margin-block-end: 1rem;
   }
 
   .webmention__author {
-    margin-inline-end: 0.25rem;
+    margin-inline-end: 0.5rem;
   }
 
   .webmention__author__photo {
@@ -54,11 +54,11 @@
     </span>
     {% endif %} {% if webmention.published %}
       <time class="webmention__pubdate dt-published" datetime="{{ webmention.published }}">
-        {{ webmention.published | dateFromTimestamp | readableDate("dd LLL yyyy - HH:mm") }}
+        {{ webmention.published }}
       </time>
     {% endif %}
   </div>
   {% if webmention.content %}
-    <div class="webmention__content p-content">{{ webmention | sanitizeWebmention | safe }}</div>
+    <div class="webmention__content p-content">{{ webmention.content | safe }}</div>
   {% endif %}
 </article>

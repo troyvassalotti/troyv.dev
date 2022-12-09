@@ -7,11 +7,15 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 const embedYouTube = require("eleventy-plugin-youtube-embed");
 const inclusiveLangPlugin = require("@11ty/eleventy-plugin-inclusive-language");
 const pluginWebmentions = require("@chrisburnell/eleventy-cache-webmentions");
+const configWebmentions = require("./configWebmentions.js")
 const {
   EleventyServerlessBundlerPlugin,
   EleventyRenderPlugin,
   EleventyEdgePlugin,
 } = require("@11ty/eleventy");
+
+// Load .env variables with dotenv
+require("dotenv").config()
 
 module.exports = {
   highlighting: {
@@ -28,11 +32,7 @@ module.exports = {
   },
   webmentions: {
     name: pluginWebmentions,
-    options: {
-      domain: "https://www.troyv.dev",
-      feed: `https://webmention.io/api/mentions.jf2?domain=www.troyv.dev&per-page=9001&token=${process.env.WEBMENTION_IO_TOKEN}`,
-      key: "children",
-    },
+    options: configWebmentions,
   },
   teapot: {
     name: EleventyServerlessBundlerPlugin,
