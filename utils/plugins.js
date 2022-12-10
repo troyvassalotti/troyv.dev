@@ -11,7 +11,6 @@ const configWebmentions = require("./configWebmentions.js");
 const {
   EleventyServerlessBundlerPlugin,
   EleventyRenderPlugin,
-  EleventyEdgePlugin,
 } = require("@11ty/eleventy");
 
 // Load .env variables with dotenv
@@ -61,8 +60,5 @@ module.exports = {
   },
   render: {
     name: EleventyRenderPlugin,
-  },
-  edge: {
-    name: EleventyEdgePlugin,
   },
 };
