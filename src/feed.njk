@@ -8,7 +8,7 @@ eleventyExcludeFromCollections: true
   <subtitle>{{ metadata.rss.subtitle }}</subtitle>
   <link href="{{ permalink | absoluteUrl(metadata.rss.url) }}" rel="self"/>
   <link href="{{ metadata.rss.url }}"/>
-  <updated>{{ collections.posts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+  <updated>{{ collections.post | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
   <id>{{ metadata.rss.url }}</id>
   <author>
     <name>{{ metadata.rss.author.name }}</name>
@@ -23,10 +23,13 @@ eleventyExcludeFromCollections: true
     <id>{{ absolutePostUrl }}</id>
     <content xml:lang="{{ metadata.rss.language }}" type="html">
       {{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}
-      {% if post.syndication %}
-        {% set syndication = post.syndication %}
-        {% include 'partials/syndication-links.njk' %}
-      {% endif %}
+      {%- if post.data.syndication -%}
+        {%- set syndication = post.data.syndication -%}
+        {%- set syndicationLinks -%}
+          {%- include 'partials/syndication-links.njk' -%}
+        {%- endset -%}
+        {{ syndicationLinks | htmlToAbsoluteUrls(absolutePostUrl) }}
+      {%- endif -%}
     </content>
   </entry>
   {%- endfor %}
