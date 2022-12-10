@@ -18,5 +18,3 @@ It wasn't too long ago that I added webmentions to my blog, and even more recent
 The technical knowledge isn't the only barrier here. I'm confident I can figure this all out, but the time and effort it asks of me is hard to balance, let alone for someone who doesn't hold the web as a career or hobby.
 
 A CMS like WordPress can go a long way in helping the average blog owner embrace the indie web and I hope that continues to get better; however, I don't use a CMS so I'm building it all from scratch. I'm writing this post from my phone as an experiment with a mobile non-CMS blog-on-the-go solution. Every few weeks I get the idea that I'll move my content to a headless CMS but that is another time suck I'm not interested in starting.
-
-<a href="https://brid.gy/publish/mastodon"></a>

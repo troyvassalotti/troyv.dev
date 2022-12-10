@@ -2,6 +2,7 @@
 title: Thoughts on Blogging
 description: The internal struggle for blogging perfection.
 tags: ["thoughts"]
+syndication: ["mastodon"]
 date: 2022-12-08
 ---
 

@@ -11,8 +11,12 @@
             <span class="dt-published">{{ page.date | dateString }}</span>
           </p>
         </header>
-        <div class="post flow u-truncate e-content">{{ content | safe }}</div>
-        {% include 'partials/syndication-links.njk' %}
+        <div class="post flow u-truncate e-content">
+          {{ content | safe }}
+          {% if syndication %}
+            {% include 'partials/syndication-links.njk' %}
+          {% endif %}
+        </div>
       </article>
       {% include 'partials/webmention-list.njk' %}
     </main>
