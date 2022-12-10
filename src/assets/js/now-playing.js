@@ -8,7 +8,7 @@ class NowPlaying extends HTMLElement {
 	constructor() {
 	  super();
 	  this.track = null;
-	  this.isEmpty = false;
+	  this.isSilent = false;
 	}
   
 	async load() {
@@ -16,8 +16,9 @@ class NowPlaying extends HTMLElement {
 		const res = await fetch('https://api.troyv.dev/now-playing');
 		const data = await res.json();
   
-		if (data === {}) {
-		  this.isEmpty = true;
+		// Only errors or empty tracks return a message property
+		if (data.message) {
+		  this.isSilent = true;
 		  return;
 		}
 
@@ -25,12 +26,12 @@ class NowPlaying extends HTMLElement {
 		this.render();
 	  } catch (error) {
 		console.error(error);
-		this.isEmpty = true;
+		this.isSilent = true;
 	  }
 	}
   
 	render() {
-		const template = this.isEmpty ? "<p>Silence.</p>" : `<dl class="c-dataList u-font--code">
+		const template = this.isSilent ? "<p>Silence.</p>" : `<dl class="c-dataList u-font--code">
 			<div class="c-dataList__item">
 				<dt>Artist</dt>
 				<dd>${this.track.artist_name}</dd>
@@ -45,9 +46,7 @@ class NowPlaying extends HTMLElement {
 			</div>
 		</dl>`;
 
-	  this.innerHTML = `
-	  <slot></slot>
-	  ${template}`;
+	  this.innerHTML = template;
 	}
   
 	connectedCallback() {
