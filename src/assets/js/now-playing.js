@@ -31,7 +31,7 @@ class NowPlaying extends HTMLElement {
   }
 
   render() {
-    const template = this.isSilent ? "<p>Silence.</p>" : `<dl class="c-dataList u-font--code">
+    const template = this.isSilent ? `<p class="u-font--code u-revertMargin--start">Silence.</p>` : `<dl class="c-dataList u-font--code">
 			<div class="c-dataList__item">
 				<dt>Artist</dt>
 				<dd>${this.track.artist_name}</dd>
