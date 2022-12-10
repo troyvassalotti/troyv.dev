@@ -1,37 +1,37 @@
 /**
  * Retrieve my now playing song from Listenbrainz.
- * 
+ *
  * Adapted from Andy Bell's `<last-fm>` component.
  * @link https://andy-bell.co.uk/
  */
 class NowPlaying extends HTMLElement {
-	constructor() {
-	  super();
-	  this.track = null;
-	  this.isSilent = false;
-	}
-  
-	async load() {
-	  try {
-		const res = await fetch('https://api.troyv.dev/now-playing');
-		const data = await res.json();
-  
-		// Only errors or empty tracks return a message property
-		if (data.message) {
-		  this.isSilent = true;
-		  return;
-		}
+  constructor() {
+    super();
+    this.track = null;
+    this.isSilent = false;
+  }
 
-		this.track = data;
-		this.render();
-	  } catch (error) {
-		console.error(error);
-		this.isSilent = true;
-	  }
-	}
-  
-	render() {
-		const template = this.isSilent ? "<p>Silence.</p>" : `<dl class="c-dataList u-font--code">
+  async load() {
+    try {
+      const res = await fetch("https://api.troyv.dev/now-playing");
+      const data = await res.json();
+
+      // Only errors or empty tracks return a message property
+      if (data.message) {
+        this.isSilent = true;
+      } else {
+        this.track = data;
+      }
+
+      this.render();
+    } catch (error) {
+      console.error(error);
+      this.isSilent = true;
+    }
+  }
+
+  render() {
+    const template = this.isSilent ? "<p>Silence.</p>" : `<dl class="c-dataList u-font--code">
 			<div class="c-dataList__item">
 				<dt>Artist</dt>
 				<dd>${this.track.artist_name}</dd>
@@ -46,13 +46,12 @@ class NowPlaying extends HTMLElement {
 			</div>
 		</dl>`;
 
-	  this.innerHTML = template;
-	}
-  
-	connectedCallback() {
-	  this.load();
-	}
+    this.innerHTML = template;
   }
-  
-  customElements.define('now-playing', NowPlaying);
-  
+
+  connectedCallback() {
+    this.load();
+  }
+}
+
+customElements.define("now-playing", NowPlaying);
