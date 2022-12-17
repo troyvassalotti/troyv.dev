@@ -2,7 +2,7 @@
   "imports": {
     "lit": "https://cdn.skypack.dev/lit@2",
     "lit-map": "https://cdn.skypack.dev/lit/directives/map.js",
-    "d3": "https://cdn.skypack.dev/d3@7",
+    "d3": "https://cdn.skypack.dev/d3@7.6",
     "petite-vue": "https://cdn.skypack.dev/petite-vue",
     "tone": "https://cdn.skypack.dev/tone@14.7.77",
     "slugify": "https://cdn.skypack.dev/@sindresorhus/slugify",
