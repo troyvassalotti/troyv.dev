@@ -15,8 +15,8 @@ description: Watch as Troy Vassalotti learns his way around a computer.
   {{ super() }}
   <script type="module">
     import "/assets/js/post-item.js"
-    import { CloudySky } from "web-components"
-    import { KbTypewriter } from "web-components"
+    import { CloudySky } from "cloudysky"
+    import { Typewriter } from "typewriter"
 
     const sloganLocation = document.querySelector(".js-slogan")
     const slogans = ["insert your favorite descriptors here", "hopeless romantic", "apple butter cheesecake", "musician, engineer, and musician, engineer, and musician, engineer...", "I don't know anymore"]
@@ -39,12 +39,12 @@ description: Watch as Troy Vassalotti learns his way around a computer.
         <div class="o-hero">
           <section class="o-hero__left flow">
             <div class="c-keyboard">
-              <kb-typewriter>
+              <type-writer>
                 <h1 class="leadingType">Hey, I'm Troy...</h1>
-              </kb-typewriter>
-              <kb-typewriter>
+              </type-writer>
+              <type-writer>
                 <p class="followingType">...and this is a website.</p>
-              </kb-typewriter>
+              </type-writer>
             </div>
             <figure class="c-portrait">
               <img
@@ -92,7 +92,7 @@ description: Watch as Troy Vassalotti learns his way around a computer.
 {% block style %}
   {{ super() }}
   <style>
-    :is(cloudy-sky, kb-typewriter, post-item):not(:defined) {
+    :is(cloudy-sky, type-writer, post-item):not(:defined) {
       visibility: hidden;
     }
 
