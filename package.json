@@ -36,7 +36,6 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
     "@chrisburnell/eleventy-cache-webmentions": "^1.1.1",
     "@netlify/functions": "^1.0.0",
-    "@troyv/web-components": "^3.2.2",
     "dotenv": "^16.0.0",
     "dprint": "^0.29.1",
     "eleventy-plugin-youtube-embed": "^1.7.0",
@@ -44,8 +43,7 @@
     "html-minifier-terser": "^7.1.0",
     "markdown-it-anchor": "^8.6.4",
     "markdown-it-footnote": "^3.0.3",
-    "netlify-plugin-cache": "^1.0.3",
-    "plvylist": "^2.1.4"
+    "netlify-plugin-cache": "^1.0.3"
   },
   "prettier": {
     "semi": true,

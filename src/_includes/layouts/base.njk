@@ -90,7 +90,8 @@
 
 {% block script %}
   <script type="module">
-    {% include 'js/script.js' %}
+    import CheatCodes from "cheatcodes"
+    new CheatCodes().listen()
   </script>
 {% endblock %}
 </body>

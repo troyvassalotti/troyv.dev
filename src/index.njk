@@ -15,10 +15,9 @@ description: Watch as Troy Vassalotti learns his way around a computer.
   {{ super() }}
   <script type="module">
     import "/assets/js/post-item.js"
-    import "/assets/js/cloudy-sky.js"
-    import "/assets/js/kb-typewriter.js"
+    import { CloudySky } from "web-components"
+    import { KbTypewriter } from "web-components"
 
-    // TODO
     const sloganLocation = document.querySelector(".js-slogan")
     const slogans = ["insert your favorite descriptors here", "hopeless romantic", "apple butter cheesecake", "musician, engineer, and musician, engineer, and musician, engineer...", "I don't know anymore"]
 
