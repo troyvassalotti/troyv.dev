@@ -8,7 +8,7 @@
     "slugify": "https://cdn.skypack.dev/@sindresorhus/slugify",
     "cheatcodes": "https://cdn.skypack.dev/@troyv/cheatcodes@0.0.3",
     "plvylist": "https://cdn.skypack.dev/plvylist@2.1.4",
-    "cloudysky": "https://cdn.skypack.dev/@troyv/cloudysky@1.0.1",
-    "typewriter": "https://cdn.skypack.dev/@troyv/typewriter"
+    "cloudysky": "https://cdn.skypack.dev/@troyv/cloudysky@1.0.3",
+    "typewriter": "https://cdn.skypack.dev/@troyv/typewriter@2.0.0"
   }
 }
