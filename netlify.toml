@@ -1,7 +1,9 @@
+# Local Netlify development
 [dev]
 framework = "#static"
 command = "npm run dev"
 
+# Build step
 [build]
 command = "npm run build"
 publish = "_site"
@@ -12,6 +14,7 @@ publish = "_site"
   [build.environment]
   NODE_VERSION = "16"
 
+# I'm a Teapot
 [[redirects]]
 from = "/brew/"
 to = "/.netlify/functions/teapot"
@@ -19,6 +22,7 @@ status = 200
 force = true
 _generated_by_eleventy_serverless = "teapot"
 
+# ListenBrainz music stats
 [[redirects]]
 from = "/music/stats/"
 to = "/.netlify/builders/ondemand"
@@ -26,12 +30,20 @@ status = 200
 force = true
 _generated_by_eleventy_serverless = "ondemand"
 
+# From Netlify base domain
 [[redirects]]
 from = "https://troyvassalotti.netlify.com/*"
 to = "https://www.troyv.dev/:splat"
 status = 301
 force = true
 
+# Fediverse discovery
+[[redirects]]
+from = "/.well-known/webfinger"
+to = "https://fosstodon.org/.well-known/webfinger?resource=acct:rest@fosstodon.org"
+status = 200
+
+# HTTP headers
 [[headers]]
 for = "/*"
 
@@ -40,6 +52,7 @@ for = "/*"
   X-Frame-Options = "SAMEORIGIN"
   X-XSS-Protection = "1"
 
+# Cache assets for future builds
 [[plugins]]
 package = "netlify-plugin-cache"
 
