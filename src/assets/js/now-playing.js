@@ -18,6 +18,8 @@ class NowPlaying extends HTMLElement {
 
   attributeChangedCallback(name, oldValue, newValue) {
     if (name === "service") {
+      console.info(`Now Playing service changed from ${oldValue}.`);
+      this.service = newValue;
       this.load();
     }
   }
