@@ -8,6 +8,7 @@
     "serve": "ELEVENTY_ENV=production eleventy --serve",
     "dev": "ELEVENTY_ENV=development eleventy --serve --incremental",
     "watch": "ELEVENTY_ENV=development eleventy --quiet --watch",
+    "clean": "rm -rf node_modules package-lock.json",
     "debug": "DEBUG=* eleventy",
     "lint": "dprint check",
     "lint::fix": "dprint fmt",
@@ -36,6 +37,10 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
     "@chrisburnell/eleventy-cache-webmentions": "^1.1.1",
     "@netlify/functions": "^1.0.0",
+    "@troyv/cheatcodes": "^0.0.4",
+    "@troyv/cloudysky": "^1.0.3",
+    "@troyv/detune": "^1.0.1",
+    "@troyv/typewriter": "^2.0.0",
     "dotenv": "^16.0.0",
     "dprint": "^0.29.1",
     "eleventy-plugin-youtube-embed": "^1.7.0",
@@ -44,6 +49,8 @@
     "markdown-it-anchor": "^8.6.4",
     "markdown-it-footnote": "^3.0.3",
     "netlify-plugin-cache": "^1.0.3",
+    "petite-vue": "^0.4.1",
+    "plvylist": "^2.1.4",
     "remark": "^14.0.2"
   },
   "prettier": {

@@ -7,7 +7,7 @@ const markdownItFootnote = require("markdown-it-footnote");
 
 const utilsDir = `${process.cwd()}/utils`;
 const srcDir = `./src`;
-let jsDir = "/assets/js";
+const jsDir = "/assets/js";
 
 const filters = require(`${utilsDir}/filters`);
 const collections = require(`${utilsDir}/collections`);
@@ -33,7 +33,25 @@ module.exports = function(eleventyConfig) {
     .addPassthroughCopy(`${srcDir}/favicons`)
     .addPassthroughCopy({
       "./node_modules/es-module-shims/dist/es-module-shims.js": `${jsDir}/es-module-shims.js`,
-    });
+    })
+    .addPassthroughCopy({
+      "./node_modules/@troyv/cheatcodes/dist/cheatcodes.js": `${jsDir}/cheatcodes.js`
+    })
+    .addPassthroughCopy({
+      "./node_modules/@troyv/cloudysky/dist/cloudysky.js": `${jsDir}/cloudysky.js`
+    })
+    .addPassthroughCopy({
+      "./node_modules/@troyv/detune/dist/detune.js": `${jsDir}/detune.js`
+    })
+    .addPassthroughCopy({
+      "./node_modules/@troyv/typewriter/dist/typewriter.js": `${jsDir}/typewriter.js`
+    })
+    .addPassthroughCopy({
+      "./node_modules/plvylist/dist/plvylist.es.js": `${jsDir}/plvylist.js`
+    })
+    .addPassthroughCopy({
+      "./node_modules/petite-vue/dist/petite-vue.es.js": `${jsDir}/petite-vue.js`
+    })
 
   // Plugins
   /** @TODO Fix the webmentions plugin when transitioning to 11ty 2.0 Stable */

@@ -1,15 +1,15 @@
 {
   "imports": {
-    "lit": "https://cdn.skypack.dev/lit@2",
-    "lit-map": "https://cdn.skypack.dev/lit/directives/map.js",
+    "lit": "https://cdn.skypack.dev/lit@2.6.1",
+    "lit-map": "https://cdn.skypack.dev/lit@2.6.1/directives/map.js",
     "d3": "https://cdn.skypack.dev/d3@7.6",
-    "petite-vue": "https://cdn.skypack.dev/petite-vue",
     "tone": "https://cdn.skypack.dev/tone@14.7.77",
     "slugify": "https://cdn.skypack.dev/@sindresorhus/slugify",
-    "cheatcodes": "https://cdn.skypack.dev/@troyv/cheatcodes@0.0.3",
-    "plvylist": "https://cdn.skypack.dev/plvylist@2.1.4",
-    "cloudysky": "https://cdn.skypack.dev/@troyv/cloudysky@1.0.3",
-    "typewriter": "https://cdn.skypack.dev/@troyv/typewriter@2.0.0",
-    "detune": "https://cdn.skypack.dev/@troyv/detune@1.0.0"
+    "petite-vue": "/assets/js/petite-vue.js",
+    "cheatcodes": "/assets/js/cheatcodes.js",
+    "plvylist": "/assets/js/plvylist.js",
+    "cloudysky": "/assets/js/cloudysky.js",
+    "typewriter": "/assets/js/typewriter.js",
+    "detune": "/assets/js/detune.js"
   }
 }
