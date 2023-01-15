@@ -9,14 +9,25 @@ class NowPlaying extends HTMLElement {
     super();
     this.track = null;
     this.isSilent = false;
+    this.service = "";
+  }
+
+  static get observedAttributes() {
+    return ["service"];
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (name === "service") {
+      this.load();
+    }
   }
 
   async load() {
     try {
-      const res = await fetch("https://api.troyv.dev/now-playing");
+      const res = await fetch(this.service);
       const data = await res.json();
 
-      // Only errors or empty tracks return a message property
+      // Expect only errors or empty tracks return a message property from the API
       if (data.message) {
         this.isSilent = true;
       } else {
@@ -31,20 +42,11 @@ class NowPlaying extends HTMLElement {
   }
 
   render() {
-    const template = this.isSilent ? `<p class="u-font--code u-revertMargin--start">Silence.</p>` : `<dl class="c-dataList u-font--code">
-			<div class="c-dataList__item">
-				<dt>Artist</dt>
-				<dd>${this.track.artist_name}</dd>
-			</div>
-			<div class="c-dataList__item">
-				<dt>Track</dt>
-				<dd>${this.track.track_name}</dd>
-			</div>
-			<div class="c-dataList__item">
-				<dt>Release</dt>
-				<dd>${this.track.release_name}</dd>
-			</div>
-		</dl>`;
+    const template = this.isSilent
+      ? `<p>Silence.</p>`
+      : `<p>"${this.track.track_name}"${
+          this.track.artist_name ? ` by <b>${this.track.artist_name}</b>` : ""
+        } ${this.track.release_name ? ` from <i>${this.track.release_name}</i>` : ""}</p>`;
 
     this.innerHTML = template;
   }

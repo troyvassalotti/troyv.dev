@@ -16,7 +16,7 @@
           <header class="flow header">
             <div class="nowPlaying flow u-step--2">
               <p class="u-font--headings u-text--bold">{% include 'partials/music.svg' %}Now Playing</p>
-              <now-playing></now-playing>
+              <now-playing service="https://api.troyv.dev/now-playing" class="u-font--code"></now-playing>
             </div>
             <h1 class="u-step-6 u-line-height--less">Guitarist, drummer, singer-songwriter.</h1>
             <p>When I'm not coding, I'm probably writing, playing, recording, or listening to music. Check out my projects below, or take a
@@ -80,6 +80,10 @@
       display: inline-block;
       margin-inline-end: .5ch;
       vertical-align: middle;
+    }
+
+    now-playing p {
+      margin-block-start: revert;
     }
 
     .central {
