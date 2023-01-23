@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/troyvassalotti/troyv.dev#readme",
   "devDependencies": {
-    "@11ty/eleventy": "2.0.0-canary.23",
+    "@11ty/eleventy": "^2.0.0-beta.1",
     "@11ty/eleventy-fetch": "^3.0.0",
     "@11ty/eleventy-plugin-inclusive-language": "^1.0.3",
     "@11ty/eleventy-plugin-rss": "^1.1.2",
@@ -50,7 +50,7 @@
     "markdown-it-footnote": "^3.0.3",
     "netlify-plugin-cache": "^1.0.3",
     "petite-vue": "^0.4.1",
-    "plvylist": "^2.1.4",
+    "plvylist": "^3.0.2",
     "remark": "^14.0.2"
   },
   "prettier": {
