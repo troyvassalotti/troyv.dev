@@ -16,13 +16,6 @@ const shortcodes = require(`${utilsDir}/shortcodes`);
 const plugins = require(`${utilsDir}/plugins`);
 
 module.exports = function(eleventyConfig) {
-  /**
-   * Default is "passthrough"
-   * @version 2.0.0
-   * @link https://www.11ty.dev/docs/copy/#passthrough-during-serve
-   */
-  eleventyConfig.setServerPassthroughCopyBehavior("copy");
-
   // Passthroughs
   eleventyConfig
     .addPassthroughCopy(`${srcDir}/favicon.ico`)
@@ -47,14 +40,13 @@ module.exports = function(eleventyConfig) {
       "./node_modules/@troyv/typewriter/dist/typewriter.js": `${jsDir}/typewriter.js`
     })
     .addPassthroughCopy({
-      "./node_modules/plvylist/dist/plvylist.es.js": `${jsDir}/plvylist.js`
+      "./node_modules/plvylist/dist/plvylist.js": `${jsDir}/plvylist.js`
     })
     .addPassthroughCopy({
       "./node_modules/petite-vue/dist/petite-vue.es.js": `${jsDir}/petite-vue.js`
     })
 
   // Plugins
-  /** @TODO Fix the webmentions plugin when transitioning to 11ty 2.0 Stable */
   Object.keys(plugins).forEach((plugin) => {
     eleventyConfig.addPlugin(plugins[plugin].name, plugins[plugin]?.options);
   });
@@ -84,9 +76,9 @@ module.exports = function(eleventyConfig) {
     excerpt_alias: "excerpt",
   });
 
-  // Markdown
   /**
-   * @version 2.0.0
+   * Amend Markdown settings
+   * @since 2.0.0
    * @link https://www.11ty.dev/docs/languages/markdown/#optional-amend-the-library-instance
    */
   eleventyConfig.amendLibrary("md", (mdLib) =>
@@ -96,6 +88,11 @@ module.exports = function(eleventyConfig) {
       })
       .use(markdownItFootnote));
 
+  /**
+   * Data filters for Serverless
+   * @since 1.0.0
+   * @link https://www.11ty.dev/docs/config/#data-filter-selectors
+   */
   eleventyConfig.dataFilterSelectors.add("page");
 
   return {

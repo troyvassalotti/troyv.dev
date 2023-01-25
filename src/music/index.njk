@@ -3,7 +3,7 @@
 {% block script %}
   {{ super() }}
   <script type="module">
-    import { Plvylist } from "plvylist"
+    import Plvylist from "plvylist"
     import "/assets/js/now-playing.js"
   </script>
 {% endblock %}
@@ -114,6 +114,7 @@
     }
 
     .plvylist {
+      color-scheme: light dark;
       font-size: var(--step--1);
       margin-block: var(--space-s-m);
     }
