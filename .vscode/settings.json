@@ -1,0 +1,4 @@
+{
+	"html.customData": ["./node_modules/plvylist/dist/vscode.html-custom-data.json"],
+	"css.customData": ["./node_modules/plvylist/dist/vscode.css-custom-data.json"]
+}
