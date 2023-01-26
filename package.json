@@ -12,7 +12,6 @@
     "debug": "DEBUG=* eleventy",
     "lint": "dprint check",
     "lint::fix": "dprint fmt",
-    "postinstall": "npx patch-package",
     "netlify::dev": "npx netlify dev",
     "netlify::deploy": "npm run prettier::format && netlify deploy --build --context production --prod"
   },
@@ -35,7 +34,7 @@
     "@11ty/eleventy-plugin-inclusive-language": "^1.0.3",
     "@11ty/eleventy-plugin-rss": "^1.1.2",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
-    "@chrisburnell/eleventy-cache-webmentions": "^1.1.1",
+    "@chrisburnell/eleventy-cache-webmentions": "^1.1.2",
     "@netlify/functions": "^1.0.0",
     "@troyv/cheatcodes": "^0.0.4",
     "@troyv/cloudysky": "^1.0.3",
