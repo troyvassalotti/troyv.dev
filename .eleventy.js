@@ -43,7 +43,7 @@ module.exports = function(eleventyConfig) {
       "./node_modules/plvylist/dist/plvylist.js": `${jsDir}/plvylist.js`
     })
     .addPassthroughCopy({
-      "./node_modules/petite-vue/dist/petite-vue.es.js": `${jsDir}/petite-vue.js`
+      "./node_modules/@troyv/beats-per/dist/beats-per.js": `${jsDir}/beats-per.js`
     })
 
   // Plugins
