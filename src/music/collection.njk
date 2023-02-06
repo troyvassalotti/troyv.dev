@@ -1,0 +1,46 @@
+---
+layout: base
+title: Music Collection
+description: A place to keep track of my music collection.
+---
+
+<h1 class="u-revertMargin--start">{{ title }}</h1>
+<p>{{ description }}</p>
+<article id="vinyl" class="vinyl flow">
+    <header>
+        <h2>Vinyl</h2>
+    </header>
+    <section class="twelveInch">
+        <h3>12 Inch</h3>
+        <ul>
+            {% for item in vinyl["12 Inch"] %}
+                <li>
+                    <b>{{ item.artist }}</b>:
+                    <i>{{ item.album }}</i>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+    <section class="tenInch">
+        <h3>10 Inch</h3>
+        <ul>
+            {% for item in vinyl["10 Inch"] %}
+                <li>
+                    <b>{{ item.artist }}</b>:
+                    <i>{{ item.album }}</i>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+    <section class="sevenInch">
+        <h3>7 Inch</h3>
+        <ul>
+            {% for item in vinyl["7 Inch"] %}
+                <li>
+                    <b>{{ item.artist }}</b>:
+                    <i>{{ item.album }}</i>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+</article>

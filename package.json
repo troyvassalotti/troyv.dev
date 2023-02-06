@@ -1,8 +1,6 @@
 {
   "name": "troyv.dev",
   "version": "2.5.0",
-  "description": "This is my portfolio, but it can really be whatever I want it to be.",
-  "main": "_site/index.html",
   "scripts": {
     "build": "ELEVENTY_ENV=production eleventy",
     "serve": "ELEVENTY_ENV=production eleventy --serve",
@@ -15,19 +13,6 @@
     "netlify::dev": "npx netlify dev",
     "netlify::deploy": "npm run prettier::format && netlify deploy --build --context production --prod"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/troyvassalotti/troyv.dev.git"
-  },
-  "author": {
-    "name": "Troy Vassalotti",
-    "url": "https://www.troyv.dev"
-  },
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/troyvassalotti/troyv.dev/issues"
-  },
-  "homepage": "https://github.com/troyvassalotti/troyv.dev#readme",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.0-beta.1",
     "@11ty/eleventy-fetch": "^3.0.0",
@@ -36,6 +21,7 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
     "@chrisburnell/eleventy-cache-webmentions": "^1.1.2",
     "@netlify/functions": "^1.0.0",
+    "@troyv/beats-per": "^1.0.0",
     "@troyv/cheatcodes": "^0.0.4",
     "@troyv/cloudysky": "^1.0.3",
     "@troyv/detune": "^1.0.1",
@@ -48,16 +34,7 @@
     "markdown-it-anchor": "^8.6.4",
     "markdown-it-footnote": "^3.0.3",
     "netlify-plugin-cache": "^1.0.3",
-    "petite-vue": "^0.4.1",
     "plvylist": "^3.0.2",
     "remark": "^14.0.2"
-  },
-  "prettier": {
-    "semi": true,
-    "singleQuote": false,
-    "printWidth": 100,
-    "quoteProps": "consistent",
-    "bracketSameLine": true,
-    "tabWidth": 2
   }
 }

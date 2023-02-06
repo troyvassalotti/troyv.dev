@@ -1,0 +1,456 @@
+{
+	"vinyl": {
+		"12 Inch": [
+			{
+				"artist": "Acceptance",
+				"album": "Phantoms"
+			},
+			{
+				"artist": "Aerosmith",
+				"album": "Toys in the Attic"
+			},
+			{
+				"artist": "Aerosmith",
+				"album": "Rocks"
+			},
+			{
+				"artist": "American Football",
+				"album": "LP 2"
+			},
+			{
+				"artist": "American Football",
+				"album": "LP 3"
+			},
+			{
+				"artist": "A Will Away",
+				"album": "Here Again"
+			},
+			{
+				"artist": "Balance and Composure",
+				"album": "The Things We Think We're Missing"
+			},
+			{
+				"artist": "Belmont",
+				"album": "Belmont"
+			},
+			{
+				"artist": "The Ben Webster Quintet",
+				"album": "Soulville"
+			},
+			{
+				"artist": "Bloc Party.",
+				"album": "Silent Alarm"
+			},
+			{
+				"artist": "Boston",
+				"album": "Boston"
+			},
+			{
+				"artist": "Braid",
+				"album": "No Coast"
+			},
+			{
+				"artist": "Del Paxton",
+				"album": "All Day, Every Day, All Night"
+			},
+			{
+				"artist": "Desaparecidos",
+				"album": "Read Music, Speak Spanish"
+			},
+			{
+				"artist": "The Dirty Nil",
+				"album": "Fuck Art"
+			},
+			{
+				"artist": "Donovan Wolfington",
+				"album": "How to Treat the Ones You Love"
+			},
+			{
+				"artist": "Donovan Wolfington",
+				"album": "WAVES"
+			},
+			{
+				"artist": "El Ten Eleven",
+				"album": "El Ten Eleven"
+			},
+			{
+				"artist": "Everyone Everywhere",
+				"album": "Everyone Everywhere"
+			},
+			{
+				"artist": "Every Time I Die",
+				"album": "From Parts Unknown"
+			},
+			{
+				"artist": "Every Time I Die",
+				"album": "Low Teens"
+			},
+			{
+				"artist": "The Fall Of Troy",
+				"album": "OK"
+			},
+			{
+				"artist": "The Flatliners",
+				"album": "Dead Language"
+			},
+			{
+				"artist": "The Flatliners",
+				"album": "Inviting Light"
+			},
+			{
+				"artist": "Four Year Strong",
+				"album": "Go Down In History"
+			},
+			{
+				"artist": "Four Year Strong",
+				"album": "Four Year Strong"
+			},
+			{
+				"artist": "Four Year Strong",
+				"album": "Brain Pain"
+			},
+			{
+				"artist": "Frameworks",
+				"album": "Smother"
+			},
+			{
+				"artist": "Girl In Red",
+				"album": "If I Could Make It Go Quiet",
+				"comment": "Lyndi's"
+			},
+			{
+				"artist": "Glassjaw",
+				"album": "Worship And Tribute"
+			},
+			{
+				"artist": "Hall and Oats",
+				"album": "Private Eyes"
+			},
+			{
+				"artist": "Have Mercy",
+				"album": "A Place Of Our Own"
+			},
+			{
+				"artist": "If These Trees Could Talk",
+				"album": "Red Forest"
+			},
+			{
+				"artist": "Into It. Over It./Koji",
+				"album": "EP"
+			},
+			{
+				"artist": "Into It. Over It.",
+				"album": "Proper"
+			},
+			{
+				"artist": "Into It. Over It.",
+				"album": "Standards"
+			},
+			{
+				"artist": "Into It. Over It.",
+				"album": "Figure"
+			},
+			{
+				"artist": "J Dilla",
+				"album": "Donuts"
+			},
+			{
+				"artist": "Jake Bowen",
+				"album": "Isometric"
+			},
+			{
+				"artist": "James Bay",
+				"album": "Chaos And The Calm",
+				"comment": "Lyndi's"
+			},
+			{
+				"artist": "Jimmy Eat World",
+				"album": "Clarity"
+			},
+			{
+				"artist": "Joyce Manor",
+				"album": "Joyce Manor"
+			},
+			{
+				"artist": "Joyce Manor",
+				"album": "Of All Things I Will Soon Grow Tired"
+			},
+			{
+				"artist": "Juila Michaels",
+				"album": "Not In Chronological Order"
+			},
+			{
+				"artist": "Kill Lincoln",
+				"album": "That's Cool... In A Totally Negative And Destructive Way"
+			},
+			{
+				"artist": "Korn",
+				"album": "Requiem"
+			},
+			{
+				"artist": "Less Than Jake",
+				"album": "GNV FLA"
+			},
+			{
+				"artist": "Light Years",
+				"album": "I Won't Hold This Against You"
+			},
+			{
+				"artist": "Light Years",
+				"album": "Temporary"
+			},
+			{
+				"artist": "Light Years",
+				"album": "I'll See You When I See You"
+			},
+			{
+				"artist": "Michael Jackson",
+				"album": "Thriller"
+			},
+			{
+				"artist": "Minus The Bear",
+				"album": "Highly Refined Pirates"
+			},
+			{
+				"artist": "The Moms",
+				"album": "Buy American"
+			},
+			{
+				"artist": "Moving Mountains",
+				"album": "Waves"
+			},
+			{
+				"artist": "Mush",
+				"album": "Thank You, We're Mush"
+			},
+			{
+				"artist": "MxPx",
+				"album": "Plans Within Plans"
+			},
+			{
+				"artist": "Nai Harvest",
+				"album": "Hairball"
+			},
+			{
+				"artist": "Noise By Numbers",
+				"album": "High On Drama"
+			},
+			{
+				"artist": "Owen",
+				"album": "No Good For No One Now"
+			},
+			{
+				"artist": "Owen",
+				"album": "I Do Perceive."
+			},
+			{
+				"artist": "Owen",
+				"album": "At Home With Owen"
+			},
+			{
+				"artist": "Owen",
+				"album": "New Leaves"
+			},
+			{
+				"artist": "Owen",
+				"album": "Ghost Town"
+			},
+			{
+				"artist": "Owen/The Rutabega",
+				"album": "Split EP"
+			},
+			{
+				"artist": "Owen",
+				"album": "The Avalanche"
+			},
+			{
+				"artist": "Pacemaker",
+				"album": "Pacemaker"
+			},
+			{
+				"artist": "Pet Symmetry",
+				"album": "Vision"
+			},
+			{
+				"artist": "Pet Symmetry",
+				"album": "Future Suits"
+			},
+			{
+				"artist": "Prawn",
+				"album": "Kingfisher"
+			},
+			{
+				"artist": "Prawn/Moving Mountains",
+				"album": "Split EP"
+			},
+			{
+				"artist": "Protest The Hero",
+				"album": "Volition"
+			},
+			{
+				"artist": "Rozwell Kid",
+				"album": "Too Shabby"
+			},
+			{
+				"artist": "Ryan Adams",
+				"album": "Gold"
+			},
+			{
+				"artist": "Ryan Adams",
+				"album": "Demolition"
+			},
+			{
+				"artist": "Saves The Day",
+				"album": "Through Being Cool"
+			},
+			{
+				"artist": "Saves The Day",
+				"album": "Stay What You Are"
+			},
+			{
+				"artist": "Saves The Day",
+				"album": "Ups & Downs"
+			},
+			{
+				"artist": "Saves The Day",
+				"album": "Daybreak"
+			},
+			{
+				"artist": "Saves The Day",
+				"album": "Saves The Day"
+			},
+			{
+				"artist": "Somos",
+				"album": "Prison On A Hill"
+			},
+			{
+				"artist": "The Story So Far",
+				"album": "What You Don't See"
+			},
+			{
+				"artist": "The Story So Far",
+				"album": "The Story So Far"
+			},
+			{
+				"artist": "The Story So Far",
+				"album": "Proper Dose"
+			},
+			{
+				"artist": "Such Gold",
+				"album": "Pedestals"
+			},
+			{
+				"artist": "Such Gold",
+				"album": "Deep In A Hole"
+			},
+			{
+				"artist": "Taylor Swift",
+				"album": "1989"
+			},
+			{
+				"artist": "Taylor Swift",
+				"album": "Reputation"
+			},
+			{
+				"artist": "Their / They're / There",
+				"album": "Their / They're / There"
+			},
+			{
+				"artist": "Their / They're / There",
+				"album": "Analog"
+			},
+			{
+				"artist": "Thursday",
+				"album": "Full Collapse"
+			},
+			{
+				"artist": "Thursday",
+				"album": "Common Existence"
+			},
+			{
+				"artist": "Title Fight",
+				"album": "Floral Green"
+			},
+			{
+				"artist": "Trails",
+				"album": "Crooked Trees"
+			},
+			{
+				"artist": "Trophy Eyes",
+				"album": "Mend, Move On"
+			},
+			{
+				"artist": "Touche Amore",
+				"album": "Parting The Sea Between Brightness And Me"
+			},
+			{
+				"artist": "Turnover",
+				"album": "Magnolia"
+			},
+			{
+				"artist": "Turnover",
+				"album": "Peripheral Vision"
+			},
+			{
+				"artist": "Valleyheart",
+				"album": "Heal My Head"
+			},
+			{
+				"artist": "Vivid Low Sky",
+				"album": "II"
+			},
+			{
+				"artist": "We Are The Union",
+				"album": "You Can't Hide The Sun"
+			},
+			{
+				"artist": "Weezer",
+				"album": "White Album"
+			},
+			{
+				"artist": "Weezer",
+				"album": "Pacific Daydream"
+			}
+		],
+		"10 Inch": [
+			{
+				"artist": "Coffee Project",
+				"album": "Easy Does It"
+			},
+			{
+				"artist": "Pacer",
+				"album": "Pacer"
+			},
+			{
+				"artist": "Sundials",
+				"album": "Kick"
+			}
+		],
+		"7 Inch": [
+			{
+				"artist": "Bomb The Music Industry",
+				"album": "Everybody That You Love"
+			},
+			{
+				"artist": "Into It. Over It.",
+				"album": "Home Is The Gift (Demo)"
+			},
+			{
+				"artist": "Less Than Jake",
+				"album": "Settling Son/Malachi Richter's Liquor's Quicker"
+			},
+			{
+				"artist": "Nai Harvest",
+				"album": "Hold Open My Head"
+			},
+			{
+				"artist": "Placeholder",
+				"album": "Thought I Would Have Been Something By Now"
+			},
+			{
+				"artist": "Such Gold/Placeholder",
+				"album": "Wax Packs 31/82"
+			}
+		]
+	}
+}

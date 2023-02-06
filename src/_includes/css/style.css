@@ -351,6 +351,10 @@ a:focus-visible {
   --wrapper-size: 100rem;
 }
 
+.defaultContentBlock {
+  margin-block-end: var(--space-xl);
+}
+
 .visually-hidden:not(:focus):not(:active) {
   block-size: 1px;
   clip: rect(0 0 0 0);
