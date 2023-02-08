@@ -3,7 +3,7 @@ title: About
 description: Normal person stuck in a computer.
 ---
 
-{% extends 'layouts/base.njk' %}
+{% extends "layouts/base.njk" %}
 
 {% block content %}
   <div class="wrapper constrain--more">
@@ -16,12 +16,23 @@ description: Normal person stuck in a computer.
         <p>My social media presence is sparse, but I am found in a few spots:</p>
         <ul class="c-socialMedia u-invertSvg--onDark" role="list">
           {% for social in metadata.socials %}
-            <li style="margin-block-end: 1ch;">
-              <a class="c-link--icon" href="{{ social.url }}">{% include 'partials/' + social.name | lower + '.svg' %}{{ social.name }}</a>
+            <li>
+              {# djlint:off #}
+              <a class="c-link--icon" href="{{ social.url }}">{% include "partials/" + social.name | lower + ".svg" %}{{ social.name }}</a>
+              {# djlint:on #}
             </li>
           {% endfor %}
         </ul>
       </section>
     </main>
   </div>
-{% endblock %}
+{% endblock content %}
+
+{% block style %}
+  {{ super()}}
+  <style>
+    .c-socialMedia li {
+        margin-block-end: 1ch;
+    }
+  </style>
+{% endblock style %}

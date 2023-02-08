@@ -440,6 +440,19 @@ a:focus-visible {
   content: ":";
 }
 
+.c-postListItem {
+  --flow-space: var(--space-2xs);
+}
+
+.c-postListItem__date {
+  font-size: var(--step--1);
+  font-style: italic;
+}
+
+.c-postListItem__title {
+  font-size: var(--step-3);
+}
+
 /* UTILITIES */
 .u-step-10 {
   font-size: var(--step-10);

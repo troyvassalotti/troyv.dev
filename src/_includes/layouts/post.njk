@@ -1,4 +1,4 @@
-{% extends 'layouts/base.njk' %}
+{% extends "layouts/base.njk" %}
 
 {% block content %}
   <div class="wrapper constrain--some">
@@ -14,15 +14,15 @@
         <div class="post flow u-truncate e-content">
           {{ content | safe }}
           {% if syndication %}
-            {% include 'partials/syndication-links.njk' %}
+            {% include "partials/syndication-links.njk" %}
           {% endif %}
         </div>
       </article>
-      {% include 'partials/webmention-list.njk' %}
+      {% include "partials/webmention-list.njk" %}
     </main>
   </div>
-  {% include 'partials/post-navigation.njk' %}
-{% endblock %}
+  {% include "partials/post-navigation.njk" %}
+{% endblock content %}
 
 {% block script %}
   {{ super() }}
@@ -32,38 +32,38 @@
       block.tabIndex = 0
     }
   </script>
-{% endblock %}
+{% endblock script %}
 
 {% block style %}
   {{ super() }}
   <style>
     .post pre[class*="language-"] {
-      margin-block: var(--space-s-m);
-      max-inline-size: 50rem;
+        margin-block: var(--space-s-m);
+        max-inline-size: 50rem;
     }
 
     .post :is(h2, h3, h4, h5, h6) {
-      margin-block-start: var(--space-xl-2xl);
+        margin-block-start: var(--space-xl-2xl);
     }
 
     .postSummary {
-      font-style: italic;
+        font-style: italic;
     }
 
     .postHeader {
-      border-block-end: 2px solid var(--accent, currentColor);
-      max-inline-size: 70ch;
-      padding-block: var(--space-m);
+        border-block-end: 2px solid var(--accent, currentColor);
+        max-inline-size: 70ch;
+        padding-block: var(--space-m);
     }
 
-    :is(h1, h2, h3, h4, h5, h6) > a:hover::after {
-      content: "🔗";
-      margin-inline-start: .5ch;
-      position: absolute;
+    :is(h1, h2, h3, h4, h5, h6)>a:hover::after {
+        content: "🔗";
+        margin-inline-start: .5ch;
+        position: absolute;
     }
 
     .post p {
-      hyphens: initial;
+        hyphens: initial;
     }
   </style>
-{% endblock %}
+{% endblock style %}

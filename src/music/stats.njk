@@ -1,19 +1,18 @@
-{% extends 'layouts/base.njk' %}
+{% extends "layouts/base.njk" %}
 
 {% block script %}
   {{ super() }}
-  <script type="module">
-    import "/assets/js/data-table.js"
-  </script>
-{% endblock %}
+  <script type="module">import "/assets/js/data-table.js";</script>
+{% endblock script %}
 
 {% block content %}
   <main id="main">
     <header class="flow u-truncate o-section--angled">
       <h1 class="u-revertMargin--start">{{ title }}</h1>
-      <p>I keep track of my listening habits in ListenBrainz because I'm a <strong>nerd</strong>. All that data is public on <a
-          href="https://listenbrainz.org/user/actionhamilton/">my ListenBrainz profile</a>, but I've chosen to display a few specific
-        metrics here. Cool, right?</p>
+      <p>
+        I keep track of my listening habits in ListenBrainz because I'm a <strong>nerd</strong>. All that data is public on <a href="https://listenbrainz.org/user/actionhamilton/">my ListenBrainz profile</a>, but I've chosen to display a few specific
+        metrics here. Cool, right?
+      </p>
     </header>
     <div class="wrapper constrain--less">
       <div class="listeningHistory">
@@ -22,7 +21,11 @@
           <div class="releaseGrid">
             {% for release in lastMonthsTopReleases %}
               <div class="release">
-                <img class="releaseArt" src="https://coverartarchive.org/release/{{ release.mbid }}/front" alt="">
+                <img class="releaseArt"
+                     width="300"
+                     height="300"
+                     src="https://coverartarchive.org/release/{{ release.mbid }}/front"
+                     alt=""/>
                 <p class="releaseName">{{ release.release }}</p>
                 <p class="releaseArtist">{{ release.artist }}</p>
                 <p class="releaseListens">{{ release.listens }} Listens</p>
@@ -31,74 +34,73 @@
           </div>
         </div>
         <div class="tables">
-          <data-table
-            caption="Last 30 Plays"
-            headers="Number Artist Track Release"
-            data='{{ mostRecentListens | dump }}'></data-table>
-          <data-table
-            caption="Top Artists This Month"
-            headers="Number Artist Listens"
-            data='{{ topArtistsThisMonth | dump }}'></data-table>
+          {# djlint:off #}
+          <data-table caption="Last 30 Plays" headers="Number Artist Track Release" data='{{ mostRecentListens | dump }}'>
+          </data-table>
+          <data-table caption="Top Artists This Month" headers="Number Artist Listens" data='{{ topArtistsThisMonth | dump }}'>
+          </data-table>
+          {# djlint:on #}
         </div>
       </div>
     </div>
   </main>
-{% endblock %}
+{% endblock content %}
 
 {% block style %}
   {{ super() }}
   <style>
     .listeningHistory {
-      margin-block: var(--space-xl-2xl);
+        margin-block: var(--space-xl-2xl);
     }
 
     .releaseGrid {
-      --column-count: auto-fill;
-      --column-size: 9rem;
+        --column-count: auto-fill;
+        --column-size: 9rem;
 
-      align-items: start;
-      display: grid;
-      font-size: var(--step--1);
-      grid-template-columns: repeat(var(--column-count), minmax(var(--column-size), 1fr));
-      gap: var(--space-s-l);
-      margin-block-end: var(--space-xl-2xl);
+        align-items: start;
+        display: grid;
+        font-size: var(--step--1);
+        grid-template-columns: repeat(var(--column-count), minmax(var(--column-size), 1fr));
+        gap: var(--space-s-l);
+        margin-block-end: var(--space-xl-2xl);
     }
 
     @media (min-width: 70.25rem) {
-      .releaseGrid {
-        --column-count: 5;
-        --column-size: 12rem;
-      }
+        .releaseGrid {
+            --column-count: 5;
+            --column-size: 12rem;
+        }
     }
 
     .releaseName {
-      font-weight: bold;
-      text-transform: uppercase;
+        font-weight: bold;
+        text-transform: uppercase;
     }
 
-    .releaseListens, .releaseArtist {
-      font-size: var(--step--2);
+    .releaseListens,
+    .releaseArtist {
+        font-size: var(--step--2);
     }
 
     .release {
-      display: flex;
-      flex-direction: column;
-      justify-content: end;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
     }
 
     .release img {
-      aspect-ratio: 1 / 1;
-      background: radial-gradient(var(--background), var(--foreground));
-      box-shadow: 0 0 2px 0 var(--foreground);
-      margin-block-end: var(--space-xs);
+        aspect-ratio: 1 / 1;
+        background: radial-gradient(var(--background), var(--foreground));
+        box-shadow: 0 0 2px 0 var(--foreground);
+        margin-block-end: var(--space-xs);
     }
 
     .tables {
-      align-items: start;
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-m);
-      justify-content: space-between;
+        align-items: start;
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-m);
+        justify-content: space-between;
     }
   </style>
-{% endblock %}
+{% endblock style %}

@@ -1,0 +1,4 @@
+{
+	"blank_line_before_tag": "extends, block",
+	"custom_html": "data-table, tag-list"
+}
