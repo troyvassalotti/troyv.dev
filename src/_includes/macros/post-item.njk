@@ -1,0 +1,21 @@
+{% macro postItem(date, title, url, excerpt = false, headingLevel = "2" ) %}
+    <li>
+        <article class="c-postListItem flow">
+            <p class="c-postListItem__date">{{ date | dateString }}</p>
+            {% if headingLevel === "2" %}
+                <h2 class="c-postListItem__title">
+                    <a href="{{ url }}">{{ title }}</a>
+                </h2>
+            {% else %}
+                <h3 class="c-postListItem__title">
+                    <a href="{{ url }}">{{ title }}</a>
+                </h3>
+            {% endif %}
+			{% if excerpt %}
+			<p class="c-postListItem__excerpt">
+				{{ excerpt }}
+			</p>
+			{% endif %}
+        </article>
+    </li>
+{% endmacro %}

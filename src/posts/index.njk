@@ -8,6 +8,8 @@ description: I occasionally write about things.
 
 {% extends "layouts/base.njk" %}
 
+{% from "macros/post-item.njk" import postItem %}
+
 {% block headScript %}
   <script>{% include "js/loading-spinner.js" %}</script>
 {% endblock headScript %}
@@ -36,16 +38,7 @@ description: I occasionally write about things.
       </section>
       <section class="posts">
         <ul role="list" class="c-postList flow">
-          {% for post in collections.post | reverse %}
-            <li>
-              <article class="c-postListItem flow">
-                <p class="c-postListItem__date">{{ post.date | dateString }}</p>
-                <h2 class="c-postListItem__title">
-                  <a href="{{ post.url }}">{{ post.data.title }}</a>
-                </h2>
-              </article>
-            </li>
-          {% endfor %}
+          {% for post in collections.post | reverse %}{{ postItem(post.date, post.data.title, post.url) }}{% endfor %}
         </ul>
       </section>
     </main>
