@@ -1,10 +1,8 @@
 {
   "imports": {
     "lit": "https://cdn.skypack.dev/lit@2.6.1",
-    "lit-map": "https://cdn.skypack.dev/lit@2.6.1/directives/map.js",
     "d3": "https://cdn.skypack.dev/d3@7.6",
     "tone": "https://cdn.skypack.dev/tone@14.7.77",
-    "slugify": "https://cdn.skypack.dev/@sindresorhus/slugify",
     "cheatcodes": "/assets/js/cheatcodes.js",
     "plvylist": "/assets/js/plvylist.js",
     "cloudysky": "/assets/js/cloudysky.js",

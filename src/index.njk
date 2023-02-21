@@ -5,29 +5,7 @@ description: Watch as Troy Vassalotti learns his way around a computer.
 
 {% extends "layouts/base.njk" %}
 
-{% block headScript %}
-  <script>{% include "js/loading-spinner.js" %}</script>
-{% endblock headScript %}
-
-{% block script %}
-  {{ super() }}
-  <script type="module">
-    import { CloudySky } from "cloudysky"
-    import { Typewriter } from "typewriter"
-
-    const sloganLocation = document.querySelector(".js-slogan")
-    const slogans = ["insert your favorite descriptors here", "hopeless romantic", "apple butter cheesecake", "musician, engineer, and musician, engineer, and musician, engineer...", "I don't know anymore"]
-
-    /** Generates a random number inclusive of min, exclusive of max */
-    const randomNumberGenerator = (min, max) => {
-      return Math.floor(Math.random() * (max - min) + min)
-    }
-
-    const randomNumberForSlogan = randomNumberGenerator(0, slogans.length)
-
-    sloganLocation.innerText = slogans[randomNumberForSlogan]
-  </script>
-{% endblock script %}
+{% from "macros.njk" import postItem %}
 
 {% block content %}
   <main id="main">
@@ -64,19 +42,11 @@ description: Watch as Troy Vassalotti learns his way around a computer.
         </section>
         <section class="o-hero__right">
           <h2 id="recent-posts" class="sectionTitle">Recent Posts</h2>
-          <ul role="list" class="c-postList flow">
+          <ol role="list" class="c-postList flow">
             {% for post in collections.post.slice(collections.post.length - 5, collections.post.length) | reverse %}
-              <li>
-                <article class="c-postListItem flow">
-                  <p class="c-postListItem__date">{{ post.date | dateString }}</p>
-                  <h3 class="c-postListItem__title">
-                    <a href="{{ post.url }}">{{ post.data.title }}</a>
-                  </h3>
-                  <p class="c-postListItem__excerpt">{{ post.data.description }}</p>
-                </article>
-              </li>
+              {{ postItem(post.date, post.data.title, post.url, excerpt = post.data.description, heading = "3") }}
             {% endfor %}
-          </ul>
+          </ol>
           <p class="c-postList__more">
             <a class="c-animatedLink" href="{{ nav.header[1].url }}">View All Posts</a>
           </p>
@@ -139,7 +109,6 @@ description: Watch as Troy Vassalotti learns his way around a computer.
     }
 
     .o-hero__left {
-        --flow-space: var(--space-s);
         text-align: center;
     }
 
@@ -226,3 +195,27 @@ description: Watch as Troy Vassalotti learns his way around a computer.
     }
   </style>
 {% endblock style %}
+
+{% block headScript %}
+  <script>{% include "js/loading-spinner.js" %}</script>
+{% endblock headScript %}
+
+{% block script %}
+  {{ super() }}
+  <script type="module">
+    import { CloudySky } from "cloudysky"
+    import { Typewriter } from "typewriter"
+
+    const sloganLocation = document.querySelector(".js-slogan")
+    const slogans = ["insert your favorite descriptors here", "hopeless romantic", "apple butter cheesecake", "musician, engineer, and musician, engineer, and musician, engineer...", "I don't know anymore"]
+
+    /** Generates a random number inclusive of min, exclusive of max */
+    const randomNumberGenerator = (min, max) => {
+      return Math.floor(Math.random() * (max - min) + min)
+    }
+
+    const randomNumberForSlogan = randomNumberGenerator(0, slogans.length)
+
+    sloganLocation.innerText = slogans[randomNumberForSlogan]
+  </script>
+{% endblock script %}
