@@ -367,7 +367,7 @@ a:focus-visible {
 
 /* Create equal spacing between elements in a flow context without setting display */
 .flow > * + * {
-  margin-block-start: var(--flow-space, var(--space-s));
+  margin-block-start: var(--flow-space, 1em);
 }
 
 /* OBJECTS */
@@ -438,19 +438,6 @@ a:focus-visible {
 
 .c-dataList__item dt::after {
   content: ":";
-}
-
-.c-postListItem {
-  --flow-space: var(--space-2xs);
-}
-
-.c-postListItem__date {
-  font-size: var(--step--1);
-  font-style: italic;
-}
-
-.c-postListItem__title {
-  font-size: var(--step-3);
 }
 
 /* UTILITIES */

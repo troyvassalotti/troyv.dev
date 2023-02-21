@@ -1,0 +1,67 @@
+{% macro postItem(date, title, url, excerpt = false, heading = "2" ) %}
+    <style>
+        .c-postListItem {
+            --flow-space: var(--space-2xs);
+        }
+        
+        .c-postListItem__date {
+            font-size: var(--step--1);
+            font-style: italic;
+        }
+        
+        .c-postListItem__title {
+            font-size: var(--step-3);
+        }
+    </style>
+
+    <li>
+        <article class="c-postListItem flow">
+            <p class="c-postListItem__date">{{ date | dateString }}</p>
+            <h{{ heading }} class="c-postListItem__title">
+            <a href="{{ url }}">{{ title }}</a>
+            </h{{ heading }}>
+            {% if excerpt %}<p class="c-postListItem__excerpt">{{ excerpt }}</p>{% endif %}
+        </article>
+    </li>
+{% endmacro %}
+
+{% macro tagCloud(base, tagList = []) %}
+    <style>
+        .c-tagCloud__title {
+            font-family: var(--headings);
+            font-size: var(--step-1);
+            font-weight: bold;
+            margin-block-end: revert;
+        }
+
+        .c-tagCloud__list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-2xs-xs);
+        }
+
+        .c-tagCloud__tag {
+            background-color: var(--foreground);
+            border-radius: 4px;
+            color: var(--background);
+            display: inline-block;
+            font-size: var(--step--1);
+            padding-inline: 8px;
+        }
+
+        .c-tagCloud__tag::before {
+            content: "#";
+        }
+    </style>
+
+    <nav aria-label="tags" class="c-tagCloud">
+        <p class="c-tagCloud__title">Tags ({{ tagList.length }}):</p>
+        <ul class="c-tagCloud__list" role="list">
+            {% for tag in tagList %}
+                <li>
+                    <a href="{{ base + tag | slugify + "/" }}" class="c-tagCloud__tag"><span class="visually-hidden">Posts tagged</span>{{ tag }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+{% endmacro %}

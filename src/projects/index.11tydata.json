@@ -62,6 +62,12 @@
       "url": "https://www.gonk.app/",
       "repository": "https://github.com/troyvassalotti/gonk",
       "description": "Send Honks with Gonk! I won't explain that any further, so check it out for yourself."
+    },
+    {
+      "name": "Aura Log",
+      "url": "https://troyvassalotti.github.io/aura-log",
+      "repository": "https://github.com/troyvassalotti/aura-log",
+      "description": "Track headaches with a CLI journaling process and customizable charts."
     }
   ]
 }

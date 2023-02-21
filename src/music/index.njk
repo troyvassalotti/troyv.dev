@@ -1,20 +1,12 @@
 {% extends "layouts/base.njk" %}
 
-{% block script %}
-  {{ super() }}
-  <script type="module">
-    import Plvylist from "plvylist";
-    import "/assets/js/now-playing.js";
-  </script>
-{% endblock script %}
-
 {% block content %}
   <main id="main">
     <div class="wrapper constrain--less">
       <div class="central">
         <div class="central__left flow u-truncate">
           <header class="flow header">
-            <div class="nowPlaying flow u-step--2">
+            <div class="nowPlaying u-step--2">
               <p class="u-font--headings u-text--bold">
                 {% include "partials/music.svg" %}
                 Now Playing
@@ -87,10 +79,6 @@
 {% block style %}
   {{ super() }}
   <style>
-    .nowPlaying {
-        --flow-space: var(--space-3xs);
-    }
-
     .nowPlaying svg {
         display: inline-block;
         margin-inline-end: .5ch;
@@ -135,3 +123,11 @@
     }
   </style>
 {% endblock style %}
+
+{% block script %}
+  {{ super() }}
+  <script type="module">
+    import Plvylist from "plvylist";
+    import "/assets/js/now-playing.js";
+  </script>
+{% endblock script %}

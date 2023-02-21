@@ -2,6 +2,11 @@ import { css, html, LitElement } from "lit";
 import { map } from "lit-map";
 import slugify from "slugify";
 
+/**
+ * Tag Cloud web component.
+ * @deprecated
+ * @since 2023-02-20
+ */
 class TagCloud extends LitElement {
   static get styles() {
     return [

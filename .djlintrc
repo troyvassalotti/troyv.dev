@@ -1,4 +1,4 @@
 {
-	"blank_line_before_tag": "extends, block",
+	"blank_line_before_tag": "extends, block, macro",
 	"custom_html": "data-table, tag-list"
 }

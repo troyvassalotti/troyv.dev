@@ -5,7 +5,7 @@ description: Watch as Troy Vassalotti learns his way around a computer.
 
 {% extends "layouts/base.njk" %}
 
-{% from "macros/post-item.njk" import postItem %}
+{% from "macros.njk" import postItem %}
 
 {% block content %}
   <main id="main">
@@ -42,11 +42,11 @@ description: Watch as Troy Vassalotti learns his way around a computer.
         </section>
         <section class="o-hero__right">
           <h2 id="recent-posts" class="sectionTitle">Recent Posts</h2>
-          <ul role="list" class="c-postList flow">
+          <ol role="list" class="c-postList flow">
             {% for post in collections.post.slice(collections.post.length - 5, collections.post.length) | reverse %}
-              {{ postItem(post.date, post.data.title, post.url, post.data.description, "3") }}
+              {{ postItem(post.date, post.data.title, post.url, excerpt = post.data.description, heading = "3") }}
             {% endfor %}
-          </ul>
+          </ol>
           <p class="c-postList__more">
             <a class="c-animatedLink" href="{{ nav.header[1].url }}">View All Posts</a>
           </p>
@@ -109,7 +109,6 @@ description: Watch as Troy Vassalotti learns his way around a computer.
     }
 
     .o-hero__left {
-        --flow-space: var(--space-s);
         text-align: center;
     }
 

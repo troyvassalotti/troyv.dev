@@ -8,16 +8,7 @@ description: I occasionally write about things.
 
 {% extends "layouts/base.njk" %}
 
-{% from "macros/post-item.njk" import postItem %}
-
-{% block headScript %}
-  <script>{% include "js/loading-spinner.js" %}</script>
-{% endblock headScript %}
-
-{% block script %}
-  {{ super() }}
-  <script type="module">import "/assets/js/tag-cloud.js";</script>
-{% endblock script %}
+{% from "macros.njk" import postItem, tagCloud %}
 
 {% block content %}
   <div class="wrapper constrain--more">
@@ -33,13 +24,12 @@ description: I occasionally write about things.
           </div>
         </header>
         {% set sortedTags = collections.allTagsList | sort %}
-        {% set tags = sortedTags.join(",") %}
-        <tag-cloud base="/tags/" tags="{{ sortedTags }}"></tag-cloud>
+        {{ tagCloud("/tags/", tagList = sortedTags) }}
       </section>
       <section class="posts">
-        <ul role="list" class="c-postList flow">
+        <ol role="list" class="c-postList flow">
           {% for post in collections.post | reverse %}{{ postItem(post.date, post.data.title, post.url) }}{% endfor %}
-        </ul>
+        </ol>
       </section>
     </main>
   </div>
@@ -48,7 +38,7 @@ description: I occasionally write about things.
 {% block style %}
   {{ super() }}
   <style>
-    tag-cloud {
+    .c-tagCloud {
         margin-block: var(--space-l-xl);
     }
 
