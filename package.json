@@ -3,17 +3,17 @@
 	"version": "2.5.0",
 	"scripts": {
 		"build": "ELEVENTY_ENV=production eleventy",
-		"serve": "ELEVENTY_ENV=production eleventy --serve",
-		"dev": "ELEVENTY_ENV=development eleventy --serve --incremental",
-		"watch": "ELEVENTY_ENV=development eleventy --quiet --watch",
 		"clean": "rm -rf node_modules package-lock.json",
 		"debug": "DEBUG=* eleventy",
+		"dev": "ELEVENTY_ENV=development eleventy --serve --incremental",
 		"lint::dprint": "dprint check",
 		"lint::dprint-fix": "dprint fmt",
 		"lint::njk": "djlint --lint \"src/\"",
 		"lint::njk-fix": "djlint --reformat \"src/\"",
 		"netlify::dev": "npx netlify dev",
-		"netlify::deploy": "npm run prettier::format && netlify deploy --build --context production --prod"
+		"netlify::deploy": "npm run prettier::format && netlify deploy --build --context production --prod",
+		"serve": "ELEVENTY_ENV=production eleventy --serve",
+		"watch": "ELEVENTY_ENV=development eleventy --quiet --watch"
 	},
 	"devDependencies": {
 		"@11ty/eleventy": "^2.0.0",
