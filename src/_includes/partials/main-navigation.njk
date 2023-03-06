@@ -83,10 +83,10 @@
     <ul role="list">
         {% for link in nav.header %}
             <li>
-                <a href="{{ link.url }}" class="c-animatedLink" {{ 'aria-current="true"' if link.url === page.url }} id="link__{{ link.name }}">
-                    {%- if loop.first -%}~/{%- else -%}:: {%- endif -%}{{ link.name }}
-                    </a>
-                </li>
-            {% endfor %}
-        </ul>
-    </nav>
+                <a href="{{ link.url }}" class="c-animatedLink" {{ "aria-current=page" if link.url === page.url }} id="link__{{ link.name }}">{%- if loop.first -%}~/{%- else -%}::
+                {% endif -%}
+            {{ link.name }}</a>
+        </li>
+    {% endfor %}
+</ul>
+</nav>

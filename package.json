@@ -10,8 +10,8 @@
 		"debug": "DEBUG=* eleventy",
 		"lint::dprint": "dprint check",
 		"lint::dprint-fix": "dprint fmt",
-		"lint::njk": "djlint",
-		"lint::njk-fix": "",
+		"lint::njk": "djlint --lint \"src/\"",
+		"lint::njk-fix": "djlint --reformat \"src/\"",
 		"netlify::dev": "npx netlify dev",
 		"netlify::deploy": "npm run prettier::format && netlify deploy --build --context production --prod"
 	},
