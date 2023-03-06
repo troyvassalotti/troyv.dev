@@ -15,36 +15,31 @@ const transforms = require(`${utilsDir}/transforms`);
 const shortcodes = require(`${utilsDir}/shortcodes`);
 const plugins = require(`${utilsDir}/plugins`);
 
-module.exports = function(eleventyConfig) {
+module.exports = function (eleventyConfig) {
   // Passthroughs
   eleventyConfig
-    .addPassthroughCopy(`${srcDir}/favicon.ico`)
-    .addPassthroughCopy(`${srcDir}/humans.txt`)
-    .addPassthroughCopy(`${srcDir}/manifest.webmanifest`)
-    .addPassthroughCopy(`${srcDir}/robots.txt`)
-    .addPassthroughCopy(`${srcDir}/assets`)
-    .addPassthroughCopy(`${srcDir}/favicons`)
+    .addPassthroughCopy("./public/", "/")
     .addPassthroughCopy({
       "./node_modules/es-module-shims/dist/es-module-shims.js": `${jsDir}/es-module-shims.js`,
     })
     .addPassthroughCopy({
-      "./node_modules/@troyv/cheatcodes/dist/cheatcodes.js": `${jsDir}/cheatcodes.js`
+      "./node_modules/@troyv/cheatcodes/dist/cheatcodes.js": `${jsDir}/cheatcodes.js`,
     })
     .addPassthroughCopy({
-      "./node_modules/@troyv/cloudysky/dist/cloudysky.js": `${jsDir}/cloudysky.js`
+      "./node_modules/@troyv/cloudysky/dist/cloudysky.js": `${jsDir}/cloudysky.js`,
     })
     .addPassthroughCopy({
-      "./node_modules/@troyv/detune/dist/detune.js": `${jsDir}/detune.js`
+      "./node_modules/@troyv/detune/dist/detune.js": `${jsDir}/detune.js`,
     })
     .addPassthroughCopy({
-      "./node_modules/@troyv/typewriter/dist/typewriter.js": `${jsDir}/typewriter.js`
+      "./node_modules/@troyv/typewriter/dist/typewriter.js": `${jsDir}/typewriter.js`,
     })
     .addPassthroughCopy({
-      "./node_modules/plvylist/dist/plvylist.js": `${jsDir}/plvylist.js`
+      "./node_modules/plvylist/dist/plvylist.js": `${jsDir}/plvylist.js`,
     })
     .addPassthroughCopy({
-      "./node_modules/@troyv/beats-per/dist/beats-per.js": `${jsDir}/beats-per.js`
-    })
+      "./node_modules/@troyv/beats-per/dist/beats-per.js": `${jsDir}/beats-per.js`,
+    });
 
   // Plugins
   Object.keys(plugins).forEach((plugin) => {
@@ -86,7 +81,8 @@ module.exports = function(eleventyConfig) {
       .use(markdownItAnchor, {
         permalink: markdownItAnchor.permalink.headerLink(),
       })
-      .use(markdownItFootnote));
+      .use(markdownItFootnote)
+  );
 
   /**
    * Data filters for Serverless

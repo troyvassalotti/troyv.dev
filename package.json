@@ -24,6 +24,7 @@
     "@troyv/beats-per": "^1.0.0",
     "@troyv/cheatcodes": "^0.0.4",
     "@troyv/cloudysky": "^1.0.3",
+    "@troyv/common-config": "^1.0.1",
     "@troyv/detune": "^1.0.1",
     "@troyv/typewriter": "^2.0.0",
     "dotenv": "^16.0.0",
@@ -33,6 +34,8 @@
     "markdown-it-anchor": "^8.6.4",
     "markdown-it-footnote": "^3.0.3",
     "netlify-plugin-cache": "^1.0.3",
+    "netlify-plugin-webmentions": "^1.1.1",
+    "plop": "^3.1.2",
     "plvylist": "^3.0.2",
     "remark": "^14.0.2"
   }

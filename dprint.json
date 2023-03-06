@@ -1,0 +1,14 @@
+{
+	"extends": "./node_modules/@troyv/common-config/dprint.json",
+	"excludes": [
+		"**/*-lock.json",
+		"dist",
+		"_site",
+		"**/node_modules",
+		".cache",
+		".netlify"
+	],
+	"includes": [
+		"**/*.{json,md,toml,js,mjs,cjs,html,css,ts}"
+	]
+}
