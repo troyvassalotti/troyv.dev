@@ -4,63 +4,62 @@ description: Watch as Troy Vassalotti learns his way around a computer.
 ---
 
 {% extends "layouts/base.njk" %}
-
 {% from "macros.njk" import postItem %}
 
 {% block content %}
-  <main id="main">
-    <cloudy-sky hillside>
-    <div class="wrapper">
-      <div class="o-hero">
-        <section class="o-hero__left flow">
-          <div class="c-keyboard">
-            <type-writer>
-            <h1 class="leadingType">Hey, I'm Troy...</h1>
-            </type-writer>
-            <type-writer>
-            <p class="followingType">...and this is a website.</p>
-            </type-writer>
-          </div>
-          <figure class="c-portrait">
-            <img src="{{ metadata.cloudinary }}/c_scale,f_auto,q_auto:eco,w_600/v1646349104/blog/me-on-stage-waverly_hoxgvf.webp"
-                 alt="Me holding my guitar on stage"
-                 decoding="async"
-                 width="600"
-                 height="600"
-                 id="me"/>
-            <figcaption>
-              <a href="/music/">Musician</a>, engineer, and <span class="js-slogan">insert your favorite descriptors here</span>.
-            </figcaption>
-          </figure>
-          <div class="o-hero__left__note">
-            <p>
-              I'm glad you could make it. Peruse my wares<sup>*</sup> and read <a href="/about/">more about me</a> if you're so inclined.
-              Try <a href="/brew/">brewing</a> me a pot of coffee perhaps?
-            </p>
-            <p class="u-step--2">*I only accept bottle caps as currency, sorry... (I'm kidding)</p>
-          </div>
-        </section>
-        <section class="o-hero__right">
-          <h2 id="recent-posts" class="sectionTitle">Recent Posts</h2>
-          <ol role="list" class="c-postList flow">
-            {% for post in collections.post.slice(collections.post.length - 5, collections.post.length) | reverse %}
-              {{ postItem(post.date, post.data.title, post.url, excerpt = post.data.description, heading = "3") }}
-            {% endfor %}
-          </ol>
-          <p class="c-postList__more">
-            <a class="c-animatedLink" href="{{ nav.header[1].url }}">View All Posts</a>
-          </p>
-        </section>
-      </div>
-    </div>
-    </cloudy-sky>
-    <loading-spinner></loading-spinner>
-  </main>
+    <main id="main">
+        <cloudy-sky hillside>
+        <div class="wrapper">
+            <div class="o-hero">
+                <section class="o-hero__left flow">
+                    <div class="c-keyboard">
+                        <type-writer>
+                        <h1 class="leadingType">Hey, I'm Troy...</h1>
+                        </type-writer>
+                        <type-writer>
+                        <p class="followingType">...and this is a website.</p>
+                        </type-writer>
+                    </div>
+                    <figure class="c-portrait">
+                        <img src="{{ metadata.cloudinary }}/c_scale,f_auto,q_auto:eco,w_600/v1646349104/blog/me-on-stage-waverly_hoxgvf.webp"
+                             alt="Me holding my guitar on stage"
+                             decoding="async"
+                             width="600"
+                             height="600"
+                             id="me"/>
+                        <figcaption>
+                            <a href="/music/">Musician</a>, engineer, and <span class="js-slogan">insert your favorite descriptors here</span>.
+                        </figcaption>
+                    </figure>
+                    <div class="o-hero__left__note">
+                        <p>
+                            I'm glad you could make it. Peruse my wares<sup>*</sup> and read <a href="/about/">more about me</a> if you're so inclined.
+                            Try <a href="/brew/">brewing</a> me a pot of coffee perhaps?
+                        </p>
+                        <p class="u-step--2">*I only accept bottle caps as currency, sorry... (I'm kidding)</p>
+                    </div>
+                </section>
+                <section class="o-hero__right">
+                    <h2 id="recent-posts" class="sectionTitle">Recent Posts</h2>
+                    <ol role="list" class="c-postList flow">
+                        {% for post in collections.post.slice(collections.post.length - 5, collections.post.length) | reverse %}
+                            {{ postItem(post.date, post.data.title, post.url, excerpt = post.data.description, heading = "3") }}
+                        {% endfor %}
+                    </ol>
+                    <p class="c-postList__more">
+                        <a class="c-animatedLink" href="{{ nav.header[1].url }}">View All Posts</a>
+                    </p>
+                </section>
+            </div>
+        </div>
+        </cloudy-sky>
+        <loading-spinner></loading-spinner>
+    </main>
 {% endblock content %}
 
 {% block style %}
-  {{ super() }}
-  <style>
+    {{ super() }}
+    <style>
     :is(cloudy-sky, type-writer):not(:defined) {
         visibility: hidden;
     }
@@ -193,16 +192,16 @@ description: Watch as Troy Vassalotti learns his way around a computer.
             --cloud-filter: hue-rotate(190deg);
         }
     }
-  </style>
+    </style>
 {% endblock style %}
 
 {% block headScript %}
-  <script>{% include "js/loading-spinner.js" %}</script>
+    <script>{% include "js/loading-spinner.js" %}</script>
 {% endblock headScript %}
 
 {% block script %}
-  {{ super() }}
-  <script type="module">
+    {{ super() }}
+    <script type="module">
     import { CloudySky } from "cloudysky"
     import { Typewriter } from "typewriter"
 
@@ -217,5 +216,5 @@ description: Watch as Troy Vassalotti learns his way around a computer.
     const randomNumberForSlogan = randomNumberGenerator(0, slogans.length)
 
     sloganLocation.innerText = slogans[randomNumberForSlogan]
-  </script>
+    </script>
 {% endblock script %}

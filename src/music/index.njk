@@ -1,84 +1,84 @@
 {% extends "layouts/base.njk" %}
 
 {% block content %}
-  <main id="main">
-    <div class="wrapper constrain--less">
-      <div class="central">
-        <div class="central__left flow u-truncate">
-          <header class="flow header">
-            <div class="nowPlaying u-step--2">
-              <p class="u-font--headings u-text--bold">
-                {% include "partials/music.svg" %}
-                Now Playing
-              </p>
-              <now-playing service="https://api.troyv.dev/now-playing" class="u-font--code"></now-playing>
+    <main id="main">
+        <div class="wrapper constrain--less">
+            <div class="central">
+                <div class="central__left flow u-truncate">
+                    <header class="flow header">
+                        <div class="nowPlaying u-step--2">
+                            <p class="u-font--headings u-text--bold">
+                                {% include "partials/music.svg" %}
+                                Now Playing
+                            </p>
+                            <now-playing service="https://api.troyv.dev/now-playing" class="u-font--code"></now-playing>
+                        </div>
+                        <h1 class="u-step-6 u-line-height--less">Guitarist, drummer, singer-songwriter.</h1>
+                        <p>
+                            When I'm not coding, I'm probably writing, playing, recording, or listening to music. Check out my projects below, take a
+                            deep dive into my
+                            <a href="/music/stats/">listening habits</a>, or view my <a href="/music/collection">music collection</a>.
+                        </p>
+                    </header>
+                    <section class="o-bands flow">
+                        <div class="c-band u-invertSvg--onDark c-band--frontRoyal flow">
+                            <h3 class="u-step-2">Front Royal</h3>
+                            <dl class="c-dataList">
+                                {% for key, value in frontRoyal.meta %}
+                                    <div class="c-dataList__item">
+                                        <dt>
+                                            {{ key }}
+                                        </dt>
+                                        <dd>
+                                            {{ value }}
+                                        </dd>
+                                    </div>
+                                {% endfor %}
+                            </dl>
+                            {% for link in frontRoyal.social %}
+                                <a href="{{ link.href }}">{% include "partials/" + link.img %}</a>
+                            {% endfor %}
+                        </div>
+                        <div class="c-band u-invertSvg--onDark c-band--troy flow">
+                            <h3 class="u-step-2">troyalllowercase</h3>
+                            <dl class="c-dataList">
+                                {% for key, value in troyalllowercase.meta %}
+                                    <div class="c-dataList__item">
+                                        <dt>
+                                            {{ key }}
+                                        </dt>
+                                        <dd>
+                                            {{ value }}
+                                        </dd>
+                                    </div>
+                                {% endfor %}
+                            </dl>
+                            {% for link in troyalllowercase.social %}
+                                <a href="{{ link.href }}">{% include "partials/" + link.img %}</a>
+                            {% endfor %}
+                        </div>
+                    </section>
+                </div>
+                <div class="central__right">
+                    <section class="plvylist">
+                        <header>
+                            <h2 class="u-step-0 u-text--caps title">You can stream here</h2>
+                            <p class="u-step--1 u-text--italic">
+                                Psst... <a href="https://plvylist.troyv.dev/">I made this player</a>.
+                            </p>
+                        </header>
+                        <plvy-list class="plvylist" file="/assets/js/alone-in-a-crowded-room.json">
+                        </plvy-list>
+                    </section>
+                </div>
             </div>
-            <h1 class="u-step-6 u-line-height--less">Guitarist, drummer, singer-songwriter.</h1>
-            <p>
-              When I'm not coding, I'm probably writing, playing, recording, or listening to music. Check out my projects below, take a
-              deep dive into my
-              <a href="/music/stats/">listening habits</a>, or view my <a href="/music/collection">music collection</a>.
-            </p>
-          </header>
-          <section class="o-bands flow">
-            <div class="c-band u-invertSvg--onDark c-band--frontRoyal flow">
-              <h3 class="u-step-2">Front Royal</h3>
-              <dl class="c-dataList">
-                {% for key, value in frontRoyal.meta %}
-                  <div class="c-dataList__item">
-                    <dt>
-                      {{ key }}
-                    </dt>
-                    <dd>
-                      {{ value }}
-                    </dd>
-                  </div>
-                {% endfor %}
-              </dl>
-              {% for link in frontRoyal.social %}
-                <a href="{{ link.href }}">{% include "partials/" + link.img %}</a>
-              {% endfor %}
-            </div>
-            <div class="c-band u-invertSvg--onDark c-band--troy flow">
-              <h3 class="u-step-2">troyalllowercase</h3>
-              <dl class="c-dataList">
-                {% for key, value in troyalllowercase.meta %}
-                  <div class="c-dataList__item">
-                    <dt>
-                      {{ key }}
-                    </dt>
-                    <dd>
-                      {{ value }}
-                    </dd>
-                  </div>
-                {% endfor %}
-              </dl>
-              {% for link in troyalllowercase.social %}
-                <a href="{{ link.href }}">{% include "partials/" + link.img %}</a>
-              {% endfor %}
-            </div>
-          </section>
         </div>
-        <div class="central__right">
-          <section class="plvylist">
-            <header>
-              <h2 class="u-step-0 u-text--caps title">You can stream here</h2>
-              <p class="u-step--1 u-text--italic">
-                Psst... <a href="https://plvylist.troyv.dev/">I made this player</a>.
-              </p>
-            </header>
-            <plvy-list class="plvylist" file="/assets/js/alone-in-a-crowded-room.json">
-            </plvy-list>
-          </section>
-        </div>
-      </div>
-    </div>
-  </main>
+    </main>
 {% endblock content %}
 
 {% block style %}
-  {{ super() }}
-  <style>
+    {{ super() }}
+    <style>
     .nowPlaying svg {
         display: inline-block;
         margin-inline-end: .5ch;
@@ -121,13 +121,13 @@
         font-size: var(--step--1);
         margin-block: var(--space-s-m);
     }
-  </style>
+    </style>
 {% endblock style %}
 
 {% block script %}
-  {{ super() }}
-  <script type="module">
+    {{ super() }}
+    <script type="module">
     import Plvylist from "plvylist";
     import "/assets/js/now-playing.js";
-  </script>
+    </script>
 {% endblock script %}

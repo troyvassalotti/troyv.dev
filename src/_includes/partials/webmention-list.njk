@@ -4,9 +4,8 @@
 {% set replies = webmentions | filterWebmentions('in-reply-to') %}
 {% set mentions = webmentions | filterWebmentions('mention-of') %}
 {% set defaultImg %}
-  {% include 'partials/user.svg' %}
+{% include 'partials/user.svg' %}
 {% endset %}
-
 <style>
   /* Webmention Section */
   .webmentions {
@@ -44,86 +43,81 @@
     margin-block-start: 2rem;
   }
 </style>
-
 <hr class="u-rule">
 <section class="webmentions" id="webmentions">
-  <h2>Webmentions</h2>
-  {% if webmentions | length %}
-    {% if reposts | length %}
-      <div class="webmentions__repost">
-        <h3>Reposts: {{ reposts | length }}</h3>
-        <div class="webmentions__facepile">
-          {% for webmention in reposts | reverse %}
-            <a
-              class="h-card u-url link-u-exempt"
-              href="{{ webmention.url }}"
-              id="webmention-{{ webmention['wm-id'] }}"
-              target="_blank"
-              rel="noopener noreferrer">
-              <img
-                src="{% if webmention.author.photo %}{{ webmention.author.photo }}{% else %}{{ defaultImg }}{% endif %}"
-                alt="{{ webmention.author.name }}"
-                class="webmentions__face"
-                loading="lazy"
-                decoding="async" />
-            </a>
-          {% endfor %}
-        </div>
-      </div>
+    <h2>Webmentions</h2>
+    {% if webmentions | length %}
+        {% if reposts | length %}
+            <div class="webmentions__repost">
+                <h3>Reposts: {{ reposts | length }}</h3>
+                <div class="webmentions__facepile">
+                    {% for webmention in reposts | reverse %}
+                        <a class="h-card u-url link-u-exempt"
+                           href="{{ webmention.url }}"
+                           id="webmention-{{ webmention['wm-id'] }}"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <img src="{% if webmention.author.photo %}{{ webmention.author.photo }}{% else %}{{ defaultImg }}{% endif %}"
+                                 alt="{{ webmention.author.name }}"
+                                 class="webmentions__face"
+                                 loading="lazy"
+                                 decoding="async"/>
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+        {% if likes | length %}
+            <div class="webmentions__like">
+                <h3>Likes: {{ likes | length }}</h3>
+                <div class="webmentions__facepile">
+                    {% for webmention in likes | reverse %}
+                        <a class="h-card u-url link-u-exempt"
+                           href="{{ webmention.url }}"
+                           id="webmention-{{ webmention['wm-id'] }}"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <img src="{% if webmention.author.photo %}{{ webmention.author.photo }}{% else %}{{ defaultImg }}{% endif %}"
+                                 alt="{{ webmention.author.name }}"
+                                 class="webmentions__face"
+                                 loading="lazy"/>
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+        {% if replies | length %}
+            <div class="webmentions__reply">
+                <h3>Replies: {{ replies | length }}</h3>
+                <ol class="webmentions__list" role="list">
+                    {% for webmention in replies | reverse %}
+                        <li class="webmentions__item">{% include 'partials/webmention.njk' %}</li>
+                    {% endfor %}
+                </ol>
+            </div>
+        {% endif %}
+        {% if mentions | length %}
+            <div class="webmentions__mention">
+                <h3>Mentions: {{ mentions | length }}</h3>
+                <ol class="webmentions__list" role="list">
+                    {% for webmention in mentions | reverse %}
+                        <li class="webmentions__item">{% include 'partials/webmention.njk' %}</li>
+                    {% endfor %}
+                </ol>
+            </div>
+        {% endif %}
+        {% if bookmarks | length %}
+            <div class="webmentions__bookmark">
+                <h3>Bookmarks: {{ bookmarks | length }}</h3>
+                <ol class="webmentions__list" role="list">
+                    {% for webmention in bookmarks | reverse %}
+                        <li class="webmentions__item">{% include 'partials/webmention.njk' %}</li>
+                    {% endfor %}
+                </ol>
+            </div>
+        {% endif %}
+    {% else %}
+        <p>No mentions yet ¯\_(ツ)_/¯</p>
     {% endif %}
-    {% if likes | length %}
-      <div class="webmentions__like">
-        <h3>Likes: {{ likes | length }}</h3>
-        <div class="webmentions__facepile">
-          {% for webmention in likes | reverse %}
-            <a
-              class="h-card u-url link-u-exempt"
-              href="{{ webmention.url }}"
-              id="webmention-{{ webmention['wm-id'] }}"
-              target="_blank"
-              rel="noopener noreferrer">
-              <img
-                src="{% if webmention.author.photo %}{{ webmention.author.photo }}{% else %}{{ defaultImg }}{% endif %}"
-                alt="{{ webmention.author.name }}"
-                class="webmentions__face"
-                loading="lazy" />
-            </a>
-          {% endfor %}
-        </div>
-      </div>
-    {% endif %}
-    {% if replies | length %}
-      <div class="webmentions__reply">
-        <h3>Replies: {{ replies | length }}</h3>
-        <ol class="webmentions__list" role="list">
-          {% for webmention in replies | reverse %}
-            <li class="webmentions__item">{% include 'partials/webmention.njk' %}</li>
-          {% endfor %}
-        </ol>
-      </div>
-    {% endif %}
-    {% if mentions | length %}
-      <div class="webmentions__mention">
-        <h3>Mentions: {{ mentions | length }}</h3>
-        <ol class="webmentions__list" role="list">
-          {% for webmention in mentions | reverse %}
-            <li class="webmentions__item">{% include 'partials/webmention.njk' %}</li>
-          {% endfor %}
-        </ol>
-      </div>
-    {% endif %}
-    {% if bookmarks | length %}
-      <div class="webmentions__bookmark">
-        <h3>Bookmarks: {{ bookmarks | length }}</h3>
-        <ol class="webmentions__list" role="list">
-          {% for webmention in bookmarks | reverse %}
-            <li class="webmentions__item">{% include 'partials/webmention.njk' %}</li>
-          {% endfor %}
-        </ol>
-      </div>
-    {% endif %}
-  {% else %}
-    <p>No mentions yet ¯\_(ツ)_/¯</p>
-  {% endif %}
 </section>
 <hr class="u-rule">
