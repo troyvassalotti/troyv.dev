@@ -1,6 +1,6 @@
 import { css, html, LitElement, nothing } from "lit";
 
-class DataTable extends LitElement {
+class StatsTable extends LitElement {
 	static get styles() {
 		return [
 			css`
@@ -163,4 +163,4 @@ class DataTable extends LitElement {
 	}
 }
 
-customElements.define("data-table", DataTable);
+customElements.define("stats-table", StatsTable);

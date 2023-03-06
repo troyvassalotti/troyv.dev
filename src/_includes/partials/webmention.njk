@@ -35,12 +35,16 @@
                target="_blank"
                rel="noopener noreferrer">
                 {% if webmention.author.photo %}
-                    <img class="webmention__author__photo u-photo"
+                    <img width="48"
+                         height="48"
+                         class="webmention__author__photo u-photo"
                          src="{{ webmention.author.photo }}"
                          alt="{{ webmention.author.name }}"
                          loading="lazy"/>
                 {% else %}
-                    <img class="webmention__author__photo"
+                    <img width="48"
+                         height="48"
+                         class="webmention__author__photo"
                          src="{{ defaultImg }}"
                          alt=""
                          loading="lazy"/>
@@ -49,7 +53,9 @@
             </a>
         {% else %}
             <span class="webmention__author">
-                <img class="webmention__author__photo"
+                <img width="48"
+                     height="48"
+                     class="webmention__author__photo"
                      src="{{ defaultImg }}"
                      alt=""
                      loading="lazy"/>

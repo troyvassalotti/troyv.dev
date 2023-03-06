@@ -1,6 +1,7 @@
 {
-	"extension": ".njk",
-	"profile": "nunjucks",
 	"blank_line_before_tag": "extends, block, macro",
-	"custom_html": "data-table, tag-list"
+	"custom_html": "stats-table",
+	"extension": ".njk",
+	"ignore": "H031",
+	"profile": "nunjucks"
 }

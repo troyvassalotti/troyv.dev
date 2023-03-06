@@ -4,7 +4,7 @@
 {% set replies = webmentions | filterWebmentions('in-reply-to') %}
 {% set mentions = webmentions | filterWebmentions('mention-of') %}
 {% set defaultImg %}
-{% include 'partials/user.svg' %}
+{% include "partials/user.svg" %}
 {% endset %}
 <style>
   /* Webmention Section */
@@ -43,7 +43,7 @@
     margin-block-start: 2rem;
   }
 </style>
-<hr class="u-rule">
+<hr class="u-rule"/>
 <section class="webmentions" id="webmentions">
     <h2>Webmentions</h2>
     {% if webmentions | length %}
@@ -57,7 +57,9 @@
                            id="webmention-{{ webmention['wm-id'] }}"
                            target="_blank"
                            rel="noopener noreferrer">
-                            <img src="{% if webmention.author.photo %}{{ webmention.author.photo }}{% else %}{{ defaultImg }}{% endif %}"
+                            <img width="48"
+                                 height="48"
+                                 src="{%- if webmention.author.photo -%}{{ webmention.author.photo }}{%- else -%}{{ defaultImg }}{%- endif -%}"
                                  alt="{{ webmention.author.name }}"
                                  class="webmentions__face"
                                  loading="lazy"
@@ -77,7 +79,9 @@
                            id="webmention-{{ webmention['wm-id'] }}"
                            target="_blank"
                            rel="noopener noreferrer">
-                            <img src="{% if webmention.author.photo %}{{ webmention.author.photo }}{% else %}{{ defaultImg }}{% endif %}"
+                            <img width="48"
+                                 height="48"
+                                 src="{%- if webmention.author.photo -%}{{ webmention.author.photo }}{%- else -%}{{ defaultImg }}{%- endif -%}"
                                  alt="{{ webmention.author.name }}"
                                  class="webmentions__face"
                                  loading="lazy"/>
@@ -91,7 +95,7 @@
                 <h3>Replies: {{ replies | length }}</h3>
                 <ol class="webmentions__list" role="list">
                     {% for webmention in replies | reverse %}
-                        <li class="webmentions__item">{% include 'partials/webmention.njk' %}</li>
+                        <li class="webmentions__item">{% include "partials/webmention.njk" %}</li>
                     {% endfor %}
                 </ol>
             </div>
@@ -101,7 +105,7 @@
                 <h3>Mentions: {{ mentions | length }}</h3>
                 <ol class="webmentions__list" role="list">
                     {% for webmention in mentions | reverse %}
-                        <li class="webmentions__item">{% include 'partials/webmention.njk' %}</li>
+                        <li class="webmentions__item">{% include "partials/webmention.njk" %}</li>
                     {% endfor %}
                 </ol>
             </div>
@@ -111,7 +115,7 @@
                 <h3>Bookmarks: {{ bookmarks | length }}</h3>
                 <ol class="webmentions__list" role="list">
                     {% for webmention in bookmarks | reverse %}
-                        <li class="webmentions__item">{% include 'partials/webmention.njk' %}</li>
+                        <li class="webmentions__item">{% include "partials/webmention.njk" %}</li>
                     {% endfor %}
                 </ol>
             </div>
@@ -120,4 +124,4 @@
         <p>No mentions yet ¯\_(ツ)_/¯</p>
     {% endif %}
 </section>
-<hr class="u-rule">
+<hr class="u-rule"/>

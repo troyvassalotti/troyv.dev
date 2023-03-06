@@ -1,54 +1,56 @@
 {% extends "layouts/base.njk" %}
 
 {% block script %}
-  {{ super() }}
-  <script type="module">import "/assets/js/data-table.js";</script>
+    {{ super() }}
+    <script type="module">import "/assets/js/stats-table.js";</script>
 {% endblock script %}
 
 {% block content %}
-  <main id="main">
-    <header class="flow u-truncate o-section--angled">
-      <h1 class="u-revertMargin--start">{{ title }}</h1>
-      <p>
-        I keep track of my listening habits in ListenBrainz because I'm a <strong>nerd</strong>. All that data is public on <a href="https://listenbrainz.org/user/actionhamilton/">my ListenBrainz profile</a>, but I've chosen to display a few specific
-        metrics here. Cool, right?
-      </p>
-    </header>
-    <div class="wrapper constrain--less">
-      <div class="listeningHistory">
-        <div class="wrapper constrain--some">
-          <h2 class="u-revertMargin--end u-step-2">Top Releases Last Month</h2>
-          <div class="releaseGrid">
-            {% for release in lastMonthsTopReleases %}
-              <div class="release">
-                <img class="releaseArt"
-                     width="300"
-                     height="300"
-                     src="https://coverartarchive.org/release/{{ release.mbid }}/front"
-                     alt=""/>
-                <p class="releaseName">{{ release.release }}</p>
-                <p class="releaseArtist">{{ release.artist }}</p>
-                <p class="releaseListens">{{ release.listens }} Listens</p>
-              </div>
-            {% endfor %}
-          </div>
+    <main id="main">
+        <header class="flow u-truncate o-section--angled">
+            <h1 class="u-revertMargin--start">{{ title }}</h1>
+            <p>
+                I keep track of my listening habits in ListenBrainz because I'm a <strong>nerd</strong>. All that data is public on <a href="https://listenbrainz.org/user/actionhamilton/">my ListenBrainz profile</a>, but I've chosen to display a few specific
+                metrics here. Cool, right?
+            </p>
+        </header>
+        <div class="wrapper constrain--less">
+            <div class="listeningHistory">
+                <div class="wrapper constrain--some">
+                    <h2 class="u-revertMargin--end u-step-2">Top Releases Last Month</h2>
+                    <div class="releaseGrid">
+                        {% for release in lastMonthsTopReleases %}
+                            <div class="release">
+                                <img class="releaseArt"
+                                     width="300"
+                                     height="300"
+                                     src="https://coverartarchive.org/release/{{ release.mbid }}/front"
+                                     alt=""/>
+                                <p class="releaseName">{{ release.release }}</p>
+                                <p class="releaseArtist">{{ release.artist }}</p>
+                                <p class="releaseListens">{{ release.listens }} Listens</p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="tables">
+                    <stats-table caption="Last 30 Plays"
+                                 headers="Number Artist Track Release"
+                                 data='{{ mostRecentListens | dump }}'>
+                    </stats-table>
+                    <stats-table caption="Top Artists This Month"
+                                 headers="Number Artist Listens"
+                                 data='{{ topArtistsThisMonth | dump }}'>
+                    </stats-table>
+                </div>
+            </div>
         </div>
-        <div class="tables">
-          {# djlint:off #}
-          <data-table caption="Last 30 Plays" headers="Number Artist Track Release" data='{{ mostRecentListens | dump }}'>
-          </data-table>
-          <data-table caption="Top Artists This Month" headers="Number Artist Listens" data='{{ topArtistsThisMonth | dump }}'>
-          </data-table>
-          {# djlint:on #}
-        </div>
-      </div>
-    </div>
-  </main>
+    </main>
 {% endblock content %}
 
 {% block style %}
-  {{ super() }}
-  <style>
+    {{ super() }}
+    <style>
     .listeningHistory {
         margin-block: var(--space-xl-2xl);
     }
@@ -102,5 +104,5 @@
         gap: var(--space-m);
         justify-content: space-between;
     }
-  </style>
+    </style>
 {% endblock style %}
