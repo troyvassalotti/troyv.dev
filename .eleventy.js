@@ -18,7 +18,7 @@ const plugins = require(`${utilsDir}/plugins`);
 module.exports = function (eleventyConfig) {
   // Passthroughs
   eleventyConfig
-    .addPassthroughCopy("./public/", "/")
+    .addPassthroughCopy({ public: "/" })
     .addPassthroughCopy({
       "./node_modules/es-module-shims/dist/es-module-shims.js": `${jsDir}/es-module-shims.js`,
     })
