@@ -38,5 +38,5 @@
 	},
 	"[twig]": {
 		"editor.defaultFormatter": "monosans.djlint"
-	},
+	}
 }

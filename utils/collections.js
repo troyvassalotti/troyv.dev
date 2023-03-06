@@ -8,21 +8,21 @@
  * @returns {*[]}
  */
 function filterTagList(tags) {
-  return (tags || []).filter(tag => ["all", "post", "posts"].indexOf(tag) === -1);
+	return (tags || []).filter((tag) => ["all", "post", "posts"].indexOf(tag) === -1);
 }
 
 module.exports = {
-  /**
-   * Used on the /tags/ page
-   * @param collection
-   * @returns {*[]}
-   */
-  allTagsList: function(collection) {
-    const tagSet = new Set();
-    collection.getAll().forEach(item => {
-      (item.data.tags || []).forEach(tag => tagSet.add(tag));
-    });
+	/**
+	 * Used on the /tags/ page
+	 * @param collection
+	 * @returns {*[]}
+	 */
+	allTagsList: function(collection) {
+		const tagSet = new Set();
+		collection.getAll().forEach((item) => {
+			(item.data.tags || []).forEach((tag) => tagSet.add(tag));
+		});
 
-    return filterTagList([...tagSet]);
-  },
+		return filterTagList([...tagSet]);
+	},
 };

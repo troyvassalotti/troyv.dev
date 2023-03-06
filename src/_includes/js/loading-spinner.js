@@ -1,8 +1,8 @@
 class LoadingSpinner extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({ mode: "open" });
-    this.template = `
+	constructor() {
+		super();
+		this.attachShadow({ mode: "open" });
+		this.template = `
       <style>
         .spinner {
             animation: spinner 2s infinite linear;
@@ -43,12 +43,12 @@ class LoadingSpinner extends HTMLElement {
 
       <div class="spinner" aria-hidden="true"></div>
     `;
-  }
+	}
 
-  connectedCallback() {
-    const { shadowRoot } = this;
-    shadowRoot.innerHTML = this.template;
-  }
+	connectedCallback() {
+		const { shadowRoot } = this;
+		shadowRoot.innerHTML = this.template;
+	}
 }
 
 customElements.define("loading-spinner", LoadingSpinner);

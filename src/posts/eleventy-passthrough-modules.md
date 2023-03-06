@@ -14,8 +14,8 @@ The solution? Eleventy's [Passthrough File Copy](https://www.11ty.dev/docs/copy/
 ```js
 // Zach's answer from the GitHub issue
 eleventyConfig.addPassthroughCopy({
-  "node_modules/chartist/dist/chartist.min.css": "assets/chartist.min.css",
-  "node_modules/chartist/dist/chartist.min.js": "assets/chartist.min.js",
+	"node_modules/chartist/dist/chartist.min.css": "assets/chartist.min.css",
+	"node_modules/chartist/dist/chartist.min.js": "assets/chartist.min.js",
 });
 ```
 

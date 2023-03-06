@@ -83,27 +83,27 @@ There's a background image in the design, but the text got hard to read upon exp
 ```js
 /* these functions remove and toggle classes for properly styling the background image */
 const openMenu = () => {
-  container.classList.remove("mobile-hide");
-  nav.classList.remove("menu__closed");
-  nav.classList.toggle("menu__open");
+	container.classList.remove("mobile-hide");
+	nav.classList.remove("menu__closed");
+	nav.classList.toggle("menu__open");
 };
 
 const closeMenu = () => {
-  container.classList.toggle("mobile-hide");
-  nav.classList.remove("menu__open");
-  nav.classList.toggle("menu__closed");
+	container.classList.toggle("mobile-hide");
+	nav.classList.remove("menu__open");
+	nav.classList.toggle("menu__closed");
 };
 
 /* this does the work of opening or closing the menu */
 const animateMenu = () => {
-  if (isEven(clickCount)) {
-    menu.innerHTML = x;
-    openMenu();
-  } else if (isOdd(clickCount)) {
-    menu.innerHTML = bars;
-    closeMenu();
-  }
-  clickCount++;
+	if (isEven(clickCount)) {
+		menu.innerHTML = x;
+		openMenu();
+	} else if (isOdd(clickCount)) {
+		menu.innerHTML = bars;
+		closeMenu();
+	}
+	clickCount++;
 };
 
 /* look for that magic click */

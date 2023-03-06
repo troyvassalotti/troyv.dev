@@ -6,7 +6,8 @@
 		"_site",
 		"**/node_modules",
 		".cache",
-		".netlify"
+		".netlify",
+		"netlify"
 	],
 	"includes": [
 		"**/*.{json,md,toml,js,mjs,cjs,html,css,ts}"

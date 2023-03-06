@@ -36,22 +36,22 @@ My `.eleventy.js` config file was getting bulky, so I moved my collections, filt
 ```js
 // Plugins
 Object.keys(plugins).forEach((plugin) => {
-  eleventyConfig.addPlugin(plugins[plugin].name, plugins[plugin]?.options);
+	eleventyConfig.addPlugin(plugins[plugin].name, plugins[plugin]?.options);
 });
 
 // Filters
 Object.keys(filters).forEach((filterName) => {
-  eleventyConfig.addFilter(filterName, filters[filterName]);
+	eleventyConfig.addFilter(filterName, filters[filterName]);
 });
 
 // Collections
 Object.keys(collections).forEach((collectionName) => {
-  eleventyConfig.addCollection(collectionName, collections[collectionName]);
+	eleventyConfig.addCollection(collectionName, collections[collectionName]);
 });
 
 // Transforms
 Object.keys(transforms).forEach((transformName) => {
-  eleventyConfig.addTransform(transformName, transforms[transformName]);
+	eleventyConfig.addTransform(transformName, transforms[transformName]);
 });
 ```
 
@@ -88,22 +88,21 @@ A call to the ListenBrainz API returns a JSON payload of track data. The `now pl
 ```js
 // netlify/edge-functions/now-playing.js
 async function getNowPlaying(api, auth) {
-  try {
-    const response = await fetch(`${api}/user/actionhamilton/playing-now`, {
-      headers: auth,
-    });
+	try {
+		const response = await fetch(`${api}/user/actionhamilton/playing-now`, {
+			headers: auth,
+		});
 
-    const data = await response.json();
+		const data = await response.json();
 
-    const { payload } = data;
-    const metadata = payload.listens[0].track_metadata;
-    const { artist_name: artist, track_name: song, release_name: release } =
-      metadata;
+		const { payload } = data;
+		const metadata = payload.listens[0].track_metadata;
+		const { artist_name: artist, track_name: song, release_name: release } = metadata;
 
-    return { artist, song, release };
-  } catch (error) {
-    return false;
-  }
+		return { artist, song, release };
+	} catch (error) {
+		return false;
+	}
 }
 ```
 
@@ -112,7 +111,7 @@ Data fetched like this needs to be added to the data cascade, so I had to rememb
 ```js
 const nowPlaying = await getNowPlaying(listenBrainzEndpoint, headers);
 edge.config((eleventyConfig) => {
-  eleventyConfig.addGlobalData("nowPlaying", nowPlaying);
+	eleventyConfig.addGlobalData("nowPlaying", nowPlaying);
 });
 ```
 
@@ -152,42 +151,42 @@ My listening habits are retrieved with a [serverless function](https://www.11ty.
 
 // Example function for getting my top artists for the month
 async function getTopArtists(
-  api,
-  auth,
-  fetchDir,
-  count = 10,
-  range = "this_month",
+	api,
+	auth,
+	fetchDir,
+	count = 10,
+	range = "this_month",
 ) {
-  try {
-    let options = {
-      type: "json",
-      fetchOptions: {
-        headers: auth,
-      },
-      directory: fetchDir,
-    };
+	try {
+		let options = {
+			type: "json",
+			fetchOptions: {
+				headers: auth,
+			},
+			directory: fetchDir,
+		};
 
-    // I don't know if these options are actually doing anything, but it looks like it works (mostly)
-    if (process.env.ELEVENTY_SERVERLESS) {
-      options.duration = "30m";
-      options.directory = "/tmp/.cache/";
-    }
+		// I don't know if these options are actually doing anything, but it looks like it works (mostly)
+		if (process.env.ELEVENTY_SERVERLESS) {
+			options.duration = "30m";
+			options.directory = "/tmp/.cache/";
+		}
 
-    const data = await EleventyFetch(
-      `${api}/stats/user/actionhamilton/artists?count=${count}&range=${range}`,
-      options,
-    );
+		const data = await EleventyFetch(
+			`${api}/stats/user/actionhamilton/artists?count=${count}&range=${range}`,
+			options,
+		);
 
-    const { payload } = data;
-    const { artists } = payload;
+		const { payload } = data;
+		const { artists } = payload;
 
-    return artists.map((artist) => {
-      const { artist_name: name, listen_count: listens } = artist;
-      return { name, listens };
-    });
-  } catch (error) {
-    return false;
-  }
+		return artists.map((artist) => {
+			const { artist_name: name, listen_count: listens } = artist;
+			return { name, listens };
+		});
+	} catch (error) {
+		return false;
+	}
 }
 ```
 

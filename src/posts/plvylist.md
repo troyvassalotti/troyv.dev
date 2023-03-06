@@ -131,15 +131,15 @@ There's a lot going in the script to be frank, but I have some favorites. For on
 ```js
 const artwork = document.createElement("img");
 const artworkAttributes = {
-  src: "",
-  width: "300",
-  height: "300",
-  alt: "album artwork",
-  id: "artwork",
+	src: "",
+	width: "300",
+	height: "300",
+	alt: "album artwork",
+	id: "artwork",
 };
 const artworkAttributesKeys = Object.keys(artworkAttributes);
 artworkAttributesKeys.forEach((key, index) => {
-  artwork.setAttribute(`${key}`, `${artworkAttributes[key]}`);
+	artwork.setAttribute(`${key}`, `${artworkAttributes[key]}`);
 });
 ```
 
@@ -149,26 +149,26 @@ Once the `forEach` loop is done, `list` is done being generated, and then `list`
 
 ```js
 function loadTrackList() {
-  let list = "";
-  tracks.forEach((track, index) => {
-    list +=
-      `<li data-track="${index}" data-file="${track.file}" class="plvy--song"><span class="plvy--song__title">${track.title}</span></li>`;
-  });
-  songs.innerHTML = list;
-  allTracks = document.querySelectorAll(".plvy--song__title");
-  allTracks.forEach((track, index) =>
-    track.addEventListener("click", () => {
-      if (settings.currentTrack === undefined) {
-        loadTrack(index);
-        pressPlay();
-      } else if (audio.paused) {
-        loadTrack(index);
-      } else {
-        loadTrack(index);
-        audio.play();
-      }
-    })
-  );
+	let list = "";
+	tracks.forEach((track, index) => {
+		list +=
+			`<li data-track="${index}" data-file="${track.file}" class="plvy--song"><span class="plvy--song__title">${track.title}</span></li>`;
+	});
+	songs.innerHTML = list;
+	allTracks = document.querySelectorAll(".plvy--song__title");
+	allTracks.forEach((track, index) =>
+		track.addEventListener("click", () => {
+			if (settings.currentTrack === undefined) {
+				loadTrack(index);
+				pressPlay();
+			} else if (audio.paused) {
+				loadTrack(index);
+			} else {
+				loadTrack(index);
+				audio.play();
+			}
+		})
+	);
 }
 ```
 
@@ -177,17 +177,17 @@ The last challenge I had was figuring out how to properly highlight the actively
 ```js
 // on loadstart of the audio resource, change the active song class
 audio.addEventListener("loadstart", () => {
-  let getter = settings.currentTrack;
-  document
-    .querySelector(`[data-file="${tracks[getter].file}"]`)
-    .classList.add("plvy--song__active");
+	let getter = settings.currentTrack;
+	document
+		.querySelector(`[data-file="${tracks[getter].file}"]`)
+		.classList.add("plvy--song__active");
 });
 
 // when the track gets emptied, remove the active track class
 audio.addEventListener("emptied", () => {
-  document.querySelector(".plvy--song__active").classList.remove(
-    "plvy--song__active",
-  );
+	document.querySelector(".plvy--song__active").classList.remove(
+		"plvy--song__active",
+	);
 });
 ```
 
