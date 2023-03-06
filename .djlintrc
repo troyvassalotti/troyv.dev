@@ -1,4 +1,6 @@
 {
+	"extension": ".njk",
+	"profile": "nunjucks",
 	"blank_line_before_tag": "extends, block, macro",
 	"custom_html": "data-table, tag-list"
 }
