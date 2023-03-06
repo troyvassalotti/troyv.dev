@@ -78,18 +78,15 @@
     }
   }
 </style>
-
 <nav class="c-mainNavigation" id="mainNavigation" aria-label="main">
-  <a class="skipLink" href="#main">Skip to main content</a>
-  <ul role="list">
-    {% for link in nav.header %}
-      <li>
-        <a href="{{ link.url }}"
-           class="c-animatedLink" {% if link.url == page.url %} aria-current="page" {% endif %}
-           id="link__{{ link.name }}">
-          {% if loop.first %}~/{% else %}:: {% endif %}{{ link.name }}
-        </a>
-      </li>
+    <a class="skipLink" href="#main">Skip to main content</a>
+    <ul role="list">
+        {% for link in nav.header %}
+            <li>
+                <a href="{{ link.url }}" class="c-animatedLink" {{ "aria-current=page" if link.url === page.url }} id="link__{{ link.name }}">{%- if loop.first -%}~/{%- else -%}::
+                {% endif -%}
+            {{ link.name }}</a>
+        </li>
     {% endfor %}
-  </ul>
+</ul>
 </nav>

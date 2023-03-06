@@ -1,42 +1,42 @@
 {% extends "layouts/base.njk" %}
 
 {% block content %}
-  <div class="wrapper constrain--some">
-    <main id="main">
-      <article class="h-entry flow">
-        <header class="flow postHeader">
-          <h1 class="postTitle p-name">{{ title }}</h1>
-          <p class="postSummary p-summary u-step--1">{{ description }}</p>
-          <p class="postMeta u-step--1">
-            <span class="dt-published">{{ page.date | dateString }}</span>
-          </p>
-        </header>
-        <div class="post flow u-truncate e-content">
-          {{ content | safe }}
-          {% if syndication %}
-            {% include "partials/syndication-links.njk" %}
-          {% endif %}
-        </div>
-      </article>
-      {% include "partials/webmention-list.njk" %}
-    </main>
-  </div>
-  {% include "partials/post-navigation.njk" %}
+    <div class="wrapper constrain--some">
+        <main id="main">
+            <article class="h-entry flow">
+                <header class="flow postHeader">
+                    <h1 class="postTitle p-name">{{ title }}</h1>
+                    <p class="postSummary p-summary u-step--1">{{ description }}</p>
+                    <p class="postMeta u-step--1">
+                        <span class="dt-published">{{ page.date | dateString }}</span>
+                    </p>
+                </header>
+                <div class="post flow u-truncate e-content">
+                    {{ content | safe }}
+                    {% if syndication %}
+                        {% include "partials/syndication-links.njk" %}
+                    {% endif %}
+                </div>
+            </article>
+            {% include "partials/webmention-list.njk" %}
+        </main>
+    </div>
+    {% include "partials/post-navigation.njk" %}
 {% endblock content %}
 
 {% block script %}
-  {{ super() }}
-  <script type="module">
+    {{ super() }}
+    <script type="module">
     /** Fixes a11y issue with non-focusable scrolling content in code blocks. */
     for (const block of document.querySelectorAll("pre[class*='language-']")) {
       block.tabIndex = 0
     }
-  </script>
+    </script>
 {% endblock script %}
 
 {% block style %}
-  {{ super() }}
-  <style>
+    {{ super() }}
+    <style>
     .post pre[class*="language-"] {
         margin-block: var(--space-s-m);
         max-inline-size: 50rem;
@@ -65,5 +65,5 @@
     .post p {
         hyphens: initial;
     }
-  </style>
+    </style>
 {% endblock style %}

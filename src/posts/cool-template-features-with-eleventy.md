@@ -42,37 +42,37 @@ For my purposes, I needed two shortcodes created to be able to fully use the plu
 const Image = require("@11ty/eleventy-img");
 
 module.exports = async function(
-  src,
-  alt,
-  widthArray,
-  formatArray,
-  sizes,
-  className = "",
-  id = "",
+	src,
+	alt,
+	widthArray,
+	formatArray,
+	sizes,
+	className = "",
+	id = "",
 ) {
-  let metadata = await Image(src, {
-    widths: widthArray,
-    formats: formatArray,
-    urlPath: "/img/",
-    outputDir: "./_site/img/",
-  });
+	let metadata = await Image(src, {
+		widths: widthArray,
+		formats: formatArray,
+		urlPath: "/img/",
+		outputDir: "./_site/img/",
+	});
 
-  let imageAttributes;
+	let imageAttributes;
 
-  if (id === "" && className === "") {
-    imageAttributes = {
-      alt,
-      sizes,
-      loading: "lazy",
-      decoding: "async",
-    };
-  } else if (otherlogic) {
-    /* a load of omitted code */
-  }
+	if (id === "" && className === "") {
+		imageAttributes = {
+			alt,
+			sizes,
+			loading: "lazy",
+			decoding: "async",
+		};
+	} else if (otherlogic) {
+		/* a load of omitted code */
+	}
 
-  return Image.generateHTML(metadata, imageAttributes, {
-    whitespaceMode: "inline",
-  });
+	return Image.generateHTML(metadata, imageAttributes, {
+		whitespaceMode: "inline",
+	});
 };
 ```
 
@@ -134,28 +134,28 @@ const CleanCSS = require("clean-css");
 const { minify } = require("terser");
 
 module.exports = function(eleventyConfig) {
-  // add the syntax highlighting plugin from earlier
-  eleventyConfig.addPlugin(syntaxHighlight);
+	// add the syntax highlighting plugin from earlier
+	eleventyConfig.addPlugin(syntaxHighlight);
 
-  // add a css minifier filter from clean-css
-  eleventyConfig.addFilter("cssmin", function(code) {
-    return new CleanCSS({}).minify(code).styles;
-  });
+	// add a css minifier filter from clean-css
+	eleventyConfig.addFilter("cssmin", function(code) {
+		return new CleanCSS({}).minify(code).styles;
+	});
 
-  // add javascript minifier
-  eleventyConfig.addNunjucksAsyncFilter(
-    "jsmin",
-    async function(code, callback) {
-      try {
-        const minified = await minify(code);
-        callback(null, minified.code);
-      } catch (err) {
-        console.error("Terser error: ", err);
-        // Fail gracefully.
-        callback(null, code);
-      }
-    },
-  );
+	// add javascript minifier
+	eleventyConfig.addNunjucksAsyncFilter(
+		"jsmin",
+		async function(code, callback) {
+			try {
+				const minified = await minify(code);
+				callback(null, minified.code);
+			} catch (err) {
+				console.error("Terser error: ", err);
+				// Fail gracefully.
+				callback(null, code);
+			}
+		},
+	);
 };
 ```
 
@@ -224,7 +224,7 @@ That `projectFeature` shortcode works like this:
 const { html } = require("common-tags");
 
 module.exports = function(content, title, description, href, id) {
-  return html` <article class="project" id="project_${id}">
+	return html` <article class="project" id="project_${id}">
         <h2>${title}</h2>
         <div class="skewed-background col full">
             <div class="wrapper" data-constrain="some">

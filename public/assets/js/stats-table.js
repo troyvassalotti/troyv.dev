@@ -1,9 +1,9 @@
 import { css, html, LitElement, nothing } from "lit";
 
-class DataTable extends LitElement {
-  static get styles() {
-    return [
-      css`
+class StatsTable extends LitElement {
+	static get styles() {
+		return [
+			css`
         :host {
           box-sizing: border-box;
           display: block;
@@ -79,59 +79,59 @@ class DataTable extends LitElement {
           background-color: var(--snow);
         }
       `,
-    ];
-  }
+		];
+	}
 
-  static get properties() {
-    return {
-      caption: { type: String },
-      headers: { type: String },
-    };
-  }
+	static get properties() {
+		return {
+			caption: { type: String },
+			headers: { type: String },
+		};
+	}
 
-  constructor() {
-    super();
-    this.caption = "";
-    this.headers = "";
-  }
+	constructor() {
+		super();
+		this.caption = "";
+		this.headers = "";
+	}
 
-  get data() {
-    return this.getAttribute("data");
-  }
+	get data() {
+		return this.getAttribute("data");
+	}
 
-  render() {
-    const parsedData = JSON.parse(this.data);
-    const headersList = this.headers.split(" ");
+	render() {
+		const parsedData = JSON.parse(this.data);
+		const headersList = this.headers.split(" ");
 
-    return html`
+		return html`
       <table>
         ${
-      this.caption
-        ? html` <caption>
+			this.caption
+				? html` <caption>
               ${this.caption}
             </caption>`
-        : nothing
-    }
+				: nothing
+		}
         <colgroup>
           ${
-      headersList.map((header) => {
-        return html` <col class="col--${header.toLowerCase()}" /> `;
-      })
-    }
+			headersList.map((header) => {
+				return html` <col class="col--${header.toLowerCase()}" /> `;
+			})
+		}
         </colgroup>
         <thead>
           <tr>
             ${
-      headersList.map((header) => {
-        return html` <th id="${header.toLowerCase()}" scope="col">${header}</th> `;
-      })
-    }
+			headersList.map((header) => {
+				return html` <th id="${header.toLowerCase()}" scope="col">${header}</th> `;
+			})
+		}
           </tr>
         </thead>
         <tbody>
           ${
-      parsedData.map((track, index) => {
-        return html`
+			parsedData.map((track, index) => {
+				return html`
               <tr>
                 <th
                   id="order-${headersList[0].toLowerCase()}"
@@ -140,27 +140,27 @@ class DataTable extends LitElement {
                   ${index + 1}
                 </th>
                 ${
-          Object.keys(track).map((item, index) => {
-            return html`
+					Object.keys(track).map((item, index) => {
+						return html`
                     <td
                       headers="order-${headersList[0].toLowerCase()} ${
-              headersList[
-                index
-              ].toLowerCase()
-            }">
+							headersList[
+								index
+							].toLowerCase()
+						}">
                       ${track[item]}
                     </td>
                   `;
-          })
-        }
+					})
+				}
               </tr>
             `;
-      })
-    }
+			})
+		}
         </tbody>
       </table>
     `;
-  }
+	}
 }
 
-customElements.define("data-table", DataTable);
+customElements.define("stats-table", StatsTable);

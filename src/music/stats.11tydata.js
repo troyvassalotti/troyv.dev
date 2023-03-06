@@ -10,35 +10,35 @@ const EleventyFetch = require("@11ty/eleventy-fetch");
  * @returns {Promise<boolean|*>}
  */
 async function getTopArtists(api, auth, fetchDir, count = 10, range = "this_month") {
-  try {
-    let options = {
-      type: "json",
-      fetchOptions: {
-        headers: auth,
-      },
-      directory: fetchDir,
-    };
+	try {
+		let options = {
+			type: "json",
+			fetchOptions: {
+				headers: auth,
+			},
+			directory: fetchDir,
+		};
 
-    if (process.env.ELEVENTY_SERVERLESS) {
-      options.duration = "30m";
-      options.directory = "/tmp/.cache/";
-    }
+		if (process.env.ELEVENTY_SERVERLESS) {
+			options.duration = "30m";
+			options.directory = "/tmp/.cache/";
+		}
 
-    const data = await EleventyFetch(
-      `${api}/stats/user/actionhamilton/artists?count=${count}&range=${range}`,
-      options,
-    );
+		const data = await EleventyFetch(
+			`${api}/stats/user/actionhamilton/artists?count=${count}&range=${range}`,
+			options,
+		);
 
-    const { payload } = data;
-    const { artists } = payload;
+		const { payload } = data;
+		const { artists } = payload;
 
-    return artists.map((artist) => {
-      const { artist_name: name, listen_count: listens } = artist;
-      return { name, listens };
-    });
-  } catch (error) {
-    return false;
-  }
+		return artists.map((artist) => {
+			const { artist_name: name, listen_count: listens } = artist;
+			return { name, listens };
+		});
+	} catch (error) {
+		return false;
+	}
 }
 
 /**
@@ -50,33 +50,33 @@ async function getTopArtists(api, auth, fetchDir, count = 10, range = "this_mont
  * @returns {Promise<boolean|*>}
  */
 async function getMostRecentListens(api, auth, fetchDir, count = 30) {
-  try {
-    let options = {
-      type: "json",
-      fetchOptions: {
-        headers: auth,
-      },
-      directory: fetchDir,
-    };
+	try {
+		let options = {
+			type: "json",
+			fetchOptions: {
+				headers: auth,
+			},
+			directory: fetchDir,
+		};
 
-    if (process.env.ELEVENTY_SERVERLESS) {
-      options.duration = "30m";
-      options.directory = "/tmp/.cache/";
-    }
+		if (process.env.ELEVENTY_SERVERLESS) {
+			options.duration = "30m";
+			options.directory = "/tmp/.cache/";
+		}
 
-    const data = await EleventyFetch(`${api}/user/actionhamilton/listens?count=${count}`, options);
+		const data = await EleventyFetch(`${api}/user/actionhamilton/listens?count=${count}`, options);
 
-    const { payload } = data;
-    const { listens } = payload;
-    const metadata = listens.map((track) => track.track_metadata);
+		const { payload } = data;
+		const { listens } = payload;
+		const metadata = listens.map((track) => track.track_metadata);
 
-    return metadata.map((track) => {
-      const { artist_name: artist, track_name: song, release_name: release } = track;
-      return { artist, song, release };
-    });
-  } catch (error) {
-    return false;
-  }
+		return metadata.map((track) => {
+			const { artist_name: artist, track_name: song, release_name: release } = track;
+			return { artist, song, release };
+		});
+	} catch (error) {
+		return false;
+	}
 }
 
 /**
@@ -89,64 +89,64 @@ async function getMostRecentListens(api, auth, fetchDir, count = 30) {
  * @returns {Promise<boolean>}
  */
 async function getLastMonthsTopReleases(api, auth, fetchDir, count = 10, range = "month") {
-  try {
-    let options = {
-      type: "json",
-      fetchOptions: {
-        headers: auth,
-      },
-      directory: fetchDir,
-    };
+	try {
+		let options = {
+			type: "json",
+			fetchOptions: {
+				headers: auth,
+			},
+			directory: fetchDir,
+		};
 
-    if (process.env.ELEVENTY_SERVERLESS) {
-      options.duration = "30m";
-      options.directory = "/tmp/.cache/";
-    }
+		if (process.env.ELEVENTY_SERVERLESS) {
+			options.duration = "30m";
+			options.directory = "/tmp/.cache/";
+		}
 
-    const data = await EleventyFetch(
-      `${api}/stats/user/actionhamilton/releases?count=${count}&range=${range}`,
-      options,
-    );
+		const data = await EleventyFetch(
+			`${api}/stats/user/actionhamilton/releases?count=${count}&range=${range}`,
+			options,
+		);
 
-    const { payload } = data;
-    const { releases } = payload;
+		const { payload } = data;
+		const { releases } = payload;
 
-    return releases.map((eachRelease) => {
-      const {
-        artist_name: artist,
-        release_name: release,
-        listen_count: listens,
-        release_mbid: mbid,
-      } = eachRelease;
+		return releases.map((eachRelease) => {
+			const {
+				artist_name: artist,
+				release_name: release,
+				listen_count: listens,
+				release_mbid: mbid,
+			} = eachRelease;
 
-      return { artist, release, listens, mbid };
-    });
-  } catch (error) {
-    return false;
-  }
+			return { artist, release, listens, mbid };
+		});
+	} catch (error) {
+		return false;
+	}
 }
 
 module.exports = async function() {
-  const listenBrainzEndpoint = "https://api.listenbrainz.org/1";
-  const headers = { Authorization: "Token " + process.env.LISTENBRAINZ_TOKEN };
-  const directory = "_cache";
+	const listenBrainzEndpoint = "https://api.listenbrainz.org/1";
+	const headers = { Authorization: "Token " + process.env.LISTENBRAINZ_TOKEN };
+	const directory = "_cache";
 
-  const topArtistsThisMonth = await getTopArtists(listenBrainzEndpoint, headers, directory);
-  const mostRecentListens = await getMostRecentListens(listenBrainzEndpoint, headers, directory);
-  const lastMonthsTopReleases = await getLastMonthsTopReleases(
-    listenBrainzEndpoint,
-    headers,
-    directory,
-  );
+	const topArtistsThisMonth = await getTopArtists(listenBrainzEndpoint, headers, directory);
+	const mostRecentListens = await getMostRecentListens(listenBrainzEndpoint, headers, directory);
+	const lastMonthsTopReleases = await getLastMonthsTopReleases(
+		listenBrainzEndpoint,
+		headers,
+		directory,
+	);
 
-  return {
-    title: "Music Stats",
-    description: "Aggregated data from my ListenBrainz profile.",
-    permalink: {
-      ondemand: "/music/stats/",
-    },
-    topArtistsThisMonth,
-    mostRecentListens,
-    lastMonthsTopReleases,
-  };
+	return {
+		title: "Music Stats",
+		description: "Aggregated data from my ListenBrainz profile.",
+		permalink: {
+			ondemand: "/music/stats/",
+		},
+		topArtistsThisMonth,
+		mostRecentListens,
+		lastMonthsTopReleases,
+	};
 };

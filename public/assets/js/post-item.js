@@ -6,9 +6,9 @@ import { css, html, LitElement, nothing } from "lit";
  * @since 2023-02-07
  */
 class PostItem extends LitElement {
-  static get styles() {
-    return [
-      css`
+	static get styles() {
+		return [
+			css`
         :host {
           display: block;
         }
@@ -49,39 +49,41 @@ class PostItem extends LitElement {
           margin-block-end: var(--space-3xs);
         }
       `,
-    ];
-  }
+		];
+	}
 
-  static get properties() {
-    return {
-      date: { type: String },
-      heading: { type: String },
-      excerpt: { type: String },
-      url: { type: String },
-      level: { type: Number },
-    };
-  }
+	static get properties() {
+		return {
+			date: { type: String },
+			heading: { type: String },
+			excerpt: { type: String },
+			url: { type: String },
+			level: { type: Number },
+		};
+	}
 
-  constructor() {
-    super();
-    this.date = "";
-    this.heading = "";
-    this.excerpt = "";
-    this.url = "";
-    this.level = 2;
-  }
+	constructor() {
+		super();
+		this.date = "";
+		this.heading = "";
+		this.excerpt = "";
+		this.url = "";
+		this.level = 2;
+	}
 
-  render() {
-    return html`
+	render() {
+		return html`
       <article class="item" part="p-item">
         <p class="date" part="p-date">${this.date}</p>
-        ${this.level === 3
-          ? html`<h3 class="title" part="p-heading"><a href="${this.url}">${this.heading}</a></h3>`
-          : html`<h2 class="title" part="p-heading"><a href="${this.url}">${this.heading}</a></h2>`}
+        ${
+			this.level === 3
+				? html`<h3 class="title" part="p-heading"><a href="${this.url}">${this.heading}</a></h3>`
+				: html`<h2 class="title" part="p-heading"><a href="${this.url}">${this.heading}</a></h2>`
+		}
         ${this.excerpt ? html`<p class="excerpt" part="p-excerpt">${this.excerpt}</p>` : nothing}
       </article>
     `;
-  }
+	}
 }
 
 customElements.define("post-item", PostItem);

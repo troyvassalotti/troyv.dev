@@ -6,33 +6,31 @@ description: Normal person stuck in a computer.
 {% extends "layouts/base.njk" %}
 
 {% block content %}
-  <div class="wrapper constrain--more">
-    <main id="main" class="flow">
-      <header>
-        <h1 class="u-revertMargin--start">{{ title }}</h1>
-      </header>
-      <section class="aboutMe flow u-truncate">
-        {% renderFile './src/_includes/partials/bio.md' %}
-        <p>My social media presence is sparse, but I am found in a few spots:</p>
-        <ul class="c-socialMedia u-invertSvg--onDark" role="list">
-          {% for social in metadata.socials %}
-            <li>
-              {# djlint:off #}
-              <a class="c-link--icon" href="{{ social.url }}">{% include "partials/" + social.name | lower + ".svg" %}{{ social.name }}</a>
-              {# djlint:on #}
-            </li>
-          {% endfor %}
-        </ul>
-      </section>
-    </main>
-  </div>
+    <div class="wrapper constrain--more">
+        <main id="main" class="flow">
+            <header>
+                <h1 class="u-revertMargin--start">{{ title }}</h1>
+            </header>
+            <section class="aboutMe flow u-truncate">
+                {% renderFile './src/_includes/partials/bio.md' %}
+                <p>My social media presence is sparse, but I am found in a few spots:</p>
+                <ul class="c-socialMedia u-invertSvg--onDark" role="list">
+                    {% for social in metadata.socials %}
+                        <li>
+                            <a class="c-link--icon" href="{{ social.url }}">{%- include "partials/" + social.name | lower + ".svg" -%}{{ social.name }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </section>
+        </main>
+    </div>
 {% endblock content %}
 
 {% block style %}
-  {{ super()}}
-  <style>
+    {{ super()}}
+    <style>
     .c-socialMedia li {
         margin-block-end: 1ch;
     }
-  </style>
+    </style>
 {% endblock style %}

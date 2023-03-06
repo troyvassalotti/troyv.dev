@@ -8,9 +8,9 @@ import slugify from "slugify";
  * @since 2023-02-20
  */
 class TagCloud extends LitElement {
-  static get styles() {
-    return [
-      css`
+	static get styles() {
+		return [
+			css`
         :host {
           display: block;
         }
@@ -66,55 +66,55 @@ class TagCloud extends LitElement {
           gap: var(--space-2xs-xs);
         }
       `,
-    ];
-  }
+		];
+	}
 
-  static get properties() {
-    return {
-      base: { type: String },
-      tags: { type: String },
-    };
-  }
+	static get properties() {
+		return {
+			base: { type: String },
+			tags: { type: String },
+		};
+	}
 
-  constructor() {
-    super();
-    this.base = "";
-    this.tags = "";
-  }
+	constructor() {
+		super();
+		this.base = "";
+		this.tags = "";
+	}
 
-  get tagList() {
-    return this.tags.split(",");
-  }
+	get tagList() {
+		return this.tags.split(",");
+	}
 
-  get tagObjects() {
-    return this.tagList.map(function(tag) {
-      return {
-        tag,
-        slug: slugify(tag),
-      };
-    });
-  }
+	get tagObjects() {
+		return this.tagList.map(function(tag) {
+			return {
+				tag,
+				slug: slugify(tag),
+			};
+		});
+	}
 
-  render() {
-    return html`
+	render() {
+		return html`
       <nav aria-label="tags" class="tags">
         <p class="title">Tags (${this.tagList.length}):</p>
         <ul role="list" class="cloud">
           ${
-      map(
-        this.tagObjects,
-        (tag) =>
-          html` <li>
+			map(
+				this.tagObjects,
+				(tag) =>
+					html` <li>
               <a class="tag" href="${this.base + tag.slug + "/"}"
                 ><span class="visually-hidden">Posts tagged </span>${tag.tag}</a
               >
             </li>`,
-      )
-    }
+			)
+		}
         </ul>
       </nav>
     `;
-  }
+	}
 }
 
 customElements.define("tag-cloud", TagCloud);

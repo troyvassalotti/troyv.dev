@@ -7,37 +7,34 @@ description: I occasionally write about things.
 ---
 
 {% extends "layouts/base.njk" %}
-
 {% from "macros.njk" import postItem, tagCloud %}
 
 {% block content %}
-  <div class="wrapper constrain--more">
-    <main id="main">
-      <section>
-        <header class="u-text--center">
-          <h1 class="u-revertMargin--start">{{ title }}</h1>
-          <div class="rss u-invertSvg--onDark">
-            {# djlint:off #}
-            <span>{% include "partials/rss.svg" %}</span>
-            {# djlint:on #}
-            <span>Subscribe to the <a href="/feed.xml">RSS feed</a>.</span>
-          </div>
-        </header>
-        {% set sortedTags = collections.allTagsList | sort %}
-        {{ tagCloud("/tags/", tagList = sortedTags) }}
-      </section>
-      <section class="posts">
-        <ol role="list" class="c-postList flow">
-          {% for post in collections.post | reverse %}{{ postItem(post.date, post.data.title, post.url) }}{% endfor %}
-        </ol>
-      </section>
-    </main>
-  </div>
+    <div class="wrapper constrain--more">
+        <main id="main">
+            <section>
+                <header class="u-text--center">
+                    <h1 class="u-revertMargin--start">{{ title }}</h1>
+                    <div class="rss u-invertSvg--onDark">
+                        <span>{% include "partials/rss.svg" %}</span>
+                        <span>Subscribe to the <a href="/feed.xml">RSS feed</a>.</span>
+                    </div>
+                </header>
+                {% set sortedTags = collections.allTagsList | sort %}
+                {{ tagCloud("/tags/", tagList = sortedTags) }}
+            </section>
+            <section class="posts">
+                <ol role="list" class="c-postList flow">
+                    {% for post in collections.post | reverse %}{{ postItem(post.date, post.data.title, post.url) }}{% endfor %}
+                </ol>
+            </section>
+        </main>
+    </div>
 {% endblock content %}
 
 {% block style %}
-  {{ super() }}
-  <style>
+    {{ super() }}
+    <style>
     .c-tagCloud {
         margin-block: var(--space-l-xl);
     }
@@ -60,5 +57,5 @@ description: I occasionally write about things.
     .rss svg {
         max-inline-size: 1em;
     }
-  </style>
+    </style>
 {% endblock style %}

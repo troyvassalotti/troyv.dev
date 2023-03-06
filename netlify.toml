@@ -10,7 +10,7 @@ publish = "_site"
   skip_processing = true
 
   [build.environment]
-  NODE_VERSION = "16"
+  NODE_VERSION = "18"
 
 [[redirects]]
 from = "/music/stats/"
@@ -50,3 +50,6 @@ package = "netlify-plugin-cache"
 
   [plugins.inputs]
   paths = [ "_cache" ]
+
+[[plugins]]
+package = "netlify-plugin-webmentions"

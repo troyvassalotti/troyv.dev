@@ -37,29 +37,29 @@ Another cool thing for the benefit of being more readable as a developer would b
 
 ```js
 class Plvylist extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({ mode: "open" });
-    this.tracks = [
-      {
-        file: this.getAttribute("audio-location") + "name_of_your_file.mp3"
-          || "",
-        title: "Your Track Title" || "",
-        artist: this.getAttribute("artist-name") || "",
-        album: this.getAttribute("album-name") || "",
-        artwork: this.getAttribute("cover-art")
-          || this.getAttribute("placeholder-image"),
-      },
-    ];
+	constructor() {
+		super();
+		this.attachShadow({ mode: "open" });
+		this.tracks = [
+			{
+				file: this.getAttribute("audio-location") + "name_of_your_file.mp3"
+					|| "",
+				title: "Your Track Title" || "",
+				artist: this.getAttribute("artist-name") || "",
+				album: this.getAttribute("album-name") || "",
+				artwork: this.getAttribute("cover-art")
+					|| this.getAttribute("placeholder-image"),
+			},
+		];
 
-    /* a bunch of other omitted variables */
-  }
+		/* a bunch of other omitted variables */
+	}
 
-  connectedCallback() {
-    /* omitted code */
-  }
+	connectedCallback() {
+		/* omitted code */
+	}
 
-  loadTrackList() {} /* like this */
+	loadTrackList() {} /* like this */
 }
 ```
 

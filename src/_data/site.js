@@ -4,6 +4,6 @@
  * @type {{environment: string}}
  */
 module.exports = {
-  environment: process.env.ELEVENTY_ENV,
-  serverless: process.env.ELEVENTY_SERVERLESS,
+	environment: process.env.ELEVENTY_ENV,
+	serverless: process.env.ELEVENTY_SERVERLESS,
 };
