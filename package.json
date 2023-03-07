@@ -2,10 +2,10 @@
 	"name": "troyv.dev",
 	"version": "2.5.0",
 	"scripts": {
-		"build": "ELEVENTY_ENV=production eleventy",
+		"build": "eleventy",
 		"clean": "rm -rf node_modules package-lock.json",
 		"debug": "DEBUG=* eleventy",
-		"dev": "ELEVENTY_ENV=development eleventy --serve --incremental",
+		"dev": "eleventy --serve --incremental",
 		"lint::all": "npm run lint::dprint && npm run lint::eslint && npm run lint::njk",
 		"lint::all-fix": "npm run lint::dprint-fix && npm run lint::eslint-fix && npm run lint::njk-fix",
 		"lint::dprint": "dprint check",
@@ -15,9 +15,9 @@
 		"lint::njk": "djlint --lint \"src/\"",
 		"lint::njk-fix": "djlint --reformat \"src/\"",
 		"netlify::dev": "npx netlify dev",
-		"netlify::deploy": "npm run prettier::format && netlify deploy --build --context production --prod",
+		"netlify::deploy": "npm run lint::all && netlify deploy --build --context production --prod",
 		"serve": "ELEVENTY_ENV=production eleventy --serve",
-		"watch": "ELEVENTY_ENV=development eleventy --quiet --watch"
+		"watch": "eleventy --quiet --watch"
 	},
 	"devDependencies": {
 		"@11ty/eleventy": "^2.0.0",
