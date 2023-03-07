@@ -105,10 +105,10 @@ class TagCloud extends LitElement {
 				this.tagObjects,
 				(tag) =>
 					html` <li>
-              <a class="tag" href="${this.base + tag.slug + "/"}"
-                ><span class="visually-hidden">Posts tagged </span>${tag.tag}</a
-              >
-            </li>`,
+                <a class="tag" href="${
+						this.base + tag.slug + "/"
+					}"><span class="visually-hidden">Posts tagged </span>${tag.tag}</a>
+              </li>`,
 			)
 		}
         </ul>
