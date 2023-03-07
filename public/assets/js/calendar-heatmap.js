@@ -37,7 +37,7 @@ class CalendarHeatmap extends HTMLElement {
 	}
 	async getDates(data) {
 		const all = [];
-		for (const [key, value] of data) {
+		for (const [key] of data) {
 			all.push(parseInt(key));
 		}
 		const min = Math.min.apply(null, all);
