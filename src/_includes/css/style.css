@@ -183,11 +183,9 @@ html {
   --space-s-l: clamp(1.13rem, calc(0.75rem + 1.88vw), 2.63rem);
 
   /* FONT FAMILIES */
-  --body: "Locale", var(--fallback);
+  --body: system-ui;
   --code: "Native", monospace;
-  --fallback: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
-    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  --headings: "Oli Grotesk", var(--fallback);
+  --headings: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
 
   /* COLOR PALETTE */
   /* HEX */
@@ -498,7 +496,7 @@ a:focus-visible {
 }
 
 .u-truncate :is(p, ul, ol) {
-  max-inline-size: var(--readable-length, 60ch);
+  max-inline-size: var(--readable-length, 70ch);
 }
 
 .u-line-height--less {
