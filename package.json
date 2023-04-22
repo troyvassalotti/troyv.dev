@@ -2,7 +2,7 @@
 	"name": "troyv.dev",
 	"version": "2.5.0",
 	"scripts": {
-        "blog": "plop post",
+		"blog": "plop post",
 		"build": "eleventy",
 		"clean": "rm -rf node_modules package-lock.json",
 		"debug": "DEBUG=* eleventy",
@@ -29,7 +29,7 @@
 		"@chrisburnell/eleventy-cache-webmentions": "^1.1.2",
 		"@netlify/functions": "^1.0.0",
 		"@troyv/beats-per": "^1.0.0",
-		"@troyv/cheatcodes": "^0.0.4",
+		"@troyv/cheatcodes": "^0.0.5",
 		"@troyv/cloudysky": "^1.0.3",
 		"@troyv/common-config": "^1.0.1",
 		"@troyv/detune": "^1.0.1",
