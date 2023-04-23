@@ -28,7 +28,7 @@ description: Watch as Troy Vassalotti learns his way around a computer.
                              height="600"
                              id="me"/>
                         <figcaption>
-                            <a href="/music/">Musician</a>, engineer, and <span class="js-slogan">insert your favorite descriptors here</span>.
+                            <a href="/music/">Musician</a>, engineer, and <span class="js-slogan">loading...</span>.
                         </figcaption>
                     </figure>
                     <div class="o-hero__left__note">
@@ -53,14 +53,13 @@ description: Watch as Troy Vassalotti learns his way around a computer.
             </div>
         </div>
         </cloudy-sky>
-        <loading-spinner></loading-spinner>
     </main>
 {% endblock content %}
 
 {% block style %}
     {{ super() }}
     <style>
-    :is(cloudy-sky, type-writer):not(:defined) {
+    :is(type-writer):not(:defined) {
         visibility: hidden;
     }
 
@@ -82,6 +81,7 @@ description: Watch as Troy Vassalotti learns his way around a computer.
     .o-hero {
         column-gap: var(--space-m-l);
         display: grid;
+        padding-block-start: 2rem;
         row-gap: var(--space-xl-2xl);
     } 
 
@@ -194,10 +194,6 @@ description: Watch as Troy Vassalotti learns his way around a computer.
     }
     </style>
 {% endblock style %}
-
-{% block headScript %}
-    <script>{% include "js/loading-spinner.js" %}</script>
-{% endblock headScript %}
 
 {% block script %}
     {{ super() }}
