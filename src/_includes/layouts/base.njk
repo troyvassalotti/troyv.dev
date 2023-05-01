@@ -19,6 +19,9 @@
         <script type="importmap">{% include "partials/importmap.json" %}</script>
 
         {% block headScript %}
+        <script>
+            document.documentElement.classList.add("js");
+        </script>
         {% endblock headScript %}
 
         {% block style %}
@@ -80,17 +83,19 @@
 
     {% block content %}
         <div class="wrapper constrain--more defaultContentBlock">
-            <main id="main" class="flow defaul">
+            <main id="main" class="flow default">
                 {{ content | safe }}
             </main>
         </div>
     {% endblock content %}
 
+    {% include "partials/keyboard-shortcuts.html" %}
+
     {% block script %}
         <script type="module">
-    import CheatCodes from "cheatcodes";
-    new CheatCodes().listen();
-    new CheatCodes("7 1 7 0 7 2 7 3 6", "gamepad").listen();
+            import CheatCodes from "cheatcodes";
+            new CheatCodes().listen();
+            new CheatCodes("7 1 7 0 7 2 7 3 6", "gamepad").listen();
         </script>
     {% endblock script %}
 </body>

@@ -9,7 +9,7 @@ description: A place to keep track of my music collection.
     <header>
         <h2>Vinyl</h2>
     </header>
-    <section class="twelveInch">
+    <section class="twelveInch flow">
         <h3>12 Inch</h3>
         <ul>
             {% for item in vinyl["12 Inch"] %}
@@ -20,7 +20,7 @@ description: A place to keep track of my music collection.
             {% endfor %}
         </ul>
     </section>
-    <section class="tenInch">
+    <section class="tenInch flow">
         <h3>10 Inch</h3>
         <ul>
             {% for item in vinyl["10 Inch"] %}
@@ -31,10 +31,22 @@ description: A place to keep track of my music collection.
             {% endfor %}
         </ul>
     </section>
-    <section class="sevenInch">
+    <section class="sevenInch flow">
         <h3>7 Inch</h3>
         <ul>
             {% for item in vinyl["7 Inch"] %}
+                <li>
+                    <b>{{ item.artist }}</b>:
+                    <i>{{ item.album }}</i>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+    <section class="wants flow">
+        <h3>The Want List</h3>
+        <p>I <em>could</em> order these online but the point of this list is that I find them out in the wild.</p>
+        <ul>
+            {% for item in vinyl["Wants"] %}
                 <li>
                     <b>{{ item.artist }}</b>:
                     <i>{{ item.album }}</i>

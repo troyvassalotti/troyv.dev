@@ -197,7 +197,10 @@ html {
   --eerie-black: #141517ff;
 
   /* STANDARD RULES */
+  background-color: var(--background);
+  color: var(--foreground);
   scrollbar-color: var(--foreground) var(--background);
+  scrollbar-gutter: stable;
 }
 
 /* COLOR SCHEME CHANGES */
@@ -242,8 +245,6 @@ html::-webkit-scrollbar-track {
 }
 
 body {
-  background-color: var(--background);
-  color: var(--foreground);
   font-family: var(--body);
   font-size: var(--step-0);
 }

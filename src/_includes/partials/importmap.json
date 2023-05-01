@@ -8,6 +8,7 @@
 		"cloudysky": "/assets/js/cloudysky.js",
 		"typewriter": "/assets/js/typewriter.js",
 		"detune": "/assets/js/detune.js",
-		"beats-per": "/assets/js/beats-per.js"
+		"beats-per": "/assets/js/beats-per.js",
+		"word-salad": "/assets/js/word-salad.js"
 	}
 }

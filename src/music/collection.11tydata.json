@@ -463,6 +463,56 @@
 				"artist": "Such Gold/Placeholder",
 				"album": "Wax Packs 31/82"
 			}
-		]
+		],
+        "Wants": [
+            {
+                "artist": "Devin Townsend Band",
+                "album": "Accelerated Evolution"
+            },
+            {
+                "artist": "Extreme",
+                "album": "Extreme II: Pornograffiti"
+            },
+            {
+                "artist": "Gatsbys American Dream",
+                "album": "Gatsbys American Dream"
+            },
+            {
+                "artist": "Gatsbys American Dream",
+                "album": "Volcano"
+            },
+            {
+                "artist": "Hard Girls",
+                "album": "Floating Now"
+            },
+            {
+                "artist": "Less Than Jake",
+                "album": "Anthem"
+            },
+            {
+                "artist": "Korn",
+                "album": "The Nothing"
+            },
+            {
+                "artist": "Sugarcult",
+                "album": "Palm Trees and Power Lines"
+            },
+            {
+                "artist": "Bloc Party.",
+                "album": "A Weekend In The City"
+            },
+            {
+                "artist": "Jawbox",
+                "album": "Jawbox"
+            },
+            {
+                "artist": "Anxious",
+                "album": "Little Green House"
+            },
+			{
+				"artist": "This Or The Apocalypse",
+				"album": "Haunt What's Left"
+			}
+        ]
 	}
 }

@@ -9,11 +9,10 @@ description: Normal person stuck in a computer.
     <div class="wrapper constrain--more">
         <main id="main" class="flow">
             <header>
-                <h1 class="u-revertMargin--start">{{ title }}</h1>
+                <h1 class="u-revertMargin--start">'Sup</h1>
             </header>
             <section class="aboutMe flow u-truncate">
                 {% renderFile './src/_includes/partials/bio.md' %}
-                <p>My social media presence is sparse, but I am found in a few spots:</p>
                 <ul class="c-socialMedia u-invertSvg--onDark" role="list">
                     {% for social in metadata.socials %}
                         <li>
