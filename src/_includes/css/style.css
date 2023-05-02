@@ -183,9 +183,9 @@ html {
   --space-s-l: clamp(1.13rem, calc(0.75rem + 1.88vw), 2.63rem);
 
   /* FONT FAMILIES */
-  --body: system-ui;
+  --body: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
   --code: "Native", monospace;
-  --headings: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+  --headings: var(--body);
 
   /* COLOR PALETTE */
   /* HEX */

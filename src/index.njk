@@ -21,12 +21,14 @@ description: Watch as Troy Vassalotti learns his way around a computer.
                         </type-writer>
                     </div>
                     <figure class="c-portrait">
-                        <img src="{{ metadata.cloudinary }}/c_scale,f_auto,q_auto:eco,w_600/v1646349104/blog/me-on-stage-waverly_hoxgvf.webp"
-                             alt="Me holding my guitar on stage"
-                             decoding="async"
-                             width="600"
-                             height="600"
-                             id="me"/>
+                        <div class="gradient-mask">
+                            <img src="{{ metadata.cloudinary }}/c_scale,f_auto,q_auto:eco,w_600/v1646349104/blog/me-on-stage-waverly_hoxgvf.webp"
+                                alt="Me holding my guitar on stage"
+                                decoding="async"
+                                width="600"
+                                height="600"
+                                id="me"/>
+                        </div>
                         <figcaption>
                             <a href="/music/">Musician</a>, engineer, and <span class="js-slogan">loading...</span>.
                         </figcaption>
@@ -84,6 +86,17 @@ description: Watch as Troy Vassalotti learns his way around a computer.
         padding-block-start: 2rem;
         row-gap: var(--space-xl-2xl);
     } 
+
+    .gradient-mask {
+        mask-image: linear-gradient(to bottom, #000, #000),
+            linear-gradient(to bottom, #000, #000),
+            linear-gradient(to bottom, #000, #000),
+            linear-gradient(to bottom, #000, #000),
+            linear-gradient(to bottom, #000, #000);
+        mask-size: 18% 70%;
+        mask-position: 0 100%, 25% 25%, 50% 50%, 75% 0, 100% 50%;
+        mask-repeat: no-repeat;
+    }
 
     @media (min-width: 70.25rem) {
         .o-hero {
@@ -156,9 +169,7 @@ description: Watch as Troy Vassalotti learns his way around a computer.
         aspect-ratio: 1 / 1;
         border-radius: 50%;
         inline-size: calc(7 * var(--step-5));
-        margin-block: 1.5rem;
         margin-inline: auto;
-        transition: filter .3s ease;
     }
 
     .o-hero__right .sectionTitle {
