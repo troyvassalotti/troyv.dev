@@ -43,4 +43,7 @@ module.exports = {
 	postTagRemoval: function(tags) {
 		return (tags || []).filter((tag) => ["all", "post", "posts"].indexOf(tag) === -1);
 	},
+	inArray: function(array, item) {
+		return array.includes(item);
+	}
 };

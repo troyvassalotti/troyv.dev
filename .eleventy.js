@@ -82,6 +82,7 @@ module.exports = function (eleventyConfig) {
     mdLib
       .use(markdownItAnchor, {
         permalink: markdownItAnchor.permalink.headerLink(),
+        level: 2,
       })
       .use(markdownItFootnote)
   );

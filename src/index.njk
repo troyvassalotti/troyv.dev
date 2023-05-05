@@ -11,9 +11,11 @@ description: Watch as Troy Vassalotti learns his way around a computer.
         <cloudy-sky hillside>
         <div class="wrapper">
             <type-writer>
-            <h1 class="leadingType">Welcome to a website.</h1>
+            <h1 id="welcome" class="leadingType">Welcome to a website.</h1>
             </type-writer>
-            <h2 id="recent-posts" class="sectionTitle">Recent Posts</h2>
+            <type-writer>
+            <h2 id="read" class="sectionTitle">Read</h2>
+            </type-writer>
             <ol role="list" class="c-postList flow">
                 {% for post in collections.post.slice(collections.post.length - 5, collections.post.length) | reverse %}
                     {{ postItem(post.date, post.data.title, post.url, excerpt = post.data.description, heading = "3") }}
@@ -22,6 +24,37 @@ description: Watch as Troy Vassalotti learns his way around a computer.
             <p class="c-postList__more">
                 <a class="c-animatedLink" href="{{ nav.header[1].url }}">View All Posts</a>
             </p>
+            <type-writer>
+            <h2 id="play">Play</h2>
+            </type-writer>
+            <ol role="list" class="list play">
+                {% for project in projects %}
+                    {% if project.tags and project.tags | inArray("play") %}
+                        <li class="play__item">
+                            <article>
+                                <p class="play__item-title">
+                                    <a href="{{ project.url }}">{{ project.name }}</a>
+                                </p>
+                                <p class="play__item-description">{{ project.description }}</p>
+                            </article>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+                {% for play in collections.play %}
+                    <li class="play__item">
+                        <article>
+                            <p class="play__item-title">
+                                <a href="{{ play.url }}">{{ play.data.title }}</a>
+                            </p>
+                            <p class="play__item-description">{{ play.data.excerpt or play.data.description }}</p>
+                        </article>
+                    </li>
+                {% endfor %}
+            </ol>
+            <type-writer>
+                <h2 id="listen">Listen</h2>
+                <p>insert music stuff here</p>
+            </type-writer>
         </div>
         </cloudy-sky>
     </main>
