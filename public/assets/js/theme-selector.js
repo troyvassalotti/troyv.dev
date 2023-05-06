@@ -80,7 +80,7 @@ class ThemeSelector extends LitElement {
 		}
 
 		if (this.storedValues.saturation) {
-			this.updateDocumentProperties(SATURATION_PROPERTY, this.storedValues.saturation);
+			this.updateDocumentProperties(SATURATION_PROPERTY, this.storedValues.saturation + "%");
 			this.saturationSlider.value = this.storedValues.saturation;
 		}
 	}
@@ -91,11 +91,11 @@ class ThemeSelector extends LitElement {
 
 	render() {
 		return html`<div class="theme__field">
-        <label for="theme-hue">Change the base theme color.</label>
+        <label for="theme-hue">Theme color.</label>
         <input @input=${this.updateHue} type="range" name="theme-hue" id="theme-hue" min="0" max="360" />
       </div>
       <div class="theme__field">
-        <label for="theme-saturation">Change the base theme saturation.</label>
+        <label for="theme-saturation">Theme saturation.</label>
         <input @input=${this.updateSaturation} type="range" name="theme-saturation" id="theme-saturation" min="0" max="100" />
       </div>
       <button @click=${this.resetTheme} class="resetThemeButton">Reset Theme</button>`;

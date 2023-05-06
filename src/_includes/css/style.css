@@ -257,8 +257,12 @@ html {
   }
 }
 
-.js :is(type-writer, theme-selector):not(:defined) {
+.js :is(type-writer):not(:defined) {
   visibility: hidden;
+}
+
+modal-menu:not(:defined) {
+  display: none;
 }
 
 body {

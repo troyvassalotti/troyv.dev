@@ -17,7 +17,9 @@ description: Watch as Troy Vassalotti learns his way around a computer.
                 <ol role="list" class="c-postList flow">
                     {% for post in collections.post.slice(collections.post.length - 5, collections.post.length) | reverse %}
                         <p class="u-step-2 u-text--bold">{{ post.data.description }}</p>
-                        <p class="u-step--1">From the post <a class="u-text--italic" href="{{ post.url }}">{{ post.data.title }}</a>, published {{ post.date | dateString }}.</p>
+                        <p class="u-step--1">
+                            From the post <a class="u-text--italic" href="{{ post.url }}">{{ post.data.title }}</a>, published {{ post.date | dateString }}.
+                        </p>
                     {% endfor %}
                 </ol>
             </div>
@@ -44,7 +46,13 @@ description: Watch as Troy Vassalotti learns his way around a computer.
                 <type-writer>
                 <h2 id="listen" class="typing--listen">Listen</h2>
                 </type-writer>
-                <p>insert music stuff here</p>
+                <p>
+                    I'm currently listening to <now-playing service="https://api.troyv.dev/now-playing">
+                    <span>elevator music</span>
+                    </now-playing> but you can listen to other songs below.
+                </p>
+                <plvy-list class="plvylist" file="/assets/js/alone-in-a-crowded-room.json">
+                </plvy-list>
             </div>
         </div>
         </cloudy-sky>
@@ -96,6 +104,11 @@ description: Watch as Troy Vassalotti learns his way around a computer.
             padding-inline: var(--space-xs);
         }
 
+        .plvylist {
+            color-scheme: light dark;
+            font-size: var(--step--1);
+        }
+
         ::part(hillside) {
             fill: var(--accent);
         }
@@ -113,5 +126,7 @@ description: Watch as Troy Vassalotti learns his way around a computer.
     <script type="module">
         import {CloudySky} from "cloudysky"
         import {Typewriter} from "typewriter"
+        import "/assets/js/now-playing.js";
+        import Plvylist from "plvylist";
     </script>
 {% endblock script %}
