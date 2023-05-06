@@ -33,7 +33,33 @@ class ModalMenu extends LitElement {
       .flow > * + * {
         margin-block-start: var(--flow-space, 1em);
       }
+
+      .title {
+        font-size: var(--step-2);
+        font-weight: bold;
+      }
     `;
+	}
+
+	static get properties() {
+		return {
+			titleText: { type: String },
+			shortcut: { type: String },
+		};
+	}
+
+	constructor() {
+		super();
+		this.titleText = "";
+		this.shortcut = "";
+	}
+
+	closeModal() {
+		this.dialogElement.close();
+	}
+
+	openModal() {
+		this.dialogElement.showModal();
 	}
 
 	/**
@@ -43,13 +69,38 @@ class ModalMenu extends LitElement {
 		return this.renderRoot.getElementById("modal");
 	}
 
-	closeModal() {
-		this.dialogElement.close();
+	get trigger() {
+		return this.renderRoot.querySelector("slot[name='trigger']").assignedElements()[0];
+	}
+
+	get shortcutKeys() {
+		return this.shortcut.split("+").map((key) => key.trim());
+	}
+
+	firstUpdated() {
+		if (this.trigger) {
+			this.trigger.addEventListener("click", () => {
+				this.openModal();
+			});
+		}
+
+		if (this.shortcut && this.shortcutKeys) {
+			document.addEventListener("keydown", (e) => {
+				if (this.shortcutKeys.includes("shift")) {
+					if (e.shiftKey & e.key === this.shortcutKeys[1]) {
+						this.dialogElement.open ? this.closeModal() : this.openModal();
+					}
+				}
+			});
+		}
 	}
 
 	render() {
-		return html`<dialog id="modal" class="flow">
-      <slot name="title"></slot>
+		return html`<slot name="trigger"></slot>
+    <dialog id="modal" class="flow">
+      <slot name="title" class="title">
+        <div>${this.titleText}</div>
+      </slot>
       <slot></slot>
       <div class="actions">
         <slot name="custom-actions"></slot>

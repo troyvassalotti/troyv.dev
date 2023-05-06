@@ -227,6 +227,7 @@ html {
   --accent-10: hsla(var(--accent-hue), var(--base-sat), var(--accent-lightness), 10%);
 
   /* STANDARD RULES */
+  accent-color: var(--accent);
   background-color: var(--background);
   color: var(--foreground);
   scrollbar-gutter: stable;
@@ -256,7 +257,7 @@ html {
   }
 }
 
-.js :is(type-writer):not(:defined) {
+.js :is(type-writer, theme-selector):not(:defined) {
   visibility: hidden;
 }
 

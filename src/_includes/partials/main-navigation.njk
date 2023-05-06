@@ -45,29 +45,8 @@
     transform: translateY(0%);
   }
 
-  .settings__button {
-		color: var(--links);
-		display: block;
-		text-decoration: underline;
-	}
-
   .themeSelector__button {
-    align-self: start;
-    padding: var(--space-xs);
-  }
-
-  .theme__field {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .theme__field label {
-    font-weight: bold;
-  }
-
-  .settings__buttons {
-    display: flex;
-    justify-content: space-between;
+    padding: var(--space-2xs);
   }
 
   @media (prefers-reduced-motion: no-preference) {
@@ -125,66 +104,11 @@
     {% endfor %}
   </ul>
 </nav>
-<button id="settings" class="themeSelector__button">{% include "partials/settings.svg" %}</button>
-<modal-menu>
-<p class="u-step-2 u-text--bold" slot="title">Site Settings</p>
+<modal-menu id="settingsMenu" titletext="Site Settings">
+<button slot="trigger" id="settings" class="themeSelector__button">{% include "partials/settings.svg" %}</button>
 <theme-selector></theme-selector>
 </modal-menu>
-<dialog class="modal flow" id="settingsMenu">
-  <div class="settings__buttons">
-    <button id="themeReset" class="settings__button u-step--1">Reset Theme</button>
-    <button id="settingsDismiss" class="settings__button u-step--1">Dismiss</button>
-  </div>
-</dialog>
 </div>
 <script type="module">
   import "/assets/js/theme-selector.js";
-  const THEME_HUE = document.getElementById("theme-hue");
-  THEME_HUE.addEventListener("input", (e) => {
-      const VALUE = e.target.value;
-      document.documentElement.style.setProperty("--base-hue", VALUE);
-      localStorage.setItem("theme-base-hue", VALUE);
-  });
-
-  const THEME_SATURATION = document.getElementById("theme-saturation");
-  THEME_SATURATION.addEventListener("input", (e) => {
-      const VALUE = `${e.target.value}%`;
-      document.documentElement.style.setProperty("--base-sat", VALUE);
-      localStorage.setItem("theme-base-saturation", e.target.value);
-  });
-
-  const SETTINGS_MODAL = document.getElementById("settingsMenu");
-  const SETTINGS_BUTTON = document.getElementById("settings");
-  SETTINGS_BUTTON.addEventListener("click", (e) => {
-    SETTINGS_MODAL.showModal();
-  });
-
-  const SETTINGS_DISMISS = document.getElementById("settingsDismiss");
-  SETTINGS_DISMISS.addEventListener("click", (e) => {
-    SETTINGS_MODAL.close();  
-  });
-
-  const THEME_RESET = document.getElementById("themeReset");
-  THEME_RESET.addEventListener("click", resetTheme);
-
-  function resetTheme() {
-      document.documentElement.style.removeProperty("--base-hue");
-      document.documentElement.style.removeProperty("--base-sat");
-      localStorage.removeItem("theme-base-hue");
-      localStorage.removeItem("theme-base-saturation");
-      THEME_HUE.value = undefined;
-      THEME_SATURATION.value = undefined;
-  }
-
-  (function() {
-    if (localStorage.getItem("theme-base-hue")) {
-      document.documentElement.style.setProperty("--base-hue", localStorage.getItem("theme-base-hue"));
-      THEME_HUE.value = localStorage.getItem("theme-base-hue");
-    }
-
-    if (localStorage.getItem("theme-base-saturation")) {
-      document.documentElement.style.setProperty("--base-sat", localStorage.getItem("theme-base-saturation") + "%");
-      THEME_SATURATION.value = localStorage.getItem("theme-base-saturation");
-    }
-  })();
 </script>

@@ -1,4 +1,4 @@
-<modal-menu id="shortcuts">
+<modal-menu id="shortcuts" shortcut="shift + ?">
 <p class="u-step-2 u-text--bold" slot="title">Keyboard Shortcuts</p>
 <div class="shortcuts__list flow">
     <div class="shortcutItem">
@@ -39,12 +39,3 @@
 		text-align: end;
 	}
 </style>
-<script type="module">
-	const SHORTCUTS_MODAL = document.getElementById("shortcuts").dialogElement;
-
-	document.addEventListener("keydown", (e) => {
-		if (e.shiftKey && e.key === "?") {
-			SHORTCUTS_MODAL.open ? SHORTCUTS_MODAL.close() : SHORTCUTS_MODAL.showModal();
-		}
-	})
-</script>

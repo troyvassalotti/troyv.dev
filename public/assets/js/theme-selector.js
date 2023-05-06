@@ -6,6 +6,44 @@ const HUE_STORAGE = "theme-base-hue";
 const SATURATION_STORAGE = "theme-base-saturation";
 
 class ThemeSelector extends LitElement {
+	static get styles() {
+		return css`
+      .theme__field {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .theme__field label {
+        font-weight: bold;
+      }
+
+	  .resetThemeButton {
+		appearance: none;
+		background-color: transparent;
+		border: 0;
+		color: var(--links);
+		cursor: pointer;
+		font-size: var(--step--1);
+		text-decoration: underline;
+	  }
+    `;
+	}
+
+	get hueSlider() {
+		return this.renderRoot.getElementById("theme-hue");
+	}
+
+	get saturationSlider() {
+		return this.renderRoot.getElementById("theme-saturation");
+	}
+
+	get storedValues() {
+		return {
+			hue: localStorage.getItem(HUE_STORAGE),
+			saturation: localStorage.getItem(SATURATION_STORAGE),
+		};
+	}
+
 	updateDocumentProperties(name, value) {
 		document.documentElement.style.setProperty(name, value);
 	}
@@ -35,22 +73,20 @@ class ThemeSelector extends LitElement {
 		this.saturationSlider.value = undefined;
 	}
 
-	get hueSlider() {
-		return this.renderRoot.getElementById("theme-hue");
-	}
-
-	get saturationSlider() {
-		return this.renderRoot.getElementById("theme-saturation");
-	}
-
-	get storedValues() {
-		return {
-			hue: localStorage.getItem(HUE_STORAGE),
-			saturation: localStorage.getItem(SATURATION_STORAGE),
-		};
-	}
-
 	initTheme() {
+		if (this.storedValues.hue) {
+			this.updateDocumentProperties(HUE_PROPERTY, this.storedValues.hue);
+			this.hueSlider.value = this.storedValues.hue;
+		}
+
+		if (this.storedValues.saturation) {
+			this.updateDocumentProperties(SATURATION_PROPERTY, this.storedValues.saturation);
+			this.saturationSlider.value = this.storedValues.saturation;
+		}
+	}
+
+	firstUpdated() {
+		this.initTheme();
 	}
 
 	render() {
@@ -61,7 +97,8 @@ class ThemeSelector extends LitElement {
       <div class="theme__field">
         <label for="theme-saturation">Change the base theme saturation.</label>
         <input @input=${this.updateSaturation} type="range" name="theme-saturation" id="theme-saturation" min="0" max="100" />
-      </div>`;
+      </div>
+      <button @click=${this.resetTheme} class="resetThemeButton">Reset Theme</button>`;
 	}
 }
 
