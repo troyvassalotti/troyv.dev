@@ -10,28 +10,21 @@ description: Watch as Troy Vassalotti learns his way around a computer.
     <main id="main">
         <cloudy-sky hillside>
         <div class="wrapper flow">
-            <div class="container--title u-text--center">
-                <h1 id="welcome" class="u-step-5">Now Viewing: A Website</h1>
-                <p>Please be resepectful of the grounds and don't feed the animals.</p>
-            </div>
             <div class="container--read flow">
-                <type-writer>
+                <type-writer class="typewriter--read">
                 <h2 id="read" class="typing--read">Read</h2>
                 </type-writer>
                 <ol role="list" class="c-postList flow">
                     {% for post in collections.post.slice(collections.post.length - 5, collections.post.length) | reverse %}
-                        {{ postItem(post.date, post.data.title, post.url, excerpt = post.data.description, heading = "3") }}
+                        <p class="u-step-2 u-text--bold">{{ post.data.description }}</p>
+                        <p class="u-step--1">From the post <a class="u-text--italic" href="{{ post.url }}">{{ post.data.title }}</a>, published {{ post.date | dateString }}.</p>
                     {% endfor %}
                 </ol>
-                <p class="c-postList__more">
-                    <a class="c-animatedLink" href="{{ nav.header[1].url }}">View All Posts</a>
-                </p>
             </div>
             <div class="container--play flow">
                 <type-writer>
                 <h2 id="play" class="typing--play">Play</h2>
                 </type-writer>
-                <p>I made these things.</p>
                 <ol role="list" class="list play u-grid" data-grid-columns="fluid">
                     {% for project in projects %}
                         {% if project.tags and project.tags | inArray("play") %}
@@ -61,27 +54,19 @@ description: Watch as Troy Vassalotti learns his way around a computer.
 {% block style %}
     {{ super() }}
     <style>
-        .container--title {
-            padding-block: var(--space-2xl);
-            position: relative;
-        }
-
-        /* From https://css-generators.com/custom-corners/ */
-        .container--title::before {
-            background: var(--accent);
-            clip-path: polygon(0 50.72px,40px 40px,50.72px 0,calc(100% - 50.72px) 0,calc(100% - 40px) 40px,100% 50.72px,100% calc(100% - 50.72px),calc(100% - 40px) calc(100% - 40px),calc(100% - 50.72px) 100%,50.72px 100%,40px calc(100% - 40px),0 calc(100% - 50.72px),0 50.72px,10px  calc(50.72px + 7.67px),10px calc(100% - 50.72px - 7.67px),calc(40px + 8.16px) calc(100% - 40px - 8.16px),calc(50.72px + 7.67px) calc(100% - 10px),calc(100% - 50.72px - 7.67px) calc(100% - 10px),calc(100% - 40px - 8.16px) calc(100% - 40px - 8.16px),calc(100% - 10px) calc(100% - 50.72px - 7.67px),calc(100% - 10px) calc(50.72px + 7.67px),calc(100% - 40px - 8.16px) calc(40px + 8.16px),calc(100% - 50.72px - 7.67px) 10px,calc(50.72px + 7.67px) 10px,calc(40px + 8.16px) calc(40px + 8.16px),10px calc(50.72px + 7.67px));
-            content: "";
-            inset: 0;
-            position: absolute;
-        }
-
-        :is(.container--title, .container--read, .container--play) {
-            margin-block-end: var(--space-xl-2xl);
+        :is(.container--read, .container--play) {
+            margin-block-end: var(--space-3xl);
         }
 
         :is(.typing--read, .typing--play, .typing--listen) {
             --kb-duration-typing: .75s;
             font-size: var(--step-6);
+        }
+
+        .typewriter--read {
+            display: grid;
+            padding-block-start: var(--space-s-m);
+            place-content: end;
         }
 
         .typing--read {
@@ -94,6 +79,10 @@ description: Watch as Troy Vassalotti learns his way around a computer.
 
         .typing--listen {
             --kb-steps-typing: 15;
+        }
+
+        .container--read {
+            text-align: end;
         }
 
         .list.play {
@@ -114,12 +103,6 @@ description: Watch as Troy Vassalotti learns his way around a computer.
         @media(prefers-color-scheme: light) {
             cloudy-sky {
                 --cloud-filter: hue-rotate(222deg);
-            }
-        }
-
-        @media(prefers-color-scheme: dark) {
-            cloudy-sky {
-                --cloud-filter: hue-rotate(190deg);
             }
         }
     </style>

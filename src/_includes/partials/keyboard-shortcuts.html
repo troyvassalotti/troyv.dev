@@ -1,34 +1,20 @@
-<dialog id="shortcuts" class="modal shortcuts flow">
-    <p class="u-step-2 u-text--bold">Keyboard Shortcuts</p>
-    <div class="shortcuts__list flow">
-        <div class="shortcutItem">
-            <span class="shortcutItem__name secret">Secret</span>
-            <span class="shortcutItem__command">Konami Code</span>
-        </div>
-        <div class="shortcutItem">
-            <span class="shortcutItem__name secret">Secret</span>
-            <span class="shortcutItem__command">Green, Red, Green, Yellow, Green, Blue, Green, Orange, Tilt</span>
-        </div>
+<modal-menu id="shortcuts">
+<p class="u-step-2 u-text--bold" slot="title">Keyboard Shortcuts</p>
+<div class="shortcuts__list flow">
+    <div class="shortcutItem">
+        <span class="shortcutItem__name secret">Secret</span>
+        <span class="shortcutItem__command">Konami Code</span>
     </div>
-    <p class="shortcutsDisclaimer u-step--2">
-        <em>Bet you weren't expecting these to exist, huh?</em>
-    </p>
-    <button id="shortcutsDismiss" class="shortcuts__dismiss u-step--1">Dismiss</button>
-</dialog>
+    <div class="shortcutItem">
+        <span class="shortcutItem__name secret">Secret</span>
+        <span class="shortcutItem__command">Green, Red, Green, Yellow, Green, Blue, Green, Orange, Tilt</span>
+    </div>
+</div>
+<p class="shortcutsDisclaimer u-step--2">
+    <em>Bet you weren't expecting these to exist, huh?</em>
+</p>
+</modal-menu>
 <style>
-	.modal {
-		margin: revert;
-	}
-
-	body:has(dialog[open]) {
-		overflow: hidden;
-	}
-
-	dialog {
-		background-color: var(--background);
-		color: var(--foreground);
-	}
-
 	.shortcutItem {
 		border-block-end: 1px solid var(--accent);
 		font-size: var(--step--1);
@@ -52,29 +38,13 @@
 		margin-block-start: var(--space-l);
 		text-align: end;
 	}
-
-	.shortcuts__dismiss {
-		appearance: none;
-		background-color: transparent;
-		border: none;
-		color: var(--links);
-		cursor: pointer;
-		display: block;
-		margin-inline-start: auto;
-		text-decoration: underline;
-	}
 </style>
 <script type="module">
-	const SHORTCUTS_MODAL = document.getElementById("shortcuts");
-	const SHORTCUTS_DISMISS = document.getElementById("shortcutsDismiss");
+	const SHORTCUTS_MODAL = document.getElementById("shortcuts").dialogElement;
 
 	document.addEventListener("keydown", (e) => {
 		if (e.shiftKey && e.key === "?") {
 			SHORTCUTS_MODAL.open ? SHORTCUTS_MODAL.close() : SHORTCUTS_MODAL.showModal();
 		}
-	})
-
-	SHORTCUTS_DISMISS.addEventListener("click", () => {
-		SHORTCUTS_MODAL.close();
 	})
 </script>

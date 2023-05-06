@@ -23,7 +23,6 @@ class StatsTable extends LitElement {
         table {
           border: 1px solid var(--foreground);
           border-collapse: collapse;
-          color: var(--eerie-black);
           font-family: var(--code);
           font-size: var(--step--1);
           inline-size: max-content;
@@ -31,7 +30,6 @@ class StatsTable extends LitElement {
         }
 
         caption {
-          color: var(--foreground);
           font-weight: bold;
           inline-size: fit-content;
           inset-inline-start: 0;
@@ -69,14 +67,6 @@ class StatsTable extends LitElement {
         th:nth-of-type(4),
         tr td:nth-of-type(3) {
           --colWidth: 40ch;
-        }
-
-        tr:nth-of-type(odd) {
-          background-color: var(--pale-silver);
-        }
-
-        tr:nth-of-type(even) {
-          background-color: var(--snow);
         }
       `,
 		];
