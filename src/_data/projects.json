@@ -45,31 +45,55 @@
 		"url": "https://vuedoku.netlify.app/",
 		"repository": "https://github.com/troyvassalotti/sudoku",
 		"description": "Play Sudoku and challenge your friends.",
-		"tags": ["play"]
+		"tags": [
+			"play"
+		]
 	},
 	{
 		"name": "BPM Finder",
 		"url": "/bpm/",
 		"description": "A simple beats per minute finder.",
-		"tags": ["play"]
+		"tags": [
+			"play"
+		]
 	},
 	{
 		"name": "Guitar Tuner",
 		"url": "/tuner/",
 		"description": "A simple guitar (or whatever stringed instrument) tuner.",
-		"tags": ["play"]
+		"tags": [
+			"play"
+		]
 	},
 	{
 		"name": "Gonk",
 		"url": "https://www.gonk.app/",
 		"repository": "https://github.com/troyvassalotti/gonk",
 		"description": "Send Honks with Gonk! I won't explain that any further, so check it out for yourself.",
-		"tags": ["play"]
+		"tags": [
+			"play"
+		]
 	},
 	{
 		"name": "Aura Log",
 		"url": "https://troyvassalotti.github.io/aura-log",
 		"repository": "https://github.com/troyvassalotti/aura-log",
 		"description": "Track headaches with a CLI journaling process and customizable charts."
+	},
+	{
+		"name": "Brew Coffee",
+		"url": "/brew/",
+		"description": "Try brewing me a cup of coffee.",
+		"tags": [
+			"play"
+		]
+	},
+	{
+		"name": "TroyGPT",
+		"url": "/blog-maker/",
+		"description": "Write a blog using my words as the LLM.",
+		"tags": [
+			"play"
+		]
 	}
 ]

@@ -199,7 +199,6 @@ html {
   /* STANDARD RULES */
   background-color: var(--background);
   color: var(--foreground);
-  scrollbar-color: var(--foreground) var(--background);
   scrollbar-gutter: stable;
 }
 
@@ -228,20 +227,6 @@ html {
   .u-invertSvg--onDark svg {
     filter: invert(1);
   }
-}
-
-html::-webkit-scrollbar {
-  block-size: 8px;
-  inline-size: 8px;
-}
-
-html::-webkit-scrollbar-thumb {
-  background-color: var(--links);
-  border-radius: 1rem;
-}
-
-html::-webkit-scrollbar-track {
-  background-color: var(--background);
 }
 
 .js :is(type-writer):not(:defined) {
@@ -354,7 +339,8 @@ a:focus-visible {
   --wrapper-size: 100rem;
 }
 
-.defaultContentBlock, .addLayoutMargin {
+.defaultContentBlock,
+.addLayoutMargin {
   margin-block-end: var(--space-xl);
 }
 
@@ -396,6 +382,19 @@ a:focus-visible {
   --linkStateHover: scaleX(0);
   --linkStartHover: right;
   text-decoration: underline;
+}
+
+.c-postListItem {
+  --flow-space: var(--space-2xs);
+}
+
+.c-postListItem__date {
+  font-size: var(--step--1);
+  font-style: italic;
+}
+
+.c-postListItem__title {
+  font-size: var(--step-3);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -540,8 +539,29 @@ a:focus-visible {
   margin-block-end: revert;
 }
 
+.u-breakout {
+  margin-inline: calc(50% - 50vw);
+}
+
 /* Yeah you do */
 .u-rule {
   margin-block-start: var(--space-l-xl);
   max-inline-size: 40ch;
+}
+
+.u-grid {
+  display: grid;
+  gap: var(--grid-gap, 3ex);
+}
+
+[data-grid-columns="2"] {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+[data-grid-columns="3"] {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+[data-grid-columns="fluid"] {
+  grid-template-columns: repeat(var(--fluid-type, auto-fit), minmax(var(--fluid-col-size, 20rem), 1fr));
 }

@@ -1,18 +1,4 @@
 {% macro postItem(date, title, url, excerpt = false, heading = "2" ) %}
-    <style>
-        .c-postListItem {
-            --flow-space: var(--space-2xs);
-        }
-        
-        .c-postListItem__date {
-            font-size: var(--step--1);
-            font-style: italic;
-        }
-        
-        .c-postListItem__title {
-            font-size: var(--step-3);
-        }
-    </style>
     <li>
         <article class="c-postListItem flow">
             <p class="c-postListItem__date">{{ date | dateString }}</p>
