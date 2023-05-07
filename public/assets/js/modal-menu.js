@@ -1,16 +1,11 @@
 import { css, html, LitElement } from "lit";
+import base from "./components.styles.js";
 
 class ModalMenu extends LitElement {
 	static get styles() {
-		return css`
+		return [base, css`
       :host {
-        box-sizing: border-box;
-      }
-
-      *,
-      *::after,
-      *::before {
-        box-sizing: inherit;
+		display: block;
       }
 
       dialog {
@@ -30,15 +25,11 @@ class ModalMenu extends LitElement {
         text-decoration: underline;
       }
 
-      .flow > * + * {
-        margin-block-start: var(--flow-space, 1em);
-      }
-
       .title {
         font-size: var(--step-2);
         font-weight: bold;
       }
-    `;
+    `];
 	}
 
 	static get properties() {

@@ -468,17 +468,9 @@ a:focus-visible {
   vertical-align: middle;
 }
 
-.c-dataList__item {
-  display: flex;
-  gap: 0.5ch;
-}
-
-.c-dataList__item dt {
-  font-weight: bold;
-}
-
-.c-dataList__item dt::after {
-  content: ":";
+.c-svg-link {
+  display: block;
+  max-inline-size: 48px;
 }
 
 /* UTILITIES */
