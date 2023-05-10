@@ -317,8 +317,8 @@ h6 {
 }
 
 blockquote {
-  border: 1px solid var(--accent);
-  box-shadow: 10px 10px 0 0 var(--accent);
+  border: var(--space-3xs) solid var(--accent);
+  box-shadow: var(--space-2xs) var(--space-2xs) 0 0 var(--accent);
   font-style: italic;
   inline-size: fit-content;
   margin-block: var(--space-s-m);
@@ -332,7 +332,7 @@ blockquote :is(p, q) {
 
 figcaption {
   font-size: var(--step--1);
-  margin-block-start: 0.5rem;
+  margin-block-start: 1em;
 }
 
 sup {
@@ -463,14 +463,20 @@ a:focus-visible {
 
 .c-link--icon svg {
   display: inline-block;
-  margin-inline-end: 1ex;
-  max-inline-size: 28px;
+  margin-inline-end: var(--space-2xs);
+  max-inline-size: 1.5em;
   vertical-align: middle;
 }
 
 .c-svg-link {
   display: block;
-  max-inline-size: 48px;
+  max-inline-size: 3em;
+}
+
+.bandcampEmbed {
+  block-size: var(--embed-h, 750px);
+  border: 0;
+  inline-size: min(var(--embed-h, 100%), 100%);
 }
 
 /* UTILITIES */
@@ -582,7 +588,7 @@ a:focus-visible {
 
 .u-grid {
   display: grid;
-  gap: var(--grid-gap, 3ex);
+  gap: var(--grid-gap, var(--space-m));
 }
 
 [data-grid-columns="2"] {
@@ -594,5 +600,5 @@ a:focus-visible {
 }
 
 [data-grid-columns="fluid"] {
-  grid-template-columns: repeat(var(--fluid-type, auto-fit), minmax(var(--fluid-col-size, 20rem), 1fr));
+  grid-template-columns: repeat(var(--fluid-type, auto-fit), minmax(var(--fluid-col-size, 200px), 1fr));
 }

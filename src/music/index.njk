@@ -10,17 +10,19 @@ layout: base
         <a href="/music/stats/">listening habits</a>, or view my <a href="/music/collection">music collection</a>.
     </p>
 </header>
-<section class="flow">
+<section class="u-grid" data-grid-columns="fluid">
     <div class="band u-invertSvg--onDark flow">
         <h2>Front Royal</h2>
         {% for link in frontRoyal.social %}
             <a class="c-svg-link" href="{{ link.href }}">{% include "partials/" + link.img %}</a>
         {% endfor %}
+        <iframe class="bandcampEmbed" src="https://bandcamp.com/EmbeddedPlayer/album=282570022/size=large/bgcol=333333/linkcol=e99708/transparent=true/" seamless loading="lazy"><a href="https://frontroyalmd.bandcamp.com/album/long-story-short">Long Story Short by Front Royal</a></iframe>
     </div>
     <div class="band u-invertSvg--onDark flow">
         <h2>troyalllowercase</h2>
         {% for link in troyalllowercase.social %}
             <a class="c-svg-link" href="{{ link.href }}">{% include "partials/" + link.img %}</a>
         {% endfor %}
+        <iframe class="bandcampEmbed" src="https://bandcamp.com/EmbeddedPlayer/album=1057370408/size=large/bgcol=333333/linkcol=0f91ff/transparent=true/" seamless loading="lazy"><a href="https://troyalllowercase.bandcamp.com/album/alone-in-a-crowded-room">Alone In A Crowded Room by troyalllowercase</a></iframe>
     </div>
 </section>
