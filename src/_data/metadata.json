@@ -4,6 +4,7 @@
 	"url": "https://www.troyv.dev",
 	"repo": "https://github.com/troyvassalotti/troyv.dev",
 	"cloudinary": "https://res.cloudinary.com/dpmchqezv/image/upload",
+	"cloudinaryVideo": "https://res.cloudinary.com/dpmchqezv/video/upload",
 	"socials": [
 		{
 			"name": "GitHub",
