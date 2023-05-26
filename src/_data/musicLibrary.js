@@ -55,6 +55,14 @@ async function getCollectionInformation(collectionId) {
 			const { title } = release;
 			const artist = getArtistCredit(release);
 			return { title, artist };
+		}).sort((a, b) => {
+			if (a.artist < b.artist) {
+				return -1;
+			}
+			if (a.artist > b.artist) {
+				return 1;
+			}
+			return 0;
 		});
 	} catch (error) {
 		return false;
