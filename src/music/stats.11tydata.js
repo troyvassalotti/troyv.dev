@@ -1,4 +1,4 @@
-const { runEleventyFetch, createCacheOptions } = require("../../utils/helpers");
+const { runEleventyFetch, createCacheOptions, getAlbumArtwork } = require("../../utils/helpers");
 const { LISTENBRAINZ_ENDPOINT, LISTENBRAINZ_AUTH } = require("../../utils/globals");
 
 const FETCH_HEADERS = {
@@ -86,7 +86,7 @@ async function getLastMonthsTopReleases(count = 10, range = "month") {
 		const { payload } = data;
 		const { releases } = payload;
 
-		return releases.map((eachRelease) => {
+		const releaseData = await Promise.all(releases.map(async (eachRelease) => {
 			const {
 				artist_name: artist,
 				release_name: release,
@@ -94,8 +94,12 @@ async function getLastMonthsTopReleases(count = 10, range = "month") {
 				release_mbid: mbid,
 			} = eachRelease;
 
-			return { artist, release, listens, mbid };
-		});
+			let artwork = await getAlbumArtwork(mbid);
+
+			return { artist, release, listens, artwork };
+		}));
+
+		return releaseData;
 	} catch (error) {
 		return false;
 	}

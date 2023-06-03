@@ -10,11 +10,24 @@ description: A place to keep track of my physical music collection.
 <article id="vinyl" class="vinyl flow">
     <section class="ownedVinyl flow">
         <h2>Vinyl</h2>
-        <ul>
-            {% for vinyl in musicLibrary.ownedVinyl %}
+        <ul role="list" class="releaseGrid">
+            {% for release in musicLibrary.ownedVinyl %}
                 <li>
-                    <b>{{ vinyl.artist }}</b>:
-                    <i>{{ vinyl.title }}</i>
+                    <div class="release">
+                        {% if release.artwork %}
+                            <img class="releaseArt"
+                                 width="300"
+                                 height="300"
+                                 src="{{ release.artwork }}"
+                                 alt=""
+                                 loading="lazy"
+                                 decoding="async"/>
+                        {% else %}
+                            <div class="releaseArt"></div>
+                        {% endif %}
+                        <p class="releaseName">{{ release.title }}</p>
+                        <p class="releaseArtist">{{ release.artist }}</p>
+                    </div>
                 </li>
             {% endfor %}
         </ul>
@@ -25,10 +38,10 @@ description: A place to keep track of my physical music collection.
             I <em>could</em> order these online but the point of this list is that I find them out in the wild. I don't even know if all of these have been pressed before, but I'm holding out hope.
         </p>
         <ul>
-            {% for vinyl in musicLibrary.vinylWishlist %}
+            {% for release in musicLibrary.vinylWishlist %}
                 <li>
-                    <b>{{ vinyl.artist }}</b>:
-                    <i>{{ vinyl.title }}</i>
+                    <b>{{ release.artist }}</b>:
+                    <i>{{ release.title }}</i>
                 </li>
             {% endfor %}
         </ul>

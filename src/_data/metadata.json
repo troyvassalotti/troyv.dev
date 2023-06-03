@@ -5,6 +5,7 @@
 	"repo": "https://github.com/troyvassalotti/troyv.dev",
 	"cloudinary": "https://res.cloudinary.com/dpmchqezv/image/upload",
 	"cloudinaryVideo": "https://res.cloudinary.com/dpmchqezv/video/upload",
+	"cloudinaryFetch": "https://res.cloudinary.com/dpmchqezv/image/fetch",
 	"socials": [
 		{
 			"name": "GitHub",

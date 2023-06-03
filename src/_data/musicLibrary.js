@@ -1,4 +1,4 @@
-const { runEleventyFetch } = require("../../utils/helpers");
+const { runEleventyFetch, getAlbumArtwork } = require("../../utils/helpers");
 const { MUSICBRAINZ_ENDPOINT } = require("../../utils/globals");
 
 const MBIDS = {
@@ -51,11 +51,16 @@ async function getCollectionInformation(collectionId) {
 			offset += numberOfReleases;
 		}
 
-		return allReleases.flat().map((release) => {
-			const { title } = release;
+		const flattened = allReleases.flat();
+		const releaseData = await Promise.all(flattened.map(async (release) => {
+			const { title, id } = release;
 			const artist = getArtistCredit(release);
-			return { title, artist };
-		}).sort((a, b) => {
+			const artwork = await getAlbumArtwork(id, false);
+
+			return { title, artist, artwork };
+		}));
+
+		return releaseData.sort((a, b) => {
 			if (a.artist < b.artist) {
 				return -1;
 			}

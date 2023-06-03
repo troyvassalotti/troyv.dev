@@ -21,11 +21,17 @@
                     <div class="releaseGrid">
                         {% for release in lastMonthsTopReleases %}
                             <div class="release">
-                                <img class="releaseArt"
-                                     width="300"
-                                     height="300"
-                                     src="https://coverartarchive.org/release/{{ release.mbid }}/front"
-                                     alt=""/>
+                                {% if release.artwork %}
+                                    <img class="releaseArt"
+                                         width="300"
+                                         height="300"
+                                         src="{{ release.artwork }}"
+                                         alt=""
+                                         loading="lazy"
+                                         decoding="async"/>
+                                {% else %}
+                                    <div class="releaseArt"></div>
+                                {% endif %}
                                 <p class="releaseName">{{ release.release }}</p>
                                 <p class="releaseArtist">{{ release.artist }}</p>
                                 <p class="releaseListens">{{ release.listens }} Listens</p>
@@ -53,48 +59,6 @@
     <style>
     .listeningHistory {
         margin-block: var(--space-xl-2xl);
-    }
-
-    .releaseGrid {
-        --column-count: auto-fill;
-        --column-size: 9rem;
-
-        align-items: start;
-        display: grid;
-        font-size: var(--step--1);
-        grid-template-columns: repeat(var(--column-count), minmax(var(--column-size), 1fr));
-        gap: var(--space-s-l);
-        margin-block-end: var(--space-xl-2xl);
-    }
-
-    @media (min-width: 70.25rem) {
-        .releaseGrid {
-            --column-count: 5;
-            --column-size: 12rem;
-        }
-    }
-
-    .releaseName {
-        font-weight: bold;
-        text-transform: uppercase;
-    }
-
-    .releaseListens,
-    .releaseArtist {
-        font-size: var(--step--2);
-    }
-
-    .release {
-        display: flex;
-        flex-direction: column;
-        justify-content: end;
-    }
-
-    .release img {
-        aspect-ratio: 1 / 1;
-        background: radial-gradient(var(--background), var(--foreground));
-        box-shadow: 0 0 2px 0 var(--foreground);
-        margin-block-end: var(--space-xs);
     }
 
     .tables {
