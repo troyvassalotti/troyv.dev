@@ -41,14 +41,6 @@ module.exports = {
 			copy: [{ from: "_cache", to: "_cache" }],
 		},
 	},
-	dynamic: {
-		name: EleventyServerlessBundlerPlugin,
-		options: {
-			name: "dynamic",
-			functionsDir: "./netlify/functions/",
-			copy: [{ from: "_cache", to: "_cache" }],
-		},
-	},
 	onDemandBuilders: {
 		name: EleventyServerlessBundlerPlugin,
 		options: {
