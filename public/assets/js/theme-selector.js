@@ -22,20 +22,12 @@ class ThemeSelector extends LitElement {
         .theme__field {
           display: flex;
           flex-direction: column;
+		  gap: .25em;
+		  margin-block-end: .75em;
         }
 
         .theme__field label {
           font-weight: bold;
-        }
-
-        .resetThemeButton {
-          appearance: none;
-          background-color: transparent;
-          border: 0;
-          color: var(--links);
-          cursor: pointer;
-          font-size: var(--step--1);
-          text-decoration: underline;
         }
       `,
 		];
@@ -164,7 +156,7 @@ class ThemeSelector extends LitElement {
 		<label for="accent-lightness">Accent Color Lightness</label>
 		<input @input=${this.updateAccent} type="range" name="accent-lightness" id="accent-lightness" min="0" max="100" />	
 	  </div>
-      <button @click=${this.resetTheme} class="resetThemeButton">Reset Theme</button>`;
+	  <slot @click=${this.resetTheme} name="reset"></slot>`;
 	}
 }
 

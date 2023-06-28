@@ -24,13 +24,8 @@
         </script>
         {% endblock headScript %}
 
-        {% block style %}
-            <style>
-      {% include "css/reset.css" %}
-      {% include "css/style.css" %}
-      {% include "css/prism.css" %}
-            </style>
-        {% endblock style %}
+        {% block style %}{% endblock style %}
+        <link rel="stylesheet" href="/assets/css/style.css"/>
         {# SEO Tags #}
         {# Keep the whitepsace removal to make it minify correctly #}
         {%- set theDescription -%}

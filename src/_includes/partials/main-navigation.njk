@@ -104,9 +104,13 @@
     {% endfor %}
   </ul>
 </nav>
-<modal-menu id="settingsMenu" titletext="Site Settings">
+<modal-menu id="settingsMenu" class="flow">
+<p slot="title">Site Settings</p>
 <button slot="trigger" id="settings" class="themeSelector__button">{% include "partials/settings.svg" %}</button>
-<theme-selector></theme-selector>
+<button class="button" slot="dismiss">Dismiss</button>
+<theme-selector>
+  <button class="button" slot="reset">Reset Theme</button>
+</theme-selector>
 </modal-menu>
 </div>
 <script type="module">
