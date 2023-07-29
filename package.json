@@ -30,7 +30,7 @@
 		"@netlify/functions": "^1.0.0",
 		"@troyv/beats-per": "^1.0.0",
 		"@troyv/cheatcodes": "^0.0.6",
-		"@troyv/cloudysky": "^1.0.4",
+		"@troyv/cloudysky": "^1.0.5",
 		"@troyv/common-config": "^1.0.1",
 		"@troyv/detune": "^1.0.1",
 		"@troyv/typewriter": "^2.0.1",
