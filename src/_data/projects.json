@@ -12,7 +12,7 @@
 	},
 	{
 		"name": "Express Cats",
-		"url": "https://cats.onrender.com/",
+		"url": "https://cats.troyv.dev/",
 		"repository": "https://github.com/troyvassalotti/express-cats",
 		"description": "My first Express site which showcases my cats. Note: it can take up to 30 seconds to spin up if it's been a while since someone viewed it!"
 	},
