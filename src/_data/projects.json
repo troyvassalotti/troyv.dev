@@ -6,7 +6,7 @@
 	},
 	{
 		"name": "NotSocial",
-		"url": "https://pang.netlify.app/",
+		"url": "https://pang.troyv.dev/",
 		"repository": "https://github.com/troyvassalotti/pang",
 		"description": "A not-so-social media website made using Vue (my first Vue project)."
 	},
@@ -18,7 +18,7 @@
 	},
 	{
 		"name": "I Don't Have A Podcast",
-		"url": "https://idonthaveapodcast.netlify.app/",
+		"url": "https://idonthaveapodcast.troyv.dev/",
 		"repository": "https://github.com/troyvassalotti/idonthaveapodcast",
 		"description": "All those without a podcast rejoice and sign your name to the cause."
 	},
@@ -30,19 +30,19 @@
 	},
 	{
 		"name": "Hello Worldvue",
-		"url": "https://helloworldvue.netlify.app/",
+		"url": "https://helloworld.troyv.dev/",
 		"repository": "https://github.com/troyvassalotti/hello-worldvue/",
 		"description": "View your GPX, KMZ, or KML files in an interactive map."
 	},
 	{
 		"name": ".docx to .html",
-		"url": "https://docx-to-html.netlify.app/",
+		"url": "https://docx-to-html.troyv.dev/",
 		"repository": "https://github.com/troyvassalotti/docx-to-html",
 		"description": "Turn a dreaded Word document into pure HTML. Ahh, how nice that feels."
 	},
 	{
 		"name": "Vuedoku",
-		"url": "https://vuedoku.netlify.app/",
+		"url": "https://sudoku.troyv.dev",
 		"repository": "https://github.com/troyvassalotti/sudoku",
 		"description": "Play Sudoku and challenge your friends.",
 		"tags": [
