@@ -6,7 +6,7 @@ require("./eleventy-bundler-modules.js");
 
 async function handler(event) {
   let elev = new EleventyServerless("teapot", {
-    path: new URL(event.rawUrl).pathname,
+    path: event.path,
     query: event.queryStringParameters,
     functionsDir: "./netlify/functions/",
   });
