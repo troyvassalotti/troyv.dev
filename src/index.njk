@@ -10,6 +10,29 @@ description: Watch as Troy Vassalotti learns his way around a computer.
     <main id="main">
         <cloudy-sky hillside>
         <div class="wrapper flow constrain--some">
+            <div class="container--about flow">
+                <figure class="portrait">
+                    <div class="gradient-mask">
+                        <img src="{{ metadata.cloudinary }}/c_scale,f_auto,q_auto:eco,w_1100/v1646349104/blog/DSC00048-positive-2_iflhof.webp"
+                             alt="Me holding my guitar on stage"
+                             decoding="async"
+                             width="1100"
+                             height="455"
+                             id="me"/>
+                    </div>
+                    <!-- htmlmin:ignore -->
+                    <figcaption class="portrait__caption">
+                        <a href="/music/">Musician</a>, engineer, and <tag-line taglines="insert your favorite descriptors here | hopeless romantic | rotten tomato | apple butter cheesecake | musician, engineer, and musician, engineer, and musician engineer... | I don't know anymore | pumpkin spice latte | you | somebody you used to know | never gonna give you up | full of peanut butter | wishing you were here | daydreamer">loading...</tag-line>.
+                        </figcaption>
+                        <!-- htmlmin:ignore -->
+                    </figure>
+                <section class="aboutMe flow u-truncate">
+                <type-writer>
+                <h1 class="leadingType">Hey, I'm Troy...</h1>
+                </type-writer>
+                    {% renderFile './src/_includes/partials/bio.md' %}
+                </section>
+            </div>
             <div class="container--read flow">
                 <type-writer class="typewriter--read">
                 <h2 id="read" class="typing--read">Read</h2>
@@ -46,13 +69,6 @@ description: Watch as Troy Vassalotti learns his way around a computer.
                 <type-writer>
                 <h2 id="listen" class="typing--listen">Listen</h2>
                 </type-writer>
-                <!-- htmlmin:ignore -->
-                <p>
-                    I'm currently listening to <now-playing service="https://api.troyv.dev/now-playing">
-                    <span>elevator music</span>
-                    </now-playing> but you can listen to other songs below.
-                </p>
-                <!-- htmlmin:ignore -->
                 <plvy-list class="plvylist" file="/assets/js/plvylist.json">
                 </plvy-list>
                 <p class="u-text--italic u-step--1">Psst... I made <a href="https://plvylist.troyv.dev">this music player</a>.</p>
@@ -64,19 +80,56 @@ description: Watch as Troy Vassalotti learns his way around a computer.
 
 {% block style %}
     <style>
-        :is(.container--read, .container--play) {
-            margin-block-end: var(--space-3xl);
+.leadingType {
+    --kb-count-cursor: 10;
+
+    font-size: var(--step-4);
+}
+
+.portrait {
+    inline-size: fit-content;
+    margin-inline: auto;
+}
+
+.portrait__caption {
+    font-style: italic;
+    text-align: end;
+}
+
+.portrait__caption::after,
+.portrait__caption::before {
+    content: " ↑ ";
+    font-size: 1.25em;
+}
+
+.gradient-mask {
+    mask-image: linear-gradient(to bottom, #000, #000),
+        linear-gradient(to bottom, #000, #000),
+        linear-gradient(to bottom, #000, #000),
+        linear-gradient(to bottom, #000, #000),
+        linear-gradient(to bottom, #000, #000);
+    mask-size: 19% 70%;
+    mask-position: 0 75%, 25% 25%, 50% 50%, 75% 0, 100% 100%;
+    mask-repeat: no-repeat;
+    
+    -webkit-mask-image: linear-gradient(to bottom, #000, #000),
+        linear-gradient(to bottom, #000, #000),
+        linear-gradient(to bottom, #000, #000),
+        linear-gradient(to bottom, #000, #000),
+        linear-gradient(to bottom, #000, #000);
+    -webkit-mask-size: 19% 70%;
+    -webkit-mask-position: 0 75%, 25% 25%, 50% 50%, 75% 0, 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    max-inline-size: max-content;
+}
+
+        :is(.container--about, .container--read, .container--play) {
+            margin-block-end: var(--space-2xl);
         }
 
         :is(.typing--read, .typing--play, .typing--listen) {
             --kb-duration-typing: .75s;
             font-size: var(--step-6);
-        }
-
-        .typewriter--read {
-            display: grid;
-            padding-block-start: var(--space-s-m);
-            place-content: end;
         }
 
         .typing--read {
@@ -89,10 +142,6 @@ description: Watch as Troy Vassalotti learns his way around a computer.
 
         .typing--listen {
             --kb-steps-typing: 15;
-        }
-
-        .container--read {
-            text-align: end;
         }
 
         .list.play {
@@ -127,9 +176,10 @@ description: Watch as Troy Vassalotti learns his way around a computer.
 {% block script %}
     {{ super() }}
     <script type="module">
-        import {CloudySky} from "cloudysky"
-        import {Typewriter} from "typewriter"
+        import {CloudySky} from "cloudysky";
+        import {Typewriter} from "typewriter";
         import "/assets/js/now-playing.js";
+        import "/assets/js/tag-line.js";
         import Plvylist from "plvylist";
     </script>
 {% endblock script %}
