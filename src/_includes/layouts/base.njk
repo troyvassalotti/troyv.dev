@@ -24,13 +24,8 @@
         </script>
         {% endblock headScript %}
 
-        {% block style %}
-            <style>
-      {% include "css/reset.css" %}
-      {% include "css/style.css" %}
-      {% include "css/prism.css" %}
-            </style>
-        {% endblock style %}
+        {% block style %}{% endblock style %}
+        <link rel="stylesheet" href="/assets/css/style.css"/>
         {# SEO Tags #}
         {# Keep the whitepsace removal to make it minify correctly #}
         {%- set theDescription -%}
@@ -78,11 +73,11 @@
           href="/favicons/favicon-16x16.png"/>
     <link rel="manifest" href="/manifest.webmanifest"/>
 </head>
-<body>
+<body class="page--{{ page.fileSlug or "home" }}">
     {% include "partials/main-navigation.njk" %}
 
     {% block content %}
-        <div class="wrapper constrain--more defaultContentBlock">
+        <div class="wrapper constrain--{{ containment or "more" }} defaultContentBlock">
             <main id="main" class="flow default">
                 {{ content | safe }}
             </main>
@@ -93,9 +88,14 @@
 
     {% block script %}
         <script type="module">
+            import "/assets/js/modal-menu.js";
             import CheatCodes from "cheatcodes";
             new CheatCodes().listen();
             new CheatCodes("7 1 7 0 7 2 7 3 6", "gamepad").listen();
+
+            if (!document.getElementById("main")) {
+                console.error(`No element with ID of "main" found. Add that in or the skip link won't work.`);
+            }
         </script>
     {% endblock script %}
 </body>

@@ -1,144 +1,5 @@
-/* MONOSPACE */
-@font-face {
-  font-family: "Native";
-  src: url("/assets/fonts/native/Native-Light.woff2") format("woff2");
-  font-display: fallback;
-  font-style: normal;
-  font-weight: 300;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
-    U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-  font-family: "Native";
-  src: url("/assets/fonts/native/Native-LightItalic.woff2") format("woff2");
-  font-display: fallback;
-  font-style: italic;
-  font-weight: 300;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
-    U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-  font-family: "Native";
-  src: url("/assets/fonts/native/Native-Regular.woff2") format("woff2");
-  font-display: fallback;
-  font-style: normal;
-  font-weight: 400;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
-    U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-  font-family: "Native";
-  src: url("/assets/fonts/native/Native-Italic.woff2") format("woff2");
-  font-display: fallback;
-  font-style: italic;
-  font-weight: 400;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
-    U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-  font-family: "Native";
-  src: url("/assets/fonts/native/Native-Bold.woff2") format("woff2");
-  font-display: fallback;
-  font-style: normal;
-  font-weight: 700;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
-    U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-  font-family: "Native";
-  src: url("/assets/fonts/native/Native-BoldItalic.woff2") format("woff2");
-  font-display: fallback;
-  font-style: italic;
-  font-weight: 700;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
-    U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-/* BODY */
-@font-face {
-  font-family: "Locale";
-  src: url("/assets/fonts/locale/Locale-Regular.woff2") format("woff2");
-  font-display: fallback;
-  font-style: normal;
-  font-weight: 400;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
-    U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-  font-family: "Locale";
-  src: url("/assets/fonts/locale/Locale-Italic.woff2") format("woff2");
-  font-display: fallback;
-  font-style: italic;
-  font-weight: 400;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
-    U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-  font-family: "Locale";
-  src: url("/assets/fonts/locale/Locale-Medium.woff2") format("woff2");
-  font-display: fallback;
-  font-style: normal;
-  font-weight: 500;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
-    U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-  font-family: "Locale";
-  src: url("/assets/fonts/locale/Locale-MediumItalic.woff2") format("woff2");
-  font-display: fallback;
-  font-style: italic;
-  font-weight: 500;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
-    U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-  font-family: "Locale";
-  src: url("/assets/fonts/locale/Locale-Bold.woff2") format("woff2");
-  font-display: fallback;
-  font-style: normal;
-  font-weight: 700;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
-    U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-  font-family: "Locale";
-  src: url("/assets/fonts/locale/Locale-BoldItalic.woff2") format("woff2");
-  font-display: fallback;
-  font-style: italic;
-  font-weight: 700;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
-    U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-  font-family: "Locale";
-  src: url("/assets/fonts/locale/Locale-Heavy.woff2") format("woff2");
-  font-display: fallback;
-  font-style: normal;
-  font-weight: 900;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
-    U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-  font-family: "Locale";
-  src: url("/assets/fonts/locale/Locale-HeavyItalic.woff2") format("woff2");
-  font-display: fallback;
-  font-style: italic;
-  font-weight: 900;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
-    U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
+@use "_mixins";
+@import "_fonts";
 
 html {
   /* FONT SIZING */
@@ -183,42 +44,69 @@ html {
   --space-s-l: clamp(1.13rem, calc(0.75rem + 1.88vw), 2.63rem);
 
   /* FONT FAMILIES */
-  --body: system-ui;
+  --body: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial, sans-serif;
   --code: "Native", monospace;
-  --headings: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+  --headings: var(--body);
 
   /* COLOR PALETTE */
-  /* HEX */
-  --snow: #fdf5f9ff;
-  --pale-silver: #cdbfbcff;
-  --davys-grey: #5d5552ff;
-  --pewter-blue: #99b5beff;
-  --blue-yonder: #3f72afff;
-  --eerie-black: #141517ff;
+  --links: var(--primary);
+
+  --base-hue: 205;
+  --base-sat: 46%;
+
+  /* full color palette, from dark to light */
+  --clr-10: hsl(var(--base-hue), var(--base-sat), 10%);
+  --clr-20: hsl(var(--base-hue), var(--base-sat), 20%);
+  --clr-30: hsl(var(--base-hue), var(--base-sat), 30%);
+  --clr-40: hsl(var(--base-hue), var(--base-sat), 40%);
+  --clr-50: hsl(var(--base-hue), var(--base-sat), 50%);
+  --clr-60: hsl(var(--base-hue), var(--base-sat), 60%);
+  --clr-70: hsl(var(--base-hue), var(--base-sat), 70%);
+  --clr-80: hsl(var(--base-hue), var(--base-sat), 80%);
+  --clr-90: hsl(var(--base-hue), var(--base-sat), 90%);
+  --clr-95: hsl(var(--base-hue), var(--base-sat), 95%);
+
+  --primary-lightness: 40%;
+
+  /* primary color in varying opacity levels */
+  --primary: hsl(var(--base-hue), var(--base-sat), var(--primary-lightness));
+  --primary-75: hsla(var(--base-hue), var(--base-sat), var(--primary-lightness), 75%);
+  --primary-50: hsla(var(--base-hue), var(--base-sat), var(--primary-lightness), 50%);
+  --primary-25: hsla(var(--base-hue), var(--base-sat), var(--primary-lightness), 25%);
+  --primary-15: hsla(var(--base-hue), var(--base-sat), var(--primary-lightness), 15%);
+  --primary-10: hsla(var(--base-hue), var(--base-sat), var(--primary-lightness), 10%);
+
+  --accent-hue: calc(var(--base-hue) + 180);
+  --accent-lightness: 50%;
+
+  /* accent color in varying opacity levels */
+  --accent: hsl(var(--accent-hue), var(--base-sat), var(--accent-lightness));
+  --accent-75: hsla(var(--accent-hue), var(--base-sat), var(--accent-lightness), 75%);
+  --accent-50: hsla(var(--accent-hue), var(--base-sat), var(--accent-lightness), 50%);
+  --accent-25: hsla(var(--accent-hue), var(--base-sat), var(--accent-lightness), 25%);
+  --accent-15: hsla(var(--accent-hue), var(--base-sat), var(--accent-lightness), 15%);
+  --accent-10: hsla(var(--accent-hue), var(--base-sat), var(--accent-lightness), 10%);
 
   /* STANDARD RULES */
+  accent-color: var(--accent);
   background-color: var(--background);
   color: var(--foreground);
-  scrollbar-color: var(--foreground) var(--background);
   scrollbar-gutter: stable;
 }
 
 /* COLOR SCHEME CHANGES */
 @media (prefers-color-scheme: light) {
   html {
-    --accent: var(--davys-grey);
-    --background: var(--snow);
-    --foreground: var(--eerie-black);
-    --links: var(--blue-yonder);
+    --background: var(--clr-95);
+    --foreground: var(--clr-10);
   }
 }
 
 @media (prefers-color-scheme: dark) {
   html {
-    --accent: var(--pale-silver);
-    --background: var(--eerie-black);
-    --foreground: var(--snow);
-    --links: var(--pewter-blue);
+    --background: var(--clr-10);
+    --foreground: var(--clr-95);
+    --primary-lightness: 50%;
   }
 
   pre {
@@ -230,18 +118,12 @@ html {
   }
 }
 
-html::-webkit-scrollbar {
-  block-size: 8px;
-  inline-size: 8px;
+.js :is(type-writer):not(:defined) {
+  visibility: hidden;
 }
 
-html::-webkit-scrollbar-thumb {
-  background-color: var(--links);
-  border-radius: 1rem;
-}
-
-html::-webkit-scrollbar-track {
-  background-color: var(--background);
+modal-menu:not(:defined) {
+  display: none;
 }
 
 body {
@@ -260,8 +142,16 @@ pre {
   white-space: pre-wrap;
 }
 
+button {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
 :is(h1, h2, h3, h4, h5, h6) {
   font-family: var(--headings);
+  line-height: 1.1;
 }
 
 h1 {
@@ -289,8 +179,8 @@ h6 {
 }
 
 blockquote {
-  border: 1px solid var(--accent);
-  box-shadow: 10px 10px 0 0 var(--accent);
+  border: var(--space-3xs) solid var(--accent);
+  box-shadow: var(--space-2xs) var(--space-2xs) 0 0 var(--accent);
   font-style: italic;
   inline-size: fit-content;
   margin-block: var(--space-s-m);
@@ -304,7 +194,7 @@ blockquote :is(p, q) {
 
 figcaption {
   font-size: var(--step--1);
-  margin-block-start: 0.5rem;
+  margin-block-start: 1em;
 }
 
 sup {
@@ -350,7 +240,8 @@ a:focus-visible {
   --wrapper-size: 100rem;
 }
 
-.defaultContentBlock {
+.defaultContentBlock,
+.addLayoutMargin {
   margin-block-end: var(--space-xl);
 }
 
@@ -394,6 +285,19 @@ a:focus-visible {
   text-decoration: underline;
 }
 
+.c-postListItem {
+  --flow-space: var(--space-2xs);
+}
+
+.c-postListItem__date {
+  font-size: var(--step--1);
+  font-style: italic;
+}
+
+.c-postListItem__title {
+  font-size: var(--step-3);
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .c-animatedLink {
     position: relative;
@@ -421,22 +325,61 @@ a:focus-visible {
 
 .c-link--icon svg {
   display: inline-block;
-  margin-inline-end: 1ex;
-  max-inline-size: 28px;
+  margin-inline-end: var(--space-2xs);
+  max-inline-size: 1.5em;
   vertical-align: middle;
 }
 
-.c-dataList__item {
-  display: flex;
-  gap: 0.5ch;
+.c-svg-link {
+  display: block;
+  max-inline-size: 3em;
 }
 
-.c-dataList__item dt {
+.bandcampEmbed {
+  block-size: var(--embed-h, 750px);
+  border: 0;
+  inline-size: min(var(--embed-h, 100%), 100%);
+}
+
+.releaseGrid {
+  --column-count: auto-fill;
+  --column-size: 9rem;
+
+  align-items: start;
+  display: grid;
+  font-size: var(--step--1);
+  grid-template-columns: repeat(var(--column-count), minmax(var(--column-size), 1fr));
+  gap: var(--space-s-l);
+  margin-block-end: var(--space-xl-2xl);
+}
+
+@media (min-width: 70.25rem) {
+  .releaseGrid {
+    --column-count: 5;
+    --column-size: 12rem;
+  }
+}
+
+.releaseName {
   font-weight: bold;
+  text-transform: uppercase;
 }
 
-.c-dataList__item dt::after {
-  content: ":";
+.releaseListens,
+.releaseArtist {
+  font-size: var(--step--2);
+}
+
+.release {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.releaseArt {
+  aspect-ratio: 1 / 1;
+  background: radial-gradient(var(--background), var(--foreground));
+  margin-block-end: var(--space-xs);
 }
 
 /* UTILITIES */
@@ -536,8 +479,56 @@ a:focus-visible {
   margin-block-end: revert;
 }
 
+.u-breakout {
+  margin-inline: calc(50% - 50vw);
+}
+
 /* Yeah you do */
 .u-rule {
   margin-block-start: var(--space-l-xl);
   max-inline-size: 40ch;
+}
+
+.u-grid {
+  display: grid;
+  gap: var(--grid-gap, var(--space-m));
+}
+
+[data-grid-columns="2"] {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+[data-grid-columns="3"] {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+[data-grid-columns="fluid"] {
+  grid-template-columns: repeat(var(--fluid-type, auto-fit), minmax(var(--fluid-col-size, 200px), 1fr));
+}
+
+.button,
+beats-per button,
+.detune__note,
+.detune__playAll {
+  @include mixins.button;
+}
+
+.detune__notes {
+  --input-gap: 1em;
+  --input-size: 4em;
+
+  align-items: start;
+  block-size: calc(calc(var(--input-size) * 3) + calc(var(--input-gap) * 3));
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: var(--input-gap);
+  inline-size: calc(calc(var(--input-size) * 2) + calc(var(--input-gap) * 2));
+  justify-content: center;
+}
+
+.detune__note,
+.detune__playAll {
+  block-size: var(--input-size);
+  inline-size: var(--input-size);
 }

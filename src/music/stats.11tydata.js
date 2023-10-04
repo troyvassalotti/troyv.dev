@@ -1,4 +1,15 @@
-const EleventyFetch = require("@11ty/eleventy-fetch");
+const { runEleventyFetch, createCacheOptions, getAlbumArtwork } = require("../../utils/helpers");
+const { LISTENBRAINZ_ENDPOINT, LISTENBRAINZ_AUTH } = require("../../utils/globals");
+
+const FETCH_HEADERS = {
+	fetchOptions: {
+		headers: LISTENBRAINZ_AUTH,
+	},
+};
+
+const CACHE_OPTIONS = process.env.ELEVENTY_SERVERLESS
+	? createCacheOptions(true, FETCH_HEADERS)
+	: createCacheOptions(false, FETCH_HEADERS);
 
 /**
  * Return my top (default: 10) artists in the given timeframe (default: this month)
@@ -9,24 +20,11 @@ const EleventyFetch = require("@11ty/eleventy-fetch");
  * @param range
  * @returns {Promise<boolean|*>}
  */
-async function getTopArtists(api, auth, fetchDir, count = 10, range = "this_month") {
+async function getTopArtists(count = 10, range = "this_month") {
 	try {
-		let options = {
-			type: "json",
-			fetchOptions: {
-				headers: auth,
-			},
-			directory: fetchDir,
-		};
-
-		if (process.env.ELEVENTY_SERVERLESS) {
-			options.duration = "30m";
-			options.directory = "/tmp/.cache/";
-		}
-
-		const data = await EleventyFetch(
-			`${api}/stats/user/actionhamilton/artists?count=${count}&range=${range}`,
-			options,
+		const data = await runEleventyFetch(
+			`${LISTENBRAINZ_ENDPOINT}stats/user/actionhamilton/artists?count=${count}&range=${range}`,
+			CACHE_OPTIONS,
 		);
 
 		const { payload } = data;
@@ -49,22 +47,12 @@ async function getTopArtists(api, auth, fetchDir, count = 10, range = "this_mont
  * @param count
  * @returns {Promise<boolean|*>}
  */
-async function getMostRecentListens(api, auth, fetchDir, count = 30) {
+async function getMostRecentListens(count = 30) {
 	try {
-		let options = {
-			type: "json",
-			fetchOptions: {
-				headers: auth,
-			},
-			directory: fetchDir,
-		};
-
-		if (process.env.ELEVENTY_SERVERLESS) {
-			options.duration = "30m";
-			options.directory = "/tmp/.cache/";
-		}
-
-		const data = await EleventyFetch(`${api}/user/actionhamilton/listens?count=${count}`, options);
+		const data = await runEleventyFetch(
+			`${LISTENBRAINZ_ENDPOINT}user/actionhamilton/listens?count=${count}`,
+			CACHE_OPTIONS,
+		);
 
 		const { payload } = data;
 		const { listens } = payload;
@@ -88,30 +76,17 @@ async function getMostRecentListens(api, auth, fetchDir, count = 30) {
  * @param range
  * @returns {Promise<boolean>}
  */
-async function getLastMonthsTopReleases(api, auth, fetchDir, count = 10, range = "month") {
+async function getLastMonthsTopReleases(count = 10, range = "month") {
 	try {
-		let options = {
-			type: "json",
-			fetchOptions: {
-				headers: auth,
-			},
-			directory: fetchDir,
-		};
-
-		if (process.env.ELEVENTY_SERVERLESS) {
-			options.duration = "30m";
-			options.directory = "/tmp/.cache/";
-		}
-
-		const data = await EleventyFetch(
-			`${api}/stats/user/actionhamilton/releases?count=${count}&range=${range}`,
-			options,
+		const data = await runEleventyFetch(
+			`${LISTENBRAINZ_ENDPOINT}stats/user/actionhamilton/releases?count=${count}&range=${range}`,
+			CACHE_OPTIONS,
 		);
 
 		const { payload } = data;
 		const { releases } = payload;
 
-		return releases.map((eachRelease) => {
+		const releaseData = await Promise.all(releases.map(async (eachRelease) => {
 			const {
 				artist_name: artist,
 				release_name: release,
@@ -119,25 +94,21 @@ async function getLastMonthsTopReleases(api, auth, fetchDir, count = 10, range =
 				release_mbid: mbid,
 			} = eachRelease;
 
-			return { artist, release, listens, mbid };
-		});
+			let artwork = await getAlbumArtwork(mbid);
+
+			return { artist, release, listens, artwork };
+		}));
+
+		return releaseData;
 	} catch (error) {
 		return false;
 	}
 }
 
 module.exports = async function() {
-	const listenBrainzEndpoint = "https://api.listenbrainz.org/1";
-	const headers = { Authorization: "Token " + process.env.LISTENBRAINZ_TOKEN };
-	const directory = "_cache";
-
-	const topArtistsThisMonth = await getTopArtists(listenBrainzEndpoint, headers, directory);
-	const mostRecentListens = await getMostRecentListens(listenBrainzEndpoint, headers, directory);
-	const lastMonthsTopReleases = await getLastMonthsTopReleases(
-		listenBrainzEndpoint,
-		headers,
-		directory,
-	);
+	const topArtistsThisMonth = await getTopArtists();
+	const mostRecentListens = await getMostRecentListens();
+	const lastMonthsTopReleases = await getLastMonthsTopReleases();
 
 	return {
 		title: "Music Stats",

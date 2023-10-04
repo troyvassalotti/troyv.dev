@@ -1,6 +1,15 @@
 <style>
+  body:not(:is(.page--foobar)) .header__container {
+    margin-block-end: 2em;
+  }
+
+  .header__container {
+    display: flex;
+  }
+
   .c-mainNavigation {
     font-size: var(--step--1);
+    flex: 1;
     padding: 1ch;
   }
 
@@ -34,6 +43,10 @@
 
   .skipLink:focus-visible {
     transform: translateY(0%);
+  }
+
+  .themeSelector__button {
+    padding: var(--space-2xs);
   }
 
   @media (prefers-reduced-motion: no-preference) {
@@ -78,15 +91,28 @@
     }
   }
 </style>
-<nav class="c-mainNavigation" id="mainNavigation" aria-label="main">
+<div class="header__container">
+  <nav class="c-mainNavigation" id="mainNavigation" aria-label="main">
     <a class="skipLink" href="#main">Skip to main content</a>
     <ul role="list">
-        {% for link in nav.header %}
-            <li>
-                <a href="{{ link.url }}" class="c-animatedLink" {{ "aria-current=page" if link.url === page.url }} id="link__{{ link.name }}">{%- if loop.first -%}~/{%- else -%}::
-                {% endif -%}
-            {{ link.name }}</a>
-        </li>
+      {% for link in nav.header %}
+        <li>
+          <a href="{{ link.url }}" class="c-animatedLink" {{ "aria-current=page" if link.url === page.url }} id="link__{{ link.name }}">{%- if loop.first -%}~/{%- else -%}::
+          {% endif -%}
+        {{ link.name }}</a>
+      </li>
     {% endfor %}
-</ul>
+  </ul>
 </nav>
+<modal-menu id="settingsMenu" class="flow">
+<p slot="title">Site Settings</p>
+<button slot="trigger" id="settings" class="themeSelector__button">{% include "partials/settings.svg" %}</button>
+<button class="button" slot="dismiss">Dismiss</button>
+<theme-selector>
+  <button class="button" slot="reset">Reset Theme</button>
+</theme-selector>
+</modal-menu>
+</div>
+<script type="module">
+  import "/assets/js/theme-selector.js";
+</script>

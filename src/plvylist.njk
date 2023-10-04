@@ -1,0 +1,30 @@
+---
+permalink: "assets/js/plvylist.json"
+---
+{
+"tracks": [
+{% for track in plvylistTracks.LP2.tracks %}
+    {
+    "file": "{{ metadata.cloudinaryVideo }}/{{ track.file | safe }}",
+    "title": "{{ track.title | safe }}",
+    "artist": "{{ plvylistTracks.LP2.artist | safe }}",
+    "artistUrl": "{{ plvylistTracks.LP2.artistUrl | safe }}",
+    "album": "{{ plvylistTracks.LP2.title | safe }}",
+    "albumUrl": "{{ plvylistTracks.LP2.albumUrl | safe }}",
+    "artwork": "{{ metadata.cloudinary }}/{{ plvylistTracks.LP2.artwork | safe }}"
+    },
+{% endfor %}
+{% for track in plvylistTracks.LP1.tracks %}
+    {
+    "file": "{{ metadata.cloudinaryVideo }}/{{ track.file | safe }}",
+    "title": "{{ track.title | safe }}",
+    "artist": "{{ plvylistTracks.LP1.artist | safe }}",
+    "artistUrl": "{{ plvylistTracks.LP1.artistUrl | safe }}",
+    "album": "{{ plvylistTracks.LP1.title | safe }}",
+    "albumUrl": "{{ plvylistTracks.LP1.albumUrl | safe }}",
+    "artwork": "{{ metadata.cloudinary }}/{{ plvylistTracks.LP1.artwork | safe }}"
+    }
+    {% if not loop.last %},{% endif %}
+{% endfor %}
+]
+}

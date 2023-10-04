@@ -1,55 +1,47 @@
 ---
 layout: base
 title: Music Collection
-description: A place to keep track of my music collection.
+description: A place to keep track of my physical music collection.
 ---
-<h1 class="u-revertMargin--start">{{ title }}</h1>
-<p>{{ description }}</p>
+<h1>{{ title }}</h1>
+<p>
+    I use <a href="https://musicbrainz.org/user/actionhamilton">MusicBrainz</a> for tracking my music collection. It isn't a perfect system, but it gets the job done. Lists are in no particular order.
+</p>
 <article id="vinyl" class="vinyl flow">
-    <header>
+    <section class="ownedVinyl flow">
         <h2>Vinyl</h2>
-    </header>
-    <section class="twelveInch flow">
-        <h3>12 Inch</h3>
-        <ul>
-            {% for item in vinyl["12 Inch"] %}
+        <ul role="list" class="releaseGrid">
+            {% for release in musicLibrary.ownedVinyl %}
                 <li>
-                    <b>{{ item.artist }}</b>:
-                    <i>{{ item.album }}</i>
+                    <div class="release">
+                        {% if release.artwork %}
+                            <img class="releaseArt"
+                                 width="300"
+                                 height="300"
+                                 src="{{ release.artwork }}"
+                                 alt=""
+                                 loading="lazy"
+                                 decoding="async"/>
+                        {% else %}
+                            <div class="releaseArt"></div>
+                        {% endif %}
+                        <p class="releaseName">{{ release.title }}</p>
+                        <p class="releaseArtist">{{ release.artist }}</p>
+                    </div>
                 </li>
             {% endfor %}
         </ul>
     </section>
-    <section class="tenInch flow">
-        <h3>10 Inch</h3>
+    <section class="wishlist flow">
+        <h2>The Wishlist</h2>
+        <p>
+            I <em>could</em> order these online but the point of this list is that I find them out in the wild. I don't even know if all of these have been pressed before, but I'm holding out hope.
+        </p>
         <ul>
-            {% for item in vinyl["10 Inch"] %}
+            {% for release in musicLibrary.vinylWishlist %}
                 <li>
-                    <b>{{ item.artist }}</b>:
-                    <i>{{ item.album }}</i>
-                </li>
-            {% endfor %}
-        </ul>
-    </section>
-    <section class="sevenInch flow">
-        <h3>7 Inch</h3>
-        <ul>
-            {% for item in vinyl["7 Inch"] %}
-                <li>
-                    <b>{{ item.artist }}</b>:
-                    <i>{{ item.album }}</i>
-                </li>
-            {% endfor %}
-        </ul>
-    </section>
-    <section class="wants flow">
-        <h3>The Want List</h3>
-        <p>I <em>could</em> order these online but the point of this list is that I find them out in the wild.</p>
-        <ul>
-            {% for item in vinyl["Wants"] %}
-                <li>
-                    <b>{{ item.artist }}</b>:
-                    <i>{{ item.album }}</i>
+                    <b>{{ release.artist }}</b>:
+                    <i>{{ release.title }}</i>
                 </li>
             {% endfor %}
         </ul>

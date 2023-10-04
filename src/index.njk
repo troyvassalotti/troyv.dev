@@ -9,47 +9,69 @@ description: Watch as Troy Vassalotti learns his way around a computer.
 {% block content %}
     <main id="main">
         <cloudy-sky hillside>
-        <div class="wrapper">
-            <div class="o-hero">
-                <section class="o-hero__left flow">
-                    <div class="c-keyboard">
-                        <type-writer>
-                        <h1 class="leadingType">Hey, I'm Troy...</h1>
-                        </type-writer>
-                        <type-writer>
-                        <p class="followingType">...and this is a website.</p>
-                        </type-writer>
-                    </div>
-                    <figure class="c-portrait">
-                        <img src="{{ metadata.cloudinary }}/c_scale,f_auto,q_auto:eco,w_600/v1646349104/blog/me-on-stage-waverly_hoxgvf.webp"
+        <div class="wrapper flow constrain--some">
+            <div class="container--about flow">
+                <figure class="portrait">
+                    <div class="gradient-mask">
+                        <img src="{{ metadata.cloudinary }}/c_scale,f_auto,q_auto:eco,w_1100/v1646349104/blog/DSC00048-positive-2_iflhof.webp"
                              alt="Me holding my guitar on stage"
                              decoding="async"
-                             width="600"
-                             height="600"
+                             width="1100"
+                             height="455"
                              id="me"/>
-                        <figcaption>
-                            <a href="/music/">Musician</a>, engineer, and <span class="js-slogan">loading...</span>.
-                        </figcaption>
-                    </figure>
-                    <div class="o-hero__left__note">
-                        <p>
-                            I'm glad you could make it. Peruse my wares<sup>*</sup> and read <a href="/about/">more about me</a> if you're so inclined.
-                            Try <a href="/brew/">brewing</a> me a pot of coffee perhaps?
-                        </p>
-                        <p class="u-step--2">*I only accept bottle caps as currency, sorry... (I'm kidding)</p>
                     </div>
+                    <!-- htmlmin:ignore -->
+                    <figcaption class="portrait__caption">
+                        <a href="/music/">Musician</a>, engineer, and <tag-line taglines="insert your favorite descriptors here | hopeless romantic | rotten tomato | apple butter cheesecake | musician, engineer, and musician, engineer, and musician engineer... | I don't know anymore | pumpkin spice latte | you | somebody you used to know | never gonna give you up | full of peanut butter | wishing you were here | daydreamer">loading...</tag-line>.
+                        </figcaption>
+                        <!-- htmlmin:ignore -->
+                    </figure>
+                <section class="aboutMe flow u-truncate">
+                <type-writer>
+                <h1 class="leadingType">Hey, I'm Troy...</h1>
+                </type-writer>
+                    {% renderFile './src/_includes/partials/bio.md' %}
                 </section>
-                <section class="o-hero__right">
-                    <h2 id="recent-posts" class="sectionTitle">Recent Posts</h2>
-                    <ol role="list" class="c-postList flow">
-                        {% for post in collections.post.slice(collections.post.length - 5, collections.post.length) | reverse %}
-                            {{ postItem(post.date, post.data.title, post.url, excerpt = post.data.description, heading = "3") }}
-                        {% endfor %}
-                    </ol>
-                    <p class="c-postList__more">
-                        <a class="c-animatedLink" href="{{ nav.header[1].url }}">View All Posts</a>
-                    </p>
-                </section>
+            </div>
+            <div class="container--read flow">
+                <type-writer class="typewriter--read">
+                <h2 id="read" class="typing--read">Read</h2>
+                </type-writer>
+                <ol role="list" class="c-postList flow">
+                    {% for post in collections.post.slice(collections.post.length - 5, collections.post.length) | reverse %}
+                        <p class="u-step-2 u-text--bold">{{ post.data.description }}</p>
+                        <p class="u-step--1">
+                            From the post <a class="u-text--italic" href="{{ post.url }}">{{ post.data.title }}</a>, published {{ post.date | dateString }}.
+                        </p>
+                    {% endfor %}
+                </ol>
+            </div>
+            <div class="container--play flow">
+                <type-writer>
+                <h2 id="play" class="typing--play">Play</h2>
+                </type-writer>
+                <ol role="list" class="list play u-grid" data-grid-columns="fluid">
+                    {% for project in projects %}
+                        {% if project.tags and project.tags | inArray("play") %}
+                            <li class="play__item">
+                                <article class="flow play__item-content">
+                                    <p class="play__item-title u-step-2 u-text--bold">
+                                        <a href="{{ project.url }}">{{ project.name }}</a>
+                                    </p>
+                                    <p class="play__item-description">{{ project.description }}</p>
+                                </article>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ol>
+            </div>
+            <div class="container--listen flow">
+                <type-writer>
+                <h2 id="listen" class="typing--listen">Listen</h2>
+                </type-writer>
+                <plvy-list class="plvylist" file="/assets/js/plvylist.json">
+                </plvy-list>
+                <p class="u-text--italic u-step--1">Psst... I made <a href="https://plvylist.troyv.dev">this music player</a>.</p>
             </div>
         </div>
         </cloudy-sky>
@@ -57,160 +79,107 @@ description: Watch as Troy Vassalotti learns his way around a computer.
 {% endblock content %}
 
 {% block style %}
-    {{ super() }}
     <style>
-    .js :is(type-writer):not(:defined) {
-        visibility: hidden;
-    }
+.leadingType {
+    --kb-count-cursor: 10;
 
-    .leadingType {
-        --kb-count-cursor: 6;
-        font-size: var(--step-5);
-    }
+    font-size: var(--step-4);
+}
 
-    .followingType {
-        --kb-delay-typing: 3.5s;
-        --kb-delay-cursor: 3s;
-        --kb-steps-typing: 35;
-        font-family: var(--headings);
-        font-size: var(--step-3);
-        font-weight: bold;
-        margin-block-start: 0.5ex;
-    }
+.portrait {
+    inline-size: fit-content;
+    margin-inline: auto;
+}
 
-    .o-hero {
-        column-gap: var(--space-m-l);
-        display: grid;
-        padding-block-start: 2rem;
-        row-gap: var(--space-xl-2xl);
-    } 
+.portrait__caption {
+    font-style: italic;
+    text-align: end;
+}
 
-    @media (min-width: 70.25rem) {
-        .o-hero {
-            grid-template-columns: .75fr 1fr;
+.portrait__caption::after,
+.portrait__caption::before {
+    content: " ↑ ";
+    font-size: 1.25em;
+}
+
+.gradient-mask {
+    mask-image: linear-gradient(to bottom, #000, #000),
+        linear-gradient(to bottom, #000, #000),
+        linear-gradient(to bottom, #000, #000),
+        linear-gradient(to bottom, #000, #000),
+        linear-gradient(to bottom, #000, #000);
+    mask-size: 19% 70%;
+    mask-position: 0 75%, 25% 25%, 50% 50%, 75% 0, 100% 100%;
+    mask-repeat: no-repeat;
+    
+    -webkit-mask-image: linear-gradient(to bottom, #000, #000),
+        linear-gradient(to bottom, #000, #000),
+        linear-gradient(to bottom, #000, #000),
+        linear-gradient(to bottom, #000, #000),
+        linear-gradient(to bottom, #000, #000);
+    -webkit-mask-size: 19% 70%;
+    -webkit-mask-position: 0 75%, 25% 25%, 50% 50%, 75% 0, 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    max-inline-size: max-content;
+}
+
+        :is(.container--about, .container--read, .container--play) {
+            margin-block-end: var(--space-2xl);
         }
 
-        .o-hero__right {
-            text-align: end;
+        :is(.typing--read, .typing--play, .typing--listen) {
+            --kb-duration-typing: .75s;
+            font-size: var(--step-6);
         }
 
-        .c-postListItem {
-            align-items: end;
-            border-inline-end: 2px dashed var(--accent, currentColor);
-            display: flex;
-            flex-direction: column;
-            padding-inline-end: 1ch;
+        .typing--read {
+            --kb-steps-typing: 15;
         }
 
-        .c-postListItem__excerpt {
-            max-inline-size: 60ch;
-        }
-    }
-
-    .o-hero__left {
-        text-align: center;
-    }
-
-    .o-hero__left__note p {
-        margin-inline: auto;
-        max-inline-size: 35rem;
-    }
-
-    .o-hero__left__note p:not(:first-of-type) {
-        margin-block-start: var(--space-2xs);
-    }
-
-    @media (min-width: 52.5rem) and (max-width: 70.25rem) {
-        .o-hero__left {
-            column-gap: var(--space-xs);
-            display: grid;
-            grid-template-areas: "keyboard image" "note image";
+        .typing--play {
+            --kb-steps-typing: 15;
         }
 
-        .c-keyboard {
-            align-self: end;
-            grid-area: keyboard;
+        .typing--listen {
+            --kb-steps-typing: 15;
         }
 
-        .c-portrait {
-            grid-area: image;
+        .list.play {
+            --fluid-col-size: 20ch;
         }
 
-        .o-hero__left__note {
-            grid-area: note;
+        .play__item-content {
+            border-radius: var(--space-3xs);
+            box-shadow: 1px 2px 1px 2px var(--foreground);
+            padding-block: var(--space-s);
+            padding-inline: var(--space-xs);
         }
-    }
 
-    .c-keyboard {
-        display: grid;
-        justify-content: center;
-    }
-
-    .c-portrait figcaption::after,
-    .c-portrait figcaption::before {
-        content: " ↑ ";
-        font-size: 1.25em;
-    }
-
-    .c-portrait img {
-        aspect-ratio: 1 / 1;
-        border-radius: 50%;
-        inline-size: calc(7 * var(--step-5));
-        margin-block: 1.5rem;
-        margin-inline: auto;
-        transition: filter .3s ease;
-    }
-
-    .o-hero__right .sectionTitle {
-        margin-block-end: var(--space-s);
-    }
-
-    .c-postList {
-        --flow-space: var(--space-s-l);
-    }
-
-    .c-postList__more {
-        margin-block: var(--space-s-m);
-    }
-
-    cloudy-sky:defined+loading-spinner {
-        display: none;
-    }
-
-    ::part(hillside) {
-        fill: var(--accent);
-    }
-
-    @media (prefers-color-scheme: light) {
-        cloudy-sky {
-            --cloud-filter: hue-rotate(222deg);
+        .plvylist {
+            color-scheme: light dark;
+            font-size: var(--step--1);
+            max-inline-size: 70rem;
         }
-    }
 
-    @media (prefers-color-scheme: dark) {
-        cloudy-sky {
-            --cloud-filter: hue-rotate(190deg);
+        ::part(hillside) {
+            fill: var(--accent);
         }
-    }
+
+        @media(prefers-color-scheme: light) {
+            cloudy-sky {
+                --cloud-filter: hue-rotate(222deg);
+            }
+        }
     </style>
 {% endblock style %}
 
 {% block script %}
     {{ super() }}
     <script type="module">
-    import { CloudySky } from "cloudysky"
-    import { Typewriter } from "typewriter"
-
-    const sloganLocation = document.querySelector(".js-slogan")
-    const slogans = ["insert your favorite descriptors here", "hopeless romantic", "apple butter cheesecake", "musician, engineer, and musician, engineer, and musician, engineer...", "I don't know anymore"]
-
-    /** Generates a random number inclusive of min, exclusive of max */
-    const randomNumberGenerator = (min, max) => {
-      return Math.floor(Math.random() * (max - min) + min)
-    }
-
-    const randomNumberForSlogan = randomNumberGenerator(0, slogans.length)
-
-    sloganLocation.innerText = slogans[randomNumberForSlogan]
+        import {CloudySky} from "cloudysky";
+        import {Typewriter} from "typewriter";
+        import "/assets/js/now-playing.js";
+        import "/assets/js/tag-line.js";
+        import Plvylist from "plvylist";
     </script>
 {% endblock script %}
