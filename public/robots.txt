@@ -1,3 +1,13 @@
 User-agent: *
 Disallow: /404.html
 Disallow: /success.html
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
