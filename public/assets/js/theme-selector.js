@@ -33,6 +33,25 @@ class ThemeSelector extends LitElement {
 		];
 	}
 
+	static get properties() {
+		return {
+			baseHue: { type: String },
+			baseSaturation: { type: String },
+			primaryLightness: { type: String },
+			accentHueModifier: { type: String },
+			accentLightness: { type: String },
+		};
+	}
+
+	constructor() {
+		super();
+		this.baseHue = "205";
+		this.baseSaturation = "46%";
+		this.primaryLightness = "40%";
+		this.accentHueModifier = "180";
+		this.accentLightness = "50%";
+	}
+
 	get hueSlider() {
 		return this.renderRoot.getElementById("theme-hue");
 	}
@@ -56,6 +75,54 @@ class ThemeSelector extends LitElement {
 			accentLightness: localStorage.getItem(ACCENT_STORAGE),
 			primaryLightness: localStorage.getItem(PRIMARY_STORAGE),
 		};
+	}
+
+	buildThemeStyles() {
+		let style = document.createElement("style");
+		let customProperties = `
+		html {
+			--base-hue: ${this.baseHue};
+			--base-sat: ${this.baseSaturation};
+
+			/* full color palette, from dark to light */
+			--clr-10: hsl(var(--base-hue), var(--base-sat), 10%);
+			--clr-20: hsl(var(--base-hue), var(--base-sat), 20%);
+			--clr-30: hsl(var(--base-hue), var(--base-sat), 30%);
+			--clr-40: hsl(var(--base-hue), var(--base-sat), 40%);
+			--clr-50: hsl(var(--base-hue), var(--base-sat), 50%);
+			--clr-60: hsl(var(--base-hue), var(--base-sat), 60%);
+			--clr-70: hsl(var(--base-hue), var(--base-sat), 70%);
+			--clr-80: hsl(var(--base-hue), var(--base-sat), 80%);
+			--clr-90: hsl(var(--base-hue), var(--base-sat), 90%);
+			--clr-95: hsl(var(--base-hue), var(--base-sat), 95%);
+
+			--primary-lightness: ${this.primaryLightness};
+
+			/* primary color in varying opacity levels */
+			--primary: hsl(var(--base-hue), var(--base-sat), var(--primary-lightness));
+			--primary-75: hsla(var(--base-hue), var(--base-sat), var(--primary-lightness), 75%);
+			--primary-50: hsla(var(--base-hue), var(--base-sat), var(--primary-lightness), 50%);
+			--primary-25: hsla(var(--base-hue), var(--base-sat), var(--primary-lightness), 25%);
+			--primary-15: hsla(var(--base-hue), var(--base-sat), var(--primary-lightness), 15%);
+			--primary-10: hsla(var(--base-hue), var(--base-sat), var(--primary-lightness), 10%);
+
+			--accent-hue: calc(var(--base-hue) + ${this.accentHueModifier});
+			--accent-lightness: ${this.accentLightness};
+
+			/* accent color in varying opacity levels */
+			--accent: hsl(var(--accent-hue), var(--base-sat), var(--accent-lightness));
+			--accent-75: hsla(var(--accent-hue), var(--base-sat), var(--accent-lightness), 75%);
+			--accent-25: hsla(var(--accent-hue), var(--base-sat), var(--accent-lightness), 25%);
+			--accent-15: hsla(var(--accent-hue), var(--base-sat), var(--accent-lightness), 15%);
+			--accent-10: hsla(var(--accent-hue), var(--base-sat), var(--accent-lightness), 10%);
+		}`;
+
+		style.textContent = customProperties;
+		style.id = "theme-modifier-styles";
+		
+		if (!document.querySelector("#theme-modifier-styles")) {
+			document.head.append(style);
+		}
 	}
 
 	updateDocumentProperties(name, value) {
@@ -114,6 +181,8 @@ class ThemeSelector extends LitElement {
 	}
 
 	initTheme() {
+		this.buildThemeStyles();
+
 		if (this.storedValues.hue) {
 			this.updateDocumentProperties(HUE_PROPERTY, this.storedValues.hue);
 			this.hueSlider.value = this.storedValues.hue;

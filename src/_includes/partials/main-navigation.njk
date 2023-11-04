@@ -1,5 +1,5 @@
 <style>
-  body:not(:is(.page--foobar)) .header__container {
+  body .header__container {
     margin-block-end: 2em;
   }
 
@@ -104,14 +104,14 @@
     {% endfor %}
   </ul>
 </nav>
-<modal-menu id="settingsMenu" class="flow">
+{# <modal-menu id="settingsMenu" class="flow">
 <p slot="title">Site Settings</p>
 <button slot="trigger" id="settings" class="themeSelector__button">{% include "partials/settings.svg" %}</button>
 <button class="button" slot="dismiss">Dismiss</button>
 <theme-selector>
   <button class="button" slot="reset">Reset Theme</button>
 </theme-selector>
-</modal-menu>
+</modal-menu> #}
 </div>
 <script type="module">
   import "/assets/js/theme-selector.js";
