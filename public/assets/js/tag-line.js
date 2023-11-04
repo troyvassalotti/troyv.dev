@@ -6,16 +6,20 @@ class Tagline extends HTMLElement {
 	}
 
 	static get observedAttributes() {
-		return ["taglines"];
+		return ["taglines", "separator"];
 	}
 
 	attributeChangedCallback(name, oldValue, newValue) {
 		if (name === "separator") {
-			this.separator = newValue;
+            if (newValue) {
+			    this.separator = newValue;
+            }
 		}
 
 		if (name === "taglines") {
-			this.tagLines = newValue.split(this.separator).map(item => item.trim());
+            if (newValue) {
+			    this.tagLines = newValue.split(this.separator).map(item => item.trim());
+            }
 		}
 	}
 

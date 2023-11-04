@@ -10,6 +10,11 @@ const SATURATION_STORAGE = "theme-base-saturation";
 const ACCENT_STORAGE = "theme-base-accent";
 const PRIMARY_STORAGE = "theme-base-primary";
 
+/**
+ * Theme Selector web component.
+ * @deprecated
+ * @since 2023-11-04
+ */
 class ThemeSelector extends LitElement {
 	static get styles() {
 		return [
