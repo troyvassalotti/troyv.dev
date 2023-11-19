@@ -92,17 +92,17 @@
   }
 </style>
 <div class="header__container">
-  <nav class="c-mainNavigation" id="mainNavigation" aria-label="main">
-    <a class="skipLink" href="#main">Skip to main content</a>
-    <ul role="list">
-      {% for link in nav.header %}
-        <li>
-          <a href="{{ link.url }}" class="c-animatedLink" {{ "aria-current=page" if link.url === page.url }} id="link__{{ link.name }}">{%- if loop.first -%}~/{%- else -%}::
-          {% endif -%}
-        {{ link.name }}</a>
-      </li>
-    {% endfor %}
-  </ul>
+    <nav class="c-mainNavigation" id="mainNavigation" aria-label="main">
+        <a class="skipLink" href="#main">Skip to main content</a>
+        <ul role="list">
+            {% for link in nav.header %}
+                <li>
+                    <a href="{{ link.url }}" class="c-animatedLink" {{ "aria-current=page" if link.url === page.url }} id="link__{{ link.name }}">{%- if loop.first -%}~/{%- else -%}::
+                    {% endif -%}
+                {{ link.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
 </nav>
 {# <modal-menu id="settingsMenu" class="flow">
 <p slot="title">Site Settings</p>
@@ -113,6 +113,4 @@
 </theme-selector>
 </modal-menu> #}
 </div>
-<script type="module">
-  import "/assets/js/theme-selector.js";
-</script>
+<script type="module">import "/assets/js/theme-selector.js";</script>

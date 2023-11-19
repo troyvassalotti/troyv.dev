@@ -7,6 +7,8 @@ featuredImage: /v1646349103/blog/cats_stm8wv.jpg
 website: https://cats.onrender.com/
 ---
 
+<!-- @format -->
+
 I recently got antsy to make an Express app. The original idea was to try and recreate _this very website_ using Express and Pug templates instead of Nunjucks. It started off fine, but then I realized it'd be a little more of a waste of time to base it on my website since 1) the site is already made with Node, and 2) it won't necessarily teach me something that new.
 
 So instead, I chose to create a mini site about my cats and add on the extra challenge of using Tailwind CSS for the first time. You can find the [code for this app](https://github.com/troyvassalotti/express-cats) on my GitHub.

@@ -6,6 +6,8 @@ tags: ["projects", "vue"]
 website: https://vuedoku.netlify.app
 ---
 
+<!-- @format -->
+
 I was surprised by how difficult it was to find a full-blown tutorial for making a Sudoku app with Vue. On the contrary, the internet is overflowing with React versions of Sudoku, so I decided to follow one of those and _port_ it into Vue.
 
 Matt Biilmann of Netlify fame [made a Sudoku React app](https://www.youtube.com/watch?v=GytUZLK4kwA) that can be found over on the freeCodeCamp YouTube channel, and it's this video that was the entry point to my app, [Vuedoku](https://github.com/troyvassalotti/sudoku). I got it started with Vite because I've been using that a lot lately and think it's rad.
@@ -56,7 +58,7 @@ The best way of keeping all these pieces of information together is by creating 
 
 ```js
 // lib/sudoku.js
-import { makepuzzle, solvepuzzle } from "sudoku";
+import {makepuzzle, solvepuzzle} from "sudoku";
 
 /*
   Generates a sudoku with the structure
@@ -83,7 +85,7 @@ export function generateSudoku() {
 
 	// Loop over the formatted data to generate row and column data
 	for (let i = 0; i < 9; i++) {
-		const row = { cols: [], index: i };
+		const row = {cols: [], index: i};
 		for (let j = 0; j < 9; j++) {
 			const value = formatted[i * 9 + j];
 			const col = {
@@ -115,7 +117,7 @@ const store = {
     showProgress: false, // Used in highlighting correct/incorrect cells
     previousSudoku: null,
   }),
-  
+
   /*
   * snip
   */
@@ -137,7 +139,7 @@ const store = {
     showProgress: false, // Used in highlighting correct/incorrect cells
     previousSudoku: null,
   }),
-  
+
   /*
   * snip
   */
@@ -224,7 +226,7 @@ Our `onChange` function takes that and checks your guesses against the stored so
 /*
  * snip
  */
- 
+
 const store = {
   state: reactive({
     sudoku: generateSudoku(),
@@ -246,7 +248,7 @@ const store = {
       }
     }
   },
-  
+
   /*
    * snip
    */
@@ -447,7 +449,8 @@ Back in `lib/sudoku.js` we need to define the `checkSolution` function and expor
  * @returns {boolean}
  */
 export function checkSolution(sudoku) {
-	const candidate = sudoku.rows.map((row) => row.cols.map((col) => col.value))
+	const candidate = sudoku.rows
+		.map((row) => row.cols.map((col) => col.value))
 		.flat();
 
 	for (let i = 0; i < candidate.length; i++) {

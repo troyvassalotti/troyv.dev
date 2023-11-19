@@ -1,5 +1,7 @@
-const { runEleventyFetch, getAlbumArtwork } = require("../../utils/helpers");
-const { MUSICBRAINZ_ENDPOINT } = require("../../utils/globals");
+/** @format */
+
+const {runEleventyFetch, getAlbumArtwork} = require("../../utils/helpers");
+const {MUSICBRAINZ_ENDPOINT} = require("../../utils/globals");
 
 const MBIDS = {
 	owned: "86a0ed72-c50b-4dad-a29c-a891aed64296",
@@ -28,37 +30,35 @@ async function getCollectionInformation(collectionId) {
 		let allReleases = [];
 		let offset = 0;
 
-		const data = await runEleventyFetch(
-			apiEndpoint,
-		);
+		const data = await runEleventyFetch(apiEndpoint);
 
 		const releaseCount = data["release-count"];
 		const releaseInformation = getReleaseInformation(data);
-		const { releases, numberOfReleases } = releaseInformation;
+		const {releases, numberOfReleases} = releaseInformation;
 
 		allReleases.push(releases);
 		offset = numberOfReleases;
 
 		while (offset < releaseCount) {
-			const data = await runEleventyFetch(
-				`${apiEndpoint}&offset=${offset}`,
-			);
+			const data = await runEleventyFetch(`${apiEndpoint}&offset=${offset}`);
 
 			const releaseInformation = getReleaseInformation(data);
-			const { releases, numberOfReleases } = releaseInformation;
+			const {releases, numberOfReleases} = releaseInformation;
 
 			allReleases.push(releases);
 			offset += numberOfReleases;
 		}
 
 		const flattened = allReleases.flat();
-		const releaseData = await Promise.all(flattened.map(async (release) => {
-			const { title, id } = release;
-			const artist = getArtistCredit(release);
-			const artwork = await getAlbumArtwork(id, false);
+		const releaseData = await Promise.all(
+			flattened.map(async (release) => {
+				const {title, id} = release;
+				const artist = getArtistCredit(release);
+				const artwork = await getAlbumArtwork(id, false);
 
-			return { title, artist, artwork };
-		}));
+				return {title, artist, artwork};
+			}),
+		);
 
 		return releaseData.sort((a, b) => {
 			if (a.artist < b.artist) {
@@ -74,7 +74,7 @@ async function getCollectionInformation(collectionId) {
 	}
 }
 
-module.exports = async function() {
+module.exports = async function () {
 	const ownedVinyl = await getCollectionInformation(MBIDS.owned);
 	const vinylWishlist = await getCollectionInformation(MBIDS.wishlist);
 

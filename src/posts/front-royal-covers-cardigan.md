@@ -5,6 +5,8 @@ date: 2021-05-21
 tags: ["front royal", "music"]
 ---
 
+<!-- @format -->
+
 It's safe to say I'm the biggest swiftie in Front Royal, so when we decided to write and release a covers album, it was no surprise I voted for a Taylor Swift tune. _Cardigan_ is one of five songs being released in this covers series, so keep an eye out for the next ones.
 
 <iframe title="Listen to cardigan by front royal" style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/track=1330083917/size=large/bgcol=333333/linkcol=e99708/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://frontroyalmd.bandcamp.com/track/cardigan">cardigan by Front Royal</a></iframe>

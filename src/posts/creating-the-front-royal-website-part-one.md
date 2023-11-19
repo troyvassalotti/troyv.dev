@@ -5,6 +5,8 @@ date: 2020-03-16
 tags: ["front royal", "design"]
 ---
 
+<!-- @format -->
+
 There was a point in time bands either had a myspace, PureVolume, or both. Nowadays, it's not so simple.
 
 People take up _so much_ space on the internet and bands have to spread their coverage out even further.

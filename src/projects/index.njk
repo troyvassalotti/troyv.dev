@@ -3,6 +3,7 @@ layout: base
 title: Projects
 description: Stuff I've made.
 ---
+
 <h1>{{ title }}</h1>
 <ul role="list" class="flow">
     {% for project in projects | reverse %}
@@ -17,7 +18,7 @@ description: Stuff I've made.
             <p>{{ project.description }}</p>
             {% if project.repository %}
                 <p>
-                    <a class="c-link--icon" href="{{ project.repository }}">{%- include "partials/github.svg" -%}{{ project.repository | replace("https://github.com/", "") }}</a>
+                    <a class="c-link--icon" href="{{ project.repository }}">{%- include "partials/github.svg" -%}{{ project.repository | replace('https://github.com/', '') }}</a>
                 </p>
             {% endif %}
         </li>

@@ -5,6 +5,8 @@ date: 2020-04-20
 tags: ["front royal", "design"]
 ---
 
+<!-- @format -->
+
 I _really_ dropped the ball on this whole "blogging in real time" thing because the site is almost done.
 
 In [the first blog](/2020/03/16/creating-the-front-royal-website-part-1/), I outlined my goals for the site with a screenshot of a few design ideas, and what stack I'll be using to build it.
@@ -40,27 +42,26 @@ I had to make some adjustments to Spotify's code to get the `<iframe>` to do wha
 
 ```css
 .player {
-  margin: auto;
-  width: 100%;
+	margin: auto;
+	width: 100%;
 }
 
 .player__featured {
-  max-width: 300px;
+	max-width: 300px;
 }
 ```
 
 ```html
 <iframe
-    class="player player__featured"
-    src="https://open.spotify.com/embed/album/17q2Qwv2jqrhVaX8iWX5wm"
-    width="300"
-    height="320"
-    frameborder="0"
-    allowtransparency="true"
-    allow="encrypted-media"
-    title="These Things Happen Spotify player"
-    loading="lazy"
-></iframe>
+	class="player player__featured"
+	src="https://open.spotify.com/embed/album/17q2Qwv2jqrhVaX8iWX5wm"
+	width="300"
+	height="320"
+	frameborder="0"
+	allowtransparency="true"
+	allow="encrypted-media"
+	title="These Things Happen Spotify player"
+	loading="lazy"></iframe>
 ```
 
 I put the bandsintown tour dates widget right after the music, which again required a small CSS adjustment.

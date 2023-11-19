@@ -2,8 +2,11 @@
  * Retrieve my now playing song from Listenbrainz.
  *
  * Adapted from Andy Bell's `<last-fm>` component.
+ *
+ * @format
  * @link https://andy-bell.co.uk/
  */
+
 class NowPlaying extends HTMLElement {
 	constructor() {
 		super();
@@ -46,9 +49,13 @@ class NowPlaying extends HTMLElement {
 	render() {
 		const template = this.isSilent
 			? "silence"
-			: `"${this.track.track_name}"${this.track.artist_name ? ` by <b>${this.track.artist_name}</b>` : ""}${
-				this.track.release_name ? ` from <i>${this.track.release_name}</i>` : ""
-			}`;
+			: `"${this.track.track_name}"${
+					this.track.artist_name ? ` by <b>${this.track.artist_name}</b>` : ""
+			  }${
+					this.track.release_name
+						? ` from <i>${this.track.release_name}</i>`
+						: ""
+			  }`;
 
 		this.innerHTML = template;
 	}

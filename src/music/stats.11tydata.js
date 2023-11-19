@@ -1,5 +1,14 @@
-const { runEleventyFetch, createCacheOptions, getAlbumArtwork } = require("../../utils/helpers");
-const { LISTENBRAINZ_ENDPOINT, LISTENBRAINZ_AUTH } = require("../../utils/globals");
+/** @format */
+
+const {
+	runEleventyFetch,
+	createCacheOptions,
+	getAlbumArtwork,
+} = require("../../utils/helpers");
+const {
+	LISTENBRAINZ_ENDPOINT,
+	LISTENBRAINZ_AUTH,
+} = require("../../utils/globals");
 
 const FETCH_HEADERS = {
 	fetchOptions: {
@@ -27,12 +36,12 @@ async function getTopArtists(count = 10, range = "this_month") {
 			CACHE_OPTIONS,
 		);
 
-		const { payload } = data;
-		const { artists } = payload;
+		const {payload} = data;
+		const {artists} = payload;
 
 		return artists.map((artist) => {
-			const { artist_name: name, listen_count: listens } = artist;
-			return { name, listens };
+			const {artist_name: name, listen_count: listens} = artist;
+			return {name, listens};
 		});
 	} catch (error) {
 		return false;
@@ -54,13 +63,17 @@ async function getMostRecentListens(count = 30) {
 			CACHE_OPTIONS,
 		);
 
-		const { payload } = data;
-		const { listens } = payload;
+		const {payload} = data;
+		const {listens} = payload;
 		const metadata = listens.map((track) => track.track_metadata);
 
 		return metadata.map((track) => {
-			const { artist_name: artist, track_name: song, release_name: release } = track;
-			return { artist, song, release };
+			const {
+				artist_name: artist,
+				track_name: song,
+				release_name: release,
+			} = track;
+			return {artist, song, release};
 		});
 	} catch (error) {
 		return false;
@@ -83,21 +96,23 @@ async function getLastMonthsTopReleases(count = 10, range = "month") {
 			CACHE_OPTIONS,
 		);
 
-		const { payload } = data;
-		const { releases } = payload;
+		const {payload} = data;
+		const {releases} = payload;
 
-		const releaseData = await Promise.all(releases.map(async (eachRelease) => {
-			const {
-				artist_name: artist,
-				release_name: release,
-				listen_count: listens,
-				release_mbid: mbid,
-			} = eachRelease;
+		const releaseData = await Promise.all(
+			releases.map(async (eachRelease) => {
+				const {
+					artist_name: artist,
+					release_name: release,
+					listen_count: listens,
+					release_mbid: mbid,
+				} = eachRelease;
 
-			let artwork = await getAlbumArtwork(mbid);
+				let artwork = await getAlbumArtwork(mbid);
 
-			return { artist, release, listens, artwork };
-		}));
+				return {artist, release, listens, artwork};
+			}),
+		);
 
 		return releaseData;
 	} catch (error) {
@@ -105,7 +120,7 @@ async function getLastMonthsTopReleases(count = 10, range = "month") {
 	}
 }
 
-module.exports = async function() {
+module.exports = async function () {
 	const topArtistsThisMonth = await getTopArtists();
 	const mostRecentListens = await getMostRecentListens();
 	const lastMonthsTopReleases = await getLastMonthsTopReleases();

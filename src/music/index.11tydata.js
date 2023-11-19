@@ -1,7 +1,10 @@
-module.exports = function() {
+/** @format */
+
+module.exports = function () {
 	return {
 		title: "Music",
-		description: "Music is one of my passions. Check out all my musical projects here.",
+		description:
+			"Music is one of my passions. Check out all my musical projects here.",
 		layout: "base",
 		frontRoyal: {
 			meta: {

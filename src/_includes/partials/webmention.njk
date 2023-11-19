@@ -40,14 +40,14 @@
                          class="webmention__author__photo u-photo"
                          src="{{ webmention.author.photo }}"
                          alt="{{ webmention.author.name }}"
-                         loading="lazy"/>
+                         loading="lazy" />
                 {% else %}
                     <img width="48"
                          height="48"
                          class="webmention__author__photo"
                          src="{{ defaultImg }}"
                          alt=""
-                         loading="lazy"/>
+                         loading="lazy" />
                 {% endif %}
                 <strong class="p-name">{{ webmention.author.name }}</strong>
             </a>
@@ -58,7 +58,7 @@
                      class="webmention__author__photo"
                      src="{{ defaultImg }}"
                      alt=""
-                     loading="lazy"/>
+                     loading="lazy" />
                 <strong>Anonymous</strong>
             </span>
         {% endif %}

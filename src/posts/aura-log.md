@@ -6,6 +6,8 @@ tags: ["life", "migraines", "javascript"]
 syndication: ["mastodon"]
 ---
 
+<!-- @format -->
+
 I've been getting migraines my whole life, but only started keeping a regular log of them in 2019. The process went through many iterations: from as a spreadsheet, to tracked in Migraine Buddy, to a JSON file on a single HTML page, to Markdown files in Obsidian, to now Markdown files in a repository hooked up to [Vite](https://www.vitejs.dev), [Lit](https://www.lit.dev), and data visualization libraries.
 
 <!-- excerpt -->

@@ -5,6 +5,8 @@ date: 2020-06-25
 tags: ["music", "life"]
 ---
 
+<!-- @format -->
+
 I don't write as much music as I used to. There's a combination of reasons for why that is or may be, but their irrelevant to this post. Though I may not sit down and produce a song in its entirety that often, it's a given that I'll end up recording a snippet of a future song during my practice sessions.
 
 Those recordings - typically a video so I can see myself doing the thing - end up in my Google photos library where they get thrown into a folder aptly named "Song Ideas."

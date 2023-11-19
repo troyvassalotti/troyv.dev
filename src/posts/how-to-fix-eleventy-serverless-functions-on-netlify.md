@@ -3,15 +3,17 @@ title: "How to Fix Eleventy Serverless Functions on Netlify"
 description: "In a strange turn of events where I made zero changes to my code, my serverless functions suddenly stopped working, until now."
 date: 2023-10-03
 tags:
-- eleventy
+  - eleventy
 syndication:
-- mastodon
+  - mastodon
 ---
+
+<!-- @format -->
 
 I started receiving this error on my site when trying to view a page generated with an Eleventy Serverless function:
 
 ```shell
- Error - Cannot find module '/var/task/netlify/functions/teapot/eleventy-serverless-map.json' Require stack: - /var/task/node_modules/@11ty/eleventy/src/Serverless.js - /var/task/node_modules/@11ty/eleventy/src/Eleventy.js - /var/task/netlify/functions/teapot/index.js - /var/task/teapot.js - /var/runtime/index.mjs 
+Error - Cannot find module '/var/task/netlify/functions/teapot/eleventy-serverless-map.json' Require stack: - /var/task/node_modules/@11ty/eleventy/src/Serverless.js - /var/task/node_modules/@11ty/eleventy/src/Eleventy.js - /var/task/netlify/functions/teapot/index.js - /var/task/teapot.js - /var/runtime/index.mjs
 ```
 
 It's referencing a specific function of mine - `teapot` - but the general message is there: Netlify couldn't find something and thus it broke. This error impacted both my serverless pages.

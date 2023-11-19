@@ -18,7 +18,7 @@ description: Watch as Troy Vassalotti learns his way around a computer.
                              decoding="async"
                              width="968"
                              height="626"
-                             id="me"/>
+                             id="me" />
                     </div>
                     <!-- htmlmin:ignore -->
                     <figcaption class="portrait__caption">
@@ -26,60 +26,62 @@ description: Watch as Troy Vassalotti learns his way around a computer.
                         </figcaption>
                         <!-- htmlmin:ignore -->
                     </figure>
-                <section class="aboutMe flow u-truncate">
-                <type-writer>
-                <h1 class="leadingType">Hey, I'm Troy...</h1>
-                </type-writer>
-                    {% renderFile './src/_includes/partials/bio.md' %}
-                </section>
+                    <section class="aboutMe flow u-truncate">
+                        <type-writer>
+                        <h1 class="leadingType">Hey, I'm Troy...</h1>
+                        </type-writer>
+                        {% renderFile './src/_includes/partials/bio.md' %}
+                    </section>
+                </div>
+                <div class="container--read flow">
+                    <type-writer class="typewriter--read">
+                    <h2 id="read" class="typing--read">Read</h2>
+                    </type-writer>
+                    <ol role="list" class="c-postList flow">
+                        {% for post in collections.post.slice(collections.post.length - 5, collections.post.length) | reverse %}
+                            <p class="u-step-2 u-text--bold">{{ post.data.description }}</p>
+                            <p class="u-step--1">
+                                From the post <a class="u-text--italic" href="{{ post.url }}">{{ post.data.title }}</a>, published {{ post.date | dateString }}.
+                            </p>
+                        {% endfor %}
+                    </ol>
+                </div>
+                <div class="container--play flow">
+                    <type-writer>
+                    <h2 id="play" class="typing--play">Play</h2>
+                    </type-writer>
+                    <ol role="list" class="list play u-grid" data-grid-columns="fluid">
+                        {% for project in projects %}
+                            {% if project.tags and project.tags | inArray("play") %}
+                                <li class="play__item">
+                                    <article class="flow play__item-content">
+                                        <p class="play__item-title u-step-2 u-text--bold">
+                                            <a href="{{ project.url }}">{{ project.name }}</a>
+                                        </p>
+                                        <p class="play__item-description">{{ project.description }}</p>
+                                    </article>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ol>
+                </div>
+                <div class="container--listen flow">
+                    <type-writer>
+                    <h2 id="listen" class="typing--listen">Listen</h2>
+                    </type-writer>
+                    <plvy-list class="plvylist" file="/assets/js/plvylist.json">
+                    </plvy-list>
+                    <p class="u-text--italic u-step--1">
+                        Psst... I made <a href="https://plvylist.troyv.dev">this music player</a>.
+                    </p>
+                </div>
             </div>
-            <div class="container--read flow">
-                <type-writer class="typewriter--read">
-                <h2 id="read" class="typing--read">Read</h2>
-                </type-writer>
-                <ol role="list" class="c-postList flow">
-                    {% for post in collections.post.slice(collections.post.length - 5, collections.post.length) | reverse %}
-                        <p class="u-step-2 u-text--bold">{{ post.data.description }}</p>
-                        <p class="u-step--1">
-                            From the post <a class="u-text--italic" href="{{ post.url }}">{{ post.data.title }}</a>, published {{ post.date | dateString }}.
-                        </p>
-                    {% endfor %}
-                </ol>
-            </div>
-            <div class="container--play flow">
-                <type-writer>
-                <h2 id="play" class="typing--play">Play</h2>
-                </type-writer>
-                <ol role="list" class="list play u-grid" data-grid-columns="fluid">
-                    {% for project in projects %}
-                        {% if project.tags and project.tags | inArray("play") %}
-                            <li class="play__item">
-                                <article class="flow play__item-content">
-                                    <p class="play__item-title u-step-2 u-text--bold">
-                                        <a href="{{ project.url }}">{{ project.name }}</a>
-                                    </p>
-                                    <p class="play__item-description">{{ project.description }}</p>
-                                </article>
-                            </li>
-                        {% endif %}
-                    {% endfor %}
-                </ol>
-            </div>
-            <div class="container--listen flow">
-                <type-writer>
-                <h2 id="listen" class="typing--listen">Listen</h2>
-                </type-writer>
-                <plvy-list class="plvylist" file="/assets/js/plvylist.json">
-                </plvy-list>
-                <p class="u-text--italic u-step--1">Psst... I made <a href="https://plvylist.troyv.dev">this music player</a>.</p>
-            </div>
-        </div>
-        </cloudy-sky>
-    </main>
-{% endblock content %}
+            </cloudy-sky>
+        </main>
+    {% endblock content %}
 
-{% block style %}
-    <style>
+    {% block style %}
+        <style>
 .leadingType {
     --kb-count-cursor: 10;
 
@@ -170,16 +172,16 @@ description: Watch as Troy Vassalotti learns his way around a computer.
                 --cloud-filter: hue-rotate(222deg);
             }
         }
-    </style>
-{% endblock style %}
+        </style>
+    {% endblock style %}
 
-{% block script %}
-    {{ super() }}
-    <script type="module">
+    {% block script %}
+        {{ super() }}
+        <script type="module">
         import {CloudySky} from "cloudysky";
         import {Typewriter} from "typewriter";
         import "/assets/js/now-playing.js";
         import "/assets/js/tag-line.js";
         import Plvylist from "plvylist";
-    </script>
-{% endblock script %}
+        </script>
+    {% endblock script %}

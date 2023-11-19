@@ -1,4 +1,6 @@
-import { css, html, LitElement } from "lit";
+/** @format */
+
+import {css, html, LitElement} from "lit";
 import base from "./components.styles.js";
 
 class ModalMenu extends LitElement {
@@ -6,31 +8,31 @@ class ModalMenu extends LitElement {
 		return [
 			base,
 			css`
-        :host {
-          display: block;
-        }
+				:host {
+					display: block;
+				}
 
-        dialog {
-          background-color: var(--background);
-          color: var(--foreground);
-        }
+				dialog {
+					background-color: var(--background);
+					color: var(--foreground);
+				}
 
-        .title {
-          font-size: var(--step-2);
-          font-weight: bold;
-        }
+				.title {
+					font-size: var(--step-2);
+					font-weight: bold;
+				}
 
-		.actions {
-			display: flex;
-			justify-content: end;
-		}
-      `,
+				.actions {
+					display: flex;
+					justify-content: end;
+				}
+			`,
 		];
 	}
 
 	static get properties() {
 		return {
-			shortcut: { type: String },
+			shortcut: {type: String},
 		};
 	}
 
@@ -71,15 +73,21 @@ class ModalMenu extends LitElement {
 	}
 
 	render() {
-		return html`<slot @click=${this.openModal} name="trigger"></slot>
-      <dialog id="modal">
-        <slot name="title" class="title"></slot>
-        <slot></slot>
-        <div class="actions">
-          <slot name="custom-actions"></slot>
-          <slot name="dismiss" @click=${this.closeModal}></slot>
-        </div>
-      </dialog>`;
+		return html`<slot
+				@click=${this.openModal}
+				name="trigger"></slot>
+			<dialog id="modal">
+				<slot
+					name="title"
+					class="title"></slot>
+				<slot></slot>
+				<div class="actions">
+					<slot name="custom-actions"></slot>
+					<slot
+						name="dismiss"
+						@click=${this.closeModal}></slot>
+				</div>
+			</dialog>`;
 	}
 }
 

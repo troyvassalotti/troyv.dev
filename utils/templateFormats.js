@@ -1,4 +1,5 @@
 /**
+ * @format
  * @file Custom Template Formats
  */
 
@@ -10,7 +11,7 @@ module.exports = {
 		outputFileExtension: "css", // optional, default: "html"
 
 		// can be an async function
-		compile: function(inputContent, inputPath) {
+		compile: function (inputContent, inputPath) {
 			let parsed = path.parse(inputPath);
 			let scssInIncludes = `${this.config.dir.input}/${this.config.dir.includes}/css`;
 

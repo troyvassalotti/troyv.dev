@@ -6,6 +6,8 @@ tags: ["web components", "projects"]
 website: https://codepen.io/troyvassalotti/full/ExyOgGV
 ---
 
+<!-- @format -->
+
 It was only a few months ago that I [created Plvylist](/2020/11/20/plvylist-using-media-element-api/) as a plugin-of-sorts. The functionality was all there, but it required too many pieces for such a simple idea: singular script that loads an audio player wherever you wish to put it. The bloat of this came from needing to manage a CSS file (or SASS if you're compiling it) _and_ a JavaScript file _and_ make sure you have an empty `div` with the right class on your page.
 
 It wasn't super flexible unless you, as the user of it, went in and did a lot of customization, and even then you had to know where to look. Since publishing it, I learned more about [web components](https://www.webcomponents.org/), realizing that _this_ was the right path forward for [Plvylist](https://github.com/troyvassalotti/plvylist).
@@ -39,16 +41,17 @@ Another cool thing for the benefit of being more readable as a developer would b
 class Plvylist extends HTMLElement {
 	constructor() {
 		super();
-		this.attachShadow({ mode: "open" });
+		this.attachShadow({mode: "open"});
 		this.tracks = [
 			{
-				file: this.getAttribute("audio-location") + "name_of_your_file.mp3"
-					|| "",
+				file:
+					this.getAttribute("audio-location") + "name_of_your_file.mp3" || "",
 				title: "Your Track Title" || "",
 				artist: this.getAttribute("artist-name") || "",
 				album: this.getAttribute("album-name") || "",
-				artwork: this.getAttribute("cover-art")
-					|| this.getAttribute("placeholder-image"),
+				artwork:
+					this.getAttribute("cover-art") ||
+					this.getAttribute("placeholder-image"),
 			},
 		];
 

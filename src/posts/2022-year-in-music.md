@@ -6,6 +6,8 @@ tags: ["music"]
 syndication: ["mastodon"]
 ---
 
+<!-- @format -->
+
 I'm finally getting around to reviewing my [ListenBrainz 2022 Year In Music](https://listenbrainz.org/user/actionhamilton/year-in-music/2022) and - to no one's surprise - it contains embarrassing results.
 
 If you weren't aware, I was in a musical rut and thought it would revitalize my relationship with music by listening to [bands I purposefully avoided](https://www.thisisa.band/limp-bizkit/). This meant I spent months listening to the entire discographies of bands like Limp Bizkit, Korn, Pearl Jam, and more.

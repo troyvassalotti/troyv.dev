@@ -1,8 +1,10 @@
+/** @format */
+
 import * as d3 from "d3";
 class CalendarHeatmap extends HTMLElement {
 	constructor() {
 		super();
-		this.attachShadow({ mode: "open" });
+		this.attachShadow({mode: "open"});
 		this.template = `
         <style>
           * {
@@ -48,7 +50,7 @@ class CalendarHeatmap extends HTMLElement {
 		};
 	}
 	async connectedCallback() {
-		const { shadowRoot } = this;
+		const {shadowRoot} = this;
 		shadowRoot.innerHTML = this.template;
 		const dataset = await this.getData();
 		const dates = await this.getDates(dataset);
@@ -74,7 +76,12 @@ class CalendarHeatmap extends HTMLElement {
 			.attr("height", "100%")
 			.attr("class", "calendar")
 			.append("g")
-			.attr("transform", `translate(${(width - cellSize * 53) / 2}, ${height - cellSize * 7 - 1})`);
+			.attr(
+				"transform",
+				`translate(${(width - cellSize * 53) / 2}, ${
+					height - cellSize * 7 - 1
+				})`,
+			);
 		svg
 			.append("g")
 			.attr("fill", "none")
@@ -95,10 +102,10 @@ class CalendarHeatmap extends HTMLElement {
 		Days.forEach((day) => {
 			if (day.hasAttribute("fill")) {
 				d3.select(day)
-					.on("mouseover", function() {
+					.on("mouseover", function () {
 						d3.select(this).attr("stroke-width", boldedStrokeWidth);
 					})
-					.on("mouseout", function() {
+					.on("mouseout", function () {
 						d3.select(this).attr("stroke-width", defaultStrokeWidth);
 					})
 					.append("title")
@@ -126,15 +133,17 @@ Time: ${dataset.get(d)}`,
 			.enter()
 			.append("path")
 			.attr("class", "month")
-			.attr("d", function(d) {
+			.attr("d", function (d) {
 				const t1 = new Date(d.getFullYear(), d.getMonth() + 1, 0),
 					d0 = d.getDay(),
 					w0 = d3.timeWeek.count(d3.timeYear(d), d),
 					d1 = t1.getDay(),
 					w1 = d3.timeWeek.count(d3.timeYear(t1), t1);
-				return `M${(w0 + 1) * cellSize}, ${d0 * cellSize}H${w0 * cellSize}V${7 * cellSize}H${w1 * cellSize}V${
-					(d1 + 1) * cellSize
-				}H${(w1 + 1) * cellSize}V0H${(w0 + 1) * cellSize}Z`;
+				return `M${(w0 + 1) * cellSize}, ${d0 * cellSize}H${w0 * cellSize}V${
+					7 * cellSize
+				}H${w1 * cellSize}V${(d1 + 1) * cellSize}H${(w1 + 1) * cellSize}V0H${
+					(w0 + 1) * cellSize
+				}Z`;
 			});
 		const axisScale = d3
 			.scaleBand()
@@ -163,4 +172,4 @@ Time: ${dataset.get(d)}`,
 	}
 }
 customElements.define("calendar-heatmap", CalendarHeatmap);
-export { CalendarHeatmap };
+export {CalendarHeatmap};
