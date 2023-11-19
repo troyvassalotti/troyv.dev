@@ -5,6 +5,8 @@ date: 2020-04-27
 tags: ["design"]
 ---
 
+<!-- @format -->
+
 I was having a normal Saturday morning of exploring the latest features in [Firefox Preview Nightly](https://play.google.com/store/apps/details?id=org.mozilla.fenix.nightly) and installed the Dark Reader add-on to see what it does to my site.
 
 As an avid dark mode user, I designed my site with dark mode in mind. I wanted it to be dark by default and leave open the idea of a light mode version down the line.
@@ -61,16 +63,16 @@ Now that we all remember how to code a color scheme change, let's look at my usa
 
 ```css
 @media (prefers-color-scheme: light) {
-  :root {
-    --light: #f0e9e9;
-    --black: #02040f;
-    --bright: #e59500;
-    --red: #7d002d;
-    --cobalt: #3d348b;
-    --blue: #006992;
-    --headerBorder: 2px solid var(--black);
-    --headings: "Lora", sans-serif;
-  }
+	:root {
+		--light: #f0e9e9;
+		--black: #02040f;
+		--bright: #e59500;
+		--red: #7d002d;
+		--cobalt: #3d348b;
+		--blue: #006992;
+		--headerBorder: 2px solid var(--black);
+		--headings: "Lora", sans-serif;
+	}
 }
 ```
 
@@ -82,20 +84,20 @@ Changing the colors was relatively simple. All I had to do was figure out which 
 
 ```css
 a {
-  color: var(--red);
+	color: var(--red);
 }
 
 a:hover {
-  color: var(--cobalt);
+	color: var(--cobalt);
 }
 
 .button {
-  background-color: var(--red);
-  color: var(--light);
+	background-color: var(--red);
+	color: var(--light);
 }
 
 .button:hover {
-  background-color: var(--cobalt);
+	background-color: var(--cobalt);
 }
 /* etc... */
 ```
@@ -108,7 +110,7 @@ I wondered that too, but the answer is super simple.
 
 ```css
 @media (prefers-color-scheme: light) and (min-width: 720px) {
-  /* rules here */
+	/* rules here */
 }
 ```
 
@@ -126,10 +128,10 @@ I almost forgot to mention that I am catering to our `prefers-reduced-motion` fo
 
 ```css
 @media (prefers-reduced-motion) {
-  .type-animation__first,
-  .type-animation__second {
-    animation: none;
-  }
+	.type-animation__first,
+	.type-animation__second {
+		animation: none;
+	}
 }
 ```
 

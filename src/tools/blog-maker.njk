@@ -4,21 +4,16 @@ title: Blog Maker
 permalink: /blog-maker/
 ---
 
-<script type="module">
-	import WordSalad from "word-salad";
-</script>
-
+<script type="module">import WordSalad from "word-salad";</script>
 {% set wordBank %}
-	{% set comma = joiner() %}
-	{% for post in collections.post %}
-		{{ comma() }} {{ post.content | replace(r/<[^>]*>?/gm, '') }}
-	{% endfor %}
+    {% set comma = joiner() %}
+    {% for post in collections.post %}{{ comma() }} {{ post.content | replace(r/<[^>]*>?/gm, '') }}{% endfor %}
 {% endset %}
-
 <h1>{{ title }}</h1>
-<p>Write your own extremely unpredictable and often incoherent blog post using a slightly-thorough list of every word I've written. It <em>will definitely</em> output HTML characters and template language syntax.</p>
+<p>
+    Write your own extremely unpredictable and often incoherent blog post using a slightly-thorough list of every word I've written. It <em>will definitely</em> output HTML characters and template language syntax.
+</p>
 <word-salad class="flow" bank="{{ wordBank }}" separator=" "></word-salad>
-
 <style>
 	word-salad {
 		display: block;

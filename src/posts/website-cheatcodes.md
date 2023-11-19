@@ -3,10 +3,12 @@ title: "Website Cheatcodes"
 description: "I want the web to be fun again."
 date: 2023-04-22
 tags:
-- javascript
+  - javascript
 syndication:
-- mastodon
+  - mastodon
 ---
+
+<!-- @format -->
 
 The internet, am I right? It's a scary place full of terror, ads, and people you wish would log off every once in a while. Where did all the fun go?
 
@@ -55,4 +57,3 @@ new CheatCode("7 1 7 0 7 2 7 3 6", "gamepad").listen();
 I listed the mappings for both a PS2 controller as well as a guitar controller [in the repo](https://github.com/troyvassalotti/cheatcodes/blob/main/src/enums.ts).
 
 What do you think? Are you going to try it out yourself? Let me know! Let's make the web fun together.
-

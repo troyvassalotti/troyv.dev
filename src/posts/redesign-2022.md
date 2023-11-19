@@ -5,6 +5,8 @@ date: 2022-07-28
 tags: ["eleventy", "web components", "design"]
 ---
 
+<!-- @format -->
+
 Websites are hard.
 
 _Roll credits_.
@@ -95,11 +97,15 @@ async function getNowPlaying(api, auth) {
 
 		const data = await response.json();
 
-		const { payload } = data;
+		const {payload} = data;
 		const metadata = payload.listens[0].track_metadata;
-		const { artist_name: artist, track_name: song, release_name: release } = metadata;
+		const {
+			artist_name: artist,
+			track_name: song,
+			release_name: release,
+		} = metadata;
 
-		return { artist, song, release };
+		return {artist, song, release};
 	} catch (error) {
 		return false;
 	}
@@ -177,12 +183,12 @@ async function getTopArtists(
 			options,
 		);
 
-		const { payload } = data;
-		const { artists } = payload;
+		const {payload} = data;
+		const {artists} = payload;
 
 		return artists.map((artist) => {
-			const { artist_name: name, listen_count: listens } = artist;
-			return { name, listens };
+			const {artist_name: name, listen_count: listens} = artist;
+			return {name, listens};
 		});
 	} catch (error) {
 		return false;

@@ -5,6 +5,8 @@ date: 2020-11-20
 tags: ["web audio", "projects"]
 ---
 
+<!-- @format -->
+
 At work, I'm surrounded by different web audio components. They're integral to the business, but they're also integral to so many businesses, and I barely understood how they get made.
 
 The basics made sense. Putting an `<audio>` or `<video>` element on a page with the proper attributes gives you a native song or movie with built-in controls, got it. Beyond that? No clue. So, I got to work learning and created [Plvylist - my own component for web audio](https://github.com/troyvassalotti/plvylist).
@@ -40,58 +42,58 @@ SASS is great and I use it a lot, so I decided this would be the route to go wit
 
 ```css
 @mixin track($fill: 0) {
-  box-sizing: border-box;
-  max-width: $plvyTrack-w;
-  height: $plvyTrack-h;
-  background: $plvyTrack-c;
-  border-radius: 6px;
+	box-sizing: border-box;
+	max-width: $plvyTrack-w;
+	height: $plvyTrack-h;
+	background: $plvyTrack-c;
+	border-radius: 6px;
 }
 
 @mixin fill() {
-  height: $plvyTrack-h;
-  background: $plvyFill-c;
-  border-radius: 6px;
+	height: $plvyTrack-h;
+	background: $plvyFill-c;
+	border-radius: 6px;
 }
 
 @mixin thumb() {
-  box-sizing: border-box;
-  background: $plvyThumb-c;
-  width: $plvyThumb-d;
-  height: $plvyThumb-d;
-  border-radius: 50%;
+	box-sizing: border-box;
+	background: $plvyThumb-c;
+	width: $plvyThumb-d;
+	height: $plvyThumb-d;
+	border-radius: 50%;
 }
 
 .plvylist input[type="range"] {
-  --range: calc(var(--max) - var(--min));
-  --ratio: calc((var(--val) - var(--min)) / var(--range));
-  --sx: calc(0.5 * #{$plvyThumb-d} + var(--ratio) * (100% - #{$plvyThumb-d}));
-  max-width: $plvyTrack-w;
-  height: $plvyTrack-h;
+	--range: calc(var(--max) - var(--min));
+	--ratio: calc((var(--val) - var(--min)) / var(--range));
+	--sx: calc(0.5 * #{$plvyThumb-d} + var(--ratio) * (100% - #{$plvyThumb-d}));
+	max-width: $plvyTrack-w;
+	height: $plvyTrack-h;
 
-  &::-webkit-slider-runnable-track {
-    @include track(1);
-  }
-  &::-moz-range-track {
-    @include track;
-    padding-top: 1.5px;
-    padding-bottom: 1.5px;
-  }
-  &::-ms-track {
-    @include track;
-  }
+	&::-webkit-slider-runnable-track {
+		@include track(1);
+	}
+	&::-moz-range-track {
+		@include track;
+		padding-top: 1.5px;
+		padding-bottom: 1.5px;
+	}
+	&::-ms-track {
+		@include track;
+	}
 
-  &::-moz-range-progress {
-    @include fill;
-  }
+	&::-moz-range-progress {
+		@include fill;
+	}
 
-  &::-webkit-slider-thumb {
-    margin-top: -9px;
-    @include thumb;
-  }
-  &::-moz-range-thumb {
-    border: none;
-    @include thumb;
-  }
+	&::-webkit-slider-thumb {
+		margin-top: -9px;
+		@include thumb;
+	}
+	&::-moz-range-thumb {
+		border: none;
+		@include thumb;
+	}
 }
 ```
 
@@ -151,8 +153,7 @@ Once the `forEach` loop is done, `list` is done being generated, and then `list`
 function loadTrackList() {
 	let list = "";
 	tracks.forEach((track, index) => {
-		list +=
-			`<li data-track="${index}" data-file="${track.file}" class="plvy--song"><span class="plvy--song__title">${track.title}</span></li>`;
+		list += `<li data-track="${index}" data-file="${track.file}" class="plvy--song"><span class="plvy--song__title">${track.title}</span></li>`;
 	});
 	songs.innerHTML = list;
 	allTracks = document.querySelectorAll(".plvy--song__title");
@@ -167,7 +168,7 @@ function loadTrackList() {
 				loadTrack(index);
 				audio.play();
 			}
-		})
+		}),
 	);
 }
 ```
@@ -185,9 +186,9 @@ audio.addEventListener("loadstart", () => {
 
 // when the track gets emptied, remove the active track class
 audio.addEventListener("emptied", () => {
-	document.querySelector(".plvy--song__active").classList.remove(
-		"plvy--song__active",
-	);
+	document
+		.querySelector(".plvy--song__active")
+		.classList.remove("plvy--song__active");
 });
 ```
 

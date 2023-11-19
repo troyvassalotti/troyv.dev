@@ -1,4 +1,5 @@
 /**
+ * @format
  * @file Custom site collections
  */
 
@@ -8,7 +9,9 @@
  * @returns {*[]}
  */
 function filterTagList(tags) {
-	return (tags || []).filter((tag) => ["all", "post", "posts"].indexOf(tag) === -1);
+	return (tags || []).filter(
+		(tag) => ["all", "post", "posts"].indexOf(tag) === -1,
+	);
 }
 
 module.exports = {
@@ -17,7 +20,7 @@ module.exports = {
 	 * @param collection
 	 * @returns {*[]}
 	 */
-	allTagsList: function(collection) {
+	allTagsList: function (collection) {
 		const tagSet = new Set();
 		collection.getAll().forEach((item) => {
 			(item.data.tags || []).forEach((tag) => tagSet.add(tag));

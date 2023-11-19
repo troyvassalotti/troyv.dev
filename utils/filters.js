@@ -1,4 +1,5 @@
 /**
+ * @format
  * @file Custom template filters
  */
 
@@ -8,10 +9,10 @@ module.exports = {
 	 * @param date
 	 * @returns {string}
 	 */
-	dateString: function(date) {
+	dateString: function (date) {
 		return date.toUTCString().replace(/\s00:00:00\sGMT/g, "");
 	},
-	filterWebmentions: function(array, type) {
+	filterWebmentions: function (array, type) {
 		return array.filter((item) => item["wm-property"] === type);
 	},
 	/**
@@ -19,7 +20,7 @@ module.exports = {
 	 * @param date
 	 * @returns {`${number}/${number}/${number}`}
 	 */
-	yyyymmdd: function(date) {
+	yyyymmdd: function (date) {
 		const d = new Date(date);
 		let year = d.getUTCFullYear();
 		let month = d.getUTCMonth() + 1;
@@ -40,10 +41,12 @@ module.exports = {
 	 * @param tags
 	 * @returns {*[]}
 	 */
-	postTagRemoval: function(tags) {
-		return (tags || []).filter((tag) => ["all", "post", "posts"].indexOf(tag) === -1);
+	postTagRemoval: function (tags) {
+		return (tags || []).filter(
+			(tag) => ["all", "post", "posts"].indexOf(tag) === -1,
+		);
 	},
-	inArray: function(array, item) {
+	inArray: function (array, item) {
 		return array.includes(item);
-	}
+	},
 };

@@ -1,7 +1,8 @@
 /**
- * @file Site configuration
- * Most site features are configured in /utils/
+ * @format
+ * @file Site configuration Most site features are configured in /utils/
  */
+
 const markdownItAnchor = require("markdown-it-anchor");
 const markdownItFootnote = require("markdown-it-footnote");
 
@@ -15,10 +16,10 @@ const shortcodes = require(`${utilsDir}/shortcodes`);
 const plugins = require(`${utilsDir}/plugins`);
 const templates = require(`${utilsDir}/templateFormats`);
 
-module.exports = function(config) {
+module.exports = function (config) {
 	// Passthroughs
 	config
-		.addPassthroughCopy({ public: "/" })
+		.addPassthroughCopy({public: "/"})
 		.addPassthroughCopy({
 			"./node_modules/es-module-shims/dist/es-module-shims.js": `${jsDir}/es-module-shims.js`,
 		})
@@ -91,7 +92,8 @@ module.exports = function(config) {
 				permalink: markdownItAnchor.permalink.headerLink(),
 				level: 2,
 			})
-			.use(markdownItFootnote));
+			.use(markdownItFootnote),
+	);
 
 	/**
 	 * Data filters for Serverless

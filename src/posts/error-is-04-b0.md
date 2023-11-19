@@ -6,6 +6,8 @@ tags: ["life"]
 syndication: ["mastodon"]
 ---
 
+<!-- @format -->
+
 As seen on a bike at the gym:
 
 > Error is : 04-B0

@@ -1,4 +1,5 @@
 /**
+ * @format
  * @file Site plugins
  */
 
@@ -38,7 +39,7 @@ module.exports = {
 		options: {
 			name: "teapot",
 			functionsDir: "./netlify/functions/",
-			copy: [{ from: "_cache", to: "_cache" }],
+			copy: [{from: "_cache", to: "_cache"}],
 		},
 	},
 	onDemandBuilders: {
@@ -47,7 +48,7 @@ module.exports = {
 			name: "ondemand",
 			functionsDir: "./netlify/functions/",
 			redirects: "netlify-toml-builders",
-			copy: [{ from: "_cache", to: "_cache" }],
+			copy: [{from: "_cache", to: "_cache"}],
 		},
 	},
 	render: {

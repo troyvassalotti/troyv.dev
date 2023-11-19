@@ -1,20 +1,22 @@
+/** @format */
+
 @mixin button() {
-  --surface: var(--background);
-  --button-background: var(--primary);
-  --button-color: var(--background);
-  --button-focus-background: var(--foreground);
-  --button-focus-color: var(--background);
+	--surface: var(--background);
+	--button-background: var(--primary);
+	--button-color: var(--background);
+	--button-focus-background: var(--foreground);
+	--button-focus-color: var(--background);
 
-  background-color: var(--button-background);
-  border-radius: .15em;
-  color: var(--button-color);
-  font-weight: bold;
-  line-height: 1.2;
-  padding-block: 0.35em;
-  padding-inline: .75em;
+	background-color: var(--button-background);
+	border-radius: 0.15em;
+	color: var(--button-color);
+	font-weight: bold;
+	line-height: 1.2;
+	padding-block: 0.35em;
+	padding-inline: 0.75em;
 
-  &:focus {
-	background-color: var(--button-focus-background);
-	color: var(--button-focus-color);
-  }
+	&:focus {
+		background-color: var(--button-focus-background);
+		color: var(--button-focus-color);
+	}
 }

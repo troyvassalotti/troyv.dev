@@ -6,6 +6,8 @@ tags: ["projects", "hugo"]
 website: https://abandoned-website.netlify.app
 ---
 
+<!-- @format -->
+
 Websites can be bought and live on forever...or so long as the domain name continues to be renewed. As a result, some sites become abandoned, living in the aether, but because of backwards compatibility they don't really _look abandoned_.
 
 Well, what if they did? What if the website deteriorated over time, things fell apart, and the darkness came to consume it? That's where my new project, [Abandoned Website]({{ website }}), comes in.

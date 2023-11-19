@@ -1,7 +1,9 @@
+/** @format */
+
 class LoadingSpinner extends HTMLElement {
 	constructor() {
 		super();
-		this.attachShadow({ mode: "open" });
+		this.attachShadow({mode: "open"});
 		this.template = `
       <style>
         .spinner {
@@ -46,7 +48,7 @@ class LoadingSpinner extends HTMLElement {
 	}
 
 	connectedCallback() {
-		const { shadowRoot } = this;
+		const {shadowRoot} = this;
 		shadowRoot.innerHTML = this.template;
 	}
 }

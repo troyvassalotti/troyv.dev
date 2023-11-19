@@ -1,4 +1,6 @@
-module.exports = function() {
+/** @format */
+
+module.exports = function () {
 	return {
 		title: "Brew",
 		layout: "base",

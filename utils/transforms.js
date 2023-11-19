@@ -1,11 +1,12 @@
 /**
+ * @format
  * @file Site transforms
  */
 
 const htmlmin = require("html-minifier-terser");
 
 module.exports = {
-	htmlmin: function(content) {
+	htmlmin: function (content) {
 		if (process.env.ELEVENTY_ENV === "production") {
 			if (this.outputPath && this.outputPath.endsWith(".html")) {
 				return htmlmin.minify(content, {

@@ -5,6 +5,8 @@ layout: base
 eleventyExcludeFromCollections: true
 ---
 
+<!-- @format -->
+
 # 200 OK
 
 Sit back, relax, and I'll be in touch soon.

@@ -6,6 +6,8 @@ syndication: ["mastodon"]
 date: 2022-12-08
 ---
 
+<!-- @format -->
+
 I tend to get hung up on creating the perfect blogging experience. Like "oh, a CMS is designed for that, so I should set one up." But that's a lot of work. More work than I ultimately care to take on.
 
 I can continue on with my current workflow of using markdown, but sometimes I do need HTML that isn't covered by the spec. Luckily, markdown accepts HTML! But then it's no longer in the perfect, human-readable text file format.

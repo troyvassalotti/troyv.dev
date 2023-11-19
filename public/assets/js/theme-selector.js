@@ -1,4 +1,6 @@
-import { css, html, LitElement } from "lit";
+/** @format */
+
+import {css, html, LitElement} from "lit";
 import base from "./components.styles.js";
 
 const HUE_PROPERTY = "--base-hue";
@@ -20,31 +22,31 @@ class ThemeSelector extends LitElement {
 		return [
 			base,
 			css`
-        :host {
-          display: block;
-        }
+				:host {
+					display: block;
+				}
 
-        .theme__field {
-          display: flex;
-          flex-direction: column;
-		  gap: .25em;
-		  margin-block-end: .75em;
-        }
+				.theme__field {
+					display: flex;
+					flex-direction: column;
+					gap: 0.25em;
+					margin-block-end: 0.75em;
+				}
 
-        .theme__field label {
-          font-weight: bold;
-        }
-      `,
+				.theme__field label {
+					font-weight: bold;
+				}
+			`,
 		];
 	}
 
 	static get properties() {
 		return {
-			baseHue: { type: String },
-			baseSaturation: { type: String },
-			primaryLightness: { type: String },
-			accentHueModifier: { type: String },
-			accentLightness: { type: String },
+			baseHue: {type: String},
+			baseSaturation: {type: String},
+			primaryLightness: {type: String},
+			accentHueModifier: {type: String},
+			accentLightness: {type: String},
 		};
 	}
 
@@ -124,7 +126,7 @@ class ThemeSelector extends LitElement {
 
 		style.textContent = customProperties;
 		style.id = "theme-modifier-styles";
-		
+
 		if (!document.querySelector("#theme-modifier-styles")) {
 			document.head.append(style);
 		}
@@ -194,17 +196,26 @@ class ThemeSelector extends LitElement {
 		}
 
 		if (this.storedValues.saturation) {
-			this.updateDocumentProperties(SATURATION_PROPERTY, this.storedValues.saturation + "%");
+			this.updateDocumentProperties(
+				SATURATION_PROPERTY,
+				this.storedValues.saturation + "%",
+			);
 			this.saturationSlider.value = this.storedValues.saturation;
 		}
 
 		if (this.storedValues.primaryLightness) {
-			this.updateDocumentProperties(PRIMARY_PROPERTY, this.storedValues.primaryLightness + "%");
+			this.updateDocumentProperties(
+				PRIMARY_PROPERTY,
+				this.storedValues.primaryLightness + "%",
+			);
 			this.primarySlider.value = this.storedValues.primaryLightness;
 		}
 
 		if (this.storedValues.accentLightness) {
-			this.updateDocumentProperties(ACCENT_PROPERTY, this.storedValues.accentLightness + "%");
+			this.updateDocumentProperties(
+				ACCENT_PROPERTY,
+				this.storedValues.accentLightness + "%",
+			);
 			this.accentSlider.value = this.storedValues.accentLightness;
 		}
 	}
@@ -215,22 +226,48 @@ class ThemeSelector extends LitElement {
 
 	render() {
 		return html`<div class="theme__field">
-        <label for="theme-hue">Theme Color</label>
-        <input @input=${this.updateHue} type="range" name="theme-hue" id="theme-hue" min="0" max="360" />
-      </div>
-      <div class="theme__field">
-        <label for="theme-saturation">Theme Saturation</label>
-        <input @input=${this.updateSaturation} type="range" name="theme-saturation" id="theme-saturation" min="0" max="100" />
-      </div>
-	  <div class="theme__field">
-		<label for="primary-lightness">Primary Color Lightness</label>
-		<input @input=${this.updatePrimary} type="range" name="primary-lightness" id="primary-lightness" min="0" max="100" />
-	  </div>
-	  <div class="theme__field">
-		<label for="accent-lightness">Accent Color Lightness</label>
-		<input @input=${this.updateAccent} type="range" name="accent-lightness" id="accent-lightness" min="0" max="100" />	
-	  </div>
-	  <slot @click=${this.resetTheme} name="reset"></slot>`;
+				<label for="theme-hue">Theme Color</label>
+				<input
+					@input=${this.updateHue}
+					type="range"
+					name="theme-hue"
+					id="theme-hue"
+					min="0"
+					max="360" />
+			</div>
+			<div class="theme__field">
+				<label for="theme-saturation">Theme Saturation</label>
+				<input
+					@input=${this.updateSaturation}
+					type="range"
+					name="theme-saturation"
+					id="theme-saturation"
+					min="0"
+					max="100" />
+			</div>
+			<div class="theme__field">
+				<label for="primary-lightness">Primary Color Lightness</label>
+				<input
+					@input=${this.updatePrimary}
+					type="range"
+					name="primary-lightness"
+					id="primary-lightness"
+					min="0"
+					max="100" />
+			</div>
+			<div class="theme__field">
+				<label for="accent-lightness">Accent Color Lightness</label>
+				<input
+					@input=${this.updateAccent}
+					type="range"
+					name="accent-lightness"
+					id="accent-lightness"
+					min="0"
+					max="100" />
+			</div>
+			<slot
+				@click=${this.resetTheme}
+				name="reset"></slot>`;
 	}
 }
 

@@ -6,6 +6,8 @@ tags: ["life"]
 syndication: ["mastodon"]
 ---
 
+<!-- @format -->
+
 I read this article from The Verge - ["Please don't film me in 2023"](https://www.theverge.com/2022/12/26/23519605/tiktok-viral-videos-privacy-surveillance-street-interviews-vlogs) - and would also like to not be filmed for content without my consent.
 
 In one of the examples, it took a creepier path where being filmed and posted online unknowingly about something innocuous led to a **stranger** online identifying and notifying the subject.

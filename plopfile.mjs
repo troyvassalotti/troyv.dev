@@ -1,3 +1,5 @@
+/** @format */
+
 const POSTS_DIRECTORY = "src/posts";
 const AVAILABLE_TAGS = [
 	"bookmarks",
@@ -23,7 +25,7 @@ const AVAILABLE_TAGS = [
 ];
 const SYNDICATION_TARGETS = ["mastodon"];
 
-export default function(plop) {
+export default function (plop) {
 	plop.setGenerator("post", {
 		description: "Write a new blog post",
 		prompts: [

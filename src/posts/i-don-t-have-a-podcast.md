@@ -6,6 +6,8 @@ tags: ["projects"]
 website: https://idonthaveapodcast.netlify.app
 ---
 
+<!-- @format -->
+
 > Are all your friends starting podcasts? Does that make you never want to start your own? Proclaim your dedication to never start your own podcast.
 
 That's the first line of text you'll find on [I Don't Have A Podcast]({{ website }}). I started said website after a night of talking podcasts and how overwhelming the podcast landscape is.

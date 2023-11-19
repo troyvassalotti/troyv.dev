@@ -1,4 +1,5 @@
 /**
+ * @format
  * @file Site shortcodes
  */
 
@@ -11,7 +12,7 @@ module.exports = {
 	 * @param alt
 	 * @returns {`<img src="https://res.cloudinary.com/${*}/${string}/${string}" alt="${string}" loading="lazy" decoding="async">`}
 	 */
-	cloudinaryImage: function(path, transforms, alt) {
+	cloudinaryImage: function (path, transforms, alt) {
 		return `<img src="https://res.cloudinary.com/dpmchqezv/image/upload/${transforms}/${path}" alt="${alt}" loading="lazy" decoding="async">`;
 	},
 };

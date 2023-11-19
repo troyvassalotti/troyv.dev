@@ -6,6 +6,8 @@ tags: ["music"]
 syndication: ["mastodon"]
 ---
 
+<!-- @format -->
+
 I mentioned [in a previous post](/2022/07/28/redesign-2022/#see-what's-playing-now) how I display any song I'm currently listening to on my site[^1], but I want to set the record straight about something in particluar with that feature.
 
 > TL;DR I fetch data from the ListenBrainz API, but that might not mean the song you see is a song I'm choosing to hear.

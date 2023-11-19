@@ -4,7 +4,7 @@
 {% set replies = webmentions | filterWebmentions('in-reply-to') %}
 {% set mentions = webmentions | filterWebmentions('mention-of') %}
 {% set defaultImg %}
-{% include "partials/user.svg" %}
+    {% include "partials/user.svg" %}
 {% endset %}
 <style>
   /* Webmention Section */
@@ -43,7 +43,7 @@
     margin-block-start: 2rem;
   }
 </style>
-<hr class="u-rule"/>
+<hr class="u-rule" />
 <section class="webmentions" id="webmentions">
     <h2>Webmentions</h2>
     {% if webmentions | length %}
@@ -63,7 +63,7 @@
                                  alt="{{ webmention.author.name }}"
                                  class="webmentions__face"
                                  loading="lazy"
-                                 decoding="async"/>
+                                 decoding="async" />
                         </a>
                     {% endfor %}
                 </div>
@@ -84,7 +84,7 @@
                                  src="{%- if webmention.author.photo -%}{{ webmention.author.photo }}{%- else -%}{{ defaultImg }}{%- endif -%}"
                                  alt="{{ webmention.author.name }}"
                                  class="webmentions__face"
-                                 loading="lazy"/>
+                                 loading="lazy" />
                         </a>
                     {% endfor %}
                 </div>
@@ -124,4 +124,4 @@
         <p>No mentions yet ¯\_(ツ)_/¯</p>
     {% endif %}
 </section>
-<hr class="u-rule"/>
+<hr class="u-rule" />

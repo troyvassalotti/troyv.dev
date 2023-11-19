@@ -3,6 +3,7 @@ layout: base
 title: Music Collection
 description: A place to keep track of my physical music collection.
 ---
+
 <h1>{{ title }}</h1>
 <p>
     I use <a href="https://musicbrainz.org/user/actionhamilton">MusicBrainz</a> for tracking my music collection. It isn't a perfect system, but it gets the job done. Lists are in no particular order.
@@ -21,7 +22,7 @@ description: A place to keep track of my physical music collection.
                                  src="{{ release.artwork }}"
                                  alt=""
                                  loading="lazy"
-                                 decoding="async"/>
+                                 decoding="async" />
                         {% else %}
                             <div class="releaseArt"></div>
                         {% endif %}

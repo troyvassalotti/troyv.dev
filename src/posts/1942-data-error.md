@@ -5,6 +5,8 @@ date: 2022-09-17
 tags: ["life"]
 ---
 
+<!-- @format -->
+
 We stayed in a house at the beach this past week as part of the family's yearly vacation. This year's house had both a theater and arcade room, and I'm here to talk about an error message I saw displayed on one of its arcade machines.
 
 > 1942 Data Error

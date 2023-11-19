@@ -5,6 +5,8 @@ date: 2020-03-12
 tags: ["migraines"]
 ---
 
+<!-- @format -->
+
 I've been having migraines for as long as I can remember, so it's not surprising to get a few here and there. But 2019 was not an average year; it was more like 3x my average.
 
 Prior to 2019, I would've told you I averaged 1-2 migraines a month. Now, in 2020, my answer would be 4-6 times a month, and I only know this because I kept track of all 67 of them.

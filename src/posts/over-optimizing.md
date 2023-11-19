@@ -5,6 +5,8 @@ date: 2021-08-15
 tags: ["life"]
 ---
 
+<!-- @format -->
+
 I find myself thinking too much about my projects; I want anything I make to be the best it can be. The sentiment is nice, but takes a lot of time in practice. Time, patience, mental energy, etc. - you name it. To be on a journey of perfection means to never end that journey.
 
 Everything I make and put on the internet is a representation of me in one form or another, so the goal is that everything's always amazing. That said, there comes a time when I have to convince myself _enough is enough_ and walk away.

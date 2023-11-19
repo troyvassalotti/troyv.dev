@@ -1,3 +1,5 @@
+/** @format */
+
 class Tagline extends HTMLElement {
 	constructor() {
 		super();
@@ -11,15 +13,17 @@ class Tagline extends HTMLElement {
 
 	attributeChangedCallback(name, oldValue, newValue) {
 		if (name === "separator") {
-            if (newValue) {
-			    this.separator = newValue;
-            }
+			if (newValue) {
+				this.separator = newValue;
+			}
 		}
 
 		if (name === "taglines") {
-            if (newValue) {
-			    this.tagLines = newValue.split(this.separator).map(item => item.trim());
-            }
+			if (newValue) {
+				this.tagLines = newValue
+					.split(this.separator)
+					.map((item) => item.trim());
+			}
 		}
 	}
 

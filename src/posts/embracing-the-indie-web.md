@@ -5,6 +5,8 @@ date: 2022-12-04
 tags: ["indie web"]
 ---
 
+<!-- @format -->
+
 The tinkerer in me - the same one who enjoys spending hours of his weekend trying out a fancy new framework even if he knows he'll never really use it - has latched onto the idea of embracing the [indie web](https://indieweb.org/).
 
 It's a lovely concept/movement/way of life, but it isn't without its complications. You can't blame it much for not being too user friendly. The fact of the matter is there's (currently) a lot of technical knowhow required to properly [publish on your own site and syndicate elsewhere](https://indieweb.org/POSSE).
