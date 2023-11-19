@@ -1,5 +1,7 @@
 /** @format */
 
+const {html} = require("common-tags");
+
 class BPM {
 	data() {
 		return {
@@ -10,7 +12,7 @@ class BPM {
 	}
 
 	render({title}) {
-		return `
+		return html`
 			<script type="module">
 				import BeatsPer from "beats-per";
 			</script>
