@@ -7,6 +7,12 @@ class Plvylist {
 		};
 	}
 
+	/**
+	 * Create a set of Plvylist tracks.
+	 * @param {PlvylistAlbumMeta} dataset Prepared data to convert to Plvylist values.
+	 * @param {*} globalData Sitewide metadata.
+	 * @returns {PlvylistTrack[]} Full set of tracks from the album.
+	 */
 	generateTrackData(dataset, globalData) {
 		const {cloudinary, cloudinaryVideo} = globalData;
 		const {artist, artistUrl, title, albumUrl, artwork, tracks} = dataset;

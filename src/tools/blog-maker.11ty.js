@@ -1,6 +1,7 @@
 /** @format */
 
 const {html} = require("common-tags");
+const {escapeHTML} = require("../../utils/helpers.js");
 
 class BlogMaker {
 	data() {
@@ -11,25 +12,10 @@ class BlogMaker {
 		};
 	}
 
-	escapeHTML(unsafe) {
-		return unsafe.replace(/[&<"']/g, function (m) {
-			switch (m) {
-				case "&":
-					return "&amp;";
-				case "<":
-					return "&lt;";
-				case '"':
-					return "&quot;";
-				default:
-					return "&#039;";
-			}
-		});
-	}
-
-	render(data) {
-		const wordBank = data.collections.post
-			.map((post) => {
-				return post.content.replace(/<[^>]*>?/gm, "");
+	render({collections, title}) {
+		const wordBank = collections.post
+			.map(({content}) => {
+				return content.replace(/<[^>]*>?/gm, "");
 			})
 			.join(",");
 
@@ -57,7 +43,7 @@ class BlogMaker {
 				}
 			</style>
 
-			<h1>${data.title}</h1>
+			<h1>${title}</h1>
 			<p>
 				Write your own extremely unpredictable and often incoherent blog post
 				using a slightly-thorough list of every word I've written. It
@@ -66,7 +52,7 @@ class BlogMaker {
 			</p>
 			<word-salad
 				class="flow"
-				bank="${this.escapeHTML(wordBank)}"
+				bank="${escapeHTML(wordBank)}"
 				separator=" "></word-salad>
 		`;
 	}
