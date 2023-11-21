@@ -1,7 +1,6 @@
 /** @format */
 
-const {html} = require("common-tags");
-const {escapeHTML} = require("../../utils/helpers.js");
+const {html, safeHtml} = require("common-tags");
 
 class BlogMaker {
 	data() {
@@ -52,7 +51,7 @@ class BlogMaker {
 			</p>
 			<word-salad
 				class="flow"
-				bank="${escapeHTML(wordBank)}"
+				bank="${safeHtml`${wordBank}`}"
 				separator=" "></word-salad>
 		`;
 	}
