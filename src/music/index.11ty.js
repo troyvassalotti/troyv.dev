@@ -48,10 +48,10 @@ class Music {
 	}
 
 	generateSocialList({social}) {
-		social.map((item) => this.generateSocialLink(item)).join("");
+		return social?.map((item) => this.generateSocialLink(item)).join("");
 	}
 
-	render({frontroyal, troyalllowercase}) {
+	render({frontRoyal, troyalllowercase}) {
 		return html`
 			<header class="flow header u-truncate">
 				<h1>I make music.</h1>
@@ -68,7 +68,7 @@ class Music {
 				data-grid-columns="fluid">
 				<div class="band u-invertSvg--onDark flow">
 					<h2>Front Royal</h2>
-					${this.generateSocialList(frontroyal)}
+					${this.generateSocialList(frontRoyal)}
 					<iframe
 						class="bandcampEmbed"
 						src="https://bandcamp.com/EmbeddedPlayer/album=282570022/size=large/bgcol=333333/linkcol=e99708/transparent=true/"

@@ -13,9 +13,7 @@ class Tag {
 				filter: ["all", "post", "allTagsList"],
 			},
 			eleventyComputed: {
-				title: function ({tag}) {
-					return `Tagged "${tag}"`;
-				},
+				title: ({tag}) => `Tagged "${tag}"`,
 				permalink: function ({tag}) {
 					return `/tags/${this.slugify(tag)}/`;
 				},
@@ -23,7 +21,7 @@ class Tag {
 		};
 	}
 
-	render({tag, capitalize, collections, dateString}) {
+	render({tag, collections}) {
 		return html`
 			<style>
 				.posts {
@@ -34,20 +32,17 @@ class Tag {
 			<main id="main">
 				<div class="wrapper constrain--more flow">
 					<header class="u-text--center">
-						<h1>Posts about “${capitalize(tag)}”</h1>
+						<h1>Posts about “${this.capitalize(tag)}”</h1>
 					</header>
 					<section class="posts">
 						<ol
 							role="list"
 							class="c-postList flow">
-							{% set taglist = collections[tag] %} {% for post in taglist |
-							reverse %}{{ postItem(post.date, post.data.title, post.url) }}{%
-							endfor %}
-							${collections.tag
+							${collections[tag]
 								.toReversed()
-								.map(({date, title, url, excerpt}) => {
-									html`<article class="c-postListItem flow">
-										<p class="c-postListItem__date">${dateString(date)}</p>
+								.map(({date, data: {title}, url, excerpt}) => {
+									return html`<article class="c-postListItem flow">
+										<p class="c-postListItem__date">${this.dateString(date)}</p>
 										<h2 class="c-postListItem__title">
 											<a href="${url}">${title}</a>
 										</h2>

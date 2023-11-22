@@ -1,41 +1,16 @@
 /** @format */
 
+const Mixin = require("../_includes/mixins/mixin.js");
+const MusicLibrary = require("../_includes/mixins/musicLibrary.js");
 const {html} = require("common-tags");
 
-class Collection {
+class Collection extends Mixin([MusicLibrary]) {
 	data() {
 		return {
 			layout: "base",
 			title: "Music Collection",
 			description: "A place to keep track of my physical music collection.",
 		};
-	}
-
-	generateVinylGrid(library) {
-		return library.map((item) => this.generateVinylGridItem(item)).join("");
-	}
-
-	generateVinylGridItem({artwork, title, artist}) {
-		return html`<li>
-			<div class="release">
-				${artwork
-					? html`<img
-							class="releaseArt"
-							width="300"
-							height="300"
-							src="${artwork}"
-							alt=""
-							loading="lazy"
-							decoding="async" />`
-					: html`<div class="releaseArt"></div>`}
-				<p class="releaseName">${title}</p>
-				<p class="releaseArtist">${artist}</p>
-			</div>
-		</li> `;
-	}
-
-	generateSimpleList(library) {
-		return library.map((item) => this.generateSimpleListItem(item)).join("");
 	}
 
 	generateSimpleListItem({artist, title}) {
@@ -45,7 +20,7 @@ class Collection {
 		</li>`;
 	}
 
-	render({title, musicLibrary: {ownedVinyl, vinylWishList}}) {
+	render({title, musicLibrary: {ownedVinyl, vinylWishlist}}) {
 		return html` <h1>${title}</h1>
 			<p>
 				I use
@@ -61,7 +36,10 @@ class Collection {
 					<ul
 						role="list"
 						class="releaseGrid">
-						${this.generateVinylGrid(ownedVinyl)}
+						${this.generateCollectionList(
+							ownedVinyl,
+							this.generateVinylGridItem,
+						)}
 					</ul>
 				</section>
 				<section class="wishlist flow">
@@ -72,7 +50,10 @@ class Collection {
 						have been pressed before, but I'm holding out hope.
 					</p>
 					<ul>
-						${this.generateSimpleList(vinylWishList)}
+						${this.generateCollectionList(
+							vinylWishlist,
+							this.generateSimpleListItem,
+						)}
 					</ul>
 				</section>
 			</article>`;

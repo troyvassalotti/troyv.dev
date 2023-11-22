@@ -4,11 +4,14 @@ const {
 	runEleventyFetch,
 	createCacheOptions,
 	getAlbumArtwork,
-} = require("../../utils/helpers");
+} = require("../../utils/helpers.js");
 const {
 	LISTENBRAINZ_ENDPOINT,
 	LISTENBRAINZ_AUTH,
-} = require("../../utils/globals");
+} = require("../../utils/globals.js");
+const Mixin = require("../_includes/mixins/mixin.js");
+const MusicLibrary = require("../_includes/mixins/musicLibrary.js");
+const {html} = require("common-tags");
 
 const FETCH_HEADERS = {
 	fetchOptions: {
@@ -120,19 +123,94 @@ async function getLastMonthsTopReleases(count = 10, range = "month") {
 	}
 }
 
-module.exports = async function () {
-	const topArtistsThisMonth = await getTopArtists();
-	const mostRecentListens = await getMostRecentListens();
-	const lastMonthsTopReleases = await getLastMonthsTopReleases();
+class Stats extends Mixin([MusicLibrary]) {
+	async data() {
+		const topArtistsThisMonth = await getTopArtists();
+		const mostRecentListens = await getMostRecentListens();
+		const lastMonthsTopReleases = await getLastMonthsTopReleases();
 
-	return {
-		title: "Music Stats",
-		description: "Aggregated data from my ListenBrainz profile.",
-		permalink: {
-			ondemand: "/music/stats/",
-		},
-		topArtistsThisMonth,
-		mostRecentListens,
+		return {
+			layout: "base",
+			title: "Music Stats",
+			description: "Aggregated data from my ListenBrainz profile.",
+			permalink: {
+				ondemand: "/music/stats/",
+			},
+			topArtistsThisMonth,
+			mostRecentListens,
+			lastMonthsTopReleases,
+		};
+	}
+
+	render({
+		title,
 		lastMonthsTopReleases,
-	};
-};
+		mostRecentListens,
+		topArtistsThisMonth,
+	}) {
+		return html`
+			<script type="module">
+				import "/assets/js/stats-table.js";
+			</script>
+
+			<style>
+				.listeningHistory {
+					margin-block: var(--space-xl-2xl);
+				}
+
+				.tables {
+					align-items: start;
+					display: flex;
+					flex-wrap: wrap;
+					gap: var(--space-m);
+					justify-content: space-between;
+				}
+			</style>
+
+			<main id="main">
+				<header class="flow u-truncate o-section--angled">
+					<h1 class="u-revertMargin--start">${title}</h1>
+					<p>
+						I keep track of my listening habits in ListenBrainz because I'm a
+						<strong>nerd</strong>. All that data is public on
+						<a href="https://listenbrainz.org/user/actionhamilton/"
+							>my ListenBrainz profile</a
+						>, but I've chosen to display a few specific metrics here. Cool,
+						right?
+					</p>
+				</header>
+				<div class="wrapper constrain--less">
+					<div class="listeningHistory">
+						<div class="wrapper constrain--some">
+							<h2 class="u-revertMargin--end u-step-2">
+								Top Releases Last Month
+							</h2>
+							<ul
+								class="releaseGrid"
+								role="list">
+								${this.generateCollectionList(
+									lastMonthsTopReleases,
+									this.generateVinylGridItem,
+								)}
+							</ul>
+						</div>
+						<div class="tables">
+							<stats-table
+								caption="Last 30 Plays"
+								headers="Number Artist Track Release"
+								data='${JSON.stringify(mostRecentListens)}'>
+							</stats-table>
+							<stats-table
+								caption="Top Artists This Month"
+								headers="Number Artist Listens"
+								data='${JSON.stringify(topArtistsThisMonth)}'>
+							</stats-table>
+						</div>
+					</div>
+				</div>
+			</main>
+		`;
+	}
+}
+
+module.exports = Stats;

@@ -49,4 +49,7 @@ module.exports = {
 	inArray: function (array, item) {
 		return array.includes(item);
 	},
+	capitalize: function (string) {
+		return string.charAt(0).toUpperCase() + string.slice(1);
+	},
 };
