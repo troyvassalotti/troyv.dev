@@ -1,4 +1,4 @@
-{
+module.exports = {
 	"title": "Troy Vassalotti",
 	"domain": "www.troyv.dev",
 	"url": "https://www.troyv.dev",

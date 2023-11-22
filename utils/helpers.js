@@ -6,7 +6,7 @@ const {
 	DEFAULT_SERVERLESS_CACHE_OPTIONS,
 	COVERT_ART_ENDPOINT,
 } = require("./globals");
-const METADATA = require("../src/_data/metadata.json");
+const METADATA = require("../src/_data/metadata");
 
 function createCacheOptions(isServerless, customOptions = {}) {
 	let options = isServerless

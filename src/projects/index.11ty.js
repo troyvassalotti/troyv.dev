@@ -1,7 +1,7 @@
 /** @format */
 
 const {html} = require("common-tags");
-const {GitHubIcon} = require("../_includes/partials/index.js");
+const {Icon} = require("../_includes/partials/index.js");
 
 class Projects {
 	data() {
@@ -12,6 +12,11 @@ class Projects {
 		};
 	}
 
+	/**
+	 * Generate HTML list of projects data.
+	 * @param {Project[]} projects Set of projects defined in the site.
+	 * @returns
+	 */
 	createProjectsList(projects) {
 		return projects
 			.toReversed()
@@ -27,7 +32,7 @@ class Projects {
 									<a
 										class="c-link--icon"
 										href="${repository}"
-										>${GitHubIcon()}${repository.replace(
+										>${Icon("github")}${repository.replace(
 											"https://github.com/",
 											"",
 										)}</a

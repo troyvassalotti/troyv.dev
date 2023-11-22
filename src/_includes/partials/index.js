@@ -1,9 +1,9 @@
 /** @format */
 
 const ContactForm = require("./contact-form.js");
-const GitHubIcon = require("./github.js");
+const Icon = require("./icons.js");
 
 module.exports = {
 	ContactForm,
-	GitHubIcon,
+	Icon,
 };
