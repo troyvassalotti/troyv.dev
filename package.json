@@ -6,7 +6,7 @@
 		"build": "eleventy",
 		"clean": "rm -rf node_modules package-lock.json",
 		"debug": "DEBUG=* eleventy",
-		"dev": "eleventy --serve --incremental",
+		"dev": "eleventy --serve",
 		"lint::all": "npm run lint::prettier && npm run lint::eslint && npm run lint::njk",
 		"lint::all-fix": "npm run lint::prettier-fix && npm run lint::eslint-fix && npm run lint::njk-fix",
 		"lint::prettier": "prettier --check .",

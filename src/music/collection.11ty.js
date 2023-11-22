@@ -1,7 +1,7 @@
 /** @format */
 
 const Mixin = require("../_includes/mixins/mixin.js");
-const MusicLibrary = require("../_includes/mixins/musicLibrary.js");
+const MusicLibrary = require("../_includes/mixins/MusicLibrary.js");
 const {html} = require("common-tags");
 
 class Collection extends Mixin([MusicLibrary]) {

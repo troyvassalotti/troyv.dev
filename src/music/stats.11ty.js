@@ -10,7 +10,7 @@ const {
 	LISTENBRAINZ_AUTH,
 } = require("../../utils/globals.js");
 const Mixin = require("../_includes/mixins/mixin.js");
-const MusicLibrary = require("../_includes/mixins/musicLibrary.js");
+const MusicLibrary = require("../_includes/mixins/MusicLibrary.js");
 const {html} = require("common-tags");
 
 const FETCH_HEADERS = {
@@ -198,12 +198,12 @@ class Stats extends Mixin([MusicLibrary]) {
 							<stats-table
 								caption="Last 30 Plays"
 								headers="Number Artist Track Release"
-								data='${JSON.stringify(mostRecentListens)}'>
+								data="${JSON.stringify(mostRecentListens)}">
 							</stats-table>
 							<stats-table
 								caption="Top Artists This Month"
 								headers="Number Artist Listens"
-								data='${JSON.stringify(topArtistsThisMonth)}'>
+								data="${JSON.stringify(topArtistsThisMonth)}">
 							</stats-table>
 						</div>
 					</div>

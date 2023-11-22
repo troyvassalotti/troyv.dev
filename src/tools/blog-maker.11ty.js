@@ -11,13 +11,11 @@ class BlogMaker {
 		};
 	}
 
-	render({collections, title}) {
-		const wordBank = collections.post
-			.map(({content}) => {
-				return content.replace(/<[^>]*>?/gm, "");
-			})
-			.join(",");
+	generateWordBank(posts) {
+		return posts.map(({content}) => content.replace(/<[^>]*>?/gm, "")).join("");
+	}
 
+	render({collections, title}) {
 		return html`
 			<script type="module">
 				import WordSalad from "word-salad";
@@ -51,7 +49,7 @@ class BlogMaker {
 			</p>
 			<word-salad
 				class="flow"
-				bank="${safeHtml`${wordBank}`}"
+				bank="${safeHtml`${this.generateWordBank(collections.post)}`}"
 				separator=" "></word-salad>
 		`;
 	}
