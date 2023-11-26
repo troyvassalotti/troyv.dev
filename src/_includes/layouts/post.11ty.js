@@ -8,120 +8,121 @@ class Post extends Base {
 	#defaultImg = Icon("user");
 
 	style() {
-		super.style();
+		return (
+			super.style() +
+			html`<style>
+				.post pre[class*="language-"] {
+					margin-block: var(--space-s-m);
+					max-inline-size: 60em;
+				}
 
-		return html`<style>
-			.post pre[class*="language-"] {
-				margin-block: var(--space-s-m);
-				max-inline-size: 60em;
-			}
+				.post :is(h2, h3, h4, h5, h6) {
+					margin-block-start: var(--space-xl-2xl);
+				}
 
-			.post :is(h2, h3, h4, h5, h6) {
-				margin-block-start: var(--space-xl-2xl);
-			}
+				.postSummary {
+					font-style: italic;
+				}
 
-			.postSummary {
-				font-style: italic;
-			}
+				.postHeader {
+					border-block-end: 2px solid var(--accent, currentColor);
+					max-inline-size: 75ch;
+					padding-block: var(--space-m);
+				}
 
-			.postHeader {
-				border-block-end: 2px solid var(--accent, currentColor);
-				max-inline-size: 75ch;
-				padding-block: var(--space-m);
-			}
+				:is(h1, h2, h3, h4, h5, h6) > a:hover::after {
+					content: "🔗";
+					margin-inline-start: 0.5ch;
+					position: absolute;
+				}
 
-			:is(h1, h2, h3, h4, h5, h6) > a:hover::after {
-				content: "🔗";
-				margin-inline-start: 0.5ch;
-				position: absolute;
-			}
+				.post p {
+					hyphens: initial;
+				}
 
-			.post p {
-				hyphens: initial;
-			}
+				/* Webmention Section */
+				.webmentions {
+					margin-block: var(--space-s-l);
+					max-inline-size: 70rem;
+					padding-block: var(--space-2xs);
+				}
 
-			/* Webmention Section */
-			.webmentions {
-				margin-block: var(--space-s-l);
-				max-inline-size: 70rem;
-				padding-block: var(--space-2xs);
-			}
+				.webmentions h2 {
+					font-size: var(--step-1);
+					font-variant: small-caps;
+				}
 
-			.webmentions h2 {
-				font-size: var(--step-1);
-				font-variant: small-caps;
-			}
+				.webmentions h3 {
+					font-size: var(--step-0);
+					margin-block: 1ch;
+				}
 
-			.webmentions h3 {
-				font-size: var(--step-0);
-				margin-block: 1ch;
-			}
+				.webmentions__facepile {
+					align-items: center;
+					display: flex;
+					flex-wrap: wrap;
+				}
 
-			.webmentions__facepile {
-				align-items: center;
-				display: flex;
-				flex-wrap: wrap;
-			}
+				.webmentions__face {
+					block-size: 2rem;
+					border-radius: 50%;
+					flex: none;
+					inline-size: 2rem;
+					margin: revert;
+					object-fit: cover;
+				}
 
-			.webmentions__face {
-				block-size: 2rem;
-				border-radius: 50%;
-				flex: none;
-				inline-size: 2rem;
-				margin: revert;
-				object-fit: cover;
-			}
+				.webmentions__item:not(:first-of-type) {
+					margin-block-start: 2rem;
+				}
 
-			.webmentions__item:not(:first-of-type) {
-				margin-block-start: 2rem;
-			}
+				/* Single Webmention */
+				.webmention__meta,
+				.webmention__author {
+					align-items: center;
+					display: flex;
+					flex-wrap: wrap;
+				}
 
-			/* Single Webmention */
-			.webmention__meta,
-			.webmention__author {
-				align-items: center;
-				display: flex;
-				flex-wrap: wrap;
-			}
+				.webmention__meta {
+					margin-block-end: 1rem;
+				}
 
-			.webmention__meta {
-				margin-block-end: 1rem;
-			}
+				.webmention__author {
+					margin-inline-end: 0.5rem;
+				}
 
-			.webmention__author {
-				margin-inline-end: 0.5rem;
-			}
+				.webmention__author__photo {
+					block-size: 3rem;
+					border-radius: 50%;
+					inline-size: 3rem;
+					margin-inline-end: 0.5rem;
+					object-fit: cover;
+				}
 
-			.webmention__author__photo {
-				block-size: 3rem;
-				border-radius: 50%;
-				inline-size: 3rem;
-				margin-inline-end: 0.5rem;
-				object-fit: cover;
-			}
+				.webmention__pubdate {
+					font-style: italic;
+				}
 
-			.webmention__pubdate {
-				font-style: italic;
-			}
+				/* Post Navigation */
+				.c-postNavigation {
+					margin-block: var(--space-l-xl);
+				}
 
-			/* Post Navigation */
-			.c-postNavigation {
-				margin-block: var(--space-l-xl);
-			}
+				.c-postNavigation dl {
+					align-items: start;
+					display: flex;
+					flex-wrap: wrap;
+					gap: var(--space-m-l);
+					justify-content: space-between;
+				}
 
-			.c-postNavigation dl {
-				align-items: start;
-				display: flex;
-				flex-wrap: wrap;
-				gap: var(--space-m-l);
-				justify-content: space-between;
-			}
-
-			.c-postNavigation dt {
-				font-family: var(--headings);
-				font-weight: bold;
-			}
-		</style>`;
+				.c-postNavigation dt {
+					font-family: var(--headings);
+					font-weight: bold;
+				}
+			</style>`
+		);
 	}
 
 	generateSyndicationLinks(syndication) {
@@ -149,7 +150,7 @@ class Post extends Base {
 				height="48"
 				src="${webmention.author.photo
 					? webmention.author.photo
-					: this.#defaultImg}}"
+					: this.#defaultImg}"
 				alt="${webmention.author.name}"
 				class="webmentions__face"
 				loading="lazy"
@@ -166,7 +167,7 @@ class Post extends Base {
 					webmention.author
 						? html`<a
 								class="webmention__author p-author h-card u-url"
-								href="{{ webmention.url }}"
+								href="${webmention.url}"
 								target="_blank"
 								rel="noopener noreferrer">
 								${webmention.author.photo
@@ -184,6 +185,7 @@ class Post extends Base {
 											class="webmention__author__photo"
 											src="${this.#defaultImg}"
 											alt=""
+											decoding="async"
 											loading="lazy" />`}
 						  </a>`
 						: html`<span class="webmention__author">
@@ -191,8 +193,9 @@ class Post extends Base {
 									width="48"
 									height="48"
 									class="webmention__author__photo"
-									src="{{ defaultImg }}"
+									src="${this.#defaultImg}"
 									alt=""
+									decoding="async"
 									loading="lazy" />
 								<strong>Anonymous</strong>
 						  </span>`
@@ -391,17 +394,18 @@ class Post extends Base {
 	}
 
 	script() {
-		super.script();
-
-		return html`<script>
-			for (const block of document.querySelectorAll(
-				"pre[class*='language-']",
-			)) {
-				if (block instanceof HTMLElement) {
-					block.tabIndex = 0;
+		return (
+			super.script() +
+			html`<script>
+				for (const block of document.querySelectorAll(
+					"pre[class*='language-']",
+				)) {
+					if (block instanceof HTMLElement) {
+						block.tabIndex = 0;
+					}
 				}
-			}
-		</script>`;
+			</script>`
+		);
 	}
 }
 

@@ -24,13 +24,14 @@ class Tag extends Mixin([RendersPosts], Base) {
 	}
 
 	style() {
-		super.style();
-
-		return html`<style>
-			.posts {
-				margin-block: var(--space-m-l);
-			}
-		</style>`;
+		return (
+			super.style() +
+			html`<style>
+				.posts {
+					margin-block: var(--space-m-l);
+				}
+			</style>`
+		);
 	}
 
 	content(data) {

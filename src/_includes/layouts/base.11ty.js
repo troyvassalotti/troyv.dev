@@ -136,7 +136,7 @@ class Base {
 						content="${pageDescription}" />
 					<meta
 						name="og:site_name"
-						content="{{ metadata.domain }}" />
+						content="${metadata.domain}" />
 					<link
 						rel="canonical"
 						href="${metadata.url}${url}" />

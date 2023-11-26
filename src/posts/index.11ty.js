@@ -18,58 +18,59 @@ class Posts extends Mixin([RendersPosts], Base) {
 	}
 
 	style() {
-		super.style();
+		return (
+			super.style() +
+			html`<style>
+				.c-tagCloud {
+					margin-block: var(--space-l-xl);
+				}
 
-		return html`<style>
-			.c-tagCloud {
-				margin-block: var(--space-l-xl);
-			}
+				.posts {
+					margin-block: var(--space-m-l);
+				}
 
-			.posts {
-				margin-block: var(--space-m-l);
-			}
+				.c-postList {
+					--flow-space: var(--space-s-m);
+				}
 
-			.c-postList {
-				--flow-space: var(--space-s-m);
-			}
+				.rss {
+					align-items: center;
+					display: flex;
+					gap: 1ch;
+					justify-content: center;
+				}
 
-			.rss {
-				align-items: center;
-				display: flex;
-				gap: 1ch;
-				justify-content: center;
-			}
+				.rss svg {
+					max-inline-size: 1em;
+				}
 
-			.rss svg {
-				max-inline-size: 1em;
-			}
+				.c-tagCloud__title {
+					font-family: var(--headings);
+					font-size: var(--step-1);
+					font-weight: bold;
+					margin-block-end: revert;
+				}
 
-			.c-tagCloud__title {
-				font-family: var(--headings);
-				font-size: var(--step-1);
-				font-weight: bold;
-				margin-block-end: revert;
-			}
+				.c-tagCloud__list {
+					display: flex;
+					flex-wrap: wrap;
+					gap: var(--space-2xs-xs);
+				}
 
-			.c-tagCloud__list {
-				display: flex;
-				flex-wrap: wrap;
-				gap: var(--space-2xs-xs);
-			}
+				.c-tagCloud__tag {
+					background-color: var(--foreground);
+					border-radius: 4px;
+					color: var(--background);
+					display: inline-block;
+					font-size: var(--step--1);
+					padding-inline: 8px;
+				}
 
-			.c-tagCloud__tag {
-				background-color: var(--foreground);
-				border-radius: 4px;
-				color: var(--background);
-				display: inline-block;
-				font-size: var(--step--1);
-				padding-inline: 8px;
-			}
-
-			.c-tagCloud__tag::before {
-				content: "#";
-			}
-		</style>`;
+				.c-tagCloud__tag::before {
+					content: "#";
+				}
+			</style>`
+		);
 	}
 
 	content(data) {

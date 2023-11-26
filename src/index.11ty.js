@@ -13,110 +13,111 @@ class Home extends Base {
 	}
 
 	style() {
-		super.style();
+		return (
+			super.style() +
+			html`<style>
+				.leadingType {
+					--kb-count-cursor: 10;
 
-		return html`<style>
-			.leadingType {
-				--kb-count-cursor: 10;
-
-				font-size: var(--step-4);
-			}
-
-			.portrait {
-				inline-size: fit-content;
-				margin-inline: auto;
-			}
-
-			.portrait__caption {
-				font-style: italic;
-				text-align: end;
-			}
-
-			.portrait__caption::after,
-			.portrait__caption::before {
-				content: " ↑ ";
-				font-size: 1.25em;
-			}
-
-			.gradient-mask {
-				mask-image: linear-gradient(to bottom, #000, #000),
-					linear-gradient(to bottom, #000, #000),
-					linear-gradient(to bottom, #000, #000),
-					linear-gradient(to bottom, #000, #000),
-					linear-gradient(to bottom, #000, #000);
-				mask-size: 19% 70%;
-				mask-position:
-					0 75%,
-					25% 25%,
-					50% 50%,
-					75% 0,
-					100% 100%;
-				mask-repeat: no-repeat;
-
-				-webkit-mask-image: linear-gradient(to bottom, #000, #000),
-					linear-gradient(to bottom, #000, #000),
-					linear-gradient(to bottom, #000, #000),
-					linear-gradient(to bottom, #000, #000),
-					linear-gradient(to bottom, #000, #000);
-				-webkit-mask-size: 19% 70%;
-				-webkit-mask-position:
-					0 75%,
-					25% 25%,
-					50% 50%,
-					75% 0,
-					100% 100%;
-				-webkit-mask-repeat: no-repeat;
-				max-inline-size: max-content;
-			}
-
-			:is(.container--about, .container--read, .container--play) {
-				margin-block-end: var(--space-2xl);
-			}
-
-			:is(.typing--read, .typing--play, .typing--listen) {
-				--kb-duration-typing: 0.75s;
-				font-size: var(--step-6);
-			}
-
-			.typing--read {
-				--kb-steps-typing: 15;
-			}
-
-			.typing--play {
-				--kb-steps-typing: 15;
-			}
-
-			.typing--listen {
-				--kb-steps-typing: 15;
-			}
-
-			.list.play {
-				--fluid-col-size: 20ch;
-			}
-
-			.play__item-content {
-				border-radius: var(--space-3xs);
-				box-shadow: 1px 2px 1px 2px var(--foreground);
-				padding-block: var(--space-s);
-				padding-inline: var(--space-xs);
-			}
-
-			.plvylist {
-				color-scheme: light dark;
-				font-size: var(--step--1);
-				max-inline-size: 70rem;
-			}
-
-			::part(hillside) {
-				fill: #2b9348;
-			}
-
-			@media (prefers-color-scheme: light) {
-				cloudy-sky {
-					--cloud-filter: hue-rotate(222deg);
+					font-size: var(--step-4);
 				}
-			}
-		</style>`;
+
+				.portrait {
+					inline-size: fit-content;
+					margin-inline: auto;
+				}
+
+				.portrait__caption {
+					font-style: italic;
+					text-align: end;
+				}
+
+				.portrait__caption::after,
+				.portrait__caption::before {
+					content: " ↑ ";
+					font-size: 1.25em;
+				}
+
+				.gradient-mask {
+					mask-image: linear-gradient(to bottom, #000, #000),
+						linear-gradient(to bottom, #000, #000),
+						linear-gradient(to bottom, #000, #000),
+						linear-gradient(to bottom, #000, #000),
+						linear-gradient(to bottom, #000, #000);
+					mask-size: 19% 70%;
+					mask-position:
+						0 75%,
+						25% 25%,
+						50% 50%,
+						75% 0,
+						100% 100%;
+					mask-repeat: no-repeat;
+
+					-webkit-mask-image: linear-gradient(to bottom, #000, #000),
+						linear-gradient(to bottom, #000, #000),
+						linear-gradient(to bottom, #000, #000),
+						linear-gradient(to bottom, #000, #000),
+						linear-gradient(to bottom, #000, #000);
+					-webkit-mask-size: 19% 70%;
+					-webkit-mask-position:
+						0 75%,
+						25% 25%,
+						50% 50%,
+						75% 0,
+						100% 100%;
+					-webkit-mask-repeat: no-repeat;
+					max-inline-size: max-content;
+				}
+
+				:is(.container--about, .container--read, .container--play) {
+					margin-block-end: var(--space-2xl);
+				}
+
+				:is(.typing--read, .typing--play, .typing--listen) {
+					--kb-duration-typing: 0.75s;
+					font-size: var(--step-6);
+				}
+
+				.typing--read {
+					--kb-steps-typing: 15;
+				}
+
+				.typing--play {
+					--kb-steps-typing: 15;
+				}
+
+				.typing--listen {
+					--kb-steps-typing: 15;
+				}
+
+				.list.play {
+					--fluid-col-size: 20ch;
+				}
+
+				.play__item-content {
+					border-radius: var(--space-3xs);
+					box-shadow: 1px 2px 1px 2px var(--foreground);
+					padding-block: var(--space-s);
+					padding-inline: var(--space-xs);
+				}
+
+				.plvylist {
+					color-scheme: light dark;
+					font-size: var(--step--1);
+					max-inline-size: 70rem;
+				}
+
+				::part(hillside) {
+					fill: #2b9348;
+				}
+
+				@media (prefers-color-scheme: light) {
+					cloudy-sky {
+						--cloud-filter: hue-rotate(222deg);
+					}
+				}
+			</style>`
+		);
 	}
 
 	content(data) {
@@ -288,15 +289,16 @@ class Home extends Base {
 	}
 
 	script() {
-		super.script();
-
-		return html`<script type="module">
-			import {CloudySky} from "cloudysky";
-			import {Typewriter} from "typewriter";
-			import "/assets/js/now-playing.js";
-			import "/assets/js/tag-line.js";
-			import Plvylist from "plvylist";
-		</script>`;
+		return (
+			super.script() +
+			html`<script type="module">
+				import {CloudySky} from "cloudysky";
+				import {Typewriter} from "typewriter";
+				import "/assets/js/now-playing.js";
+				import "/assets/js/tag-line.js";
+				import Plvylist from "plvylist";
+			</script>`
+		);
 	}
 }
 

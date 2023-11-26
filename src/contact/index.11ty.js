@@ -8,7 +8,7 @@ class Contact {
 		return {
 			layout: "base",
 			title: "Contact",
-			templateEngineOverride: "md, 11ty.js",
+			templateEngineOverride: "md,11ty.js",
 		};
 	}
 

@@ -11,7 +11,7 @@ const {
 } = require("../../utils/globals.js");
 const Mixin = require("../_includes/mixins/mixin.js");
 const MusicLibrary = require("../_includes/mixins/MusicLibrary.js");
-const {html} = require("common-tags");
+const {html, safeHtml} = require("common-tags");
 const Base = require("../_includes/layouts/base.11ty.js");
 
 const FETCH_HEADERS = {
@@ -143,21 +143,22 @@ class Stats extends Mixin([MusicLibrary], Base) {
 	}
 
 	style() {
-		super.style();
+		return (
+			super.style() +
+			html`<style>
+				.listeningHistory {
+					margin-block: var(--space-xl-2xl);
+				}
 
-		return html`<style>
-			.listeningHistory {
-				margin-block: var(--space-xl-2xl);
-			}
-
-			.tables {
-				align-items: start;
-				display: flex;
-				flex-wrap: wrap;
-				gap: var(--space-m);
-				justify-content: space-between;
-			}
-		</style>`;
+				.tables {
+					align-items: start;
+					display: flex;
+					flex-wrap: wrap;
+					gap: var(--space-m);
+					justify-content: space-between;
+				}
+			</style>`
+		);
 	}
 
 	content(data) {
@@ -196,12 +197,12 @@ class Stats extends Mixin([MusicLibrary], Base) {
 							<stats-table
 								caption="Last 30 Plays"
 								headers="Number Artist Track Release"
-								data="${JSON.stringify(mostRecentListens)}">
+								data="${safeHtml`${JSON.stringify(mostRecentListens)}`}">
 							</stats-table>
 							<stats-table
 								caption="Top Artists This Month"
 								headers="Number Artist Listens"
-								data="${JSON.stringify(topArtistsThisMonth)}">
+								data="${safeHtml`${JSON.stringify(topArtistsThisMonth)}`}">
 							</stats-table>
 						</div>
 					</div>
@@ -211,11 +212,12 @@ class Stats extends Mixin([MusicLibrary], Base) {
 	}
 
 	script() {
-		super.script();
-
-		return html`<script type="module">
-			import "/assets/js/stats-table.js";
-		</script>`;
+		return (
+			super.script() +
+			html`<script type="module">
+				import "/assets/js/stats-table.js";
+			</script>`
+		);
 	}
 }
 
