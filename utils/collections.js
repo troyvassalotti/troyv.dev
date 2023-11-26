@@ -1,6 +1,6 @@
 /**
  * @format
- * @file Custom site collections
+ * @file Custom site collections.
  */
 
 /**
