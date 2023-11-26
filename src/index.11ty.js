@@ -249,7 +249,7 @@ class Home extends Base {
 								data-grid-columns="fluid">
 								${projects
 									.map((project) => {
-										if (project.tags && this.inArray(project.tags, "play")) {
+										if (project.tags && project.tags.includes("play")) {
 											return html`<li class="play__item">
 												<article class="flow play__item-content">
 													<p class="play__item-title u-step-2 u-text--bold">
