@@ -31,7 +31,7 @@ const RendersPosts = function (Base) {
 			return html`
 				<${listType} class="c-postList flow" role="list">
 					${this.generatePostListItems(posts)}
-				</${listType}
+				</${listType}>
 			`;
 		}
 	};

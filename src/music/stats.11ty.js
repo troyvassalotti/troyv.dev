@@ -12,6 +12,7 @@ const {
 const Mixin = require("../_includes/mixins/mixin.js");
 const MusicLibrary = require("../_includes/mixins/MusicLibrary.js");
 const {html} = require("common-tags");
+const Base = require("../_includes/layouts/base.11ty.js");
 
 const FETCH_HEADERS = {
 	fetchOptions: {
@@ -123,14 +124,13 @@ async function getLastMonthsTopReleases(count = 10, range = "month") {
 	}
 }
 
-class Stats extends Mixin([MusicLibrary]) {
+class Stats extends Mixin([MusicLibrary], Base) {
 	async data() {
 		const topArtistsThisMonth = await getTopArtists();
 		const mostRecentListens = await getMostRecentListens();
 		const lastMonthsTopReleases = await getLastMonthsTopReleases();
 
 		return {
-			layout: "base",
 			title: "Music Stats",
 			description: "Aggregated data from my ListenBrainz profile.",
 			permalink: {
@@ -142,31 +142,29 @@ class Stats extends Mixin([MusicLibrary]) {
 		};
 	}
 
-	render({
-		title,
-		lastMonthsTopReleases,
-		mostRecentListens,
-		topArtistsThisMonth,
-	}) {
+	style() {
+		super.style();
+
+		return html`<style>
+			.listeningHistory {
+				margin-block: var(--space-xl-2xl);
+			}
+
+			.tables {
+				align-items: start;
+				display: flex;
+				flex-wrap: wrap;
+				gap: var(--space-m);
+				justify-content: space-between;
+			}
+		</style>`;
+	}
+
+	content(data) {
+		let {title, lastMonthsTopReleases, mostRecentListens, topArtistsThisMonth} =
+			data;
+
 		return html`
-			<script type="module">
-				import "/assets/js/stats-table.js";
-			</script>
-
-			<style>
-				.listeningHistory {
-					margin-block: var(--space-xl-2xl);
-				}
-
-				.tables {
-					align-items: start;
-					display: flex;
-					flex-wrap: wrap;
-					gap: var(--space-m);
-					justify-content: space-between;
-				}
-			</style>
-
 			<main id="main">
 				<header class="flow u-truncate o-section--angled">
 					<h1 class="u-revertMargin--start">${title}</h1>
@@ -210,6 +208,14 @@ class Stats extends Mixin([MusicLibrary]) {
 				</div>
 			</main>
 		`;
+	}
+
+	script() {
+		super.script();
+
+		return html`<script type="module">
+			import "/assets/js/stats-table.js";
+		</script>`;
 	}
 }
 

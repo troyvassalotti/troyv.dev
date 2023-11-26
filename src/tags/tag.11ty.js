@@ -3,11 +3,11 @@
 const {html} = require("common-tags");
 const Mixin = require("../_includes/mixins/mixin");
 const RendersPosts = require("../_includes/mixins/RendersPosts.js");
+const Base = require("../_includes/layouts/base.11ty.js");
 
-class Tag extends Mixin([RendersPosts]) {
+class Tag extends Mixin([RendersPosts], Base) {
 	data() {
 		return {
-			layout: "base",
 			pagination: {
 				data: "collections",
 				size: 1,
@@ -23,14 +23,20 @@ class Tag extends Mixin([RendersPosts]) {
 		};
 	}
 
-	render({tag, collections}) {
-		return html`
-			<style>
-				.posts {
-					margin-block: var(--space-m-l);
-				}
-			</style>
+	style() {
+		super.style();
 
+		return html`<style>
+			.posts {
+				margin-block: var(--space-m-l);
+			}
+		</style>`;
+	}
+
+	content(data) {
+		let {tag, collections} = data;
+
+		return html`
 			<main id="main">
 				<div class="wrapper constrain--more flow">
 					<header class="u-text--center">

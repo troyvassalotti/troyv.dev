@@ -259,6 +259,122 @@ a:focus-visible {
 }
 
 /* COMPONENTS */
+body .header__container {
+	margin-block-end: 2em;
+}
+
+.header__container {
+	display: flex;
+}
+
+.c-mainNavigation {
+	font-size: var(--step--1);
+	flex: 1;
+	padding: 1ch;
+}
+
+.c-mainNavigation ul {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0;
+}
+
+.c-mainNavigation li:first-of-type {
+	inline-size: 100%;
+	margin-block-end: 1ch;
+}
+
+.c-mainNavigation li:not(:last-of-type) {
+	margin-inline-end: 1ch;
+}
+
+.c-mainNavigation a {
+	color: currentColor;
+	text-decoration: none;
+}
+
+.skipLink {
+	inset-inline-start: 50%;
+	padding: 4px;
+	position: absolute;
+	transform: translateY(-200%);
+	transition: transform 0.3s;
+}
+
+.skipLink:focus-visible {
+	transform: translateY(0%);
+}
+
+.themeSelector__button {
+	padding: var(--space-2xs);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.c-mainNavigation a::before {
+		--linkStartRest: right;
+		--linkStateRest: scaleX(0);
+	}
+
+	.c-mainNavigation a:hover::before {
+		--linkStartHover: left;
+		--linkStateHover: scaleX(1);
+	}
+
+	#link__home::before {
+		background-color: currentColor;
+	}
+
+	#link__posts::before {
+		background-color: currentColor;
+	}
+
+	#link__music::before {
+		background-color: currentColor;
+	}
+
+	#link__work::before {
+		background-color: currentColor;
+	}
+
+	#link__about::before {
+		background-color: currentColor;
+	}
+
+	a[aria-current="page"]::before {
+		--linkStartRest: left;
+		--linkStateRest: scaleX(1);
+	}
+
+	a[aria-current="page"]:hover::before {
+		--linkStartHover: right;
+		--linkStateHover: scaleX(0);
+	}
+}
+
+.shortcutItem {
+	border-block-end: 1px solid var(--accent);
+	font-size: var(--step--1);
+	padding-block: 0.5ch;
+}
+
+.shortcutItem > * {
+	display: inline-block;
+}
+
+.shortcutItem__name.secret {
+	font-style: italic;
+}
+
+.shortcutItem__command {
+	font-family: var(--code);
+	margin-inline-start: 1.5ch;
+}
+
+.shortcutsDisclaimer {
+	margin-block-start: var(--space-l);
+	text-align: end;
+}
+
 .c-animatedLink {
 	--linkStateRest: scaleX(1);
 	--linkStartRest: left;
