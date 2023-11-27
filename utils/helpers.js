@@ -6,7 +6,7 @@ const {
 	DEFAULT_SERVERLESS_CACHE_OPTIONS,
 	COVERT_ART_ENDPOINT,
 } = require("./globals");
-const METADATA = require("../src/_data/metadata.json");
+const METADATA = require("../src/_data/metadata");
 
 function createCacheOptions(isServerless, customOptions = {}) {
 	let options = isServerless
@@ -39,8 +39,30 @@ async function getAlbumArtwork(mbid, thumb = false) {
 	}
 }
 
+/**
+ * Escapes HTML content.
+ * 
+ * @param {string} unsafe HTML content that needs escaping.
+ * @returns {string} Escaped HTML.
+ */
+function escapeHTML(unsafe) {
+	return unsafe.replace(/[&<"']/g, function (m) {
+		switch (m) {
+			case "&":
+				return "&amp;";
+			case "<":
+				return "&lt;";
+			case '"':
+				return "&quot;";
+			default:
+				return "&#039;";
+		}
+	});
+}
+
 module.exports = {
 	runEleventyFetch,
 	createCacheOptions,
 	getAlbumArtwork,
+	escapeHTML
 };

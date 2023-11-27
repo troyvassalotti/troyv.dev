@@ -27,7 +27,13 @@ eleventyExcludeFromCollections: true
         {%- if post.data.syndication -%}
             {%- set syndication = post.data.syndication -%}
             {%- set syndicationLinks -%}
-                {%- include 'partials/syndication-links.njk' -%}
+                {%- for location in syndication -%}
+                    {%- if location === 'mastodon' -%}
+                        <a rel="syndication noreferrer"
+                           class="u-syndication"
+                           href="https://brid.gy/publish/mastodon"></a>
+                    {%- endif -%}
+                {%- endfor -%}
             {%- endset -%}
             {{ syndicationLinks | htmlToAbsoluteUrls(absolutePostUrl) }}
         {%- endif -%}

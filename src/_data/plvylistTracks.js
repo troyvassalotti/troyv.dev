@@ -1,20 +1,33 @@
 /** @format */
 
-const TROY = "troyalllowercase";
-const TROY_BANDCAMP = "https://troyalllowercase.bandcamp.com";
-const CLOUD_PATH = "troy";
+/**
+ * troyalllowercase artist profile.
+ * @type {ArtistProfile}
+ */
+class Troyalllowercase {
+	static name = "troyalllowercase";
+	static bandcamp = "https://troyalllowercase.bandcamp.com";
+}
 
+/**
+ * Generate a track's file path under a base directory that auto completes the album name.
+ * @param {string} dir Base directory for the track.
+ * @param {NumberLike} lp The LP release in number form.
+ * @param {string} file File name with extension.
+ * @returns {string} Track file path.
+ */
 function generateTrackPath(dir, lp, file) {
 	let path = lp === "1" ? "alone-in-a-crowded-room" : "lets-try-this-again";
 
-	return `${dir}/${CLOUD_PATH}/${path}/${file}`;
+	return `${dir}/troy/${path}/${file}`;
 }
 
+/** @type {PlvylistAlbumMeta} */
 const LP1 = {
 	title: "Alone In A Crowded Room",
-	albumUrl: `${TROY_BANDCAMP}/album/alone-in-a-crowded-room`,
-	artist: TROY,
-	artistUrl: TROY_BANDCAMP,
+	albumUrl: `${Troyalllowercase.bandcamp}/album/alone-in-a-crowded-room`,
+	artist: Troyalllowercase.name,
+	artistUrl: Troyalllowercase.bandcamp,
 	artwork:
 		"c_scale,f_auto,q_auto:eco,w_300/v1631306010/troy/alone-in-a-crowded-room/AIACR-troy_cwoizg.png",
 	tracks: [
@@ -125,11 +138,12 @@ const LP1 = {
 	],
 };
 
+/** @type {PlvylistAlbumMeta} */
 const LP2 = {
 	title: "Let's try this again",
-	albumUrl: `${TROY_BANDCAMP}/album/lets-try-this-again`,
-	artist: TROY,
-	artistUrl: TROY_BANDCAMP,
+	albumUrl: `${Troyalllowercase.bandcamp}/album/lets-try-this-again`,
+	artist: Troyalllowercase.name,
+	artistUrl: Troyalllowercase.bandcamp,
 	artwork:
 		"c_scale,f_auto,q_auto:eco,w_300/v1684975617/troy/lets-try-this-again/artwork_y9iqv0.jpg",
 	tracks: [

@@ -1,4 +1,5 @@
 ---
+title: Success
 description: Thanks for reaching out! I'll be in touch soon.
 permalink: /success/
 layout: base

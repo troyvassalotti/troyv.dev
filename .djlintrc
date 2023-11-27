@@ -1,7 +1,0 @@
-{
-	"blank_line_before_tag": "extends, block, macro",
-	"custom_html": "stats-table",
-	"extension": ".njk",
-	"ignore": "H021,H031",
-	"profile": "nunjucks"
-}

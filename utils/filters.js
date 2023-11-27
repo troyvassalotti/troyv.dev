@@ -26,11 +26,11 @@ module.exports = {
 		let month = d.getUTCMonth() + 1;
 		let day = d.getUTCDate();
 
-		if (parseInt(month) < 10) {
+		if (month < 10) {
 			month = "0" + month;
 		}
 
-		if (parseInt(day) < 10) {
+		if (day < 10) {
 			day = "0" + day;
 		}
 		return `${year}/${month}/${day}`;
@@ -46,7 +46,7 @@ module.exports = {
 			(tag) => ["all", "post", "posts"].indexOf(tag) === -1,
 		);
 	},
-	inArray: function (array, item) {
-		return array.includes(item);
+	capitalize: function (string) {
+		return string.charAt(0).toUpperCase() + string.slice(1);
 	},
 };
