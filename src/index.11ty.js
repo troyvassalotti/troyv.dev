@@ -2,7 +2,6 @@
 
 const {html} = require("common-tags");
 const Base = require("./_includes/layouts/base.11ty.js");
-const {Bio} = require("./_includes/partials/index.js");
 
 class Home extends Base {
 	data() {
