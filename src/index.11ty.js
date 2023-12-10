@@ -226,7 +226,7 @@ class Home extends Base {
 													From the post
 													<a
 														class="u-text--italic"
-														href="{{ post.url }}"
+														href="${post.url}"
 														>${post.data.title}</a
 													>, published ${this.dateString(post.date)}.
 												</p>`,
