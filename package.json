@@ -25,7 +25,6 @@
 		"@11ty/eleventy-plugin-rss": "^1.2.0",
 		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
 		"@chrisburnell/eleventy-cache-webmentions": "^1.2.5",
-		"@netlify/functions": "^2.4.0",
 		"@troyv/beats-per": "^1.0.0",
 		"@troyv/cheatcodes": "^0.0.6",
 		"@troyv/cloudysky": "^1.0.5",

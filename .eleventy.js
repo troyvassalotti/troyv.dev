@@ -91,13 +91,6 @@ module.exports = function (config) {
 			.use(markdownItFootnote),
 	);
 
-	/**
-	 * Data filters for Serverless
-	 * @since 1.0.0
-	 * @link https://www.11ty.dev/docs/config/#data-filter-selectors
-	 */
-	config.dataFilterSelectors.add("page");
-
 	return {
 		htmlTemplateEngine: "njk",
 		markdownTemplateEngine: "njk",

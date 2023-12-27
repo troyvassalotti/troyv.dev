@@ -83,12 +83,6 @@ const PROJECTS = [
 			"Track headaches with a CLI journaling process and customizable charts.",
 	},
 	{
-		name: "Brew Coffee",
-		url: "/brew/",
-		description: "Try brewing me a cup of coffee.",
-		tags: ["play"],
-	},
-	{
 		name: "TroyGPT",
 		url: "/blog-maker/",
 		description: "Write a blog using my words as the LLM.",

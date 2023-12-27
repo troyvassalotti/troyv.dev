@@ -20,9 +20,7 @@ const FETCH_HEADERS = {
 	},
 };
 
-const CACHE_OPTIONS = process.env.ELEVENTY_SERVERLESS
-	? createCacheOptions(true, FETCH_HEADERS)
-	: createCacheOptions(false, FETCH_HEADERS);
+const CACHE_OPTIONS = createCacheOptions(FETCH_HEADERS);
 
 /**
  * Return my top (default: 10) artists in the given timeframe (default: this month)
@@ -133,9 +131,6 @@ class Stats extends Mixin([MusicLibrary], Base) {
 		return {
 			title: "Music Stats",
 			description: "Aggregated data from my ListenBrainz profile.",
-			permalink: {
-				ondemand: "/music/stats/",
-			},
 			topArtistsThisMonth,
 			mostRecentListens,
 			lastMonthsTopReleases,

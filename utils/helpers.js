@@ -1,19 +1,11 @@
 /** @format */
 
 const EleventyFetch = require("@11ty/eleventy-fetch");
-const {
-	DEFAULT_CACHE_OPTIONS,
-	DEFAULT_SERVERLESS_CACHE_OPTIONS,
-	COVERT_ART_ENDPOINT,
-} = require("./globals");
+const {DEFAULT_CACHE_OPTIONS, COVERT_ART_ENDPOINT} = require("./globals");
 const METADATA = require("../src/_data/metadata");
 
-function createCacheOptions(isServerless, customOptions = {}) {
-	let options = isServerless
-		? DEFAULT_SERVERLESS_CACHE_OPTIONS
-		: DEFAULT_CACHE_OPTIONS;
-
-	return Object.assign(options, customOptions);
+function createCacheOptions(customOptions = {}) {
+	return Object.assign(DEFAULT_CACHE_OPTIONS, customOptions);
 }
 
 async function runEleventyFetch(url, options = createCacheOptions()) {
@@ -41,7 +33,7 @@ async function getAlbumArtwork(mbid, thumb = false) {
 
 /**
  * Escapes HTML content.
- * 
+ *
  * @param {string} unsafe HTML content that needs escaping.
  * @returns {string} Escaped HTML.
  */
@@ -64,5 +56,5 @@ module.exports = {
 	runEleventyFetch,
 	createCacheOptions,
 	getAlbumArtwork,
-	escapeHTML
+	escapeHTML,
 };

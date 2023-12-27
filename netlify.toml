@@ -6,25 +6,11 @@ command = "npm run dev"
 command = "npm run build"
 publish = "_site"
 
-  [build.processing]
-  skip_processing = true
+[build.processing]
+skip_processing = true
 
-  [build.environment]
-  NODE_VERSION = "20"
-
-[[redirects]]
-from = "/music/stats/"
-to = "/.netlify/builders/ondemand"
-status = 200
-force = true
-_generated_by_eleventy_serverless = "ondemand"
-
-[[redirects]]
-from = "/brew/"
-to = "/.netlify/functions/teapot"
-status = 200
-force = true
-_generated_by_eleventy_serverless = "teapot"
+[build.environment]
+NODE_VERSION = "20"
 
 [[redirects]]
 from = "https://troyvassalotti.netlify.com/*"
@@ -40,20 +26,16 @@ status = 200
 [[headers]]
 for = "/*"
 
-  [headers.values]
-  X-Content-Type-Options = "nosniff"
-  X-Frame-Options = "SAMEORIGIN"
-  X-XSS-Protection = "1"
+[headers.values]
+X-Content-Type-Options = "nosniff"
+X-Frame-Options = "SAMEORIGIN"
+X-XSS-Protection = "1"
 
 [[plugins]]
 package = "netlify-plugin-cache"
 
-  [plugins.inputs]
-  paths = [ "_cache" ]
+[plugins.inputs]
+paths = ["_cache"]
 
 [[plugins]]
 package = "netlify-plugin-webmentions"
-
-[functions]
-directory = "netlify/functions/"
-node_bundler = "zisi"
