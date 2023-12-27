@@ -3,10 +3,10 @@ title: "Physical Media"
 description: "A collection of thoughts on why I miss physical media."
 date: 2023-12-26
 tags:
-	- music
-	- thoughts
+  - music
+  - thoughts
 syndication:
-	- mastodon
+  - mastodon
 ---
 
 <!-- @format -->
