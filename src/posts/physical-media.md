@@ -1,14 +1,15 @@
---- title: "Physical Media" description: "A collection of thoughts on why I miss physical media." date:
-2023-12-26
-	tags:
-		-
-		music
-		-
-		thoughts
-	syndication:
-		-
-		mastodon
 ---
+title: "Physical Media"
+description: "A collection of thoughts on why I miss physical media."
+date: 2023-12-26
+tags:
+	- music
+	- thoughts
+syndication:
+	- mastodon
+---
+
+<!-- @format -->
 
 CDs, vinyl records, DVDs, VHS tapes, video games. Blockbuster, Best Buy, your local video store.
 

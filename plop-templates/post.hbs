@@ -1,17 +1,17 @@
---- title: "{{titleCase title}}" description: "{{description}}" date:
-{{date}}
+---
+title: "{{titleCase title}}"
+description: "{{description}}"
+date: {{date}}
 {{#if tags}}
-	tags:
+tags:
 	{{#each tags}}
-		-
-		{{this}}
+	- {{this}}
 	{{/each}}
 {{/if}}
 {{#if syndication}}
-	syndication:
+syndication:
 	{{#each syndication}}
-		-
-		{{this}}
+	- {{this}}
 	{{/each}}
 {{/if}}
 ---
