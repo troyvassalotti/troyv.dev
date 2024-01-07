@@ -83,27 +83,27 @@ class Base {
 						href="https://d33wubrfki0l68.cloudfront.net" />
 					<link
 						rel="dns-prefetch"
-						href="https://cdn.skypack.dev/" />
+						href="https://esm.sh/" />
 					<link
 						rel="dns-prefetch"
 						href="https://res.cloudinary.com/" />
 					<!-- Import Maps polyfill -->
 					<script
 						async
-						src="/assets/js/es-module-shims.js"></script>
+						src="https://esm.sh/es-module-shims"></script>
 					<script type="importmap">
 						{
 							"imports": {
-								"lit": "https://cdn.skypack.dev/lit@2.6.1",
-								"d3": "https://cdn.skypack.dev/d3@7.6",
-								"tone": "https://cdn.skypack.dev/tone@14.7.77",
-								"cheatcodes": "/assets/js/cheatcodes.js",
-								"plvylist": "/assets/js/plvylist.js",
-								"cloudysky": "/assets/js/cloudysky.js",
-								"typewriter": "/assets/js/typewriter.js",
-								"detune": "/assets/js/detune.js",
-								"beats-per": "/assets/js/beats-per.js",
-								"word-salad": "/assets/js/word-salad.js"
+								"lit": "https://esm.sh/lit",
+								"d3": "https://esm.sh/d3@7.6",
+								"tone": "https://esm.sh/tone@14.7.77",
+								"cheatcodes": "https://esm.sh/@troyv/cheatcodes",
+								"plvylist": "https://esm.sh/plvylist",
+								"cloudysky": "https://esm.sh/@troyv/cloudysky",
+								"typewriter": "https://esm.sh/@troyv/typewriter",
+								"detune": "https://esm.sh/@troyv/detune",
+								"beats-per": "https://esm.sh/@troyv/beats-per",
+								"word-salad": "https://esm.sh/@troyv/word-salad"
 							}
 						}
 					</script>

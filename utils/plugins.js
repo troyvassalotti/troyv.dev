@@ -26,6 +26,7 @@ module.exports = {
 	},
 	youTubeEmbeds: {
 		name: embedYouTube,
+		options: {lite: true},
 	},
 	webmentions: {
 		name: pluginWebmentions,

@@ -7,7 +7,6 @@ const markdownItAnchor = require("markdown-it-anchor");
 const markdownItFootnote = require("markdown-it-footnote");
 
 const utilsDir = `${process.cwd()}/utils`;
-const jsDir = "/assets/js";
 
 const filters = require(`${utilsDir}/filters`);
 const collections = require(`${utilsDir}/collections`);
@@ -17,32 +16,7 @@ const templates = require(`${utilsDir}/templateFormats`);
 
 module.exports = function (config) {
 	// Passthroughs
-	config
-		.addPassthroughCopy({public: "/"})
-		.addPassthroughCopy({
-			"./node_modules/es-module-shims/dist/es-module-shims.js": `${jsDir}/es-module-shims.js`,
-		})
-		.addPassthroughCopy({
-			"./node_modules/@troyv/cheatcodes/dist/cheatcodes.js": `${jsDir}/cheatcodes.js`,
-		})
-		.addPassthroughCopy({
-			"./node_modules/@troyv/cloudysky/dist/cloudysky.js": `${jsDir}/cloudysky.js`,
-		})
-		.addPassthroughCopy({
-			"./node_modules/@troyv/detune/dist/detune.js": `${jsDir}/detune.js`,
-		})
-		.addPassthroughCopy({
-			"./node_modules/@troyv/typewriter/dist/typewriter.js": `${jsDir}/typewriter.js`,
-		})
-		.addPassthroughCopy({
-			"./node_modules/plvylist/dist/plvylist.js": `${jsDir}/plvylist.js`,
-		})
-		.addPassthroughCopy({
-			"./node_modules/@troyv/beats-per/dist/beats-per.js": `${jsDir}/beats-per.js`,
-		})
-		.addPassthroughCopy({
-			"./node_modules/@troyv/word-salad/dist/word-salad.js": `${jsDir}/word-salad.js`,
-		});
+	config.addPassthroughCopy({public: "/"});
 
 	// Plugins
 	Object.keys(plugins).forEach((plugin) => {
