@@ -18,7 +18,11 @@ class BPM {
 			</script>
 
 			<h1>${title}</h1>
-			<beats-per class="flow"></beats-per>
+			<beats-per class="flow">
+				<p>BPM: <output id="bpm"></output></p>
+				<p>Count: <output id="count"></output></p>
+				<button>Tap BPM</button>
+			</beats-per>
 		`;
 	}
 }
