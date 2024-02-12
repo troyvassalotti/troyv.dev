@@ -53,8 +53,8 @@ class Base {
 		let pageDescription = description
 			? safeHtml`${description}`
 			: excerpt
-			  ? safeHtml`${excerpt}`
-			  : safeHtml`${pageTitle} :: a page on ${metadata.domain}`;
+				? safeHtml`${excerpt}`
+				: safeHtml`${pageTitle} :: a page on ${metadata.domain}`;
 
 		return html`
 			<!-- base.11ty.js -->
@@ -99,7 +99,7 @@ class Base {
 								"tone": "https://esm.sh/tone@14.7.77",
 								"cheatcodes": "https://esm.sh/@troyv/cheatcodes",
 								"plvylist": "https://esm.sh/plvylist",
-								"cloudysky": "https://esm.sh/@troyv/cloudysky",
+								"cloudysky": "https://esm.sh/@troyv/cloudysky@2.0.1",
 								"typewriter": "https://esm.sh/@troyv/typewriter",
 								"detune": "https://esm.sh/@troyv/detune",
 								"beats-per": "https://esm.sh/@troyv/beats-per",

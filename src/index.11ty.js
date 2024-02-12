@@ -110,10 +110,10 @@ class Home extends Base {
 					fill: #2b9348;
 				}
 
-				@media (prefers-color-scheme: light) {
-					cloudy-sky {
-						--cloud-filter: hue-rotate(222deg);
-					}
+				::part(clouds) {
+					block-size: min(50vh, 60%);
+					overflow-x: clip;
+					overflow-y: visible;
 				}
 			</style>`
 		);
@@ -291,7 +291,7 @@ class Home extends Base {
 		return (
 			super.script() +
 			html`<script type="module">
-				import {CloudySky} from "cloudysky";
+				import CloudySky from "cloudysky";
 				import {Typewriter} from "typewriter";
 				import "/assets/js/now-playing.js";
 				import "/assets/js/tag-line.js";
