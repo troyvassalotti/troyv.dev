@@ -100,7 +100,7 @@ class Base {
 								"cheatcodes": "https://esm.sh/@troyv/cheatcodes",
 								"plvylist": "https://esm.sh/plvylist",
 								"cloudysky": "https://esm.sh/@troyv/cloudysky@2.0.1",
-								"typewriter": "https://esm.sh/@troyv/typewriter",
+								"typewriter": "https://esm.sh/@troyv/typewriter@3.0.0",
 								"detune": "https://esm.sh/@troyv/detune",
 								"beats-per": "https://esm.sh/@troyv/beats-per",
 								"word-salad": "https://esm.sh/@troyv/word-salad"

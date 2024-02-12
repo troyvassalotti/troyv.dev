@@ -292,7 +292,7 @@ class Home extends Base {
 			super.script() +
 			html`<script type="module">
 				import CloudySky from "cloudysky";
-				import {Typewriter} from "typewriter";
+				import TypeWriter from "typewriter";
 				import "/assets/js/now-playing.js";
 				import "/assets/js/tag-line.js";
 				import Plvylist from "plvylist";
