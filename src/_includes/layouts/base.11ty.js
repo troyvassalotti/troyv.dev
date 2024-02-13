@@ -103,7 +103,7 @@ class Base {
 								"typewriter": "https://esm.sh/@troyv/typewriter@3.0.0",
 								"detune": "https://esm.sh/@troyv/detune",
 								"beats-per": "https://esm.sh/@troyv/beats-per",
-								"word-salad": "https://esm.sh/@troyv/word-salad"
+								"word-salad": "https://esm.sh/@troyv/word-salad@2.0.0"
 							}
 						}
 					</script>

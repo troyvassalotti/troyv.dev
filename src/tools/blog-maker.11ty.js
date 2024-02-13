@@ -22,20 +22,19 @@ class BlogMaker {
 			</script>
 
 			<style>
-				word-salad {
-					display: block;
-				}
-
-				word-salad .field {
+				::part(selection-field),
+				::part(number-field) {
 					margin-block: var(--space-2xs);
 				}
 
-				word-salad button {
+				::part(submit) {
+					background-color: transparent;
 					border: 1px solid var(--links);
 					color: var(--links);
 					font-family: var(--code);
 					font-size: var(--step--1);
 					font-weight: bold;
+					margin-block-end: var(--space-2xs);
 					padding: var(--space-2xs);
 				}
 			</style>
@@ -50,7 +49,8 @@ class BlogMaker {
 			<word-salad
 				class="flow"
 				bank="${safeHtml`${this.generateWordBank(collections.post)}`}"
-				separator=" "></word-salad>
+				separator=" ">
+			</word-salad>
 		`;
 	}
 }
