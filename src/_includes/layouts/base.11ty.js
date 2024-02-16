@@ -102,7 +102,7 @@ class Base {
 								"cloudysky": "https://esm.sh/@troyv/cloudysky@2.0.1",
 								"typewriter": "https://esm.sh/@troyv/typewriter@3.0.0",
 								"detune": "https://esm.sh/@troyv/detune",
-								"beats-per": "https://esm.sh/@troyv/beats-per",
+								"beats-per": "https://esm.sh/@troyv/beats-per@3.0.0",
 								"word-salad": "https://esm.sh/@troyv/word-salad@2.0.0"
 							}
 						}
