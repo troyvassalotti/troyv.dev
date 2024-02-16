@@ -612,12 +612,11 @@ body .header__container {
 
 .button,
 beats-per button,
-.detune__note,
-.detune__playAll {
+de-tune button {
 	@include mixins.button;
 }
 
-.detune__notes {
+de-tune {
 	--input-gap: 1em;
 	--input-size: 4em;
 
@@ -631,8 +630,7 @@ beats-per button,
 	justify-content: center;
 }
 
-.detune__note,
-.detune__playAll {
+de-tune button {
 	block-size: var(--input-size);
 	inline-size: var(--input-size);
 }
