@@ -102,7 +102,7 @@ class Posts extends Mixin([RendersPosts], Base) {
 										<a
 											href="/tags/${this.slugify(tag)}/"
 											class="c-tagCloud__tag">
-											<span class="visually-hidden">Posts tagged</span> ${tag}
+											<span class="u-visually-hidden">Posts tagged</span> ${tag}
 										</a>
 									</li>`;
 								})}
