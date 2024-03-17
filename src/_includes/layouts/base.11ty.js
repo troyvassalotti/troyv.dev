@@ -11,13 +11,9 @@ class Base {
 		let {content} = data;
 
 		return html`
-			<div class="wrapper constrain--more">
-				<main
-					id="main"
-					class="flow default">
-					${content}
-				</main>
-			</div>
+			<main id="main">
+				<div class="wrapper flow">${content}</div>
+			</main>
 		`;
 	}
 
@@ -49,8 +45,7 @@ class Base {
 		let {
 			title,
 			description,
-			excerpt,
-			page: {fileSlug, url},
+			page: {fileSlug, url, excerpt},
 			metadata,
 			eleventy,
 			nav: {header},
@@ -213,7 +208,7 @@ class Base {
 					<!-- Main Navigation -->
 					<div class="wrapper">
 						<nav
-							class="c-mainNavigation"
+							class="mainNavigation"
 							id="mainNavigation"
 							aria-label="main">
 							<a
@@ -227,10 +222,10 @@ class Base {
 										html`<li>
 											<a
 												href="${linkUrl}"
-												class="c-animatedLink"
+												class="animatedLink"
 												${linkUrl === url ? 'aria-current="page"' : ""}
 												id="link__${name}"
-												>${index === 0 ? "~/" : "::"}${name}</a
+												>${index === 0 ? "~/" : "~/"}${name}</a
 											>
 										</li>`,
 								)}

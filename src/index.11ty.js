@@ -19,11 +19,6 @@ class Home extends Base {
 					h1 {
 						font-size: inherit;
 					}
-
-					.container--about {
-						max-inline-size: 40ch;
-						padding-block: var(--space-2xl-3xl);
-					}
 				</style>
 			`
 		);
@@ -40,7 +35,7 @@ class Home extends Base {
 			<main id="main">
 				<div class="wrapper flow">
 					<section
-						class="container--about u-step-4 animate__animated animate__fadeInDown">
+						class="container--about masthead u-step-4 animate__animated animate__fadeInDown">
 						<h1 class="u-inline">
 							<glitch-text>Hey, I'm Troy.</glitch-text>
 						</h1>
@@ -62,27 +57,32 @@ class Home extends Base {
 						</type-writer>
 						<ol
 							role="list"
-							class="c-postList flow">
+							class="recentPosts flow">
 							${collections.post
-								.slice(collections.post.length - 7, collections.post.length)
+								.slice(collections.post.length - 5, collections.post.length)
 								.toReversed()
 								.map(
 									(post) => html`
-										<h3 class="u-step-1 u-text--bold">
-											${post.data.description}
-										</h3>
-										<p class="u-step--1">
-											From the post
-											<a
-												class="u-text--italic"
-												href="${post.url}"
-												>${post.data.title}</a
-											>, published ${this.dateString(post.date)}.
-										</p>
+										<li class="flow recentPost">
+											<h3 class="u-step-1 recentPost__title">
+												${post.data.description}
+											</h3>
+											<p class="u-step--1 recentPost__description">
+												<span aria-hidden="true">&mdash;</span> From
+												<a
+													class="u-text--italic"
+													href="${post.url}"
+													>${post.data.title}</a
+												>, published ${this.dateString(post.date)}.
+											</p>
+										</li>
 									`,
 								)
 								.join("")}
 						</ol>
+						<p class="cta-archive">
+							<a href="/archive/">View the archive</a>
+						</p>
 					</section>
 				</div>
 			</main>
@@ -92,13 +92,14 @@ class Home extends Base {
 	script() {
 		return (
 			super.script() +
-			html`<script type="module">
-				import CloudySky from "cloudysky";
-				import TypeWriter from "typewriter";
-				import GlitchText from "glitch-text";
-				import "/assets/js/now-playing.js";
-				import "/assets/js/tag-line.js";
-			</script>`
+			html`
+				<script type="module">
+					import TypeWriter from "typewriter";
+					import GlitchText from "glitch-text";
+					import "/assets/js/now-playing.js";
+					import "/assets/js/tag-line.js";
+				</script>
+			`
 		);
 	}
 }

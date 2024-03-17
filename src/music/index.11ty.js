@@ -65,7 +65,7 @@ class Music {
 			</header>
 			<section
 				class="u-grid"
-				data-grid-columns="fluid">
+				data-grid-columns="auto-fit">
 				<div class="band u-invertSvg--onDark flow">
 					<h2>Front Royal</h2>
 					${this.generateSocialList(frontRoyal)}

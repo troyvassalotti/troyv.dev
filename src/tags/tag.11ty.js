@@ -23,24 +23,13 @@ class Tag extends Mixin([RendersPosts], Base) {
 		};
 	}
 
-	style() {
-		return (
-			super.style() +
-			html`<style>
-				.posts {
-					margin-block: var(--space-m-l);
-				}
-			</style>`
-		);
-	}
-
 	content(data) {
 		let {tag, collections} = data;
 
 		return html`
 			<main id="main">
-				<div class="wrapper constrain--more flow">
-					<header class="u-text--center">
+				<div class="wrapper flow">
+					<header class="masthead masthead--small masthead--no-contain">
 						<h1>Posts about “${this.capitalize(tag)}”</h1>
 					</header>
 					<section class="posts">

@@ -35,7 +35,6 @@ module.exports = function (config) {
 	config.setFrontMatterParsingOptions({
 		excerpt: true,
 		excerpt_separator: "<!-- excerpt -->",
-		excerpt_alias: "excerpt",
 	});
 
 	/**

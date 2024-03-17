@@ -187,7 +187,7 @@ class Post extends Base {
 											alt=""
 											decoding="async"
 											loading="lazy" />`}
-						  </a>`
+							</a>`
 						: html`<span class="webmention__author">
 								<img
 									width="48"
@@ -198,7 +198,7 @@ class Post extends Base {
 									decoding="async"
 									loading="lazy" />
 								<strong>Anonymous</strong>
-						  </span>`
+							</span>`
 				}
 					  ${
 							webmention.published
@@ -206,14 +206,14 @@ class Post extends Base {
 										class="webmention__pubdate dt-published"
 										datetime="${webmention.published}">
 										${webmention.published}
-								  </time>`
+									</time>`
 								: ""
 						}
 				  ${
 						webmention.content
 							? html`<div class="webmention__content p-content">
 									${webmention.content}
-							  </div>`
+								</div>`
 							: ""
 					}
 		</article>`;
@@ -242,8 +242,8 @@ class Post extends Base {
 		let previousPost = this.getPreviousCollectionItem(post, page);
 
 		return html`
-			<div class="wrapper constrain--some">
-				<main id="main">
+			<main id="main">
+				<div class="wrapper">
 					<article class="h-entry flow">
 						<header class="flow postHeader">
 							<h1 class="postTitle p-name">${title}</h1>
@@ -281,7 +281,7 @@ class Post extends Base {
 															.join("")}
 													</div>
 												</div>
-										  `
+											`
 										: ""}
 									${likes.length
 										? html`
@@ -296,7 +296,7 @@ class Post extends Base {
 															.join("")}
 													</div>
 												</div>
-										  `
+											`
 										: ""}
 									${replies.length
 										? html`<div class="webmentions__reply">
@@ -314,7 +314,7 @@ class Post extends Base {
 														)
 														.join("")}
 												</ol>
-										  </div>`
+											</div>`
 										: ""}
 									${mentions.length
 										? html`<div class="webmentions__mention">
@@ -332,7 +332,7 @@ class Post extends Base {
 														)
 														.join("")}
 												</ol>
-										  </div>`
+											</div>`
 										: ""}
 									${bookmarks.length
 										? html`<div class="webmentions__bookmark">
@@ -350,18 +350,18 @@ class Post extends Base {
 														)
 														.join("")}
 												</ol>
-										  </div>`
+											</div>`
 										: ""}
-							  `
+								`
 							: html`<p>No mentions yet ¯_(ツ)_/¯</p>`}
 					</section>
 					<hr class="u-rule" />
-				</main>
-			</div>
+				</div>
+			</main>
 
 			<!-- Post Navigation -->
 			${nextPost || previousPost
-				? html`<div class="wrapper constrain--some">
+				? html`<div class="wrapper">
 						<nav
 							aria-label="pagination"
 							class="c-postNavigation">
@@ -374,7 +374,7 @@ class Post extends Base {
 													>${nextPost.data.title}</a
 												>
 											</dd>
-									  </div>`
+										</div>`
 									: ""}
 								${previousPost
 									? html`<div>
@@ -384,11 +384,11 @@ class Post extends Base {
 													>${previousPost.data.title}</a
 												>
 											</dd>
-									  </div>`
+										</div>`
 									: ""}
 							</dl>
 						</nav>
-				  </div>`
+					</div>`
 				: ""}
 		`;
 	}

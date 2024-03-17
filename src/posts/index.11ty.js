@@ -20,56 +20,72 @@ class Posts extends Mixin([RendersPosts], Base) {
 	style() {
 		return (
 			super.style() +
-			html`<style>
-				.c-tagCloud {
-					margin-block: var(--space-l-xl);
-				}
+			html`
+				<style>
+					.rss {
+						align-items: center;
+						display: flex;
+						gap: 1ch;
 
-				.posts {
-					margin-block: var(--space-m-l);
-				}
+						svg {
+							inline-size: 1em;
+						}
+					}
 
-				.c-postList {
-					--flow-space: var(--space-s-m);
-				}
+					.tagCloud {
+						inset-block-start: 0;
+						position: sticky;
 
-				.rss {
-					align-items: center;
-					display: flex;
-					gap: 1ch;
-					justify-content: center;
-				}
+						.tagCloud__title {
+							font-family: var(--headings);
+							font-size: var(--step-1);
+							font-weight: bold;
+							margin-block-end: revert;
+						}
 
-				.rss svg {
-					max-inline-size: 1em;
-				}
+						.tagCloud__list {
+							display: flex;
+							flex-wrap: wrap;
+							gap: var(--space-2xs-xs);
+						}
 
-				.c-tagCloud__title {
-					font-family: var(--headings);
-					font-size: var(--step-1);
-					font-weight: bold;
-					margin-block-end: revert;
-				}
+						.tagCloud__tag {
+							border: 1px solid currentColor;
+							border-radius: 4px;
+							display: inline-block;
+							padding-block: 4px;
+							padding-inline: 8px;
+							text-decoration: none;
+						}
 
-				.c-tagCloud__list {
-					display: flex;
-					flex-wrap: wrap;
-					gap: var(--space-2xs-xs);
-				}
+						.tagCloud__tag::before {
+							content: "#";
+						}
+					}
 
-				.c-tagCloud__tag {
-					background-color: var(--foreground);
-					border-radius: 4px;
-					color: var(--background);
-					display: inline-block;
-					font-size: var(--step--1);
-					padding-inline: 8px;
-				}
+					.posts {
+						display: grid;
+						gap: var(--space-l-xl);
+					}
 
-				.c-tagCloud__tag::before {
-					content: "#";
-				}
-			</style>`
+					@container (width > 60rem) {
+						.posts {
+							grid-template-columns: 33% auto;
+						}
+					}
+				</style>
+			`
+		);
+	}
+
+	script() {
+		return (
+			super.script() +
+			html`
+				<script type="module">
+					import GlitchText from "glitch-text";
+				</script>
+			`
 		);
 	}
 
@@ -80,38 +96,41 @@ class Posts extends Mixin([RendersPosts], Base) {
 		} = data;
 
 		return html`
-			<div class="wrapper constrain--more">
-				<main id="main">
-					<section>
-						<header class="u-text--center">
-							<h1>${title}</h1>
-							<div class="rss u-invertSvg--onDark">
-								<span>${Icons("rss")}</span>
-								<span>Subscribe to the <a href="/feed.xml">RSS feed</a>.</span>
-							</div>
-						</header>
-						<nav
-							aria-label="tags"
-							class="c-tagCloud">
-							<p class="c-tagCloud__title">Tags (${allTagsList.length}):</p>
-							<ul
-								class="c-tagCloud__list"
-								role="list">
-								${allTagsList.sort().map((tag) => {
-									return html`<li>
-										<a
-											href="/tags/${this.slugify(tag)}/"
-											class="c-tagCloud__tag">
-											<span class="u-visually-hidden">Posts tagged</span> ${tag}
-										</a>
-									</li>`;
-								})}
-							</ul>
-						</nav>
+			<main id="main">
+				<div class="wrapper flow">
+					<header class="flow masthead masthead--small">
+						<h1><glitch-text>${title}</glitch-text></h1>
+						<div class="rss u-invertSvg--onDark">
+							<span>${Icons("rss")}</span>
+							<span>Subscribe to the <a href="/feed.xml">RSS feed</a>.</span>
+						</div>
+					</header>
+					<section class="posts">
+						<div class="stickyContainer">
+							<nav
+								aria-label="tags"
+								class="tagCloud u-step--1 animate__animated animate__fadeInLeft">
+								<p class="tagCloud__title">Tags (${allTagsList.length}):</p>
+								<ul
+									class="tagCloud__list"
+									role="list">
+									${allTagsList.sort().map((tag) => {
+										return html`<li>
+											<a
+												href="/tags/${this.slugify(tag)}/"
+												class="tagCloud__tag">
+												<span class="u-visually-hidden">Posts tagged</span>
+												${tag}
+											</a>
+										</li>`;
+									})}
+								</ul>
+							</nav>
+						</div>
+						${this.generatePostList(post, true)}
 					</section>
-					<section class="posts">${this.generatePostList(post, true)}</section>
-				</main>
-			</div>
+				</div>
+			</main>
 		`;
 	}
 }
