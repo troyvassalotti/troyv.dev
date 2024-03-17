@@ -37,7 +37,7 @@ class Projects {
 											"",
 										)}</a
 									>
-							  </p>`
+								</p>`
 							: ""}
 					</li>
 				`;
@@ -47,7 +47,13 @@ class Projects {
 
 	render({title, projects}) {
 		return html`
-			<h1>${title}</h1>
+			<header class="masthead masthead--small masthead--no-contain flow">
+				<h1><glitch-text>${title}</glitch-text></h1>
+				<p>
+					A non-exhaustive list of things I've made ranging from little tools to
+					bonafide apps.
+				</p>
+			</header>
 			<ul
 				role="list"
 				class="flow">

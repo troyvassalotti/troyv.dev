@@ -140,19 +140,17 @@ class Stats extends Mixin([MusicLibrary], Base) {
 	style() {
 		return (
 			super.style() +
-			html`<style>
-				.listeningHistory {
-					margin-block: var(--space-xl-2xl);
-				}
-
-				.tables {
-					align-items: start;
-					display: flex;
-					flex-wrap: wrap;
-					gap: var(--space-m);
-					justify-content: space-between;
-				}
-			</style>`
+			html`
+				<style>
+					.tables {
+						align-items: start;
+						display: flex;
+						flex-wrap: wrap;
+						gap: var(--space-m);
+						justify-content: space-between;
+					}
+				</style>
+			`
 		);
 	}
 
@@ -162,44 +160,41 @@ class Stats extends Mixin([MusicLibrary], Base) {
 
 		return html`
 			<main id="main">
-				<header class="flow u-truncate o-section--angled">
-					<h1 class="u-revertMargin--start">${title}</h1>
-					<p>
-						I keep track of my listening habits in ListenBrainz because I'm a
-						<strong>nerd</strong>. All that data is public on
-						<a href="https://listenbrainz.org/user/actionhamilton/"
-							>my ListenBrainz profile</a
-						>, but I've chosen to display a few specific metrics here. Cool,
-						right?
-					</p>
-				</header>
-				<div class="wrapper constrain--less">
-					<div class="listeningHistory">
-						<div class="wrapper constrain--some">
-							<h2 class="u-revertMargin--end u-step-2">
-								Top Releases Last Month
-							</h2>
-							<ul
-								class="releaseGrid"
-								role="list">
-								${this.generateCollectionList(
-									lastMonthsTopReleases,
-									this.generateVinylGridItem,
-								)}
-							</ul>
-						</div>
-						<div class="tables">
-							<stats-table
-								caption="Last 30 Plays"
-								headers="Number Artist Track Release"
-								data="${safeHtml`${JSON.stringify(mostRecentListens)}`}">
-							</stats-table>
-							<stats-table
-								caption="Top Artists This Month"
-								headers="Number Artist Listens"
-								data="${safeHtml`${JSON.stringify(topArtistsThisMonth)}`}">
-							</stats-table>
-						</div>
+				<div class="wrapper flow">
+					<header class="flow masthead masthead--small">
+						<h1><glitch-text>${title}</glitch-text></h1>
+						<p>
+							I keep track of my listening habits in ListenBrainz because I'm a
+							<strong>nerd</strong>. All that data is public on
+							<a href="https://listenbrainz.org/user/actionhamilton/"
+								>my ListenBrainz profile</a
+							>, but I've chosen to display a few specific metrics here. Cool,
+							right?
+						</p>
+					</header>
+					<div class="flow">
+						<h2>Top Releases Last Month</h2>
+						<ul
+							class="u-grid"
+							data-grid-columns="5"
+							role="list">
+							${this.generateCollectionList(
+								lastMonthsTopReleases,
+								this.generateVinylGridItem,
+							)}
+						</ul>
+					</div>
+					<div class="tables">
+						<stats-table
+							caption="Last 30 Plays"
+							headers="Number Artist Track Release"
+							data="${safeHtml`${JSON.stringify(mostRecentListens)}`}">
+						</stats-table>
+						<stats-table
+							caption="Top Artists This Month"
+							headers="Number Artist Listens"
+							data="${safeHtml`${JSON.stringify(topArtistsThisMonth)}`}">
+						</stats-table>
 					</div>
 				</div>
 			</main>

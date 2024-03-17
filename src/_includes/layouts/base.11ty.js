@@ -11,23 +11,27 @@ class Base {
 		let {content} = data;
 
 		return html`
-			<div class="wrapper constrain--more defaultContentBlock">
-				<main
-					id="main"
-					class="flow default">
-					${content}
-				</main>
-			</div>
+			<main id="main">
+				<div class="wrapper flow">${content}</div>
+			</main>
 		`;
 	}
 
 	script() {
 		return html`
+			<script>
+				document.documentElement.classList.add("js");
+			</script>
 			<script type="module">
 				import "/assets/js/modal-menu.js";
 				import CheatCodes from "cheatcodes";
-				new CheatCodes().listen();
-				new CheatCodes("7 1 7 0 7 2 7 3 6", "gamepad").listen();
+				import GlitchText from "glitch-text";
+
+				const generalCodes = new CheatCodes();
+				const gamepadCodes = new CheatCodes("7 1 7 0 7 2 7 3 6", "gamepad");
+
+				generalCodes.listen();
+				gamepadCodes.listen();
 
 				if (!document.getElementById("main")) {
 					console.error(
@@ -42,8 +46,7 @@ class Base {
 		let {
 			title,
 			description,
-			excerpt,
-			page: {fileSlug, url},
+			page: {fileSlug, url, excerpt},
 			metadata,
 			eleventy,
 			nav: {header},
@@ -57,8 +60,8 @@ class Base {
 				: safeHtml`${pageTitle} :: a page on ${metadata.domain}`;
 
 		return html`
-			<!-- base.11ty.js -->
 			<!doctype html>
+			<!-- base.11ty.js -->
 			<html
 				lang="en-US"
 				dir="ltr">
@@ -87,10 +90,16 @@ class Base {
 					<link
 						rel="dns-prefetch"
 						href="https://res.cloudinary.com/" />
-					<!-- Import Maps polyfill -->
-					<script
-						async
-						src="https://esm.sh/es-module-shims"></script>
+					<link
+						rel="preconnect"
+						href="https://fonts.googleapis.com" />
+					<link
+						rel="preconnect"
+						href="https://fonts.gstatic.com"
+						crossorigin />
+					<link
+						href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+						rel="stylesheet" />
 					<script type="importmap">
 						{
 							"imports": {
@@ -103,17 +112,21 @@ class Base {
 								"typewriter": "https://esm.sh/@troyv/typewriter@3.0.0",
 								"detune": "https://esm.sh/@troyv/detune@2.0.0",
 								"beats-per": "https://esm.sh/@troyv/beats-per@3.0.0",
-								"word-salad": "https://esm.sh/@troyv/word-salad@2.0.0"
+								"word-salad": "https://esm.sh/@troyv/word-salad@2.0.0",
+								"glitch-text": "https://esm.sh/@troyv/glitch-text@1.0.0"
 							}
 						}
 					</script>
-					<script>
-						document.documentElement.classList.add("js");
-					</script>
+
+					<!-- Scripts -->
+					${this.script()}
 
 					<link
 						rel="stylesheet"
 						href="/assets/css/style.css" />
+					<link
+						rel="stylesheet"
+						href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
 					<!-- Custom Styles -->
 					${this.style()}
@@ -165,10 +178,11 @@ class Base {
 					<!-- Verification Links -->
 					${metadata.socials
 						.map(
-							(social) =>
-								html`<link
+							(social) => html`
+								<link
 									rel="me"
-									href="${social.url}" />`,
+									href="${social.url}" />
+							`,
 						)
 						.join("\n")}
 
@@ -191,11 +205,11 @@ class Base {
 						rel="manifest"
 						href="/manifest.webmanifest" />
 				</head>
-				<body class="page--${fileSlug ?? "home"}">
+				<body class="page--${fileSlug || "home"}">
 					<!-- Main Navigation -->
-					<div class="header__container">
+					<div class="wrapper">
 						<nav
-							class="c-mainNavigation"
+							class="mainNavigation"
 							id="mainNavigation"
 							aria-label="main">
 							<a
@@ -209,10 +223,10 @@ class Base {
 										html`<li>
 											<a
 												href="${linkUrl}"
-												class="c-animatedLink"
+												class="animatedLink"
 												${linkUrl === url ? 'aria-current="page"' : ""}
 												id="link__${name}"
-												>${index === 0 ? "~/" : "::"}${name}</a
+												>${index === 0 ? "~/" : "~/"}${name}</a
 											>
 										</li>`,
 								)}
@@ -227,7 +241,8 @@ class Base {
 					<modal-menu
 						id="shortcuts"
 						shortcut="shift + ?"
-						class="flow">
+						class="flow"
+						data-undefined="display">
 						<p slot="title">Keyboard Shortcuts</p>
 						<div class="shortcuts__list flow">
 							<div class="shortcutItem">
@@ -251,9 +266,6 @@ class Base {
 							Dismiss
 						</button>
 					</modal-menu>
-
-					<!-- Scripts -->
-					${this.script()}
 				</body>
 			</html>
 		`;

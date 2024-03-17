@@ -17,6 +17,12 @@ class BPM {
 				import BeatsPer from "beats-per";
 			</script>
 
+			<style>
+				beats-per {
+					display: block;
+				}
+			</style>
+
 			<h1>${title}</h1>
 			<beats-per class="flow">
 				<p>BPM: <output data-bp-bpm></output></p>

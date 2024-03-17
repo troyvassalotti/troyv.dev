@@ -31,6 +31,7 @@ class BlogMaker {
 					background-color: transparent;
 					border: 1px solid var(--links);
 					color: var(--links);
+					cursor: pointer;
 					font-family: var(--code);
 					font-size: var(--step--1);
 					font-weight: bold;
@@ -42,8 +43,10 @@ class BlogMaker {
 			<h1>${title}</h1>
 			<p>
 				Write your own extremely unpredictable and often incoherent blog post
-				using a slightly-thorough list of every word I've written. It
-				<em>will definitely</em> output HTML characters and template language
+				using a slightly-thorough list of every word I've written.
+			</p>
+			<p>
+				It <em>will definitely</em> output HTML characters and template language
 				syntax.
 			</p>
 			<word-salad

@@ -10,9 +10,7 @@ const utilsDir = `${process.cwd()}/utils`;
 
 const filters = require(`${utilsDir}/filters`);
 const collections = require(`${utilsDir}/collections`);
-const transforms = require(`${utilsDir}/transforms`);
 const plugins = require(`${utilsDir}/plugins`);
-const templates = require(`${utilsDir}/templateFormats`);
 
 module.exports = function (config) {
 	// Passthroughs
@@ -33,22 +31,10 @@ module.exports = function (config) {
 		config.addCollection(collectionName, collections[collectionName]);
 	});
 
-	// Transforms
-	Object.keys(transforms).forEach((transformName) => {
-		config.addTransform(transformName, transforms[transformName]);
-	});
-
-	// Custom Templates
-	Object.keys(templates).forEach((templateName) => {
-		config.addTemplateFormats(templateName);
-		config.addExtension(templateName, templates[templateName]);
-	});
-
 	// Add excerpt support
 	config.setFrontMatterParsingOptions({
 		excerpt: true,
 		excerpt_separator: "<!-- excerpt -->",
-		excerpt_alias: "excerpt",
 	});
 
 	/**

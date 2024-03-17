@@ -3,31 +3,17 @@
 /** @type {Project[]} */
 const PROJECTS = [
 	{
-		name: "Abandoned Website",
-		repository: "https://github.com/troyvassalotti/abandoned-website",
-		description:
-			"A fake company website made as a Hugo learning experience. This was my first attempt at making websites for fun that aren't my personal site.",
-	},
-	{
 		name: "NotSocial",
 		url: "https://pang.troyv.dev/",
 		repository: "https://github.com/troyvassalotti/pang",
-		description:
-			"A not-so-social media website made using Vue (my first Vue project).",
+		description: "A not-so-social media website.",
 	},
 	{
-		name: "Express Cats",
+		name: "Cats",
 		url: "https://cats.troyv.dev/",
 		repository: "https://github.com/troyvassalotti/express-cats",
 		description:
 			"My first Express site which showcases my cats. Note: it can take up to 30 seconds to spin up if it's been a while since someone viewed it!",
-	},
-	{
-		name: "I Don't Have A Podcast",
-		url: "https://idonthaveapodcast.troyv.dev/",
-		repository: "https://github.com/troyvassalotti/idonthaveapodcast",
-		description:
-			"All those without a podcast rejoice and sign your name to the cause.",
 	},
 	{
 		name: "This is a Band",
