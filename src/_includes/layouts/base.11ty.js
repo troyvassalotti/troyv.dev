@@ -25,6 +25,7 @@ class Base {
 			<script type="module">
 				import "/assets/js/modal-menu.js";
 				import CheatCodes from "cheatcodes";
+				import GlitchText from "glitch-text";
 
 				const generalCodes = new CheatCodes();
 				const gamepadCodes = new CheatCodes("7 1 7 0 7 2 7 3 6", "gamepad");
@@ -59,8 +60,8 @@ class Base {
 				: safeHtml`${pageTitle} :: a page on ${metadata.domain}`;
 
 		return html`
-			<!-- base.11ty.js -->
 			<!doctype html>
+			<!-- base.11ty.js -->
 			<html
 				lang="en-US"
 				dir="ltr">

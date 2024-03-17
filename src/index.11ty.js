@@ -95,7 +95,6 @@ class Home extends Base {
 			html`
 				<script type="module">
 					import TypeWriter from "typewriter";
-					import GlitchText from "glitch-text";
 					import "/assets/js/now-playing.js";
 					import "/assets/js/tag-line.js";
 				</script>

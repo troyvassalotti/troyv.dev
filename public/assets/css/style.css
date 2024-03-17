@@ -52,10 +52,6 @@
 		overflow-wrap: break-word;
 	}
 
-	a:not([class]) {
-		text-decoration-skip-ink: auto;
-	}
-
 	ul[role="list"],
 	ol[role="list"] {
 		list-style: none;
@@ -310,6 +306,7 @@
 
 	a {
 		color: var(--links);
+		text-decoration-skip-ink: none;
 
 		&:not(.animatedLink) {
 			text-decoration-thickness: 0.1em;
@@ -462,6 +459,12 @@
 		--flow-space: var(--space-l);
 	}
 
+	plvy-list {
+		color-scheme: light dark;
+		font-size: var(--step--1);
+		max-inline-size: 70rem;
+	}
+
 	.themeSelector__button {
 		padding: var(--space-2xs);
 	}
@@ -507,7 +510,7 @@
 				block-size: 0.06em;
 				content: "";
 				inline-size: 100%;
-				inset-block-end: 0;
+				inset-block-end: -0.5ch;
 				inset-inline-start: 0;
 				position: absolute;
 				transform: var(--linkStateRest);
@@ -562,28 +565,6 @@
 		block-size: var(--embed-h, 750px);
 		border: 0;
 		inline-size: min(var(--embed-h, 100%), 100%);
-	}
-
-	.releaseGrid {
-		--column-count: auto-fill;
-		--column-size: 9rem;
-
-		align-items: start;
-		display: grid;
-		font-size: var(--step--1);
-		grid-template-columns: repeat(
-			var(--column-count),
-			minmax(var(--column-size), 1fr)
-		);
-		gap: var(--space-s-m);
-		margin-block-end: var(--space-xl-2xl);
-	}
-
-	@media (min-width: 70.25rem) {
-		.releaseGrid {
-			--column-count: 5;
-			--column-size: 12rem;
-		}
 	}
 
 	.releaseName {
@@ -698,7 +679,7 @@
 		text-align: center;
 	}
 
-	.u-truncate :is(h1, h2, h3, h4, h5, h6, p, ul, ol) {
+	.u-truncate :is(h1, h2, h3, h4, h5, h6, p, :is(ul, ol):not([role])) {
 		max-inline-size: var(--readable-length, 70ch);
 	}
 

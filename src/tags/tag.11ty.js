@@ -30,7 +30,10 @@ class Tag extends Mixin([RendersPosts], Base) {
 			<main id="main">
 				<div class="wrapper flow">
 					<header class="masthead masthead--small masthead--no-contain">
-						<h1>Posts about “${this.capitalize(tag)}”</h1>
+						<h1>
+							Posts about
+							<em>${this.capitalize(tag)}</em>
+						</h1>
 					</header>
 					<section class="posts">
 						${this.generatePostList(collections[tag], true)}

@@ -17,10 +17,18 @@ class Tuner {
 				import {Detune} from "detune";
 			</script>
 
+			<style>
+				.tunings {
+					display: flex;
+					flex-wrap: wrap;
+					gap: var(--space-2xl);
+				}
+			</style>
+
 			<h1>${title}</h1>
-			<div class="u-grid">
+			<div class="tunings">
 				<div class="detune">
-					<h2>Standard</h2>
+					<h2 class="u-step-1">Standard</h2>
 					<de-tune>
 						<button>E2</button>
 						<button>A2</button>
@@ -31,7 +39,7 @@ class Tuner {
 					</de-tune>
 				</div>
 				<div class="detune">
-					<h2>Half Step Down</h2>
+					<h2 class="u-step-1">Half Step Down</h2>
 					<de-tune>
 						<button>Eb2</button>
 						<button>Ab2</button>
@@ -42,7 +50,7 @@ class Tuner {
 					</de-tune>
 				</div>
 				<div class="detune">
-					<h2>Drop D</h2>
+					<h2 class="u-step-1">Drop D</h2>
 					<de-tune>
 						<button>D2</button>
 						<button>A2</button>
@@ -53,7 +61,7 @@ class Tuner {
 					</de-tune>
 				</div>
 				<div class="detune">
-					<h2>D Standard</h2>
+					<h2 class="u-step-1">D Standard</h2>
 					<de-tune>
 						<button>D2</button>
 						<button>G2</button>
@@ -64,7 +72,7 @@ class Tuner {
 					</de-tune>
 				</div>
 				<div class="detune">
-					<h2>C# Standard</h2>
+					<h2 class="u-step-1">C# Standard</h2>
 					<de-tune>
 						<button>C#2</button>
 						<button>F#2</button>

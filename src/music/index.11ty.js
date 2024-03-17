@@ -1,7 +1,6 @@
 /** @format */
 
 const {html} = require("common-tags");
-const {Icon} = require("../_includes/partials/index.js");
 
 class Music {
 	data() {
@@ -11,89 +10,55 @@ class Music {
 				"Music is one of my passions. Check out all my musical projects here.",
 			layout: "base",
 			frontRoyal: {
-				meta: {
-					Instruments: "Guitar, backing vocals",
-					"Years Active": "2014 - present",
-				},
-				social: [
-					{
-						href: "https://frontroyalmd.bandcamp.com/",
-						img: "bandcamp",
-						alt: "Bandcamp",
-					},
-				],
+				bandcamp: "https://frontroyalmd.bandcamp.com/",
+				website: "https://www.frontroyalband.com/",
 			},
 			troyalllowercase: {
-				meta: {
-					Instruments: "Guitar, drums, bass, vocals",
-					"Years Active": "2016 - present",
-				},
-				social: [
-					{
-						href: "https://troyalllowercase.bandcamp.com/",
-						img: "bandcamp",
-						alt: "Bandcamp",
-					},
-				],
+				bandcamp: "https://troyalllowercase.bandcamp.com/",
 			},
 		};
 	}
 
-	generateSocialLink({href, img}) {
-		return html`<a
-			class="c-svg-link"
-			href="${href}"
-			>${Icon(img)}</a
-		>`;
-	}
-
-	generateSocialList({social}) {
-		return social?.map((item) => this.generateSocialLink(item)).join("");
-	}
-
 	render({frontRoyal, troyalllowercase}) {
 		return html`
-			<header class="flow header u-truncate">
-				<h1>I make music.</h1>
+			<header
+				class="flow header u-truncate masthead masthead--small masthead--no-contain">
+				<h1>I make <glitch-text>music</glitch-text>.</h1>
 				<p>
-					When I'm not coding, I'm probably writing, playing, recording, or
-					listening to music. Check out my projects below, take a deep dive into
-					my
+					Check out my projects below, take a deep dive into my
 					<a href="/music/stats/">listening habits</a>, or view my
 					<a href="/music/collection">music collection</a>.
 				</p>
 			</header>
-			<section
-				class="u-grid"
-				data-grid-columns="auto-fit">
-				<div class="band u-invertSvg--onDark flow">
-					<h2>Front Royal</h2>
-					${this.generateSocialList(frontRoyal)}
-					<iframe
-						class="bandcampEmbed"
-						src="https://bandcamp.com/EmbeddedPlayer/album=282570022/size=large/bgcol=333333/linkcol=e99708/transparent=true/"
-						seamless
-						loading="lazy"
-						><a href="https://frontroyalmd.bandcamp.com/album/long-story-short"
-							>Long Story Short by Front Royal</a
-						></iframe
-					>
-				</div>
-				<div class="band u-invertSvg--onDark flow">
-					<h2>troyalllowercase</h2>
-					${this.generateSocialList(troyalllowercase)}
-					<iframe
-						class="bandcampEmbed"
-						src="https://bandcamp.com/EmbeddedPlayer/album=2678313189/size=large/bgcol=333333/linkcol=0f91ff/transparent=true/"
-						seamless
-						loading="lazy"
-						><a
-							href="https://troyalllowercase.bandcamp.com/album/lets-try-this-again"
-							>Let's try this again by troyalllowercase</a
-						></iframe
-					>
-				</div>
+			<section class="flow prose u-truncate">
+				<h2>Front Royal</h2>
+				<p>
+					A punk/alternative/indie/punkternatindie band. If that sounds like
+					your thing, check out our
+					<a href="${frontRoyal.bandcamp}">Bandcamp</a> or visit our
+					<a href="${frontRoyal.website}">website</a>.
+				</p>
+				<h2>troyalllowercase</h2>
+				<p>
+					My solo project where I do whatever I want. It's got punk, it's got
+					emo, it's sometimes instrumental. If you like Front Royal, you'll also
+					like this. Check out
+					<a href="${troyalllowercase.bandcamp}">my Bandcamp</a> or find me on
+					your streaming service of choice.
+				</p>
+				<p>
+					I'll even let you listen to a preview of this project using
+					<a href="https://plvylist.troyv.dev">Plvylist</a>, a media player web
+					component I made.
+				</p>
+				<plvy-list
+					class="plvylist"
+					file="/assets/js/plvylist.json">
+				</plvy-list>
 			</section>
+			<script type="module">
+				import Plvylist from "plvylist";
+			</script>
 		`;
 	}
 }

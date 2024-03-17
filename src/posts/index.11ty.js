@@ -78,17 +78,6 @@ class Posts extends Mixin([RendersPosts], Base) {
 		);
 	}
 
-	script() {
-		return (
-			super.script() +
-			html`
-				<script type="module">
-					import GlitchText from "glitch-text";
-				</script>
-			`
-		);
-	}
-
 	content(data) {
 		let {
 			title,
