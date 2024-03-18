@@ -5,7 +5,8 @@ const {html} = require("common-tags");
 class Tuner {
 	data() {
 		return {
-			layout: "base",
+			layout: "base.11ty.js",
+			glitch: true,
 			title: "Tuner",
 			permalink: "/tuner/",
 		};
@@ -25,7 +26,6 @@ class Tuner {
 				}
 			</style>
 
-			<h1>${title}</h1>
 			<div class="tunings">
 				<div class="detune">
 					<h2 class="u-step-1">Standard</h2>

@@ -459,16 +459,6 @@
 		--flow-space: var(--space-l);
 	}
 
-	plvy-list {
-		color-scheme: light dark;
-		font-size: var(--step--1);
-		max-inline-size: 70rem;
-	}
-
-	.themeSelector__button {
-		padding: var(--space-2xs);
-	}
-
 	.shortcutItem {
 		border-block-end: 1px solid var(--accent);
 		font-size: var(--step--1);
@@ -556,17 +546,6 @@
 		vertical-align: middle;
 	}
 
-	.c-svg-link {
-		display: block;
-		max-inline-size: 3em;
-	}
-
-	.bandcampEmbed {
-		block-size: var(--embed-h, 750px);
-		border: 0;
-		inline-size: min(var(--embed-h, 100%), 100%);
-	}
-
 	.releaseName {
 		font-weight: bold;
 		text-transform: uppercase;
@@ -624,11 +603,11 @@
 		gap: var(--input-gap);
 		inline-size: calc(calc(var(--input-size) * 2) + calc(var(--input-gap) * 2));
 		justify-content: center;
-	}
 
-	de-tune button {
-		block-size: var(--input-size);
-		inline-size: var(--input-size);
+		button {
+			block-size: var(--input-size);
+			inline-size: var(--input-size);
+		}
 	}
 }
 
@@ -675,20 +654,8 @@
 		font-size: var(--step--2);
 	}
 
-	.u-text--center {
-		text-align: center;
-	}
-
 	.u-truncate :is(h1, h2, h3, h4, h5, h6, p, :is(ul, ol):not([role])) {
 		max-inline-size: var(--readable-length, 70ch);
-	}
-
-	.u-line-height--less {
-		line-height: 1.25;
-	}
-
-	.u-text--caps {
-		text-transform: uppercase;
 	}
 
 	.u-text--italic {
@@ -711,19 +678,6 @@
 		font-family: var(--code);
 	}
 
-	.u-revertMargin--start {
-		margin-block-start: revert;
-	}
-
-	.u-revertMargin--end {
-		margin-block-end: revert;
-	}
-
-	.u-breakout {
-		margin-inline: calc(50% - 50vw);
-	}
-
-	/* Yeah you do */
 	.u-rule {
 		margin-block-start: var(--space-l-xl);
 		max-inline-size: 40ch;
@@ -779,7 +733,7 @@
 		display: inline;
 	}
 
-	.flow > * + * {
+	.flow > *:not(style, script) + *:not(style, script) {
 		margin-block-start: var(--flow-space, 1em);
 	}
 

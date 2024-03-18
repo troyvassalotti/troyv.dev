@@ -5,30 +5,25 @@ const {html} = require("common-tags");
 module.exports = function () {
 	return html`
 		<style>
-			.c-contactForm {
+			.contactForm {
 				color-scheme: light dark;
 				margin-block: 2rem;
 				max-inline-size: 40rem;
-			}
 
-			.c-contactForm__set {
-				display: flex;
-				flex-direction: column;
-				gap: 0.5rem;
-			}
+				.contactForm__set {
+					display: flex;
+					flex-direction: column;
+					gap: 0.5rem;
+				}
 
-			.requiredField {
-				color: red;
-			}
-
-			button[type="submit"] {
-				padding-block: var(--space-2xs);
-				padding-inline: 1ch;
+				.requiredField {
+					color: red;
+				}
 			}
 		</style>
 
 		<form
-			class="c-contactForm flow"
+			class="contactForm flow"
 			name="contactForm"
 			netlify
 			netlify-honeypot="bot-field"
@@ -37,7 +32,7 @@ module.exports = function () {
 				Don't fill this out:
 				<input name="bot-field" />
 			</label>
-			<div class="c-contactForm__set">
+			<div class="contactForm__set">
 				<label for="name">
 					Name<sup
 						aria-hidden="true"
@@ -51,7 +46,7 @@ module.exports = function () {
 					id="name"
 					required />
 			</div>
-			<div class="c-contactForm__set">
+			<div class="contactForm__set">
 				<label for="email">
 					Email<sup
 						aria-hidden="true"
@@ -65,7 +60,7 @@ module.exports = function () {
 					id="email"
 					required />
 			</div>
-			<div class="c-contactForm__set">
+			<div class="contactForm__set">
 				<label for="message">
 					Message<sup
 						aria-hidden="true"
@@ -80,7 +75,11 @@ module.exports = function () {
 					placeholder="Say hi!"
 					rows="5"></textarea>
 			</div>
-			<button type="submit">Submit</button>
+			<button
+				class="button"
+				type="submit">
+				Submit
+			</button>
 		</form>
 	`;
 };

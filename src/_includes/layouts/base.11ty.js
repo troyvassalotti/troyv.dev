@@ -3,20 +3,6 @@
 const {html, safeHtml} = require("common-tags");
 
 class Base {
-	style() {
-		return html``;
-	}
-
-	content(data) {
-		let {content} = data;
-
-		return html`
-			<main id="main">
-				<div class="wrapper flow">${content}</div>
-			</main>
-		`;
-	}
-
 	script() {
 		return html`
 			<script>
@@ -39,6 +25,44 @@ class Base {
 					);
 				}
 			</script>
+		`;
+	}
+
+	style() {
+		return html``;
+	}
+
+	content(data) {
+		let {
+			content,
+			containment,
+			title,
+			truncate,
+			glitch,
+			outputDescription,
+			description,
+			noHeaderContainment,
+		} = data;
+
+		return html`
+			<main id="main">
+				<div
+					class="wrapper constrain--${containment ||
+					"base"} flow prose ${truncate ? "u-truncate" : ""}">
+					<header
+						class="flow masthead masthead--small ${noHeaderContainment
+							? "masthead--no-contain"
+							: ""}">
+						<h1>
+							${glitch
+								? html`<glitch-text>${title}</glitch-text>`
+								: html`${title}`}
+						</h1>
+						${outputDescription ? html`<p>${description}</p>` : html``}
+					</header>
+					${content}
+				</div>
+			</main>
 		`;
 	}
 
@@ -131,7 +155,7 @@ class Base {
 					<!-- Custom Styles -->
 					${this.style()}
 
-					<!-- SEO -->
+					<!-- SEO Garbage -->
 					<meta
 						name="description"
 						content="${pageDescription}" />
@@ -219,8 +243,8 @@ class Base {
 							>
 							<ul role="list">
 								${header.map(
-									({name, url: linkUrl}, index) =>
-										html`<li>
+									({name, url: linkUrl}, index) => html`
+										<li>
 											<a
 												href="${linkUrl}"
 												class="animatedLink"
@@ -228,7 +252,8 @@ class Base {
 												id="link__${name}"
 												>${index === 0 ? "~/" : "~/"}${name}</a
 											>
-										</li>`,
+										</li>
+									`,
 								)}
 							</ul>
 						</nav>

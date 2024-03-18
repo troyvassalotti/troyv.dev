@@ -16,10 +16,6 @@ class Post extends Base {
 					max-inline-size: 60em;
 				}
 
-				.post :is(h2, h3, h4, h5, h6) {
-					margin-block-start: var(--space-xl-2xl);
-				}
-
 				.postSummary {
 					font-style: italic;
 				}
@@ -34,10 +30,6 @@ class Post extends Base {
 					content: "🔗";
 					margin-inline-start: 0.5ch;
 					position: absolute;
-				}
-
-				.post p {
-					hyphens: initial;
 				}
 
 				/* Webmention Section */
@@ -244,7 +236,7 @@ class Post extends Base {
 		return html`
 			<main id="main">
 				<div class="wrapper">
-					<article class="h-entry flow">
+					<article class="h-entry flow prose">
 						<header class="flow postHeader">
 							<h1 class="postTitle p-name">${title}</h1>
 							<p class="postSummary p-summary u-step--1">${description}</p>

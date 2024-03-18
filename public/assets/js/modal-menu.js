@@ -60,20 +60,31 @@ class ModalMenu extends LitElement {
 		return this.shortcut.split("+").map((key) => key.trim());
 	}
 
-	firstUpdated() {
-		if (this.shortcut && this.shortcutKeys) {
-			document.addEventListener("keydown", (e) => {
-				if (this.shortcutKeys.includes("shift")) {
-					if (e.shiftKey & (e.key === this.shortcutKeys[1])) {
-						this.dialogElement.open ? this.closeModal() : this.openModal();
-					}
-				}
-			});
+	handleKeydown(e) {
+		if (this.shortcutKeys.includes("shift")) {
+			if (e.shiftKey && e.key === this.shortcutKeys[1]) {
+				this.dialogElement.open ? this.closeModal() : this.openModal();
+			}
 		}
 	}
 
+	connectedCallback() {
+		super.connectedCallback();
+		this.handleKeydown = this.handleKeydown.bind(this);
+
+		if (this.shortcut && this.shortcutKeys) {
+			document.addEventListener("keydown", this.handleKeydown);
+		}
+	}
+
+	disconnectedCallback() {
+		super.disconnectedCallback();
+		document.removeEventListener("keydown", this.handleKeydown);
+	}
+
 	render() {
-		return html`<slot
+		return html`
+			<slot
 				@click=${this.openModal}
 				name="trigger"></slot>
 			<dialog id="modal">
@@ -87,8 +98,9 @@ class ModalMenu extends LitElement {
 						name="dismiss"
 						@click=${this.closeModal}></slot>
 				</div>
-			</dialog>`;
+			</dialog>
+		`;
 	}
 }
 
-customElements.define("modal-menu", ModalMenu);
+window.customElements.define("modal-menu", ModalMenu);

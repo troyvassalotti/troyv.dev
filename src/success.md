@@ -1,15 +1,12 @@
 ---
-title: Success
-description: Thanks for reaching out! I'll be in touch soon.
+title: 200 OK
+description: Sit back, relax, and I'll be in touch soon.
+outputDescription: true,
 permalink: /success/
-layout: base
+layout: base.11ty.js
 eleventyExcludeFromCollections: true
 ---
 
 <!-- @format -->
-
-# 200 OK
-
-Sit back, relax, and I'll be in touch soon.
 
 https://www.youtube.com/watch?v=dQw4w9WgXcQ

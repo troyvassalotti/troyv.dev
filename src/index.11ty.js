@@ -25,11 +25,7 @@ class Home extends Base {
 	}
 
 	content(data) {
-		let {
-			metadata: {cloudinary},
-			collections,
-			projects,
-		} = data;
+		let {collections} = data;
 
 		return html`
 			<main id="main">
