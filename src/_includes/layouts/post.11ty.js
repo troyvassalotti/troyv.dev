@@ -32,70 +32,6 @@ class Post extends Base {
 					position: absolute;
 				}
 
-				/* Webmention Section */
-				.webmentions {
-					margin-block: var(--space-s-l);
-					max-inline-size: 70rem;
-					padding-block: var(--space-2xs);
-				}
-
-				.webmentions h2 {
-					font-size: var(--step-1);
-					font-variant: small-caps;
-				}
-
-				.webmentions h3 {
-					font-size: var(--step-0);
-					margin-block: 1ch;
-				}
-
-				.webmentions__facepile {
-					align-items: center;
-					display: flex;
-					flex-wrap: wrap;
-				}
-
-				.webmentions__face {
-					block-size: 2rem;
-					border-radius: 50%;
-					flex: none;
-					inline-size: 2rem;
-					margin: revert;
-					object-fit: cover;
-				}
-
-				.webmentions__item:not(:first-of-type) {
-					margin-block-start: 2rem;
-				}
-
-				/* Single Webmention */
-				.webmention__meta,
-				.webmention__author {
-					align-items: center;
-					display: flex;
-					flex-wrap: wrap;
-				}
-
-				.webmention__meta {
-					margin-block-end: 1rem;
-				}
-
-				.webmention__author {
-					margin-inline-end: 0.5rem;
-				}
-
-				.webmention__author__photo {
-					block-size: 3rem;
-					border-radius: 50%;
-					inline-size: 3rem;
-					margin-inline-end: 0.5rem;
-					object-fit: cover;
-				}
-
-				.webmention__pubdate {
-					font-style: italic;
-				}
-
 				/* Post Navigation */
 				.c-postNavigation {
 					margin-block: var(--space-l-xl);
@@ -224,12 +160,6 @@ class Post extends Base {
 
 		let {date} = page;
 
-		let reposts = this.filterWebmentions(webmentions, "repost-of");
-		let likes = this.filterWebmentions(webmentions, "like-of");
-		let bookmarks = this.filterWebmentions(webmentions, "bookmark-of");
-		let replies = this.filterWebmentions(webmentions, "in-reply-to");
-		let mentions = this.filterWebmentions(webmentions, "mention-of");
-
 		let nextPost = this.getNextCollectionItem(post, page);
 		let previousPost = this.getPreviousCollectionItem(post, page);
 
@@ -254,102 +184,10 @@ class Post extends Base {
 
 					<web-mentions domain="https://www.troyv.dev"></web-mentions>
 
-					<!-- Webmentions -->
-					<hr class="u-rule" />
-					<section
-						class="webmentions"
-						id="webmentions">
-						<h2>Webmentions</h2>
-						${webmentions.length
-							? html`
-									${reposts.length
-										? html`
-												<div class="webmentions__repost">
-													<h3>Reposts: ${reposts.length}</h3>
-													<div class="webmentions__facepile">
-														${reposts
-															.toReversed()
-															.map((webmention) =>
-																this.generateWebmentionCountSection(webmention),
-															)
-															.join("")}
-													</div>
-												</div>
-											`
-										: ""}
-									${likes.length
-										? html`
-												<div class="webmentions__like">
-													<h3>Likes: ${likes.length}</h3>
-													<div class="webmentions__facepile">
-														${likes
-															.toReversed()
-															.map((webmention) =>
-																this.generateWebmentionCountSection(webmention),
-															)
-															.join("")}
-													</div>
-												</div>
-											`
-										: ""}
-									${replies.length
-										? html`<div class="webmentions__reply">
-												<h3>Replies: ${replies.length}</h3>
-												<ol
-													class="webmentions__list"
-													role="list">
-													${replies
-														.toReversed()
-														.map(
-															(webmention) =>
-																html`<li class="webmentions__item">
-																	${this.generateSingleWebmention(webmention)}
-																</li>`,
-														)
-														.join("")}
-												</ol>
-											</div>`
-										: ""}
-									${mentions.length
-										? html`<div class="webmentions__mention">
-												<h3>Mentions: ${mentions.length}</h3>
-												<ol
-													class="webmentions__list"
-													role="list">
-													${mentions
-														.toReversed()
-														.map(
-															(webmention) =>
-																html`<li class="webmentions__item">
-																	${this.generateSingleWebmention(webmention)}
-																</li>`,
-														)
-														.join("")}
-												</ol>
-											</div>`
-										: ""}
-									${bookmarks.length
-										? html`<div class="webmentions__bookmark">
-												<h3>Bookmarks: ${bookmarks.length}</h3>
-												<ol
-													class="webmentions__list"
-													role="list">
-													${bookmarks
-														.toReversed()
-														.map(
-															(webmention) =>
-																html`<li class="webmentions__item">
-																	${this.generateSingleWebmention(webmention)}
-																</li>`,
-														)
-														.join("")}
-												</ol>
-											</div>`
-										: ""}
-								`
-							: html`<p>No mentions yet ¯_(ツ)_/¯</p>`}
-					</section>
-					<hr class="u-rule" />
+					<web-mentions
+						domain="https://www.troyv.dev"
+						variant="facepile"
+						loadstyles></web-mentions>
 				</div>
 			</main>
 

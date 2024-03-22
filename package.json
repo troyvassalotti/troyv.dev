@@ -24,7 +24,6 @@
 		"@11ty/eleventy-plugin-inclusive-language": "^1.0.3",
 		"@11ty/eleventy-plugin-rss": "^1.2.0",
 		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-		"@chrisburnell/eleventy-cache-webmentions": "^1.2.5",
 		"@troyv/common-config": "^1.1.0",
 		"common-tags": "^1.8.2",
 		"dotenv": "^16.0.0",
@@ -35,8 +34,7 @@
 		"netlify-plugin-cache": "^1.0.3",
 		"netlify-plugin-webmentions": "^1.1.1",
 		"plop": "^4.0.0",
-		"prettier": "^3.1.0",
-		"remark": "^15.0.1"
+		"prettier": "^3.1.0"
 	},
 	"prettier": "@troyv/common-config/.prettierrc.json"
 }
