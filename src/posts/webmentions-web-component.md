@@ -12,7 +12,7 @@ syndication:
 
 <!-- @format -->
 
-I've been giving my site a fresh look recently. It mostly involved stylesheet updates with a touch of dependency management and site simplification, but I got overwhelmed by the unknowns in how my existing webmention system worked[^This isn't surprising considering webmentions as a whole are not a straightforward system.] and wanted to do something that felt more comfortable.
+I've been giving my site a fresh look recently. It mostly involved stylesheet updates with a touch of dependency management and site simplification, but I got overwhelmed by the unknowns in how my existing webmention system worked^[This isn't surprising considering webmentions as a whole are not a straightforward system.] and wanted to do something that felt more comfortable.
 
 [Chris Burnell's](https://chrisburnell.com/eleventy-cache-webmentions/) `eleventy-cache-webmentions` has been my plugin-of-choice for handling webmentions up to this point because it gave me exactly what I needed with little configuration necessary (thanks Chris!). But I wanted to try something different; something that I can build myself.
 
