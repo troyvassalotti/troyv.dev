@@ -30,22 +30,26 @@ class Home extends Base {
 		return html`
 			<main id="main">
 				<div class="wrapper flow">
-					<section
-						class="container--about masthead u-step-4 animate__animated animate__fadeInDown">
-						<h1 class="u-inline">
-							<glitch-text>Hey, I'm Troy.</glitch-text>
-						</h1>
-						<span
-							>I'm a Baltimore-based <a href="/music/">musician</a>, software
-							engineer, and
-							<tag-line
-								taglines="insert your favorite descriptors here | hopeless romantic | rotten tomato | apple butter cheesecake | musician, engineer, and musician, engineer, and musician engineer... | I don't know anymore | pumpkin spice latte | you | somebody you used to know | never gonna give you up | full of peanut butter | wishing you were here | daydreamer"
-								>loading...</tag-line
-							>. I'm currently listening to
+					<section class="container--about u-step-4 masthead flow">
+						<div class="animate__animated animate__fadeInDown">
+							<h1 class="u-inline">
+								<glitch-text>Hey, I'm Troy.</glitch-text>
+							</h1>
+							<span
+								>I'm a Baltimore-based <a href="/music/">musician</a>, software
+								engineer, and
+								<tag-line
+									taglines="insert your favorite descriptors here | hopeless romantic | rotten tomato | apple butter cheesecake | musician, engineer, and musician, engineer, and musician engineer... | I don't know anymore | pumpkin spice latte | you | somebody you used to know | never gonna give you up | full of peanut butter | wishing you were here | daydreamer"
+									>loading...</tag-line
+								>.</span
+							>
+						</div>
+						<p class="u-step-0">
+							I'm currently listening to
 							<now-playing service="https://api.troyv.dev/now-playing"
 								>elevator music</now-playing
-							>.</span
-						>
+							>.
+						</p>
 					</section>
 					<section class="container--posts flow">
 						<type-writer data-undefined="visibility">

@@ -4,6 +4,7 @@
  * @typedef {"reposts" | "likes" | "bookmarks" | "replies" | "mentions"} Filter
  * @typedef {"repost-of" | "like-of" | "bookmark-of" | "in-reply-to" | "mention-of"} WebmentionType
  * @typedef {"feed" | "facepile"} Variant
+ * @typedef {"ascending" | "descending"} Sort
  */
 
 import {html, css, LitElement} from "lit";
@@ -16,6 +17,7 @@ function getMapKey(map, value) {
  * @element web-mentions
  * @summary A web component to display web mentions of the current URL.
  *
+ * @property {boolean} expanded - State of whether all mentions are shown or if it's collapsed.
  * @property {string} domain - Domain of the page to get web mentions of. Useful for overriding localhost servers.
  * @property {string} path - URL path excluding domain to find mentions of. Defaults to the current location.
  * @property {string} feed - Webmention service feed to fetch data from. Defaults to using webmention.io.
@@ -23,6 +25,9 @@ function getMapKey(map, value) {
  * @property {Filter} filters - Space-separated list of filters for the type of webmention to show. Possible options are: likes, reposts, replies, mentions, or bookmarks.
  * @property {Variant} variant - Type of visual style to display. Best paired with individual filters.
  * @property {boolean} loadStyles - Optionally adopt minimal default styles.
+ * @property {Sort} sortBy - How to sort the webmentions. Default is ascending.
+ * @property {boolean} showTitle - Display an optional header for the webmentions section.
+ * @property {number} previewLimit - Total number of mentions to show in the preview before hiding the rest.
  *
  * @todo
  * it should:
@@ -34,6 +39,7 @@ export default class WebMentions extends LitElement {
 	static properties = {
 		webmentions: {type: Array, state: true},
 		filteredWebmentions: {type: Array, state: true},
+		expanded: {type: Boolean, reflect: true},
 		domain: {type: String},
 		path: {type: String},
 		feed: {type: String},
@@ -41,10 +47,14 @@ export default class WebMentions extends LitElement {
 		filters: {type: String},
 		variant: {type: String, reflect: true},
 		loadStyles: {type: Boolean},
+		sortBy: {type: String},
+		showTitle: {type: Boolean},
+		previewLimit: {type: Number},
 	};
 
 	constructor() {
 		super();
+		this.expanded = false;
 		this.domain = window.location.origin;
 		this.path = window.location.pathname;
 		this.feed = "https://webmention.io/api/mentions.jf2?target";
@@ -52,15 +62,38 @@ export default class WebMentions extends LitElement {
 		this.filters = undefined;
 		this.variant = "feed";
 		this.loadStyles = false;
+		this.sortBy = "ascending";
+		this.showTitle = false;
+		this.previewLimit = 4;
 	}
 
 	static styles = css`
 		web-mentions {
 			display: block;
+			margin-block: 2rem;
 
 			[role="list"] {
 				list-style: none;
 				padding: 0;
+			}
+
+			.webmentions__header {
+				display: flex;
+				gap: 4px;
+				margin-block-end: 1.5rem;
+			}
+
+			.webmentions__title {
+				font-size: 1.5rem;
+			}
+
+			.webmentions__showAll {
+				border: 1px solid currentColor;
+				border-radius: 0.5em;
+				color: currentColor;
+				font-size: 1rem;
+				padding-block: 0.5em;
+				padding-inline: 1em;
 			}
 
 			.webmentions--facepile {
@@ -78,10 +111,72 @@ export default class WebMentions extends LitElement {
 				}
 			}
 
+			.webmentions--feed {
+				font-size: 1rem;
+
+				> * + * {
+					margin-block-start: 2em;
+				}
+
+				.webmention {
+					column-gap: 1em;
+					container-type: inline-size;
+					display: grid;
+					grid-template-columns: auto 1fr;
+				}
+
+				.webmention__header {
+					align-items: center;
+					display: flex;
+					font-size: 1rem;
+					gap: 1ch;
+				}
+
+				.webmention__meta {
+					display: inline-flex;
+					flex-direction: column;
+					gap: 0.5em;
+
+					> * {
+						inline-size: fit-content;
+					}
+
+					time {
+						font-size: 0.9rem;
+					}
+				}
+
+				.webmention__content {
+					grid-column: 1 / span 2;
+					margin-block-start: 1em;
+
+					@container (width > 40rem) {
+						grid-column: 2;
+					}
+				}
+
+				.webmention__content__reply {
+					white-space: pre-line;
+				}
+
+				.webmention__content__source {
+					display: inline-block;
+					inline-size: 100%;
+					max-inline-size: 35ch;
+					min-inline-size: 15ch;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					vertical-align: bottom;
+					white-space: nowrap;
+				}
+			}
+
 			.webmention__author {
-				display: inline-block;
+				block-size: 48px;
 				border: 2px solid transparent;
 				border-radius: 50%;
+				display: inline-block;
+				inline-size: 48px;
 
 				&:hover,
 				&:focus-visible {
@@ -91,8 +186,13 @@ export default class WebMentions extends LitElement {
 				img {
 					aspect-ratio: 1;
 					border-radius: 50%;
+					inline-size: 100%;
 					object-fit: cover;
 				}
+			}
+
+			.webmentions__remainingFeed > * {
+				margin-block-start: 2em;
 			}
 		}
 	`;
@@ -130,6 +230,10 @@ export default class WebMentions extends LitElement {
 		return this.domain + this.path;
 	}
 
+	get apiRoute() {
+		return `${this.feed}=${this.currentPath}`;
+	}
+
 	/** Validated webmention type filters supplied by the user. */
 	get activeFilters() {
 		if (typeof this.filters !== "string") {
@@ -144,9 +248,17 @@ export default class WebMentions extends LitElement {
 		return parsedFilters;
 	}
 
+	get remainingMentionsList() {
+		return this.querySelector(".webmentions__remainingFeed ol");
+	}
+
+	get showAllButton() {
+		return this.querySelector(".webmentions__showAll");
+	}
+
 	async fetchWebmentions() {
 		try {
-			let response = await fetch(`${this.feed}=${this.currentPath}`);
+			let response = await fetch(this.apiRoute);
 			let json = await response.json();
 
 			return json;
@@ -164,14 +276,32 @@ export default class WebMentions extends LitElement {
 		}
 	}
 
+	createRenderRoot() {
+		return this;
+	}
+
+	handleShowAll() {
+		this.remainingMentionsList?.removeAttribute("style");
+		this.showAllButton?.style.setProperty("display", "none");
+		this.expanded = true;
+	}
+
 	filterMentions() {
+		let mentions;
+
 		if (!this.activeFilters) {
-			return this.webmentions;
+			mentions = this.webmentions;
+		} else {
+			mentions = this.activeFilters
+				.map((filter) => this[getMapKey(WebMentions.filterMap, filter)])
+				.flat(Infinity);
 		}
 
-		return this.activeFilters
-			.map((filter) => this[getMapKey(WebMentions.filterMap, filter)])
-			.flat(Infinity);
+		if (this.sortBy === "ascending") {
+			return mentions.reverse();
+		}
+
+		return mentions;
 	}
 
 	/**
@@ -182,6 +312,10 @@ export default class WebMentions extends LitElement {
 			(mention) =>
 				mention["wm-property"] === this.filterMap.get(filterProperty),
 		);
+	}
+
+	static fireShowAllEvent() {
+		this.dispatchEvent(new Event("webmentions-show-all"));
 	}
 
 	/**
@@ -227,7 +361,7 @@ export default class WebMentions extends LitElement {
 			<div class="webmention__meta">
 				<a
 					href="${url}"
-					class="u-url link-u-exempt p-name"
+					class="u-url link-u-exempt p-name p-author"
 					>${name}</a
 				>
 				<time
@@ -239,18 +373,109 @@ export default class WebMentions extends LitElement {
 		`;
 	}
 
-	static renderFeed(webmentions) {
+	/**
+	 * @assumes webmention.io : wm-property
+	 */
+	static renderWebmentionContent(webmention) {
+		let type = webmention["wm-property"];
+		let {url, content} = webmention;
+
+		switch (type) {
+			case "like-of":
+				return html`liked this:
+					<a
+						class="webmention__content__source"
+						href="${url}"
+						>${url}</a
+					>`;
+			case "bookmark-of":
+				return html`bookmarked this:
+					<a
+						class="webmention__content__source"
+						href="${url}"
+						>${url}</a
+					>`;
+			case "in-reply-to":
+				return html`
+					<div class="webmention__content__reply">${content.text}</div>
+				`;
+			case "mention-of":
+				return html`mentioned this:
+					<a
+						class="webmention__content__source"
+						href="${url}"
+						>${url}</a
+					>`;
+			case "repost-of":
+				return html`reposted this:
+					<a
+						class="webmention__content__source"
+						href="${url}"
+						>${url}</a
+					>`;
+			default:
+				return html``;
+		}
+	}
+
+	static renderRemainingFeed(webmentions) {
+		if (webmentions.length === 0) {
+			return html``;
+		}
+
 		return html`
-			${webmentions.map(
-				(mention) => html`
-					<div class="webmention">
-						<div class="webmention__header">
+			<div class="webmentions__remainingFeed">
+				<button
+					class="webmentions__showAll"
+					type="button"
+					@click=${this.fireShowAllEvent}>
+					Show all Webmentions (${webmentions.length})
+				</button>
+				<ol
+					class="webmentions--feed"
+					style="display: none;"
+					role="list">
+					${webmentions.map(
+						(mention) => html`
+							<li class="webmention h-cite">
+								${WebMentions.renderAuthorProfile(mention, true)}
+								<div class="webmention__header">
+									${WebMentions.renderAuthorMeta(mention)}
+								</div>
+								<div class="webmention__content">
+									${WebMentions.renderWebmentionContent(mention)}
+								</div>
+							</li>
+						`,
+					)}
+				</ol>
+			</div>
+		`;
+	}
+
+	static renderFeed(webmentions, previewLimit) {
+		let previewMentions = webmentions.slice(0, previewLimit);
+		let remainingMentions = webmentions.slice(previewLimit);
+
+		return html`
+			<ol
+				class="webmentions--feed webmentions__preview"
+				role="list">
+				${previewMentions.map(
+					(mention) => html`
+						<li class="webmention h-cite">
 							${WebMentions.renderAuthorProfile(mention, true)}
-							${WebMentions.renderAuthorMeta(mention)}
-						</div>
-					</div>
-				`,
-			)}
+							<div class="webmention__header">
+								${WebMentions.renderAuthorMeta(mention)}
+							</div>
+							<div class="webmention__content">
+								${WebMentions.renderWebmentionContent(mention)}
+							</div>
+						</li>
+					`,
+				)}
+			</ol>
+			${WebMentions.renderRemainingFeed(remainingMentions)}
 		`;
 	}
 
@@ -276,12 +501,10 @@ export default class WebMentions extends LitElement {
 		return html`<span>No webmentions to display.</span>`;
 	}
 
-	createRenderRoot() {
-		return this;
-	}
-
 	async connectedCallback() {
 		super.connectedCallback();
+
+		this.addEventListener("webmentions-show-all", this.handleShowAll);
 
 		this.webmentions = await this.getWebmentions();
 		this.reposts = WebMentions.#filterMentionsByType(
@@ -309,21 +532,46 @@ export default class WebMentions extends LitElement {
 	}
 
 	render() {
+		let header = this.showTitle
+			? html`
+					<div class="webmentions__header">
+						<h2 class="webmentions__title">Webmentions</h2>
+						<sup
+							><a
+								aria-label="What are these?"
+								href="https://indieweb.org/Webmention"
+								title="What are these?"
+								>?</a
+							></sup
+						>
+					</div>
+				`
+			: html``;
+
 		if (!this.webmentions) {
-			return WebMentions.renderLoadingContent();
+			return html` ${header} ${WebMentions.renderLoadingContent()} `;
 		}
 
 		if (this.webmentions.length < 1) {
-			return WebMentions.renderEmptyContent();
+			return html` ${header} ${WebMentions.renderEmptyContent()} `;
 		}
+
+		let main;
 
 		switch (this.variant) {
 			case "facepile":
-				return WebMentions.renderFacepile(this.filteredWebmentions);
+				main = WebMentions.renderFacepile(this.filteredWebmentions);
+				break;
 			case "feed":
 			default:
-				return WebMentions.renderFeed(this.filteredWebmentions);
+				main = WebMentions.renderFeed(
+					this.filteredWebmentions,
+					this.previewLimit,
+				);
+				break;
 		}
+
+		return html` ${header} ${main} `;
 	}
 }
 
