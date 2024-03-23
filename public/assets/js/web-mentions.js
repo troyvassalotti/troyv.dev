@@ -28,12 +28,6 @@ function getMapKey(map, value) {
  * @property {Sort} sortBy - How to sort the webmentions. Default is ascending.
  * @property {boolean} showTitle - Display an optional header for the webmentions section.
  * @property {number} previewLimit - Total number of mentions to show in the preview before hiding the rest.
- *
- * @todo
- * it should:
- * - be able to get all the webmentions of the current url.
- * - default to webmention.io which doesn't need an api key for mentions on a single URL
- * - it won't support other services for now since I don't use them, but open to submissions
  */
 export default class WebMentions extends LitElement {
 	static properties = {

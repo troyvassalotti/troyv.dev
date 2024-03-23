@@ -9,7 +9,13 @@ class Post extends Base {
 			super.style() +
 			html`<style>
 				pre[class*="language-"] {
+					margin-block: var(--space-s);
 					max-inline-size: 60em;
+				}
+
+				code[class*="language-"],
+				pre[class*="language-"] {
+					white-space: pre-line; /* bandaid while I eventually address spacing issues with tabs */
 				}
 
 				.postSummary {
