@@ -18,6 +18,14 @@ class Post extends Base {
 					white-space: pre-line; /* bandaid while I eventually address spacing issues with tabs */
 				}
 
+				.footnotes-sep {
+					max-inline-size: 70ch;
+				}
+
+				.footnote-backref:not(:hover, :focus-visible) {
+					text-decoration: none;
+				}
+
 				.postSummary {
 					font-style: italic;
 				}

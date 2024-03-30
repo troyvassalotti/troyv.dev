@@ -3,6 +3,8 @@
 const {html, safeHtml} = require("common-tags");
 
 class Base {
+	// Base scripts
+	// Should be called with super()
 	script() {
 		return html`
 			<script>
@@ -28,6 +30,8 @@ class Base {
 		`;
 	}
 
+	// Base inline styles
+	// Should be called with super()
 	style() {
 		return html``;
 	}

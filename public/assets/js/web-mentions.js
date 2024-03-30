@@ -72,8 +72,6 @@ export default class WebMentions extends LitElement {
 			}
 
 			.webmentions__header {
-				display: flex;
-				gap: 4px;
 				margin-block-end: 1.5rem;
 			}
 
@@ -191,7 +189,7 @@ export default class WebMentions extends LitElement {
 		}
 	`;
 
-	static loadStyles() {
+	static addStyles() {
 		let sheet = new CSSStyleSheet();
 		sheet.replaceSync(WebMentions.styles);
 		document.adoptedStyleSheets.push(sheet);
@@ -533,14 +531,15 @@ export default class WebMentions extends LitElement {
 			"mentions",
 		);
 		this.filteredWebmentions = this.filterMentions();
-
-		if (this.loadStyles) {
-			WebMentions.loadStyles();
-		}
 	}
 
 	connectedCallback() {
 		super.connectedCallback();
+
+		if (this.loadStyles) {
+			WebMentions.addStyles();
+		}
+
 		this.waitToIntersect();
 	}
 
@@ -548,15 +547,17 @@ export default class WebMentions extends LitElement {
 		let header = this.showTitle
 			? html`
 					<div class="webmentions__header">
-						<h2 class="webmentions__title">Webmentions</h2>
-						<sup
-							><a
-								aria-label="What are these?"
-								href="https://indieweb.org/Webmention"
-								title="What are these?"
-								>?</a
-							></sup
-						>
+						<h2 class="webmentions__title">
+							Webmentions
+							<sup
+								><a
+									aria-label="What are these?"
+									href="https://indieweb.org/Webmention"
+									title="What are these?"
+									>?</a
+								></sup
+							>
+						</h2>
 					</div>
 				`
 			: html``;
