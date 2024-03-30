@@ -495,9 +495,23 @@ export default class WebMentions extends LitElement {
 		return html`<span>No webmentions to display.</span>`;
 	}
 
-	async connectedCallback() {
-		super.connectedCallback();
+	/** IntersectionObserver to defer making a network request before the component is in view. */
+	waitToIntersect() {
+		const _intersectionObserver = (entries) => {
+			entries.map((entry) => {
+				if (entry.isIntersecting) {
+					this.init();
+					observer.unobserve(entry.target);
+				}
+			});
+		};
 
+		const observer = new IntersectionObserver(_intersectionObserver);
+		observer.observe(this);
+	}
+
+	/** All code needed to fetch webmentions and inject them into the DOM. */
+	async init() {
 		this.addEventListener("webmentions-show-all", this.handleShowAll);
 
 		this.webmentions = await this.getWebmentions();
@@ -523,6 +537,11 @@ export default class WebMentions extends LitElement {
 		if (this.loadStyles) {
 			WebMentions.loadStyles();
 		}
+	}
+
+	connectedCallback() {
+		super.connectedCallback();
+		this.waitToIntersect();
 	}
 
 	render() {
