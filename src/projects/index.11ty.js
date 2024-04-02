@@ -1,7 +1,7 @@
 /** @format */
 
 const {html} = require("common-tags");
-const {Icon} = require("../_includes/partials/index.js");
+const Icons = require("../_includes/partials/icons.js");
 
 class Projects {
 	data() {
@@ -35,7 +35,7 @@ class Projects {
 											<a
 												class="c-link--icon"
 												href="${repository}"
-												>${Icon("github")}${repository.replace(
+												>${Icons("github")}${repository.replace(
 													"https://github.com/",
 													"",
 												)}</a

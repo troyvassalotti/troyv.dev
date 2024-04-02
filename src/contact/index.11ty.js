@@ -1,7 +1,6 @@
 /** @format */
 
 const {html} = require("common-tags");
-const {ContactForm} = require("../_includes/partials/index.js");
 
 class Contact {
 	data() {
@@ -21,8 +20,65 @@ class Contact {
 				emailing me ever would (and it won't go into spam, unless you are in
 				fact sending me spam).
 			</p>
-
-			${ContactForm()}
+			<form
+				class="contactForm flow"
+				name="contactForm"
+				netlify
+				netlify-honeypot="bot-field"
+				action="/success">
+				<label style="display: none">
+					Don't fill this out:
+					<input name="bot-field" />
+				</label>
+				<div class="contactForm__set">
+					<label for="name">
+						Name<sup
+							aria-hidden="true"
+							class="requiredField"
+							>*</sup
+						>
+					</label>
+					<input
+						name="name"
+						type="text"
+						id="name"
+						required />
+				</div>
+				<div class="contactForm__set">
+					<label for="email">
+						Email<sup
+							aria-hidden="true"
+							class="requiredField"
+							>*</sup
+						>
+					</label>
+					<input
+						name="email"
+						type="email"
+						id="email"
+						required />
+				</div>
+				<div class="contactForm__set">
+					<label for="message">
+						Message<sup
+							aria-hidden="true"
+							class="requiredField"
+							>*</sup
+						>
+					</label>
+					<textarea
+						name="message"
+						id="message"
+						required
+						placeholder="Say hi!"
+						rows="5"></textarea>
+				</div>
+				<button
+					class="button"
+					type="submit">
+					Submit
+				</button>
+			</form>
 		`;
 	}
 }

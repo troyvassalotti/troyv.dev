@@ -628,6 +628,22 @@
 			inline-size: var(--input-size);
 		}
 	}
+
+	.contactForm {
+		color-scheme: light dark;
+		margin-block: 2rem;
+		max-inline-size: 40rem;
+
+		.contactForm__set {
+			display: flex;
+			flex-direction: column;
+			gap: 0.5rem;
+		}
+
+		.requiredField {
+			color: red;
+		}
+	}
 }
 
 @layer utilities {

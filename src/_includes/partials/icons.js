@@ -274,6 +274,8 @@ const ICONS = new Map([
  * @param {Icon} icon Name of the icon to reneder.
  * @returns {string} SVG code for the icon.
  */
-module.exports = function (icon) {
+function generateIcon(icon) {
 	return ICONS.get(icon) ?? "";
-};
+}
+
+module.exports = generateIcon;
