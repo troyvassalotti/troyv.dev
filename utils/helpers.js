@@ -22,10 +22,10 @@ async function getAlbumArtwork(mbid, thumb = false) {
 
 			const {thumbnails} = front;
 
-			return `${METADATA.cloudinaryFetch}/c_scale,f_auto,q_auto:eco,w_500/${thumbnails["500"]}`;
+			return `${METADATA.cloudinary.fetch}/c_scale,f_auto,q_auto:eco,w_500/${thumbnails["500"]}`;
 		}
 
-		return `${METADATA.cloudinaryFetch}/c_scale,f_auto,q_auto:eco,w_500/${COVERT_ART_ENDPOINT}${mbid}/front`;
+		return `${METADATA.cloudinary.fetch}/c_scale,f_auto,q_auto:eco,w_500/${COVERT_ART_ENDPOINT}${mbid}/front`;
 	} catch (error) {
 		return false;
 	}

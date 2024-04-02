@@ -138,20 +138,17 @@ class Stats extends Mixin([MusicLibrary], Base) {
 	}
 
 	style() {
-		return (
-			super.style() +
-			html`
-				<style>
-					.tables {
-						align-items: start;
-						display: flex;
-						flex-wrap: wrap;
-						gap: var(--space-m);
-						justify-content: space-between;
-					}
-				</style>
-			`
-		);
+		return html`
+			<style>
+				.tables {
+					align-items: start;
+					display: flex;
+					flex-wrap: wrap;
+					gap: var(--space-m);
+					justify-content: space-between;
+				}
+			</style>
+		`;
 	}
 
 	content(data) {
@@ -202,12 +199,11 @@ class Stats extends Mixin([MusicLibrary], Base) {
 	}
 
 	script() {
-		return (
-			super.script() +
-			html`<script type="module">
+		return html`
+			<script type="module">
 				import "/assets/js/stats-table.js";
-			</script>`
-		);
+			</script>
+		`;
 	}
 }
 

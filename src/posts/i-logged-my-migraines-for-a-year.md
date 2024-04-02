@@ -24,7 +24,7 @@ I'm still figuring that out. For years, I've had a pretty basic understanding of
 
 So while it hasn't been a mystery, a year of spreadsheet-tracking surely helped. Look at these _graphs!_
 
-![Two charts I created with my migraine data]({{ metadata.cloudinary }}/c_scale,f_auto,q_auto:eco/v1646349103/blog/migraines-charts_tcbh5o.webp)
+![Two charts I created with my migraine data]({{ metadata.cloudinary.image }}/c_scale,f_auto,q_auto:eco/v1646349103/blog/migraines-charts_tcbh5o.webp)
 
 ## What Was I Looking To Find?
 
@@ -40,7 +40,7 @@ I thought I'd have more graphs than I do, but I didn't want this project to cons
 
 My main goal was to create calendar heat map detailing each migraine day, color coded by the main trigger, and I'd say I succeeded.
 
-![My migraine calendar heat map]({{ metadata.cloudinary }}/c_scale,f_auto,q_auto:eco/v1646349103/blog/migraines-2019_yklspy.webp)
+![My migraine calendar heat map]({{ metadata.cloudinary.image }}/c_scale,f_auto,q_auto:eco/v1646349103/blog/migraines-2019_yklspy.webp)
 
 I created the calendar with the following underlying data:
 

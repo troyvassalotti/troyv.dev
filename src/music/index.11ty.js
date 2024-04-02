@@ -20,29 +20,23 @@ class Music extends Base {
 	}
 
 	style() {
-		return (
-			super.style() +
-			html`
-				<style>
-					plvy-list {
-						color-scheme: light dark;
-						font-size: var(--step--1);
-						max-inline-size: 70rem;
-					}
-				</style>
-			`
-		);
+		return html`
+			<style>
+				plvy-list {
+					color-scheme: light dark;
+					font-size: var(--step--1);
+					max-inline-size: 70rem;
+				}
+			</style>
+		`;
 	}
 
 	script() {
-		return (
-			super.script() +
-			html`
-				<script type="module">
-					import Plvylist from "plvylist";
-				</script>
-			`
-		);
+		return html`
+			<script type="module">
+				import Plvylist from "plvylist";
+			</script>
+		`;
 	}
 
 	content(data) {

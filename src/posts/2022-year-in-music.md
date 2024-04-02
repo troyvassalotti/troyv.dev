@@ -14,7 +14,7 @@ If you weren't aware, I was in a musical rut and thought it would revitalize my 
 
 That experiment was initially aimed at bands I didn't think I'd like, but turned into bands I did like enough but wanted a deeper understanding of. This resulted in a year in music dominated by those experimented-on bands.
 
-![A grid of my top nine albums, including Vasudeva, Korn, Limp Bizkit, Edamame, Their They're There, Taking Meds, Young Legionnaire, and Jawbox]({{ metadata.cloudinary }}/c_scale,f_auto,q_auto:eco/v1646349103/blog/actionhamilton-top-albums-2022_x1cdpi.webp)
+![A grid of my top nine albums, including Vasudeva, Korn, Limp Bizkit, Edamame, Their They're There, Taking Meds, Young Legionnaire, and Jawbox]({{ metadata.cloudinary.image }}/c_scale,f_auto,q_auto:eco/v1646349103/blog/actionhamilton-top-albums-2022_x1cdpi.webp)
 
 My top nine albums were:
 
@@ -34,7 +34,7 @@ Among that list, the Taking Meds, Their / They're / There, and Jawbox albums wer
 
 My top 10 artists are a slightly different story based on me listening to them a whole lot but not any particular album frequently enough.
 
-![A list of my top 10 artists, including Korn, Limp Bizkit, Jimmy Eat World, Less Than Jake, Pearl Jam, Lower Than Atlantis, Bloc Party, Norma Jean, Jawbreaker, Edamame]({{ metadata.cloudinary }}/c_scale,f_auto,q_auto:eco/v1646349103/blog/actionhamilton-top-artists-2022_oemttc.webp)
+![A list of my top 10 artists, including Korn, Limp Bizkit, Jimmy Eat World, Less Than Jake, Pearl Jam, Lower Than Atlantis, Bloc Party, Norma Jean, Jawbreaker, Edamame]({{ metadata.cloudinary.image }}/c_scale,f_auto,q_auto:eco/v1646349103/blog/actionhamilton-top-artists-2022_oemttc.webp)
 
 This list is influenced by me reading [Dan Ozzi's _Sellout_](https://www.danozzi.com/books/sellout) as you can tell by the Jimmy Eat World and Jawbreaker inclusions.
 

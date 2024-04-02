@@ -12,16 +12,13 @@ class Home extends Base {
 	}
 
 	style() {
-		return (
-			super.style() +
-			html`
-				<style>
-					h1 {
-						font-size: inherit;
-					}
-				</style>
-			`
-		);
+		return html`
+			<style>
+				h1 {
+					font-size: inherit;
+				}
+			</style>
+		`;
 	}
 
 	content(data) {
@@ -90,16 +87,13 @@ class Home extends Base {
 	}
 
 	script() {
-		return (
-			super.script() +
-			html`
-				<script type="module">
-					import TypeWriter from "typewriter";
-					import "/assets/js/now-playing.js";
-					import "/assets/js/tag-line.js";
-				</script>
-			`
-		);
+		return html`
+			<script type="module">
+				import TypeWriter from "typewriter";
+				import "/assets/js/now-playing.js";
+				import "/assets/js/tag-line.js";
+			</script>
+		`;
 	}
 }
 

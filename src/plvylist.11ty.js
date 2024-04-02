@@ -14,18 +14,18 @@ class Plvylist {
 	 * @returns {PlvylistTrack[]} Full set of tracks from the album.
 	 */
 	generateTrackData(dataset, globalData) {
-		const {cloudinary, cloudinaryVideo} = globalData;
+		const {cloudinary} = globalData;
 		const {artist, artistUrl, title, albumUrl, artwork, tracks} = dataset;
 
 		return tracks.map((track) => {
 			return {
-				file: `${cloudinaryVideo}/${track.file}`,
+				file: `${cloudinary.video}/${track.file}`,
 				title: `${track.title}`,
 				artist: `${artist}`,
 				artistUrl: `${artistUrl}`,
 				album: `${title}`,
 				albumUrl: `${albumUrl}`,
-				artwork: `${cloudinary}/${artwork}`,
+				artwork: `${cloudinary.image}/${artwork}`,
 			};
 		});
 	}

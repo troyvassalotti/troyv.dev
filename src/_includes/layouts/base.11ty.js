@@ -3,40 +3,14 @@
 const {html, safeHtml} = require("common-tags");
 
 class Base {
-	// Base scripts
-	// Should be called with super()
-	script() {
-		return html`
-			<script>
-				document.documentElement.classList.add("js");
-			</script>
-			<script type="module">
-				import "/assets/js/modal-menu.js";
-				import CheatCodes from "cheatcodes";
-				import GlitchText from "glitch-text";
+	/** @abstract */
+	script() {}
 
-				const generalCodes = new CheatCodes();
-				const gamepadCodes = new CheatCodes("7 1 7 0 7 2 7 3 6", "gamepad");
-
-				generalCodes.listen();
-				gamepadCodes.listen();
-
-				if (!document.getElementById("main")) {
-					console.error(
-						"No element with ID of 'main' found. Add that in or the skip link won't work.",
-					);
-				}
-			</script>
-		`;
-	}
-
-	// Base inline styles
-	// Should be called with super()
-	style() {
-		return html``;
-	}
+	/** @abstract */
+	style() {}
 
 	content(data) {
+		// Possible front matter options
 		let {
 			content,
 			containment,
@@ -62,7 +36,7 @@ class Base {
 								? html`<glitch-text>${title}</glitch-text>`
 								: html`${title}`}
 						</h1>
-						${outputDescription ? html`<p>${description}</p>` : html``}
+						${outputDescription ? html`<p>${description}</p>` : ""}
 					</header>
 					${content}
 				</div>
@@ -77,7 +51,7 @@ class Base {
 			page: {fileSlug, url, excerpt},
 			metadata,
 			eleventy,
-			nav: {header},
+			navigation,
 		} = data;
 
 		let pageTitle = title ? safeHtml`${title}` : this.capitalize(fileSlug);
@@ -131,7 +105,7 @@ class Base {
 					<script type="importmap">
 						{
 							"imports": {
-								"lit": "https://esm.sh/lit",
+								"lit": "https://esm.sh/lit@3.1.2",
 								"d3": "https://esm.sh/d3@7.6",
 								"tone": "https://esm.sh/tone@14.7.77",
 								"cheatcodes": "https://esm.sh/@troyv/cheatcodes",
@@ -146,7 +120,28 @@ class Base {
 						}
 					</script>
 
-					<!-- Scripts -->
+					<script>
+						document.documentElement.classList.add("js");
+					</script>
+					<script type="module">
+						import "/assets/js/modal-menu.js";
+						import CheatCodes from "cheatcodes";
+						import GlitchText from "glitch-text";
+
+						const generalCodes = new CheatCodes();
+						const gamepadCodes = new CheatCodes("7 1 7 0 7 2 7 3 6", "gamepad");
+
+						generalCodes.listen();
+						gamepadCodes.listen();
+
+						if (!document.getElementById("main")) {
+							console.error(
+								"No element with ID of 'main' found. Add that in or the skip link won't work.",
+							);
+						}
+					</script>
+
+					<!-- Custom Scripts -->
 					${this.script()}
 
 					<link
@@ -246,7 +241,7 @@ class Base {
 								>Skip to main content</a
 							>
 							<ul role="list">
-								${header.map(
+								${navigation.map(
 									({name, url: linkUrl}, index) => html`
 										<li>
 											<a

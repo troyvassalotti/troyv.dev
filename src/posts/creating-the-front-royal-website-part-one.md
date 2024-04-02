@@ -46,7 +46,7 @@ I decided the these were the most important features to cover:
 
 After an afternoon of fiddling around in Figma, I created these four visuals that show some promise for covering [all that](https://en.wikipedia.org/wiki/All_That):
 
-![The first four visuals of the Front Royal website]({{ metadata.cloudinary }}/c_scale,f_auto,q_auto:eco/v1646349103/blog/froro-des-phase1_fropbr.webp)
+![The first four visuals of the Front Royal website]({{ metadata.cloudinary.image }}/c_scale,f_auto,q_auto:eco/v1646349103/blog/froro-des-phase1_fropbr.webp)
 
 I realized by Version 4 that I forgot to add our newsletter signup, so that's why it's missing from the other three...
 

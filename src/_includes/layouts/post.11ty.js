@@ -5,9 +5,8 @@ const Base = require("./base.11ty.js");
 
 class Post extends Base {
 	style() {
-		return (
-			super.style() +
-			html`<style>
+		return html`
+			<style>
 				pre[class*="language-"] {
 					margin-block: var(--space-s);
 					max-inline-size: 60em;
@@ -61,8 +60,8 @@ class Post extends Base {
 					font-family: var(--headings);
 					font-weight: bold;
 				}
-			</style>`
-		);
+			</style>
+		`;
 	}
 
 	generateSyndicationLinks(syndication) {
@@ -154,23 +153,20 @@ class Post extends Base {
 	}
 
 	script() {
-		return (
-			super.script() +
-			html`
-				<script>
-					for (const block of document.querySelectorAll(
-						"pre[class*='language-']",
-					)) {
-						if (block instanceof HTMLElement) {
-							block.tabIndex = 0;
-						}
+		return html`
+			<script>
+				for (const block of document.querySelectorAll(
+					"pre[class*='language-']",
+				)) {
+					if (block instanceof HTMLElement) {
+						block.tabIndex = 0;
 					}
-				</script>
-				<script type="module">
-					import "/assets/js/web-mentions.js";
-				</script>
-			`
-		);
+				}
+			</script>
+			<script type="module">
+				import "/assets/js/web-mentions.js";
+			</script>
+		`;
 	}
 }
 

@@ -18,64 +18,61 @@ class Posts extends Mixin([RendersPosts], Base) {
 	}
 
 	style() {
-		return (
-			super.style() +
-			html`
-				<style>
-					.rss {
-						align-items: center;
+		return html`
+			<style>
+				.rss {
+					align-items: center;
+					display: flex;
+					gap: 1ch;
+
+					svg {
+						inline-size: 1em;
+					}
+				}
+
+				.tagCloud {
+					inset-block-start: 0;
+					position: sticky;
+
+					.tagCloud__title {
+						font-family: var(--headings);
+						font-size: var(--step-1);
+						font-weight: bold;
+						margin-block-end: revert;
+					}
+
+					.tagCloud__list {
 						display: flex;
-						gap: 1ch;
-
-						svg {
-							inline-size: 1em;
-						}
+						flex-wrap: wrap;
+						gap: var(--space-2xs-xs);
 					}
 
-					.tagCloud {
-						inset-block-start: 0;
-						position: sticky;
-
-						.tagCloud__title {
-							font-family: var(--headings);
-							font-size: var(--step-1);
-							font-weight: bold;
-							margin-block-end: revert;
-						}
-
-						.tagCloud__list {
-							display: flex;
-							flex-wrap: wrap;
-							gap: var(--space-2xs-xs);
-						}
-
-						.tagCloud__tag {
-							border: 1px solid currentColor;
-							border-radius: 4px;
-							display: inline-block;
-							padding-block: 4px;
-							padding-inline: 8px;
-							text-decoration: none;
-						}
-
-						.tagCloud__tag::before {
-							content: "#";
-						}
+					.tagCloud__tag {
+						border: 1px solid currentColor;
+						border-radius: 4px;
+						display: inline-block;
+						padding-block: 4px;
+						padding-inline: 8px;
+						text-decoration: none;
 					}
 
+					.tagCloud__tag::before {
+						content: "#";
+					}
+				}
+
+				.posts {
+					display: grid;
+					gap: var(--space-l-xl);
+				}
+
+				@container (width > 60rem) {
 					.posts {
-						display: grid;
-						gap: var(--space-l-xl);
+						grid-template-columns: 33% auto;
 					}
-
-					@container (width > 60rem) {
-						.posts {
-							grid-template-columns: 33% auto;
-						}
-					}
-				</style>
-			`
-		);
+				}
+			</style>
+		`;
 	}
 
 	content(data) {

@@ -11,7 +11,7 @@ We stayed in a house at the beach this past week as part of the family's yearly 
 
 > 1942 Data Error
 
-![An arcade machine showing the text "1942 Data Error"]({{ metadata.cloudinary }}/c_scale,f_auto,q_auto:eco/v1646349103/blog/1942_c0u9hv.webp)
+![An arcade machine showing the text "1942 Data Error"]({{ metadata.cloudinary.image }}/c_scale,f_auto,q_auto:eco/v1646349103/blog/1942_c0u9hv.webp)
 
 That's all it said. I did the first thing anyone in my position would have done: took to DuckDuckGo for the answer. You know what I found? **Nothing**. References to _Battlefield: 1942_ - a completely separate game, sure - but not what "1942 Data Error" means for this particular machine.
 
