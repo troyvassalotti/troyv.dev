@@ -1,23 +1,19 @@
 /** @format */
 
 const {html} = require("common-tags");
+const Base = require("../_includes/layouts/base.11ty.js");
 
-class Tuner {
+class Tuner extends Base {
 	data() {
 		return {
-			layout: "base.11ty.js",
 			glitch: true,
 			title: "Tuner",
 			permalink: "/tuner/",
 		};
 	}
 
-	render({title}) {
+	style() {
 		return html`
-			<script type="module">
-				import {Detune} from "detune";
-			</script>
-
 			<style>
 				.tunings {
 					display: flex;
@@ -25,7 +21,19 @@ class Tuner {
 					gap: var(--space-2xl);
 				}
 			</style>
+		`;
+	}
 
+	script() {
+		return html`
+			<script type="module">
+				import {Detune} from "detune";
+			</script>
+		`;
+	}
+
+	content(data) {
+		let page = html`
 			<div class="tunings">
 				<div class="detune">
 					<h2 class="u-step-1">Standard</h2>
@@ -84,6 +92,8 @@ class Tuner {
 				</div>
 			</div>
 		`;
+
+		return this.defaultTemplate(data, page);
 	}
 }
 

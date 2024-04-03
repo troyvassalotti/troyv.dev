@@ -9,10 +9,13 @@ class Base {
 	/** @abstract */
 	style() {}
 
-	content(data) {
+	/**
+	 * Render a default shell for page content.
+	 * Classes that extend Base can leverage this to get benefits of other methods on the Base while keeping the default layout.
+	 */
+	defaultTemplate(data, page) {
 		// Possible front matter options
 		let {
-			content,
 			containment,
 			title,
 			truncate,
@@ -38,10 +41,19 @@ class Base {
 						</h1>
 						${outputDescription ? html`<p>${description}</p>` : ""}
 					</header>
-					${content}
+					${page}
 				</div>
 			</main>
 		`;
+	}
+
+	/**
+	 * Classes extending Base should override this method instead of `render`.
+	 * @abstract
+	 */
+	content(data) {
+		let {content} = data;
+		return this.defaultTemplate(data, content);
 	}
 
 	render(data) {

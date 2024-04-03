@@ -64,6 +64,22 @@ class Post extends Base {
 		`;
 	}
 
+	script() {
+		return html`
+			<script type="module">
+				import "/assets/js/web-mentions.js";
+
+				for (const block of document.querySelectorAll(
+					"pre[class*='language-']",
+				)) {
+					if (block instanceof HTMLElement) {
+						block.tabIndex = 0;
+					}
+				}
+			</script>
+		`;
+	}
+
 	generateSyndicationLinks(syndication) {
 		return syndication
 			.map((location) => {
@@ -149,23 +165,6 @@ class Post extends Base {
 						: html``}
 				</div>
 			</main>
-		`;
-	}
-
-	script() {
-		return html`
-			<script>
-				for (const block of document.querySelectorAll(
-					"pre[class*='language-']",
-				)) {
-					if (block instanceof HTMLElement) {
-						block.tabIndex = 0;
-					}
-				}
-			</script>
-			<script type="module">
-				import "/assets/js/web-mentions.js";
-			</script>
 		`;
 	}
 }

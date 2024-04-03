@@ -1,11 +1,11 @@
 /** @format */
 
 const {html, safeHtml} = require("common-tags");
+const Base = require("../_includes/layouts/base.11ty.js");
 
-class BlogMaker {
+class BlogMaker extends Base {
 	data() {
 		return {
-			layout: "base.11ty.js",
 			title: "Blog Maker",
 			description:
 				"Write your own extremely unpredictable and often incoherent blog post using a slightly-thorough list of every word I've written.",
@@ -16,16 +16,8 @@ class BlogMaker {
 		};
 	}
 
-	generateWordBank(posts) {
-		return posts.map(({content}) => content.replace(/<[^>]*>?/gm, "")).join("");
-	}
-
-	render({collections, description}) {
+	style() {
 		return html`
-			<script type="module">
-				import WordSalad from "word-salad";
-			</script>
-
 			<style>
 				::part(selection-field),
 				::part(number-field) {
@@ -43,7 +35,21 @@ class BlogMaker {
 					padding: var(--space-2xs);
 				}
 			</style>
+		`;
+	}
 
+	script() {
+		return html`
+			<script type="module">
+				import WordSalad from "word-salad";
+			</script>
+		`;
+	}
+
+	content(data) {
+		let {collections, description} = data;
+
+		let page = html`
 			<p>${description}</p>
 			<p>
 				It <em>will definitely</em> output HTML characters and template language
@@ -54,6 +60,12 @@ class BlogMaker {
 				separator=" ">
 			</word-salad>
 		`;
+
+		return this.defaultTemplate(data, page);
+	}
+
+	generateWordBank(posts) {
+		return posts.map(({content}) => content.replace(/<[^>]*>?/gm, "")).join("");
 	}
 }
 
