@@ -1,34 +1,5 @@
 /** @format */
 
-function CreateTrack(album) {
-	return class {
-		constructor() {
-			this.album = album;
-		}
-
-		/**
-		 * Generate a track's file path under a base directory that auto completes the album name.
-		 * @param {string} file File name with extension.
-		 * @returns {string} Track file path.
-		 */
-		generateTrackPath(file) {
-			return `${this.album?.directory}/troy/${this.album?.name}/${file}`;
-		}
-	};
-}
-
-function CreateAlbum(title, path, artwork) {
-	return class {
-		constructor() {
-			this.title = title;
-			this.albumUrl = `${Troyalllowercase.bandcamp}/${path}`;
-			this.artist = Troyalllowercase.name;
-			this.artistUrl = Troyalllowercase.bandcamp;
-			this.artwork = artwork;
-		}
-	};
-}
-
 /**
  * troyalllowercase artist profile.
  * @type {ArtistProfile}
@@ -43,6 +14,31 @@ class Album {
 		this.directory = directory;
 		this.name = albumName;
 	}
+}
+
+function CreateTrack(album) {
+	return class {
+		album = album;
+
+		/**
+		 * Generate a track's file path under a base directory that auto completes the album name.
+		 * @param {string} file File name with extension.
+		 * @returns {string} Track file path.
+		 */
+		generateTrackPath(file) {
+			return `${this.album?.directory}/troy/${this.album?.name}/${file}`;
+		}
+	};
+}
+
+function CreateAlbum(title, path, artwork) {
+	return class {
+		title = title;
+		albumUrl = `${Troyalllowercase.bandcamp}/${path}`;
+		artist = Troyalllowercase.name;
+		artistUrl = Troyalllowercase.bandcamp;
+		artwork = artwork;
+	};
 }
 
 class AloneInACrowdedRoomTrack extends CreateTrack(

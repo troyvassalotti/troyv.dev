@@ -2,11 +2,11 @@
 
 const {html} = require("common-tags");
 const Icons = require("../_includes/partials/icons.js");
-const Mixin = require("../_includes/mixins/mixin.js");
+const {mix} = require("../_includes/mixins/mixin.js");
 const RendersPosts = require("../_includes/mixins/RendersPosts.js");
 const Base = require("../_includes/layouts/base.11ty.js");
 
-class Posts extends Mixin([RendersPosts], Base) {
+class Posts extends mix(Base).with(RendersPosts) {
 	data() {
 		return {
 			title: "Posts Archive",

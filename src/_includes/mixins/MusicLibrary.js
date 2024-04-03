@@ -1,8 +1,9 @@
 /** @format */
 
 const {html} = require("common-tags");
+const {Mixin} = require("../mixins/mixin.js");
 
-const MusicLibrary = function (Base) {
+const MusicLibrary = Mixin((Base) => {
 	return class extends Base {
 		/**
 		 * Concat a set of HTML list items from a collection.
@@ -15,27 +16,29 @@ const MusicLibrary = function (Base) {
 		}
 
 		generateVinylGridItem({artwork, title, artist, listens}) {
-			return html`<li>
-				<div class="release">
-					${artwork
-						? html`<img
-								class="releaseArt"
-								width="300"
-								height="300"
-								src="${artwork}"
-								alt=""
-								loading="lazy"
-								decoding="async" />`
-						: html`<div class="releaseArt"></div>`}
-					<p class="releaseName">${title}</p>
-					<p class="releaseArtist">${artist}</p>
-					${listens
-						? html`<p class="releaseListens">${listens} Listens</p>`
-						: ""}
-				</div>
-			</li> `;
+			return html`
+				<li>
+					<div class="release">
+						${artwork
+							? html`<img
+									class="releaseArt"
+									width="300"
+									height="300"
+									src="${artwork}"
+									alt=""
+									loading="lazy"
+									decoding="async" />`
+							: html`<div class="releaseArt"></div>`}
+						<p class="releaseName">${title}</p>
+						<p class="releaseArtist">${artist}</p>
+						${listens
+							? html`<p class="releaseListens">${listens} Listens</p>`
+							: ""}
+					</div>
+				</li>
+			`;
 		}
 	};
-};
+});
 
 module.exports = MusicLibrary;

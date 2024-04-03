@@ -1,8 +1,9 @@
 /** @format */
 
 const {html} = require("common-tags");
+const {Mixin} = require("../mixins/mixin.js");
 
-const RendersPosts = function (Base) {
+const RendersPosts = Mixin((Base) => {
 	return class extends Base {
 		generatePostListItems(posts) {
 			let sortedPosts = posts.toReversed();
@@ -40,6 +41,6 @@ const RendersPosts = function (Base) {
 			`;
 		}
 	};
-};
+});
 
 module.exports = RendersPosts;

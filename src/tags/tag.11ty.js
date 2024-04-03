@@ -1,11 +1,11 @@
 /** @format */
 
 const {html} = require("common-tags");
-const Mixin = require("../_includes/mixins/mixin");
+const {mix} = require("../_includes/mixins/mixin");
 const RendersPosts = require("../_includes/mixins/RendersPosts.js");
 const Base = require("../_includes/layouts/base.11ty.js");
 
-class Tag extends Mixin([RendersPosts], Base) {
+class Tag extends mix(Base).with(RendersPosts) {
 	data() {
 		return {
 			pagination: {

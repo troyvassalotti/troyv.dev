@@ -1,11 +1,11 @@
 /** @format */
 
-const Mixin = require("../_includes/mixins/mixin.js");
+const {mix} = require("../_includes/mixins/mixin.js");
 const MusicLibrary = require("../_includes/mixins/MusicLibrary.js");
 const Base = require("../_includes/layouts/base.11ty.js");
 const {html} = require("common-tags");
 
-class Collection extends Mixin([MusicLibrary], Base) {
+class Collection extends mix(Base).with(MusicLibrary) {
 	data() {
 		return {
 			title: "Music Collection",

@@ -9,7 +9,7 @@ const {
 	LISTENBRAINZ_ENDPOINT,
 	LISTENBRAINZ_AUTH,
 } = require("../../utils/globals.js");
-const Mixin = require("../_includes/mixins/mixin.js");
+const {mix} = require("../_includes/mixins/mixin.js");
 const MusicLibrary = require("../_includes/mixins/MusicLibrary.js");
 const {html, safeHtml} = require("common-tags");
 const Base = require("../_includes/layouts/base.11ty.js");
@@ -122,7 +122,7 @@ async function getLastMonthsTopReleases(count = 10, range = "month") {
 	}
 }
 
-class Stats extends Mixin([MusicLibrary], Base) {
+class Stats extends mix(Base).with(MusicLibrary) {
 	async data() {
 		const topArtistsThisMonth = await getTopArtists();
 		const mostRecentListens = await getMostRecentListens();
