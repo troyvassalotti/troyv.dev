@@ -1,6 +1,5 @@
 /** @format */
 
-// Load .env variables with dotenv
 require("dotenv").config();
 
 const DEFAULT_CACHE_OPTIONS = {

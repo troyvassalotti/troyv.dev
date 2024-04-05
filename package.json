@@ -14,8 +14,6 @@
 		"lint::eslint": "eslint",
 		"lint::eslint-fix": "eslint --fix",
 		"netlify::dev": "npx netlify dev",
-		"netlify::deploy": "npm run lint::all && netlify deploy --build --context production --prod",
-		"serve": "ELEVENTY_ENV=production eleventy --serve",
 		"start": "npm run dev"
 	},
 	"devDependencies": {

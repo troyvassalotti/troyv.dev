@@ -2,6 +2,11 @@
 
 const {html} = require("common-tags");
 
+/**
+ * An SVG icon available in the site.
+ * @typedef {"github" | "instagram" | "mastodon" | "settings" | "twitter" | "user" | "youtube" | "bandcamp" | "codepen" | "rss" | "music" | "facebook"} Icon
+ */
+
 const ICONS = new Map([
 	[
 		"github",
