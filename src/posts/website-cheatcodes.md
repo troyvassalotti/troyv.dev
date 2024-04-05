@@ -12,7 +12,7 @@ syndication:
 
 The internet, am I right? It's a scary place full of terror, ads, and people you wish would log off every once in a while. Where did all the fun go?
 
-I've been seeing personal blogs get redesigned with an old school aesthetic, embracing the flashy graphics of a web long forgotten, and I want that for this here website. I'm not a super talented graphic designer though, but maybe that's okay if I want visitors to feel like they've just been transported back to a time when [AIM status messages](https://greatist.com/connect/friendships-were-easier-with-aim) meant something.
+I've been seeing personal blogs get redesigned with an old school aesthetic, embracing the flashy graphics of a web long forgotten, and I want that for this here website. I'm not a super talented graphic designer though, but maybe that's okay if I want visitors to feel like they've been transported back to a time when [AIM status messages](https://greatist.com/connect/friendships-were-easier-with-aim) meant something.
 
 There is something I _can_ do though, and that's give my website cheat codes.
 
