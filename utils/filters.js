@@ -10,6 +10,13 @@ function dateString(date) {
 	return date.toUTCString().replace(/\s\d+:\d+:\d+\sGMT/g, "");
 }
 
+function dateStringMinusOne(date) {
+	let dateToUse = date;
+	dateToUse.setDate(date.getDate() - 1);
+
+	return dateToUse.toUTCString().replace(/\s\d+:\d+:\d+\sGMT/g, "");
+}
+
 /**
  * Slash-separated dates
  */
@@ -36,6 +43,7 @@ function capitalize(string) {
 
 module.exports = {
 	dateString,
+	dateStringMinusOne,
 	yyyymmdd,
 	capitalize,
 };

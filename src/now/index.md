@@ -11,7 +11,7 @@ date: git Last Modified
 
 This is a [now page](https://nownownow.com) inspired by [Derek Sivers](https://sive.rs/nowff).
 
-Last updated: {{ page.date | dateString }}. If it's been a while since this page got updated, [reach out and remind me](/contact/).
+Last updated: {{ page.date | dateStringMinusOne }}. If it's been a while since this page got updated, [reach out and remind me](/contact/).
 
 - Revisiting a back catalogue of [music I wrote](/music/) years ago but never finished. Trying to map out a third _troyalllowercase_ album amongst the stockpile.
 - Absolutely exhausting Skyrim (PS4) for all it's worth since I can't progress the main quest due to a bug that makes Alduin never appear in the time wound.
