@@ -390,11 +390,11 @@
 			display: flex;
 			flex-wrap: wrap;
 			margin: 0;
+			row-gap: 1ch;
 		}
 
 		li:first-of-type {
 			inline-size: 100%;
-			margin-block-end: 1ch;
 		}
 
 		li:not(:last-of-type) {

@@ -7,7 +7,7 @@
  * Date string used in header data on posts
  */
 function dateString(date) {
-	return date.toUTCString().replace(/\s00:00:00\sGMT/g, "");
+	return date.toUTCString().replace(/\s\d+:\d+:\d+\sGMT/g, "");
 }
 
 /**

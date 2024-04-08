@@ -2,7 +2,9 @@
 title: Running
 description: Information about my running that I decided to publicly share.
 layout: base.11ty.js
+glitch: true
 truncate: true
+outputDescription: true
 ---
 
 <!-- @format -->
