@@ -73,7 +73,7 @@ const PROJECTS = [
 	},
 	{
 		name: "Aura Log",
-		url: "https://troyvassalotti.github.io/aura-log",
+		url: "https://auralog.troyv.dev/",
 		repository: "https://github.com/troyvassalotti/aura-log",
 		description:
 			"Track headaches with a CLI journaling process and customizable charts.",

@@ -30,4 +30,4 @@ The process looks something like this:
 
 The components are fairly restrictive, but that's only because they fit exactly my needs only. Anyone can feel free to fork and customize as they see fit.
 
-[Check it out](https://troyvassalotti.github.io/aura-log/)!
+[Check it out](https://auralog.troyv.dev/)!
