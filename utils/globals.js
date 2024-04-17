@@ -14,16 +14,21 @@ const LISTENBRAINZ_AUTH = {
 };
 const COVERT_ART_ENDPOINT = "https://coverartarchive.org/release/";
 
-const DARK_VISITORS_AUTH = {
-	method: "POST",
-	headers: {
-		Authorization: "Bearer " + process.env.DARK_VISITORS_TOKEN,
-	},
-	body: {
-		agent_types: ["AI Data Scraper", "AI Search Crawler", "AI Assistant"],
-		disallow: "/",
-	},
-};
+// This is supposed to return an updated robots.txt but fails consistently.
+// The only way it works is going to https://httpie.io/app and returning the response there.
+// const options = {
+//   method: 'POST',
+//   headers: {
+//     Authorization: 'Bearer ' + process.env.DARK_VISITORS_TOKEN,
+//     'Content-Type': 'application/json'
+//   },
+//   body: '{"agent_types":["AI Data Scraper","AI Search Crawler","AI Assistant"],"disallow":"/"}'
+// };
+//
+// fetch('https://api.darkvisitors.com/robots-txts', options)
+//   .then(response => response.json())
+//   .then(response => console.log(response))
+//   .catch(err => console.error(err));
 
 module.exports = {
 	DEFAULT_CACHE_OPTIONS,
