@@ -20,7 +20,7 @@ const DARK_VISITORS_AUTH = {
 		Authorization: "Bearer " + process.env.DARK_VISITORS_TOKEN,
 	},
 	body: {
-		agent_types: ["AI Data Scraper", "AI Assistant", "AI Search Crawler"],
+		agent_types: ["AI Data Scraper", "AI Search Crawler", "AI Assistant"],
 		disallow: "/",
 	},
 };

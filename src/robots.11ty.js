@@ -1,6 +1,5 @@
 /** @format */
 
-const {html} = require("common-tags");
 const {DARK_VISITORS_AUTH} = require("../utils/globals.js");
 
 class RobotsTXT {
@@ -11,13 +10,13 @@ class RobotsTXT {
 		);
 
 		return {
-			permalink: "robots.txt",
+			permalink: "dark-visitors.txt",
 			robots,
 		};
 	}
 
 	render({robots}) {
-		return html`${robots}`;
+		return JSON.stringify(robots.body);
 	}
 }
 
