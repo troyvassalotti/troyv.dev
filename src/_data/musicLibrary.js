@@ -1,7 +1,8 @@
 /** @format */
 
-const {runEleventyFetch, getAlbumArtwork} = require("../../utils/helpers");
-const {MUSICBRAINZ_ENDPOINT} = require("../../utils/globals");
+import {runEleventyFetch, getAlbumArtwork} from "../../utils/helpers.js";
+
+const MUSICBRAINZ_ENDPOINT = "https://musicbrainz.org/ws/2/";
 
 class MusicLibrary {
 	static mbids = {
@@ -40,6 +41,8 @@ class MusicLibrary {
 			allReleases.push(releases);
 			offset = numberOfReleases;
 
+      // MusicBrainz only returns a subset of responses and there's no way to increase that number at this time.
+      // To get around it, I fetch more data with an offset based on what is remaining.
 			while (offset < releaseCount) {
 				const data = await runEleventyFetch(`${apiEndpoint}&offset=${offset}`);
 
@@ -76,7 +79,7 @@ class MusicLibrary {
 	}
 }
 
-module.exports = async function () {
+export default async function () {
 	const ownedVinyl = await MusicLibrary.getCollectionInformation(
 		MusicLibrary.mbids.owned,
 	);
@@ -88,4 +91,4 @@ module.exports = async function () {
 		ownedVinyl,
 		vinylWishlist,
 	};
-};
+}

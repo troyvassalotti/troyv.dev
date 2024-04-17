@@ -1,7 +1,7 @@
 /** @format */
 
-const {html} = require("common-tags");
-const {Mixin} = require("../mixins/mixin.js");
+import {html} from "common-tags";
+import {Mixin} from "../mixins/mixin.js";
 
 const RendersPosts = Mixin((Base) => {
 	return class extends Base {
@@ -43,4 +43,4 @@ const RendersPosts = Mixin((Base) => {
 	};
 });
 
-module.exports = RendersPosts;
+export default RendersPosts;

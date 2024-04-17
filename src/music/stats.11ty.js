@@ -1,22 +1,23 @@
 /** @format */
 
-const {
+import {
 	runEleventyFetch,
 	createCacheOptions,
 	getAlbumArtwork,
-} = require("../../utils/helpers.js");
-const {
-	LISTENBRAINZ_ENDPOINT,
-	LISTENBRAINZ_AUTH,
-} = require("../../utils/globals.js");
-const {mix} = require("../_includes/mixins/mixin.js");
-const MusicLibrary = require("../_includes/mixins/MusicLibrary.js");
-const {html, safeHtml} = require("common-tags");
-const Base = require("../_includes/layouts/base.11ty.js");
+} from "../../utils/helpers.js";
+import {mix} from "../_includes/mixins/mixin.js";
+import MusicLibrary from "../_includes/mixins/MusicLibrary.js";
+import {html, safeHtml} from "common-tags";
+import Base from "../_includes/layouts/base.11ty.js";
+import "dotenv/config";
+
+const LISTENBRAINZ_ENDPOINT = "https://api.listenbrainz.org/1/";
 
 const FETCH_HEADERS = {
 	fetchOptions: {
-		headers: LISTENBRAINZ_AUTH,
+		headers: {
+	Authorization: "Token " + process.env.LISTENBRAINZ_TOKEN,
+    }
 	},
 };
 
@@ -122,7 +123,7 @@ async function getLastMonthsTopReleases(count = 10, range = "month") {
 	}
 }
 
-class Stats extends mix(Base).with(MusicLibrary) {
+export default class Stats extends mix(Base).with(MusicLibrary) {
 	async data() {
 		const topArtistsThisMonth = await getTopArtists();
 		const mostRecentListens = await getMostRecentListens();
@@ -206,5 +207,3 @@ class Stats extends mix(Base).with(MusicLibrary) {
 		`;
 	}
 }
-
-module.exports = Stats;

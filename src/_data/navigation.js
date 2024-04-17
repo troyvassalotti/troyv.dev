@@ -11,7 +11,7 @@ class Navigation {
 	}
 }
 
-module.exports = [
+export default [
 	new Navigation("home", "/"),
 	new Navigation("archive"),
 	new Navigation("music"),

@@ -1,12 +1,12 @@
 /** @format */
 
-const {html} = require("common-tags");
-const Icons = require("../_includes/partials/icons.js");
-const {mix} = require("../_includes/mixins/mixin.js");
-const RendersPosts = require("../_includes/mixins/RendersPosts.js");
-const Base = require("../_includes/layouts/base.11ty.js");
+import {html} from "common-tags";
+import Icons from "../_includes/partials/icons.js";
+import {mix} from "../_includes/mixins/mixin.js";
+import RendersPosts from "../_includes/mixins/RendersPosts.js";
+import Base from "../_includes/layouts/base.11ty.js";
 
-class Posts extends mix(Base).with(RendersPosts) {
+export default class Posts extends mix(Base).with(RendersPosts) {
 	data() {
 		return {
 			title: "Posts Archive",
@@ -120,5 +120,3 @@ class Posts extends mix(Base).with(RendersPosts) {
 		`;
 	}
 }
-
-module.exports = Posts;

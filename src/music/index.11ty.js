@@ -1,9 +1,9 @@
 /** @format */
 
-const {html} = require("common-tags");
-const Base = require("../_includes/layouts/base.11ty.js");
+import {html} from "common-tags";
+import Base from "../_includes/layouts/base.11ty.js";
 
-class Music extends Base {
+export default class Music extends Base {
 	data() {
 		return {
 			title: "Music",
@@ -85,5 +85,3 @@ class Music extends Base {
 		`;
 	}
 }
-
-module.exports = Music;

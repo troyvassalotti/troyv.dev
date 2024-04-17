@@ -1,8 +1,8 @@
 /** @format */
 
-const {html, safeHtml} = require("common-tags");
+import {html, safeHtml} from "common-tags";
 
-class Base {
+export default class Base {
 	/** @abstract */
 	script() {}
 
@@ -307,5 +307,3 @@ class Base {
 		`;
 	}
 }
-
-module.exports = Base;

@@ -1,6 +1,6 @@
 /** @format */
 
-const {html} = require("common-tags");
+import {html} from "common-tags";
 
 /**
  * An SVG icon available in the site.
@@ -279,8 +279,6 @@ const ICONS = new Map([
  * @param {Icon} icon Name of the icon to reneder.
  * @returns {string} SVG code for the icon.
  */
-function generateIcon(icon) {
+export default function generateIcon(icon) {
 	return ICONS.get(icon) ?? "";
 }
-
-module.exports = generateIcon;

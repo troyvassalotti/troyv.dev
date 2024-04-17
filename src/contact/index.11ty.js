@@ -1,8 +1,8 @@
 /** @format */
 
-const {html} = require("common-tags");
+import {html} from "common-tags";
 
-class Contact {
+export default class Contact {
 	data() {
 		return {
 			layout: "base.11ty.js",
@@ -82,5 +82,3 @@ class Contact {
 		`;
 	}
 }
-
-module.exports = Contact;

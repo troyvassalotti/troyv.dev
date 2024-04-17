@@ -70,7 +70,7 @@ const BaseMixin = (mixin) =>
  * ```
 );
 */
-const Mixin = (mixin) => Cached(HasInstance(BaseMixin(mixin)));
+export const Mixin = (mixin) => Cached(BaseMixin(mixin));
 
 class MixinBuilder {
 	constructor(superclass) {
@@ -89,6 +89,4 @@ class MixinBuilder {
  * class MyClass extends mix(MyBaseClass).with(Mixin1, Mixin2) {}
  * ```
  */
-const mix = (superclass) => new MixinBuilder(superclass);
-
-module.exports = {mix, Mixin};
+export const mix = (superclass) => new MixinBuilder(superclass);

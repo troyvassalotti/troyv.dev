@@ -1,9 +1,9 @@
 /** @format */
 
-const {html, safeHtml} = require("common-tags");
-const Base = require("../_includes/layouts/base.11ty.js");
+import {html, safeHtml} from "common-tags";
+import Base from "../_includes/layouts/base.11ty.js";
 
-class BlogMaker extends Base {
+export default class BlogMaker extends Base {
 	data() {
 		return {
 			title: "Blog Maker",
@@ -68,5 +68,3 @@ class BlogMaker extends Base {
 		return posts.map(({content}) => content.replace(/<[^>]*>?/gm, "")).join("");
 	}
 }
-
-module.exports = BlogMaker;

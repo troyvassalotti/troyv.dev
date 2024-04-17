@@ -1,9 +1,9 @@
 /** @format */
 
-module.exports = {
+export default {
 	layout: "post",
 	tags: ["post"],
-	permalink: function (data) {
+	permalink(data) {
 		return `${this.yyyymmdd(data.page.date)}/${this.slugify(data.title)}/`;
 	},
 };

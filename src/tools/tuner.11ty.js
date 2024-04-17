@@ -1,9 +1,9 @@
 /** @format */
 
-const {html} = require("common-tags");
-const Base = require("../_includes/layouts/base.11ty.js");
+import {html} from "common-tags";
+import Base from "../_includes/layouts/base.11ty.js";
 
-class Tuner extends Base {
+export default class Tuner extends Base {
 	data() {
 		return {
 			glitch: true,
@@ -96,5 +96,3 @@ class Tuner extends Base {
 		return this.defaultTemplate(data, page);
 	}
 }
-
-module.exports = Tuner;

@@ -1,9 +1,9 @@
 /** @format */
 
-const {html} = require("common-tags");
-const Icons = require("../_includes/partials/icons.js");
+import {html} from "common-tags";
+import Icons from "../_includes/partials/icons.js";
 
-class Projects {
+export default class Projects {
 	data() {
 		return {
 			layout: "base.11ty.js",
@@ -50,5 +50,3 @@ class Projects {
 		`;
 	}
 }
-
-module.exports = Projects;
