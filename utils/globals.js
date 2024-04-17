@@ -14,6 +14,17 @@ const LISTENBRAINZ_AUTH = {
 };
 const COVERT_ART_ENDPOINT = "https://coverartarchive.org/release/";
 
+const DARK_VISITORS_AUTH = {
+	method: "POST",
+	headers: {
+		Authorization: "Bearer " + process.env.DARK_VISITORS_TOKEN,
+	},
+	body: {
+		agent_types: ["AI Data Scraper", "AI Assistant", "AI Search Crawler"],
+		disallow: "/",
+	},
+};
+
 module.exports = {
 	DEFAULT_CACHE_OPTIONS,
 	MUSICBRAINZ_ENDPOINT,

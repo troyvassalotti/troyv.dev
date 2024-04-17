@@ -51,11 +51,11 @@ class NowPlaying extends HTMLElement {
 			? "silence"
 			: `"${this.track.track_name}"${
 					this.track.artist_name ? ` by <b>${this.track.artist_name}</b>` : ""
-			  }${
+				}${
 					this.track.release_name
 						? ` from <i>${this.track.release_name}</i>`
 						: ""
-			  }`;
+				}`;
 
 		this.innerHTML = template;
 	}

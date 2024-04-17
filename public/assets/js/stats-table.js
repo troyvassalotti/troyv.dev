@@ -101,7 +101,7 @@ class StatsTable extends LitElement {
 						${this.caption
 							? html` <caption>
 									${this.caption}
-							  </caption>`
+								</caption>`
 							: nothing}
 						<colgroup>
 							${headersList.map(
@@ -145,7 +145,7 @@ class StatsTable extends LitElement {
 							)}
 						</tbody>
 					</table>
-			  `
+				`
 			: html`<p>Data not found.</p>`;
 	}
 }
