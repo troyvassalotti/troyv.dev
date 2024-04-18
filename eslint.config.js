@@ -14,6 +14,14 @@ export default [
 				...globals.node,
 			},
 		},
+		rules: {
+			"no-unused-vars": [
+				"error",
+				{
+					argsIgnorePattern: "^_",
+				},
+			],
+		},
 	},
 	{
 		ignores: ["_site"],
