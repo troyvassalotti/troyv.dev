@@ -25,6 +25,7 @@ const Cached = (mixin) =>
 		}
 
 		// Look up an cached application of `mixin` to `superclass`
+		/* eslint-disable-next-line */
 		if (superclass.hasOwnProperty(applicationRef)) {
 			return superclass[applicationRef];
 		}
@@ -38,6 +39,7 @@ const Cached = (mixin) =>
 		return application;
 	});
 
+/* eslint-disable-next-line */
 const HasInstance = (mixin) => {
 	if (!Symbol.hasInstance) {
 		return mixin;
@@ -45,6 +47,7 @@ const HasInstance = (mixin) => {
 	mixin[Symbol.hasInstance] = function (o) {
 		const originalMixin = this[_originalMixin];
 		while (o != null) {
+			/* eslint-disable-next-line */
 			if (o.hasOwnProperty(_mixinRef) && o[_mixinRef] === originalMixin) {
 				return true;
 			}
@@ -70,7 +73,7 @@ const BaseMixin = (mixin) =>
  * ```
 );
 */
-const Mixin = (mixin) => Cached(HasInstance(BaseMixin(mixin)));
+export const Mixin = (mixin) => Cached(BaseMixin(mixin));
 
 class MixinBuilder {
 	constructor(superclass) {
@@ -89,6 +92,4 @@ class MixinBuilder {
  * class MyClass extends mix(MyBaseClass).with(Mixin1, Mixin2) {}
  * ```
  */
-const mix = (superclass) => new MixinBuilder(superclass);
-
-module.exports = {mix, Mixin};
+export const mix = (superclass) => new MixinBuilder(superclass);

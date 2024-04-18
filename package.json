@@ -1,5 +1,6 @@
 {
 	"name": "troyv.dev",
+	"type": "module",
 	"version": "2.5.0",
 	"scripts": {
 		"blog": "plop post",
@@ -17,22 +18,22 @@
 		"start": "npm run dev"
 	},
 	"devDependencies": {
-		"@11ty/eleventy": "^2.0.0",
-		"@11ty/eleventy-fetch": "^4.0.0",
+		"@11ty/eleventy": "3.0.0-alpha.6",
+		"@11ty/eleventy-fetch": "^4.0.1",
 		"@11ty/eleventy-plugin-inclusive-language": "^1.0.3",
 		"@11ty/eleventy-plugin-rss": "^1.2.0",
 		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
 		"@troyv/common-config": "^1.1.0",
 		"common-tags": "^1.8.2",
-		"dotenv": "^16.0.0",
-		"eleventy-plugin-youtube-embed": "^1.9.1",
-		"eslint": "^8.54.0",
+		"dotenv": "^16.4.5",
+		"eleventy-plugin-youtube-embed": "^1.10.2",
+		"eslint": "^9.0.0",
 		"markdown-it-anchor": "^8.6.7",
-		"markdown-it-footnote": "^3.0.3",
+		"markdown-it-footnote": "^4.0.0",
 		"netlify-plugin-cache": "^1.0.3",
 		"netlify-plugin-webmentions": "^1.1.1",
-		"plop": "^4.0.0",
-		"prettier": "^3.1.0"
+		"plop": "^4.0.1",
+		"prettier": "^3.2.5"
 	},
 	"prettier": "@troyv/common-config/.prettierrc.json"
 }

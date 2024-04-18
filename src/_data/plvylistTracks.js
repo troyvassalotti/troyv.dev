@@ -171,10 +171,5 @@ class LetsTryThisAgain extends CreateAlbum(
 	];
 }
 
-const LP1 = new AloneInACrowdedRoom();
-const LP2 = new LetsTryThisAgain();
-
-module.exports = {
-	LP1,
-	LP2,
-};
+export const LP1 = new AloneInACrowdedRoom();
+export const LP2 = new LetsTryThisAgain();

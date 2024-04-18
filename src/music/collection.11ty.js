@@ -1,11 +1,11 @@
 /** @format */
 
-const {mix} = require("../_includes/mixins/mixin.js");
-const MusicLibrary = require("../_includes/mixins/MusicLibrary.js");
-const Base = require("../_includes/layouts/base.11ty.js");
-const {html} = require("common-tags");
+import {mix} from "../_includes/mixins/mixin.js";
+import MusicLibrary from "../_includes/mixins/MusicLibrary.js";
+import Base from "../_includes/layouts/base.11ty.js";
+import {html} from "common-tags";
 
-class Collection extends mix(Base).with(MusicLibrary) {
+export default class Collection extends mix(Base).with(MusicLibrary) {
 	data() {
 		return {
 			title: "Music Collection",
@@ -74,5 +74,3 @@ class Collection extends mix(Base).with(MusicLibrary) {
 		`;
 	}
 }
-
-module.exports = Collection;

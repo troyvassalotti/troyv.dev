@@ -86,4 +86,4 @@ const PROJECTS = [
 	},
 ];
 
-module.exports = PROJECTS;
+export default PROJECTS;

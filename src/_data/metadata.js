@@ -38,4 +38,5 @@ class Metadata {
 		},
 	};
 }
-module.exports = new Metadata();
+
+export default new Metadata();

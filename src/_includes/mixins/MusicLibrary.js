@@ -1,7 +1,7 @@
 /** @format */
 
-const {html} = require("common-tags");
-const {Mixin} = require("../mixins/mixin.js");
+import {html} from "common-tags";
+import {Mixin} from "../mixins/mixin.js";
 
 const MusicLibrary = Mixin((Base) => {
 	return class extends Base {
@@ -41,4 +41,4 @@ const MusicLibrary = Mixin((Base) => {
 	};
 });
 
-module.exports = MusicLibrary;
+export default MusicLibrary;

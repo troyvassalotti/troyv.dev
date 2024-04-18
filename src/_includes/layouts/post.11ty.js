@@ -1,9 +1,9 @@
 /** @format */
 
-const {html} = require("common-tags");
-const Base = require("./base.11ty.js");
+import {html} from "common-tags";
+import Base from "./base.11ty.js";
 
-class Post extends Base {
+export default class Post extends Base {
 	style() {
 		return html`
 			<style>
@@ -168,5 +168,3 @@ class Post extends Base {
 		`;
 	}
 }
-
-module.exports = Post;

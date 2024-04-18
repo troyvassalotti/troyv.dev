@@ -1,6 +1,6 @@
 /** @format */
 
-class Plvylist {
+export default class Plvylist {
 	data() {
 		return {
 			permalink: "assets/js/plvylist.json",
@@ -40,5 +40,3 @@ class Plvylist {
 		});
 	}
 }
-
-module.exports = Plvylist;
