@@ -41,8 +41,8 @@ class MusicLibrary {
 			allReleases.push(releases);
 			offset = numberOfReleases;
 
-      // MusicBrainz only returns a subset of responses and there's no way to increase that number at this time.
-      // To get around it, I fetch more data with an offset based on what is remaining.
+			// MusicBrainz only returns a subset of responses and there's no way to increase that number at this time.
+			// To get around it, I fetch more data with an offset based on what is remaining.
 			while (offset < releaseCount) {
 				const data = await runEleventyFetch(`${apiEndpoint}&offset=${offset}`);
 

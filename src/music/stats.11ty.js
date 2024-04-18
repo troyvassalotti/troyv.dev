@@ -16,8 +16,8 @@ const LISTENBRAINZ_ENDPOINT = "https://api.listenbrainz.org/1/";
 const FETCH_HEADERS = {
 	fetchOptions: {
 		headers: {
-	Authorization: "Token " + process.env.LISTENBRAINZ_TOKEN,
-    }
+			Authorization: "Token " + process.env.LISTENBRAINZ_TOKEN,
+		},
 	},
 };
 
