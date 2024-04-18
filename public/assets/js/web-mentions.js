@@ -10,7 +10,7 @@
 import {html, css, LitElement} from "lit";
 
 function getMapKey(map, value) {
-	return [...map].find(([key, val]) => val == value)[0];
+	return [...map].find(([_key, val]) => val == value)[0];
 }
 
 /**
@@ -229,7 +229,7 @@ export default class WebMentions extends LitElement {
 	/** Validated webmention type filters supplied by the user. */
 	get activeFilters() {
 		if (typeof this.filters !== "string") {
-			return;
+			return [];
 		}
 
 		let requestedFilters = this.filters.split(" ");

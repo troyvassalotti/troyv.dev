@@ -47,6 +47,7 @@ async function getTopArtists(count = 10, range = "this_month") {
 			return {name, listens};
 		});
 	} catch (error) {
+		console.error(error);
 		return false;
 	}
 }
@@ -79,6 +80,7 @@ async function getMostRecentListens(count = 30) {
 			return {artist, song, release};
 		});
 	} catch (error) {
+		console.error(error);
 		return false;
 	}
 }
@@ -119,6 +121,7 @@ async function getLastMonthsTopReleases(count = 10, range = "month") {
 
 		return releaseData;
 	} catch (error) {
+		console.error(error);
 		return false;
 	}
 }

@@ -49,6 +49,7 @@ export async function getAlbumArtwork(mbid, thumb = false) {
 
 		return `${METADATA.cloudinary.fetch}/c_scale,f_auto,q_auto:eco,w_500/${COVER_ART_ENDPOINT}${mbid}/front`;
 	} catch (error) {
+		console.error(error);
 		return false;
 	}
 }

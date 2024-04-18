@@ -74,6 +74,7 @@ class MusicLibrary {
 				return 0;
 			});
 		} catch (error) {
+			console.error(error);
 			return false;
 		}
 	}
