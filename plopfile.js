@@ -39,6 +39,7 @@ export default function (plop) {
 					"nunjucks",
 					"podcast idea",
 					"projects",
+					"rust",
 					"speaking",
 					"thoughts",
 					"vue",
