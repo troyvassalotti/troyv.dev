@@ -240,6 +240,10 @@
 		}
 	}
 
+	modal-menu:not(:defined) {
+		display: none;
+	}
+
 	.js {
 		[data-undefined="visibility"]:not(:defined) {
 			visibility: hidden;
