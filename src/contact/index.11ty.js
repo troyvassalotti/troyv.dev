@@ -20,6 +20,10 @@ export default class Contact {
 				emailing me ever would (and it won't go into spam, unless you are in
 				fact sending me spam).
 			</p>
+			<p>
+				If you're looking for my resume, you can
+				<a href="https://resume.troyv.dev/">find that here</a>.
+			</p>
 			<form
 				class="contactForm flow"
 				name="contactForm"
