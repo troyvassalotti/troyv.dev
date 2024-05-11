@@ -314,15 +314,14 @@
 	}
 
 	blockquote {
-		border: var(--space-3xs) solid var(--accent);
-		box-shadow: var(--space-2xs) var(--space-2xs) 0 0 var(--accent);
+		border-inline-start: var(--space-3xs) solid currentColor;
 		font-style: italic;
 		inline-size: fit-content;
-		margin-block: var(--space-s-m);
+		margin: var(--space-s-m);
 		position: relative;
 
 		:is(p, q) {
-			padding-block: var(--space-s);
+			padding-block: var(--space-2xs);
 			padding-inline: var(--space-xs-s);
 		}
 	}
