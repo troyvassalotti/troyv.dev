@@ -229,7 +229,7 @@ export default class WebMentions extends LitElement {
 	/** Validated webmention type filters supplied by the user. */
 	get activeFilters() {
 		if (typeof this.filters !== "string") {
-			return [];
+			return undefined;
 		}
 
 		let requestedFilters = this.filters.split(" ");
