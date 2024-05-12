@@ -1,0 +1,35 @@
+---
+permalink: notes.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="{{ metadata.rss.url }}">
+<title>{{ metadata.rss.title }}</title>
+<subtitle>{{ metadata.rss.subtitle }}</subtitle>
+<link href="{{ permalink | absoluteUrl(metadata.rss.url) }}" rel="self" />
+<link href="{{ metadata.rss.url }}" />
+<updated>{{ collections.note | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+<id>{{ metadata.rss.url }}notes/</id>
+<author>
+<name>{{ metadata.rss.author.name }}</name>
+<email>{{ metadata.rss.author.email }}</email>
+</author>
+{%- for post in collections.note | reverse %}
+    {%- set absolutePostUrl = post.url | absoluteUrl(metadata.rss.url) %}
+    <entry>
+    <title>{{ post.data.title }}</title>
+    <link href="{{ absolutePostUrl }}" />
+    <updated>{{ post.date | dateToRfc3339 }}</updated>
+    <id>{{ absolutePostUrl }}</id>
+    <content xml:lang="{{ metadata.rss.language }}" type="html">
+        {{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}
+        {%- set syndicationLinks -%}
+          <a rel="syndication noreferrer"
+              class="u-syndication"
+              href="https://brid.gy/publish/mastodon"></a>
+        {%- endset -%}
+        {{ syndicationLinks | htmlToAbsoluteUrls(absolutePostUrl) }}
+    </content>
+    </entry>
+{%- endfor %}
+</feed>
