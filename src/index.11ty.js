@@ -60,7 +60,7 @@ export default class Home extends Base {
 								.toReversed()
 								.map(
 									(post) => html`
-										<li class="h-card flow recentPost">
+										<li class="h-entry flow recentPost">
 											<h3 class="p-summary u-step-1 recentPost__title">
 												${post.data.description}
 											</h3>

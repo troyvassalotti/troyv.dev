@@ -14,7 +14,7 @@ const RendersPosts = Mixin((Base) => {
 				 */
 				return html`
 					<li>
-						<article class="h-card postListItem">
+						<article class="h-entry postListItem">
 							<time
 								class="dt-published postListItem__date u-step--1"
 								datetime="${this.yyyymmdd(date, "-")}">

@@ -118,7 +118,7 @@ export default class Post extends Base {
 							<p class="postMeta u-step--1">
 								<time
 									class="dt-published"
-									datetime="${date}"
+									datetime="${this.yyyymmdd(date, "-")}"
 									>${this.dateString(date)}</time
 								>
 							</p>
