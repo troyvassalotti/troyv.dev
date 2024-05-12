@@ -46,7 +46,7 @@ export default function (config) {
 	/**
 	 * Slash-separated dates
 	 */
-	config.addFilter("yyyymmdd", function (date) {
+	config.addFilter("yyyymmdd", function (date, sep = "/") {
 		const d = new Date(date);
 		let year = d.getUTCFullYear();
 		let month = d.getUTCMonth() + 1;
@@ -60,7 +60,7 @@ export default function (config) {
 			day = "0" + day;
 		}
 
-		return `${year}/${month}/${day}`;
+		return `${year}${sep}${month}${sep}${day}`;
 	});
 
 	config.addFilter("capitalize", function (string) {

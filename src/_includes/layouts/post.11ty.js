@@ -116,7 +116,11 @@ export default class Post extends Base {
 							<h1 class="postTitle p-name">${title}</h1>
 							<p class="postSummary p-summary u-step--1">${description}</p>
 							<p class="postMeta u-step--1">
-								<span class="dt-published">${this.dateString(date)}</span>
+								<time
+									class="dt-published"
+									datetime="${date}"
+									>${this.dateString(date)}</time
+								>
 							</p>
 						</header>
 						<div class="post flow u-truncate e-content">

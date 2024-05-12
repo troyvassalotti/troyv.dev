@@ -60,17 +60,22 @@ export default class Home extends Base {
 								.toReversed()
 								.map(
 									(post) => html`
-										<li class="flow recentPost">
-											<h3 class="u-step-1 recentPost__title">
+										<li class="h-card flow recentPost">
+											<h3 class="p-summary u-step-1 recentPost__title">
 												${post.data.description}
 											</h3>
 											<p class="u-step--1 recentPost__description">
 												<span aria-hidden="true">&mdash;</span> From
 												<a
-													class="u-text--italic"
+													class="u-url p-name u-text--italic"
 													href="${post.url}"
 													>${post.data.title}</a
-												>, published ${this.dateString(post.date)}.
+												>, published
+												<time
+													class="dt-published"
+													datetime="${this.yyyymmdd(post.date, "-")}"
+													>${this.dateString(post.date)}</time
+												>.
 											</p>
 										</li>
 									`,

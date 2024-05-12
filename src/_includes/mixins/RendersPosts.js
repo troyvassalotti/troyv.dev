@@ -14,12 +14,18 @@ const RendersPosts = Mixin((Base) => {
 				 */
 				return html`
 					<li>
-						<article class="postListItem">
-							<p class="postListItem__date u-step--1">
+						<article class="h-card postListItem">
+							<time
+								class="dt-published postListItem__date u-step--1"
+								datetime="${this.yyyymmdd(date, "-")}">
 								${this.dateString(date)}
-							</p>
-							<h2 class="postListItem__title u-step-2">
-								<a href="${url}">${title}</a>
+							</time>
+							<h2 class="p-name postListItem__title u-step-2">
+								<a
+									class="u-url"
+									href="${url}"
+									>${title}</a
+								>
 							</h2>
 						</article>
 					</li>
