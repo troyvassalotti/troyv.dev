@@ -41,7 +41,4 @@ paths = ["_cache"]
 package = "netlify-plugin-webmentions"
 
 [[plugins]]
-package = "netlify-plugin-webmentions"
-
-[plugins.inputs]
-feedPath = "/notes.xml"
+package = "/plugins/netlify-plugin-wm"

@@ -23,6 +23,7 @@
 		"@11ty/eleventy-plugin-inclusive-language": "^1.0.3",
 		"@11ty/eleventy-plugin-rss": "^1.2.0",
 		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+		"@remy/webmention": "^1.5.0",
 		"@troyv/common-config": "^1.1.0",
 		"common-tags": "^1.8.2",
 		"dotenv": "^16.4.5",
