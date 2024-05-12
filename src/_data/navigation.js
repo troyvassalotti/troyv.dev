@@ -14,6 +14,7 @@ class Navigation {
 export default [
 	new Navigation("home", "/"),
 	new Navigation("archive"),
+	new Navigation("notes"),
 	new Navigation("music"),
 	new Navigation("projects"),
 	new Navigation("contact"),

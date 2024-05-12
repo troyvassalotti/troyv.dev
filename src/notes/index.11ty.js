@@ -36,12 +36,12 @@ export default class Notes extends Base {
 										<article class="h-entry note">
 											<time
 												class="dt-published u-step--1"
-												datetime="${this.yyyymmdd(date, "-")}"
-												>${this.dateString(date)}</time
+												datetime="${date.toISOString()}"
+												>${this.localizedDateString(date)}</time
 											>
 											<div class="e-content">${content}</div>
 											<a
-												class="u-url u-uid"
+												class="u-url u-uid u-step--1"
 												href="${url}"
 												>Permalink</a
 											>

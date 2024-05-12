@@ -43,6 +43,14 @@ export default function (config) {
 		return dateToUse.toUTCString().replace(/\s\d+:\d+:\d+\sGMT/g, "");
 	});
 
+	// For when the time is know, i.e. dates as "git Created" or "git Last Modified"
+	config.addFilter("localizedDateString", function (date) {
+		return date.toLocaleString("en-US", {
+			timeZone: "America/New_York",
+			timeZoneName: "longGeneric",
+		});
+	});
+
 	/**
 	 * Slash-separated dates
 	 */

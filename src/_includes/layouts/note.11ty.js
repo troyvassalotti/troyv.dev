@@ -19,23 +19,25 @@ export default class Note extends Base {
 		return html`
 			<main id="main">
 				<div class="wrapper">
-					<article class="h-entry">
+					<article class="h-entry flow">
 						<!-- Published -->
 						<time
-							class="dt-published"
-							datetime="${this.yyyymmdd(date, "-")}"
-							>${this.dateString(date)}</time
+							class="dt-published u-step--1"
+							datetime="${date.toISOString()}"
+							>${this.localizedDateString(date)}</time
 						>
 
 						<!-- Content -->
 						<div class="e-content">${content}</div>
 
 						<!-- Permalink -->
-						<a
-							class="u-url u-uid"
-							href=""
-							>Permalink</a
-						>
+						<div>
+							<a
+								class="u-url u-uid u-step--1"
+								href=""
+								>Permalink</a
+							>
+						</div>
 
 						<!-- Syndication -->
 						<a
