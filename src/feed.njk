@@ -4,12 +4,12 @@ eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:base="{{ metadata.rss.url }}">
-<title>{{ metadata.rss.title }}</title>
-<subtitle>{{ metadata.rss.subtitle }}</subtitle>
+<title>Troy Vassalotti :: Blog</title>
+<subtitle>Troy writes about web development and being a person.</subtitle>
 <link href="{{ permalink | absoluteUrl(metadata.rss.url) }}" rel="self" />
-<link href="{{ metadata.rss.url }}" />
+<link href="{{ metadata.rss.url }}archive/" />
 <updated>{{ collections.post | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
-<id>{{ metadata.rss.url }}</id>
+<id>{{ metadata.rss.url }}archive/</id>
 <author>
 <name>{{ metadata.rss.author.name }}</name>
 <email>{{ metadata.rss.author.email }}</email>

@@ -198,9 +198,14 @@ export default class Base {
 						href="/humans.txt" />
 					<link
 						rel="alternate"
-						type="application/rss+xml"
+						type="application/atom+xml"
 						href="/feed.xml"
-						title="RSS Feed" />
+						title="Posts RSS" />
+					<link
+						rel="alternate"
+						type="application/atom+xml"
+						href="/notes.xml"
+						title="Notes RSS" />
 
 					<!-- Webmentions -->
 					<link

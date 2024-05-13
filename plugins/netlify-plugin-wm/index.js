@@ -1,6 +1,7 @@
 /**
  * @format
  * @file Notes plugin for sending webmentions.
+ * @link https://github.com/CodeFoodPixels/netlify-plugin-webmentions
  */
 
 const Webmention = require("@remy/webmention");

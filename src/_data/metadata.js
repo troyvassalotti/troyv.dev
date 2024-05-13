@@ -28,8 +28,6 @@ class Metadata {
 	];
 	cloudinary = new Cloudinary("dpmchqezv");
 	rss = {
-		title: "Troy Vassalotti | troyv.dev",
-		subtitle: "Troy writes about web development and being a person.",
 		url: "https://www.troyv.dev/",
 		language: "en",
 		author: {
