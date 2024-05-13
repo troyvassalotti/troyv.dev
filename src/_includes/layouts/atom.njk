@@ -1,0 +1,38 @@
+{%- set alt = metadata.rss.url + alternate -%}
+{%- set feed = collections[items] -%}
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="{{ metadata.rss.url }}">
+  <title>{{ title }}</title>
+  <subtitle>{{ subtitle }}</subtitle>
+  <link rel="self" href="{{ permalink | absoluteUrl(metadata.rss.url) }}" />
+  <link rel="alternate" href="{{ alt }}" />
+  <updated>{{ feed | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+  <id>{{ alt }}</id>
+  <author>
+    <name>{{ metadata.rss.author.name }}</name>
+    <email>{{ metadata.rss.author.email }}</email>
+  </author>
+  {%- for post in feed | reverse %}
+  {%- set absolutePostUrl = post.url | absoluteUrl(metadata.rss.url) %}
+  <entry>
+    <title>{{ post.data.title }}</title>
+    <link href="{{ absolutePostUrl }}" />
+    <updated>{{ post.date | dateToRfc3339 }}</updated>
+    <id>{{ absolutePostUrl }}</id>
+    <content xml:lang="{{ metadata.rss.language }}" type="html">
+      {{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}
+      {%- if post.data.syndication -%}
+        {%- set syndication = post.data.syndication -%}
+        {%- set syndicationLinks -%}
+          {%- for location in syndication -%}
+            <a rel="syndication noreferrer"
+              class="u-syndication"
+              href="https://brid.gy/publish/{{ syndication }}"></a>
+          {%- endfor -%}
+        {%- endset -%}
+        {{ syndicationLinks | htmlToAbsoluteUrls(absolutePostUrl) }}
+      {%- endif -%}
+    </content>
+  </entry>
+  {%- endfor %}
+</feed>

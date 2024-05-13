@@ -1,0 +1,26 @@
+{%- set feed = collections[items] -%}
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "{{ title }}",
+  "language": "{{ metadata.rss.language }}",
+  "home_page_url": "{{ metadata.rss.url }}",
+  "feed_url": "{{ permalink | absoluteUrl(metadata.rss.url) }}",
+  "description": "{{ subtitle }}",
+  "author": {
+    "name": "{{ metadata.rss.author.name }}",
+    "url": "{{ metadata.rss.url }}"
+  },
+  "items": [
+    {%- for post in feed | reverse %}
+    {%- set absolutePostUrl = post.url | absoluteUrl(metadata.url) %}
+    {
+      "id": "{{ absolutePostUrl }}",
+      "url": "{{ absolutePostUrl }}",
+      "title": "{{ post.data.title }}",
+      "content_html": {% if post.templateContent %}{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) | dump | safe }}{% else %}""{% endif %},
+      "date_published": "{{ post.date | dateToRfc3339 }}"
+    }
+    {% if not loop.last %},{% endif %}
+    {%- endfor %}
+  ]
+}

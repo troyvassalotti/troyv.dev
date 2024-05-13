@@ -1,6 +1,7 @@
 /** @format */
 
 import {html} from "common-tags";
+import Icons from "../_includes/partials/icons.js";
 import Base from "../_includes/layouts/base.11ty.js";
 
 export default class Notes extends Base {
@@ -14,6 +15,22 @@ export default class Notes extends Base {
 		};
 	}
 
+	style() {
+		return html`
+			<style>
+				.rss {
+					align-items: center;
+					display: flex;
+					gap: 1ch;
+
+					svg {
+						inline-size: 1em;
+					}
+				}
+			</style>
+		`;
+	}
+
 	content(data) {
 		let {
 			title,
@@ -23,8 +40,12 @@ export default class Notes extends Base {
 		return html`
 			<main id="main">
 				<div class="wrapper flow">
-					<header class="masthead masthead--small">
+					<header class="flow masthead masthead--small">
 						<h1><glitch-text>${title}</glitch-text></h1>
+						<div class="rss u-invertSvg--onDark">
+							<span>${Icons("rss")}</span>
+							<span>Subscribe to the <a href="/notes.xml">RSS feed</a>.</span>
+						</div>
 					</header>
 					<section class="notes">
 						<ol

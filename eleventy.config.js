@@ -15,7 +15,7 @@ import markdownItFootnote from "markdown-it-footnote";
  */
 function filterTagList(tags) {
 	return (tags || []).filter(
-		(tag) => ["all", "post", "posts"].indexOf(tag) === -1,
+		(tag) => ["all", "post", "posts", "note"].indexOf(tag) === -1,
 	);
 }
 

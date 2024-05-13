@@ -203,9 +203,19 @@ export default class Base {
 						title="Posts RSS" />
 					<link
 						rel="alternate"
+						type="application/json"
+						href="/feed.json"
+						title="Posts JSON Feed" />
+					<link
+						rel="alternate"
 						type="application/atom+xml"
 						href="/notes.xml"
 						title="Notes RSS" />
+					<link
+						rel="alternate"
+						type="application/json"
+						href="/notes.json"
+						title="Notes JSON Feed" />
 
 					<!-- Webmentions -->
 					<link
