@@ -38,7 +38,7 @@ package = "netlify-plugin-cache"
 paths = ["_cache"]
 
 [[plugins]]
-package = "netlify-plugin-webmentions"
-
-[[plugins]]
 package = "/plugins/netlify-plugin-wm"
+
+[plugins.inputs]
+feeds = ["feed.xml", "notes.xml"]

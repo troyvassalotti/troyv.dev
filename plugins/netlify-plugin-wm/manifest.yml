@@ -1,3 +1,8 @@
 # @format
 
 name: netlify-plugin-wm
+inputs:
+  - name: feeds
+    description: Feeds to scan for new web mentions to send, without leading slashes.
+  - name: limit
+    description: "Maximum number of feed entries to check (Default: 1)"
