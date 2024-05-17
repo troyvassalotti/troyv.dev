@@ -28,12 +28,10 @@ export default class Note extends Base {
 						>
 
 						<!-- Content -->
-						<div class="e-content flow u-truncate u-truncate--media">
-							${content}
-						</div>
+						<div class="e-content flow u-truncate">${content}</div>
 
 						<!-- Permalink -->
-						<div>
+						<div class="permalink">
 							<a
 								class="u-url u-uid u-step--1"
 								href=""

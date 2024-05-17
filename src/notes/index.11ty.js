@@ -27,6 +27,10 @@ export default class Notes extends Base {
 						inline-size: 1em;
 					}
 				}
+
+				.noteList > li + li {
+					margin-block-start: var(--space-l);
+				}
 			</style>
 		`;
 	}
@@ -49,23 +53,25 @@ export default class Notes extends Base {
 					</header>
 					<section class="notes">
 						<ol
-							class="noteList flow"
+							class="noteList"
 							role="list">
 							${note.toReversed().map(({date, url, content}) => {
 								return html`
 									<li>
-										<article class="h-entry note">
+										<article class="h-entry note flow">
 											<time
 												class="dt-published u-step--1"
 												datetime="${date.toISOString()}"
 												>${this.localizedDateString(date)}</time
 											>
-											<div class="e-content">${content}</div>
-											<a
-												class="u-url u-uid u-step--1"
-												href="${url}"
-												>Permalink</a
-											>
+											<div class="e-content u-truncate flow">${content}</div>
+											<div class="permalink">
+												<a
+													class="u-url u-uid u-step--1"
+													href="${url}"
+													>Permalink</a
+												>
+											</div>
 										</article>
 									</li>
 								`;

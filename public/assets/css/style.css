@@ -696,10 +696,6 @@
 		max-inline-size: var(--readable-length, 70ch);
 	}
 
-	.u-truncate--media :is(video, img) {
-		max-inline-size: var(--viewable-length, 70ch);
-	}
-
 	.u-text--italic {
 		font-style: italic;
 	}
