@@ -28,7 +28,9 @@ export default class Note extends Base {
 						>
 
 						<!-- Content -->
-						<div class="e-content">${content}</div>
+						<div class="e-content flow u-truncate u-truncate--media">
+							${content}
+						</div>
 
 						<!-- Permalink -->
 						<div>
