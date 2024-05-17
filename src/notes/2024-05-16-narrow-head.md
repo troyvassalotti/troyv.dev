@@ -2,6 +2,4 @@
 
 Got to see Narrow Head last night and it was great! _Moments of Clarity_ was one of my top albums last year.
 
-<video class="u-video" controls="">
-  <source type="video/mp4" src="{{ metadata.cloudinary.video }}/v1715904357/blog/PXL_20240516_031126466_kgt7ig.mp4" />
-</video>
+<img class="u-photo" alt="The band Narrow Head on stage mid-song." width="800" height="450" src="{{ metadata.cloudinary.image }}/w_800,c_scale,f_jpg,q_auto:eco/v1715906099/blog/PXL_20240516_035313883_rydcnc.jpg" />
