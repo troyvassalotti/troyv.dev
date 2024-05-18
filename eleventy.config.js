@@ -106,13 +106,13 @@ export default function (config) {
 			})
 			.use(markdownItFootnote),
 	);
-
-	return {
-		htmlTemplateEngine: "njk",
-		markdownTemplateEngine: "njk",
-		dir: {
-			input: "src",
-			layouts: "_includes/layouts",
-		},
-	};
 }
+
+export const config = {
+	htmlTemplateEngine: "njk",
+	markdownTemplateEngine: "njk",
+	dir: {
+		input: "src",
+		layouts: "_includes/layouts",
+	},
+};

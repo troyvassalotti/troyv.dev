@@ -18,7 +18,7 @@
 		"start": "npm run dev"
 	},
 	"devDependencies": {
-		"@11ty/eleventy": "3.0.0-alpha.6",
+		"@11ty/eleventy": "^3.0.0-alpha.10",
 		"@11ty/eleventy-fetch": "^4.0.1",
 		"@11ty/eleventy-plugin-inclusive-language": "^1.0.3",
 		"@11ty/eleventy-plugin-rss": "^1.2.0",
