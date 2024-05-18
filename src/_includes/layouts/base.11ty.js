@@ -154,7 +154,7 @@ export default class Base {
 					</script>
 
 					<!-- Custom Scripts -->
-					${this.script()}
+					${this.script()} ${this.getBundle("js")}
 
 					<link
 						rel="stylesheet"
@@ -164,7 +164,7 @@ export default class Base {
 						href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
 					<!-- Custom Styles -->
-					${this.style()}
+					${this.style()} ${this.getBundle("css")}
 
 					<!-- SEO Garbage -->
 					<meta
