@@ -64,6 +64,7 @@ export default class Base {
 			metadata,
 			eleventy,
 			navigation,
+			bundle,
 		} = data;
 
 		let pageTitle = title ? safeHtml`${title}` : this.capitalize(fileSlug);
@@ -154,7 +155,7 @@ export default class Base {
 					</script>
 
 					<!-- Custom Scripts -->
-					${this.script()} ${this.getBundle("js")}
+					${this.script()} ${bundle?.js}
 
 					<link
 						rel="stylesheet"
@@ -164,7 +165,7 @@ export default class Base {
 						href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
 					<!-- Custom Styles -->
-					${this.style()} ${this.getBundle("css")}
+					${this.style()} ${bundle?.css}
 
 					<!-- SEO Garbage -->
 					<meta

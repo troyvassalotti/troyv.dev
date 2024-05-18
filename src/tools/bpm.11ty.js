@@ -7,24 +7,23 @@ export function data() {
 		title: "BPM Finder",
 		glitch: true,
 		permalink: "/bpm/",
-		layout: "base",
+		layout: "base.11ty.js",
+		bundle: {
+			css: html`
+				<style>
+					beats-per {
+						display: block;
+					}
+				</style>
+			`,
+			js: html`
+				<script type="module">
+					import BeatsPer from "beats-per";
+				</script>
+			`,
+		},
 	};
 }
-
-export const bundle = {
-	css: html`
-		<style>
-			beats-per {
-				display: block;
-			}
-		</style>
-	`,
-	js: html`
-		<script type="module">
-			import BeatsPer from "beats-per";
-		</script>
-	`,
-};
 
 export function render() {
 	return html`

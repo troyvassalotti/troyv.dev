@@ -22,9 +22,6 @@ function filterTagList(tags) {
 export default function (config) {
 	config.addPassthroughCopy({public: "/"});
 
-	config.addBundle("css");
-	config.addBundle("js");
-
 	config.addPlugin(syntaxHighlight);
 	config.addPlugin(pluginRss);
 	config.addPlugin(inclusiveLangPlugin);

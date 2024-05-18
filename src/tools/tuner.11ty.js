@@ -7,26 +7,25 @@ export function data() {
 		glitch: true,
 		title: "Tuner",
 		permalink: "/tuner/",
-		layout: "base",
+		layout: "base.11ty.js",
+		bundle: {
+			css: html`
+				<style>
+					.tunings {
+						display: flex;
+						flex-wrap: wrap;
+						gap: var(--space-2xl);
+					}
+				</style>
+			`,
+			js: html`
+				<script type="module">
+					import {Detune} from "detune";
+				</script>
+			`,
+		},
 	};
 }
-
-export const bundle = {
-	css: html`
-		<style>
-			.tunings {
-				display: flex;
-				flex-wrap: wrap;
-				gap: var(--space-2xl);
-			}
-		</style>
-	`,
-	js: html`
-		<script type="module">
-			import {Detune} from "detune";
-		</script>
-	`,
-};
 
 export function render() {
 	return html`
