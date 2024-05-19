@@ -1,13 +1,11 @@
 /** @format */
 
-import data from "./feeds.11tydata.js";
+import metadata from "../_data/metadata.js";
 
-export default class NotesAtom {
-	data() {
-		return {
-			layout: "atom.njk",
-			permalink: "notes.xml",
-			...data.feeds.notes,
-		};
-	}
+export function data() {
+	return {
+		layout: "atom.njk",
+		permalink: "notes.xml",
+		...metadata.rss.feeds.notes,
+	};
 }

@@ -1,7 +1,7 @@
 ---
 title: Now
 description: What I'm doing now.
-layout: base.11ty.js
+layout: page.11ty.js
 truncate: true
 glitch: true
 date: git Last Modified

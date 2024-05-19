@@ -34,6 +34,20 @@ class Metadata {
 			name: "Troy Vassalotti",
 			email: "fqa560de@anonaddy.me",
 		},
+		feeds: {
+			blog: {
+				title: "Troy Vassalotti :: Blog",
+				subtitle: "Troy writes about web development and being a person.",
+				items: "post",
+				alternate: "archive/",
+			},
+			notes: {
+				title: "Troy Vassalotti :: Notes",
+				subtitle: "Bite-sized notes from Troy.",
+				items: "note",
+				alternate: "notes/",
+			},
+		},
 	};
 }
 
