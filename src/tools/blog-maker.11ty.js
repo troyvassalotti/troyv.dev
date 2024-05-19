@@ -9,7 +9,7 @@ export function data() {
 			"Write your own extremely unpredictable and often incoherent blog post using a slightly-thorough list of every word I've written.",
 		glitch: true,
 		truncate: true,
-		layout: "base.11ty.js",
+		layout: "page.11ty.js",
 		noHeaderContainment: true,
 		permalink: "/blog-maker/",
 		bundle: {

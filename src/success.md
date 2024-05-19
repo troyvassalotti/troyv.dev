@@ -3,7 +3,7 @@ title: 200 OK
 description: Sit back, relax, and I'll be in touch soon.
 outputDescription: true,
 permalink: /success/
-layout: base.11ty.js
+layout: page.11ty.js
 eleventyExcludeFromCollections: true
 ---
 

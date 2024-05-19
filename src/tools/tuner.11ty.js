@@ -7,7 +7,7 @@ export function data() {
 		glitch: true,
 		title: "Tuner",
 		permalink: "/tuner/",
-		layout: "base.11ty.js",
+		layout: "page.11ty.js",
 		bundle: {
 			css: html`
 				<style>

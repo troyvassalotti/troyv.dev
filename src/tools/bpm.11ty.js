@@ -7,7 +7,7 @@ export function data() {
 		title: "BPM Finder",
 		glitch: true,
 		permalink: "/bpm/",
-		layout: "base.11ty.js",
+		layout: "page.11ty.js",
 		bundle: {
 			css: html`
 				<style>

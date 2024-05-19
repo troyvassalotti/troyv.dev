@@ -4,7 +4,7 @@ import {html} from "common-tags";
 
 export function data() {
 	return {
-		layout: "base.11ty.js",
+		layout: "page.11ty.js",
 		glitch: true,
 		title: "Contact",
 		truncate: true,

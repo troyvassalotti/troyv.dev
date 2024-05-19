@@ -1,13 +1,11 @@
 /** @format */
 
-import data from "./feeds.11tydata.js";
+import metadata from "../_data/metadata.js";
 
-export default class BlogAtom {
-	data() {
-		return {
-			layout: "atom.njk",
-			permalink: "feed.xml",
-			...data.feeds.blog,
-		};
-	}
+export function data() {
+	return {
+		layout: "atom.njk",
+		permalink: "feed.xml",
+		...metadata.rss.feeds.blog,
+	};
 }

@@ -5,11 +5,90 @@ import {
 	createCacheOptions,
 	getAlbumArtwork,
 } from "../../utils/helpers.js";
-import {mix} from "../_includes/mixins/mixin.js";
-import MusicLibrary from "../_includes/mixins/MusicLibrary.js";
 import {html, safeHtml} from "common-tags";
-import Base from "../_includes/layouts/base.11ty.js";
 import "dotenv/config";
+import {generateVinylGridItem} from "../_includes/lib/generateVinylGridItem.js";
+import {generateCollectionList} from "../_includes/lib/generateCollectionList.js";
+
+export async function data() {
+	const topArtistsThisMonth = await getTopArtists();
+	const mostRecentListens = await getMostRecentListens();
+	const lastMonthsTopReleases = await getLastMonthsTopReleases();
+
+	return {
+		layout: "base.11ty.js",
+		title: "Music Stats",
+		description: "Aggregated data from my ListenBrainz profile.",
+		topArtistsThisMonth,
+		mostRecentListens,
+		lastMonthsTopReleases,
+		bundle: {
+			css: html`
+				<style>
+					.tables {
+						align-items: start;
+						display: flex;
+						flex-wrap: wrap;
+						gap: var(--space-m);
+						justify-content: space-between;
+					}
+				</style>
+			`,
+			js: html`
+				<script type="module">
+					import "/assets/js/stats-table.js";
+				</script>
+			`,
+		},
+	};
+}
+
+export function render(data) {
+	let {title, lastMonthsTopReleases, mostRecentListens, topArtistsThisMonth} =
+		data;
+
+	return html`
+		<main id="main">
+			<div class="wrapper flow">
+				<header class="flow masthead masthead--small">
+					<h1><glitch-text>${title}</glitch-text></h1>
+					<p>
+						I keep track of my listening habits in ListenBrainz because I'm a
+						<strong>nerd</strong>. All that data is public on
+						<a href="https://listenbrainz.org/user/actionhamilton/"
+							>my ListenBrainz profile</a
+						>, but I've chosen to display a few specific metrics here. Cool,
+						right?
+					</p>
+				</header>
+				<div class="flow">
+					<h2>Top Releases Last Month</h2>
+					<ul
+						class="u-grid"
+						data-grid-columns="5"
+						role="list">
+						${generateCollectionList(
+							lastMonthsTopReleases,
+							generateVinylGridItem,
+						)}
+					</ul>
+				</div>
+				<div class="tables">
+					<stats-table
+						caption="Last 30 Plays"
+						headers="Number Artist Track Release"
+						data="${safeHtml`${JSON.stringify(mostRecentListens)}`}">
+					</stats-table>
+					<stats-table
+						caption="Top Artists This Month"
+						headers="Number Artist Listens"
+						data="${safeHtml`${JSON.stringify(topArtistsThisMonth)}`}">
+					</stats-table>
+				</div>
+			</div>
+		</main>
+	`;
+}
 
 const LISTENBRAINZ_ENDPOINT = "https://api.listenbrainz.org/1/";
 
@@ -123,90 +202,5 @@ async function getLastMonthsTopReleases(count = 10, range = "month") {
 	} catch (error) {
 		console.error(error);
 		return false;
-	}
-}
-
-export default class Stats extends mix(Base).with(MusicLibrary) {
-	async data() {
-		const topArtistsThisMonth = await getTopArtists();
-		const mostRecentListens = await getMostRecentListens();
-		const lastMonthsTopReleases = await getLastMonthsTopReleases();
-
-		return {
-			title: "Music Stats",
-			description: "Aggregated data from my ListenBrainz profile.",
-			topArtistsThisMonth,
-			mostRecentListens,
-			lastMonthsTopReleases,
-		};
-	}
-
-	style() {
-		return html`
-			<style>
-				.tables {
-					align-items: start;
-					display: flex;
-					flex-wrap: wrap;
-					gap: var(--space-m);
-					justify-content: space-between;
-				}
-			</style>
-		`;
-	}
-
-	content(data) {
-		let {title, lastMonthsTopReleases, mostRecentListens, topArtistsThisMonth} =
-			data;
-
-		return html`
-			<main id="main">
-				<div class="wrapper flow">
-					<header class="flow masthead masthead--small">
-						<h1><glitch-text>${title}</glitch-text></h1>
-						<p>
-							I keep track of my listening habits in ListenBrainz because I'm a
-							<strong>nerd</strong>. All that data is public on
-							<a href="https://listenbrainz.org/user/actionhamilton/"
-								>my ListenBrainz profile</a
-							>, but I've chosen to display a few specific metrics here. Cool,
-							right?
-						</p>
-					</header>
-					<div class="flow">
-						<h2>Top Releases Last Month</h2>
-						<ul
-							class="u-grid"
-							data-grid-columns="5"
-							role="list">
-							${this.generateCollectionList(
-								lastMonthsTopReleases,
-								this.generateVinylGridItem,
-							)}
-						</ul>
-					</div>
-					<div class="tables">
-						<stats-table
-							caption="Last 30 Plays"
-							headers="Number Artist Track Release"
-							data="${safeHtml`${JSON.stringify(mostRecentListens)}`}">
-						</stats-table>
-						<stats-table
-							caption="Top Artists This Month"
-							headers="Number Artist Listens"
-							data="${safeHtml`${JSON.stringify(topArtistsThisMonth)}`}">
-						</stats-table>
-					</div>
-				</div>
-			</main>
-		`;
-	}
-
-	script() {
-		return html`
-			<script type="module">
-				import "/assets/js/stats-table.js";
-			</script>
-		`;
 	}
 }

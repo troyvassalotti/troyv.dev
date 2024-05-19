@@ -5,7 +5,7 @@ import Icons from "../_includes/partials/icons.js";
 
 export function data() {
 	return {
-		layout: "base.11ty.js",
+		layout: "page.11ty.js",
 		glitch: true,
 		outputDescription: true,
 		noHeaderContainment: true,
