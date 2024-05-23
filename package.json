@@ -15,7 +15,8 @@
 		"lint::eslint": "eslint",
 		"lint::eslint-fix": "eslint --fix",
 		"netlify::dev": "npx netlify dev",
-		"start": "npm run dev"
+		"start": "npm run dev",
+		"tweet": "plop tweet"
 	},
 	"devDependencies": {
 		"@11ty/eleventy": "^3.0.0-alpha.10",

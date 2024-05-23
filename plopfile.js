@@ -66,4 +66,37 @@ export default function (plop) {
 			},
 		],
 	});
+
+	plop.setGenerator("tweet", {
+		description: "Write a new tweet",
+		prompts: [
+			{
+				type: "input",
+				name: "title",
+				message: "What's the title?",
+			},
+			{
+				type: "editor",
+				name: "content",
+				postfix: "md",
+			},
+		],
+		actions: [
+			{
+				type: "add",
+				path: "src/notes/{{dashCase date}}-{{dashCase title}}.md",
+				template: "{{date}} {{{content}}}",
+				data() {
+					let now = new Date();
+					let date = new Intl.DateTimeFormat("se-SV", {
+						timeZone: "America/New_York",
+					}).format(now);
+
+					return {
+						date,
+					};
+				},
+			},
+		],
+	});
 }
