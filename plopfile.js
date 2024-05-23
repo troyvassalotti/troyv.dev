@@ -85,7 +85,7 @@ export default function (plop) {
 			{
 				type: "add",
 				path: "src/notes/{{dashCase date}}-{{dashCase title}}.md",
-				template: "{{date}} {{{content}}}",
+				template: "{{{content}}}",
 				data() {
 					let now = new Date();
 					let date = new Intl.DateTimeFormat("se-SV", {
