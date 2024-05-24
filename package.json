@@ -33,6 +33,7 @@
 		"markdown-it-anchor": "^8.6.7",
 		"markdown-it-footnote": "^4.0.0",
 		"netlify-plugin-cache": "^1.0.3",
+		"opml": "^0.5.2",
 		"plop": "^4.0.1",
 		"prettier": "^3.2.5"
 	},
