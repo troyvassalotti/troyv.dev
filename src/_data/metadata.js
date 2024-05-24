@@ -16,17 +16,20 @@ class Cloudinary {
 	}
 }
 
+const GitHub = new SocialMedia("GitHub", "https://github.com/troyvassalotti");
+const Mastodon = new SocialMedia("Mastodon", "https://fosstodon.org/@rest");
+const CodePen = new SocialMedia("CodePen", "https://codepen.io/troyvassalotti");
+
 class Metadata {
 	title = "Troy Vassalotti";
 	domain = "www.troyv.dev";
 	url = "https://www.troyv.dev";
 	repo = "https://github.com/troyvassalotti/troyv.dev";
-	socials = [
-		new SocialMedia("GitHub", "https://github.com/troyvassalotti"),
-		new SocialMedia("Mastodon", "https://fosstodon.org/@rest"),
-		new SocialMedia("CodePen", "https://codepen.io/troyvassalotti"),
-	];
+	socials = [GitHub, Mastodon, CodePen];
 	cloudinary = new Cloudinary("dpmchqezv");
+	follow = {
+		mastodon: Mastodon.url,
+	};
 	rss = {
 		url: "https://www.troyv.dev/",
 		language: "en",

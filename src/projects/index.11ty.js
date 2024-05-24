@@ -25,7 +25,7 @@ export function render({projects}) {
 				.map(({url, description, name, repository}) => {
 					return html`
 						<li>
-							<p class="u-font--headings u-step-3 u-text--bold">
+							<p class="u-font--headings u-step-2 u-text--bold">
 								${url ? html`<a href="${url}">${name}</a>` : html`${name}`}
 							</p>
 							<p>${description}</p>

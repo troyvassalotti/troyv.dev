@@ -775,6 +775,11 @@
 		margin-block-start: var(--flow-space, 1em);
 	}
 
+	/* Remove extra space since the masthead already has padding around it */
+	.flow .masthead + * {
+		margin-block-start: 0;
+	}
+
 	.prose * + :is(h2, h3, h4) {
 		--flow-space: var(--space-xl);
 	}
