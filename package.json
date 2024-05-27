@@ -15,6 +15,7 @@
 		"lint::eslint": "eslint",
 		"lint::eslint-fix": "eslint --fix",
 		"netlify::dev": "npx netlify dev",
+		"posttweet": "git add . && git commit -m \"Post a tweet\" ",
 		"start": "npm run dev",
 		"tweet": "plop tweet"
 	},
