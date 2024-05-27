@@ -91,16 +91,13 @@ export function render(data) {
 }
 
 const LISTENBRAINZ_ENDPOINT = "https://api.listenbrainz.org/1/";
-
-const FETCH_HEADERS = {
+const CACHE_OPTIONS = createCacheOptions({
 	fetchOptions: {
 		headers: {
 			Authorization: "Token " + process.env.LISTENBRAINZ_TOKEN,
 		},
 	},
-};
-
-const CACHE_OPTIONS = createCacheOptions(FETCH_HEADERS);
+});
 
 /**
  * Return my top (default: 10) artists in the given timeframe (default: this month)
