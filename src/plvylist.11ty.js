@@ -34,7 +34,5 @@ export function render({metadata, plvylistTracks}) {
 	const LP1_TRACKS = generateTrackData(LP1, metadata);
 	const LP2_TRACKS = generateTrackData(LP2, metadata);
 
-	return JSON.stringify({
-		tracks: [...LP2_TRACKS, ...LP1_TRACKS],
-	});
+	return JSON.stringify([...LP2_TRACKS, ...LP1_TRACKS]);
 }
