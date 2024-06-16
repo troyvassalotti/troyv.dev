@@ -62,6 +62,7 @@ export function render(data) {
 				<link
 					href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap"
 					rel="stylesheet" />
+
 				<script type="importmap">
 					{
 						"imports": {
@@ -80,9 +81,23 @@ export function render(data) {
 					}
 				</script>
 
+				<script type="speculationrules">
+					{
+						"prerender": [
+							{
+								"where": {
+									"href_matches": "/*"
+								},
+								"eagerness": "moderate"
+							}
+						]
+					}
+				</script>
+
 				<script>
 					document.documentElement.classList.add("js");
 				</script>
+
 				<script type="module">
 					import "/assets/js/modal-menu.js";
 					import CheatCodes from "cheatcodes";
