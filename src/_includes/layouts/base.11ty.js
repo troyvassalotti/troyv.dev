@@ -76,7 +76,8 @@ export function render(data) {
 							"detune": "https://esm.sh/@troyv/detune@2.0.0",
 							"beats-per": "https://esm.sh/@troyv/beats-per@3.0.0",
 							"word-salad": "https://esm.sh/@troyv/word-salad@2.0.0",
-							"glitch-text": "https://esm.sh/@troyv/glitch-text@1.0.0"
+							"glitch-text": "https://esm.sh/@troyv/glitch-text@1.0.0",
+							"inapp-spy": "https://esm.sh/inapp-spy@3.0.0"
 						}
 					}
 				</script>
@@ -113,6 +114,23 @@ export function render(data) {
 						console.error(
 							"No element with ID of 'main' found. Add that in or the skip link won't work.",
 						);
+					}
+				</script>
+
+				<script type="module">
+					import InAppSpy from "inapp-spy";
+
+					const {isInApp} = InAppSpy();
+
+					if (isInApp) {
+						// Because of how these templates are written, I can't create a const and re-use it.
+						// That's why this string is repeated twice.
+						window.location.replace("intent:${metadata.url}${url}#Intent;end");
+
+						const $div = document.createElement("div");
+						$div.innerHTML =
+							'<p><a href="intent:${metadata.url}${url}#Intent;end">Open this page</a> in your default browser.</p>';
+						document.body.appendChild($div);
 					}
 				</script>
 
