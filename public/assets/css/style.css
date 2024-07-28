@@ -240,6 +240,7 @@
 		}
 	}
 
+	/* because this shouldn't be visible at all if JS isn't there */
 	modal-menu:not(:defined) {
 		display: none;
 	}
@@ -261,6 +262,7 @@
 
 	.code,
 	code,
+	kbd,
 	pre {
 		font-family: var(--code);
 	}
@@ -481,30 +483,6 @@
 		--flow-space: var(--space-l);
 	}
 
-	.shortcutItem {
-		border-block-end: 1px solid var(--accent);
-		font-size: var(--step--1);
-		padding-block: 0.5ch;
-	}
-
-	.shortcutItem > * {
-		display: inline-block;
-	}
-
-	.shortcutItem__name.secret {
-		font-style: italic;
-	}
-
-	.shortcutItem__command {
-		font-family: var(--code);
-		margin-inline-start: 1.5ch;
-	}
-
-	.shortcutsDisclaimer {
-		margin-block-start: var(--space-l);
-		text-align: end;
-	}
-
 	.animatedLink {
 		--linkStateRest: scaleX(1);
 		--linkStartRest: left;
@@ -719,6 +697,15 @@
 	.u-rule {
 		margin-block-start: var(--space-l-xl);
 		max-inline-size: 40ch;
+	}
+
+	.u-flex {
+		display: flex;
+		gap: var(--space-s);
+
+		&[data-align="center"] {
+			align-items: center;
+		}
 	}
 
 	.u-grid {

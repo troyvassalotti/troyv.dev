@@ -8,7 +8,6 @@ class ModalMenu extends LitElement {
 			css`
 				:host {
 					box-sizing: border-box;
-					display: block;
 				}
 
 				*,
@@ -21,18 +20,9 @@ class ModalMenu extends LitElement {
 					margin: 0;
 				}
 
-				.flow > * + * {
-					margin-block-start: var(--flow-space, 1em);
-				}
-
 				dialog {
 					background-color: var(--background);
 					color: var(--foreground);
-				}
-
-				.title {
-					font-size: var(--step-2);
-					font-weight: bold;
 				}
 
 				.actions {
@@ -49,9 +39,14 @@ class ModalMenu extends LitElement {
 		};
 	}
 
+	static shadowRootOptions = {
+		...LitElement.shadowRootOptions,
+		delegatesFocus: true,
+	};
+
 	constructor() {
 		super();
-		this.shortcut = "";
+		this.shortcut = "shift + ?";
 	}
 
 	closeModal() {
@@ -62,15 +57,18 @@ class ModalMenu extends LitElement {
 		this.dialogElement.showModal();
 	}
 
-	/**
-	 * @returns {HTMLDialogElement}
-	 */
 	get dialogElement() {
 		return this.renderRoot.getElementById("modal");
 	}
 
 	get shortcutKeys() {
 		return this.shortcut.split("+").map((key) => key.trim());
+	}
+
+	handleEvent(event) {
+		if (event.type === "keydown") {
+			this.handleKeydown(event);
+		}
 	}
 
 	handleKeydown(e) {
@@ -83,16 +81,15 @@ class ModalMenu extends LitElement {
 
 	connectedCallback() {
 		super.connectedCallback();
-		this.handleKeydown = this.handleKeydown.bind(this);
 
 		if (this.shortcut && this.shortcutKeys) {
-			document.addEventListener("keydown", this.handleKeydown);
+			document.addEventListener("keydown", this);
 		}
 	}
 
 	disconnectedCallback() {
 		super.disconnectedCallback();
-		document.removeEventListener("keydown", this.handleKeydown);
+		document.removeEventListener("keydown", this);
 	}
 
 	render() {
@@ -101,12 +98,9 @@ class ModalMenu extends LitElement {
 				@click=${this.openModal}
 				name="trigger"></slot>
 			<dialog id="modal">
-				<slot
-					name="title"
-					class="title"></slot>
 				<slot></slot>
 				<div class="actions">
-					<slot name="custom-actions"></slot>
+					<slot name="action"></slot>
 					<slot
 						name="dismiss"
 						@click=${this.closeModal}></slot>

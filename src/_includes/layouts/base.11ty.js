@@ -77,7 +77,8 @@ export function render(data) {
 							"beats-per": "https://esm.sh/@troyv/beats-per@3.0.0",
 							"word-salad": "https://esm.sh/@troyv/word-salad@2.0.0",
 							"glitch-text": "https://esm.sh/@troyv/glitch-text@1.0.0",
-							"inapp-spy": "https://esm.sh/inapp-spy@3.0.0"
+							"inapp-spy": "https://esm.sh/inapp-spy@3.0.0",
+							"the-club": "https://esm.sh/@troyv/the-club"
 						}
 					}
 				</script>
@@ -103,6 +104,11 @@ export function render(data) {
 					import "/assets/js/modal-menu.js";
 					import CheatCodes from "cheatcodes";
 					import GlitchText from "glitch-text";
+					import TheClub from "the-club";
+					import CoolTable from "/assets/js/cool-table.js";
+
+					TheClub.register();
+					CoolTable.register();
 
 					const generalCodes = new CheatCodes();
 					const gamepadCodes = new CheatCodes("7 1 7 0 7 2 7 3 6", "gamepad");
@@ -272,26 +278,55 @@ export function render(data) {
 				<!-- Keyboard Shortcuts -->
 				<modal-menu
 					id="shortcuts"
-					shortcut="shift + ?"
 					class="flow"
 					data-undefined="display">
-					<p slot="title">Keyboard Shortcuts</p>
-					<div class="shortcuts__list flow">
-						<div class="shortcutItem">
-							<span class="shortcutItem__name secret">Secret</span>
-							<span class="shortcutItem__command">Konami Code</span>
-						</div>
-						<div class="shortcutItem">
-							<span class="shortcutItem__name secret">Secret</span>
-							<span class="shortcutItem__command"
-								>Green, Red, Green, Yellow, Green, Blue, Green, Orange,
-								Tilt</span
-							>
-						</div>
-					</div>
-					<p class="shortcutsDisclaimer u-step--2">
-						<em>Bet you weren't expecting these to exist, huh?</em>
+					<h2 class="u-step-2 u-text--bold">Keyboard Shortcuts</h2>
+					<p class="u-step--2 u-text--italic">
+						Bet you weren't expecting these to exist, huh?
 					</p>
+					<cool-table headless-body>
+						<table>
+							<thead>
+								<tr>
+									<th scope="col">Effect</th>
+									<th scope="col">Command</th>
+									<th scope="col">Hint</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="u-text--italic">Secret</td>
+									<td>Konami Code</td>
+									<td>It's <kbd>spacebar</kbd>, not <kbd>enter</kbd>.</td>
+								</tr>
+								<tr>
+									<td class="u-text--italic">Secret</td>
+									<td>
+										Green, Red, Green, Yellow, Green, Blue, Green, Orange, Tilt
+									</td>
+									<td>Grab your Guitar Hero controller.</td>
+								</tr>
+							</tbody>
+						</table>
+					</cool-table>
+					<h3 class="u-step-1">Bonus Features</h3>
+					<p>Upload an audio file and watch this website turn into The Club.</p>
+					<p class="u-step--1">
+						WARNING: this feature is still in alpha. Do not use if you are
+						sensitive to flashing lights or colors.
+					</p>
+					<div
+						class="u-flex"
+						data-align="center">
+						<the-club
+							fftsize="256"
+							id="club"></the-club>
+						<button
+							class="button u-step--1"
+							onclick="window.club.src='https://res.cloudinary.com/dpmchqezv/video/upload/v1684975533/troy/lets-try-this-again/02_-_In_awe_of_you_cld3he.mp3'">
+							Use Sample Track
+						</button>
+					</div>
 					<button
 						class="button"
 						slot="dismiss">
