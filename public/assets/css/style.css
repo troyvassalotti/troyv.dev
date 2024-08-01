@@ -245,7 +245,7 @@
 		display: none;
 	}
 
-	.js {
+	:not(.no-js) {
 		[data-undefined="visibility"]:not(:defined) {
 			visibility: hidden;
 		}

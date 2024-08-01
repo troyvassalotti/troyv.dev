@@ -18,8 +18,11 @@ export function data() {
 			js: html`
 				<script type="module">
 					import TypeWriter from "typewriter";
-					import "/assets/js/now-playing.js";
-					import "/assets/js/tag-line.js";
+					import NowPlaying from "now-playing";
+					import TagLine from "tag-line";
+
+					NowPlaying.register();
+					TagLine.register();
 				</script>
 			`,
 		},

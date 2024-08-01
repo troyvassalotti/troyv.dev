@@ -61,6 +61,14 @@ export default class WebMentions extends LitElement {
 		this.previewLimit = 4;
 	}
 
+	static tagName = "web-mentions";
+
+	static register() {
+		if (!window.customElements.get(this.tagName)) {
+			window.customElements.define(this.tagName, this);
+		}
+	}
+
 	static styles = css`
 		web-mentions {
 			display: block;
@@ -588,5 +596,3 @@ export default class WebMentions extends LitElement {
 		return html` ${header} ${main} `;
 	}
 }
-
-window.customElements.define("web-mentions", WebMentions);

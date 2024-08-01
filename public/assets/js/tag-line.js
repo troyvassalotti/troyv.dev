@@ -1,10 +1,18 @@
 /** @format */
 
-class Tagline extends HTMLElement {
+export default class Tagline extends HTMLElement {
 	constructor() {
 		super();
 		this.tagLines = [];
 		this.separator = "|";
+	}
+
+	static tagName = "tag-line";
+
+	static register() {
+		if (!window.customElements.get(this.tagName)) {
+			window.customElements.define(this.tagName, this);
+		}
 	}
 
 	static get observedAttributes() {
@@ -41,5 +49,3 @@ class Tagline extends HTMLElement {
 		this.render();
 	}
 }
-
-customElements.define("tag-line", Tagline);

@@ -36,7 +36,8 @@ export async function data() {
 			`,
 			js: html`
 				<script type="module">
-					import "/assets/js/stats-table.js";
+					import StatsTable from "stats-table";
+					StatsTable.register();
 				</script>
 			`,
 		},

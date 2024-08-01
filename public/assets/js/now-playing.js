@@ -7,12 +7,20 @@
  * @link https://andy-bell.co.uk/
  */
 
-class NowPlaying extends HTMLElement {
+export default class NowPlaying extends HTMLElement {
 	constructor() {
 		super();
 		this.track = null;
 		this.isSilent = false;
 		this.service = "";
+	}
+
+	static tagName = "now-playing";
+
+	static register() {
+		if (!window.customElements.get(this.tagName)) {
+			window.customElements.define(this.tagName, this);
+		}
 	}
 
 	static get observedAttributes() {
@@ -64,5 +72,3 @@ class NowPlaying extends HTMLElement {
 		this.load();
 	}
 }
-
-customElements.define("now-playing", NowPlaying);

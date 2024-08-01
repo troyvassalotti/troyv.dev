@@ -65,7 +65,9 @@ export function data() {
 			`,
 			js: html`
 				<script type="module">
-					import "/assets/js/web-mentions.js";
+					import WebMentions from "web-mentions";
+
+					WebMentions.register();
 
 					for (const block of document.querySelectorAll(
 						"pre[class*='language-']",

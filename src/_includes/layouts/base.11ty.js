@@ -3,7 +3,7 @@
 import {html, safeHtml} from "common-tags";
 
 export function render(data) {
-	let {
+	const {
 		title,
 		description,
 		page: {fileSlug, url, excerpt},
@@ -14,8 +14,8 @@ export function render(data) {
 		content,
 	} = data;
 
-	let pageTitle = title ? safeHtml`${title}` : this.capitalize(fileSlug);
-	let pageDescription = description
+	const pageTitle = title ? safeHtml`${title}` : this.capitalize(fileSlug);
+	const pageDescription = description
 		? safeHtml`${description}`
 		: excerpt
 			? safeHtml`${excerpt}`
@@ -26,7 +26,8 @@ export function render(data) {
 		<!-- base.11ty.js -->
 		<html
 			lang="en-US"
-			dir="ltr">
+			dir="ltr"
+			class="no-js">
 			<head>
 				<meta charset="utf-8" />
 				<meta
@@ -69,8 +70,8 @@ export function render(data) {
 							"lit": "https://esm.sh/lit@3.1.2",
 							"d3": "https://esm.sh/d3@7.6",
 							"tone": "https://esm.sh/tone@14.7.77",
-							"cheatcodes": "https://esm.sh/@troyv/cheatcodes",
-							"plvylist": "https://esm.sh/plvylist",
+							"cheatcode": "https://esm.sh/@troyv/cheatcode-component@1.0.0",
+							"plvylist": "https://esm.sh/plvylist@4.0.0",
 							"cloudysky": "https://esm.sh/@troyv/cloudysky@2.0.1",
 							"typewriter": "https://esm.sh/@troyv/typewriter@3.0.0",
 							"detune": "https://esm.sh/@troyv/detune@2.0.0",
@@ -78,7 +79,13 @@ export function render(data) {
 							"word-salad": "https://esm.sh/@troyv/word-salad@2.0.0",
 							"glitch-text": "https://esm.sh/@troyv/glitch-text@1.0.0",
 							"inapp-spy": "https://esm.sh/inapp-spy@3.0.0",
-							"the-club": "https://esm.sh/@troyv/the-club"
+							"the-club": "https://esm.sh/@troyv/the-club@1.1.0-alpha.0",
+							"modal-menu": "/assets/js/modal-menu.js",
+							"cool-table": "/assets/js/cool-table.js",
+							"now-playing": "/assets/js/now-playing.js",
+							"tag-line": "/assets/js/tag-line.js",
+							"web-mentions": "/assets/js/web-mentions.js",
+							"stats-table": "/assets/js/stats-table.js"
 						}
 					}
 				</script>
@@ -96,49 +103,12 @@ export function render(data) {
 					}
 				</script>
 
-				<script>
-					document.documentElement.classList.add("js");
-				</script>
-
-				<script type="module">
-					import "/assets/js/modal-menu.js";
-					import CheatCodes from "cheatcodes";
-					import GlitchText from "glitch-text";
-					import TheClub from "the-club";
-					import CoolTable from "/assets/js/cool-table.js";
-
-					TheClub.register();
-					CoolTable.register();
-
-					const generalCodes = new CheatCodes();
-					const gamepadCodes = new CheatCodes("7 1 7 0 7 2 7 3 6", "gamepad");
-
-					generalCodes.listen();
-					gamepadCodes.listen();
-
-					if (!document.getElementById("main")) {
-						console.error(
-							"No element with ID of 'main' found. Add that in or the skip link won't work.",
-						);
-					}
-				</script>
-
-				<script type="module">
-					import InAppSpy from "inapp-spy";
-
-					const {isInApp} = InAppSpy();
-
-					if (isInApp) {
-						// Because of how these templates are written, I can't create a const and re-use it.
-						// That's why this string is repeated twice.
-						window.location.replace("intent:${metadata.url}${url}#Intent;end");
-
-						const $div = document.createElement("div");
-						$div.innerHTML =
-							'<p><a href="intent:${metadata.url}${url}#Intent;end">Open this page</a> in your default browser.</p>';
-						document.body.appendChild($div);
-					}
-				</script>
+				<script
+					type="module"
+					src="/assets/js/main.js"></script>
+				<script
+					type="module"
+					src="/assets/js/inapp.js"></script>
 
 				<!-- Custom Scripts -->
 				${bundle?.js}
@@ -183,6 +153,8 @@ export function render(data) {
 				<link
 					rel="author"
 					href="/humans.txt" />
+
+				<!-- Feeds -->
 				<link
 					rel="alternate"
 					type="application/atom+xml"
@@ -247,8 +219,7 @@ export function render(data) {
 				<div class="wrapper">
 					<nav
 						class="mainNavigation"
-						id="mainNavigation"
-						aria-label="main">
+						id="mainNavigation">
 						<a
 							class="skipLink"
 							href="#main"
@@ -333,6 +304,10 @@ export function render(data) {
 						Dismiss
 					</button>
 				</modal-menu>
+
+				<!-- Cheat Codes -->
+				<cheat-code></cheat-code>
+				<cheat-code pattern="starpower"></cheat-code>
 			</body>
 		</html>
 	`;

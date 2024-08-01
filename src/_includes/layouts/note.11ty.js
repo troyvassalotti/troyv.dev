@@ -8,7 +8,8 @@ export function data() {
 		bundle: {
 			js: html`
 				<script type="module">
-					import "/assets/js/web-mentions.js";
+					import WebMentions from "web-mentions";
+					WebMentions.register();
 				</script>
 			`,
 		},

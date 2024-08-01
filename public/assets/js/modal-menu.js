@@ -2,7 +2,17 @@
 
 import {css, html, LitElement} from "lit";
 
-class ModalMenu extends LitElement {
+export default class ModalMenu extends LitElement {
+	/** @type {string} */
+	static tagName = "modal-menu";
+
+	/** @returns {void} */
+	static register() {
+		if (!window.customElements.get(this.tagName)) {
+			window.customElements.define(this.tagName, this);
+		}
+	}
+
 	static get styles() {
 		return [
 			css`
@@ -81,7 +91,6 @@ class ModalMenu extends LitElement {
 
 	connectedCallback() {
 		super.connectedCallback();
-
 		if (this.shortcut && this.shortcutKeys) {
 			document.addEventListener("keydown", this);
 		}
@@ -109,5 +118,3 @@ class ModalMenu extends LitElement {
 		`;
 	}
 }
-
-window.customElements.define("modal-menu", ModalMenu);

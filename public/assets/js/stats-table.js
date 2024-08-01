@@ -2,7 +2,7 @@
 
 import {css, html, LitElement, nothing} from "lit";
 
-class StatsTable extends LitElement {
+export default class StatsTable extends LitElement {
 	static get styles() {
 		return [
 			css`
@@ -39,6 +39,14 @@ class StatsTable extends LitElement {
 		super();
 		this.caption = "";
 		this.headers = "";
+	}
+
+	static tagName = "stats-table";
+
+	static register() {
+		if (!window.customElements.get(this.tagName)) {
+			window.customElements.define(this.tagName, this);
+		}
 	}
 
 	get data() {
@@ -106,4 +114,3 @@ class StatsTable extends LitElement {
 			: html`<p>Data not found.</p>`;
 	}
 }
-customElements.define("stats-table", StatsTable);

@@ -66,6 +66,7 @@ export function data() {
 					}
 				</style>
 			`,
+			js: undefined,
 		},
 	};
 }
