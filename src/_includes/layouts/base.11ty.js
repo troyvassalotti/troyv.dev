@@ -85,7 +85,8 @@ export function render(data) {
 							"now-playing": "/assets/js/now-playing.js",
 							"tag-line": "/assets/js/tag-line.js",
 							"web-mentions": "/assets/js/web-mentions.js",
-							"stats-table": "/assets/js/stats-table.js"
+							"stats-table": "/assets/js/stats-table.js",
+							"heading-anchors": "https://esm.sh/@daviddarnes/heading-anchors@2.0.0"
 						}
 					}
 				</script>

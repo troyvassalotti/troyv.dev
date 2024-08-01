@@ -30,18 +30,10 @@ export function data() {
 						font-style: italic;
 					}
 
-					:is(h1, h2, h3, h4, h5, h6) > a {
-						color: currentColor;
-					}
-
-					:is(h1, h2, h3, h4, h5, h6) > a:not(:hover, :focus-visible) {
-						text-decoration: none;
-					}
-
-					:is(h1, h2, h3, h4, h5, h6) > a:hover::after {
-						content: "🔗";
-						margin-inline-start: 0.5ch;
-						position: absolute;
+					heading-anchors :is(h1, h2, h3, h4, h5, h6) + a {
+						display: inline-block;
+						font-size: var(--step--1);
+						margin-block-start: 0;
 					}
 
 					/* Post Navigation */
@@ -61,11 +53,16 @@ export function data() {
 						font-family: var(--headings);
 						font-weight: bold;
 					}
+
+					heading-anchors {
+						display: contents;
+					}
 				</style>
 			`,
 			js: html`
 				<script type="module">
 					import WebMentions from "web-mentions";
+					import _HeadingAnchors from "heading-anchors";
 
 					WebMentions.register();
 
@@ -112,12 +109,14 @@ export function render(data) {
 							>
 						</p>
 					</header>
-					<div class="post flow u-truncate e-content">
-						${content}
+					<heading-anchors>
+						<div class="post flow u-truncate e-content">
+							${content}
 
-						<!-- Syndication -->
-						${syndication ? generateSyndicationLinks(syndication) : ""}
-					</div>
+							<!-- Syndication -->
+							${syndication ? generateSyndicationLinks(syndication) : ""}
+						</div>
+					</heading-anchors>
 				</article>
 
 				<web-mentions

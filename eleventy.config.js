@@ -7,8 +7,8 @@ import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import pluginRss from "@11ty/eleventy-plugin-rss";
 import embedYouTube from "eleventy-plugin-youtube-embed";
 import inclusiveLangPlugin from "@11ty/eleventy-plugin-inclusive-language";
-import {default as markdownItAnchor} from "markdown-it-anchor";
 import markdownItFootnote from "markdown-it-footnote";
+import {IdAttributePlugin} from "@11ty/eleventy";
 import {html} from "common-tags";
 
 /**
@@ -26,6 +26,7 @@ export default function (config) {
 	config.addPlugin(syntaxHighlight);
 	config.addPlugin(pluginRss);
 	config.addPlugin(inclusiveLangPlugin);
+	config.addPlugin(IdAttributePlugin);
 	config.addPlugin(embedYouTube, {
 		lite: true,
 	});
@@ -139,14 +140,7 @@ export default function (config) {
 	 * @since 2.0.0
 	 * @link https://www.11ty.dev/docs/languages/markdown/#optional-amend-the-library-instance
 	 */
-	config.amendLibrary("md", (mdLib) =>
-		mdLib
-			.use(markdownItAnchor, {
-				permalink: markdownItAnchor.permalink.headerLink(),
-				level: 2,
-			})
-			.use(markdownItFootnote),
-	);
+	config.amendLibrary("md", (mdLib) => mdLib.use(markdownItFootnote));
 }
 
 export const config = {
