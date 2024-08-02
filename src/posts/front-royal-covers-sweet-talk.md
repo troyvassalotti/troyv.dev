@@ -11,4 +11,7 @@ I don't need to reiterate what 2020 is like. My friends and I, you may know us a
 
 Watch the video here:
 
-https://www.youtube.com/watch?v=p18VbHbVJ78
+<lite-youtube videoid="p18VbHbVJ78" style="background-image: url('https://i.ytimg.com/vi/p18VbHbVJ78/hqdefault.jpg')">
+  <a class="lty-playbtn" href="https://www.youtube.com/watch?v=p18VbHbVJ78"></a>
+  <span class="lyt-visually-hidden">Play Video: Sweet Talk by Dear and the Headlights Cover, by Front Royal</span>
+</lite-youtube>

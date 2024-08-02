@@ -5,7 +5,6 @@
 
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import pluginRss from "@11ty/eleventy-plugin-rss";
-import embedYouTube from "eleventy-plugin-youtube-embed";
 import inclusiveLangPlugin from "@11ty/eleventy-plugin-inclusive-language";
 import markdownItFootnote from "markdown-it-footnote";
 import {IdAttributePlugin} from "@11ty/eleventy";
@@ -27,9 +26,6 @@ export default function (config) {
 	config.addPlugin(pluginRss);
 	config.addPlugin(inclusiveLangPlugin);
 	config.addPlugin(IdAttributePlugin);
-	config.addPlugin(embedYouTube, {
-		lite: true,
-	});
 
 	/**
 	 * Date string used in header data on posts

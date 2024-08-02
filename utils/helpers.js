@@ -29,6 +29,7 @@ export function createCacheOptions(customOptions = {}) {
 	);
 }
 
+// EleventyFetch with default options
 export async function runEleventyFetch(url, options = createCacheOptions()) {
 	return await EleventyFetch(url, options);
 }

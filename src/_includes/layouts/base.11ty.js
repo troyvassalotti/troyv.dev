@@ -86,7 +86,8 @@ export function render(data) {
 							"tag-line": "/assets/js/tag-line.js",
 							"web-mentions": "/assets/js/web-mentions.js",
 							"stats-table": "/assets/js/stats-table.js",
-							"heading-anchors": "https://esm.sh/@daviddarnes/heading-anchors@2.0.0"
+							"heading-anchors": "https://esm.sh/@daviddarnes/heading-anchors@2.0.0",
+							"lite-youtube": "https://esm.sh/lite-youtube-embed@0.3.2"
 						}
 					}
 				</script>
@@ -120,6 +121,9 @@ export function render(data) {
 				<link
 					rel="stylesheet"
 					href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+				<link
+					rel="stylesheet"
+					href="https://esm.sh/lite-youtube-embed@0.3.2/src/lite-yt-embed.css" />
 
 				<!-- Custom Styles -->
 				${bundle?.css}

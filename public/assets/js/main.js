@@ -2,6 +2,7 @@
 
 import _GlitchText from "glitch-text";
 import _CheatCode from "cheatcode";
+import _LiteYoutube from "lite-youtube";
 import ModalMenu from "modal-menu";
 import TheClub from "the-club";
 import CoolTable from "cool-table";
