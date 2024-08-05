@@ -1,0 +1,80 @@
+<!-- @format -->
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge" />
+		<meta
+			name="robots"
+			content="noindex" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1" />
+		<link
+			href="https://unpkg.com/sanitize.css"
+			rel="stylesheet" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Poiret+One&display=swap"
+			rel="stylesheet" />
+		<title>This Is A Very Big Deal</title>
+		<meta
+			name="description"
+			content="Again, this is a very big deal. Possibly the biggest in my life." />
+
+		<!-- import the webpage's stylesheet -->
+		<link
+			rel="stylesheet"
+			href="/assets/css/moonstone.css" />
+
+		<style>
+			html {
+			}
+			body {
+				background: transparent;
+			}
+
+			main {
+				background: white;
+				padding: 3em;
+				border-radius: 25px;
+				width: 100%;
+			}
+		</style>
+	</head>
+	<body class="grid place-center">
+		<main class="grid place-center">
+			<h1>Hey, Lyndsi</h1>
+			<p>Do you like me?</p>
+			<div>
+				<a
+					href="./story/"
+					class="button"
+					>Yes</a
+				>
+				<button id="no">No</button>
+			</div>
+		</main>
+		<script>
+			const no = document.getElementById("no"),
+				next = document.getElementById("next");
+
+			no.addEventListener(
+				"click",
+				() => {
+					alert(
+						"Are you sure? It really messes with the gimmick if you say No.",
+					);
+				},
+				{
+					once: true,
+				},
+			);
+		</script>
+	</body>
+</html>

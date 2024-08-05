@@ -1,0 +1,88 @@
+<!-- @format -->
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="robots"
+			content="noindex, nofollow" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1" />
+		<title>Workout Log</title>
+		<link
+			rel="stylesheet"
+			href="/assets/css/style.css" />
+		<style>
+			main {
+				display: grid;
+				grid-template-columns: 1fr min(80rem, 90%) 1fr;
+
+				> * {
+					grid-column: 2;
+				}
+			}
+
+			workout-log {
+				margin-block-start: 2rem;
+			}
+		</style>
+		<script type="importmap">
+			{
+				"imports": {
+					"lit": "https://esm.sh/lit@3.1.2",
+					"lit/": "https://esm.sh/lit@3.1.2/"
+				}
+			}
+		</script>
+		<script
+			type="module"
+			src="/assets/js/workouts/workout-log.js"></script>
+	</head>
+	<body>
+		<main>
+			<workout-log
+				bench="160"
+				overheadpress="100"
+				squat="140"
+				deadlift="175"></workout-log>
+		</main>
+		<template id="push-pull">
+			<tr>
+				<th>Pull</th>
+				<td>50-100 reps</td>
+				<td>50-100 reps</td>
+				<td>50-100 reps</td>
+				<td>50-100 reps</td>
+			</tr>
+			<tr>
+				<th>Push</th>
+				<td>50-100 reps</td>
+				<td>50-100 reps</td>
+				<td>50-100 reps</td>
+				<td>50-100 reps</td>
+			</tr>
+		</template>
+		<template id="leg-core">
+			<tr>
+				<th>Single Leg/Core</th>
+				<td>25 reps</td>
+				<td>25 reps</td>
+				<td>25 reps</td>
+				<td>25 reps</td>
+			</tr>
+		</template>
+		<template id="bbb-thead">
+			<thead>
+				<tr>
+					<th>Lift</th>
+					<th>Week 1: 3x5+</th>
+					<th>Week 2: 3x3+</th>
+					<th>Week 3: 5/3/1+</th>
+					<th>Deload</th>
+				</tr>
+			</thead>
+		</template>
+	</body>
+</html>

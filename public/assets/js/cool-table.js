@@ -36,6 +36,9 @@ export default class CoolTable extends LitElement {
         table {
           border-collapse: collapse;
           inline-size: max(60rem, 100%);
+        }
+
+        &:not([unfixed]) {
           table-layout: fixed;
         }
 
