@@ -4,11 +4,16 @@ description: How to follow me and what I'm up to.
 layout: page.11ty.js
 glitch: true
 truncate: true
+outputDescription: true
 ---
 
 <!-- @format -->
 
-Follow me [on Mastodon]({{metadata.follow.mastodon}}).
+## Social Media
+
+- [Mastodon]({{metadata.follow.mastodon}})
+
+## RSS and Other Feeds
 
 Since [all my notes](/notes/) are syndicated to Mastodon, you could subscribe directly to my notes feed:
 

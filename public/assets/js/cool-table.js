@@ -38,7 +38,7 @@ export default class CoolTable extends LitElement {
           inline-size: max(60rem, 100%);
         }
 
-        &:not([unfixed]) {
+        &:not([unfixed]) table {
           table-layout: fixed;
         }
 

@@ -45,14 +45,22 @@ export async function data() {
 }
 
 export function render(data) {
-	let {title, lastMonthsTopReleases, mostRecentListens, topArtistsThisMonth} =
-		data;
+	let {
+		title,
+		page: {date},
+		lastMonthsTopReleases,
+		mostRecentListens,
+		topArtistsThisMonth,
+	} = data;
 
 	return html`
 		<main id="main">
 			<div class="wrapper flow">
 				<header class="flow masthead masthead--small">
 					<h1><glitch-text>${title}</glitch-text></h1>
+					<p class="u-step--1 u-text--italic">
+						Last updated: ${this.localizedDateString(date)}
+					</p>
 					<p>
 						I keep track of my listening habits in ListenBrainz because I'm a
 						<strong>nerd</strong>. All that data is public on
@@ -76,11 +84,13 @@ export function render(data) {
 				</div>
 				<div class="tables">
 					<stats-table
+						id="mostRecentListens"
 						caption="Last 30 Plays"
 						headers="Number Artist Track Release"
 						data="${safeHtml`${JSON.stringify(mostRecentListens)}`}">
 					</stats-table>
 					<stats-table
+						id="topArtistsThisMonth"
 						caption="Top Artists This Month"
 						headers="Number Artist Listens"
 						data="${safeHtml`${JSON.stringify(topArtistsThisMonth)}`}">
