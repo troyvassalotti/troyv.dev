@@ -1,0 +1,1 @@
+The year is 2024 and I just burned a CD in Windows Media Player.
