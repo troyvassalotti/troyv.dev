@@ -91,7 +91,7 @@ export function render(data) {
 					<div class="stickyContainer">
 						<nav
 							aria-label="tags"
-							class="tagCloud u-step--1 animate__animated animate__fadeInLeft">
+							class="tagCloud u-step--1">
 							<p class="tagCloud__title">Tags (${allTagsList.length}):</p>
 							<ul
 								class="tagCloud__list"

@@ -1,0 +1,152 @@
+/** @format */
+
+.u-visually-hidden:not(:focus):not(:active) {
+	block-size: 1px;
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	inline-size: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+}
+
+.u-step-5 {
+	font-size: var(--step-5);
+}
+
+.u-step-4 {
+	font-size: var(--step-4);
+}
+
+.u-step-3 {
+	font-size: var(--step-3);
+}
+
+.u-step-2 {
+	font-size: var(--step-2);
+}
+
+.u-step-1 {
+	font-size: var(--step-1);
+}
+
+.u-step-0 {
+	font-size: var(--step-0);
+}
+
+.u-step--1 {
+	font-size: var(--step--1);
+}
+
+.u-step--2 {
+	font-size: var(--step--2);
+}
+
+.u-truncate :is(h1, h2, h3, h4, h5, h6, p, :is(ul, ol):not([role])) {
+	max-inline-size: var(--readable-length, 70ch);
+}
+
+.u-text--normal {
+	font-style: normal;
+}
+
+.u-text--italic {
+	font-style: italic;
+}
+
+.u-text--bold {
+	font-weight: bold;
+}
+
+.u-font--headings {
+	font-family: var(--headings);
+}
+
+.u-font--base {
+	font-family: var(--body);
+}
+
+.u-font--code {
+	font-family: var(--code);
+}
+
+.u-rule {
+	margin-block-start: var(--space-l-xl);
+	max-inline-size: 40ch;
+}
+
+.u-flex {
+	display: flex;
+	gap: var(--space-s);
+
+	&[data-align="center"] {
+		align-items: center;
+	}
+}
+
+.u-grid {
+	--grid-layout-gap: var(--space-m);
+	--grid-column-count: 4;
+	--grid-item--min-width: 150px;
+
+	--gap-count: calc(var(--grid-column-count) - 1);
+	--total-gap-width: calc(var(--gap-count) * var(--grid-layout-gap));
+	--grid-item--max-width: calc(
+		(100% - var(--total-gap-width)) / var(--grid-column-count)
+	);
+
+	display: grid;
+	gap: var(--grid-layout-gap);
+	grid-template-columns: repeat(
+		auto-fill,
+		minmax(max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr)
+	);
+
+	&[data-grid-columns="2"] {
+		--grid-column-count: 2;
+	}
+
+	&[data-grid-columns="3"] {
+		--grid-column-count: 3;
+	}
+
+	&[data-grid-columns="5"] {
+		--grid-column-count: 5;
+	}
+
+	&[data-grid-columns*="auto"] {
+		grid-template-columns: repeat(
+			var(--fluid-type),
+			minmax(var(--grid-item--min-width), 1fr)
+		);
+	}
+
+	&[data-grid-columns="auto-fill"] {
+		--fluid-type: auto-fill;
+	}
+
+	&[data-grid-columns="auto-fit"] {
+		--fluid-type: auto-fit;
+	}
+}
+
+.u-inline {
+	display: inline;
+}
+
+.flow > *:not(style, script) + *:not(style, script) {
+	margin-block-start: var(--flow-space, 1em);
+}
+
+/* Remove extra space since the masthead already has padding around it */
+.flow .masthead + * {
+	margin-block-start: 0;
+}
+
+.prose * + :is(h2, h3, h4) {
+	--flow-space: var(--space-xl);
+}
+
+.hide {
+	display: none;
+}

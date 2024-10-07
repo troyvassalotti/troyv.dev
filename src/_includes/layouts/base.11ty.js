@@ -118,12 +118,8 @@ export function render(data) {
 				<link
 					rel="stylesheet"
 					href="/assets/css/style.css" />
-				<link
-					rel="stylesheet"
-					href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-				<link
-					rel="stylesheet"
-					href="https://esm.sh/lite-youtube-embed@0.3.2/src/lite-yt-embed.css" />
+
+				<!-- lite-youtube-styles -->
 
 				<!-- Custom Styles -->
 				${bundle?.css}

@@ -20,7 +20,7 @@
 		"tweet": "plop tweet"
 	},
 	"devDependencies": {
-		"@11ty/eleventy": "^3.0.0-beta.1",
+		"@11ty/eleventy": "^3.0.0",
 		"@11ty/eleventy-fetch": "^4.0.1",
 		"@11ty/eleventy-plugin-inclusive-language": "^1.0.3",
 		"@11ty/eleventy-plugin-rss": "^2.0.2",
@@ -29,10 +29,11 @@
 		"@troyv/common-config": "^1.2.0",
 		"common-tags": "^1.8.2",
 		"dotenv": "^16.4.5",
-		"eslint": "^9.8.0",
+		"eslint": "^9.12.0",
 		"markdown-it-footnote": "^4.0.0",
 		"netlify-plugin-cache": "^1.0.3",
-		"opml": "^0.5.5",
+		"node-html-parser": "^6.1.13",
+		"opml": "^0.5.6",
 		"plop": "^4.0.1",
 		"prettier": "^3.3.3"
 	},

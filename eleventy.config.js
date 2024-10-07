@@ -9,6 +9,7 @@ import inclusiveLangPlugin from "@11ty/eleventy-plugin-inclusive-language";
 import markdownItFootnote from "markdown-it-footnote";
 import {IdAttributePlugin} from "@11ty/eleventy";
 import {html} from "common-tags";
+import {parse} from "node-html-parser";
 
 /**
  * Some pre-generated tags are unnecessary or make templating complicated
@@ -41,7 +42,7 @@ export default function (config) {
 		return dateToUse.toUTCString().replace(/\s\d+:\d+:\d+\sGMT/g, "");
 	});
 
-	// For when the time is know, i.e. dates as "git Created" or "git Last Modified"
+	// For when the time is known, i.e. dates as "git Created" or "git Last Modified"
 	config.addFilter("localizedDateString", function (date) {
 		return date.toLocaleString("en-US", {
 			timeZone: "America/New_York",
@@ -137,6 +138,29 @@ export default function (config) {
 	 * @link https://www.11ty.dev/docs/languages/markdown/#optional-amend-the-library-instance
 	 */
 	config.amendLibrary("md", (mdLib) => mdLib.use(markdownItFootnote));
+
+	// lets me dynamically insert the styles for lite-youtube based on usage
+	config.addTransform("insert-lite-youtube-styles", function (content) {
+		let insertLiteYouTubeStyles = "";
+
+		const root = parse(content);
+		const hasLiteYouTube = root.querySelector("lite-youtube");
+
+		if (hasLiteYouTube && (this.page.outputPath || "").endsWith(".html")) {
+			insertLiteYouTubeStyles = html`
+				<link
+					rel="stylesheet"
+					href="https://esm.sh/lite-youtube-embed@0.3.2/src/lite-yt-embed.css" />
+			`;
+		}
+
+		const transformed = content.replace(
+			"<!-- lite-youtube-styles -->",
+			insertLiteYouTubeStyles,
+		);
+
+		return transformed;
+	});
 }
 
 export const config = {

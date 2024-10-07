@@ -35,6 +35,10 @@ export default class ModalMenu extends LitElement {
 					color: var(--foreground);
 				}
 
+				dialog::backdrop {
+					background-color: rgb(0 0 0 / 0.5);
+				}
+
 				.actions {
 					display: flex;
 					justify-content: end;
