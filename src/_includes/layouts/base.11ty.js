@@ -257,7 +257,9 @@ export function render(data) {
 					<cool-separator
 						size="small"
 						space="end"></cool-separator>
-					<div class="u-flex u-step--1">
+					<div
+						class="u-flex u-step--1"
+						data-wrap>
 						<nav id="socials">
 							<p
 								class="u-text--bold"
@@ -280,6 +282,7 @@ export function render(data) {
 							</p>
 							<ul
 								class="u-flex"
+								data-wrap
 								role="list"
 								aria-describedby="rssFeedsTitle">
 								<li>

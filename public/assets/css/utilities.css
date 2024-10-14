@@ -82,6 +82,10 @@
 	&[data-align="center"] {
 		align-items: center;
 	}
+
+	&[data-wrap] {
+		flex-wrap: wrap;
+	}
 }
 
 .u-grid {
