@@ -297,7 +297,6 @@ main {
 
 .mainNavigation {
 	font-size: var(--step--1);
-	flex: 1;
 	padding-block: var(--space-xs);
 
 	ul {
@@ -385,6 +384,44 @@ main {
 
 	&.masthead--no-contain {
 		max-inline-size: none;
+	}
+}
+
+cool-separator {
+	background-color: var(--primary);
+	block-size: 1.5px;
+	display: block;
+	inline-size: var(--cool-separator-size, 100%);
+	margin-block: var(--space-xs);
+
+	&[space="start"] {
+		margin-block-end: 0;
+	}
+
+	&[space="end"] {
+		margin-block-start: 0;
+	}
+
+	&[size="small"] {
+		--cool-separator-size: 25%;
+	}
+
+	&[size="medium"] {
+		--cool-separator-size: 50%;
+	}
+
+	&[size="large"] {
+		--cool-separator-size: 75%;
+	}
+}
+
+.siteFooter {
+	inset-block-start: 100dvh;
+	padding-block: var(--space-xs);
+	position: sticky;
+
+	nav > :first-child {
+		margin-block-end: var(--space-2xs);
 	}
 }
 

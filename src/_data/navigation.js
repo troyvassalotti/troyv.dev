@@ -18,8 +18,6 @@ export default [
 	new Navigation("music"),
 	new Navigation("projects"),
 	new Navigation("contact"),
-	new Navigation("follow"),
-	new Navigation("now"),
 	new Navigation("blogroll"),
 	new Navigation("links"),
 	new Navigation(

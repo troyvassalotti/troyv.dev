@@ -196,6 +196,11 @@ export function render(data) {
 					)
 					.join("\n")}
 
+				<!-- Fediverse Creator -->
+				<meta
+					name="fediverse:creator"
+					content="@rest@fosstodon.org" />
+
 				<!-- Icons / PWA -->
 				<link
 					rel="apple-touch-icon"
@@ -217,7 +222,7 @@ export function render(data) {
 			</head>
 			<body class="page--${fileSlug || "home"}">
 				<!-- Main Navigation -->
-				<div class="wrapper">
+				<header class="siteHeader wrapper">
 					<nav
 						class="mainNavigation"
 						id="mainNavigation">
@@ -242,10 +247,57 @@ export function render(data) {
 							)}
 						</ul>
 					</nav>
-				</div>
+				</header>
 
 				<!-- Content -->
 				${content}
+
+				<!-- Footer -->
+				<footer class="siteFooter wrapper">
+					<cool-separator
+						size="small"
+						space="end"></cool-separator>
+					<div class="u-flex u-step--1">
+						<nav id="socials">
+							<p
+								class="u-text--bold"
+								id="socialNavTitle">
+								Social Media
+							</p>
+							<ul
+								role="list"
+								aria-describedby="socialNavTitle">
+								<li>
+									<a href="${metadata.follow.mastodon}">Mastodon</a>
+								</li>
+							</ul>
+						</nav>
+						<nav id="feeds">
+							<p
+								class="u-text--bold"
+								id="rssFeedsTitle">
+								RSS Feeds
+							</p>
+							<ul
+								class="u-flex"
+								role="list"
+								aria-describedby="rssFeedsTitle">
+								<li>
+									<a href="/notes.xml">Notes (Atom)</a>
+								</li>
+								<li>
+									<a href="/notes.json">Notes (JSON)</a>
+								</li>
+								<li>
+									<a href="/feed.xml">Blog (Atom)</a>
+								</li>
+								<li>
+									<a href="/feed.json">Blog (JSON)</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</footer>
 
 				<!-- Keyboard Shortcuts -->
 				<modal-menu

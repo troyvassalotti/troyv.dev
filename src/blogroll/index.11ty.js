@@ -7,7 +7,6 @@ export function data() {
 		layout: "page.11ty.js",
 		description: "Sites I read or follow regularly.",
 		glitch: true,
-		outputDescription: true,
 		truncate: true,
 		title: "Blogroll",
 	};
