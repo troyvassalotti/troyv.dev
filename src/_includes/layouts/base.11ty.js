@@ -94,6 +94,14 @@ export function render(data) {
 
 				<script type="speculationrules">
 					{
+						"prefetch": [
+							{
+								"where": {
+									"href_matches": "/*"
+								},
+								"eagerness": "immediate"
+							}
+						],
 						"prerender": [
 							{
 								"where": {
