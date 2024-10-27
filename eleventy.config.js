@@ -20,6 +20,9 @@ function filterTagList(tags) {
 	);
 }
 
+/**
+ * @param {import("@11ty/eleventy").UserConfig} config
+ */
 export default function (config) {
 	config.addPassthroughCopy({public: "/"});
 
@@ -161,6 +164,12 @@ export default function (config) {
 
 		return transformed;
 	});
+
+	config.addTransform("remove-prettier-comments", (content) =>
+		content
+			.replaceAll("<!-- prettier-ignore -->", "")
+			.replaceAll("<!-- @format -->", ""),
+	);
 }
 
 export const config = {

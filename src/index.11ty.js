@@ -4,7 +4,7 @@ import {html} from "common-tags";
 
 export function data() {
 	return {
-		layout: "base.11ty.js",
+		layout: "base.html",
 		title: "Welcome",
 		description: "Watch as Troy Vassalotti learns his way around a computer.",
 		bundle: {

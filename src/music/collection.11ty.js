@@ -8,7 +8,7 @@ export function data() {
 	return {
 		title: "Music Collection",
 		description: "A place to keep track of my physical music collection.",
-		layout: "base.11ty.js",
+		layout: "base.html",
 	};
 }
 

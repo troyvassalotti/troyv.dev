@@ -5,7 +5,7 @@ import {html} from "common-tags";
 export function data() {
 	return {
 		title: "Music",
-		layout: "base.11ty.js",
+		layout: "base.html",
 		description:
 			"Music is one of my passions. Check out all my musical projects here.",
 		frontRoyal: {

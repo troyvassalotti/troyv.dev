@@ -16,7 +16,7 @@ export async function data() {
 	const lastMonthsTopReleases = await getLastMonthsTopReleases();
 
 	return {
-		layout: "base.11ty.js",
+		layout: "base.html",
 		title: "Music Stats",
 		description: "Aggregated data from my ListenBrainz profile.",
 		topArtistsThisMonth,

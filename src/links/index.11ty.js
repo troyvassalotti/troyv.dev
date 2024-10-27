@@ -6,7 +6,7 @@ export function data() {
 	return {
 		title: "Links",
 		description: "Think of this like a linktree, but on my own website.",
-		layout: "base.11ty.js",
+		layout: "base.html",
 		bundle: {
 			css: html`
 				<style>

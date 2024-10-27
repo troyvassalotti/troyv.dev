@@ -5,7 +5,7 @@ import Icons from "../_includes/partials/icons.js";
 
 export function data() {
 	return {
-		"override:layout": "base.11ty.js",
+		"override:layout": "base.html",
 		"override:tags": [],
 		"override:permalink": "/archive/",
 		title: "Posts Archive",

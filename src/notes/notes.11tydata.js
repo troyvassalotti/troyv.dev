@@ -1,7 +1,7 @@
 /** @format */
 
 export default {
-	layout: "note",
+	layout: "note.11ty.js",
 	tags: ["note"],
 	date: "git Created",
 	permalink(data) {
