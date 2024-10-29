@@ -1,5 +1,33 @@
 /** @format */
 
+.wrapper {
+	inline-size: min(
+		100% - var(--wrapper-padding, 2rem),
+		var(--wrapper-size, 100rem)
+	);
+	margin-inline: auto;
+
+	&.constrain--less {
+		--wrapper-size: 115rem;
+	}
+
+	&.constrain--base {
+		--wrapper-size: 100rem;
+	}
+
+	&.constrain--some {
+		--wrapper-size: 81.25rem;
+	}
+
+	&.constrain--more {
+		--wrapper-size: 68.75rem;
+	}
+
+	&.constrain--most {
+		--wrapper-size: 41.5rem;
+	}
+}
+
 .u-visually-hidden:not(:focus):not(:active) {
 	block-size: 1px;
 	clip: rect(0 0 0 0);

@@ -267,113 +267,6 @@ main {
 	}
 }
 
-.wrapper {
-	inline-size: min(
-		100% - var(--wrapper-padding, 2rem),
-		var(--wrapper-size, 100rem)
-	);
-	margin-inline: auto;
-
-	&.constrain--less {
-		--wrapper-size: 115rem;
-	}
-
-	&.constrain--base {
-		--wrapper-size: 100rem;
-	}
-
-	&.constrain--some {
-		--wrapper-size: 81.25rem;
-	}
-
-	&.constrain--more {
-		--wrapper-size: 68.75rem;
-	}
-
-	&.constrain--most {
-		--wrapper-size: 41.5rem;
-	}
-}
-
-.mainNavigation {
-	font-size: var(--step--1);
-	padding-block: var(--space-xs);
-
-	ul {
-		display: flex;
-		flex-wrap: wrap;
-		margin: 0;
-		row-gap: 1ch;
-	}
-
-	li:first-of-type {
-		inline-size: 100%;
-	}
-
-	li:not(:last-of-type) {
-		margin-inline-end: 1ch;
-	}
-
-	a {
-		color: currentColor;
-		text-decoration: none;
-	}
-
-	@media (prefers-reduced-motion: no-preference) {
-		a::before {
-			--linkStartRest: right;
-			--linkStateRest: scaleX(0);
-		}
-
-		a:hover::before {
-			--linkStartHover: left;
-			--linkStateHover: scaleX(1);
-		}
-
-		#link__home::before {
-			background-color: currentColor;
-		}
-
-		#link__posts::before {
-			background-color: currentColor;
-		}
-
-		#link__music::before {
-			background-color: currentColor;
-		}
-
-		#link__work::before {
-			background-color: currentColor;
-		}
-
-		#link__about::before {
-			background-color: currentColor;
-		}
-
-		a[aria-current="page"]::before {
-			--linkStartRest: left;
-			--linkStateRest: scaleX(1);
-		}
-
-		a[aria-current="page"]:hover::before {
-			--linkStartHover: right;
-			--linkStateHover: scaleX(0);
-		}
-	}
-}
-
-.skipLink {
-	inset-inline-start: 50%;
-	padding: 4px;
-	position: absolute;
-	transform: translateY(-200%);
-	transition: transform 0.3s;
-
-	&:focus-visible {
-		transform: translateY(0%);
-	}
-}
-
 .masthead {
 	max-inline-size: 40ch;
 	padding-block: var(--space-2xl-3xl);
@@ -384,16 +277,6 @@ main {
 
 	&.masthead--no-contain {
 		max-inline-size: none;
-	}
-}
-
-.siteFooter {
-	inset-block-start: 100dvh;
-	padding-block: var(--space-xs);
-	position: sticky;
-
-	nav > :first-child {
-		margin-block-end: var(--space-2xs);
 	}
 }
 

@@ -223,90 +223,178 @@
 	</head>
 
 	<body class="page--{{ page.fileSlug or 'home' }}">
-		<!-- Main Navigation -->
-		<header class="siteHeader wrapper">
-			<nav
-				class="mainNavigation"
-				id="mainNavigation">
-				<a
-					class="skipLink"
-					href="#main"
-					>Skip to main content</a
-				>
-				<ul role="list">
-					{%- for link in navigation -%}
+		<template shadowrootmode="open">
+			<link
+				rel="stylesheet"
+				href="/assets/css/reset.css" />
+			<link
+				rel="stylesheet"
+				href="/assets/css/utilities.css" />
+			<style>
+				.main-navigation {
+					font-size: var(--step--1);
+					padding-block: var(--space-xs);
 
-					<!-- prettier-ignore -->
-					{%- set current = link.url === page.url or "false" -%}
+					ul {
+						display: flex;
+						flex-wrap: wrap;
+						margin: 0;
+						row-gap: 1ch;
+					}
 
-					<li>
-						<cool-link>
+					li:first-of-type {
+						inline-size: 100%;
+					}
+
+					li:not(:last-of-type) {
+						margin-inline-end: 1ch;
+					}
+
+					a {
+						color: currentColor;
+						text-decoration: none;
+					}
+
+					.skip-link {
+						inset-inline-start: 50%;
+						padding: 4px;
+						position: absolute;
+						transform: translateY(-200%);
+						transition: transform 0.3s;
+
+						&:focus-visible {
+							transform: translateY(0%);
+						}
+					}
+
+					@media (prefers-reduced-motion: no-preference) {
+						a::before {
+							--linkStartRest: right;
+							--linkStateRest: scaleX(0);
+						}
+
+						a:hover::before {
+							--linkStartHover: left;
+							--linkStateHover: scaleX(1);
+						}
+
+						a[aria-current="page"]::before {
+							--linkStartRest: left;
+							--linkStateRest: scaleX(1);
+						}
+
+						a[aria-current="page"]:hover::before {
+							--linkStartHover: right;
+							--linkStateHover: scaleX(0);
+						}
+					}
+				}
+
+				.site-footer {
+					inset-block-start: 100dvh;
+					padding-block: var(--space-xs);
+					position: sticky;
+
+					nav > :first-child {
+						margin-block-end: var(--space-2xs);
+					}
+				}
+			</style>
+			<div class="header">
+				<slot name="header">
+					<!-- Main Navigation -->
+					<header class="wrapper">
+						<nav class="main-navigation">
 							<a
-								href="{{ link.url }}"
-								id="link__{{ link.name }}"
-								aria-current="{{ current }}">
-								{%- if loop.first -%}~/{%- else -%}:: {% endif -%} {{ link.name
-								}}
-							</a>
-						</cool-link>
-					</li>
-					{%- endfor -%}
-				</ul>
-			</nav>
-		</header>
+								class="skip-link"
+								href="#main"
+								>Skip to main content</a
+							>
+							<ul role="list">
+								{%- for link in navigation -%}
+
+								<!-- prettier-ignore -->
+								{%- set current = "page" if link.url === page.url else "false" -%}
+
+								<li>
+									<cool-link>
+										<a
+											href="{{ link.url }}"
+											aria-current="{{ current }}">
+											{%- if loop.first -%}~/{%- else -%}:: {% endif -%} {{
+											link.name }}
+										</a>
+									</cool-link>
+								</li>
+								{%- endfor -%}
+							</ul>
+						</nav>
+					</header>
+				</slot>
+			</div>
+			<div class="body">
+				<slot></slot>
+			</div>
+			<div class="footer">
+				<slot name="footer">
+					<!-- Footer -->
+					<footer class="site-footer wrapper">
+						<cool-separator
+							size="small"
+							space="end"></cool-separator>
+						<div
+							class="u-flex u-step--1"
+							data-wrap>
+							<nav id="socials">
+								<p
+									class="u-text--bold"
+									id="socialNavTitle">
+									Social Media
+								</p>
+								<ul
+									role="list"
+									aria-describedby="socialNavTitle">
+									<li>
+										<a href="{{ metadata.follow.mastodon }}">Mastodon</a>
+									</li>
+								</ul>
+							</nav>
+							<nav id="feeds">
+								<p
+									class="u-text--bold"
+									id="rssFeedsTitle">
+									RSS Feeds
+								</p>
+								<ul
+									class="u-flex"
+									data-wrap
+									role="list"
+									aria-describedby="rssFeedsTitle">
+									<li>
+										<a href="/notes.xml">Notes (Atom)</a>
+									</li>
+									<li>
+										<a href="/notes.json">Notes (JSON)</a>
+									</li>
+									<li>
+										<a href="/feed.xml">Blog (Atom)</a>
+									</li>
+									<li>
+										<a href="/feed.json">Blog (JSON)</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</footer>
+				</slot>
+			</div>
+			<div class="leaf-nodes">
+				<slot name="leaf-nodes"></slot>
+			</div>
+		</template>
 
 		<!-- Content -->
 		{{ content | safe }}
-
-		<!-- Footer -->
-		<footer class="siteFooter wrapper">
-			<cool-separator
-				size="small"
-				space="end"></cool-separator>
-			<div
-				class="u-flex u-step--1"
-				data-wrap>
-				<nav id="socials">
-					<p
-						class="u-text--bold"
-						id="socialNavTitle">
-						Social Media
-					</p>
-					<ul
-						role="list"
-						aria-describedby="socialNavTitle">
-						<li>
-							<a href="{{ metadata.follow.mastodon }}">Mastodon</a>
-						</li>
-					</ul>
-				</nav>
-				<nav id="feeds">
-					<p
-						class="u-text--bold"
-						id="rssFeedsTitle">
-						RSS Feeds
-					</p>
-					<ul
-						class="u-flex"
-						data-wrap
-						role="list"
-						aria-describedby="rssFeedsTitle">
-						<li>
-							<a href="/notes.xml">Notes (Atom)</a>
-						</li>
-						<li>
-							<a href="/notes.json">Notes (JSON)</a>
-						</li>
-						<li>
-							<a href="/feed.xml">Blog (Atom)</a>
-						</li>
-						<li>
-							<a href="/feed.json">Blog (JSON)</a>
-						</li>
-					</ul>
-				</nav>
-			</div>
-		</footer>
 
 		<!-- Keyboard Shortcuts -->
 		<modal-menu
@@ -368,7 +456,9 @@
 		</modal-menu>
 
 		<!-- Cheat Codes -->
-		<cheat-code></cheat-code>
-		<cheat-code pattern="starpower"></cheat-code>
+		<cheat-code slot="leaf-nodes"></cheat-code>
+		<cheat-code
+			slot="leaf-nodes"
+			pattern="starpower"></cheat-code>
 	</body>
 </html>

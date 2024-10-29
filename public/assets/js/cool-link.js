@@ -15,13 +15,14 @@ export default class CoolLink extends LitElement {
 
 	static styles = css`
 		:host {
+		}
+
+		::slotted(a) {
 			--linkStateRest: scaleX(1);
 			--linkStartRest: left;
 			--linkStateHover: scaleX(0);
 			--linkStartHover: right;
-		}
 
-		::slotted(a) {
 			text-decoration: none;
 		}
 
