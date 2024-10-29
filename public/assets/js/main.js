@@ -6,10 +6,14 @@ import _LiteYoutube from "lite-youtube";
 import ModalMenu from "modal-menu";
 import TheClub from "the-club";
 import CoolTable from "cool-table";
+import CoolLink from "cool-link";
+import CoolSeparator from "cool-separator";
 
 ModalMenu.register();
 TheClub.register();
 CoolTable.register();
+CoolLink.register();
+CoolSeparator.register();
 
 document.documentElement.classList.remove("no-js");
 

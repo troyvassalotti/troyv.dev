@@ -76,6 +76,8 @@
 					"the-club": "https://esm.sh/@troyv/the-club@1.1.0-alpha.0",
 					"modal-menu": "/assets/js/modal-menu.js",
 					"cool-table": "/assets/js/cool-table.js",
+					"cool-link": "/assets/js/cool-link.js",
+					"cool-separator": "/assets/js/cool-separator.js",
 					"now-playing": "/assets/js/now-playing.js",
 					"tag-line": "/assets/js/tag-line.js",
 					"web-mentions": "/assets/js/web-mentions.js",
@@ -238,13 +240,15 @@
 					{%- set current = link.url === page.url or "false" -%}
 
 					<li>
-						<a
-							href="{{ link.url }}"
-							class="animatedLink"
-							id="link__{{ link.name }}"
-							aria-current="{{ current }}">
-							{%- if loop.first -%}~/{%- else -%}:: {% endif -%} {{ link.name }}
-						</a>
+						<cool-link>
+							<a
+								href="{{ link.url }}"
+								id="link__{{ link.name }}"
+								aria-current="{{ current }}">
+								{%- if loop.first -%}~/{%- else -%}:: {% endif -%} {{ link.name
+								}}
+							</a>
+						</cool-link>
 					</li>
 					{%- endfor -%}
 				</ul>
