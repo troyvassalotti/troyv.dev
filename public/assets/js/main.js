@@ -22,3 +22,14 @@ if (!document.getElementById("main")) {
 		"No element with ID of 'main' found. Add that in or the skip link won't work.",
 	);
 }
+
+(function attachShadowRoots(root) {
+	root.querySelectorAll("template[shadowrootmode]").forEach((template) => {
+		const mode = template.getAttribute("shadowrootmode");
+		const shadowRoot = template.parentNode.attachShadow({mode});
+
+		shadowRoot.appendChild(template.content);
+		template.remove();
+		attachShadowRoots(shadowRoot);
+	});
+})(document);
