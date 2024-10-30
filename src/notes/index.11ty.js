@@ -41,8 +41,8 @@ export function render(data) {
 
 	return html`
 		<main id="main">
-			<div class="wrapper flow">
-				<header class="flow masthead masthead--small">
+			<div class="u-wrapper u-flow">
+				<header class="u-flow masthead masthead--small">
 					<h1><glitch-text>${title}</glitch-text></h1>
 					<div class="rss u-invertSvg--onDark">
 						<span>${Icons("rss")}</span>
@@ -56,13 +56,13 @@ export function render(data) {
 						${note.toReversed().map(({date, url, content}) => {
 							return html`
 								<li>
-									<article class="h-entry note flow">
+									<article class="h-entry note u-flow">
 										<time
 											class="dt-published u-step--1"
 											datetime="${date.toISOString()}"
 											>${this.localizedDateString(date)}</time
 										>
-										<div class="e-content u-truncate flow">${content}</div>
+										<div class="e-content u-truncate u-flow">${content}</div>
 										<div class="permalink">
 											<a
 												class="u-url u-uid u-step--1"

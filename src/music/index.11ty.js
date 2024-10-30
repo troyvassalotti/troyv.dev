@@ -39,9 +39,9 @@ export function render(data) {
 
 	return html`
 		<main id="main">
-			<div class="wrapper flow">
+			<div class="u-wrapper u-flow">
 				<header
-					class="flow header u-truncate masthead masthead--small masthead--no-contain">
+					class="u-flow header u-truncate masthead masthead--small masthead--no-contain">
 					<h1>I make <glitch-text>music</glitch-text>.</h1>
 					<p>
 						Check out my projects below, take a deep dive into my
@@ -49,7 +49,7 @@ export function render(data) {
 						<a href="/music/collection">music collection</a>.
 					</p>
 				</header>
-				<section class="flow prose u-truncate">
+				<section class="u-flow u-prose u-truncate">
 					<h2>Front Royal</h2>
 					<p>
 						A punk/alternative/indie/punkternatindie band. If that sounds like

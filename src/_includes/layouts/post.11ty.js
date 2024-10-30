@@ -96,9 +96,9 @@ export function render(data) {
 
 	return html`
 		<main id="main">
-			<div class="wrapper">
-				<article class="h-entry flow prose">
-					<header class="flow masthead masthead--small masthead--no-contain">
+			<div class="u-wrapper">
+				<article class="h-entry u-flow u-prose">
+					<header class="u-flow masthead masthead--small masthead--no-contain">
 						<h1 class="postTitle p-name">${title}</h1>
 						<p class="postSummary p-summary u-step--1">${description}</p>
 						<p class="postMeta u-step--1">
@@ -110,7 +110,7 @@ export function render(data) {
 						</p>
 					</header>
 					<heading-anchors>
-						<div class="post flow u-truncate e-content">
+						<div class="post u-flow u-truncate e-content">
 							${content}
 
 							<!-- Syndication -->

@@ -80,7 +80,7 @@ export default class WorkoutLog extends LitElement {
 
 	render() {
 		return html`
-			<div class="flow">
+			<div class="u-flow">
 				<training-weights
 					.percentages=${WorkoutLog.percentages}
 					.weights=${this.trainingWeights}></training-weights>

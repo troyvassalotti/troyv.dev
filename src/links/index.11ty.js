@@ -56,7 +56,7 @@ export function data() {
 export function render(data) {
 	return html`
 		<main class="linktree">
-			<div class="wrapper flow">
+			<div class="u-wrapper u-flow">
 				<div class="header">
 					<h1>
 						<glitch-text>Links</glitch-text>
@@ -65,7 +65,7 @@ export function render(data) {
 				</div>
 				<ul
 					role="list"
-					class="links flow">
+					class="links u-flow">
 					<li><a href="https://www.frontroyalband.com">Front Royal</a></li>
 					<li>
 						<a href="https://troyalllowercase.bandcamp.com">troyalllowercase</a>

@@ -20,9 +20,9 @@ export function render(data) {
 
 	return html`
 		<main id="main">
-			<div class="wrapper flow">
+			<div class="u-wrapper u-flow">
 				<header
-					class="masthead masthead--small masthead--no-contain u-truncate flow">
+					class="masthead masthead--small masthead--no-contain u-truncate u-flow">
 					<h1><glitch-text>${title}</glitch-text></h1>
 					<p>
 						I use
@@ -35,7 +35,7 @@ export function render(data) {
 				</header>
 				<article
 					id="vinyl"
-					class="vinyl flow prose u-truncate">
+					class="vinyl u-flow u-prose u-truncate">
 					<h2>Vinyl</h2>
 					<ul
 						role="list"

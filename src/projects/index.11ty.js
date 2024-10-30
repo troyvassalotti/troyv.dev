@@ -12,6 +12,18 @@ export function data() {
 		title: "Projects",
 		description:
 			"A non-exhaustive list of things I've made ranging from little tools to bonafide apps.",
+		bundle: {
+			css: html`
+				<style>
+					.c-link--icon svg {
+						display: inline-block;
+						margin-inline-end: var(--space-2xs);
+						max-inline-size: 1.5em;
+						vertical-align: middle;
+					}
+				</style>
+			`,
+		},
 	};
 }
 
@@ -19,7 +31,7 @@ export function render({projects}) {
 	return html`
 		<ul
 			role="list"
-			class="flow">
+			class="u-flow">
 			${projects
 				.toReversed()
 				.map(({url, description, name, repository}) => {

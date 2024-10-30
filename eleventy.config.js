@@ -111,7 +111,7 @@ export default function (config) {
 		let listType = ordered ? "ol" : "ul";
 
 		return html`
-				<${listType} class="postList flow" role="list">
+				<${listType} class="u-flow" style="--flow-space: var(--space-l);" role="list">
 					${this.generatePostListItems(posts)}
 				</${listType}>
 			`;

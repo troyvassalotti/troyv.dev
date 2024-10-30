@@ -229,6 +229,9 @@
 				href="/assets/css/reset.css" />
 			<link
 				rel="stylesheet"
+				href="/assets/css/base.css" />
+			<link
+				rel="stylesheet"
 				href="/assets/css/utilities.css" />
 			<style>
 				.main-navigation {
@@ -290,20 +293,20 @@
 					}
 				}
 
-				.site-footer {
+				.footer {
 					inset-block-start: 100dvh;
 					padding-block: var(--space-xs);
 					position: sticky;
+				}
 
-					nav > :first-child {
-						margin-block-end: var(--space-2xs);
-					}
+				.site-footer nav > :first-child {
+					margin-block-end: var(--space-2xs);
 				}
 			</style>
 			<div class="header">
 				<slot name="header">
 					<!-- Main Navigation -->
-					<header class="wrapper">
+					<header class="u-wrapper">
 						<nav class="main-navigation">
 							<a
 								class="skip-link"
@@ -338,7 +341,7 @@
 			<div class="footer">
 				<slot name="footer">
 					<!-- Footer -->
-					<footer class="site-footer wrapper">
+					<footer class="site-footer u-wrapper">
 						<cool-separator
 							size="small"
 							space="end"></cool-separator>
@@ -399,8 +402,19 @@
 		<!-- Keyboard Shortcuts -->
 		<modal-menu
 			id="shortcuts"
-			class="flow"
-			data-undefined="display">
+			class="u-flow">
+			<style>
+				/* because this shouldn't be visible at all if JS isn't there */
+				modal-menu:not(:defined) {
+					display: none;
+				}
+
+				@scope {
+					:scope:not(:defined) {
+						display: none;
+					}
+				}
+			</style>
 			<h2 class="u-step-2 u-text--bold">Keyboard Shortcuts</h2>
 			<p class="u-step--2 u-text--italic">
 				Bet you weren't expecting these to exist, huh?

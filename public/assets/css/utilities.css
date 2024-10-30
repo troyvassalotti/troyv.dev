@@ -1,6 +1,6 @@
 /** @format */
 
-.wrapper {
+.u-wrapper {
 	inline-size: min(
 		100% - var(--wrapper-padding, 2rem),
 		var(--wrapper-size, 100rem)
@@ -98,11 +98,6 @@
 	font-family: var(--code);
 }
 
-.u-rule {
-	margin-block-start: var(--space-l-xl);
-	max-inline-size: 40ch;
-}
-
 .u-flex {
 	display: flex;
 	gap: var(--space-s);
@@ -166,19 +161,19 @@
 	display: inline;
 }
 
-.flow > *:not(style, script) + *:not(style, script) {
+.u-flow > *:not(style, script) + *:not(style, script) {
 	margin-block-start: var(--flow-space, 1em);
 }
 
 /* Remove extra space since the masthead already has padding around it */
-.flow .masthead + * {
+.u-flow .masthead + * {
 	margin-block-start: 0;
 }
 
-.prose * + :is(h2, h3, h4) {
+.u-prose * + :is(h2, h3, h4) {
 	--flow-space: var(--space-xl);
 }
 
-.hide {
+.u-hide {
 	display: none;
 }

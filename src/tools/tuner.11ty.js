@@ -16,6 +16,29 @@ export function data() {
 						flex-wrap: wrap;
 						gap: var(--space-2xl);
 					}
+
+					de-tune {
+						--input-gap: 1em;
+						--input-size: 4em;
+
+						align-items: start;
+						block-size: calc(
+							calc(var(--input-size) * 3) + calc(var(--input-gap) * 3)
+						);
+						display: flex;
+						flex-direction: column;
+						flex-wrap: wrap;
+						gap: var(--input-gap);
+						inline-size: calc(
+							calc(var(--input-size) * 2) + calc(var(--input-gap) * 2)
+						);
+						justify-content: center;
+
+						button {
+							block-size: var(--input-size);
+							inline-size: var(--input-size);
+						}
+					}
 				</style>
 			`,
 			js: html`

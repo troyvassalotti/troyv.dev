@@ -6,6 +6,24 @@ export function generateVinylGridItem({artwork, title, artist, listens}) {
 	return html`
 		<li>
 			<div class="release">
+				<style>
+					.release {
+						display: flex;
+						flex-direction: column;
+						justify-content: end;
+					}
+
+					.releaseName {
+						font-weight: bold;
+						text-transform: uppercase;
+					}
+
+					.releaseArt {
+						aspect-ratio: 1 / 1;
+						background: radial-gradient(var(--background), var(--foreground));
+						margin-block-end: var(--space-xs);
+					}
+				</style>
 				${artwork
 					? html`<img
 							class="releaseArt"
@@ -17,8 +35,8 @@ export function generateVinylGridItem({artwork, title, artist, listens}) {
 							decoding="async" />`
 					: html`<div class="releaseArt"></div>`}
 				<p class="releaseName">${title}</p>
-				<p class="releaseArtist">${artist}</p>
-				${listens ? html`<p class="releaseListens">${listens} Listens</p>` : ""}
+				<p class="u-step--2">${artist}</p>
+				${listens ? html`<p class="u-step--2">${listens} Listens</p>` : ""}
 			</div>
 		</li>
 	`;

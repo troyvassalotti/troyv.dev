@@ -27,7 +27,7 @@ export function data() {
 
 export function render() {
 	return html`
-		<beats-per class="flow">
+		<beats-per class="u-flow">
 			<p>BPM: <output data-bp-bpm></output></p>
 			<p>Count: <output data-bp-count></output></p>
 			<button data-bp-button>Tap BPM</button>

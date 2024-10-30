@@ -8,6 +8,27 @@ export function data() {
 		glitch: true,
 		title: "Contact",
 		truncate: true,
+		bundle: {
+			css: html`
+				<style>
+					.contactForm {
+						color-scheme: light dark;
+						margin-block: 2rem;
+						max-inline-size: 40rem;
+
+						.contactForm__set {
+							display: flex;
+							flex-direction: column;
+							gap: 0.5rem;
+						}
+
+						.requiredField {
+							color: red;
+						}
+					}
+				</style>
+			`,
+		},
 	};
 }
 
@@ -24,7 +45,7 @@ export function render() {
 			<a href="https://resume.troyv.dev/">find that here</a>.
 		</p>
 		<form
-			class="contactForm flow"
+			class="contactForm u-flow"
 			name="contactForm"
 			netlify
 			netlify-honeypot="bot-field"

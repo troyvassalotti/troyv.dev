@@ -24,8 +24,8 @@ export function render(data) {
 
 	return html`
 		<main id="main">
-			<div class="wrapper">
-				<article class="h-entry flow">
+			<div class="u-wrapper">
+				<article class="h-entry u-flow">
 					<!-- Published -->
 					<time
 						class="dt-published u-step--1"
@@ -34,7 +34,7 @@ export function render(data) {
 					>
 
 					<!-- Content -->
-					<div class="e-content flow u-truncate">${content}</div>
+					<div class="e-content u-flow u-truncate">${content}</div>
 
 					<!-- Permalink -->
 					<div class="permalink">

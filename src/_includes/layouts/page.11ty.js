@@ -24,11 +24,10 @@ export function render(data) {
 	return html`
 		<main id="main">
 			<div
-				class="wrapper constrain--${containment || "base"} flow prose ${truncate
-					? "u-truncate"
-					: ""}">
+				class="u-wrapper constrain--${containment ||
+				"base"} u-flow u-prose ${truncate ? "u-truncate" : ""}">
 				<header
-					class="flow masthead masthead--small ${noHeaderContainment
+					class="u-flow masthead masthead--small ${noHeaderContainment
 						? "masthead--no-contain"
 						: ""}">
 					<h1>

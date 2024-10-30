@@ -25,7 +25,7 @@ export function render(data) {
 
 	return html`
 		<main id="main">
-			<div class="wrapper flow">
+			<div class="u-wrapper u-flow">
 				<header class="masthead masthead--small masthead--no-contain">
 					<h1>
 						Posts about

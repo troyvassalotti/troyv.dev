@@ -34,8 +34,8 @@ export function render(data) {
 
 	return html`
 		<main id="main">
-			<div class="wrapper flow">
-				<section class="container--about u-step-4 masthead flow">
+			<div class="u-wrapper u-flow">
+				<section class="container--about u-step-4 masthead u-flow">
 					<div>
 						<h1 class="u-inline">
 							<glitch-text>Hey, I'm Troy.</glitch-text>
@@ -56,7 +56,7 @@ export function render(data) {
 						>.
 					</p>
 				</section>
-				<div class="container--reading-materials flow">
+				<div class="container--reading-materials u-flow">
 					<type-writer data-undefined="visibility">
 						<h2 class="u-step-3">Reading Materials</h2>
 					</type-writer>
@@ -64,17 +64,60 @@ export function render(data) {
 						style="--grid-item--min-width: 320px;"
 						class="u-grid"
 						data-grid-columns="2">
-						<section class="container--posts flow">
+						<section class="container--posts u-flow">
 							<h3 class="u-step-3">Posts</h3>
 							<ol
 								role="list"
-								class="recentPosts flow">
+								class="recentPosts u-flow">
+								<style>
+									.recentPosts {
+										--flow-space: var(--space-m);
+
+										max-inline-size: 70rem;
+
+										.recentPost > * {
+											--flow-space: var(--space-xs);
+										}
+
+										.recentPost__title {
+											&::before {
+												content: "\\201C";
+											}
+
+											&::after {
+												content: "\\201D";
+											}
+										}
+									}
+
+									@scope {
+										:scope {
+											--flow-space: var(--space-m);
+
+											max-inline-size: 70rem;
+
+											.recentPost > * {
+												--flow-space: var(--space-xs);
+											}
+
+											.recentPost__title {
+												&::before {
+													content: "\\201C";
+												}
+
+												&::after {
+													content: "\\201D";
+												}
+											}
+										}
+									}
+								</style>
 								${collections.post
 									.slice(collections.post.length - 5, collections.post.length)
 									.toReversed()
 									.map(
 										(post) => html`
-											<li class="h-entry flow recentPost">
+											<li class="h-entry u-flow recentPost">
 												<h4 class="p-summary u-step-1 recentPost__title">
 													${post.data.description}
 												</h4>
@@ -96,21 +139,21 @@ export function render(data) {
 									)
 									.join("")}
 							</ol>
-							<p class="cta-archive">
+							<p style="--flow-space: var(--space-m);">
 								<a href="/archive/">View the archive</a>
 							</p>
 						</section>
-						<section class="container--notes flow">
+						<section class="container--notes u-flow">
 							<h3 class="u-step-3">Notes</h3>
 							<ol
 								role="list"
-								class="recentNotes flow">
+								class="recentNotes u-flow">
 								${collections.note
 									.slice(collections.note.length - 5, collections.note.length)
 									.toReversed()
 									.map(
 										(note) => html`
-											<li class="h-entry flow recentNote">
+											<li class="h-entry u-flow recentNote">
 												<div class="e-content u-step--1 recentNote__title">
 													${note.content}
 												</div>
@@ -132,7 +175,7 @@ export function render(data) {
 									)
 									.join("")}
 							</ol>
-							<p class="cta-notes">
+							<p style="--flow-space: var(--space-m);">
 								<a href="/notes/">View all notes</a>
 							</p>
 						</section>

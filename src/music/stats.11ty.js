@@ -55,8 +55,8 @@ export function render(data) {
 
 	return html`
 		<main id="main">
-			<div class="wrapper flow">
-				<header class="flow masthead masthead--small">
+			<div class="u-wrapper u-flow">
+				<header class="u-flow masthead masthead--small">
 					<h1><glitch-text>${title}</glitch-text></h1>
 					<p class="u-step--1 u-text--italic">
 						Last updated: ${this.localizedDateString(date)}
@@ -70,7 +70,7 @@ export function render(data) {
 						right?
 					</p>
 				</header>
-				<div class="flow">
+				<div class="u-flow">
 					<h2>Top Releases Last Month</h2>
 					<ul
 						class="u-grid"
