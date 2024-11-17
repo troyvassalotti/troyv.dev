@@ -35,11 +35,12 @@ export default class CoolTable extends LitElement {
 
         table {
           border-collapse: collapse;
-          inline-size: max(60rem, 100%);
+          inline-size: 100%;
         }
 
         &:not([unfixed]) table {
           table-layout: fixed;
+          inline-size: max(60rem, 100%);
         }
 
         th,
@@ -48,6 +49,7 @@ export default class CoolTable extends LitElement {
         }
 
         caption {
+          font-weight: bold;
           margin-block: 0.75rem;
         }
 
@@ -60,6 +62,10 @@ export default class CoolTable extends LitElement {
         thead {
           background: color-mix(in srgb, var(--accent) 70%, var(--light));
           border-block-end: 2px solid;
+
+          th {
+            inline-size: auto;
+          }
         }
 
         tfoot {
@@ -98,11 +104,7 @@ export default class CoolTable extends LitElement {
 
         &:not([headless-body]) :is(td:first-of-type, :where(thead, tfoot) th:nth-child(2)),
         &[headless-body] :is(td:nth-of-type(2), :where(thead, tfoot) th:nth-child(2)) {
-          border-inline-start: none;
-        }
-
-        th:first-of-type {
-          width: 10rem;
+          border-inline-start: 0;
         }
 
         th:first-child::after,

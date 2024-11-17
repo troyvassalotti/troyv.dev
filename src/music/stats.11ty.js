@@ -4,7 +4,7 @@ import runEleventyFetch, {
 	createCacheOptions,
 } from "../../utils/eleventyFetch.js";
 import {getAlbumArtwork} from "../../utils/music.js";
-import {html, safeHtml} from "common-tags";
+import {html} from "common-tags";
 import "dotenv/config";
 import {generateVinylGridItem} from "../_includes/lib/generateVinylGridItem.js";
 import {generateCollectionList} from "../_includes/lib/generateCollectionList.js";
@@ -32,12 +32,6 @@ export async function data() {
 						justify-content: space-between;
 					}
 				</style>
-			`,
-			js: html`
-				<script type="module">
-					import StatsTable from "stats-table";
-					StatsTable.register();
-				</script>
 			`,
 		},
 	};
@@ -82,18 +76,83 @@ export function render(data) {
 					</ul>
 				</div>
 				<div class="tables">
-					<stats-table
-						id="mostRecentListens"
-						caption="Last 30 Plays"
-						headers="Number Artist Track Release"
-						data="${safeHtml`${JSON.stringify(mostRecentListens)}`}">
-					</stats-table>
-					<stats-table
-						id="topArtistsThisMonth"
-						caption="Top Artists This Month"
-						headers="Number Artist Listens"
-						data="${safeHtml`${JSON.stringify(topArtistsThisMonth)}`}">
-					</stats-table>
+					<cool-table
+						headless-body
+						unfixed>
+						<table>
+							<caption>
+								Last 30 Plays
+							</caption>
+							<colgroup>
+								<col class="col--artist" />
+								<col class="col--track" />
+								<col class="col--release" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th
+										id="last-30-artist"
+										scope="col">
+										Artist
+									</th>
+									<th
+										id="last-30-track"
+										scope="col">
+										Track
+									</th>
+									<th
+										id="last-30-release"
+										scope="col">
+										Release
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								${mostRecentListens
+									.map(
+										(listen) => html`
+											<tr>
+												<td headers="last-30-artist">${listen.artist}</td>
+												<td headers="last-30-track">${listen.song}</td>
+												<td headers="last-30-release">${listen.release}</td>
+											</tr>
+										`,
+									)
+									.join("")}
+							</tbody>
+						</table>
+					</cool-table>
+					<cool-table
+						headless-body
+						unfixed>
+						<table>
+							<caption>
+								Top Artists This Month
+							</caption>
+							<colgroup>
+								<col class="col--artist" />
+								<col class="col--listens" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th id="top-artists-artist">Artist</th>
+									<th id="top-artists-listens">Listens</th>
+								</tr>
+							</thead>
+							<tbody>
+								${topArtistsThisMonth
+									.map(
+										(artist) => html`
+											<tr>
+												<td headers="top-artists-artist">${artist.name}</td>
+												<td headers="top-artists-listens">${artist.listens}</td>
+											</tr>
+										`,
+									)
+									.join("")}
+							</tbody>
+						</table>
+					</cool-table>
 				</div>
 			</div>
 		</main>

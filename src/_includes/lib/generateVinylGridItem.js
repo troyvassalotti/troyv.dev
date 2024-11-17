@@ -2,7 +2,7 @@
 
 import {html} from "common-tags";
 
-export function generateVinylGridItem({artwork, title, artist, listens}) {
+export function generateVinylGridItem({artwork, release, artist, listens}) {
 	return html`
 		<li>
 			<div class="release">
@@ -15,7 +15,6 @@ export function generateVinylGridItem({artwork, title, artist, listens}) {
 
 					.releaseName {
 						font-weight: bold;
-						text-transform: uppercase;
 					}
 
 					.releaseArt {
@@ -34,7 +33,7 @@ export function generateVinylGridItem({artwork, title, artist, listens}) {
 							loading="lazy"
 							decoding="async" />`
 					: html`<div class="releaseArt"></div>`}
-				<p class="releaseName">${title}</p>
+				<p class="releaseName u-step--1">${release}</p>
 				<p class="u-step--2">${artist}</p>
 				${listens ? html`<p class="u-step--2">${listens} Listens</p>` : ""}
 			</div>

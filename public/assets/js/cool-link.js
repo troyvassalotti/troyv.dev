@@ -14,9 +14,6 @@ export default class CoolLink extends LitElement {
 	}
 
 	static styles = css`
-		:host {
-		}
-
 		::slotted(a) {
 			--linkStateRest: scaleX(1);
 			--linkStartRest: left;

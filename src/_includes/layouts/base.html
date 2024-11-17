@@ -79,7 +79,6 @@
 					"now-playing": "/assets/js/now-playing.js",
 					"tag-line": "/assets/js/tag-line.js",
 					"web-mentions": "/assets/js/web-mentions.js",
-					"stats-table": "/assets/js/stats-table.js",
 					"heading-anchors": "https://esm.sh/@daviddarnes/heading-anchors@2.0.0",
 					"lite-youtube": "https://esm.sh/lite-youtube-embed@0.3.2"
 				}
@@ -322,8 +321,8 @@
 										<a
 											href="{{ link.url }}"
 											aria-current="{{ current }}">
-											{%- if loop.first -%}~/{%- else -%}:: {% endif -%} {{
-											link.name }}
+											<!-- prettier-ignore -->
+											{%- if loop.first -%}~/{%- else -%}:: {% endif -%} {{ link.name }}
 										</a>
 									</cool-link>
 								</li>
@@ -389,9 +388,7 @@
 					</footer>
 				</slot>
 			</div>
-			<div class="leaf-nodes">
-				<slot name="leaf-nodes"></slot>
-			</div>
+			<slot name="leaf-nodes"></slot>
 		</template>
 
 		<!-- Content -->
