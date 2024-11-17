@@ -1,22 +1,7 @@
 /** @format */
 
-import EleventyFetch from "@11ty/eleventy-fetch";
 import metadata from "../src/_data/metadata.js";
-
-export function createCacheOptions(customOptions = {}) {
-	return Object.assign(
-		{
-			type: "json",
-			directory: "_cache",
-		},
-		customOptions,
-	);
-}
-
-// EleventyFetch with default options
-export async function runEleventyFetch(url, options = createCacheOptions()) {
-	return await EleventyFetch(url, options);
-}
+import runEleventyFetch from "./eleventyFetch.js";
 
 export async function getAlbumArtwork(mbid, thumb = false) {
 	const coverArtArchiveEndpoint = "https://coverartarchive.org/release/";

@@ -9,7 +9,12 @@ export function data() {
 			data: "collections",
 			size: 1,
 			alias: "tag",
-			filter: ["all", "post", "allTagsList"],
+			filter: [
+				"post",
+				"taggedPosts",
+				"note",
+				"all",
+			] /* don't create /tags/{name}/index.html pages */,
 		},
 		eleventyComputed: {
 			title: ({tag}) => `Tagged "${tag}"`,

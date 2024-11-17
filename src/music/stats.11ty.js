@@ -1,10 +1,9 @@
 /** @format */
 
-import {
-	runEleventyFetch,
+import runEleventyFetch, {
 	createCacheOptions,
-	getAlbumArtwork,
-} from "../../utils/helpers.js";
+} from "../../utils/eleventyFetch.js";
+import {getAlbumArtwork} from "../../utils/music.js";
 import {html, safeHtml} from "common-tags";
 import "dotenv/config";
 import {generateVinylGridItem} from "../_includes/lib/generateVinylGridItem.js";

@@ -74,7 +74,7 @@ export function data() {
 export function render(data) {
 	let {
 		title,
-		collections: {allTagsList, post},
+		collections: {taggedPosts, post},
 	} = data;
 
 	return html`
@@ -92,11 +92,11 @@ export function render(data) {
 						<nav
 							aria-label="tags"
 							class="tagCloud u-step--1">
-							<p class="tagCloud__title">Tags (${allTagsList.length}):</p>
+							<p class="tagCloud__title">Tags (${taggedPosts.length}):</p>
 							<ul
 								class="tagCloud__list"
 								role="list">
-								${allTagsList.sort().map((tag) => {
+								${taggedPosts.sort().map((tag) => {
 									return html`<li>
 										<a
 											href="/tags/${this.slugify(tag)}/"

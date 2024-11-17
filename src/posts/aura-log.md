@@ -10,8 +10,6 @@ syndication: ["mastodon"]
 
 I've been getting migraines my whole life, but only started keeping a regular log of them in 2019. The process went through many iterations: from as a spreadsheet, to tracked in Migraine Buddy, to a JSON file on a single HTML page, to Markdown files in Obsidian, to now Markdown files in a repository hooked up to [Vite](https://www.vitejs.dev), [Lit](https://www.lit.dev), and data visualization libraries.
 
-<!-- excerpt -->
-
 I'm calling it [**Aura Log**](https://github.com/troyvassalotti/aura-log), named after the [aura](https://www.mayoclinic.org/diseases-conditions/migraine-with-aura/symptoms-causes/syc-20352072) associated with migraines like mine. Key features include:
 
 - Vite, web components, and cool charts.

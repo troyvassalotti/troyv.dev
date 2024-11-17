@@ -12,8 +12,6 @@
     {%- set pageDescription -%}
         {%- if description -%}
             {{ description | safe }}
-        {%- elseif page.excerpt -%}
-            {{ page.excerpt | safe }}
         {%- else -%}
             {{ pageTitle }} :: a page on {{ metadata.domain }}
         {%- endif -%}

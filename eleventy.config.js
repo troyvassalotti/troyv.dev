@@ -12,15 +12,6 @@ import {html} from "common-tags";
 import {parse} from "node-html-parser";
 
 /**
- * Some pre-generated tags are unnecessary or make templating complicated
- */
-function filterTagList(tags) {
-	return (tags || []).filter(
-		(tag) => ["all", "post", "posts", "note"].indexOf(tag) === -1,
-	);
-}
-
-/**
  * @param {import("@11ty/eleventy").UserConfig} config
  */
 export default function (config) {
@@ -31,32 +22,21 @@ export default function (config) {
 	config.addPlugin(inclusiveLangPlugin);
 	config.addPlugin(IdAttributePlugin);
 
-	/**
-	 * Date string used in header data on posts
-	 */
-	config.addFilter("dateString", function (date) {
-		return date.toUTCString().replace(/\s\d+:\d+:\d+\sGMT/g, "");
-	});
+	/** Date string used in header data on posts */
+	config.addFilter("dateString", (date) =>
+		date.toUTCString().replace(/\s\d+:\d+:\d+\sGMT/g, ""),
+	);
 
-	config.addFilter("dateStringMinusOne", function (date) {
-		let dateToUse = date;
-		dateToUse.setDate(date.getDate() - 1);
-
-		return dateToUse.toUTCString().replace(/\s\d+:\d+:\d+\sGMT/g, "");
-	});
-
-	// For when the time is known, i.e. dates as "git Created" or "git Last Modified"
-	config.addFilter("localizedDateString", function (date) {
-		return date.toLocaleString("en-US", {
+	/* Date string for when the time is known, i.e. dates as "git Created" or "git Last Modified" */
+	config.addFilter("localizedDateString", (date) =>
+		date.toLocaleString("en-US", {
 			timeZone: "America/New_York",
 			timeZoneName: "longGeneric",
-		});
-	});
+		}),
+	);
 
-	/**
-	 * Slash-separated dates
-	 */
-	config.addFilter("yyyymmdd", function (date, sep = "/") {
+	/** YYYYMMDD dates separated with a delimeter */
+	config.addFilter("yyyymmdd", (date, sep = "/") => {
 		const d = new Date(date);
 		let year = d.getUTCFullYear();
 		let month = d.getUTCMonth() + 1;
@@ -73,17 +53,14 @@ export default function (config) {
 		return `${year}${sep}${month}${sep}${day}`;
 	});
 
-	config.addFilter("capitalize", function (string) {
-		return string.charAt(0).toUpperCase() + string.slice(1);
-	});
+	config.addFilter(
+		"capitalize",
+		(string) => string.charAt(0).toUpperCase() + string.slice(1),
+	);
 
 	config.addShortcode("generatePostListItems", function (posts) {
 		let sortedPosts = posts.toReversed();
 		let listHtml = sortedPosts.map(({date, data: {title}, url}) => {
-			/**
-			 * @todo properly support excerpts
-			 * Right now they render as markdown strings, and many posts don't have one assigned.
-			 */
 			return html`
 				<li>
 					<article class="h-entry postListItem">
@@ -118,21 +95,17 @@ export default function (config) {
 	});
 
 	/**
-	 * Used on the /tags/ page
+	 * Used for collecting posts with tags that have content tags as opposed to hierarchy tags
 	 */
-	config.addCollection("allTagsList", function (collection) {
+	config.addCollection("taggedPosts", (collection) => {
+		const excludedTags = ["post", "note"];
 		const tagSet = new Set();
+
 		collection.getAll().forEach((item) => {
 			(item.data.tags || []).forEach((tag) => tagSet.add(tag));
 		});
 
-		return filterTagList([...tagSet]);
-	});
-
-	// Add excerpt support
-	config.setFrontMatterParsingOptions({
-		excerpt: true,
-		excerpt_separator: "<!-- excerpt -->",
+		return [...tagSet].filter((tag) => excludedTags.indexOf(tag) === -1);
 	});
 
 	/**

@@ -1,6 +1,7 @@
 /** @format */
 
-import {runEleventyFetch, getAlbumArtwork} from "../../utils/helpers.js";
+import runEleventyFetch from "../../utils/eleventyFetch.js";
+import {getAlbumArtwork} from "../../utils/music.js";
 
 const MUSICBRAINZ_ENDPOINT = "https://musicbrainz.org/ws/2/";
 
