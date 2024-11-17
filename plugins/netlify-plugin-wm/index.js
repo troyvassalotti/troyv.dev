@@ -4,65 +4,57 @@
  * @link https://github.com/CodeFoodPixels/netlify-plugin-webmentions
  */
 
-const Webmention = require("@remy/webmention");
+import Webmention from "@remy/webmention";
 
 const {CONTEXT, URL} = process.env;
 
-module.exports = {
-	async onSuccess({utils, constants, inputs}) {
-		const limit = inputs.limit || 1;
-		const feeds = inputs.feeds;
-		const baseUrl = URL;
-		const feedUrls = feeds.map(
-			(feed) => `${baseUrl.replace(/\$/, "")}/${feed}`,
+export async function onSuccess({utils, constants, inputs}) {
+	const limit = inputs.limit || 1;
+	const feeds = inputs.feeds;
+	const baseUrl = URL;
+	const feedUrls = feeds.map((feed) => `${baseUrl.replace(/\$/, "")}/${feed}`);
+
+	if (constants.IS_LOCAL || CONTEXT !== "production") {
+		console.log(
+			"Skipping discovering webmentions because this isn't a production build",
 		);
 
-		if (constants.IS_LOCAL || CONTEXT !== "production") {
-			console.log(
-				"Skipping discovering webmentions because this isn't a production build",
-			);
+		return;
+	}
 
-			return;
-		}
+	try {
+		const promises = feedUrls.map(
+			(url) =>
+				new Promise((resolve, reject) => {
+					console.log(
+						`Discovering Webmentions in ${url} with a limit of ${limit} ${
+							limit === 1 ? "entry" : "entries"
+						}`,
+					);
 
-		try {
-			const promises = feedUrls.map(
-				(url) =>
-					new Promise((resolve, reject) => {
+					const wm = new Webmention({limit, send: true});
+
+					wm.on("error", (e) => reject(e));
+
+					wm.on("sent", (res) => {
 						console.log(
-							`Discovering Webmentions in ${url} with a limit of ${limit} ${
-								limit === 1 ? "entry" : "entries"
-							}`,
+							`Sent ${res.source} to ${res.endpoint.url} (${res.endpoint.type})`,
 						);
-						console.log("");
+						if (res.error) {
+							console.log(`Error sending to ${res.endpoint.url}: ${res.error}`);
+						}
+					});
 
-						const wm = new Webmention({limit, send: true});
+					wm.on("end", () => {
+						resolve();
+					});
 
-						wm.on("error", (e) => reject(e));
+					wm.fetch(url);
+				}),
+		);
 
-						wm.on("sent", (res) => {
-							console.log(
-								`Sent ${res.source} to ${res.endpoint.url} (${res.endpoint.type})`,
-							);
-							if (res.error) {
-								console.log(
-									`Error sending to ${res.endpoint.url}: ${res.error}`,
-								);
-							}
-							console.log("");
-						});
-
-						wm.on("end", () => {
-							resolve();
-						});
-
-						wm.fetch(url);
-					}),
-			);
-
-			await Promise.all(promises);
-		} catch (e) {
-			utils.build.failPlugin(e);
-		}
-	},
-};
+		await Promise.all(promises);
+	} catch (e) {
+		utils.build.failPlugin(e);
+	}
+}
