@@ -102,10 +102,10 @@ export function render() {
 				<de-tune>
 					<button>C#2</button>
 					<button>F#2</button>
-					<button>B3</button>
+					<button>B2</button>
 					<button>E3</button>
 					<button>G#3</button>
-					<button>C#3</button>
+					<button>C#4</button>
 				</de-tune>
 			</div>
 		</div>
