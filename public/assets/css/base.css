@@ -152,7 +152,7 @@ main {
 
 .button,
 beats-per button,
-de-tune button {
+de-tune::part(note) {
 	--surface: var(--background);
 	--button-background: var(--primary);
 	--button-color: var(--background);
@@ -162,6 +162,7 @@ de-tune button {
 	background-color: var(--button-background);
 	border-radius: 0.25em;
 	color: var(--button-color);
+	cursor: pointer;
 	font-weight: bold;
 	padding-block: 0.75em;
 	padding-inline: 1em;

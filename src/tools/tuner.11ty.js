@@ -11,39 +11,31 @@ export function data() {
 		bundle: {
 			css: html`
 				<style>
-					.tunings {
-						display: flex;
-						flex-wrap: wrap;
-						gap: var(--space-2xl);
-					}
-
 					de-tune {
 						--input-gap: 1em;
 						--input-size: 4em;
 
-						align-items: start;
-						block-size: calc(
-							calc(var(--input-size) * 3) + calc(var(--input-gap) * 3)
-						);
-						display: flex;
-						flex-direction: column;
-						flex-wrap: wrap;
-						gap: var(--input-gap);
-						inline-size: calc(
-							calc(var(--input-size) * 2) + calc(var(--input-gap) * 2)
-						);
-						justify-content: center;
+						&::part(notes) {
+							display: flex;
+							flex-wrap: wrap;
+							gap: var(--input-gap);
+						}
 
-						button {
-							block-size: var(--input-size);
-							inline-size: var(--input-size);
+						&::part(note) {
+							border: 0;
+							font: inherit;
+							font-weight: bold;
+						}
+
+						&::part(play-all-container) {
+							margin-block-start: var(--space-s);
 						}
 					}
 				</style>
 			`,
 			js: html`
 				<script type="module">
-					import {Detune} from "detune";
+					import Detune from "detune";
 				</script>
 			`,
 		},
@@ -52,61 +44,28 @@ export function data() {
 
 export function render() {
 	return html`
-		<div class="tunings">
-			<div class="detune">
+		<div
+			class="tunings u-grid"
+			data-grid-columns="3">
+			<div class="detune u-flow">
 				<h2 class="u-step-1">Standard</h2>
-				<de-tune>
-					<button>E2</button>
-					<button>A2</button>
-					<button>D3</button>
-					<button>G3</button>
-					<button>B3</button>
-					<button>E4</button>
-				</de-tune>
+				<de-tune notes="E2 A2 D3 G3 B3 E4"></de-tune>
 			</div>
-			<div class="detune">
+			<div class="detune u-flow">
 				<h2 class="u-step-1">Half Step Down</h2>
-				<de-tune>
-					<button>Eb2</button>
-					<button>Ab2</button>
-					<button>Db3</button>
-					<button>Gb3</button>
-					<button>Bb3</button>
-					<button>Eb4</button>
-				</de-tune>
+				<de-tune notes="Eb2 Ab2 Db3 Gb3 Bb3 Eb4"></de-tune>
 			</div>
-			<div class="detune">
+			<div class="detune u-flow">
 				<h2 class="u-step-1">Drop D</h2>
-				<de-tune>
-					<button>D2</button>
-					<button>A2</button>
-					<button>D3</button>
-					<button>G3</button>
-					<button>B3</button>
-					<button>E4</button>
-				</de-tune>
+				<de-tune notes="D2 A2 D3 G3 B3 E4"></de-tune>
 			</div>
-			<div class="detune">
+			<div class="detune u-flow">
 				<h2 class="u-step-1">D Standard</h2>
-				<de-tune>
-					<button>D2</button>
-					<button>G2</button>
-					<button>C3</button>
-					<button>F3</button>
-					<button>A3</button>
-					<button>D4</button>
-				</de-tune>
+				<de-tune notes="D2 G2 C3 F3 A3 D4"></de-tune>
 			</div>
-			<div class="detune">
+			<div class="detune u-flow">
 				<h2 class="u-step-1">C# Standard</h2>
-				<de-tune>
-					<button>C#2</button>
-					<button>F#2</button>
-					<button>B2</button>
-					<button>E3</button>
-					<button>G#3</button>
-					<button>C#4</button>
-				</de-tune>
+				<de-tune notes="C#2 F#2 B2 E3 G#3 C#4"></de-tune>
 			</div>
 		</div>
 	`;
