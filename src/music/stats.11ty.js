@@ -10,16 +10,12 @@ import {generateVinylGridItem} from "../_includes/lib/generateVinylGridItem.js";
 import {generateCollectionList} from "../_includes/lib/generateCollectionList.js";
 
 export async function data() {
-	const topArtistsThisMonth = await getTopArtists();
-	const mostRecentListens = await getMostRecentListens();
 	const lastMonthsTopReleases = await getLastMonthsTopReleases();
 
 	return {
 		layout: "base.html",
 		title: "Music Stats",
 		description: "Aggregated data from my ListenBrainz profile.",
-		topArtistsThisMonth,
-		mostRecentListens,
 		lastMonthsTopReleases,
 		bundle: {
 			css: html`
@@ -33,6 +29,12 @@ export async function data() {
 					}
 				</style>
 			`,
+			js: html`
+				<script type="module">
+					import FeedReader from "feed-reader";
+					FeedReader.register();
+				</script>
+			`,
 		},
 	};
 }
@@ -42,8 +44,6 @@ export function render(data) {
 		title,
 		page: {date},
 		lastMonthsTopReleases,
-		mostRecentListens,
-		topArtistsThisMonth,
 	} = data;
 
 	return html`
@@ -75,84 +75,31 @@ export function render(data) {
 						)}
 					</ul>
 				</div>
+				<cool-separator></cool-separator>
+				<blockquote>
+					<p>EVERYTHING BELOW THIS POINT IS A WORK IN PROGRESS</p>
+					<p>
+						ListenBrainz now has Atom feeds and I'm excited to start using those
+						instead of my old system.
+					</p>
+				</blockquote>
+				<cool-separator></cool-separator>
+				<div class="u-flow">
+					<h2>Top Releases This Month</h2>
+					<feed-reader
+						atom="https://listenbrainz.org/syndication-feed/user/actionhamilton/stats/top-albums?range=this_month&count=10"></feed-reader>
+				</div>
 				<div class="tables">
-					<cool-table
-						headless-body
-						unfixed>
-						<table>
-							<caption>
-								Last 30 Plays
-							</caption>
-							<colgroup>
-								<col class="col--artist" />
-								<col class="col--track" />
-								<col class="col--release" />
-							</colgroup>
-							<thead>
-								<tr>
-									<th
-										id="last-30-artist"
-										scope="col">
-										Artist
-									</th>
-									<th
-										id="last-30-track"
-										scope="col">
-										Track
-									</th>
-									<th
-										id="last-30-release"
-										scope="col">
-										Release
-									</th>
-								</tr>
-							</thead>
-							<tbody>
-								${mostRecentListens
-									.map(
-										(listen) => html`
-											<tr>
-												<td headers="last-30-artist">${listen.artist}</td>
-												<td headers="last-30-track">${listen.song}</td>
-												<td headers="last-30-release">${listen.release}</td>
-											</tr>
-										`,
-									)
-									.join("")}
-							</tbody>
-						</table>
-					</cool-table>
-					<cool-table
-						headless-body
-						unfixed>
-						<table>
-							<caption>
-								Top Artists This Month
-							</caption>
-							<colgroup>
-								<col class="col--artist" />
-								<col class="col--listens" />
-							</colgroup>
-							<thead>
-								<tr>
-									<th id="top-artists-artist">Artist</th>
-									<th id="top-artists-listens">Listens</th>
-								</tr>
-							</thead>
-							<tbody>
-								${topArtistsThisMonth
-									.map(
-										(artist) => html`
-											<tr>
-												<td headers="top-artists-artist">${artist.name}</td>
-												<td headers="top-artists-listens">${artist.listens}</td>
-											</tr>
-										`,
-									)
-									.join("")}
-							</tbody>
-						</table>
-					</cool-table>
+					<div id="most-recent-listens">
+						<h2>Most Recent Listens (8 Hours)</h2>
+						<feed-reader
+							atom="https://listenbrainz.org/syndication-feed/user/actionhamilton/listens?minutes=480"></feed-reader>
+					</div>
+					<div id="top-artists-this-month">
+						<h2>Top Artists This Month</h2>
+						<feed-reader
+							atom="https://listenbrainz.org/syndication-feed/user/actionhamilton/stats/top-artists?range=this_month&count=10"></feed-reader>
+					</div>
 				</div>
 			</div>
 		</main>
@@ -167,68 +114,6 @@ const CACHE_OPTIONS = createCacheOptions({
 		},
 	},
 });
-
-/**
- * Return my top (default: 10) artists in the given timeframe (default: this month)
- * @param api
- * @param auth
- * @param fetchDir
- * @param count
- * @param range
- * @returns {Promise<boolean|*>}
- */
-async function getTopArtists(count = 10, range = "this_month") {
-	try {
-		const data = await runEleventyFetch(
-			`${LISTENBRAINZ_ENDPOINT}stats/user/actionhamilton/artists?count=${count}&range=${range}`,
-			CACHE_OPTIONS,
-		);
-
-		const {payload} = data;
-		const {artists} = payload;
-
-		return artists.map((artist) => {
-			const {artist_name: name, listen_count: listens} = artist;
-			return {name, listens};
-		});
-	} catch (error) {
-		console.error(error);
-		return false;
-	}
-}
-
-/**
- * Gets my most recent listens (default: 30) from ListenBrainz
- * @param api
- * @param auth
- * @param fetchDir
- * @param count
- * @returns {Promise<boolean|*>}
- */
-async function getMostRecentListens(count = 30) {
-	try {
-		const data = await runEleventyFetch(
-			`${LISTENBRAINZ_ENDPOINT}user/actionhamilton/listens?count=${count}`,
-			CACHE_OPTIONS,
-		);
-
-		const {payload} = data;
-		const {listens} = payload;
-		const metadata = listens.map((track) => track.track_metadata);
-
-		return metadata.map((track) => {
-			const {
-				artist_name: artist,
-				track_name: song,
-				release_name: release,
-			} = track;
-			return {artist, song, release};
-		});
-	} catch (error) {
-		console.error(error);
-		return false;
-	}
-}
 
 /**
  * Get my top releases (default: 10) from ListenBrainz
