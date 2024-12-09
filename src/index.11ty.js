@@ -50,7 +50,12 @@ export function render(data) {
 						>
 					</div>
 					<p class="u-step-0">
-						I'm currently listening to
+						I'm currently
+						<tag-line
+							taglines="crying | raving | throwing an absolute fit | starting the pit | yearning"
+							>listening</tag-line
+						>
+						to
 						<now-playing service="https://api.troyv.dev/now-playing"
 							>elevator music</now-playing
 						>.
