@@ -87,7 +87,8 @@ export function render(data) {
 				<div class="u-flow">
 					<h2>Top Releases This Month</h2>
 					<feed-reader
-						atom="https://listenbrainz.org/syndication-feed/user/actionhamilton/stats/top-albums?range=this_month&count=10"></feed-reader>
+						atom="https://beta.listenbrainz.org/syndication-feed/user/actionhamilton/stats/art/grid?dimension=3&layout=0&range=this_month"
+						contenttype="svg"></feed-reader>
 				</div>
 				<div class="tables">
 					<div id="most-recent-listens">

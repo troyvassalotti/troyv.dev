@@ -2,9 +2,13 @@
 
 import {css, html, LitElement} from "lit";
 import {unsafeHTML} from "lit/directives/unsafe-html.js";
+import {unsafeSVG} from "lit/directives/unsafe-svg.js";
 import {Task} from "@lit/task";
 import {parseFeed} from "@rowanmanning/feed-parser";
 
+/**
+ * @link https://blog.metabrainz.org/2024/12/03/new-syndication-feeds-in-listenbrainz/
+ */
 export default class FeedReader extends LitElement {
 	/** @type {string} */
 	static tagName = "feed-reader";
@@ -21,6 +25,7 @@ export default class FeedReader extends LitElement {
 			display: block;
 		}
 
+		/* fixes bugs in feed gen */
 		:is(p):not(:has(*)) {
 			display: none;
 		}
@@ -28,7 +33,7 @@ export default class FeedReader extends LitElement {
 
 	static properties = {
 		atom: {type: String},
-		content: {type: String, state: true},
+		contentType: {type: String},
 	};
 
 	#fetchFeed = new Task(this, {
@@ -39,47 +44,41 @@ export default class FeedReader extends LitElement {
 				throw new Error(response.status);
 			}
 			const xml = await response.text();
+
+			if (this.contentType === "svg") {
+				const parser = new DOMParser();
+				const parsedXML = parser.parseFromString(xml, "text/xml");
+				const entries = [
+					...parsedXML.documentElement.querySelectorAll("entry"),
+				];
+				const content = entries
+					.map((entry) => entry.querySelector("content"))
+					.map((node) => node.innerHTML)
+					.join("");
+				return content;
+			}
+
 			const parsedFeed = parseFeed(xml);
 			const {items} = parsedFeed;
 			const content = items.map((item) => item.content);
-			this.content = content.join("");
+			return content.join("");
 		},
 	});
 
-	get firstAnchorLinks() {
-		return Array.from(this.renderRoot.querySelectorAll("a:first-of-type"));
-	}
-
-	fireFeedEvent() {
-		this.dispatchEvent(new Event("feed-content-set"));
-	}
-
-	handleFeedContentSet(_event) {
-		console.log(_event, this, this.firstAnchorLinks);
-		// TODO: need to poll for when firstAnchorLinks gets set
-		this.firstAnchorLinks.forEach((link) => {
-			console.log(link);
-		});
-	}
-
-	connectedCallback() {
-		super.connectedCallback();
-
-		this.addEventListener("feed-content-set", (event) => {
-			this.handleFeedContentSet(event);
-		});
-	}
-
-	updated(changedProperties) {
-		if (changedProperties.has("content") && this.content) {
-			this.fireFeedEvent();
+	renderByContentType(content) {
+		switch (this.contentType) {
+			case "svg":
+				return unsafeSVG(content);
+			case "html":
+			default:
+				return unsafeHTML(content);
 		}
 	}
 
 	render() {
 		return this.#fetchFeed.render({
 			pending: () => html`<p>Loading feed...</p>`,
-			complete: () => html`${unsafeHTML(this.content)}`,
+			complete: (content) => this.renderByContentType(content),
 			error: (e) => html`<p>Error: ${e}</p>`,
 		});
 	}
