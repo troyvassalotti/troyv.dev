@@ -1,6 +1,6 @@
 /** @format */
 
-import {css, html, LitElement} from "lit";
+import {html, LitElement} from "lit";
 import {unsafeHTML} from "lit/directives/unsafe-html.js";
 import {unsafeSVG} from "lit/directives/unsafe-svg.js";
 import {Task} from "@lit/task";
@@ -8,6 +8,8 @@ import {parseFeed} from "@rowanmanning/feed-parser";
 
 /**
  * @link https://blog.metabrainz.org/2024/12/03/new-syndication-feeds-in-listenbrainz/
+ * @todo Bug in top artists, not rendering UL element
+ * @todo Album art grid uses relative paths for each release
  */
 export default class FeedReader extends LitElement {
 	/** @type {string} */
@@ -20,21 +22,55 @@ export default class FeedReader extends LitElement {
 		}
 	}
 
-	static styles = css`
-		:host {
-			display: block;
-		}
-
-		/* fixes bugs in feed gen */
-		:is(p):not(:has(*)) {
-			display: none;
-		}
-	`;
-
 	static properties = {
 		atom: {type: String},
 		contentType: {type: String},
 	};
+
+	constructor() {
+		super();
+		this.contentType = "html";
+	}
+
+	static addStyles(rootNode) {
+		const sheet = new CSSStyleSheet();
+		sheet.replaceSync(`
+      ${this.tagName} {
+        display: block;
+
+        /* Addresses rendering issue */
+        :is(p):not(:has(*)) {
+          display: none;
+        }
+      }
+    `);
+
+		const existingAdoptedStyleSheets = rootNode.adoptedStyleSheets;
+		const hasStylesAlready = existingAdoptedStyleSheets.find(
+			(sheet) => sheet.cssRules[0].selectorText === this.tagName,
+		);
+
+		if (!hasStylesAlready) {
+			rootNode.adoptedStyleSheets.push(sheet);
+		}
+	}
+
+	createRenderRoot() {
+		FeedReader.addStyles(this.getRootNode());
+		return this;
+	}
+
+	cleanAnchorLinks() {
+		const allAnchors = this.querySelectorAll("a[href]");
+		for (const anchor of allAnchors) {
+			if (!anchor.origin) {
+				anchor.setAttribute(
+					"href",
+					"https://listenbrainz.org" + anchor.href.baseVal,
+				);
+			}
+		}
+	}
 
 	#fetchFeed = new Task(this, {
 		args: () => [this.atom],
@@ -73,6 +109,10 @@ export default class FeedReader extends LitElement {
 			default:
 				return unsafeHTML(content);
 		}
+	}
+
+	updated() {
+		this.cleanAnchorLinks();
 	}
 
 	render() {
