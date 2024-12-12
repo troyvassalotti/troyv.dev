@@ -1,9 +1,10 @@
 /** @format */
 
+import metadata from "./metadata.js";
 import runEleventyFetch from "../../utils/eleventyFetch.js";
-import {getAlbumArtwork} from "../../utils/music.js";
 
 const MUSICBRAINZ_ENDPOINT = "https://musicbrainz.org/ws/2/";
+const COVER_ART_ARCHIVE_ENDPOINT = "https://coverartarchive.org/release/";
 
 class MusicLibrary {
 	static mbids = {
@@ -26,9 +27,29 @@ class MusicLibrary {
 		return release["artist-credit"][0].name;
 	}
 
+	static async getAlbumArtwork(mbid, thumb = false) {
+		try {
+			if (thumb) {
+				const data = await runEleventyFetch(
+					`${COVER_ART_ARCHIVE_ENDPOINT}${mbid}`,
+				);
+				const {images} = data;
+				const front = images.find((image) => image.front);
+				const {thumbnails} = front;
+
+				return `${metadata.cloudinary.fetch}/c_scale,f_auto,q_auto:eco,w_500/${thumbnails["500"]}`;
+			}
+
+			return `${metadata.cloudinary.fetch}/c_scale,f_auto,q_auto:eco,w_500/${COVER_ART_ARCHIVE_ENDPOINT}${mbid}/front`;
+		} catch (error) {
+			console.error(error);
+			return false;
+		}
+	}
+
 	static async getCollectionInformation(collectionId) {
 		try {
-			let apiEndpoint = `${MUSICBRAINZ_ENDPOINT}collection/${collectionId}/releases${MusicLibrary.apiQueries}`;
+			let apiEndpoint = `${MUSICBRAINZ_ENDPOINT}collection/${collectionId}/releases${this.apiQueries}`;
 
 			let allReleases = [];
 			let offset = 0;
@@ -59,7 +80,7 @@ class MusicLibrary {
 				flattened.map(async (release) => {
 					const {title, id} = release;
 					const artist = this.getArtistCredit(release);
-					const artwork = await getAlbumArtwork(id, false);
+					const artwork = await this.getAlbumArtwork(id, false);
 
 					return {title, artist, artwork};
 				}),

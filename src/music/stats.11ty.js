@@ -1,7 +1,6 @@
 /** @format */
 
 import {html} from "common-tags";
-import "dotenv/config";
 
 export function data() {
 	return {
