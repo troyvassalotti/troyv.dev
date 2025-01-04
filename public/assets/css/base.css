@@ -12,23 +12,31 @@ html {
 			visibility: hidden;
 		}
 	}
+}
 
-	@media (prefers-color-scheme: dark) {
+@supports (color: lch(from red l c h)) {
+	html {
+		color: lch(from var(--background) calc((49.44 - l) * infinity) 0 0);
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	html {
 		color-scheme: dark;
+	}
 
-		body,
-		pre {
-			font-weight: 300;
-		}
+	body,
+	pre {
+		font-weight: 300;
+	}
 
-		strong,
-		b {
-			font-weight: 600;
-		}
+	strong,
+	b {
+		font-weight: 600;
+	}
 
-		.u-invertSvg--onDark svg {
-			filter: invert(1);
-		}
+	.u-invertSvg--onDark svg {
+		filter: invert(1);
 	}
 }
 
@@ -122,7 +130,7 @@ a {
 	}
 
 	&:focus-visible {
-		outline: 2px dashed var(--links);
+		outline: 2px dashed currentColor;
 		outline-offset: 2px;
 	}
 }
