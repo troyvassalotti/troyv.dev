@@ -10,14 +10,25 @@
 	margin: 0;
 }
 
+html {
+	-moz-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+}
+
 html:focus-within {
 	scroll-behavior: smooth;
 }
 
 body {
 	block-size: 100%;
+	font-kerning: normal;
+	font-optical-sizing: auto;
+	font-variant-ligatures: common-ligatures no-discretionary-ligatures
+		no-historical-ligatures contextual;
 	line-height: 1.5;
 	min-block-size: 100dvh;
+	text-decoration-skip-ink: auto;
 	text-rendering: optimizeSpeed;
 	-webkit-font-smoothing: antialiased;
 }
@@ -39,14 +50,10 @@ select {
 	font: inherit;
 }
 
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	overflow-wrap: break-word;
+button,
+input,
+label {
+	line-height: 1.1;
 }
 
 ul[role="list"],
@@ -55,20 +62,42 @@ ol[role="list"] {
 	padding: 0;
 }
 
-sub,
-sup {
-	font-size: 75%;
-	line-height: 0;
-	position: relative;
-	vertical-align: baseline;
+@support not (font-variant-position: sub) {
+	sub,
+	sup {
+		font-size: 75%;
+		line-height: 0;
+		position: relative;
+		vertical-align: baseline;
+	}
+
+	sub {
+		bottom: -0.25em;
+	}
+
+	sup {
+		top: -0.5em;
+	}
 }
 
-sub {
-	bottom: -0.25em;
+@supports (font-variant-position: sub) {
+	sub,
+	.sub {
+		vertical-align: baseline;
+		font-size: 100%;
+		line-height: inherit;
+		font-variant-position: sub;
+	}
 }
 
-sup {
-	top: -0.5em;
+@supports (font-variant-position: super) {
+	sup,
+	.sup {
+		vertical-align: baseline;
+		font-size: 100%;
+		line-height: inherit;
+		font-variant-position: super;
+	}
 }
 
 @media (prefers-reduced-motion: reduce) {

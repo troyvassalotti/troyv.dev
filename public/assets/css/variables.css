@@ -55,6 +55,9 @@ html {
 	--foreground: var(--dark);
 	--primary: var(--blue);
 
+	--opentype-case: off;
+	--opentype-sinf: off;
+
 	@media (prefers-color-scheme: dark) {
 		--background: var(--dark);
 		--foreground: var(--light);

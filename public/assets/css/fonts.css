@@ -65,3 +65,53 @@
 		U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
 		U+FEFF, U+FFFD;
 }
+
+@font-face {
+	font-family: "Literata";
+	src:
+		url("/assets/fonts/Literata-var.woff2") format("woff2") tech(variations),
+		url("/assets/fonts/Literata-var.woff2") format("woff2-variations");
+	font-weight: 1 1000;
+	font-stretch: 50% 200%;
+	font-style: normal;
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: "Literata";
+	src:
+		url("/assets/fonts/Literata-Italic-var.woff2") format("woff2")
+			tech(variations),
+		url("/assets/fonts/Literata-Italic-var.woff2") format("woff2-variations");
+	font-weight: 1 1000;
+	font-stretch: 50% 200%;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "RobotoFlex";
+	src:
+		url("/assets/fonts/RobotoFlex.woff2") format("woff2") tech(variations),
+		url("/assets/fonts/RobotoFlex.woff2") format("woff2-variations");
+	font-weight: 1 1000;
+	font-stretch: 50% 200%;
+	font-style: normal;
+	font-display: block;
+}
+
+@font-face {
+	font-family: "Bookmania";
+	src: url("/assets/fonts/bookmania-blackitalic.woff2") format("woff2");
+	font-weight: 900;
+	font-style: italic;
+	font-display: block;
+}
+
+@font-face {
+	font-family: "Bookmania";
+	src: url("/assets/fonts/bookmania-bold.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+	font-display: block;
+}

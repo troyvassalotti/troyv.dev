@@ -1,4 +1,7 @@
-/** @format */
+/**
+  * @format
+  * Some styles based on https://github.com/clagnut/TODS/tree/main
+  */
 
 @layer reset, base, utilities, prism;
 

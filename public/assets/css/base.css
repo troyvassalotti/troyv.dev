@@ -65,14 +65,27 @@ button {
 	padding: 0;
 }
 
+td,
+math,
+time[datetime*=":"] {
+	font-variant-numeric: tabular-nums lining-nums slashed-zero;
+}
+
 :is(h1, h2, h3, h4, h5, h6) {
 	font-family: var(--headings);
+	font-size-adjust: 0.514;
+	font-variant-numeric: lining-nums;
 	line-height: 1.1;
 }
 
 h1 {
 	font-size: var(--step-5);
+	font-variant-ligatures: discretionary-ligatures;
 	font-weight: 800;
+
+	&.u-uppercase {
+		font-variant-caps: titling-caps;
+	}
 }
 
 h2 {
