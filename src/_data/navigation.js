@@ -16,7 +16,6 @@ export default [
 	new Navigation("archive"),
 	new Navigation("notes"),
 	new Navigation("music"),
-	new Navigation("projects"),
 	new Navigation("contact"),
 	new Navigation("blogroll"),
 	new Navigation("links"),
