@@ -113,6 +113,10 @@
 	font-family: var(--code);
 }
 
+.u-font--styled-heading {
+	font-family: var(--styled-headings);
+}
+
 .u-flex {
 	display: flex;
 	gap: var(--space-s);

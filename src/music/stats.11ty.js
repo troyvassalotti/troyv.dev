@@ -28,7 +28,9 @@ export function render(data) {
 		<main id="main">
 			<div class="u-wrapper u-flow">
 				<header class="u-flow masthead masthead--small">
-					<h1><glitch-text>${title}</glitch-text></h1>
+					<h1 class="u-font--styled-heading">
+						<glitch-text>${title}</glitch-text>
+					</h1>
 					<p class="u-step--1 u-text--italic">
 						Last updated: ${this.localizedDateString(date)}
 					</p>

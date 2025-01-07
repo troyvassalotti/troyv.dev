@@ -81,7 +81,9 @@ export function render(data) {
 		<main id="main">
 			<div class="u-wrapper u-flow">
 				<header class="u-flow masthead masthead--small">
-					<h1><glitch-text>${title}</glitch-text></h1>
+					<h1 class="u-font--styled-heading">
+						<glitch-text>${title}</glitch-text>
+					</h1>
 					<div class="rss u-invertSvg--onDark">
 						<span>${Icons("rss")}</span>
 						<span>Subscribe to the <a href="/feed.xml">RSS feed</a>.</span>

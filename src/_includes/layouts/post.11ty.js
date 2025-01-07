@@ -99,7 +99,7 @@ export function render(data) {
 			<div class="u-wrapper">
 				<article class="h-entry u-flow u-prose">
 					<header class="u-flow masthead masthead--small masthead--no-contain">
-						<h1 class="postTitle p-name">${title}</h1>
+						<h1 class="postTitle p-name u-font--styled-heading">${title}</h1>
 						<p class="postSummary p-summary u-step--1">${description}</p>
 						<p class="postMeta u-step--1">
 							<time

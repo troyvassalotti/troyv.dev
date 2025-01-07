@@ -42,7 +42,9 @@ export function render(data) {
 			<div class="u-wrapper u-flow">
 				<header
 					class="u-flow header u-truncate masthead masthead--small masthead--no-contain">
-					<h1>I make <glitch-text>music</glitch-text>.</h1>
+					<h1 class="u-font--styled-heading">
+						I make <glitch-text>music</glitch-text>.
+					</h1>
 					<p>
 						Check out my projects below, take a deep dive into my
 						<a href="/music/stats/">listening habits</a>, or view my

@@ -70,7 +70,9 @@ export function render(data) {
 			<div class="u-wrapper u-flow">
 				<header
 					class="masthead masthead--small masthead--no-contain u-truncate u-flow">
-					<h1><glitch-text>${title}</glitch-text></h1>
+					<h1 class="u-font--styled-heading">
+						<glitch-text>${title}</glitch-text>
+					</h1>
 					<p>
 						I use
 						<a href="https://musicbrainz.org/user/actionhamilton"
