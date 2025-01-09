@@ -559,6 +559,7 @@ export default class WebMentions extends LitElement {
 							Webmentions
 							<sup
 								><a
+									style="text-decoration: none;"
 									aria-label="What are these?"
 									href="https://indieweb.org/Webmention"
 									title="What are these?"

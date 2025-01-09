@@ -79,6 +79,7 @@ time[datetime*=":"] {
 }
 
 h1 {
+	font-family: var(--styled-headings);
 	font-size: var(--step-5);
 	font-variant-ligatures: discretionary-ligatures;
 	font-weight: 800;

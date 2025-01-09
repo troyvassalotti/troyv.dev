@@ -1,7 +1,6 @@
 /** @format */
 
 import {html} from "common-tags";
-import Icons from "../_includes/partials/icons.js";
 
 export function data() {
 	return {
@@ -13,18 +12,12 @@ export function data() {
 		bundle: {
 			css: html`
 				<style>
-					.rss {
-						align-items: center;
-						display: flex;
-						gap: 1ch;
-
-						svg {
-							inline-size: 1em;
-						}
-					}
-
 					.noteList > li + li {
 						margin-block-start: var(--space-l);
+					}
+
+					.e-content {
+						margin-inline-start: 1em;
 					}
 				</style>
 			`,
@@ -43,13 +36,9 @@ export function render(data) {
 		<main id="main">
 			<div class="u-wrapper u-flow">
 				<header class="u-flow masthead masthead--small">
-					<h1 class="u-font--styled-heading">
+					<h1>
 						<glitch-text>${title}</glitch-text>
 					</h1>
-					<div class="rss u-invertSvg--onDark">
-						<span>${Icons("rss")}</span>
-						<span>Subscribe to the <a href="/notes.xml">RSS feed</a>.</span>
-					</div>
 				</header>
 				<section class="notes">
 					<ol
@@ -59,19 +48,18 @@ export function render(data) {
 							return html`
 								<li>
 									<article class="h-entry note u-flow">
-										<time
-											class="dt-published u-step--1"
-											datetime="${date.toISOString()}"
-											>${this.localizedDateString(date)}</time
-										>
-										<div class="e-content u-truncate u-flow">${content}</div>
-										<div class="permalink">
+										<div class="permalink u-font--code u-underline-offset">
 											<a
 												class="u-url u-uid u-step--1"
-												href="${url}"
-												>Permalink</a
-											>
+												href="${url}">
+												<time
+													class="dt-published"
+													datetime="${date.toISOString()}"
+													>${this.localizedDateString(date)}</time
+												>
+											</a>
 										</div>
+										<div class="e-content u-truncate u-flow">${content}</div>
 									</article>
 								</li>
 							`;

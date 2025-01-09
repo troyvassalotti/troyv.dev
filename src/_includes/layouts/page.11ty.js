@@ -30,7 +30,7 @@ export function render(data) {
 					class="u-flow masthead masthead--small ${noHeaderContainment
 						? "masthead--no-contain"
 						: ""}">
-					<h1 class="u-font--styled-heading">
+					<h1>
 						${glitch
 							? html`<glitch-text>${title}</glitch-text>`
 							: html`${title}`}

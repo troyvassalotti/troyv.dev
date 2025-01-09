@@ -62,9 +62,6 @@ export function render(data) {
 					</p>
 				</section>
 				<div class="container--reading-materials u-flow">
-					<type-writer data-undefined="visibility">
-						<h2 class="u-step-3">Reading Materials</h2>
-					</type-writer>
 					<div
 						style="--grid-item--min-width: 320px;"
 						class="u-grid"

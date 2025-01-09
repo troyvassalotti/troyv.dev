@@ -1,7 +1,6 @@
 /** @format */
 
 import {html} from "common-tags";
-import Icons from "../_includes/partials/icons.js";
 
 export function data() {
 	return {
@@ -13,31 +12,34 @@ export function data() {
 		bundle: {
 			css: html`
 				<style>
-					.rss {
-						align-items: center;
-						display: flex;
-						gap: 1ch;
-
-						svg {
-							inline-size: 1em;
-						}
+					summary {
+						border-block-end: 1px solid var(--primary);
+						cursor: pointer;
+						font-family: var(--styled-headings);
+						font-weight: bold;
+						inline-size: fit-content;
+						margin-block-end: 0.5em;
+						padding-block-end: 0.5em;
 					}
 
 					.tagCloud {
 						inset-block-start: 0;
 						position: sticky;
 
-						.tagCloud__title {
-							font-family: var(--headings);
-							font-size: var(--step-1);
-							font-weight: bold;
-							margin-block-end: revert;
-						}
-
 						.tagCloud__list {
 							display: flex;
 							flex-wrap: wrap;
 							gap: var(--space-2xs-xs);
+
+							@media (hover) {
+								& > li {
+									transition: opacity 0.2s ease-in;
+								}
+
+								&:hover > li:not(:hover) {
+									opacity: 0.25;
+								}
+							}
 						}
 
 						.tagCloud__tag {
@@ -81,20 +83,19 @@ export function render(data) {
 		<main id="main">
 			<div class="u-wrapper u-flow">
 				<header class="u-flow masthead masthead--small">
-					<h1 class="u-font--styled-heading">
+					<h1>
 						<glitch-text>${title}</glitch-text>
 					</h1>
-					<div class="rss u-invertSvg--onDark">
-						<span>${Icons("rss")}</span>
-						<span>Subscribe to the <a href="/feed.xml">RSS feed</a>.</span>
-					</div>
 				</header>
 				<section class="posts">
 					<div class="stickyContainer">
 						<nav
 							aria-label="tags"
-							class="tagCloud u-step--1">
-							<p class="tagCloud__title">Tags (${taggedPosts.length}):</p>
+							class="tagCloud u-step--1 u-flow">
+							<h2
+								class="tagCloud__title u-font--styled-headings u-step-1 dlig onum">
+								Tags (${taggedPosts.length}):
+							</h2>
 							<ul
 								class="tagCloud__list"
 								role="list">
@@ -111,7 +112,18 @@ export function render(data) {
 							</ul>
 						</nav>
 					</div>
-					${this.generatePostList(post, true)}
+					<div class="postLists u-flow">
+						<details
+							name="posts"
+							open>
+							<summary class="dlig">Last Published</summary>
+							${this.generatePostList(post, true)}
+						</details>
+						<details name="posts">
+							<summary class="dlig">Last Updated</summary>
+							${this.generatePostList(post, true, "updated")}
+						</details>
+					</div>
 				</section>
 			</div>
 		</main>

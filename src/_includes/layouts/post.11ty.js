@@ -99,7 +99,7 @@ export function render(data) {
 			<div class="u-wrapper">
 				<article class="h-entry u-flow u-prose">
 					<header class="u-flow masthead masthead--small masthead--no-contain">
-						<h1 class="postTitle p-name u-font--styled-heading">${title}</h1>
+						<h1 class="postTitle p-name">${title}</h1>
 						<p class="postSummary p-summary u-step--1">${description}</p>
 						<p class="postMeta u-step--1">
 							<time
@@ -132,24 +132,28 @@ export function render(data) {
 								class="c-postNavigation">
 								<dl>
 									${nextPost
-										? html`<div>
-												<dt class="u-step-1">Next Post:</dt>
-												<dd>
-													<a href="${this.url(nextPost.url)}"
-														>${nextPost.data.title}</a
-													>
-												</dd>
-											</div>`
+										? html`
+												<div>
+													<dt class="u-step-1">Next Post:</dt>
+													<dd>
+														<a href="${this.url(nextPost.url)}"
+															>${nextPost.data.title}</a
+														>
+													</dd>
+												</div>
+											`
 										: ""}
 									${previousPost
-										? html`<div>
-												<dt class="u-step-1">Previous Post:</dt>
-												<dd>
-													<a href="${this.url(previousPost.url)}"
-														>${previousPost.data.title}</a
-													>
-												</dd>
-											</div>`
+										? html`
+												<div>
+													<dt class="u-step-1">Previous Post:</dt>
+													<dd>
+														<a href="${this.url(previousPost.url)}"
+															>${previousPost.data.title}</a
+														>
+													</dd>
+												</div>
+											`
 										: ""}
 								</dl>
 							</nav>

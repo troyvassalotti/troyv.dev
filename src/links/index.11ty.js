@@ -58,7 +58,7 @@ export function render(data) {
 		<main class="linktree">
 			<div class="u-wrapper u-flow">
 				<div class="header">
-					<h1 class="u-font--styled-heading">
+					<h1>
 						<glitch-text>Links</glitch-text>
 					</h1>
 					<p>${data.description}</p>

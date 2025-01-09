@@ -28,7 +28,7 @@ export function render(data) {
 		<main id="main">
 			<div class="u-wrapper u-flow">
 				<header class="u-flow masthead masthead--small">
-					<h1 class="u-font--styled-heading">
+					<h1>
 						<glitch-text>${title}</glitch-text>
 					</h1>
 					<p class="u-step--1 u-text--italic">

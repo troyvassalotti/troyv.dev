@@ -58,16 +58,27 @@ export default function (config) {
 		(string) => string.charAt(0).toUpperCase() + string.slice(1),
 	);
 
-	config.addShortcode("generatePostListItems", function (posts) {
-		let sortedPosts = posts.toReversed();
-		let listHtml = sortedPosts.map(({date, data: {title}, url}) => {
+	config.addShortcode("generatePostListItems", function (posts, type) {
+		let sortedPosts =
+			type === "published"
+				? posts.toReversed()
+				: posts.toSorted((a, b) => {
+						const aUpdated = a.data?.updated ?? a.date;
+						const bUpdated = b.data?.updated ?? b.date;
+
+						return new Date(bUpdated).getTime() - new Date(aUpdated).getTime();
+					});
+
+		let listHtml = sortedPosts.map(({date, data: {title, updated}, url}) => {
+			let dateToUse =
+				type === "published" ? date : updated ? new Date(updated) : date;
 			return html`
 				<li>
 					<article class="h-entry postListItem">
 						<time
 							class="dt-published postListItem__date u-step--1"
-							datetime="${this.yyyymmdd(date, "-")}">
-							${this.dateString(date)}
+							datetime="${this.yyyymmdd(dateToUse, "-")}">
+							${this.dateString(dateToUse)}
 						</time>
 						<h2 class="p-name postListItem__title u-step-2">
 							<a
@@ -84,15 +95,18 @@ export default function (config) {
 		return listHtml;
 	});
 
-	config.addShortcode("generatePostList", function (posts, ordered = false) {
-		let listType = ordered ? "ol" : "ul";
+	config.addShortcode(
+		"generatePostList",
+		function (posts, ordered = false, type = "published") {
+			let listType = ordered ? "ol" : "ul";
 
-		return html`
+			return html`
 				<${listType} class="u-flow" style="--flow-space: var(--space-l);" role="list">
-					${this.generatePostListItems(posts)}
+					${this.generatePostListItems(posts, type)}
 				</${listType}>
 			`;
-	});
+		},
+	);
 
 	/**
 	 * Used for collecting posts with tags that have content tags as opposed to hierarchy tags

@@ -70,7 +70,8 @@
 	font-size: var(--step--2);
 }
 
-.u-truncate :is(h1, h2, h3, h4, h5, h6, p, :is(ul, ol):not([role])) {
+.u-truncate
+	:is(h1, h2, h3, h4, h5, h6, p, [data-truncate], :is(ul, ol):not([role])) {
 	max-inline-size: var(--readable-length, 70ch);
 }
 
@@ -84,6 +85,14 @@
 
 .u-text--bold {
 	font-weight: bold;
+}
+
+.u-text--regular {
+	font-weight: inherit;
+}
+
+.u-underline-offset {
+	text-underline-offset: 0.25em;
 }
 
 .u-centered {
@@ -113,7 +122,7 @@
 	font-family: var(--code);
 }
 
-.u-font--styled-heading {
+.u-font--styled-headings {
 	font-family: var(--styled-headings);
 }
 

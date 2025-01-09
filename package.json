@@ -28,14 +28,13 @@
 		"@remy/webmention": "^1.5.0",
 		"@troyv/common-config": "^1.2.0",
 		"common-tags": "^1.8.2",
-		"dotenv": "^16.4.5",
-		"eslint": "^9.13.0",
+		"dotenv": "^16.4.7",
+		"eslint": "^9.17.0",
 		"markdown-it-footnote": "^4.0.0",
 		"netlify-plugin-cache": "^1.0.3",
-		"node-html-parser": "^6.1.13",
-		"opml": "^0.5.6",
+		"node-html-parser": "^7.0.1",
 		"plop": "^4.0.1",
-		"prettier": "^3.3.3"
+		"prettier": "^3.4.2"
 	},
 	"prettier": "@troyv/common-config/.prettierrc.json"
 }
