@@ -2,6 +2,29 @@
 
 import {html} from "common-tags";
 
+/**
+ * Create a set of Plvylist tracks.
+ * @param {PlvylistAlbumMeta} dataset Prepared data to convert to Plvylist values.
+ * @param {*} globalData Sitewide metadata.
+ * @returns {PlvylistTrack[]} Full set of tracks from the album.
+ */
+function generateTrackData(dataset, globalData) {
+	const {cloudinary} = globalData;
+	const {artist, artistUrl, title, albumUrl, artwork, tracks} = dataset;
+
+	return tracks.map((track) => {
+		return {
+			file: `${cloudinary.video}/${track.file}`,
+			title: `${track.title}`,
+			artist: `${artist}`,
+			artistUrl: `${artistUrl}`,
+			album: `${title}`,
+			albumUrl: `${albumUrl}`,
+			artwork: `${cloudinary.image}/${artwork}`,
+		};
+	});
+}
+
 export function data() {
 	return {
 		title: "Music",
@@ -23,6 +46,18 @@ export function data() {
 						font-size: var(--step--1);
 						margin-block-start: var(--space-xl);
 						max-inline-size: 70rem;
+
+						.no-js-grid {
+							margin-block-start: var(--space-l);
+						}
+
+						plvy-list-track-title {
+							font-weight: bold;
+						}
+
+						audio {
+							max-inline-size: 100%;
+						}
 					}
 				</style>
 			`,
@@ -36,7 +71,15 @@ export function data() {
 }
 
 export function render(data) {
-	let {frontRoyal, troyalllowercase} = data;
+	let {
+		frontRoyal,
+		troyalllowercase,
+		metadata,
+		plvylistTracks: {LP1, LP2},
+	} = data;
+	let lp1Tracks = generateTrackData(LP1, metadata);
+	let lp2Tracks = generateTrackData(LP2, metadata);
+	let allPlvylistTracks = [...lp1Tracks, ...lp2Tracks];
 
 	return html`
 		<main id="main">
@@ -81,9 +124,46 @@ export function render(data) {
 							web component I made.
 						</p>
 					</div>
-					<plvy-list
-						class="plvylist"
-						file="/assets/js/plvylist.json">
+					<plvy-list>
+						<div
+							class="no-js-grid u-grid"
+							data-grid-columns="5">
+							${allPlvylistTracks
+								.map(
+									(track) => html`
+										<plvy-list-track class="u-flow">
+											<plvy-list-track-artwork
+												><img
+													decoding="async"
+													loading="lazy"
+													src="${track.artwork}"
+													alt="${track.album} artwork"
+											/></plvy-list-track-artwork>
+											<p>
+												<plvy-list-track-title
+													>${track.title}</plvy-list-track-title
+												>
+												by
+												<plvy-list-track-artist
+													><a href="${track.artistUrl}"
+														>${track.artist}</a
+													></plvy-list-track-artist
+												>
+												from the album
+												<plvy-list-track-album
+													><a href="${track.albumUrl}"
+														>${track.album}</a
+													></plvy-list-track-album
+												>
+											</p>
+											<audio
+												controls
+												src="${track.file}"></audio>
+										</plvy-list-track>
+									`,
+								)
+								.join("")}
+						</div>
 					</plvy-list>
 				</section>
 			</div>
