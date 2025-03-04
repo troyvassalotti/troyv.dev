@@ -36,7 +36,7 @@ export function data() {
 									transition: opacity 0.2s ease-in;
 								}
 
-								&:hover > li:not(:hover) {
+								&:is(:hover, :focus-within) > li:not(:hover, :focus-within) {
 									opacity: 0.25;
 								}
 							}
