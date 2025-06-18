@@ -52,7 +52,7 @@ export function render(data) {
 					<p class="u-step-0">
 						I'm currently
 						<tag-line
-							taglines="crying | raving | throwing an absolute fit | starting the pit | yearning"
+							taglines="crying | raving | throwing an absolute fit | starting the pit | yearning | punching nazis | telling you that fascists aren't welcome here"
 							>listening</tag-line
 						>
 						to

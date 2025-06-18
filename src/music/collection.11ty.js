@@ -62,7 +62,7 @@ export function data() {
 export function render(data) {
 	let {
 		title,
-		musicLibrary: {ownedVinyl, vinylWishlist},
+		musicLibrary: {ownedVinyl},
 	} = data;
 
 	return html`
@@ -92,26 +92,8 @@ export function render(data) {
 						data-grid-columns="5">
 						${generateCollectionList(ownedVinyl, generateVinylGridItem)}
 					</ul>
-					<h3>The Wishlist</h3>
-					<p>
-						I <em>could</em> order these online but the point of this list is
-						that I find them out in the wild. I don't even know if all of these
-						have been pressed before, but I'm holding out hope.
-					</p>
-					<ul>
-						${generateCollectionList(vinylWishlist, generateSimpleListItem)}
-					</ul>
 				</article>
 			</div>
 		</main>
-	`;
-}
-
-function generateSimpleListItem({artist, title}) {
-	return html`
-		<li>
-			<b>${artist}</b>:
-			<i>${title}</i>
-		</li>
 	`;
 }

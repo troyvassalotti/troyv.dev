@@ -23,8 +23,9 @@ class MusicLibrary {
 		};
 	}
 
+	// TODO: artist-credit is an empty array???
 	static getArtistCredit(release) {
-		return release["artist-credit"][0].name;
+		return release["artist-credit"][0]?.name;
 	}
 
 	static async getAlbumArtwork(mbid, thumb = false) {
