@@ -17,5 +17,4 @@ export default [
 	new Navigation("notes"),
 	new Navigation("music"),
 	new Navigation("contact"),
-	new Navigation("links"),
 ];

@@ -7,5 +7,10 @@ export default {
 	permalink(data) {
 		return `/notes/${data.page.date.getTime()}/`;
 	},
+	eleventyComputed: {
+		title(data) {
+			return `Note: ${data.page.date.getTime()}`;
+		},
+	},
 	syndication: ["mastodon"],
 };

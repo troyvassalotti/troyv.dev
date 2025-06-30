@@ -7,7 +7,10 @@ export function data() {
 		"override:layout": "base.html",
 		"override:tags": [],
 		"override:permalink": "/notes/",
-		title: "Notes",
+		// overrides notes.11tydata.js computed title
+		eleventyComputed: {
+			title: "Notes",
+		},
 		description: "Shortform notes I make.",
 		bundle: {
 			css: html`
