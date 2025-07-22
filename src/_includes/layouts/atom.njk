@@ -10,7 +10,6 @@
   <id>{{ alt }}</id>
   <author>
     <name>{{ metadata.rss.author.name }}</name>
-    <email>{{ metadata.rss.author.email }}</email>
   </author>
   {%- for post in feed | reverse %}
   {%- set absolutePostUrl = post.url | absoluteUrl(metadata.rss.url) %}

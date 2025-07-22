@@ -20,7 +20,7 @@
 		"tweet": "plop tweet"
 	},
 	"devDependencies": {
-		"@11ty/eleventy": "^3.1.1",
+		"@11ty/eleventy": "^3.1.2",
 		"@11ty/eleventy-fetch": "^5.1.0",
 		"@11ty/eleventy-plugin-inclusive-language": "^1.0.3",
 		"@11ty/eleventy-plugin-rss": "^2.0.4",
@@ -28,13 +28,13 @@
 		"@remy/webmention": "^1.5.0",
 		"@troyv/common-config": "^1.2.0",
 		"common-tags": "^1.8.2",
-		"dotenv": "^16.5.0",
-		"eslint": "^9.29.0",
+		"dotenv": "^17.2.0",
+		"eslint": "^9.31.0",
 		"markdown-it-footnote": "^4.0.0",
 		"netlify-plugin-cache": "^1.0.3",
 		"node-html-parser": "^7.0.1",
 		"plop": "^4.0.1",
-		"prettier": "^3.5.3"
+		"prettier": "^3.6.2"
 	},
 	"prettier": "@troyv/common-config/.prettierrc.json"
 }

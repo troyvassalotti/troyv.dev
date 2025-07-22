@@ -35,7 +35,6 @@ class Metadata {
 		language: "en",
 		author: {
 			name: "Troy Vassalotti",
-			email: "fqa560de@anonaddy.me",
 		},
 		feeds: {
 			blog: {
