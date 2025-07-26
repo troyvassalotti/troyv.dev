@@ -16,6 +16,7 @@ import {parse} from "node-html-parser";
  */
 export default function (config) {
 	config.addPassthroughCopy({public: "/"});
+	config.addPassthroughCopy({"src/admin/config.yml": "/admin/"});
 
 	config.addPlugin(syntaxHighlight);
 	config.addPlugin(pluginRss);
