@@ -1,0 +1,29 @@
+# @format
+
+backend:
+  name: github
+  repo: troyvassalotti/troyv.dev
+  branch: main
+  base_url: https://sveltia-cms-auth.me-3f3.workers.dev/
+  use_graphql: true
+
+# The folder used to store uploaded images
+media_folder: "public/assets/img"
+
+collections:
+  - name: "notes"
+    label: "Notes"
+    label_singular: "note"
+    folder: "src/notes"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {
+          label: "Date",
+          name: "date",
+          widget: "datetime",
+          default: "{{now}}",
+          picker_utc: true,
+        }
+      - {label: "Body", name: "body", widget: "markdown"}

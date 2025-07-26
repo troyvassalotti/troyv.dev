@@ -1,3 +1,7 @@
+---
+date: 2024-05-17T00:22:10.000Z
+---
+
 <!-- @format -->
 
 Got to see Narrow Head last night and it was great! _Moments of Clarity_ was one of my top albums last year.
