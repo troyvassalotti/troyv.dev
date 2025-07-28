@@ -8,6 +8,7 @@ export default {
 	},
 	eleventyComputed: {
 		title(data) {
+			// @since 2025-07-25: Prior to Sveltia CMS, titles weren't in front matter
 			return data.title
 				? `Note: ${data.title}`
 				: `Note: ${data.page.date.getTime()}`;

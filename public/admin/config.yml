@@ -11,6 +11,37 @@ backend:
 media_folder: "public/assets/img"
 
 collections:
+  - name: "posts"
+    label: "Posts"
+    label_singular: "post"
+    folder: "src/posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "string"}
+      - {
+          label: "Tags",
+          name: "tags",
+          widget: "list",
+          required: false,
+          hint: "Enter tags separated by a comma",
+        }
+        # TODO: turn this into an object with booleans for sites. Requires updates to templates where this was assumed to be an array.
+      - {
+          label: "Syndication",
+          name: "syndication",
+          widget: "list",
+          default: ["mastodon"],
+        }
+      - {
+          label: "Date",
+          name: "date",
+          widget: "datetime",
+          default: "{{now}}",
+          picker_utc: true,
+        }
+      - {label: "Body", name: "body", widget: "markdown"}
   - name: "notes"
     label: "Notes"
     label_singular: "note"

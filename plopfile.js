@@ -67,6 +67,9 @@ export default function (plop) {
 		],
 	});
 
+	/**
+	 * @deprecated: Use Sveltia CMS
+	 */
 	plop.setGenerator("tweet", {
 		description: "Write a new tweet",
 		prompts: [
@@ -84,8 +87,8 @@ export default function (plop) {
 		actions: [
 			{
 				type: "add",
-				path: "src/notes/{{dashCase date}}-{{dashCase title}}.md",
-				template: "{{{content}}}",
+				path: "src/notes/{{dashCase datePretty}}-{{dashCase title}}.md",
+				templateFile: "plop-templates/note.hbs",
 				data() {
 					let now = new Date();
 					let date = new Intl.DateTimeFormat("se-SV", {
@@ -93,7 +96,8 @@ export default function (plop) {
 					}).format(now);
 
 					return {
-						date,
+						datePretty: date,
+						date: now.toISOString(),
 					};
 				},
 			},
